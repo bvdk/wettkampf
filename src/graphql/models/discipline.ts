@@ -1,0 +1,6 @@
+export enum Discipline {
+    BENCHPRESS = "BENCHPRESS",
+    SQUAT = "SQUAT",
+    DEADLIFT = "DEADLIFT",
+    POWERLIFTING = "POWERLIFTING",
+}
