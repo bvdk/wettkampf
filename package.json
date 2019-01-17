@@ -15,19 +15,21 @@
   "author": "Toni Möckel",
   "license": "ISC",
   "dependencies": {
+    "csvtojson": "^2.0.8",
+    "express-fileupload": "^1.1.1-alpha.1",
     "graphql-yoga": "1.16.9",
-    "lowdb": "^1.0.0",
     "lodash-id": "^0.14.0",
-    "type-graphql": "^0.16.0",
-    "reflect-metadata": "^0.1.12"
+    "lowdb": "^1.0.0",
+    "reflect-metadata": "^0.1.12",
+    "type-graphql": "^0.16.0"
   },
   "devDependencies": {
     "graphql-cli": "2.17.0",
-    "npm-run-all": "4.1.5",
     "nodemon": "^1.18.9",
+    "npm-run-all": "4.1.5",
     "ts-node": "6.2.0",
-    "typescript": "2.9.2",
-    "tslint": "^5.12.0"
+    "tslint": "^5.12.0",
+    "typescript": "2.9.2"
   },
   "resolutions": {
     "graphql": "^14.0.0"

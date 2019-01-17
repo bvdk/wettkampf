@@ -1,7 +1,6 @@
 import {Context} from "graphql-yoga/dist/types";
-import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Query, Resolver} from "type-graphql";
+import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
-import {AthleteGroup} from "../models/athleteGroup";
 import {Slot, SlotInput} from "../models/slot";
 import IdArgs from "./args/IdArgs";
 import AthleteGroupsResolver from "./AthleteGroups";

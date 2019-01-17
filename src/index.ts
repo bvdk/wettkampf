@@ -1,10 +1,9 @@
+import * as fileUpload from "express-fileupload";
 import { GraphQLServer } from "graphql-yoga";
-import db from "./database";
 import getSchema from "./graphql";
+import importResolver from "./import";
 
 const init = () => {
-
-  console.log("Starting ...");
 
   return getSchema.then((schema) => {
 
@@ -12,6 +11,10 @@ const init = () => {
     const server = new GraphQLServer({
       schema,
     });
+
+
+    server.use(fileUpload());
+    server.post("/import", importResolver);
 
     return server.start(() => console.log("Server is running on http://localhost:4000"))
         .catch((error) => console.error(error));
