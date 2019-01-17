@@ -1,3 +1,28 @@
 {
-  "events": []
+  "events": [
+    {
+      "name": "Mein Event",
+      "discipline": "BENCHPRESS",
+      "contestType": "SINGLE",
+      "id": "a286a77d-14ae-444f-a1da-594accb00c02"
+    }
+  ],
+  "athletes": [],
+  "slots": [
+    {
+      "name": "Slot 1",
+      "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
+      "id": "26495ec6-1a52-4a4b-a752-dd140f21b8bc"
+    }
+  ],
+  "athleteGroups": [
+    {
+      "name": "Startgruppe 1",
+      "slotId": "26495ec6-1a52-4a4b-a752-dd140f21b8bc",
+      "id": "4d64a044-6fd1-4f5b-ad24-140a76e3ccdb"
+    }
+  ],
+  "attempts": [],
+  "weightClasses": [],
+  "ageClasses": []
 }

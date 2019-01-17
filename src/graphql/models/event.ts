@@ -1,4 +1,5 @@
 import {Field, ID, InputType, Int, ObjectType} from "type-graphql";
+import {ContestType} from "./contentType";
 import {Discipline} from "./discipline";
 import {Gender} from "./gender";
 import {Slot} from "./slot";
@@ -14,22 +15,22 @@ export class Event {
     @Field()
     public name: string;
 
-    @Field()
+    @Field((type) => Discipline, { nullable: true })
     public discipline?: Discipline;
 
-    @Field()
-    public contestType?: string;
+    @Field((type) => ContestType, { nullable: true })
+    public contestType?: ContestType;
 
-    @Field()
+    @Field((type) => Gender, { nullable: true })
     public teamGender?: Gender;
 
-    @Field((type) => Int)
+    @Field((type) => Int, { nullable: true })
     public teamSize?: number;
 
-    @Field((type) => [String])
+    @Field((type) => [String], { nullable: true })
     public groupOrder?: string[];
 
-    @Field()
+    @Field((type) => Discipline, { nullable: true })
     public currentDiscipline?: Discipline;
 
     @Field((type) => [Slot])
@@ -40,22 +41,22 @@ export class Event {
 @InputType()
 export class EventInput implements Partial<Event> {
 
-    @Field()
+    @Field({ nullable: true })
     public name: string;
 
-    @Field()
+    @Field((type) => Discipline, { nullable: true })
     public discipline?: Discipline;
 
-    @Field()
-    public contestType?: string;
+    @Field((type) => ContestType, { nullable: true })
+    public contestType?: ContestType;
 
-    @Field()
+    @Field((type) => Gender, { nullable: true })
     public teamGender?: Gender;
 
-    @Field((type) => Int)
+    @Field((type) => Int, { nullable: true })
     public teamSize?: number;
 
-    @Field()
+    @Field((type) => Discipline, { nullable: true })
     public currentDiscipline?: Discipline;
 
 }

@@ -1,6 +1,7 @@
-import {Field, ID, Int, ObjectType} from "type-graphql";
+import {Field, ID, InputType, Int, ObjectType} from "type-graphql";
 import Athlete from "./athlete";
 import {Event} from "./event";
+import {AthleteGroup} from "./athleteGroup";
 
 @ObjectType()
 export class Slot {
@@ -24,4 +25,15 @@ export class Slot {
 
     @Field((type) => Athlete)
     public athletes: Athlete[];
+
+    @Field((type) => AthleteGroup)
+    public athleteGroups: AthleteGroup[];
+}
+
+@InputType()
+export class SlotInput {
+
+    @Field({nullable: true})
+    public name: string;
+
 }

@@ -16,3 +16,4 @@ export class WeightClass {
     @Field()
     public gender: Gender;
 }
+

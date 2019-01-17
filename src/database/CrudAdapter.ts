@@ -1,19 +1,31 @@
 import {Event} from "../graphql/models/event";
 import db from "./index";
+import {duplicateVariableMessage} from "graphql/validation/rules/UniqueVariableNames";
 
 export class CrudAdapter {
+
+    public static getDb(): any {
+        return db;
+    }
 
     public static getAll(collectionName): any {
         return db
             .get(collectionName)
-            .write();
+            .value();
+    }
+
+    public static filter(collectionName, filter): any {
+        return db
+            .get(collectionName)
+            .filter(filter)
+            .value();
     }
 
     public static getItem(collectionName, id): any {
         return db
             .get(collectionName)
-            .findById(id)
-            .write();
+            .getById(id)
+            .value();
     }
 
     public static insertItem(collectionName, insertData): any {

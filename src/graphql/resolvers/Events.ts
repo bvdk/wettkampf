@@ -1,7 +1,10 @@
 import {Context} from "graphql-cli";
-import {Arg, Ctx, Mutation, Query, Resolver} from "type-graphql";
+import {Arg, Args, Ctx, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Event, EventInput} from "../models/event";
+import IdArgs from "./args/IdArgs";
+import SlotResolver from "./Slot";
+import SlotsResolver from "./Slots";
 
 @Resolver()
 export default class EventsResolver {
@@ -15,7 +18,7 @@ export default class EventsResolver {
 
     @Query((returns) => Event, { description: "Get a event" })
     public event(
-        @Arg("id") id: string,
+        @Args() {id}: IdArgs,
     ): Event {
         return CrudAdapter.getItem(Event.collectionKey, id);
     }
@@ -25,7 +28,15 @@ export default class EventsResolver {
         @Arg("data") data: EventInput,
         @Ctx() ctx: Context,
     ): Event {
-        return CrudAdapter.insertItem(Event.collectionKey, data);
+        const event = CrudAdapter.insertItem(Event.collectionKey, data);
+        const slotResolver = new SlotsResolver();
+        slotResolver.createSlot({
+            data: {
+                name: "Slot 1",
+            },
+            eventId: event.id,
+        }, ctx);
+        return event;
     }
 
     @Mutation()

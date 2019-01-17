@@ -8,7 +8,8 @@
     "start": "ts-node start.ts",
     "build": "rimraf dist && tsc",
     "dev": "npm-run-all --parallel start playground",
-    "playground": "graphql playground"
+    "playground": "graphql playground",
+    "kill:port": "kill-port 4000"
   },
   "keywords": [],
   "author": "Toni Möckel",

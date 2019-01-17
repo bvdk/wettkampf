@@ -1,7 +1,21 @@
 import {Context} from "graphql-cli";
-import {Arg, Ctx, Mutation, Query, Resolver} from "type-graphql";
+import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import Athlete, {AthleteInput} from "../models/athlete";
+import IdArgs from "./args/IdArgs";
+
+@ArgsType()
+class CreateAthleteArgs {
+    @Field((type) => ID)
+    public eventId: string;
+
+    @Field((type) => ID, {nullable: true})
+    public athleteGroupId?: string;
+
+    @Field((type) => AthleteInput)
+    public data: AthleteInput;
+}
+
 
 @Resolver()
 export default class AthletesResolver {
@@ -15,22 +29,27 @@ export default class AthletesResolver {
 
     @Query((returns) => Athlete, { description: "" })
     public event(
-        @Arg("id") id: string,
+        @Args() {id}: IdArgs,
     ): Athlete {
         return CrudAdapter.getItem(this.collectionKey, id);
     }
 
     @Mutation()
     public createAthlete(
-        @Arg("data") data: AthleteInput,
+        @Args() {data, eventId, athleteGroupId}: CreateAthleteArgs,
         @Ctx() ctx: Context,
     ): Athlete {
-        return CrudAdapter.insertItem(this.collectionKey, data);
+        return CrudAdapter.insertItem(this.collectionKey, {
+            ...data,
+            athleteGroupId,
+            eventId,
+        });
     }
 
     @Mutation()
     public updateAthlete(
-        @Arg("id") id: string,
+
+        @Args() {id}: IdArgs,
         @Arg("data") data: AthleteInput,
         @Ctx() ctx: Context,
     ): Athlete {
@@ -40,7 +59,7 @@ export default class AthletesResolver {
 
     @Mutation()
     public deleteAthlete(
-        @Arg("id") id: string,
+        @Args() {id}: IdArgs,
         @Ctx() ctx: Context,
     ): Athlete {
 

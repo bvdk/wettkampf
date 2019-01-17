@@ -42,6 +42,22 @@ type Athlete {
   attempts: [Attempt!]!
 }
 
+type AthleteGroup {
+  id: ID!
+  slotId: String!
+  name: String!
+  gender: Gender
+  ageClass: AgeClass
+  weightClass: WeightClass
+}
+
+input AthleteGroupInput {
+  name: String
+  gender: Gender
+  ageClassId: String
+  weightClassId: String
+}
+
 input AthleteInput {
   importId: String!
   firstName: String!
@@ -78,34 +94,57 @@ type Attempt {
   date: String!
 }
 
+enum ContestType {
+  SINGLE
+  TEAM
+}
+
 # The javascript `Date` as string. Type represents date and time as the ISO Date string.
 scalar DateTime
+
+enum Discipline {
+  BENCHPRESS
+  SQUAT
+  DEADLIFT
+  POWERLIFTING
+}
 
 type Event {
   id: ID!
   name: String!
-  discipline: String!
-  contestType: String!
-  teamGender: String!
-  teamSize: Int!
-  groupOrder: [String!]!
-  currentDiscipline: String!
+  discipline: Discipline
+  contestType: ContestType
+  teamGender: Gender
+  teamSize: Int
+  groupOrder: [String!]
+  currentDiscipline: Discipline
   slots: [Slot!]!
 }
 
 input EventInput {
-  name: String!
-  discipline: String!
-  contestType: String!
-  teamGender: String!
-  teamSize: Int!
-  currentDiscipline: String!
+  name: String
+  discipline: Discipline
+  contestType: ContestType
+  teamGender: Gender
+  teamSize: Int
+  currentDiscipline: Discipline
+}
+
+enum Gender {
+  MALE
+  FEMALE
 }
 
 type Mutation {
-  createAthlete(data: AthleteInput!): Athlete!
-  updateAthlete(data: AthleteInput!, id: String!): Athlete!
-  deleteAthlete(id: String!): Athlete!
+  createAthleteGroup(slotId: ID!, data: AthleteGroupInput!): AthleteGroup!
+  updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
+  deleteAthleteGroup(id: ID!): AthleteGroup!
+  createAthlete(eventId: ID!, athleteGroupId: ID, data: AthleteInput!): Athlete!
+  updateAthlete(data: AthleteInput!, id: ID!): Athlete!
+  deleteAthlete(id: ID!): Athlete!
+  createSlot(eventId: ID!, data: SlotInput!): Slot!
+  updateSlot(data: SlotInput!, id: ID!): Slot!
+  deleteSlot(id: ID!): Slot!
   createEvent(data: EventInput!): Event!
   updateEvent(data: EventInput!, id: String!): Event!
   deleteEvent(id: String!): Event!
@@ -115,7 +154,7 @@ type Query {
   athletes: [Athlete!]!
 
   # Get a event
-  event(id: String!): Event!
+  event(id: ID!): Event!
 
   # Get all the events
   events: [Event!]!
@@ -128,6 +167,11 @@ type Slot {
   eventId: String!
   index: Int!
   athletes: [Athlete!]!
+  athleteGroups: [AthleteGroup!]!
+}
+
+input SlotInput {
+  name: String
 }
 
 type WeightClass {
