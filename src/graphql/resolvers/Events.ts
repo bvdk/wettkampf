@@ -1,4 +1,4 @@
-import {Context} from "graphql-cli";
+import {Context} from "graphql-yoga/dist/types";
 import {Arg, Args, Ctx, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Event, EventInput} from "../models/event";

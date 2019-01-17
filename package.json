@@ -2,10 +2,10 @@
   "name": "minimal",
   "version": "1.0.0",
   "description": "",
-  "main": "start.ts",
+  "main": "src/start.ts",
   "scripts": {
     "watch": "nodemon",
-    "start": "ts-node start.ts",
+    "start": "ts-node ./src/start.ts",
     "build": "rimraf dist && tsc",
     "dev": "npm-run-all --parallel start playground",
     "playground": "graphql playground",

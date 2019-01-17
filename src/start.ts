@@ -1,4 +1,4 @@
-import start from "./src";
+import start from ".";
 
 start().then((server) => {
     console.log("Started server");

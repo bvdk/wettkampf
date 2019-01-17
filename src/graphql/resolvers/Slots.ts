@@ -1,4 +1,4 @@
-import {Context} from "graphql-cli";
+import {Context} from "graphql-yoga/dist/types";
 import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {AthleteGroup} from "../models/athleteGroup";
