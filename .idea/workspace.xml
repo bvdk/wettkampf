@@ -2,120 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0b5efdc-5ccc-4d08-b131-31876f7bf59b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.bablerc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-overrides.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graphql.config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/Logo_BVDK.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/mac/app.icns" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/1024x1024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/128x128.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/24x24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/256x256.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/48x48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/64x64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/96x96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/icons/win/app.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/DataLoaderType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/DataLoaderValueLabel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/EnumLoaderConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/LoaderConfigLabel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Error/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EventCreateForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EventForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EventTable/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/EventsDashboard/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FileUploadDropZone/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FileUploader/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-form-factory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inline-field.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inline-field.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inline-field.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inlineedit-field-connected.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attributeTypeValue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attributeValues-to-fomValues.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attributes-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attributes-inline-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/attributes-to-formConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/display-field.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/display-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/Autocomplete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/AutocompleteSearch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/DebounceInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/EditTable/editablecell.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/EditTable/editabletablestyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/EditTable/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/File.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/MenuAsync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/MultilangInput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/SelectAsync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/SelectSearch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/TablePicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/TreeSelectAsync.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/fomValues-to-attributeValues.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/form-factory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/form-value-translator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/persist-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/remote-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/rules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/warn-err-min-max-attribute-factory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Form/warn-err-min-max-attribute-factory.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Bread.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Bread.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Sider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Sider.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/rightMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/QueryLoader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Loader/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OneLineLabel/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RouterBreadcrumbs/athlete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RouterBreadcrumbs/event.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RouterBreadcrumbs/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Toolbar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Utilities/ColorBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Utilities/EditableCell.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Utilities/EditableCell.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Utilities/EditableCell.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/strings.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/createEvent.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/queries/athlete.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/queries/enums.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/queries/eventName.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/queries/events.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hoc/waitWhileLoading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Redirect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/eventsDashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/colors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/sizes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/base64File.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/findKey.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/findKey.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/toast.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/deleteEvent.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/graphql.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventCreateForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventCreateForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventTable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventTable/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventsDashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventsDashboard/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -128,27 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-              <folding>
-                <element signature="e#9#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/eventsDashboard.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -164,26 +35,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/EventsDashboard/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config-overrides.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="143">
+              <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+              <folding>
+                <element signature="e#9#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphql/mutations/deleteEvent.graphql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graphql.config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/EventTable/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="67" lean-forward="true" selection-start-line="10" selection-end-line="10" selection-end-column="67" />
+              <folding>
+                <element signature="e#9#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/EventCreateForm/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+            <state relative-caret-position="119">
+              <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
               <folding>
                 <element signature="e#9#50#0" expanded="true" />
               </folding>
@@ -260,7 +155,6 @@
         <option value="$PROJECT_DIR$/src/routes/index.js" />
         <option value="$PROJECT_DIR$/src/components/Form/attributes-to-formConfig.js" />
         <option value="$PROJECT_DIR$/src/components/Form/form-factory.js" />
-        <option value="$PROJECT_DIR$/src/components/EventTable/index.js" />
         <option value="$PROJECT_DIR$/src/utils/toast.js" />
         <option value="$PROJECT_DIR$/src/components/Form/attribute-inlineedit-field-connected.js" />
         <option value="$PROJECT_DIR$/src/components/Error/index.js" />
@@ -270,7 +164,6 @@
         <option value="$PROJECT_DIR$/src/components/Form/fields/SelectSearch.js" />
         <option value="$PROJECT_DIR$/src/components/Loader/Loader.js" />
         <option value="$PROJECT_DIR$/src/components/Form/attribute-form-factory.js" />
-        <option value="$PROJECT_DIR$/graphql.config.json" />
         <option value="$PROJECT_DIR$/src/graphql/queries/events.graphql" />
         <option value="$PROJECT_DIR$/src/graphql/package.json" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -289,11 +182,14 @@
         <option value="$PROJECT_DIR$/src/utils/index.js" />
         <option value="$PROJECT_DIR$/src/routes/eventsDashboard.js" />
         <option value="$PROJECT_DIR$/src/graphql/mutations/createEvent.graphql" />
-        <option value="$PROJECT_DIR$/src/components/EventCreateForm/index.js" />
         <option value="$PROJECT_DIR$/src/components/EventForm/index.js" />
         <option value="$PROJECT_DIR$/src/components/Form/attributes-inline-form.js" />
-        <option value="$PROJECT_DIR$/src/components/EventsDashboard/index.js" />
         <option value="$PROJECT_DIR$/config-overrides.js" />
+        <option value="$PROJECT_DIR$/src/graphql/mutations/deleteEvent.graphql" />
+        <option value="$PROJECT_DIR$/graphql.config.json" />
+        <option value="$PROJECT_DIR$/src/components/EventsDashboard/index.js" />
+        <option value="$PROJECT_DIR$/src/components/EventTable/index.js" />
+        <option value="$PROJECT_DIR$/src/components/EventCreateForm/index.js" />
       </list>
     </option>
   </component>
@@ -363,6 +259,13 @@
               <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="EventCreateForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="EventForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,6 +279,13 @@
               <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="EventTable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -383,6 +293,20 @@
               <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="graphql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="graphql" type="462c0819:PsiDirectoryNode" />
+              <item name="mutations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="graphql" type="462c0819:PsiDirectoryNode" />
+              <item name="queries" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
@@ -407,7 +331,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -462,12 +386,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547994037912</updated>
-      <workItem from="1547994039242" duration="8043000" />
+      <workItem from="1547994039242" duration="9032000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8043000" />
+    <option name="totallyTimeSpent" value="9032000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="23" width="1867" height="1101" extended-state="0" />
@@ -475,7 +399,7 @@
     <layout>
       <window_info id="npm" sideWeight="0.50075644" side_tool="true" weight="0.24972914" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924356" visible="true" weight="0.24972914" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49924356" visible="true" weight="0.24972914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -485,7 +409,7 @@
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50108343" side_tool="true" weight="0.3296146" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49891657" visible="true" weight="0.3296146" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49891657" visible="true" weight="0.3296146" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -499,24 +423,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/i18n/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/Redirect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/strings.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -674,13 +580,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/graphql.schema.json">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/graphql.config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphql/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -849,16 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventCreateForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <element signature="e#9#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/EventForm/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -886,17 +775,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventsDashboard/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config-overrides.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/mutations/deleteEvent.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventsDashboard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding>
+            <element signature="e#9#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventTable/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="67" lean-forward="true" selection-start-line="10" selection-end-line="10" selection-end-column="67" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventCreateForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

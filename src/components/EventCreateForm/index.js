@@ -5,6 +5,7 @@ import {compose, graphql} from "react-apollo";
 import { loader } from 'graphql.macro';
 import EventForm from "../EventForm";
 const CreateEventMutation = loader("../../graphql/mutations/createEvent.graphql");
+const EventsQuery = loader("../../graphql/queries/events.graphql");
 
 type Props = {
   createEventMutation: Function,
@@ -35,5 +36,10 @@ class EventCreateForm extends Component<Props, State> {
 export default compose(
   graphql(CreateEventMutation, {
     name: 'createEventMutation',
+    options: () => ({
+      refetchQueries: [{
+        query: EventsQuery
+      }]
+    })
   }),
 )(EventCreateForm);

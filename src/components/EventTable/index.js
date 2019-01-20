@@ -2,10 +2,16 @@
 import React, { Component } from 'react';
 import {Divider, Table} from "antd";
 import * as _ from "lodash";
+import {graphql, compose} from "react-apollo";
+
+import { loader } from 'graphql.macro';
+import {withProps} from "recompose";
+import {Link} from "react-router-dom";
+const DeleteEventMutation = loader("../../graphql/mutations/deleteEvent.graphql");
+const EventsQuery = loader("../../graphql/queries/events.graphql");
 
 type Props = {
   events: Event[],
-  onEdit?: ?Function,
   onRemove?: ?Function,
   onClick?: (event: any) => void
 };
@@ -13,7 +19,7 @@ type Props = {
 
 
 
-export default class EventTable extends Component<Props> {
+class EventTable extends Component<Props> {
   props: Props;
 
   static defaultProps = {
@@ -63,10 +69,7 @@ export default class EventTable extends Component<Props> {
         key: 'action',
         render: (text, record) => (
           <span>
-            { this.props.onEdit ?<span>
-              <a onClick={()=>{this.props.onEdit(record)}}>Bearbeiten</a> {this.props.onRemove ? <Divider type="vertical" />: null }
-            </span>
-              : null }
+            <Link to={`events/${record.id}/edit`}>Bearbeiten</Link> {this.props.onRemove ? <Divider type="vertical" />: null }
             { this.props.onRemove ?<span><a onClick={()=>{this.props.onRemove(record)}}>Löschen</a></span>
               : null }
           </span>
@@ -84,3 +87,21 @@ export default class EventTable extends Component<Props> {
     );
   }
 }
+
+export default compose(
+  graphql(DeleteEventMutation, {
+    name: 'deleteEventMutation',
+    options: () => ({
+      refetchQueries: [{
+        query: EventsQuery
+      }]
+    })
+  }),
+  withProps((props) => ({
+    onRemove: (event) => props.deleteEventMutation({
+      variables: {
+        id: event.id
+      }
+    })
+  }))
+)(EventTable)

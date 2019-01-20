@@ -63,8 +63,6 @@ class EventsDashboard extends Component<Props, State> {
         <EventTable
           onClick={onClickEvent}
           events={events}
-          onEdit={onEditEvent}
-          onRemove={onRemoveEvent}
         />
         <Modal
           title="Neues Event"
