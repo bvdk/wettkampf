@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b0b5efdc-5ccc-4d08-b131-31876f7bf59b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.bablerc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config-overrides.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphql.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/Logo_BVDK.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/mac/app.icns" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/1024x1024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/128x128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/16x16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/24x24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/256x256.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/32x32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/48x48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/64x64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/png/96x96.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/icons/win/app.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/DataLoaderType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/DataLoaderValueLabel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/EnumLoaderConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/LoaderConfigLabel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Error/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EventCreateForm/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EventForm/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EventTable/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EventsDashboard/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FileUploadDropZone/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/FileUploader/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-form-factory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inline-field.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inline-field.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inline-field.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attribute-inlineedit-field-connected.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attributeTypeValue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attributeValues-to-fomValues.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attributes-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attributes-inline-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/attributes-to-formConfig.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/display-field.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/display-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/Autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/AutocompleteSearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/DebounceInput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/EditTable/editablecell.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/EditTable/editabletablestyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/EditTable/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/File.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/MenuAsync.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/MultilangInput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/SelectAsync.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/SelectSearch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/TablePicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fields/TreeSelectAsync.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/fomValues-to-attributeValues.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/form-factory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/form-value-translator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/persist-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/remote-form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/rules.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/warn-err-min-max-attribute-factory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Form/warn-err-min-max-attribute-factory.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Bread.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Bread.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Header.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Layout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Sider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/Sider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/rightMenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Layout/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader/Loader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader/QueryLoader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OneLineLabel/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RouterBreadcrumbs/athlete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RouterBreadcrumbs/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RouterBreadcrumbs/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Toolbar/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utilities/ColorBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utilities/EditableCell.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utilities/EditableCell.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Utilities/EditableCell.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/constants/strings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/createEvent.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/queries/athlete.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/queries/enums.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/queries/eventName.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/queries/events.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hoc/waitWhileLoading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/Redirect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/eventsDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/colors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/sizes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/base64File.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/findKey.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/findKey.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/toast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8">
+              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+              <folding>
+                <element signature="e#9#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routes/eventsDashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <folding>
+                <element signature="e#9#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/EventsDashboard/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config-overrides.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/EventCreateForm/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+              <folding>
+                <element signature="e#9#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/EventForm/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+              <folding>
+                <element signature="e#9#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Form/attributes-inline-form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="491">
+              <caret line="177" column="30" lean-forward="true" selection-start-line="177" selection-start-column="30" selection-end-line="177" selection-end-column="30" />
+              <folding>
+                <element signature="e#9#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/message/index.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphql/mutations/createEvent.graphql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>update</find>
+      <find>t</find>
+      <find>t(</find>
+      <find>console</find>
+      <find>pathToRegexp</find>
+      <find>packa</find>
+      <find>onSubmit</find>
+      <find>t(</find>
+      <find>onAddEvent</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/FileUploadDropZone/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/eventDashboard.js" />
+        <option value="$PROJECT_DIR$/src/routes/athlete.js" />
+        <option value="$PROJECT_DIR$/src/routes/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/attributes-to-formConfig.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/form-factory.js" />
+        <option value="$PROJECT_DIR$/src/components/EventTable/index.js" />
+        <option value="$PROJECT_DIR$/src/utils/toast.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/attribute-inlineedit-field-connected.js" />
+        <option value="$PROJECT_DIR$/src/components/Error/index.js" />
+        <option value="$PROJECT_DIR$/src/components/FileUploader/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/fields/TablePicker.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/fields/AutocompleteSearch.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/fields/SelectSearch.js" />
+        <option value="$PROJECT_DIR$/src/components/Loader/Loader.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/attribute-form-factory.js" />
+        <option value="$PROJECT_DIR$/graphql.config.json" />
+        <option value="$PROJECT_DIR$/src/graphql/queries/events.graphql" />
+        <option value="$PROJECT_DIR$/src/graphql/package.json" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.bablerc" />
+        <option value="$PROJECT_DIR$/src/components/Layout/Header.js" />
+        <option value="$PROJECT_DIR$/src/graphql/queries/athlete.graphql" />
+        <option value="$PROJECT_DIR$/src/components/RouterBreadcrumbs/athlete.js" />
+        <option value="$PROJECT_DIR$/src/graphql/queries/event.graphql" />
+        <option value="$PROJECT_DIR$/src/graphql/queries/eventName.graphql" />
+        <option value="$PROJECT_DIR$/src/components/RouterBreadcrumbs/event.js" />
+        <option value="$PROJECT_DIR$/node_modules/.env" />
+        <option value="$PROJECT_DIR$/src/components/Layout/index.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/form-value-translator.js" />
+        <option value="$PROJECT_DIR$/src/components/Utilities/ColorBar.js" />
+        <option value="$PROJECT_DIR$/src/utils/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/eventsDashboard.js" />
+        <option value="$PROJECT_DIR$/src/graphql/mutations/createEvent.graphql" />
+        <option value="$PROJECT_DIR$/src/components/EventCreateForm/index.js" />
+        <option value="$PROJECT_DIR$/src/components/EventForm/index.js" />
+        <option value="$PROJECT_DIR$/src/components/Form/attributes-inline-form.js" />
+        <option value="$PROJECT_DIR$/src/components/EventsDashboard/index.js" />
+        <option value="$PROJECT_DIR$/config-overrides.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="53" />
+    <option name="y" value="23" />
+    <option name="width" value="1867" />
+    <option name="height" value="1101" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="antd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="antd" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="antd" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="EventForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="EventsDashboard" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="graphql" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/graphql/queries" />
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/components/Layout" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0b5efdc-5ccc-4d08-b131-31876f7bf59b" name="Default Changelist" comment="" />
+      <created>1547994037912</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1547994037912</updated>
+      <workItem from="1547994039242" duration="8043000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="8043000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="53" y="23" width="1867" height="1101" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="npm" sideWeight="0.50075644" side_tool="true" weight="0.24972914" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49924356" visible="true" weight="0.24972914" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="GraphQL" sideWeight="0.49945828" weight="0.3296146" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49945828" weight="0.3296146" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50108343" side_tool="true" weight="0.3296146" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49891657" visible="true" weight="0.3296146" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/i18n/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/Redirect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/constants/strings.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/toast.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#10#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/enums.graphql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/findKey.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/attribute-inlineedit-field-connected.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="9" column="71" selection-start-line="9" selection-start-column="71" selection-end-line="9" selection-end-column="71" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/attributes-to-formConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Error/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="53" column="145" selection-start-line="53" selection-start-column="145" selection-end-line="53" selection-end-column="145" />
+          <folding>
+            <element signature="e#9#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/fields/TablePicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="130" column="26" selection-start-line="130" selection-start-column="26" selection-end-line="130" selection-end-column="26" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/fields/AutocompleteSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="101" column="31" lean-forward="true" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+          <folding>
+            <element signature="e#9#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/fields/SelectSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="121" column="47" selection-start-line="121" selection-start-column="47" selection-end-line="121" selection-end-column="47" />
+          <folding>
+            <element signature="e#9#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Loader/Loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
+          <folding>
+            <element signature="e#9#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/fields/MarkdownEditor.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/FileUploader/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+          <folding>
+            <element signature="e#9#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/attribute-form-factory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="140" selection-start-line="140" selection-end-line="140" />
+          <folding>
+            <element signature="e#9#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hoc/waitWhileLoading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../vsm-web/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="86" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../vsm-web/config-overrides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/serviceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql.schema.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphql.config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.bablerc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout/menu.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout/Bread.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/menu.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RouterBreadcrumbs/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/events.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/athlete.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventName.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RouterBreadcrumbs/athlete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="25" />
+          <folding>
+            <element signature="e#1#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RouterBreadcrumbs/event.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="e#1#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="50" column="78" selection-start-line="50" selection-start-column="78" selection-end-line="50" selection-end-column="78" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/form-value-translator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Utilities/ColorBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="44" lean-forward="true" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding>
+            <element signature="e#9#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/eventsDashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#9#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/mutations/createEvent.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventCreateForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/message/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Form/attributes-inline-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="177" column="30" lean-forward="true" selection-start-line="177" selection-start-column="30" selection-end-line="177" selection-end-column="30" />
+          <folding>
+            <element signature="e#9#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventsDashboard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config-overrides.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

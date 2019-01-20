@@ -1,0 +1,8 @@
+mutation createEvent($data: EventInput!) {
+    createEvent(data:$data){
+        id
+        name
+        contestType
+        discipline
+    }
+}

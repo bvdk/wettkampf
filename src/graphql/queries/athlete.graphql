@@ -1,0 +1,7 @@
+query athelte($id: ID!){
+    athlete(id: $id){
+        id
+        firstName
+        lastName
+    }
+}
