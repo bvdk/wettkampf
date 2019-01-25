@@ -1,7 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
-import EventsDashboard from "./../components/EventsDashboard";
+import EventsDashboard from "../../components/EventsDashboard";
 
 type Props = {
   events: Event[],

@@ -2,7 +2,7 @@
 import React, {Component} from "react"
 import _ from 'lodash';
 import SelectSearch from "./SelectSearch";
-import {compose, graphql} from "react-apollo/index";
+import {compose, graphql} from "react-apollo";
 import {withProps} from "recompose";
 
 type Props = {

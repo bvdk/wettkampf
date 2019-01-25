@@ -24,12 +24,16 @@ const attributes = [
     index: 'discipline',
     name: 'Disziplin',
     type: 'string',
+    entityType: 'enum',
+    enumType: 'Discipline',
     inputType: 'select',
 
   },{
     index: 'contestType',
     name: 'Wettbewerb',
     type: 'string',
+    entityType: 'enum',
+    enumType: 'ContestType',
     inputType: 'select',
 
   },{
@@ -42,6 +46,8 @@ const attributes = [
     index: 'teamGender',
     name: 'Wertung',
     type: 'string',
+    entityType: 'enum',
+    enumType: 'Gender',
     inputType: 'select',
     condition: (form) => form.getFieldValue('contestType') === 'TEAM'
   }

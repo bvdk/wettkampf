@@ -1,5 +1,6 @@
 // @flow
-import query from "./../../graphql/queries/enums.graphql"
+import {loader} from "graphql.macro";
+const query = loader("./../../graphql/queries/enums.graphql");
 
 const LoaderConfig = {
   dataKey: '__type',

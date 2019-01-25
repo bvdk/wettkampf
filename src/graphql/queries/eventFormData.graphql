@@ -1,0 +1,8 @@
+query eventFormData($id: ID!){
+    event(id: $id){
+        id
+        name
+        contestType
+        discipline
+    }
+}
