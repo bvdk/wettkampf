@@ -1,5 +1,5 @@
 import {Field, ID, InputType, Int, ObjectType} from "type-graphql";
-import Athlete from "./athlete";
+import { Athlete } from "./athlete";
 import {Event} from "./event";
 import {AthleteGroup} from "./athleteGroup";
 

@@ -1,4 +1,5 @@
-import {Field, Float, ID, Int, ObjectType} from "type-graphql";
+import {Field, Float, ID, InputType, Int, ObjectType} from "type-graphql";
+import {Athlete} from "./athlete";
 import {Discipline} from "./discipline";
 import {Gender} from "./gender";
 
@@ -11,7 +12,7 @@ export class Attempt {
     public id: string;
 
     @Field((type) => Float)
-    public weight?: number;
+    public weight: number;
 
     @Field()
     public valid?: boolean;
@@ -19,6 +20,32 @@ export class Attempt {
     @Field()
     public done?: boolean;
 
-    @Field((type)=> String)
+    @Field()
+    public date: Date;
+}
+
+@InputType()
+export class AttemptInput implements Partial<Attempt> {
+
+    @Field((type) => Float)
+    public weight: number;
+
+    @Field({nullable: true})
+    public valid?: boolean;
+
+    @Field({nullable: true})
+    public done?: boolean;
+
+    @Field({nullable: true})
     public date?: Date;
+
+}
+
+@InputType()
+export class AttemptUpdateInput extends AttemptInput implements Partial<Attempt> {
+
+    @Field((type) => Float, {nullable: true})
+    public weight: number;
+
+
 }

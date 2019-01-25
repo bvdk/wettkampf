@@ -1,5 +1,6 @@
 import {Field, ID, InputType, ObjectType} from "type-graphql";
 import {AgeClass} from "./ageClass";
+import { Athlete } from "./athlete";
 import {Gender} from "./gender";
 import {WeightClass} from "./weightClass";
 
@@ -25,6 +26,9 @@ export class AthleteGroup {
 
     @Field((type) => WeightClass, { nullable: true })
     public weightClass: WeightClass;
+
+    @Field( (type) => Athlete )
+    public athletes: Athlete[];
 
 }
 

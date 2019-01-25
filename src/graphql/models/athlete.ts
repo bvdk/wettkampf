@@ -1,33 +1,36 @@
 import {Field, Float, ID, InputType, Int, ObjectType} from "type-graphql";
 import {AgeClass} from "./ageClass";
+import {AthleteGroup} from "./athleteGroup";
 import {Attempt} from "./attempt";
-import {Discipline} from "./discipline";
 import {Event} from "./event";
 import {Gender} from "./gender";
 import {Slot} from "./slot";
 import {WeightClass} from "./weightClass";
 
 @ObjectType()
-export default class Athlete {
+export class Athlete {
 
     public static collectionKey: string = "athletes";
 
     @Field((type) => ID)
     public id: string;
 
-    @Field()
+    @Field((type) => ID)
     public eventId?: string;
 
     @Field((type) => Event)
     public event?: Event;
 
-    @Field()
-    public slotId?: string;
+    @Field((type) => ID, {nullable: true})
+    public athleteGroupId?: string;
 
-    @Field((type) => Slot)
+    @Field((type) => AthleteGroup, {nullable: true})
+    public athleteGroup?: AthleteGroup;
+
+    @Field((type) => Slot, {nullable: true})
     public slot?: Slot;
 
-    @Field()
+    @Field({nullable: true})
     public importId?: string;
 
     @Field()
@@ -36,29 +39,35 @@ export default class Athlete {
     @Field()
     public lastName: string;
 
-    @Field()
+    @Field((type) => Gender)
     public gender: Gender;
 
-    @Field()
+    @Field({nullable: true})
     public birthday: Date;
 
-    @Field()
+    @Field({nullable: true})
     public club?: string;
 
-    @Field()
+    @Field({nullable: true})
     public norm?: boolean;
 
-    @Field()
+    @Field({nullable: true})
     public lateRegistration?: boolean;
 
-    @Field()
+    @Field({nullable: true})
     public price?: string;
 
-    @Field((type) => AgeClass)
+    @Field((type) => ID, {nullable: true})
+    public ageClassId?: string;
+
+    @Field((type) => AgeClass, {nullable: true})
     public ageClass?: AgeClass;
 
-    @Field((type) => Float, { description: "Body weight in kg"})
+    @Field((type) => Float, { description: "Body weight in kg", nullable: true})
     public bodyWeight?: number;
+
+    @Field((type) => ID, {nullable: true})
+    public weightClassId?: string;
 
     @Field((type) => WeightClass)
     public weightClass?: WeightClass;
@@ -89,11 +98,15 @@ export default class Athlete {
 }
 
 
+
 @InputType()
 export class AthleteInput implements Partial<Athlete> {
 
-    @Field()
+    @Field({nullable: true})
     public importId?: string;
+
+    @Field((type) => ID, {nullable: true})
+    public athleteGroupId?: string;
 
     @Field()
     public firstName: string;
@@ -101,52 +114,51 @@ export class AthleteInput implements Partial<Athlete> {
     @Field()
     public lastName: string;
 
-    @Field()
+    @Field((type) => Gender)
     public gender: Gender;
 
-    @Field()
+    @Field({nullable: true})
     public birthday: Date;
 
-    @Field()
+    @Field({nullable: true})
     public club?: string;
 
-    @Field()
+    @Field({nullable: true})
     public norm?: boolean;
 
-    @Field()
+    @Field({nullable: true})
     public lateRegistration?: boolean;
 
-    @Field()
+    @Field({nullable: true})
     public price?: string;
 
-    @Field()
+    // Auto calc with birthday
+    @Field((type) => ID, {nullable: true})
     public ageClassId?: string;
 
-    @Field((type) => Float, { description: "Body weight in kg"})
+    @Field((type) => Float, { description: "Body weight in kg", nullable: true})
     public bodyWeight?: number;
 
-    @Field()
+    // Auto calc with bodyweight
+    @Field({nullable: true})
     public weightClassId?: string;
 
-    @Field((type) => Int, { description: "Attempt count"})
-    public attemptCount?: number;
-
-    @Field((type) => Float, { description: "Calc wilks"})
-    public wilks?: number;
-
-    @Field((type) => Int)
+    @Field((type) => Int, {nullable: true})
     public los?: number;
 
-    @Field((type) => Float)
-    public points?: number;
+}
 
-    @Field((type) => Float)
-    public total?: number;
+@InputType()
+export class AthleteUpdateInput extends AthleteInput implements Partial<Athlete> {
 
-    @Field((type) => Int)
-    public place?: number;
+    @Field({nullable: true})
+    public firstName: string;
 
-    @Field((type) => Int)
-    public location?: number;
+    @Field({nullable: true})
+    public lastName: string;
+
+    @Field((type) => Gender, {nullable: true})
+    public gender: Gender;
+
 
 }

@@ -7,12 +7,38 @@
       "id": "a286a77d-14ae-444f-a1da-594accb00c02"
     }
   ],
-  "athletes": [],
+  "athletes": [
+    {
+      "firstName": "Toni",
+      "lastName": "Möckel",
+      "gender": "MALE",
+      "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
+      "id": "7d51f4d1-3f40-4686-a868-9437dabcb9f0",
+      "athleteGroupId": "4d64a044-6fd1-4f5b-ad24-140a76e3ccdb"
+    },
+    {
+      "firstName": "Nora",
+      "lastName": "Liebender",
+      "gender": "FEMALE",
+      "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
+      "id": "0aa373fb-456d-4eaf-87bf-3c7c11d5317c"
+    }
+  ],
   "slots": [
     {
       "name": "Slot 1",
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "26495ec6-1a52-4a4b-a752-dd140f21b8bc"
+    },
+    {
+      "name": "Slot 1",
+      "eventId": "62666b19-66ff-463d-b196-f80ce060bcdb",
+      "id": "7d8a977e-efaa-4b6c-bd52-09a625ee835b"
+    },
+    {
+      "name": "Slot 1",
+      "eventId": "a1fa424f-c274-4783-a560-e03a550688ce",
+      "id": "8d2c3470-0f4e-4c1f-8d09-d3965a3911e8"
     }
   ],
   "athleteGroups": [
@@ -20,9 +46,177 @@
       "name": "Startgruppe 1",
       "slotId": "26495ec6-1a52-4a4b-a752-dd140f21b8bc",
       "id": "4d64a044-6fd1-4f5b-ad24-140a76e3ccdb"
+    },
+    {
+      "name": "Startgruppe 1",
+      "slotId": "7d8a977e-efaa-4b6c-bd52-09a625ee835b",
+      "id": "3a297c80-9c57-4f2f-8919-c00c984e4815"
+    },
+    {
+      "name": "Startgruppe 1",
+      "slotId": "8d2c3470-0f4e-4c1f-8d09-d3965a3911e8",
+      "id": "3cabde1e-c6c1-45c6-9433-451194841db3"
     }
   ],
-  "attempts": [],
-  "weightClasses": [],
-  "ageClasses": []
+  "attempts": [
+    {
+      "date": "2019-01-20T13:34:26.504Z",
+      "weight": 100,
+      "athleteId": "7d51f4d1-3f40-4686-a868-9437dabcb9f0",
+      "id": "b6ff337e-47e1-44c1-9e1c-63379d3447a8"
+    },
+    {
+      "date": "2019-01-20T13:34:54.854Z",
+      "weight": 110,
+      "athleteId": "7d51f4d1-3f40-4686-a868-9437dabcb9f0",
+      "id": "79f9eef5-555c-4471-971f-1a422d3e909d"
+    }
+  ],
+  "weightClasses": [
+    {
+      "id": "-53",
+      "name": "bis 53,0 kg",
+      "gender": "MALE",
+      "min": 0,
+      "max": 53
+    },
+    {
+      "id": "-59",
+      "name": "bis 59,0 kg",
+      "gender": "MALE",
+      "min": 0,
+      "max": 55
+    },
+    {
+      "id": "-66",
+      "name": "bis 66,0 kg",
+      "gender": "MALE",
+      "min": 59.01,
+      "max": 66
+    },
+    {
+      "id": "-74",
+      "name": "bis 74,0 kg",
+      "gender": "MALE",
+      "min": 66.01,
+      "max": 74
+    },
+    {
+      "id": "-83",
+      "name": "bis 83,0 kg",
+      "gender": "MALE",
+      "min": 74.01,
+      "max": 83
+    },
+    {
+      "id": "-93",
+      "name": "bis 93,0 kg",
+      "gender": "MALE",
+      "min": 83.01,
+      "max": 93
+    },
+    {
+      "id": "-105",
+      "name": "bis 105,0 kg",
+      "gender": "MALE",
+      "min": 93.01,
+      "max": 105
+    },
+    {
+      "id": "-120",
+      "name": "bis 120,0 kg",
+      "gender": "MALE",
+      "min": 105.01,
+      "max": 120
+    },
+    {
+      "id": "+120",
+      "name": "ab 120,0 kg",
+      "gender": "MALE",
+      "min": 120.01,
+      "max": 999
+    },
+    {
+      "id": "-43",
+      "name": "bis 43,0 kg",
+      "gender": "FEMALE",
+      "min": 0,
+      "max": 43
+    },
+    {
+      "id": "-47",
+      "name": "bis 47,0 kg",
+      "gender": "FEMALE",
+      "min": 0,
+      "max": 47
+    },
+    {
+      "id": "-52",
+      "name": "bis 52 Kg",
+      "gender": "FEMALE",
+      "min": 47.01,
+      "max": 52
+    },
+    {
+      "id": "-57",
+      "name": "bis 57 Kg",
+      "gender": "FEMALE",
+      "min": 52.01,
+      "max": 57
+    },
+    {
+      "id": "-63",
+      "name": "bis 63 Kg",
+      "gender": "FEMALE",
+      "min": 52.01,
+      "max": 63
+    },
+    {
+      "id": "-72",
+      "name": "bis 72 Kg",
+      "gender": "FEMALE",
+      "min": 63.01,
+      "max": 72
+    },
+    {
+      "id": "-84",
+      "name": "bis 84 Kg",
+      "gender": "FEMALE",
+      "min": 72.01,
+      "max": 84
+    },
+    {
+      "id": "+84",
+      "name": "ab 84 Kg",
+      "gender": "FEMALE",
+      "min": 84.01,
+      "max": 999
+    }
+  ],
+  "ageClasses": [
+    {
+      "id": "ak1",
+      "name": "AK 1"
+    },
+    {
+      "id": "ak2",
+      "name": "AK 2"
+    },
+    {
+      "id": "ak3",
+      "name": "AK 3"
+    },
+    {
+      "id": "aktive",
+      "name": "Aktive"
+    },
+    {
+      "id": "ak",
+      "name": "außer Konkurrenz"
+    },
+    {
+      "id": "junioren",
+      "name": "Junioren"
+    }
+  ]
 }

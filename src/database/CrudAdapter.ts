@@ -1,6 +1,4 @@
-import {Event} from "../graphql/models/event";
 import db from "./index";
-import {duplicateVariableMessage} from "graphql/validation/rules/UniqueVariableNames";
 
 export class CrudAdapter {
 
@@ -44,7 +42,7 @@ export class CrudAdapter {
 
     public static removeItem(collectionName, id): any {
         return db
-            .get(Event.collectionKey)
+            .get(collectionName)
             .removeById(id)
             .write();
     }

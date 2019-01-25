@@ -1,63 +1,59 @@
 import {Context} from "graphql-yoga/dist/types";
 import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
-import { Athlete, AthleteInput, AthleteUpdateInput} from "../models/athlete";
+import { Attempt, AttemptInput, AttemptUpdateInput} from "../models/attempt";
 import IdArgs from "./args/IdArgs";
 
 @ArgsType()
-class CreateAthleteArgs {
+class CreateAttemptArgs {
     @Field((type) => ID)
-    public eventId: string;
+    public athleteId: string;
 
-    @Field((type) => AthleteInput)
-    public data: AthleteInput;
+    @Field((type) => AttemptInput)
+    public data: AttemptInput;
 }
 
 
 @Resolver()
-export default class AthletesResolver {
+export default class AttemptsResolver {
 
-    private collectionKey: string = Athlete.collectionKey;
+    private collectionKey: string = Attempt.collectionKey;
 
-    @Query((returns) => [Athlete] )
-    public athletes(): Athlete[] {
-        return CrudAdapter.getAll(this.collectionKey);
-    }
-
-    @Query((returns) => Athlete)
-    public athlete(
+    @Query((returns) => Attempt)
+    public attempt(
         @Args() {id}: IdArgs,
-    ): Athlete {
+    ): Attempt {
         return CrudAdapter.getItem(this.collectionKey, id);
     }
 
     @Mutation()
-    public createAthlete(
-        @Args() {data, eventId}: CreateAthleteArgs,
+    public createAttempt(
+        @Args() {data, athleteId}: CreateAttemptArgs,
         @Ctx() ctx: Context,
-    ): Athlete {
+    ): Attempt {
         return CrudAdapter.insertItem(this.collectionKey, {
+            date: new Date(),
             ...data,
-            eventId,
+            athleteId,
         });
     }
 
     @Mutation()
-    public updateAthlete(
+    public updateAttempt(
 
         @Args() {id}: IdArgs,
-        @Arg("data") data: AthleteUpdateInput,
+        @Arg("data") data: AttemptUpdateInput,
         @Ctx() ctx: Context,
-    ): Athlete {
+    ): Attempt {
 
         return CrudAdapter.updateItem(this.collectionKey, id, data);
     }
 
     @Mutation()
-    public deleteAthlete(
+    public deleteAttempt(
         @Args() {id}: IdArgs,
         @Ctx() ctx: Context,
-    ): Athlete {
+    ): Attempt {
 
         return CrudAdapter.removeItem(this.collectionKey, id);
     }

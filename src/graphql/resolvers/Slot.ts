@@ -2,7 +2,7 @@ import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Event} from "../models/event";
 import {Slot} from "../models/slot";
-import Athlete from "../models/athlete";
+import { Athlete } from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 
 @Resolver((of) => Slot)

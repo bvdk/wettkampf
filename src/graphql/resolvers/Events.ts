@@ -3,7 +3,6 @@ import {Arg, Args, Ctx, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Event, EventInput} from "../models/event";
 import IdArgs from "./args/IdArgs";
-import SlotResolver from "./Slot";
 import SlotsResolver from "./Slots";
 
 @Resolver()
@@ -41,7 +40,7 @@ export default class EventsResolver {
 
     @Mutation()
     public updateEvent(
-        @Arg("id") id: string,
+        @Args() {id}: IdArgs,
         @Arg("data") data: EventInput,
         @Ctx() ctx: Context,
     ): Event {
@@ -51,7 +50,7 @@ export default class EventsResolver {
 
     @Mutation()
     public deleteEvent(
-        @Arg("id") id: string,
+        @Args() {id}: IdArgs,
         @Ctx() ctx: Context,
     ): Event {
 

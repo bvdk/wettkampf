@@ -1,4 +1,5 @@
 import {Field, ID, InputType, Int, ObjectType} from "type-graphql";
+import {Athlete} from "./athlete";
 import {ContestType} from "./contentType";
 import {Discipline} from "./discipline";
 import {Gender} from "./gender";
@@ -35,6 +36,12 @@ export class Event {
 
     @Field((type) => [Slot])
     public slots: Slot[];
+
+    @Field((type) => [Athlete], {description: "Athletes without valid group"})
+    public unsortedAthletes: Athlete[];
+
+    @Field((type) => [Athlete])
+    public athletes: Athlete[];
 
 }
 

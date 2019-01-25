@@ -17,10 +17,10 @@
   "dependencies": {
     "csvtojson": "^2.0.8",
     "express-fileupload": "^1.1.1-alpha.1",
-    "graphql-yoga": "1.16.9",
+    "graphql-yoga": "1.17.0",
     "lodash-id": "^0.14.0",
     "lowdb": "^1.0.0",
-    "reflect-metadata": "^0.1.12",
+    "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.16.0"
   },
   "devDependencies": {

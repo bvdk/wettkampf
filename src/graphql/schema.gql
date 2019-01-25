@@ -10,23 +10,26 @@ type AgeClass {
 
 type Athlete {
   id: ID!
-  eventId: String!
+  eventId: ID!
   event: Event!
-  slotId: String!
-  slot: Slot!
-  importId: String!
+  athleteGroupId: ID
+  athleteGroup: AthleteGroup
+  slot: Slot
+  importId: String
   firstName: String!
   lastName: String!
-  gender: String!
-  birthday: DateTime!
-  club: String!
-  norm: Boolean!
-  lateRegistration: Boolean!
-  price: String!
-  ageClass: AgeClass!
+  gender: Gender!
+  birthday: DateTime
+  club: String
+  norm: Boolean
+  lateRegistration: Boolean
+  price: String
+  ageClassId: ID
+  ageClass: AgeClass
 
   # Body weight in kg
-  bodyWeight: Float!
+  bodyWeight: Float
+  weightClassId: ID
   weightClass: WeightClass!
 
   # Attempt count
@@ -49,6 +52,7 @@ type AthleteGroup {
   gender: Gender
   ageClass: AgeClass
   weightClass: WeightClass
+  athletes: [Athlete!]!
 }
 
 input AthleteGroupInput {
@@ -59,31 +63,41 @@ input AthleteGroupInput {
 }
 
 input AthleteInput {
-  importId: String!
+  importId: String
+  athleteGroupId: ID
   firstName: String!
   lastName: String!
-  gender: String!
-  birthday: DateTime!
-  club: String!
-  norm: Boolean!
-  lateRegistration: Boolean!
-  price: String!
-  ageClassId: String!
+  gender: Gender!
+  birthday: DateTime
+  club: String
+  norm: Boolean
+  lateRegistration: Boolean
+  price: String
+  ageClassId: ID
 
   # Body weight in kg
-  bodyWeight: Float!
-  weightClassId: String!
+  bodyWeight: Float
+  weightClassId: String
+  los: Int
+}
 
-  # Attempt count
-  attemptCount: Int!
+input AthleteUpdateInput {
+  importId: String
+  athleteGroupId: ID
+  firstName: String
+  lastName: String
+  gender: Gender
+  birthday: DateTime
+  club: String
+  norm: Boolean
+  lateRegistration: Boolean
+  price: String
+  ageClassId: ID
 
-  # Calc wilks
-  wilks: Float!
-  los: Int!
-  points: Float!
-  total: Float!
-  place: Int!
-  location: Int!
+  # Body weight in kg
+  bodyWeight: Float
+  weightClassId: String
+  los: Int
 }
 
 type Attempt {
@@ -91,7 +105,21 @@ type Attempt {
   weight: Float!
   valid: Boolean!
   done: Boolean!
-  date: String!
+  date: DateTime!
+}
+
+input AttemptInput {
+  weight: Float!
+  valid: Boolean
+  done: Boolean
+  date: DateTime
+}
+
+input AttemptUpdateInput {
+  weight: Float
+  valid: Boolean
+  done: Boolean
+  date: DateTime
 }
 
 enum ContestType {
@@ -119,6 +147,10 @@ type Event {
   groupOrder: [String!]
   currentDiscipline: Discipline
   slots: [Slot!]!
+
+  # Athletes without valid group
+  unsortedAthletes: [Athlete!]!
+  athletes: [Athlete!]!
 }
 
 input EventInput {
@@ -139,25 +171,30 @@ type Mutation {
   createAthleteGroup(slotId: ID!, data: AthleteGroupInput!): AthleteGroup!
   updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
   deleteAthleteGroup(id: ID!): AthleteGroup!
-  createAthlete(eventId: ID!, athleteGroupId: ID, data: AthleteInput!): Athlete!
-  updateAthlete(data: AthleteInput!, id: ID!): Athlete!
+  createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
+  updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
   deleteAthlete(id: ID!): Athlete!
   createSlot(eventId: ID!, data: SlotInput!): Slot!
   updateSlot(data: SlotInput!, id: ID!): Slot!
   deleteSlot(id: ID!): Slot!
   createEvent(data: EventInput!): Event!
-  updateEvent(data: EventInput!, id: String!): Event!
-  deleteEvent(id: String!): Event!
+  updateEvent(data: EventInput!, id: ID!): Event!
+  deleteEvent(id: ID!): Event!
+  createAttempt(athleteId: ID!, data: AttemptInput!): Attempt!
+  updateAttempt(data: AttemptUpdateInput!, id: ID!): Attempt!
+  deleteAttempt(id: ID!): Attempt!
 }
 
 type Query {
   athletes: [Athlete!]!
-
-  # Get a event
-  event(id: ID!): Event!
+  athlete(id: ID!): Athlete!
 
   # Get all the events
   events: [Event!]!
+
+  # Get a event
+  event(id: ID!): Event!
+  attempt(id: ID!): Attempt!
 }
 
 type Slot {
