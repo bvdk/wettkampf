@@ -1,4 +1,4 @@
-import {Field, ID, ObjectType} from "type-graphql";
+import {Field, ID, InputType, ObjectType} from "type-graphql";
 import {AgeClass} from "./ageClass";
 import {Gender} from "./gender";
 
@@ -13,7 +13,17 @@ export class WeightClass {
     @Field()
     public name: string;
 
-    @Field()
+    @Field({nullable: true})
     public gender: Gender;
 }
 
+@InputType()
+export class WeightClassInput {
+
+    @Field({nullable: true})
+    public name: string;
+
+    @Field((type) => Gender, {nullable: true})
+    public gender: Gender;
+
+}

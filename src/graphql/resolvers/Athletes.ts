@@ -14,6 +14,14 @@ class CreateAthleteArgs {
 }
 
 
+@ArgsType()
+class FindAthleteArgs {
+    @Field((type) => ID)
+    public importId: string;
+
+}
+
+
 @Resolver()
 export default class AthletesResolver {
 
@@ -29,6 +37,13 @@ export default class AthletesResolver {
         @Args() {id}: IdArgs,
     ): Athlete {
         return CrudAdapter.getItem(this.collectionKey, id);
+    }
+
+    @Query((returns) => Athlete)
+    public findAthlete(
+        @Args() args: FindAthleteArgs,
+    ): Athlete {
+        return CrudAdapter.find(this.collectionKey, args);
     }
 
     @Mutation()

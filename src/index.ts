@@ -14,7 +14,7 @@ const init = () => {
 
 
     server.use(fileUpload());
-    server.post("/import", importResolver);
+    server.post("/import/:eventId", importResolver);
 
     return server.start(() => console.log("Server is running on http://localhost:4000"))
         .catch((error) => console.error(error));

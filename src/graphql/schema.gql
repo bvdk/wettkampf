@@ -24,24 +24,25 @@ type Athlete {
   norm: Boolean
   lateRegistration: Boolean
   price: String
+  age: Int
   ageClassId: ID
   ageClass: AgeClass
 
   # Body weight in kg
   bodyWeight: Float
   weightClassId: ID
-  weightClass: WeightClass!
+  weightClass: WeightClass
 
   # Attempt count
   attemptCount: Int!
 
   # Calc wilks
-  wilks: Float!
-  los: Int!
-  points: Float!
-  total: Float!
-  place: Int!
-  location: Int!
+  wilks: Float
+  los: Int
+  points: Float
+  total: Float
+  place: Int
+  location: Int
   attempts: [Attempt!]!
 }
 
@@ -183,11 +184,15 @@ type Mutation {
   createAttempt(athleteId: ID!, data: AttemptInput!): Attempt!
   updateAttempt(data: AttemptUpdateInput!, id: ID!): Attempt!
   deleteAttempt(id: ID!): Attempt!
+  createWeightClass(eventId: ID!, data: WeightClassInput!): WeightClass!
+  updateWeightClass(data: WeightClassInput!, id: ID!): WeightClass!
+  deleteWeightClass(id: ID!): WeightClass!
 }
 
 type Query {
   athletes: [Athlete!]!
   athlete(id: ID!): Athlete!
+  findAthlete(importId: ID!): Athlete!
 
   # Get all the events
   events: [Event!]!
@@ -214,5 +219,10 @@ input SlotInput {
 type WeightClass {
   id: ID!
   name: String!
-  gender: String!
+  gender: String
+}
+
+input WeightClassInput {
+  name: String
+  gender: Gender
 }

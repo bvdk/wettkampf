@@ -11,6 +11,11 @@ import SlotResolver from "./Slot";
 export default class EventResolver implements ResolverInterface<Event> {
 
     @FieldResolver()
+    public name(@Root() event: Event) {
+        return event.name || "Unbekannter Wettkampf";
+    }
+
+    @FieldResolver()
     public slots(@Root() event: Event) {
         return CrudAdapter.filter(Slot.collectionKey, {eventId: event.id});
     }

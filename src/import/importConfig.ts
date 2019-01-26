@@ -44,6 +44,8 @@ const getRawAthleteKeyMap = () => {
             name: "bodyWeight",
             import: toNumber,
         },
+        "Vorname": "firstName",
+        "Nachname": "lastName",
         "First Name": "firstName",
         "Last Name": "lastName",
         "Kniebeuge 1": {

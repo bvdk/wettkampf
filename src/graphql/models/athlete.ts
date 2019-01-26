@@ -57,6 +57,9 @@ export class Athlete {
     @Field({nullable: true})
     public price?: string;
 
+    @Field((type) => Int,{nullable: true})
+    public age?: number;
+
     @Field((type) => ID, {nullable: true})
     public ageClassId?: string;
 
@@ -69,32 +72,32 @@ export class Athlete {
     @Field((type) => ID, {nullable: true})
     public weightClassId?: string;
 
-    @Field((type) => WeightClass)
+    @Field((type) => WeightClass, {nullable: true})
     public weightClass?: WeightClass;
 
     @Field((type) => Int, { description: "Attempt count"})
-    public attemptCount?: number;
+    public attemptCount: number;
 
-    @Field((type) => Float, { description: "Calc wilks"})
+    @Field((type) => Float, { description: "Calc wilks", nullable: true})
     public wilks?: number;
 
-    @Field((type) => Int)
+    @Field((type) => Int, { nullable: true })
     public los?: number;
 
-    @Field((type) => Float)
+    @Field((type) => Float, { nullable: true })
     public points?: number;
 
-    @Field((type) => Float)
+    @Field((type) => Float, { nullable: true })
     public total?: number;
 
-    @Field((type) => Int)
+    @Field((type) => Int, { nullable: true })
     public place?: number;
 
-    @Field((type) => Int)
+    @Field((type) => Int, { nullable: true })
     public location?: number;
 
     @Field((type) => [Attempt])
-    public attempts?: Attempt[];
+    public attempts: Attempt[];
 }
 
 

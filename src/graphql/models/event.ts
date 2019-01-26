@@ -46,10 +46,10 @@ export class Event {
 }
 
 @InputType()
-export class EventInput implements Partial<Event> {
+export class EventInput {
 
     @Field({ nullable: true })
-    public name: string;
+    public name?: string;
 
     @Field((type) => Discipline, { nullable: true })
     public discipline?: Discipline;

@@ -19,6 +19,13 @@ export class CrudAdapter {
             .value();
     }
 
+    public static find(collectionName, filter): any {
+        return db
+            .get(collectionName)
+            .find(filter)
+            .value();
+    }
+
     public static getItem(collectionName, id): any {
         return db
             .get(collectionName)

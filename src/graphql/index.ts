@@ -11,6 +11,8 @@ import SlotResolver from "./resolvers/Slot";
 import SlotsResolver from "./resolvers/Slots";
 import AttemptsResolver from "./resolvers/Attempts";
 import AttemptResolver from "./resolvers/Attempt";
+import {WeightClass} from "./models/weightClass";
+import WeightClasses from "./resolvers/WeightClasses";
 
 
 // @ts-ignore
@@ -27,6 +29,8 @@ const schema = buildSchema({
         AthleteResolver,
         AttemptsResolver,
         AttemptResolver,
+        WeightClass,
+        WeightClasses
     ],
 });
 
