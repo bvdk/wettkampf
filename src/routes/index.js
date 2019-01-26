@@ -4,17 +4,16 @@ import {Route, Switch} from 'react-router';
 import _ from 'lodash';
 import Redirect from "./Redirect";
 import EventsDashboardRoute from "./events/eventsDashboard";
-import EventUpdateForm from "./../components/EventUpdateForm";
-import EventUpdateRoute from "./events/eventUpdateRoute";
+import EventRoute from "./event";
 
 export default () => (
   <Switch>
-    <Route exact path="/events" component={EventsDashboardRoute} />
-    <Route exact path="/events/:eventId/edit" component={EventUpdateRoute} />
-    <Redirect
-      from="/events/:eventId"
-      to="/events/:eventId/athletes"
-    />
-    <Redirect exact path="/" to="/events" />
+        <Route path="/events/:eventId" component={EventRoute} />
+        <Route path="/events" component={EventsDashboardRoute} />
+        <Redirect
+          from="/events/:eventId"
+          to="/events/:eventId/dashboard"
+        />
+        <Redirect exact path="/" to="/events" />
   </Switch>
 );

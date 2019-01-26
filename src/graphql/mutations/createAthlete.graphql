@@ -1,0 +1,16 @@
+mutation createAthlete($eventId: ID!, $data: AthleteInput!) {
+    createAthlete(eventId: $eventId, data:$data){
+        id
+        birthday
+        firstName
+        lastName
+        club
+        gender
+        lateRegistration
+        location
+        los
+        norm
+        price
+
+    }
+}

@@ -14,7 +14,7 @@ export default compose(
     name: 'eventQuery',
     options: (props: Props) =>({
       variables: {
-        id: props.id
+        id: props.match.params.eventId
       }
     }),
   }),

@@ -6,7 +6,7 @@ import { loader } from 'graphql.macro';
 import EventForm from "../EventForm";
 import waitWhileLoading from "../../hoc/waitWhileLoading";
 import {mapProps} from "recompose";
-const CreateEventMutation = loader("../../graphql/mutations/createEvent.graphql");
+const CreateEventMutation = loader("../../graphql/mutations/updateEvent.graphql");
 const EventFormDataQuery = loader("../../graphql/queries/eventFormData.graphql");
 
 type WrapperProps = {
@@ -29,7 +29,7 @@ class EventUpdateForm extends Component<ConnectedProps, State> {
 
   render() {
 
-    const {values, eventMutation, onEdit} = this.props;
+    const {values, eventMutation, onEdit, eventId} = this.props;
 
     return <EventForm
       onSubmit={onEdit}
@@ -37,6 +37,7 @@ class EventUpdateForm extends Component<ConnectedProps, State> {
       mutation={eventMutation}
       translateMutationOptions={(data) => ({
         variables: {
+          id: eventId,
           data
         },
       })}

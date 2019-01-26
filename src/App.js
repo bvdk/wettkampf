@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 import ApolloClient from "apollo-boost";
-import Routes from "./routes";
 import {ApolloProvider} from "react-apollo";
-import './App.css';
+import './i18n';
+import Routes from "./routes";
 import {BrowserRouter as Router} from "react-router-dom";
 import Layout from "./components/Layout";
+import './App.css';
+
+
+
 
 const client = new ApolloClient({
-  uri: "http://127.0.0.1:4000"
+  uri: "/"
 });
 
 class App extends Component {

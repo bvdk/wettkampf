@@ -1,6 +1,7 @@
 // @flow
 import React, {Component} from "react"
 
+import { withNamespaces } from 'react-i18next';
 import {compose} from "react-apollo";
 import {Select, Spin} from "antd";
 import * as _ from "lodash";
@@ -93,11 +94,14 @@ class SelectSearch extends Component<Props> {
         const queryData = _.get(getQuery,this.props.dataKey);
         if (queryData){
           const items = _.get(queryData,this.props.itemsKey,[]);
-          data = items.map(item => (
-            <Option key={item[valueKey]} name={item[textKey]} value={String(item[valueKey])} item={item}>
-              {item[textKey] || item[valueKey]}
+          data = items.map(item => {
+
+            const name = item[textKey] || t(item[valueKey]);
+
+            return <Option key={item[valueKey]} name={name} value={String(item[valueKey])} item={item}>
+              {name}
             </Option>
-          ));
+          });
 
         }
       }
@@ -151,4 +155,4 @@ class SelectSearch extends Component<Props> {
 
 }
 
-export default SelectSearch;
+export default withNamespaces()(SelectSearch);

@@ -1,0 +1,34 @@
+query eventAthletes($eventId: ID!) {
+    event(id: $eventId){
+        id
+        athletes {
+            ageClass {
+                id
+                name
+            }
+            athleteGroup {
+                id
+                name
+            }
+            slot {
+                id
+                name
+            }
+            birthday
+            bodyWeight
+            club
+            firstName
+            lastName
+            gender
+            place
+            points
+            total
+            age
+            weightClass {
+                id
+                name
+            }
+            wilks
+        }
+    }
+}

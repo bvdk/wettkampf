@@ -1,0 +1,34 @@
+// @flow
+import React, { Component } from 'react';
+import EventUpdateForm from "../../../components/EventUpdateForm";
+import _ from "lodash";
+import EventAthletesTable from "../../../components/EventAthletesTable";
+import Toolbar from "../../../components/Toolbar";
+import {Button} from "antd";
+import {Link} from "react-router-dom";
+
+type Props = {
+  eventId: string,
+};
+
+type State = {
+
+}
+
+class EventAthletesRoute extends Component<Props, State> {
+  componentDidMount() {}
+
+  render() {
+    const { eventId } = this.props;
+
+    return <div style={{padding: 10}}>
+      <Toolbar renderRight={() => [
+        <Link key={"new"} to={`athletes/new`}><Button>Neu</Button></Link>,
+        <Link style={{paddingLeft: '10px'}} key={"import"} to={`athletes/import`}><Button>Import</Button></Link>
+      ]}/>
+      <EventAthletesTable eventId={eventId}/>
+    </div>;
+  }
+}
+
+export default EventAthletesRoute;

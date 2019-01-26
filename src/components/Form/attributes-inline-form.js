@@ -12,6 +12,7 @@ import AttributeFormFactory from "./attribute-form-factory";
 import Error from "../Error";
 import Sizes from "../../styles/sizes";
 import AttributeInlineEditField from "./attribute-inlineedit-field-connected";
+import {withNamespaces} from "react-i18next";
 
 const TabPane = Tabs.TabPane;
 
@@ -430,5 +431,5 @@ export default Form.create({
       props.onValuesChange(attributeValues);
     }
   },
-})(AttributesInlineForm);
+})(withNamespaces()(AttributesInlineForm));
 

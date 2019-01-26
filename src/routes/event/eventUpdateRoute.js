@@ -4,7 +4,7 @@ import EventUpdateForm from "../../components/EventUpdateForm";
 import _ from "lodash";
 
 type Props = {
-  match: any,
+  eventId: any,
 };
 
 type State = {
@@ -15,12 +15,10 @@ class EventUpdateRoute extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { match } = this.props;
-
-    const eventId = _.get(match, 'params.eventId')
+    const { eventId } = this.props;
 
     return <div style={{padding: 10}}>
-      <h3>Event bearbeiten</h3>
+      <h3>Wettkampf bearbeiten</h3>
       <EventUpdateForm eventId={eventId}/>
     </div>;
   }

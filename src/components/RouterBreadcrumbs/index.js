@@ -8,6 +8,8 @@ import AthleteBreadcrumb from "./athlete";
 
 // define some custom breadcrumbs for certain routes (optional)
 const routes = [
+  { path: '/events/:eventId/athletes/new', breadcrumb: 'Neu' },
+  { path: '/events/:eventId/athletes/import', breadcrumb: 'Import' },
   { path: '/events/:eventId/athletes/:athleteId', breadcrumb: AthleteBreadcrumb },
   { path: '/events/:eventId/live', breadcrumb: 'LIVE' },
   { path: '/events/:eventId/judging', breadcrumb: 'Wertung' },
