@@ -6,7 +6,7 @@ export default function csvToJSON(csv) {
   for (let i = 1; i < lines.length; i++) {
     const obj = {};
 
-    const row = lines[i],
+    let row = lines[i],
       queryIdx = 0,
       startValueIdx = 0,
       idx = 0;

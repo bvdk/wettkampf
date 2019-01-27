@@ -972,44 +972,49 @@
   ],
   "slots": [
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "26495ec6-1a52-4a4b-a752-dd140f21b8bc"
     },
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "62666b19-66ff-463d-b196-f80ce060bcdb",
       "id": "7d8a977e-efaa-4b6c-bd52-09a625ee835b"
     },
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "a1fa424f-c274-4783-a560-e03a550688ce",
       "id": "8d2c3470-0f4e-4c1f-8d09-d3965a3911e8"
     },
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "52097d55-a655-4c95-9a1b-a13eccee1204",
       "id": "4ffc45cd-3ccd-4d12-bea2-267c6ab123af"
     },
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "415ee372-1a21-4ed5-8acc-debaee7d30a2",
       "id": "56b09a8f-a22c-434f-9a7b-3c985bdea8af"
     },
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "e64a074b-1e09-4561-935a-bcd3fd4499d8",
       "id": "7b7b60af-6aef-4be7-a3b0-b8ad96044ec7"
     },
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "803d8eb2-fd7e-4872-91fe-2e36d3dd6fa4",
       "id": "5a091006-98ef-4975-9775-3d667a3df054"
     },
     {
-      "name": "Slot 1",
+      "name": "Bühne 1",
       "eventId": "32cdb1e8-ecdd-4391-b9a8-ed149c5c3a58",
       "id": "b8d4b897-8249-42a3-b827-c9bc6d88e322"
+    },
+    {
+      "name": "Bühne 2",
+      "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
+      "id": "fea21124-3e63-4893-83f5-1ad149368307"
     }
   ],
   "athleteGroups": [
@@ -1052,6 +1057,36 @@
       "name": "Startgruppe 1",
       "slotId": "b8d4b897-8249-42a3-b827-c9bc6d88e322",
       "id": "ce4f6c07-2d9c-4cda-8d34-502fb623c9f7"
+    },
+    {
+      "name": "Startgruppe 1",
+      "slotId": "f010e7b1-23a3-4f05-ad96-4e084be8a6f5",
+      "id": "48266bc8-e65f-4cef-85f3-84420cc0c3b7"
+    },
+    {
+      "name": "Startgruppe 1",
+      "slotId": "c6eace2c-858f-46db-9181-dc285a444f57",
+      "id": "d6ecf34b-b721-4336-ae01-4f1b21436ce2"
+    },
+    {
+      "gender": "MALE",
+      "ageClassId": "aktive",
+      "weightClassId": "-74",
+      "id": "a6339754-506a-4c2b-a578-fd55f1abb1b0"
+    },
+    {
+      "gender": "MALE",
+      "ageClassId": "ak1",
+      "weightClassId": "-105",
+      "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
+      "slotId": "fea21124-3e63-4893-83f5-1ad149368307",
+      "id": "bcb97061-39b7-49ac-94ac-8c60964a7211"
+    },
+    {
+      "name": "Startgruppe 1",
+      "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
+      "slotId": "10286905-cad1-4a0a-905c-b0ce78b3fb94",
+      "id": "4a987b47-a1e5-40d0-a75e-34d9ecf9f9a8"
     }
   ],
   "attempts": [

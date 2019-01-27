@@ -1,5 +1,4 @@
 import {Field, ID, InputType, ObjectType} from "type-graphql";
-import {AgeClass} from "./ageClass";
 import {Gender} from "./gender";
 
 @ObjectType()

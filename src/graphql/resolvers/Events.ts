@@ -31,7 +31,7 @@ export default class EventsResolver {
         const slotResolver = new SlotsResolver();
         slotResolver.createSlot({
             data: {
-                name: "Slot 1",
+                name: "Bühne 1",
             },
             eventId: event.id,
         }, ctx);

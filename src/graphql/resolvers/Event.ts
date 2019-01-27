@@ -26,6 +26,18 @@ export default class EventResolver implements ResolverInterface<Event> {
     }
 
     @FieldResolver()
+    public athleteGroups(@Root() event: Event) {
+
+        // const slots = this.slots(event);
+        // const athleteGroups = _.chain(slots)
+        //     .map((slot: Slot) => CrudAdapter.filter(AthleteGroup.collectionKey, { slotId: slot.id }))
+        //     .flatten()
+        //     .value();
+
+        return CrudAdapter.filter(AthleteGroup.collectionKey, {eventId: event.id});
+    }
+
+    @FieldResolver()
     public unsortedAthletes(@Root() event: Event) {
         const slots = this.slots(event);
 

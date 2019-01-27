@@ -26,6 +26,9 @@ export class Slot {
     @Field((type) => Athlete)
     public athletes: Athlete[];
 
+    @Field((type) => Int)
+    public athleteCount: number;
+
     @Field((type) => AthleteGroup)
     public athleteGroups: AthleteGroup[];
 }
@@ -34,6 +37,6 @@ export class Slot {
 export class SlotInput {
 
     @Field({nullable: true})
-    public name: string;
+    public name?: string;
 
 }

@@ -8,6 +8,10 @@ type AgeClass {
   name: String!
 }
 
+input AgeClassInput {
+  name: String!
+}
+
 type Athlete {
   id: ID!
   eventId: ID!
@@ -48,19 +52,24 @@ type Athlete {
 
 type AthleteGroup {
   id: ID!
-  slotId: String!
+  eventId: ID!
+  slotId: ID
+  slot: Slot
   name: String!
   gender: Gender
+  ageClassId: ID
   ageClass: AgeClass
+  weightClassId: ID
   weightClass: WeightClass
   athletes: [Athlete!]!
+  athleteCount: Int!
 }
 
 input AthleteGroupInput {
   name: String
   gender: Gender
-  ageClassId: String
-  weightClassId: String
+  ageClassId: ID
+  weightClassId: ID
 }
 
 input AthleteInput {
@@ -148,6 +157,7 @@ type Event {
   groupOrder: [String!]
   currentDiscipline: Discipline
   slots: [Slot!]!
+  athleteGroups: [AthleteGroup!]!
 
   # Athletes without valid group
   unsortedAthletes: [Athlete!]!
@@ -169,36 +179,50 @@ enum Gender {
 }
 
 type Mutation {
-  createAthleteGroup(slotId: ID!, data: AthleteGroupInput!): AthleteGroup!
-  updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
-  deleteAthleteGroup(id: ID!): AthleteGroup!
-  createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
-  updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
-  deleteAthlete(id: ID!): Athlete!
+  createAgeClass(data: AgeClassInput!): AgeClass!
+  updateAgeClass(data: AgeClassInput!, id: ID!): AgeClass!
+  deleteAgeClass(id: ID!): AgeClass!
+  createWeightClass(data: WeightClassInput!): WeightClass!
+  updateWeightClass(data: WeightClassInput!, id: ID!): WeightClass!
+  deleteWeightClass(id: ID!): WeightClass!
   createSlot(eventId: ID!, data: SlotInput!): Slot!
   updateSlot(data: SlotInput!, id: ID!): Slot!
   deleteSlot(id: ID!): Slot!
   createEvent(data: EventInput!): Event!
   updateEvent(data: EventInput!, id: ID!): Event!
   deleteEvent(id: ID!): Event!
+  createAthleteGroup(eventId: ID!, slotId: ID, data: AthleteGroupInput!): AthleteGroup!
+  updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
+  setAthleteGroupSlot(athleteGroupId: ID!, slotId: ID!): AthleteGroup!
+  deleteAthleteGroup(id: ID!): AthleteGroup!
+  createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
+  updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
+  deleteAthlete(id: ID!): Athlete!
   createAttempt(athleteId: ID!, data: AttemptInput!): Attempt!
   updateAttempt(data: AttemptUpdateInput!, id: ID!): Attempt!
   deleteAttempt(id: ID!): Attempt!
-  createWeightClass(eventId: ID!, data: WeightClassInput!): WeightClass!
-  updateWeightClass(data: WeightClassInput!, id: ID!): WeightClass!
-  deleteWeightClass(id: ID!): WeightClass!
 }
 
 type Query {
-  athletes: [Athlete!]!
-  athlete(id: ID!): Athlete!
-  findAthlete(importId: ID!): Athlete!
+  # All age classes
+  ageClasses: [AgeClass!]!
+  ageClass(id: ID!): AgeClass!
+
+  # All weight classes
+  weightClasses: [WeightClass!]!
+  weightClass(id: ID!): WeightClass!
+
+  # Get a slot
+  slot(id: ID!): Slot!
 
   # Get all the events
   events: [Event!]!
 
   # Get a event
   event(id: ID!): Event!
+  athletes: [Athlete!]!
+  athlete(id: ID!): Athlete!
+  findAthlete(importId: ID!): Athlete!
   attempt(id: ID!): Attempt!
 }
 
@@ -209,6 +233,7 @@ type Slot {
   eventId: String!
   index: Int!
   athletes: [Athlete!]!
+  athleteCount: Int!
   athleteGroups: [AthleteGroup!]!
 }
 

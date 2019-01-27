@@ -6,6 +6,13 @@ export enum Gender {
     FEMALE = "FEMALE",
 }
 
+export function getDescriptionForGender(gender: Gender) {
+    switch (gender) {
+        case Gender.MALE: return "Männer";
+        case Gender.FEMALE: return "Frauen";
+    }
+}
+
 registerEnumType(Gender, {
     name: "Gender",
 });

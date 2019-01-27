@@ -4,6 +4,7 @@ import {ContestType} from "./contentType";
 import {Discipline} from "./discipline";
 import {Gender} from "./gender";
 import {Slot} from "./slot";
+import {AthleteGroup} from "./athleteGroup";
 
 @ObjectType()
 export class Event {
@@ -36,6 +37,9 @@ export class Event {
 
     @Field((type) => [Slot])
     public slots: Slot[];
+
+    @Field((type) => [AthleteGroup])
+    public athleteGroups: AthleteGroup[];
 
     @Field((type) => [Athlete], {description: "Athletes without valid group"})
     public unsortedAthletes: Athlete[];
