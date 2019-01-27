@@ -76,10 +76,11 @@
 
 .attribute-inline-edit-field .editable-icon-check {
   align-self: center;
-  margin-left: 5px; }
+  }
 
 .attribute-inline-edit-field .editable-cell {
   position: relative;
+  display: flex;
   flex: 1; }
 
 .attribute-inline-edit-field .editable-cell-value-wrap {

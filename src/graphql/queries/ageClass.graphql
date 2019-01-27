@@ -1,0 +1,6 @@
+query ageClass($id: ID!){
+    ageClass(id: $id){
+        id
+        name
+    }
+}

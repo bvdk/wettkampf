@@ -30,6 +30,9 @@ import TablePicker from "./fields/TablePicker";
 import DebounceInput from "./fields/DebounceInput";
 import MenuAsync from "./fields/MenuAsync";
 import OneLineLabel from "../OneLineLabel";
+import AgeClassesLoaderConfig from "../DataLoader/AgeClassesLoaderConfig";
+import WeightClassesLoaderConfig from "../DataLoader/WeightClassesLoaderConfig";
+import EventSlotsLoaderConfig from "../DataLoader/EventSlotsLoaderConfig";
 
 const CheckboxGroup = Checkbox.Group;
 const RangePicker = DatePicker.RangePicker;
@@ -60,6 +63,52 @@ class FormFactory {
         break;
       }
 
+      case 'AgeClass': {
+        config.showSearch = true;
+        config.loaderConfig = {
+          ...AgeClassesLoaderConfig
+        };
+        break;
+      }
+
+      case 'EventSlot': {
+        config.loaderConfig = {
+          ...EventSlotsLoaderConfig,
+          getQueryVariables: attribute.getQueryVariables,
+          local: true,
+        };
+        break;
+      }
+
+      case 'WeightClass': {
+        config.showSearch = true;
+        config.loaderConfig = {
+          ...WeightClassesLoaderConfig,
+          local: true,
+        };
+        break;
+      }
+
+      case 'WeightClassMale': {
+        config.showSearch = true;
+        config.loaderConfig = {
+          ...WeightClassesLoaderConfig,
+          local: true,
+          localFilter: (item) => _.get(item,'props.item.gender') === 'MALE'
+        };
+        break;
+      }
+
+      case 'WeightClassFemale': {
+        config.showSearch = true;
+        config.loaderConfig = {
+          ...WeightClassesLoaderConfig,
+          local: true,
+          localFilter: (item) => _.get(item,'props.item.gender') === 'FEMALE'
+        }
+        ;
+        break;
+      }
 
 
       default:
@@ -469,9 +518,9 @@ class FormFactory {
   }
 
 
-  static renderDisplayAttribute(attribute: Attribute, form: {getFieldDecorator: Function, getFieldValue: Function}){
+  static renderDisplayAttribute(attribute: Attribute, form: {getFieldDecorator: Function, getFieldValue: Function}, t, val){
 
-    const value = form.getFieldValue(attribute.index);
+    const value = val || form.getFieldValue(attribute.index);
     const config = FormFactory.getConfigForAttribute(attribute);
     let result = <span>-</span>;
 

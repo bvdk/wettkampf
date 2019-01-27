@@ -1,0 +1,6 @@
+mutation updateSlot($slotId: ID!, $data: SlotInput!) {
+    updateSlot(id: $slotId, data:$data){
+        id
+        name
+    }
+}

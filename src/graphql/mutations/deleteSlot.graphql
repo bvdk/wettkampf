@@ -1,0 +1,5 @@
+mutation deleteSlot($id: ID!){
+    deleteSlot(id: $id){
+        id
+    }
+}

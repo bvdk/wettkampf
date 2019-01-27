@@ -93,7 +93,7 @@ class SelectSearch extends Component<Props> {
       }else {
         const queryData = _.get(getQuery,this.props.dataKey);
         if (queryData){
-          const items = _.get(queryData,this.props.itemsKey,[]);
+          const items = _.get(queryData,this.props.itemsKey,_.isArray(queryData) ? queryData : []);
           data = items.map(item => {
 
             const name = item[textKey] || t(item[valueKey]);
@@ -147,7 +147,7 @@ class SelectSearch extends Component<Props> {
         onSelect={onSelect}
         onDeselect={onDeselect}
         onSearch={(val)=>this.search(val)}
-        placeholder={placeholder ? placeholder: 'Please select'}
+        placeholder={placeholder ? placeholder: 'Bitte auswählen'}
     >
       {data}
     </Select>;

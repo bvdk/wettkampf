@@ -282,11 +282,11 @@ class AttributesInlineForm extends Component<Props, State> {
 
       return <AttributeInlineEditField
         key={`${index}`}
+        value={this.props.values[attribute.index]}
         form={form}
         readOnly={readOnly}
         formItemLayout={ formItemLayout }
         attribute={attribute}
-        values={values[attribute.index]}
         mutation={mutation}
         translateMutationOptions={translateMutationOptions}
       />

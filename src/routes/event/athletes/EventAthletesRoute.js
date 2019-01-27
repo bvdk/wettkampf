@@ -22,7 +22,9 @@ class EventAthletesRoute extends Component<Props, State> {
     const { eventId } = this.props;
 
     return <div style={{padding: 10}}>
-      <Toolbar renderRight={() => [
+      <Toolbar
+          renderLeft={() => <h3>Alle Athleten</h3>}
+          renderRight={() => [
         <Link key={"new"} to={`athletes/new`}><Button>Neu</Button></Link>,
         <Link style={{paddingLeft: '10px'}} key={"import"} to={`athletes/import`}><Button>Import</Button></Link>
       ]}/>

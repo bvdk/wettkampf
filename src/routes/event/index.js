@@ -7,20 +7,37 @@ import EventUpdateRoute from "./eventUpdateRoute";
 import EventAthletesRoute from "./athletes";
 import EventDashboardRoute from "./EventDashboardRoute";
 
+import EventMenu from "../../components/EventDashboard/menu";
+import EventSlotsRoute from "./slots";
+import EventAthleteGroupsRoute from "./athleteGroups";
+import {Col, Grow, Row} from "@internal/components/Flex";
+
+
 export default (props) => {
 
   const {match} = props;
 
   const eventId = _.get(match, 'params.eventId');
+  const index = _.get(match, 'params.index');
 
-  return <Switch>
-    <Route path="/events/:eventId/dashboard" component={() => <EventDashboardRoute eventId={eventId}/>} />
-    <Route path="/events/:eventId/edit" component={() => <EventUpdateRoute eventId={eventId} />} />
-    <Route path="/events/:eventId/athletes" component={() => <EventAthletesRoute eventId={eventId} />} />
-    <Redirect
-      from="/events/:eventId"
-      to="/events/:eventId/dashboard"
-    />
-  </Switch>
+  return <Row type={'flex'} style={{flexDirection: 'row', flex: '1 100%'}} className={"event-layout"}>
+    <Col className={'event-sidebar'}>
+      <EventMenu selectedKey={index} eventId={eventId}/>
+    </Col>
+    <Grow>
+      <Switch>
+        <Route path="/events/:eventId/dashboard" component={() => <EventDashboardRoute eventId={eventId}/>} />
+        <Route path="/events/:eventId/edit" component={() => <EventUpdateRoute eventId={eventId} />} />
+        <Route path="/events/:eventId/athletes" component={() => <EventAthletesRoute eventId={eventId} />} />
+        <Route path="/events/:eventId/athleteGroups" component={EventAthleteGroupsRoute} />
+        <Route path="/events/:eventId/slots" component={() => <EventSlotsRoute eventId={eventId}/>} />
+        <Redirect
+            from="/events/:eventId"
+            to="/events/:eventId/dashboard"
+        />
+      </Switch>
+
+    </Grow>
+  </Row>
 }
 ;

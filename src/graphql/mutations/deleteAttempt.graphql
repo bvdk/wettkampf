@@ -1,0 +1,5 @@
+mutation deleteAttempt($id: ID!){
+    deleteAttempt(id: $id){
+        id
+    }
+}

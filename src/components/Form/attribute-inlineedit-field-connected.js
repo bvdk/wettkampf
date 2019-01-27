@@ -21,7 +21,6 @@ type Props = {
     mutation: () => Promise,
     translateMutationOptions: ({[string]: any}) => any,
     onChange: Function,
-    value: any,
 };
 
 type State = {
@@ -149,8 +148,6 @@ class AttributeInlineEditField extends Component<Props, State> {
             name = `${name}`;
         }
 
-        //console.log('render value',attribute.index,form.getFieldValue(attribute.index));
-
         return (
           <FormItem
             className={'attribute-inline-edit-field'}
@@ -169,21 +166,24 @@ class AttributeInlineEditField extends Component<Props, State> {
                         {
                             loading ? <Loader useIcon /> : null
                         }
-                        <Button
-                          className="editable-icon-check"
-                          shape={"circle"}
-                          size={"small"}
-                          onClick={this.check}
-                        >
-                            <Icon
-                              type="check"
-                            />
-                        </Button>
+                        <div
+                            className="editable-icon-check" style={{paddingLeft: 5}}>
+                            <Button
+                                shape={"circle"}
+                                size={"small"}
+                                onClick={this.check}
+                            >
+                                <Icon
+                                    type="check"
+                                />
+                            </Button>
+                        </div>
+
                     </div>
                   ) : (
                     <div onClick={this.edit} className={'editable-cell-value-wrap'} >
                         <div className={'editable-cell-value-content'}>
-                            {AttributeFormFactory.renderDisplayAttribute(attribute, form, t)}
+                            {AttributeFormFactory.renderDisplayAttribute(attribute, form, t, value)}
                         </div>
 
                         {

@@ -9,11 +9,11 @@ const imageTypes = [
 export default {
     email: {
         type: 'email',
-        message: 'Please insert a valid email address'
+        message: 'Bitte geben Sie eine E-Mail Adresse an'
     },
     required: {
         required: true,
-        message: 'This field is required'
+        message: 'Dieses Feld muss ausgefüllt werden'
     },
 
     number: {

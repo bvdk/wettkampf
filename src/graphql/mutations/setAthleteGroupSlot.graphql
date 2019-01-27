@@ -1,0 +1,10 @@
+mutation setAthleteGroupSlot($slotId: ID!, $athleteGroupId: ID!){
+    setAthleteGroupSlot(athleteGroupId: $athleteGroupId, slotId: $slotId ){
+        id
+        slotId
+        slot{
+            id
+            name
+        }
+    }
+}

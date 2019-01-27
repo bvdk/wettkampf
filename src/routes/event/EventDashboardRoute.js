@@ -2,13 +2,10 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
 import EventsDashboard from "../../components/EventsDashboard";
+import EventDashboard from "../../components/EventDashboard";
 
 type Props = {
-  events: Event[],
-  history: {
-    push: Function,
-  },
-  addEvent: (event: Event) => void,
+  eventId: string,
 };
 
 type State = {
@@ -22,15 +19,11 @@ class EventDashboardRoute extends Component<Props, State> {
 
   render() {
 
-    const {events, addEvent, history} = this.props;
+    const {eventId} = this.props;
 
-    return ( <EventsDashboard
-      events={events}
-      onClickEvent={(event)=>{
-        history.push(`/events/${event.id}`)
-      }}
-      onAddEvent={addEvent}
-    /> );
+    return ( <div>
+      <EventDashboard eventId={eventId}/>
+    </div> );
   }
 }
 

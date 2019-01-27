@@ -43,7 +43,7 @@ class SelectAsync extends Component<Props> {
 
     this.SelectSearchWithData = compose(
       withProps((myProps)=>({
-        localFilter: _.get(props,'loaderConfig.localFilter')
+        localFilter: myProps.localFilter || _.get(props,'loaderConfig.localFilter')
       })),
       graphql(props.loaderConfig.query, {
         name: 'getQuery',

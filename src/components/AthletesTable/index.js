@@ -4,7 +4,7 @@ import {Table} from "antd";
 import {withNamespaces} from "react-i18next";
 
 type Props = {
-  athletes: any[],
+  athletes: any[]
 };
 
 type State = {

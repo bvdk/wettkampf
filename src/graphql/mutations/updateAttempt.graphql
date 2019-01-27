@@ -1,0 +1,9 @@
+mutation updateAttempt($attemptId: ID!, $data: AttemptUpdateInput!) {
+    updateAttempt(id: $attemptId, data:$data){
+        id
+        done
+        valid
+        weight
+        date
+    }
+}

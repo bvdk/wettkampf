@@ -1,0 +1,9 @@
+query slot($id: ID!) {
+    slot(id: $id){
+        id
+        name
+        index
+        athleteCount
+        eventId
+    }
+}

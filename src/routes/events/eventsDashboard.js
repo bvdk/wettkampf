@@ -27,6 +27,7 @@ class EventsDashboardRoute extends Component<Props, State> {
     return ( <EventsDashboard
       events={events}
       onClickEvent={(event)=>{
+        console.log('onClickEvent',event);
         history.push(`/events/${event.id}`)
       }}
       onAddEvent={addEvent}

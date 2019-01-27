@@ -1,0 +1,9 @@
+mutation createAttempt($athleteId: ID!, $data: AttemptInput!) {
+    createAttempt(athleteId: $athleteId, data:$data){
+        id
+        done
+        date
+        valid
+        weight
+    }
+}

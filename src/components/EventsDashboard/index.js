@@ -7,7 +7,7 @@ import Toolbar from "../Toolbar";
 import EventTable from "../EventTable";
 
 import {compose, graphql} from "react-apollo";
-import {mapProps} from "recompose";
+import {mapProps, withProps} from "recompose";
 import EventCreateForm from "../EventCreateForm";
 import waitWhileLoading from "../../hoc/waitWhileLoading";
 
@@ -89,7 +89,7 @@ export default compose(
     name: 'eventsQuery',
   }),
   waitWhileLoading('eventsQuery'),
-  mapProps((props) => ({
+  withProps((props) => ({
     events: _.get(props, 'eventsQuery.events',[]),
   }))
 )(EventsDashboard)
