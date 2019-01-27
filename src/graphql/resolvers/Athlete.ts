@@ -4,6 +4,7 @@ import {CrudAdapter} from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Attempt} from "../models/attempt";
+import {Slot} from "../models/slot";
 
 function _calculateAge(birthday): number { // birthday is a date
     var ageDifMs = Date.now() - birthday.getTime();
@@ -28,6 +29,15 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
     @FieldResolver()
     public age(@Root() athlete: Athlete) {
         return athlete.birthday ? _calculateAge(new Date(athlete.birthday)) : null;
+    }
+
+    @FieldResolver()
+    public slot(@Root() athlete: Athlete) {
+        const athleteGroup = this.athleteGroup(athlete);
+        if (athleteGroup.slotId){
+            return CrudAdapter.getItem(Slot.collectionKey, athleteGroup.slotId);
+        }
+        return null;
     }
 
     @FieldResolver()

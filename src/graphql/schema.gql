@@ -160,7 +160,7 @@ type Event {
   athleteGroups: [AthleteGroup!]!
 
   # Athletes without valid group
-  unsortedAthletes: [Athlete!]!
+  unsortedAthletes(filters: [FilterInput!]): [Athlete!]!
   athletes: [Athlete!]!
 }
 
@@ -171,6 +171,11 @@ input EventInput {
   teamGender: Gender
   teamSize: Int
   currentDiscipline: Discipline
+}
+
+input FilterInput {
+  value: [String!]
+  index: String!
 }
 
 enum Gender {
@@ -194,6 +199,7 @@ type Mutation {
   createAthleteGroup(eventId: ID!, slotId: ID, data: AthleteGroupInput!): AthleteGroup!
   updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
   setAthleteGroupSlot(athleteGroupId: ID!, slotId: ID!): AthleteGroup!
+  addAthletesToAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
   deleteAthleteGroup(id: ID!): AthleteGroup!
   createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
   updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
@@ -213,13 +219,14 @@ type Query {
   weightClass(id: ID!): WeightClass!
 
   # Get a slot
-  slot(id: ID!): Slot!
+  slot(id: ID!): Slot
 
   # Get all the events
   events: [Event!]!
 
   # Get a event
   event(id: ID!): Event!
+  athleteGroup(id: ID!): AthleteGroup!
   athletes: [Athlete!]!
   athlete(id: ID!): Athlete!
   findAthlete(importId: ID!): Athlete!

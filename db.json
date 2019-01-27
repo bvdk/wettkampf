@@ -14,21 +14,23 @@
       "gender": "MALE",
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "7d51f4d1-3f40-4686-a868-9437dabcb9f0",
-      "athleteGroupId": "4d64a044-6fd1-4f5b-ad24-140a76e3ccdb"
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "firstName": "Nora",
       "lastName": "Liebender",
       "gender": "FEMALE",
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
-      "id": "0aa373fb-456d-4eaf-87bf-3c7c11d5317c"
+      "id": "0aa373fb-456d-4eaf-87bf-3c7c11d5317c",
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "firstName": "Foo",
       "lastName": "Bar",
       "gender": "MALE",
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
-      "id": "be5135d3-3470-452c-9f46-2abd2f96081b"
+      "id": "be5135d3-3470-452c-9f46-2abd2f96081b",
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "importId": "5175",
@@ -41,7 +43,8 @@
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "fd44e2ca-b98b-4fba-bc6b-ad3dd4285a3d",
       "lastName": "Amelal",
-      "firstName": "Mirjam"
+      "firstName": "Mirjam",
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "importId": "5020",
@@ -54,7 +57,8 @@
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "5a61a695-133e-4aef-b597-39a9260245f2",
       "lastName": "Ihle",
-      "firstName": "Nancy"
+      "firstName": "Nancy",
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "importId": "2793",
@@ -67,7 +71,8 @@
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "6b5f9564-286b-4234-842f-471b3f85195d",
       "lastName": "Pham Viet",
-      "firstName": "Ha"
+      "firstName": "Ha",
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "importId": "4825",
@@ -80,7 +85,8 @@
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "05ce728c-33d8-4d36-8fc6-ea39c31e537f",
       "lastName": "Bosse",
-      "firstName": "Juliane"
+      "firstName": "Juliane",
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "importId": "2448",
@@ -1079,13 +1085,13 @@
       "ageClassId": "ak1",
       "weightClassId": "-105",
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
-      "slotId": "fea21124-3e63-4893-83f5-1ad149368307",
+      "slotId": "26495ec6-1a52-4a4b-a752-dd140f21b8bc",
       "id": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "name": "Startgruppe 1",
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
-      "slotId": "10286905-cad1-4a0a-905c-b0ce78b3fb94",
+      "slotId": "fea21124-3e63-4893-83f5-1ad149368307",
       "id": "4a987b47-a1e5-40d0-a75e-34d9ecf9f9a8"
     }
   ],

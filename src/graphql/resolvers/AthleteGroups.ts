@@ -6,6 +6,7 @@ import {AthleteGroup, AthleteGroupInput} from "../models/athleteGroup";
 import IdArgs from "./args/IdArgs";
 import EventsResolver from "./Events";
 import EventResolver from "./Event";
+import {Athlete} from "../models/athlete";
 
 @ArgsType()
 class CreateAthleteGroupArgs {
@@ -28,11 +29,28 @@ class SetAthleteGroupSlotArgs {
     public slotId: string;
 }
 
+@ArgsType()
+class AddAthletesToAthleteGroupArgs {
+    @Field((type) => ID)
+    public athleteGroupId: string;
+
+    @Field((type) => [ID])
+    public athleteIds: string[];
+}
+
 
 @Resolver()
 export default class AthleteGroupsResolver {
 
     private collectionKey: string = AthleteGroup.collectionKey;
+
+
+    @Query((returns) => AthleteGroup)
+    public athleteGroup(
+        @Args() {id}: IdArgs,
+    ): AthleteGroup {
+        return CrudAdapter.getItem(this.collectionKey, id);
+    }
 
     @Mutation()
     public createAthleteGroup(
@@ -76,6 +94,18 @@ export default class AthleteGroupsResolver {
         return CrudAdapter.updateItem(this.collectionKey, athleteGroupId, {
             slotId,
         });
+    }
+
+    @Mutation((type) => AthleteGroup)
+    public addAthletesToAthleteGroup(
+        @Args() {athleteGroupId, athleteIds}: AddAthletesToAthleteGroupArgs,
+        @Ctx() ctx: Context,
+    ): AthleteGroup {
+
+        const athletes = athleteIds.map((athleteId: string) => CrudAdapter.updateItem(Athlete.collectionKey, athleteId, {
+            athleteGroupId,
+        }));
+        return this.athleteGroup({id: athleteGroupId});
     }
 
     @Mutation()

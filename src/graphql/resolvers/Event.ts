@@ -1,11 +1,16 @@
 import * as _ from "lodash";
-import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
+import * as lodashAdvanced from "lodash-advanced";
+import {Args, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Athlete} from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Event} from "../models/event";
+
+import {FilterInput} from "../models/filter";
 import {Slot} from "../models/slot";
-import SlotResolver from "./Slot";
+import FilterArgs from "./args/FilterArgs";
+
+const __ = lodashAdvanced();
 
 @Resolver((of) => Event)
 export default class EventResolver implements ResolverInterface<Event> {
@@ -21,7 +26,9 @@ export default class EventResolver implements ResolverInterface<Event> {
     }
 
     @FieldResolver()
-    public athletes(@Root() event: Event) {
+    public athletes(
+        @Root() event: Event,
+    ) {
         return CrudAdapter.filter(Athlete.collectionKey, { eventId: event.id });
     }
 
@@ -38,22 +45,27 @@ export default class EventResolver implements ResolverInterface<Event> {
     }
 
     @FieldResolver()
-    public unsortedAthletes(@Root() event: Event) {
-        const slots = this.slots(event);
+    public unsortedAthletes(
+        @Root() event: Event,
+        @Args() { filters }: FilterArgs,
+    ) {
 
-        const slotResolver = new SlotResolver();
-
-        const athleteGroupIds = _.chain(slots.map((slot) => slotResolver.athleteGroups(slot)))
-            .flatten()
+        const athleteGroupIds = _.chain(this.athleteGroups(event))
             .uniqBy("id")
             .map((item: AthleteGroup) => item.id)
             .value();
 
         const atheltes = this.athletes(event);
 
-        return _.filter(atheltes, (athlete) => {
+        const unsortedAthletes = _.filter(atheltes, (athlete) => {
             return athleteGroupIds.indexOf(athlete.athleteGroupId) === -1;
         });
+
+        if (!filters) {
+            return unsortedAthletes;
+        }
+
+        return FilterInput.performFilter(unsortedAthletes, filters);
     }
 
 }

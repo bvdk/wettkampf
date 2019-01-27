@@ -22,7 +22,7 @@ export default class SlotsResolver {
 
     private collectionKey: string = Slot.collectionKey;
 
-    @Query((returns) => Slot, { description: "Get a slot" })
+    @Query((returns) => Slot, {nullable: true, description: "Get a slot" })
     public slot(
         @Args() {id}: IdArgs,
     ): Slot {
