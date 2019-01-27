@@ -1,8 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import withBreadcrumbs from 'react-router-breadcrumbs-hoc';
-import _ from "lodash";
-import { Breadcrumb } from "antd";
+import {Breadcrumb} from "antd";
 import EventBreadcrumb from "./event";
 import AthleteBreadcrumb from "./athlete";
 

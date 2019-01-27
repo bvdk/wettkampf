@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import {Tabs, Panel} from "antd";
 import _ from "lodash";
 import styled from "styled-components";
-
-import AthleteGroupCreateForm from "../../../../components/AthleteGroupCreateForm";
-import Infobox from "../../../../components/Infobox";
+import EventAthleteGroupDashboard from "../../../../components/EventAthleteGroupDashboard";
 
 const TabPane = Tabs.TabPane;
 
@@ -18,16 +16,19 @@ const Wrapper = styled.div`
 `
 
 export default class EventAthleteGroupRoute extends Component<Props> {
-  props: Props;
+    props: Props;
 
-  render() {
+    render() {
 
-      const { match, history } = this.props;
+        const { match, history } = this.props;
 
-    return (
-        <div>
+        const eventId = this.props.eventId || _.get(match, 'params.eventId');
+        const athleteGroupId = _.get(match, 'params.athleteGroupId');
 
-        </div>
-    );
-  }
+        return (
+            <div>
+                <EventAthleteGroupDashboard eventId={eventId} athleteGroupId={athleteGroupId}/>
+            </div>
+        );
+    }
 }

@@ -19,7 +19,7 @@ class EventAthletesRoute extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { eventId } = this.props;
+    const { eventId, history } = this.props;
 
     return <div style={{padding: 10}}>
       <Toolbar
@@ -28,7 +28,7 @@ class EventAthletesRoute extends Component<Props, State> {
         <Link key={"new"} to={`athletes/new`}><Button>Neu</Button></Link>,
         <Link style={{paddingLeft: '10px'}} key={"import"} to={`athletes/import`}><Button>Import</Button></Link>
       ]}/>
-      <EventAthletesTable eventId={eventId}/>
+      <EventAthletesTable onAthleteClick={(athlete) => history.push(`athletes/${athlete.id}`)} eventId={eventId}/>
     </div>;
   }
 }

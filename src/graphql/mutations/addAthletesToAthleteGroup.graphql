@@ -1,0 +1,8 @@
+mutation addAthletesToAthleteGroup($athleteGroupId: ID!, $athleteIds: [ID!]! ) {
+    addAthletesToAthleteGroup(athleteGroupId: $athleteGroupId, athleteIds: $athleteIds ){
+        id
+        athletes {
+            id
+        }
+    }
+}

@@ -26,7 +26,7 @@ export default class Toolbar extends Component<Props> {
 
         return (
             <div
-              className={className}
+              className={`toolbar ${className ? className : ''}`}
               style={{
                 flexWrap: 'wrap',
                 display: 'flex',

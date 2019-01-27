@@ -44,7 +44,7 @@ class EventMenu extends Component<Props> {
                 <Menu.Item key="athletes">
                     <Link to={`/events/${eventId}/athletes`}>
                         <Icon type="team" />
-                        Alle Athleten
+                        Athleten
                     </Link>
                 </Menu.Item>
                 <Menu.Item key="athleteGroups">

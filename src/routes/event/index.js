@@ -15,7 +15,7 @@ import {Col, Grow, Row} from "@internal/components/Flex";
 
 export default (props) => {
 
-  const {match} = props;
+  const {match, history} = props;
 
   const eventId = _.get(match, 'params.eventId');
   const index = _.get(match, 'params.index');
@@ -28,9 +28,9 @@ export default (props) => {
       <Switch>
         <Route path="/events/:eventId/dashboard" component={() => <EventDashboardRoute eventId={eventId}/>} />
         <Route path="/events/:eventId/edit" component={() => <EventUpdateRoute eventId={eventId} />} />
-        <Route path="/events/:eventId/athletes" component={() => <EventAthletesRoute eventId={eventId} />} />
+        <Route path="/events/:eventId/athletes" component={EventAthletesRoute} />
         <Route path="/events/:eventId/athleteGroups" component={EventAthleteGroupsRoute} />
-        <Route path="/events/:eventId/slots" component={() => <EventSlotsRoute eventId={eventId}/>} />
+        <Route path="/events/:eventId/slots" component={() => <EventSlotsRoute history={history} eventId={eventId}/>} />
         <Redirect
             from="/events/:eventId"
             to="/events/:eventId/dashboard"

@@ -6,9 +6,10 @@ import {compose, graphql} from "react-apollo";
 import waitWhileLoading from "../../hoc/waitWhileLoading";
 import AthletesTable from "../AthletesTable";
 import {mapProps} from "recompose";
+import Toolbar from "../Toolbar";
+import {Button} from "antd";
 
 const EventAthletesQuery = loader("../../graphql/queries/eventAthletesQuery.graphql");
-
 
 type Props = {
   eventId: string,
@@ -16,16 +17,36 @@ type Props = {
 };
 
 type State = {
-
+  selectedAthleteIds: string[]
 }
 
 class EventAthletesTable extends Component<Props, State> {
-  componentDidMount() {}
+  state = {
+    selectedAthleteIds: [],
+  }
+
+  _handleSelectChange = (selectedAthleteIds) => {
+    this.setState({
+      selectedAthleteIds
+    })
+  };
+
+  renderLeftTools = () => {
+
+    const { selectedAthleteIds } = this.state;
+
+    return <div>
+      <Button disabled={!selectedAthleteIds.length} onClick={()=>{}}>Startgruppe zuweisen</Button>
+    </div>
+  }
 
   render() {
-    const { athletes } = this.props;
+    const { athletes, onAthleteClick } = this.props;
 
-    return <AthletesTable athletes={athletes}/>
+    return <div>
+      <Toolbar renderLeft={this.renderLeftTools}/>
+      <AthletesTable onAthleteClick={onAthleteClick} onSelectChange={this._handleSelectChange} athletes={athletes}/>
+    </div>
   }
 }
 
@@ -40,6 +61,7 @@ export default compose(
   }),
   waitWhileLoading('eventAthletesQuery'),
   mapProps((props)=>({
+    onAthleteClick: props.onAthleteClick,
     athletes: _.get(props,'eventAthletesQuery.event.athletes',[])
   }))
 )(EventAthletesTable);

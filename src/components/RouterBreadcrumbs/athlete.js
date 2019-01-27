@@ -12,13 +12,15 @@ const AthleteBreadcrumb = ({ athlete }) => athlete ? <span>{athlete.lastName}, {
 export default compose(
   graphql(AthleteQuery, {
     name: 'athleteQuery',
-    options: (props: Props) =>({
-      variables: {
-        id: props.id
-      }
-    }),
+    options: (props) =>{
+        console.log(props);
+        return {
+            variables: {
+                id: _.get(props,'match.params.athleteId'),
+            }
+        }
+    },
   }),
-  waitWhileLoading('athleteQuery'),
   mapProps((props) => ({
     athlete: _.get(props,'athleteQuery.athlete'),
   }))

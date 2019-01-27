@@ -1,7 +1,7 @@
-query eventAthletes($eventId: ID!) {
+query eventAthletesUnsorted($eventId: ID!, $filters: [FilterInput!]) {
     event(id: $eventId){
         id
-        athletes {
+        unsortedAthletes(filters: $filters) {
             id
             ageClass {
                 id
@@ -10,10 +10,6 @@ query eventAthletes($eventId: ID!) {
             athleteGroup {
                 id
                 name
-                slot {
-                    id
-                    name
-                }
             }
             slot {
                 id
