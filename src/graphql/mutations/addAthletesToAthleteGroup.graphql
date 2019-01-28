@@ -3,6 +3,11 @@ mutation addAthletesToAthleteGroup($athleteGroupId: ID!, $athleteIds: [ID!]! ) {
         id
         athletes {
             id
+            athleteGroupId
+            athleteGroup {
+                id
+                name
+            }
         }
     }
 }

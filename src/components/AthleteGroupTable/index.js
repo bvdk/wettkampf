@@ -12,11 +12,14 @@ const DeleteAthleteGroupMutation = loader("../../graphql/mutations/deleteAthlete
 const SetAthleteGroupSlotMutation = loader("../../graphql/mutations/setAthleteGroupSlot.graphql");
 
 type Props = {
+  hideKeys: boolean,
   eventId: string,
   athleteGroups: any[],
   onClick?: Function,
   editable: boolean,
   deleteAthleteGroupMutation: Function,
+  onSelectChange: Function,
+  selectionConfig?: any,
 };
 
 type State = {
@@ -24,6 +27,14 @@ type State = {
 }
 
 class AthleteGroupTable extends Component<Props, State> {
+
+  static defaultProps = {
+    hideKeys: [],
+  }
+
+  state = {
+    selectedRowKeys: [],
+  }
 
   _handleRemove = ({id}) => {
 
@@ -35,8 +46,56 @@ class AthleteGroupTable extends Component<Props, State> {
 
   }
 
+  onSelectionChange = () => {
+
+    if (this.props.onSelectChange){
+      this.props.onSelectChange(this.state.selectedRowKeys);
+    }
+
+  }
+
+  toggleSelectAll = () => {
+
+    if (this.state.selectedRowKeys.length !== this.props.athleteGroups.length){
+      this.setState({
+        selectedRowKeys: this.props.athleteGroups.map(item => item.id),
+      },this.onSelectionChange);
+    }else {
+      this.setState({
+        selectedRowKeys: [],
+      },this.onSelectionChange);
+    }
+
+  }
+
+  getRowSelection = () => {
+
+    const { selectedRowKeys } = this.state;
+    const { selectionConfig } = this.props;
+
+    const rowSelection = {
+      selectedRowKeys,
+      hideDefaultSelections: true,
+      onSelectAll: this.toggleSelectAll,
+      onChange: (selectedRowKeys, selectedRows) => {
+        this.setState({
+          selectedRowKeys,
+        },this.onSelectionChange);
+      },
+      getCheckboxProps: record => ({
+        // disabled: record.name === 'Disabled User', // Column configuration not to be checked
+        name: record.id,
+        value: record.id,
+      }),
+      ...selectionConfig,
+    };
+
+    return rowSelection;
+
+  }
+
   render() {
-    const { athleteGroups, t, onClick, eventId, setAthleteGroupSlotMutation, editable } = this.props;
+    const { hideKeys, onSelectChange, athleteGroups, t, onClick, eventId, setAthleteGroupSlotMutation, editable } = this.props;
 
     const columns = [{
       title: 'Bezeichnung',
@@ -55,7 +114,6 @@ class AthleteGroupTable extends Component<Props, State> {
         width: 200,
         render: (text, record) => {
 
-          console.log('render slot',record);
           if (editable){
             return <AttributesInlineForm
                 values={{
@@ -102,15 +160,16 @@ class AthleteGroupTable extends Component<Props, State> {
         dataIndex: 'athleteCount'
       },{
         title: 'Aktion',
-        key: 'action',
+        dataIndex: 'action',
         render: (text, record) => (
             <a onClick={()=>{this._handleRemove(record)}}>Löschen</a>
         ),
       }
-    ];
+    ].filter(item => hideKeys.indexOf(item.dataIndex)===-1);
 
     return <Table
         rowKey={'id'}
+        rowSelection={onSelectChange ? this.getRowSelection() : undefined}
         columns={columns}
         dataSource={athleteGroups}
     />;

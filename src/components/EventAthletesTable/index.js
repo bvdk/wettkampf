@@ -8,6 +8,7 @@ import AthletesTable from "../AthletesTable";
 import {mapProps} from "recompose";
 import Toolbar from "../Toolbar";
 import {Button} from "antd";
+import SetAthleteGroupModal from "../SetAthleteGroupModal";
 
 const EventAthletesQuery = loader("../../graphql/queries/eventAthletesQuery.graphql");
 
@@ -17,11 +18,13 @@ type Props = {
 };
 
 type State = {
-  selectedAthleteIds: string[]
+  selectedAthleteIds: string[],
+  showSetAthleteGroupsModal: boolean,
 }
 
 class EventAthletesTable extends Component<Props, State> {
   state = {
+    showSetAthleteGroupsModal: false,
     selectedAthleteIds: [],
   }
 
@@ -33,10 +36,21 @@ class EventAthletesTable extends Component<Props, State> {
 
   renderLeftTools = () => {
 
-    const { selectedAthleteIds } = this.state;
+    const { eventId } = this.props;
+    const { selectedAthleteIds, showSetAthleteGroupsModal } = this.state;
 
     return <div>
-      <Button disabled={!selectedAthleteIds.length} onClick={()=>{}}>Startgruppe zuweisen</Button>
+      <Button disabled={!selectedAthleteIds.length} onClick={()=>{this.setAthleteGroupsModal(true)}}>
+        Startgruppe zuweisen
+      </Button>
+      <SetAthleteGroupModal
+          eventId={eventId}
+          athleteIds={selectedAthleteIds}
+          modalProps={{
+            onCancel: () => this.setAthleteGroupsModal(false),
+            visible: showSetAthleteGroupsModal
+          }}
+      />
     </div>
   }
 
@@ -47,6 +61,13 @@ class EventAthletesTable extends Component<Props, State> {
       <Toolbar renderLeft={this.renderLeftTools}/>
       <AthletesTable onAthleteClick={onAthleteClick} onSelectChange={this._handleSelectChange} athletes={athletes}/>
     </div>
+  }
+
+  setAthleteGroupsModal(visible) {
+    console.log(visible);
+    this.setState({
+      showSetAthleteGroupsModal: visible,
+    })
   }
 }
 
@@ -61,6 +82,7 @@ export default compose(
   }),
   waitWhileLoading('eventAthletesQuery'),
   mapProps((props)=>({
+    eventId: props.eventId,
     onAthleteClick: props.onAthleteClick,
     athletes: _.get(props,'eventAthletesQuery.event.athletes',[])
   }))

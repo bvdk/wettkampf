@@ -13,7 +13,8 @@ type Props = {
 };
 
 type State = {
-  selectedRowKeys: string[]
+  selectedRowKeys: string[],
+  filteredDataSourceIds: string[],
 }
 
 
@@ -34,13 +35,14 @@ class AthletesTable extends Component<Props, State> {
   state = {
     selectedRowKeys: [],
     searchText: '',
+    filteredDataSourceIds: this.props.athletes.map(item => item.id),
   }
 
   toggleSelectAll = () => {
 
-    if (this.state.selectedRowKeys.length !== this.props.athletes.length){
+    if (this.state.selectedRowKeys.length !== this.state.filteredDataSourceIds.length){
       this.setState({
-        selectedRowKeys: this.props.athletes.map(item => item.id),
+        selectedRowKeys: this.state.filteredDataSourceIds,
       },this.onSelectionChange);
     }else {
       this.setState({
@@ -227,6 +229,11 @@ class AthletesTable extends Component<Props, State> {
         rowSelection={onSelectChange ? this.getRowSelection() : undefined}
         columns={this.getColumns()}
         dataSource={athletes}
+        onChange={(pagination, filters, sorter, { currentDataSource })=>{
+          this.setState({
+            filteredDataSourceIds: currentDataSource.map(item => item.id),
+          })
+        }}
         locale={{
           emptyText: <Empty description={'Keine Athleten'} />
         }}
