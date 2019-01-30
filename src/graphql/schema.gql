@@ -65,6 +65,19 @@ type AthleteGroup {
   athleteCount: Int!
 }
 
+enum AthleteGroupCreationKey {
+  GENDER
+  AGE_CLASS
+  WEIGHT_CLASS
+}
+
+type AthleteGroupCreationResult {
+  preview: Boolean!
+  keys: [AthleteGroupCreationKey!]
+  athletes: [Athlete!]!
+  athleteGroups: [AthleteGroup!]!
+}
+
 input AthleteGroupInput {
   name: String
   gender: Gender
@@ -201,6 +214,24 @@ type Mutation {
   setAthleteGroupSlot(athleteGroupId: ID!, slotId: ID!): AthleteGroup!
   addAthletesToAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
   deleteAthleteGroup(id: ID!): AthleteGroup!
+  autoCreateAthleteGroups(
+    # Wenn true wird das Ergebnis nicht in die Datenbank geschrieben
+    preview: Boolean!
+
+    # Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet.
+    athleteIds: [ID!]
+    eventId: ID!
+    keys: [AthleteGroupCreationKey!]!
+
+    # Maximale Startgruppengröße, wenn 0 werden alle passenden Athleten in eine Gruppe gespeichert.
+    maxGroupSize: Int
+
+    # Wenn true werden bestehende Startgruppen mit einbezogen
+    useExisting: Boolean
+
+    # Gruppen auf bestehende Bühnen verteilen
+    distributeSlots: Boolean
+  ): AthleteGroupCreationResult!
   createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
   updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
   deleteAthlete(id: ID!): Athlete!

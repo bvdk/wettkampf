@@ -7,8 +7,8 @@ import {Attempt} from "../models/attempt";
 import {Slot} from "../models/slot";
 
 function _calculateAge(birthday): number { // birthday is a date
-    var ageDifMs = Date.now() - birthday.getTime();
-    var ageDate = new Date(ageDifMs); // miliseconds from epoch
+    let ageDifMs = Date.now() - birthday.getTime();
+    let ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
@@ -34,8 +34,9 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
     @FieldResolver()
     public slot(@Root() athlete: Athlete) {
         const athleteGroup = this.athleteGroup(athlete);
-        if (athleteGroup.slotId){
-            return CrudAdapter.getItem(Slot.collectionKey, athleteGroup.slotId);
+        const slotId = _.get(athleteGroup, "slotId");
+        if (slotId) {
+            return CrudAdapter.getItem(Slot.collectionKey, slotId);
         }
         return null;
     }

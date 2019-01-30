@@ -1,5 +1,4 @@
 import * as _ from "lodash";
-import * as lodashAdvanced from "lodash-advanced";
 import {Args, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Athlete} from "../models/athlete";
@@ -10,10 +9,17 @@ import {FilterInput} from "../models/filter";
 import {Slot} from "../models/slot";
 import FilterArgs from "./args/FilterArgs";
 
-const __ = lodashAdvanced();
-
 @Resolver((of) => Event)
 export default class EventResolver implements ResolverInterface<Event> {
+
+
+    public getEventAthletes(eventId: string): Athlete[] {
+        return CrudAdapter.filter(Athlete.collectionKey, { eventId });
+    }
+
+    public getEventAthleteGroups(eventId: string): AthleteGroup[] {
+        return CrudAdapter.filter(AthleteGroup.collectionKey, {eventId});
+    }
 
     @FieldResolver()
     public name(@Root() event: Event) {
@@ -29,7 +35,7 @@ export default class EventResolver implements ResolverInterface<Event> {
     public athletes(
         @Root() event: Event,
     ) {
-        return CrudAdapter.filter(Athlete.collectionKey, { eventId: event.id });
+        return this.getEventAthletes(event.id);
     }
 
     @FieldResolver()
@@ -41,7 +47,7 @@ export default class EventResolver implements ResolverInterface<Event> {
         //     .flatten()
         //     .value();
 
-        return CrudAdapter.filter(AthleteGroup.collectionKey, {eventId: event.id});
+        return this.getEventAthleteGroups(event.id);
     }
 
     @FieldResolver()
