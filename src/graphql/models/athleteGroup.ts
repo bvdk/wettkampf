@@ -2,8 +2,8 @@ import {Field, ID, InputType, Int, ObjectType} from "type-graphql";
 import {AgeClass} from "./ageClass";
 import { Athlete } from "./athlete";
 import {Gender} from "./gender";
-import {WeightClass} from "./weightClass";
 import {Slot} from "./slot";
+import {WeightClass} from "./weightClass";
 
 @ObjectType()
 export class AthleteGroup {
@@ -26,25 +26,28 @@ export class AthleteGroup {
     public name: string;
 
     @Field((type) => Gender, { nullable: true })
-    public gender: Gender;
+    public gender?: Gender;
 
     @Field((type) => ID, { nullable: true })
-    public ageClassId: string;
+    public ageClassId?: string;
 
     @Field((type) => AgeClass, { nullable: true })
-    public ageClass: AgeClass;
+    public ageClass?: AgeClass;
 
     @Field((type) => ID, { nullable: true })
     public weightClassId?: string;
 
     @Field((type) => WeightClass, { nullable: true })
-    public weightClass: WeightClass;
+    public weightClass?: WeightClass;
 
     @Field( (type) => Athlete )
     public athletes: Athlete[];
 
     @Field( (type) => Int )
     public athleteCount: number;
+
+    @Field( (type) => Boolean )
+    public shallow?: boolean;
 
 }
 

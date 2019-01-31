@@ -90,7 +90,9 @@ function getGroupDefinitionName(keys: AthleteGroupCreationKey[], args: INameForK
     return index;
 }
 
-
+export function findAthleteGroupByKeyConfig(athleteGroups: AthleteGroup[], keyConfig: any) {
+    return _.filter(athleteGroups, keyConfig);
+}
 
 export default function createAutoCreateAthleteGroups({
                                                           ageClasses,
@@ -107,28 +109,49 @@ export default function createAutoCreateAthleteGroups({
 
     return _.chain(Object.keys(groups))
         .map((groupKey: string) => {
+
+            const groupAthletes: Athlete[] = groups[groupKey];
+            const firstAthlete = _.first(groupAthletes);
+            const athleteGroupKeys = keys.reduce((acc, key) => {
+                acc[key] = _.get(firstAthlete, key);
+                return acc;
+            }, {});
+
+            const useAthleteGroups = findAthleteGroupByKeyConfig(athleteGroups, athleteGroupKeys);
+
             const groupConfig = {
-                athletes: groups[groupKey],
-                index: groupKey,
+                id: `${groupKey}`,
                 name: getGroupDefinitionName(keys, {
                     ageClasses,
-                    athlete: _.first(groups[groupKey]),
+                    athlete: _.first(groupAthletes),
                     weightClasses,
                 }),
+                ...athleteGroupKeys,
+                index: groupKey,
             };
 
             const result = [];
             if (maxGroupSize) {
-                const chunks = chunk(groupConfig.athletes, maxGroupSize);
-                chunks.forEach((items) => {
+                const chunks = chunk(groupAthletes, maxGroupSize);
+                chunks.forEach((items, index) => {
+                    let useExisiting = null;
+                    if (index < useAthleteGroups.length) {
+                        useExisiting = useAthleteGroups[index];
+                    }
                     result.push({
+                        id: `${groupKey}-${index}`,
                         ...groupConfig,
-                        athletes: items,
+                        ...useExisiting,
+                        athletes: groupAthletes,
                     });
                 });
 
             } else {
-                result.push(groupConfig);
+                result.push({
+                    ...groupConfig,
+                    ..._.first(useAthleteGroups),
+                    athletes: groupAthletes,
+                });
             }
 
             return result;
