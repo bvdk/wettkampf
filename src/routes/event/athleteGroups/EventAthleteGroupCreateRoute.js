@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 import AthleteGroupCreateForm from "./../../../components/AthleteGroupCreateForm";
 import Infobox from "./../../../components/Infobox";
+import AthleteGroupAutomaticCreationWizard from "@internal/components/AthleteGroupAutomaticCreationWizard";
 
 const TabPane = Tabs.TabPane;
 
@@ -43,7 +44,17 @@ export default class EventAthleteGroupCreateRoute extends Component<Props> {
 
             </TabPane>
             <TabPane tab="Automatisch Erstellen" key="automatic">
-
+                <Wrapper>
+                    <h3>Startgruppen automatisch erstellen</h3>
+                    <hr/>
+                    <Infobox>
+                        <span>Startgruppen können einer Alter- oder Gewichtsklasse zugeordnet werden. Durch die eingestellten Rahmenbedingungen können Athleten automatisiert zugeordnet werden.</span><br/>
+                        <span>Mit dem automatischen Erstellen von Startgruppen werden Athleten die noch keiner Startgruppe zugeordnet sind automatisch in Gruppen eingeordnet.
+                        Sie können bestimmen nach welchen Kriterien Startgruppen erstellt werden sollen.</span>
+                    </Infobox>
+                    <div style={{padding: 10}}/>
+                    <AthleteGroupAutomaticCreationWizard eventId={eventId}/>
+                </Wrapper>
             </TabPane>
         </Tabs>
     );

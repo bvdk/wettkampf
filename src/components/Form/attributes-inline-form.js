@@ -149,10 +149,13 @@ class AttributesInlineForm extends Component<Props, State> {
             return form.isFieldTouched(x)
           });
           const values = form.getFieldsValue(fieldKeys || arr);
-          console.log('values',values);
+
           const attributeValues = formValueToAttributeValue(attributes, values, false);
-          console.log('attributeValues',attributeValues);
-          const done = () => {
+
+          const done = (res) => {
+            if (this.props.onSubmit){
+              this.props.onSubmit(res, attributeValues);
+            }
             this.setState({
               submitting: false
             });
@@ -177,9 +180,7 @@ class AttributesInlineForm extends Component<Props, State> {
                 promise
                   .then((res)=>{
                     message.success(t('Gespeichert'))
-                    if (this.props.onSubmit){
-                      this.props.onSubmit(res, attributeValues);
-                    }
+
                     if (this.props.resetFields){
                       form.resetFields();
                     }
@@ -188,7 +189,7 @@ class AttributesInlineForm extends Component<Props, State> {
                   .catch((res)=>{
                     message.error(res.message || 'An error occurred while submitting the form data')
                   })
-                  .finally(done)
+                  .then(done)
               }else {
                 done();
               }
@@ -421,11 +422,11 @@ export default Form.create({
   },
   mapPropsToFields(props) {
     const result =  FormValueTranslator.translateAttributes(props.attributes, props.values);
-    console.log('mapPropsToFields',result);
+    // console.log('mapPropsToFields',result);
     return result;
   },
   onValuesChange(props, values) {
-    console.log('onValuesChange',values);
+    // console.log('onValuesChange',values);
     if (props.onValuesChange){
       const attributeValues = formValueToAttributeValue(props.attributes,values,false);
       props.onValuesChange(attributeValues);

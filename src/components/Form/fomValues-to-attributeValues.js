@@ -41,7 +41,9 @@ export default function(attributes, values, asArray = true) {
       if (formValue === ""){
         formValue = null;
       }
-      const value = {};
+      const value = {
+
+      };
       const multiple = multipleTypes.indexOf(item.inputType) !== -1;
 
       if (multiple) {
@@ -81,17 +83,17 @@ export default function(attributes, values, asArray = true) {
             if (item.optionValueList && item.optionValueList.length > 0) {
               if (_.isNumber(formValue)) {
                 value.stringValue = getOptionForType(
-                  item.optionValueList,
-                  formValue,
-                  'intValue',
-                  'stringValue',
+                    item.optionValueList,
+                    formValue,
+                    'intValue',
+                    'stringValue',
                 );
               } else if (_.isBoolean(formValue)) {
                 value.stringValue = getOptionForType(
-                  item.optionValueList,
-                  formValue,
-                  'boolValue',
-                  'stringValue',
+                    item.optionValueList,
+                    formValue,
+                    'boolValue',
+                    'stringValue',
                 );
               } else {
                 value.stringValue = formValue;
@@ -109,6 +111,7 @@ export default function(attributes, values, asArray = true) {
             value.floatValue = Number.parseFloat(formValue);
             break;
           }
+
           case 'bool': {
             value.boolValue = !!formValue;
             break;
@@ -124,6 +127,8 @@ export default function(attributes, values, asArray = true) {
           default: {}
         }
       }
+
+      console.log(item, value);
 
       return {
         index: item.index,

@@ -20,6 +20,7 @@ type Props = {
   deleteAthleteGroupMutation: Function,
   onSelectChange: Function,
   selectionConfig?: any,
+  tableProps: any,
 };
 
 type State = {
@@ -95,7 +96,7 @@ class AthleteGroupTable extends Component<Props, State> {
   }
 
   render() {
-    const { hideKeys, onSelectChange, athleteGroups, t, onClick, eventId, setAthleteGroupSlotMutation, editable } = this.props;
+    const { tableProps, hideKeys, onSelectChange, athleteGroups, t, onClick, eventId, setAthleteGroupSlotMutation, editable } = this.props;
 
     const columns = [{
       title: 'Bezeichnung',
@@ -168,6 +169,7 @@ class AthleteGroupTable extends Component<Props, State> {
     ].filter(item => hideKeys.indexOf(item.dataIndex)===-1);
 
     return <Table
+        {...tableProps}
         rowKey={'id'}
         rowSelection={onSelectChange ? this.getRowSelection() : undefined}
         columns={columns}
@@ -175,7 +177,6 @@ class AthleteGroupTable extends Component<Props, State> {
     />;
   }
 }
-
 
 export default compose(
     withNamespaces(),
