@@ -24,11 +24,8 @@ registerEnumType(AthleteGroupCreationKey, {
 @ObjectType()
 export class AthleteGroupCreationResult {
 
-    @Field()
-    public preview: boolean;
-
     @Field((type) => AthleteGroupCreationKey, {nullable: true})
-    public keys: [AthleteGroupCreationKey];
+    public keys: AthleteGroupCreationKey[];
 
     @Field((type) => [Athlete])
     public athletes: Athlete[];

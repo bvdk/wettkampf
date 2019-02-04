@@ -1,7 +1,7 @@
 import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {WeightClass} from "../models/weightClass";
 import {Gender} from "../models/gender";
-import * as _ from "lodash";
+import  _ from "lodash";
 
 @Resolver((of) => WeightClass)
 export default class WeightClassResolver implements ResolverInterface<WeightClass> {

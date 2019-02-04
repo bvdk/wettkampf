@@ -1,14 +1,14 @@
+import  _ from "lodash";
 import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
+import {AgeClass} from "../models/ageClass";
 import { Athlete } from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {getDescriptionForGender} from "../models/gender";
-import * as _ from "lodash";
 import {Slot} from "../models/slot";
+import {WeightClass} from "../models/weightClass";
 import AgeClassesResolver from "./AgeClasses";
 import WeightClasses from "./WeightClasses";
-import {WeightClass} from "../models/weightClass";
-import {AgeClass} from "../models/ageClass";
 
 @Resolver((of) => AthleteGroup)
 export default class AthleteGroupResolver implements ResolverInterface<AthleteGroup> {
@@ -24,18 +24,22 @@ export default class AthleteGroupResolver implements ResolverInterface<AthleteGr
         }
         if (athleteGroup.ageClassId) {
             const ageClassResolver = new AgeClassesResolver();
-            const ageClass = ageClassResolver.ageClass({id: athleteGroup.ageClassId})
+            const ageClass = ageClassResolver.ageClass({id: athleteGroup.ageClassId});
             nameComponents.push(ageClass.name);
         }
         if (athleteGroup.weightClassId) {
             const weightClassResolver = new WeightClasses();
-            const weightClass = weightClassResolver.weightClass({id: athleteGroup.weightClassId})
+            const weightClass = weightClassResolver.weightClass({id: athleteGroup.weightClassId});
             nameComponents.push(weightClass.name);
         }
 
         return nameComponents.join(" - ");
     }
 
+    @FieldResolver()
+    public shallow(@Root() athleteGroup: AthleteGroup) {
+        return _.get(athleteGroup, "shallow", false);
+    }
 
 
     @FieldResolver()
@@ -56,6 +60,9 @@ export default class AthleteGroupResolver implements ResolverInterface<AthleteGr
 
     @FieldResolver()
     public athletes(@Root() athleteGroup: AthleteGroup) {
+        if (athleteGroup.athletes) {
+            return athleteGroup.athletes;
+        }
         return CrudAdapter.filter(Athlete.collectionKey, {athleteGroupId: athleteGroup.id});
     }
 

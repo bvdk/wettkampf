@@ -1,6 +1,6 @@
 
-import * as csv from "csvtojson";
-import * as _ from "lodash";
+import csv from "csvtojson";
+import _ from "lodash";
 import AthletesResolver from "../graphql/resolvers/Athletes";
 import parseImport from "./parseImport";
 

@@ -1,4 +1,4 @@
-import * as path from "path";
+import  path from "path";
 import "reflect-metadata";
 import {buildSchema} from "type-graphql";
 import AgeClasses from "./resolvers/AgeClasses";

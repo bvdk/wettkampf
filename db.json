@@ -287,7 +287,8 @@
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "b94b473c-7d60-49e4-b5e0-65df356ba48c",
       "lastName": "Kammer",
-      "firstName": "Torsten"
+      "firstName": "Torsten",
+      "athleteGroupId": "bcb97061-39b7-49ac-94ac-8c60964a7211"
     },
     {
       "weightClass": "-105",
@@ -301,7 +302,8 @@
       "eventId": "a286a77d-14ae-444f-a1da-594accb00c02",
       "id": "ac829aeb-c3bb-4c88-9c5e-fb2134331b39",
       "lastName": "Markewitz",
-      "firstName": "Thomas"
+      "firstName": "Thomas",
+      "athleteGroupId": "4a987b47-a1e5-40d0-a75e-34d9ecf9f9a8"
     },
     {
       "weightClass": "-105",

@@ -1,4 +1,4 @@
-import * as fileUpload from "express-fileupload";
+import fileUpload from "express-fileupload";
 import { GraphQLServer } from "graphql-yoga";
 import getSchema from "./graphql";
 import importResolver from "./import";

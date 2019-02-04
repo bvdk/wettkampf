@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import  _ from "lodash";
 import {Args, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Athlete} from "../models/athlete";
@@ -21,6 +21,10 @@ export default class EventResolver implements ResolverInterface<Event> {
         return CrudAdapter.filter(AthleteGroup.collectionKey, {eventId});
     }
 
+    public getEventSlots(eventId: string): Slot[] {
+        return CrudAdapter.filter(Slot.collectionKey, {eventId});
+    }
+
     @FieldResolver()
     public name(@Root() event: Event) {
         return event.name || "Unbekannter Wettkampf";
@@ -28,7 +32,7 @@ export default class EventResolver implements ResolverInterface<Event> {
 
     @FieldResolver()
     public slots(@Root() event: Event) {
-        return CrudAdapter.filter(Slot.collectionKey, {eventId: event.id});
+        return this.getEventSlots(event.id);
     }
 
     @FieldResolver()

@@ -194,7 +194,7 @@ describe("Auto create athlete groups", () => {
             gender: Gender.MALE,
         });
 
-        expect(result.length).toBe(3);
+        expect(result.length).toBe(4);
 
     });
 

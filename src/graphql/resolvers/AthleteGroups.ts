@@ -1,16 +1,18 @@
 import {Context} from "graphql-yoga/dist/types";
-import * as _ from "lodash";
+import  _ from "lodash";
 import {Arg, Args, ArgsType, Ctx, Field, ID, Int, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
+import createAutoCreateAthleteGroups from "../../utils/autoCreateAthleteGroups";
 import {Athlete} from "../models/athlete";
 import {AthleteGroup, AthleteGroupInput} from "../models/athleteGroup";
 import {AthleteGroupCreationKey, AthleteGroupCreationResult} from "../models/athleteGroupCreationResult";
 import {Gender} from "../models/gender";
+import AgeClassesResolver from "./AgeClasses";
 import IdArgs from "./args/IdArgs";
 import AthletesResolver from "./Athletes";
 import EventResolver from "./Event";
 import EventsResolver from "./Events";
-import createAutoCreateAthleteGroups from "../../utils/autoCreateAthleteGroups";
+import WeightClassesResolver from "./WeightClasses";
 
 @ArgsType()
 class CreateAthleteGroupArgs {
@@ -35,9 +37,6 @@ class SetAthleteGroupSlotArgs {
 
 @ArgsType()
 class AthleteGroupCreationArgs {
-
-    @Field((type) => Boolean, { description: "Wenn true wird das Ergebnis nicht in die Datenbank geschrieben"})
-    public preview: boolean;
 
     @Field((type) => [ID], {
         description: "Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet.",
@@ -154,6 +153,13 @@ export default class AthleteGroupsResolver {
         return CrudAdapter.removeItem(this.collectionKey, id);
     }
 
+    @Query()
+    public autoCreateAthleteGroupsPreview(
+        @Args() args: AthleteGroupCreationArgs,
+    ): AthleteGroupCreationResult {
+        return this.autoCreateAthleteGroups(args, null, true);
+    }
+
     @Mutation()
     public autoCreateAthleteGroups(
         @Args() {
@@ -163,15 +169,17 @@ export default class AthleteGroupsResolver {
             eventId,
             keys,
             maxGroupSize,
-            preview,
         }: AthleteGroupCreationArgs,
         @Ctx() ctx: Context,
+        preview: boolean,
     ): AthleteGroupCreationResult {
 
         const eventResolver = new EventResolver();
         let athletes = eventResolver.getEventAthletes(eventId);
         if (athleteIds && athleteIds.length) {
             athletes = athletes.filter((item: Athlete) => athleteIds.indexOf(item.id) > -1);
+        } else {
+            athletes = athletes.filter((item: Athlete) => !item.athleteGroupId );
         }
 
         let athleteGroups = [];
@@ -179,15 +187,39 @@ export default class AthleteGroupsResolver {
             athleteGroups = eventResolver.getEventAthleteGroups(eventId);
         }
 
-        return createAutoCreateAthleteGroups({
+        let slots = [];
+        if (distributeSlots) {
+            slots = eventResolver.getEventSlots(eventId);
+        }
+        const ageClassesResolver = new AgeClassesResolver();
+        const ageClasses = ageClassesResolver.ageClasses();
+
+        const weightClassesResolver = new WeightClassesResolver();
+        const weightClasses = weightClassesResolver.weightClasses();
+
+
+        const autoCreateAthleteGroups = createAutoCreateAthleteGroups({
+            ageClasses,
             athleteGroups,
             athletes,
-            distributeSlots,
-            eventId,
             keys,
             maxGroupSize,
-            preview,
-            useExisting,
+            slots,
+            weightClasses,
         });
+
+        if (preview) {
+            return {
+                athleteGroups: autoCreateAthleteGroups,
+                athletes,
+                keys,
+            };
+        }
+
+        return {
+            athleteGroups: autoCreateAthleteGroups,
+            athletes,
+            keys,
+        };
     }
 }

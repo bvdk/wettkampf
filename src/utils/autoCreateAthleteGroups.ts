@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import  _ from "lodash";
 import {AgeClass} from "../graphql/models/ageClass";
 import {Athlete} from "../graphql/models/athlete";
 import {AthleteGroup} from "../graphql/models/athleteGroup";
@@ -98,6 +98,7 @@ export default function createAutoCreateAthleteGroups({
                                                           ageClasses,
                                                           athletes,
                                                           athleteGroups,
+                                                          slots,
                                                           keys,
                                                           maxGroupSize,
                                                           weightClasses,
@@ -140,6 +141,7 @@ export default function createAutoCreateAthleteGroups({
                     }
                     result.push({
                         id: `${groupKey}-${index}`,
+                        shallow: !useExisiting,
                         ...groupConfig,
                         ...useExisiting,
                         athletes: groupAthletes,
@@ -147,9 +149,11 @@ export default function createAutoCreateAthleteGroups({
                 });
 
             } else {
+                const useExisting = _.first(useAthleteGroups);
                 result.push({
+                    shallow: !useExisting,
                     ...groupConfig,
-                    ..._.first(useAthleteGroups),
+                    ...useExisting,
                     athletes: groupAthletes,
                 });
             }

@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import  _ from "lodash";
 import {Field, InputType, ObjectType} from "type-graphql";
 
 const myFilter = (item, {value, index}: FilterInput) => {

@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import  _ from "lodash";
 import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";

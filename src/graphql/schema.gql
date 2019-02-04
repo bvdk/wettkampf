@@ -63,6 +63,7 @@ type AthleteGroup {
   weightClass: WeightClass
   athletes: [Athlete!]!
   athleteCount: Int!
+  shallow: Boolean!
 }
 
 enum AthleteGroupCreationKey {
@@ -72,7 +73,6 @@ enum AthleteGroupCreationKey {
 }
 
 type AthleteGroupCreationResult {
-  preview: Boolean!
   keys: [AthleteGroupCreationKey!]
   athletes: [Athlete!]!
   athleteGroups: [AthleteGroup!]!
@@ -215,9 +215,6 @@ type Mutation {
   addAthletesToAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
   deleteAthleteGroup(id: ID!): AthleteGroup!
   autoCreateAthleteGroups(
-    # Wenn true wird das Ergebnis nicht in die Datenbank geschrieben
-    preview: Boolean!
-
     # Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet.
     athleteIds: [ID!]
     eventId: ID!
@@ -258,6 +255,21 @@ type Query {
   # Get a event
   event(id: ID!): Event!
   athleteGroup(id: ID!): AthleteGroup!
+  autoCreateAthleteGroupsPreview(
+    # Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet.
+    athleteIds: [ID!]
+    eventId: ID!
+    keys: [AthleteGroupCreationKey!]!
+
+    # Maximale Startgruppengröße, wenn 0 werden alle passenden Athleten in eine Gruppe gespeichert.
+    maxGroupSize: Int
+
+    # Wenn true werden bestehende Startgruppen mit einbezogen
+    useExisting: Boolean
+
+    # Gruppen auf bestehende Bühnen verteilen
+    distributeSlots: Boolean
+  ): AthleteGroupCreationResult!
   athletes: [Athlete!]!
   athlete(id: ID!): Athlete!
   findAthlete(importId: ID!): Athlete!
@@ -282,10 +294,14 @@ input SlotInput {
 type WeightClass {
   id: ID!
   name: String!
-  gender: String
+  min: Int!
+  max: Int!
+  gender: Gender
 }
 
 input WeightClassInput {
   name: String
+  min: Int!
+  max: Int!
   gender: Gender
 }

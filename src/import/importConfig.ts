@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import  _ from "lodash";
 import {CrudAdapter} from "../database/CrudAdapter";
 import {WeightClass} from "../graphql/models/weightClass";
 
