@@ -22,6 +22,9 @@ export class Attempt {
 
     @Field()
     public date: Date;
+
+    @Field((type) => Discipline)
+    public discipline: Discipline;
 }
 
 @InputType()

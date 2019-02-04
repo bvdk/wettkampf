@@ -1,14 +1,16 @@
 import  _ from "lodash";
-import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
+import {type} from "os";
+import {Arg, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Attempt} from "../models/attempt";
+import {Discipline} from "../models/discipline";
 import {Slot} from "../models/slot";
 
 function _calculateAge(birthday): number { // birthday is a date
-    let ageDifMs = Date.now() - birthday.getTime();
-    let ageDate = new Date(ageDifMs); // miliseconds from epoch
+    const ageDifMs = Date.now() - birthday.getTime();
+    const ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
 }
 
@@ -55,8 +57,41 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
     }
 
     @FieldResolver()
-    public attempts(@Root() athlete: Athlete) {
-        return CrudAdapter.filter(Attempt.collectionKey, { athleteId: athlete.id });
+    public attempts(
+        @Root() athlete: Athlete,
+        @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
+    ) {
+        const attempts = CrudAdapter.filter(Attempt.collectionKey, { athleteId: athlete.id });
+        if (discipline){
+            return _.filter(attempts,{discipline});
+        }
+        return attempts;
+    }
+
+    @FieldResolver()
+    public bestAttempt(
+        @Root() athlete: Athlete,
+        @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
+    ) {
+        return _.chain(this.attempts(athlete, discipline))
+            .sortBy(["weight"])
+            .filter({
+                valid: true,
+            })
+            .first()
+            .value();
+    }
+
+    @FieldResolver()
+    public nextAttempt(
+        @Root() athlete: Athlete,
+        @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
+    ) {
+        return _.chain(this.attempts(athlete, discipline))
+            .sortBy(["weight"])
+            .filter((attempt: Attempt) => !attempt.done)
+            .first()
+            .value();
     }
 
     @FieldResolver()

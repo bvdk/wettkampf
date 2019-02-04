@@ -3,6 +3,7 @@ import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Query, Resolver} from "ty
 import {CrudAdapter} from "../../database/CrudAdapter";
 import { Attempt, AttemptInput, AttemptUpdateInput} from "../models/attempt";
 import IdArgs from "./args/IdArgs";
+import {Discipline} from "../models/discipline";
 
 @ArgsType()
 class CreateAttemptArgs {
@@ -11,6 +12,9 @@ class CreateAttemptArgs {
 
     @Field((type) => AttemptInput)
     public data: AttemptInput;
+
+    @Field((type) => Discipline)
+    public discipline: Discipline;
 }
 
 
@@ -28,10 +32,11 @@ export default class AttemptsResolver {
 
     @Mutation()
     public createAttempt(
-        @Args() {data, athleteId}: CreateAttemptArgs,
+        @Args() {data, athleteId, discipline}: CreateAttemptArgs,
         @Ctx() ctx: Context,
     ): Attempt {
         return CrudAdapter.insertItem(this.collectionKey, {
+            discipline,
             date: new Date(),
             ...data,
             athleteId,

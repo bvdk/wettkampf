@@ -98,6 +98,12 @@ export class Athlete {
 
     @Field((type) => [Attempt])
     public attempts: Attempt[];
+
+    @Field((type) => Attempt, {nullable: true})
+    public nextAttempt?: Attempt;
+
+    @Field((type) => Attempt, {nullable: true})
+    public bestAttempt?: Attempt;
 }
 
 

@@ -1,5 +1,5 @@
 import  _ from "lodash";
-import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
+import {Args, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {AgeClass} from "../models/ageClass";
 import { Athlete } from "../models/athlete";
@@ -8,6 +8,7 @@ import {getDescriptionForGender} from "../models/gender";
 import {Slot} from "../models/slot";
 import {WeightClass} from "../models/weightClass";
 import AgeClassesResolver from "./AgeClasses";
+import SortArgs from "./args/SortArgs";
 import WeightClasses from "./WeightClasses";
 
 @Resolver((of) => AthleteGroup)
@@ -59,7 +60,10 @@ export default class AthleteGroupResolver implements ResolverInterface<AthleteGr
     }
 
     @FieldResolver()
-    public athletes(@Root() athleteGroup: AthleteGroup) {
+    public athletes(
+        @Root() athleteGroup: AthleteGroup,
+        @Args() sort?: SortArgs,
+    ) {
         if (athleteGroup.athletes) {
             return athleteGroup.athletes;
         }

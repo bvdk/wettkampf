@@ -47,7 +47,9 @@ type Athlete {
   total: Float
   place: Int
   location: Int
-  attempts: [Attempt!]!
+  attempts(discipline: Discipline): [Attempt!]!
+  nextAttempt(discipline: Discipline): Attempt
+  bestAttempt(discipline: Discipline): Attempt
 }
 
 type AthleteGroup {
@@ -61,7 +63,7 @@ type AthleteGroup {
   ageClass: AgeClass
   weightClassId: ID
   weightClass: WeightClass
-  athletes: [Athlete!]!
+  athletes(sort: [SortInput!]): [Athlete!]!
   athleteCount: Int!
   shallow: Boolean!
 }
@@ -129,6 +131,7 @@ type Attempt {
   valid: Boolean!
   done: Boolean!
   date: DateTime!
+  discipline: Discipline!
 }
 
 input AttemptInput {
@@ -232,7 +235,7 @@ type Mutation {
   createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
   updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
   deleteAthlete(id: ID!): Athlete!
-  createAttempt(athleteId: ID!, data: AttemptInput!): Attempt!
+  createAttempt(athleteId: ID!, data: AttemptInput!, discipline: Discipline!): Attempt!
   updateAttempt(data: AttemptUpdateInput!, id: ID!): Attempt!
   deleteAttempt(id: ID!): Attempt!
 }
@@ -289,6 +292,16 @@ type Slot {
 
 input SlotInput {
   name: String
+}
+
+enum SortDirection {
+  ASC
+  DESC
+}
+
+input SortInput {
+  name: String
+  direction: SortDirection
 }
 
 type WeightClass {
