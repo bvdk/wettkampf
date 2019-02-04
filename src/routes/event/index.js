@@ -10,7 +10,7 @@ import EventDashboardRoute from "./EventDashboardRoute";
 import EventMenu from "../../components/EventDashboard/menu";
 import EventSlotsRoute from "./slots";
 import EventAthleteGroupsRoute from "./athleteGroups";
-import {Col, Grow, Row} from "@internal/components/Flex";
+import {Col, Grow, Row} from "../../components/Flex";
 
 
 export default (props) => {

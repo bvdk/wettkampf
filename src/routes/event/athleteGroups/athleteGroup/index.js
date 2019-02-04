@@ -6,7 +6,7 @@ import {Col, Menu, Row} from "antd";
 import EventAthleteGroupMenuList from "../../../../components/EventAthleteGroupMenuList";
 import {Link} from "react-router-dom";
 import EventAthleteGroupDashboardRoute from "./EventAthleteGroupDashboardRoute";
-import Toolbar from "@internal/components/Toolbar";
+import Toolbar from "../../../../components/Toolbar";
 
 const { SubMenu } = Menu;
 
