@@ -20,6 +20,9 @@ export class Event {
     @Field((type) => Discipline, { nullable: true })
     public discipline?: Discipline;
 
+    @Field((type) => [Discipline], { nullable: true })
+    public availableDisciplines?: Discipline[];
+
     @Field((type) => ContestType, { nullable: true })
     public contestType?: ContestType;
 

@@ -99,11 +99,11 @@ export class Athlete {
     @Field((type) => [Attempt])
     public attempts: Attempt[];
 
-    @Field((type) => Attempt, {nullable: true})
-    public nextAttempt?: Attempt;
+    @Field((type) => [Attempt], {nullable: true})
+    public nextAttempts?: Attempt[];
 
-    @Field((type) => Attempt, {nullable: true})
-    public bestAttempt?: Attempt;
+    @Field((type) => [Attempt], {nullable: true})
+    public bestAttempts?: Attempt[];
 }
 
 
@@ -117,14 +117,14 @@ export class AthleteInput implements Partial<Athlete> {
     @Field((type) => ID, {nullable: true})
     public athleteGroupId?: string;
 
-    @Field()
-    public firstName: string;
+    @Field({nullable: true})
+    public firstName?: string;
 
-    @Field()
-    public lastName: string;
+    @Field({nullable: true})
+    public lastName?: string;
 
-    @Field((type) => Gender)
-    public gender: Gender;
+    @Field((type) => Gender,{nullable: true})
+    public gender?: Gender;
 
     @Field({nullable: true})
     public birthday: Date;
@@ -161,13 +161,13 @@ export class AthleteInput implements Partial<Athlete> {
 export class AthleteUpdateInput extends AthleteInput implements Partial<Athlete> {
 
     @Field({nullable: true})
-    public firstName: string;
+    public firstName?: string;
 
     @Field({nullable: true})
-    public lastName: string;
+    public lastName?: string;
 
     @Field((type) => Gender, {nullable: true})
-    public gender: Gender;
+    public gender?: Gender;
 
 
 }

@@ -48,8 +48,8 @@ type Athlete {
   place: Int
   location: Int
   attempts(discipline: Discipline): [Attempt!]!
-  nextAttempt(discipline: Discipline): Attempt
-  bestAttempt(discipline: Discipline): Attempt
+  nextAttempts(discipline: Discipline): [Attempt!]
+  bestAttempts(discipline: Discipline): [Attempt!]
 }
 
 type AthleteGroup {
@@ -90,9 +90,9 @@ input AthleteGroupInput {
 input AthleteInput {
   importId: String
   athleteGroupId: ID
-  firstName: String!
-  lastName: String!
-  gender: Gender!
+  firstName: String
+  lastName: String
+  gender: Gender
   birthday: DateTime
   club: String
   norm: Boolean
@@ -167,6 +167,7 @@ type Event {
   id: ID!
   name: String!
   discipline: Discipline
+  availableDisciplines: [Discipline!]
   contestType: ContestType
   teamGender: Gender
   teamSize: Int
@@ -177,7 +178,7 @@ type Event {
 
   # Athletes without valid group
   unsortedAthletes(filters: [FilterInput!]): [Athlete!]!
-  athletes: [Athlete!]!
+  athletes(filters: [FilterInput!]): [Athlete!]!
 }
 
 input EventInput {

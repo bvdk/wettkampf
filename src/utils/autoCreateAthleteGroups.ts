@@ -1,3 +1,4 @@
+import {appendFileSync} from "fs";
 import  _ from "lodash";
 import {AgeClass} from "../graphql/models/ageClass";
 import {Athlete} from "../graphql/models/athlete";
@@ -121,12 +122,13 @@ export default function createAutoCreateAthleteGroups({
             const useAthleteGroups = findAthleteGroupByKeyConfig(athleteGroups, athleteGroupKeys);
 
             const groupConfig = {
-                id: `${groupKey}`,
+                id: _.uniqueId("shallow"),
                 name: getGroupDefinitionName(keys, {
                     ageClasses,
                     athlete: _.first(groupAthletes),
                     weightClasses,
                 }),
+                slotId: _.chain(slots).first().get("id").value(),
                 ...athleteGroupKeys,
                 index: groupKey,
             };
@@ -134,17 +136,22 @@ export default function createAutoCreateAthleteGroups({
             const result = [];
             if (maxGroupSize) {
                 const chunks = chunk(groupAthletes, maxGroupSize);
-                chunks.forEach((items, index) => {
+                chunks.forEach((items, index, arr) => {
                     let useExisiting = null;
                     if (index < useAthleteGroups.length) {
                         useExisiting = useAthleteGroups[index];
                     }
+
+                    const baseName = useExisiting ? useExisiting.name : groupConfig.name;
+                    const name = arr.length > 1 ? `${baseName} [${index + 1}]` : baseName;
+
                     result.push({
-                        id: `${groupKey}-${index}`,
                         shallow: !useExisiting,
                         ...groupConfig,
+                        id: _.uniqueId("shallow"),
                         ...useExisiting,
-                        athletes: groupAthletes,
+                        athletes: items,
+                        name,
                     });
                 });
 

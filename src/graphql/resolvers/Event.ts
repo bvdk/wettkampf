@@ -1,10 +1,11 @@
-import  _ from "lodash";
+import _ from "lodash";
 import {Args, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Athlete} from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Event} from "../models/event";
 
+import {Discipline} from "../models/discipline";
 import {FilterInput} from "../models/filter";
 import {Slot} from "../models/slot";
 import FilterArgs from "./args/FilterArgs";
@@ -31,6 +32,21 @@ export default class EventResolver implements ResolverInterface<Event> {
     }
 
     @FieldResolver()
+    public availableDisciplines(@Root() event: Event) {
+        if (event.discipline === Discipline.POWERLIFTING) {
+            return [
+                Discipline.BENCHPRESS,
+                Discipline.SQUAT,
+                Discipline.DEADLIFT,
+            ];
+        }
+        if (event.discipline) {
+            return [event.discipline];
+        }
+        return [];
+    }
+
+    @FieldResolver()
     public slots(@Root() event: Event) {
         return this.getEventSlots(event.id);
     }
@@ -38,8 +54,18 @@ export default class EventResolver implements ResolverInterface<Event> {
     @FieldResolver()
     public athletes(
         @Root() event: Event,
+        @Args() filterArgs?: FilterArgs,
     ) {
-        return this.getEventAthletes(event.id);
+
+        const athletes = this.getEventAthletes(event.id);
+        const filters = _.get(filterArgs, "filters");
+        if (filters) {
+            const filteredAthletes = FilterInput.performFilter(athletes, filters);
+
+            return filteredAthletes;
+        }
+
+        return athletes;
     }
 
     @FieldResolver()

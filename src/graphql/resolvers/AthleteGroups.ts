@@ -187,9 +187,14 @@ export default class AthleteGroupsResolver {
             athleteGroups = eventResolver.getEventAthleteGroups(eventId);
         }
 
-        let slots = [];
-        if (distributeSlots) {
-            slots = eventResolver.getEventSlots(eventId);
+        let slots = eventResolver.getEventSlots(eventId);;
+        if (!distributeSlots) {
+            const firstSlot = _.first(slots);
+            if (firstSlot){
+                slots = [firstSlot];
+            }else {
+                slots = [];
+            }
         }
         const ageClassesResolver = new AgeClassesResolver();
         const ageClasses = ageClassesResolver.ageClasses();
@@ -208,6 +213,7 @@ export default class AthleteGroupsResolver {
             weightClasses,
         });
 
+
         if (preview) {
             return {
                 athleteGroups: autoCreateAthleteGroups,
@@ -216,8 +222,34 @@ export default class AthleteGroupsResolver {
             };
         }
 
+        const createdAthleteGroups = autoCreateAthleteGroups.map((athleteGroup) => {
+
+            let createdAthleteGroup =  athleteGroup;
+            if (athleteGroup.shallow) {
+                createdAthleteGroup = this.createAthleteGroup({
+                    data: {
+                        ageClassId: athleteGroup.ageClassId,
+                        gender: athleteGroup.gender,
+                        name: athleteGroup.name,
+                        weightClassId: athleteGroup.weightClassId,
+                    },
+                    eventId,
+                    slotId: athleteGroup.slotId,
+                }, ctx);
+            }
+
+            return this.addAthletesToAthleteGroup(
+                {
+                    athleteGroupId: createdAthleteGroup.id,
+                    athleteIds: athleteGroup.athletes
+                        .map((item: Athlete) => item.id),
+                },
+                ctx,
+                );
+        });
+
         return {
-            athleteGroups: autoCreateAthleteGroups,
+            athleteGroups: createdAthleteGroups,
             athletes,
             keys,
         };

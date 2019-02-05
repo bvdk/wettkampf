@@ -1,12 +1,13 @@
-import  _ from "lodash";
-import {type} from "os";
+import _ from "lodash";
 import {Arg, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
-import { Athlete } from "../models/athlete";
+import {AgeClass} from "../models/ageClass";
+import {Athlete} from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Attempt} from "../models/attempt";
 import {Discipline} from "../models/discipline";
 import {Slot} from "../models/slot";
+import {WeightClass} from "../models/weightClass";
 
 function _calculateAge(birthday): number { // birthday is a date
     const ageDifMs = Date.now() - birthday.getTime();
@@ -62,14 +63,14 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
         @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
     ) {
         const attempts = CrudAdapter.filter(Attempt.collectionKey, { athleteId: athlete.id });
-        if (discipline){
-            return _.filter(attempts,{discipline});
+        if (discipline) {
+            return _.filter(attempts, {discipline});
         }
         return attempts;
     }
 
     @FieldResolver()
-    public bestAttempt(
+    public bestAttempts(
         @Root() athlete: Athlete,
         @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
     ) {
@@ -78,26 +79,40 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
             .filter({
                 valid: true,
             })
-            .first()
+            .groupBy("discipline")
+            .map((group, key) => {
+                return _.first(group);
+            })
             .value();
     }
 
     @FieldResolver()
-    public nextAttempt(
+    public nextAttempts(
         @Root() athlete: Athlete,
         @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
     ) {
         return _.chain(this.attempts(athlete, discipline))
             .sortBy(["weight"])
             .filter((attempt: Attempt) => !attempt.done)
-            .first()
+            .groupBy("discipline")
+            .map((group, key) => {
+                return _.first(group);
+            })
             .value();
+    }
+
+    @FieldResolver()
+    public ageClass(@Root() athlete: Athlete) {
+        if (athlete.ageClassId) {
+            return CrudAdapter.getItem(AgeClass.collectionKey, athlete.ageClassId );
+        }
+        return null;
     }
 
     @FieldResolver()
     public weightClass(@Root() athlete: Athlete) {
         if (athlete.weightClassId) {
-            return CrudAdapter.getItem(Attempt.collectionKey, athlete.weightClassId );
+            return CrudAdapter.getItem(WeightClass.collectionKey, athlete.weightClassId );
         }
         return null;
     }

@@ -25,10 +25,10 @@ const fromAttemptResult =  (value?) => {
 
 const toNumber = (value) => parseFloat(value);
 const toBool = (value) => {
-    if (value === "true") {
+    if (value === "true" || value === "Ja") {
         return true;
     }
-    if (value === "false") {
+    if (value === "false" || value === "Nein") {
         return true;
     }
     return !!parseInt(value);
@@ -39,7 +39,7 @@ const getRawAthleteKeyMap = () => {
     const weightClasses = CrudAdapter.getAll(WeightClass.collectionKey);
 
     return {
-        "Age Category": "ageClass",
+        "Age Category": "ageClassId",
         "Body Weight": {
             name: "bodyWeight",
             import: toNumber,
@@ -104,11 +104,7 @@ const getRawAthleteKeyMap = () => {
             import: (value) => String(value).toUpperCase(),
             export: (value) => String(value).toLowerCase(),
         },
-        "Gewichtsklasse": {
-            name: "weightClass",
-            import: (value) => (_.get(_.find(weightClasses, {name: value}), "id")),
-            export: (value) => (_.get(_.find(weightClasses, {id: value}), "name")),
-        },
+        "Gewichtsklasse": "weightClassId",
         "ID": "importId",
         "Los": {
             name: "los",
