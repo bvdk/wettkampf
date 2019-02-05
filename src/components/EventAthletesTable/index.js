@@ -12,6 +12,7 @@ import SetAthleteGroupModal from "../SetAthleteGroupModal";
 
 const EventAthletesQuery = loader("../../graphql/queries/eventAthletesQuery.graphql");
 
+
 type Props = {
   eventId: string,
   athletes: any[],

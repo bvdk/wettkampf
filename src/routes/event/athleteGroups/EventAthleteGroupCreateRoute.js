@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import AthleteGroupCreateForm from "./../../../components/AthleteGroupCreateForm";
 import Infobox from "./../../../components/Infobox";
-import AthleteGroupAutomaticCreationWizard from "@internal/components/AthleteGroupAutomaticCreationWizard";
+import AthleteGroupAutomaticCreationWizard from "../../../components/AthleteGroupAutomaticCreationWizard";
 
 const TabPane = Tabs.TabPane;
 
@@ -53,7 +53,7 @@ export default class EventAthleteGroupCreateRoute extends Component<Props> {
                         Sie können bestimmen nach welchen Kriterien Startgruppen erstellt werden sollen.</span>
                     </Infobox>
                     <div style={{padding: 10}}/>
-                    <AthleteGroupAutomaticCreationWizard eventId={eventId}/>
+                    <AthleteGroupAutomaticCreationWizard onCreated={()=>history.push(`/events/${eventId}/athleteGroups`)} eventId={eventId}/>
                 </Wrapper>
             </TabPane>
         </Tabs>

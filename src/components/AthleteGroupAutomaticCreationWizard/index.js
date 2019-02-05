@@ -6,6 +6,7 @@ import AthleteGroupAutomaticCreationPreview from  "../AthleteGroupAutomaticCreat
 
 type Props = {
   eventId: string,
+  onCreated?: Function
 };
 
 type State = {
@@ -17,7 +18,7 @@ export default class AthleteGroupAutomaticCreationWizard extends Component<Props
 
   state = {
     options: {
-      keys: 'GENDER'
+      keys: ['GENDER']
     },
   }
 
@@ -26,11 +27,11 @@ export default class AthleteGroupAutomaticCreationWizard extends Component<Props
     this.setState({
       options
     });
-  }
+  };
 
   render() {
 
-    const {eventId} = this.props;
+    const {eventId, onCreated} = this.props;
     const {options} = this.state;
 
     console.log(options);
@@ -40,7 +41,7 @@ export default class AthleteGroupAutomaticCreationWizard extends Component<Props
         <AthleteGroupAutomaticCreationForm values={options} eventId={eventId} onChange={this._handleChanges}/>
       </div>
 
-      <AthleteGroupAutomaticCreationPreview eventId={eventId} options={options}/>
+      <AthleteGroupAutomaticCreationPreview onCreated={onCreated} eventId={eventId} options={options}/>
     </div>
   }
 }

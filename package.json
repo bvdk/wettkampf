@@ -1,6 +1,6 @@
 {
   "name": "kdk-web",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@internal/graphql": "file:src/graphql",
@@ -16,6 +16,7 @@
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "path-to-regexp": "^3.0.0",
+    "query-string": "^6.2.0",
     "react": "^16.7.0",
     "react-apollo": "^2.4.0",
     "react-dom": "^16.7.0",

@@ -21,13 +21,14 @@ class EventAthletesRoute extends Component<Props, State> {
   render() {
     const { eventId, history } = this.props;
 
-    return <div style={{padding: 10}}>
+    return <div>
       <Toolbar
-          renderLeft={() => <h3>Alle Athleten</h3>}
-          renderRight={() => [
-        <Link key={"new"} to={`athletes/new`}><Button>Neu</Button></Link>,
-        <Link style={{paddingLeft: '10px'}} key={"import"} to={`athletes/import`}><Button>Import</Button></Link>
-      ]}/>
+        renderLeft={() => <h3>Alle Athleten</h3>}
+        renderRight={() => [
+          <Link key={"new"} to={`athletes/new`}><Button>Neu</Button></Link>,
+          <Link style={{paddingLeft: '10px'}} key={"import"} to={`athletes/import`}><Button>Import</Button></Link>
+        ]}/>
+      <hr/>
       <EventAthletesTable onAthleteClick={(athlete) => history.push(`athletes/${athlete.id}`)} eventId={eventId}/>
     </div>;
   }

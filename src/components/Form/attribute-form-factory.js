@@ -33,6 +33,7 @@ import OneLineLabel from "../OneLineLabel";
 import AgeClassesLoaderConfig from "../DataLoader/AgeClassesLoaderConfig";
 import WeightClassesLoaderConfig from "../DataLoader/WeightClassesLoaderConfig";
 import EventSlotsLoaderConfig from "../DataLoader/EventSlotsLoaderConfig";
+import EventAthleteGroupsLoaderConfig from "../DataLoader/EventAthleteGroupsLoaderConfig";
 
 const CheckboxGroup = Checkbox.Group;
 const RangePicker = DatePicker.RangePicker;
@@ -74,6 +75,15 @@ class FormFactory {
       case 'EventSlot': {
         config.loaderConfig = {
           ...EventSlotsLoaderConfig,
+          getQueryVariables: attribute.getQueryVariables,
+          local: true,
+        };
+        break;
+      }
+
+      case 'EventAthleteGroup': {
+        config.loaderConfig = {
+          ...EventAthleteGroupsLoaderConfig,
           getQueryVariables: attribute.getQueryVariables,
           local: true,
         };

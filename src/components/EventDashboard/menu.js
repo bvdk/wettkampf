@@ -13,7 +13,7 @@ const MenuItemGroup = Menu.ItemGroup;
 const { Header, Content, Sider } = Layout;
 
 type Props = {
-    eventId: string,
+  eventId: string,
 };
 
 class EventMenu extends Component<Props> {
@@ -21,55 +21,67 @@ class EventMenu extends Component<Props> {
 
   render() {
 
-      const {eventId, selectedKey, eventNameQuery} = this.props;
+    const {eventId, selectedKey, eventNameQuery} = this.props;
     return (
-        <div>
-            <Header className="event-header">
-                <div>
-                    <Icon type="trophy"/>
-                    <span style={{padding: '0 10px', fontWeight: 700}}>{_.get(eventNameQuery,'event.name')}</span>
-                </div>
-            </Header>
-            <Menu
-                style={{minWidth: 200}}
-                theme="dark"
-                selectedKeys={[selectedKey]}
-            >
-                <Menu.Item key="dashboard">
-                    <Link to={`/events/${eventId}/dashboard`}>
-                        <Icon type="dashboard" />
-                        Übersicht
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="athletes">
-                    <Link to={`/events/${eventId}/athletes`}>
-                        <Icon type="team" />
-                        Athleten
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="athleteGroups">
-                    <Link to={`/events/${eventId}/athleteGroups`}>
-                        <Icon type="table" />
-                        Startgruppen
-                    </Link>
-                </Menu.Item>
-                <Menu.Item key="slots">
-                    <Link to={`/events/${eventId}/slots`}>
-                        <Icon type="cluster" />
-                        Bühnen
-                    </Link>
-                </Menu.Item>
-            </Menu>
-        </div>
+      <div>
+        <Header className="event-header">
+          <div>
+            <Icon type="trophy"/>
+            <span style={{padding: '0 10px', fontWeight: 700}}>{_.get(eventNameQuery,'event.name')}</span>
+          </div>
+        </Header>
+        <Menu
+          style={{minWidth: 200}}
+          theme="dark"
+          selectedKeys={[selectedKey]}
+        >
+          <MenuItemGroup key="g1" title="Allgemeines">
+            <Menu.Item key="athletes">
+              <Link to={`/events/${eventId}/athletes`}>
+                <Icon type="team" />
+                Athleten
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="athleteGroups">
+              <Link to={`/events/${eventId}/athleteGroups`}>
+                <Icon type="table" />
+                Startgruppen
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="slots">
+              <Link to={`/events/${eventId}/slots`}>
+                <Icon type="cluster" />
+                Bühnen
+              </Link>
+            </Menu.Item>
+          </MenuItemGroup>
+          <MenuItemGroup key="g2" title="Wettkampf">
+            <Menu.Item key="attempts">
+              <Link to={`/events/${eventId}/attempts`}>
+                <Icon type="issues-close" />
+                Versuche
+              </Link>
+            </Menu.Item>
+          </MenuItemGroup>
+          <MenuItemGroup key="g3" title="Einstellungen">
+            <Menu.Item key="edit">
+              <Link to={`/events/${eventId}/edit`}>
+                <Icon type="edit" />
+                Bearbeiten
+              </Link>
+            </Menu.Item>
+          </MenuItemGroup>
+        </Menu>
+      </div>
     );
   }
 }
 
 export default graphql(EventNameQuery,{
-    name: 'eventNameQuery',
-    options: (props) => ({
-      variables: {
-          id: props.eventId
-      }
-    })
+  name: 'eventNameQuery',
+  options: (props) => ({
+    variables: {
+      id: props.eventId
+    }
+  })
 })(EventMenu)

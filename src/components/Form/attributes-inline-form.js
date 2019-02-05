@@ -29,7 +29,7 @@ type Props = {
   resetFields: ?boolean,
   readOnly: ?boolean,
   form: any,
-  layout: 'horizontal' | 'vertical',
+  layout: 'horizontal' | 'vertical' | 'inline',
   attributes: Attribute[],
   onChange?: (values: AttributeValue, attribute: Attribute) => void,
   mutation?: Function,
@@ -388,7 +388,7 @@ class AttributesInlineForm extends Component<Props, State> {
     })
 
 
-    return <div className={this.props.className} style={{position: 'relative'}}>
+    return <div className={this.props.className} style={{position: 'relative', display: layout === 'inline' ? 'inline' : undefined}}>
       <Form layout={layout} onSubmit={this.handleSubmit}>
 
         { this.renderGroups(attributes) }

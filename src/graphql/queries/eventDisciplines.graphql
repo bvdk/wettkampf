@@ -1,0 +1,7 @@
+query eventDiscipline($id: ID!){
+    event(id: $id){
+        id
+        discipline
+        availableDisciplines
+    }
+}

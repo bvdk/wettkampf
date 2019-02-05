@@ -114,7 +114,7 @@ class AthletesTable extends Component<Props, State> {
                 value={selectedKeys[0]}
                 onChange={e => setSelectedKeys(e.target.value ? [e.target.value] : [])}
                 onPressEnter={() => this.handleSearch(selectedKeys, confirm)}
-                style={{ width: 188, marginBottom: 8, display: 'block' }}
+                style={{ width: 200, marginBottom: 8, display: 'block' }}
             />
             <Button
                 type="primary"
@@ -123,14 +123,14 @@ class AthletesTable extends Component<Props, State> {
                 size="small"
                 style={{ width: 90, marginRight: 8 }}
             >
-              Search
+              Suchen
             </Button>
             <Button
                 onClick={() => this.handleReset(clearFilters, "searchText")}
                 size="small"
                 style={{ width: 90 }}
             >
-              Reset
+              Entfernen
             </Button>
           </div>
       ),
@@ -164,6 +164,13 @@ class AthletesTable extends Component<Props, State> {
       key: 'age',
       defaultSortOrder: 'descend',
       sorter: (a, b) => defaultSorter(a, b, 'age')
+    },{
+      title: 'Altersklasse',
+      dataIndex: 'ageClass',
+      key: 'ageClass',
+      defaultSortOrder: 'descend',
+      render: (text, record) => _.get(record, 'ageClass.name'),
+      sorter: (a, b) => defaultSorter(a, b, 'ageClassId')
     }, {
       title: 'Gewicht',
       dataIndex: 'weight',
@@ -171,6 +178,13 @@ class AthletesTable extends Component<Props, State> {
       render: (text) => text ? <span>{text} kg</span> : null,
       sorter: (a, b) => defaultSorter(a, b, 'weight')
     }, {
+      title: 'Gewichtsklasse',
+      dataIndex: 'weightClass',
+      key: 'weightClass',
+      defaultSortOrder: 'descend',
+      render: (text, record) => _.get(record, 'weightClass.name'),
+      sorter: (a, b) => defaultSorter(a, b, 'weightClassId')
+    },{
       title: 'Startgruppe',
       dataIndex: 'athleteGroup.name',
       key: 'athleteGroup.name',
@@ -224,7 +238,8 @@ class AthletesTable extends Component<Props, State> {
     const { athletes, t, onSelectChange, onAthleteClick } = this.props;
 
 
-    return <Table
+    return <div>
+      <Table
         rowKey={'id'}
         rowSelection={onSelectChange ? this.getRowSelection() : undefined}
         columns={this.getColumns()}
@@ -237,7 +252,8 @@ class AthletesTable extends Component<Props, State> {
         locale={{
           emptyText: <Empty description={'Keine Athleten'} />
         }}
-    />;
+    />
+        </div>
   }
 
 
