@@ -35,8 +35,8 @@ export default class EventResolver implements ResolverInterface<Event> {
     public availableDisciplines(@Root() event: Event) {
         if (event.discipline === Discipline.POWERLIFTING) {
             return [
-                Discipline.BENCHPRESS,
                 Discipline.SQUAT,
+                Discipline.BENCHPRESS,
                 Discipline.DEADLIFT,
             ];
         }
@@ -58,9 +58,17 @@ export default class EventResolver implements ResolverInterface<Event> {
     ) {
 
         const athletes = this.getEventAthletes(event.id);
+        const athleteGroups = this.getEventAthleteGroups(event.id);
+
         const filters = _.get(filterArgs, "filters");
         if (filters) {
-            const filteredAthletes = FilterInput.performFilter(athletes, filters);
+            const filteredAthletes = FilterInput.performFilter(athletes.map((item) => {
+
+                return {
+                    ...item,
+                    slotId: _.chain(athleteGroups).find({id: item.athleteGroupId}).get("slotId").value(),
+                };
+            }), filters);
 
             return filteredAthletes;
         }

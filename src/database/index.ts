@@ -8,8 +8,8 @@ import {Attempt} from "../graphql/models/attempt";
 import {Event} from "../graphql/models/event";
 import {Slot} from "../graphql/models/slot";
 import {WeightClass} from "../graphql/models/weightClass";
-import AgeClassesSeed from "./seed/ageClasses.json";
-import WeightClassesSeed from "./seed/weightClasses.json";
+import AgeClassesSeed from "./seed/ageClasses";
+import WeightClassesSeed from "./seed/weightClasses";
 
 const adapter = new FileSync("db.json");
 const db = low(adapter);

@@ -1,6 +1,7 @@
 import _ from "lodash";
 import {Arg, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
+import wilks from "../../utils/wilks";
 import {AgeClass} from "../models/ageClass";
 import {Athlete} from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
@@ -8,6 +9,8 @@ import {Attempt} from "../models/attempt";
 import {Discipline} from "../models/discipline";
 import {Slot} from "../models/slot";
 import {WeightClass} from "../models/weightClass";
+import AthletesResolver from "./Athletes";
+import AttemptsResolver from "./Attempts";
 
 function _calculateAge(birthday): number { // birthday is a date
     const ageDifMs = Date.now() - birthday.getTime();
@@ -18,6 +21,13 @@ function _calculateAge(birthday): number { // birthday is a date
 @Resolver((of) => Athlete)
 export default class AthleteResolver implements ResolverInterface<Athlete> {
 
+    public getAttempts(athleteId: string, discipline?: Discipline) {
+        const attempts = CrudAdapter.filter(Attempt.collectionKey, { athleteId });
+        if (discipline) {
+            return _.filter(attempts, {discipline});
+        }
+        return attempts;
+    }
 
     @FieldResolver()
     public firstName(@Root() athlete: Athlete) {
@@ -27,6 +37,16 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
     @FieldResolver()
     public lastName(@Root() athlete: Athlete) {
         return _.get(athlete, "lastName", "");
+    }
+
+    @FieldResolver()
+    public name(@Root() athlete: Athlete) {
+        const firstName = this.firstName(athlete);
+        const lastName = this.lastName(athlete);
+        if (firstName && lastName) {
+            return `${lastName}, ${firstName}`;
+        }
+        return firstName || lastName;
     }
 
     @FieldResolver()
@@ -62,11 +82,7 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
         @Root() athlete: Athlete,
         @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
     ) {
-        const attempts = CrudAdapter.filter(Attempt.collectionKey, { athleteId: athlete.id });
-        if (discipline) {
-            return _.filter(attempts, {discipline});
-        }
-        return attempts;
+        return this.getAttempts(athlete.id, discipline);
     }
 
     @FieldResolver()
@@ -115,6 +131,41 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
             return CrudAdapter.getItem(WeightClass.collectionKey, athlete.weightClassId );
         }
         return null;
+    }
+
+    @FieldResolver()
+    public wilks(@Root() athlete: Athlete) {
+        // if (!athlete.wilks) {
+        //     const resolver = new AthletesResolver();
+        //     const result = resolver.autoUpdateWilks(athlete.id, athlete);
+        //     return _.get(result, "wilks");
+        // }
+        return athlete.wilks ? Math.round(athlete.wilks * 10000) / 10000 : null;
+    }
+
+
+    @FieldResolver()
+    public total(@Root() athlete: Athlete) {
+        if (!athlete.total) {
+            const resolver = new AttemptsResolver();
+            const result = resolver.autoUpdateTotalAndPoints(athlete.id);
+            return _.get(result, "total");
+        }
+        return athlete.total;
+    }
+
+
+    @FieldResolver()
+    public points(@Root() athlete: Athlete) {
+        let tmp = null;
+        if (!athlete.points) {
+            const resolver = new AttemptsResolver();
+            const result = resolver.autoUpdateTotalAndPoints(athlete.id);
+            tmp = _.get(result, "points");
+        }else {
+            tmp = athlete.points;
+        }
+        return tmp ? Math.round(tmp * 100) / 100 : null;
     }
 
 }

@@ -22,6 +22,7 @@ type Athlete {
   importId: String
   firstName: String!
   lastName: String!
+  name: String!
   gender: Gender!
   birthday: DateTime
   club: String
@@ -46,7 +47,7 @@ type Athlete {
   points: Float
   total: Float
   place: Int
-  location: Int
+  location: String
   attempts(discipline: Discipline): [Attempt!]!
   nextAttempts(discipline: Discipline): [Attempt!]
   bestAttempts(discipline: Discipline): [Attempt!]
@@ -127,15 +128,16 @@ input AthleteUpdateInput {
 
 type Attempt {
   id: ID!
-  weight: Float!
+  weight: Float
   valid: Boolean!
   done: Boolean!
   date: DateTime!
   discipline: Discipline!
+  index: Int!
 }
 
 input AttemptInput {
-  weight: Float!
+  weight: Float
   valid: Boolean
   done: Boolean
   date: DateTime
@@ -204,15 +206,12 @@ type Mutation {
   createAgeClass(data: AgeClassInput!): AgeClass!
   updateAgeClass(data: AgeClassInput!, id: ID!): AgeClass!
   deleteAgeClass(id: ID!): AgeClass!
+  createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
+  updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
+  deleteAthlete(id: ID!): Athlete!
   createWeightClass(data: WeightClassInput!): WeightClass!
   updateWeightClass(data: WeightClassInput!, id: ID!): WeightClass!
   deleteWeightClass(id: ID!): WeightClass!
-  createSlot(eventId: ID!, data: SlotInput!): Slot!
-  updateSlot(data: SlotInput!, id: ID!): Slot!
-  deleteSlot(id: ID!): Slot!
-  createEvent(data: EventInput!): Event!
-  updateEvent(data: EventInput!, id: ID!): Event!
-  deleteEvent(id: ID!): Event!
   createAthleteGroup(eventId: ID!, slotId: ID, data: AthleteGroupInput!): AthleteGroup!
   updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
   setAthleteGroupSlot(athleteGroupId: ID!, slotId: ID!): AthleteGroup!
@@ -233,31 +232,30 @@ type Mutation {
     # Gruppen auf bestehende Bühnen verteilen
     distributeSlots: Boolean
   ): AthleteGroupCreationResult!
-  createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
-  updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
-  deleteAthlete(id: ID!): Athlete!
+  createSlot(eventId: ID!, data: SlotInput!): Slot!
+  updateSlot(data: SlotInput!, id: ID!): Slot!
+  deleteSlot(id: ID!): Slot!
+  createEvent(data: EventInput!): Event!
+  updateEvent(data: EventInput!, id: ID!): Event!
+  deleteEvent(id: ID!): Event!
   createAttempt(athleteId: ID!, data: AttemptInput!, discipline: Discipline!): Attempt!
   updateAttempt(data: AttemptUpdateInput!, id: ID!): Attempt!
   deleteAttempt(id: ID!): Attempt!
+  removeAllAttempts(id: ID!): Boolean!
+  simulateAttempts(id: ID!): Boolean!
 }
 
 type Query {
   # All age classes
   ageClasses: [AgeClass!]!
   ageClass(id: ID!): AgeClass!
+  athletes: [Athlete!]!
+  athlete(id: ID!): Athlete!
+  findAthlete(importId: ID!): Athlete!
 
   # All weight classes
   weightClasses: [WeightClass!]!
   weightClass(id: ID!): WeightClass!
-
-  # Get a slot
-  slot(id: ID!): Slot
-
-  # Get all the events
-  events: [Event!]!
-
-  # Get a event
-  event(id: ID!): Event!
   athleteGroup(id: ID!): AthleteGroup!
   autoCreateAthleteGroupsPreview(
     # Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet.
@@ -274,9 +272,15 @@ type Query {
     # Gruppen auf bestehende Bühnen verteilen
     distributeSlots: Boolean
   ): AthleteGroupCreationResult!
-  athletes: [Athlete!]!
-  athlete(id: ID!): Athlete!
-  findAthlete(importId: ID!): Athlete!
+
+  # Get a slot
+  slot(id: ID!): Slot
+
+  # Get all the events
+  events: [Event!]!
+
+  # Get a event
+  event(id: ID!): Event!
   attempt(id: ID!): Attempt!
 }
 

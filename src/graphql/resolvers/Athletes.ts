@@ -1,6 +1,8 @@
 import {Context} from "graphql-yoga/dist/types";
+import _ from "lodash";
 import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
+import wilks from "../../utils/wilks";
 import { Athlete, AthleteInput, AthleteUpdateInput} from "../models/athlete";
 import IdArgs from "./args/IdArgs";
 
@@ -51,10 +53,14 @@ export default class AthletesResolver {
         @Args() {data, eventId}: CreateAthleteArgs,
         @Ctx() ctx: Context,
     ): Athlete {
-        return CrudAdapter.insertItem(this.collectionKey, {
+        const athlete = CrudAdapter.insertItem(this.collectionKey, {
             ...data,
             eventId,
         });
+
+        this.autoUpdateWilks(athlete.id, athlete);
+
+        return athlete;
     }
 
     @Mutation()
@@ -65,7 +71,27 @@ export default class AthletesResolver {
         @Ctx() ctx: Context,
     ): Athlete {
 
+        this.autoUpdateWilks(id, data);
         return CrudAdapter.updateItem(this.collectionKey, id, data);
+    }
+
+    public autoUpdateWilks(id: string, input: any): Athlete | void {
+
+        const athlete = this.athlete({id});
+        const updateProps = Object.keys(input);
+        const wilksUpdateProps = ["bodyWeight", "gender"];
+        const shouldUpdateWilks = wilksUpdateProps.reduce((acc, cur) => {
+            if (acc) { return acc; }
+            return updateProps.indexOf(cur) > -1;
+        }, false);
+
+        if (shouldUpdateWilks) {
+            return CrudAdapter.updateItem(this.collectionKey, id, {
+                wilks: wilks(_.get(input, "gender", athlete.gender), _.get(input, "bodyWeight", athlete.bodyWeight)),
+            });
+        }
+
+        return null;
     }
 
     @Mutation()

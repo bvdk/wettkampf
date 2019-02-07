@@ -39,6 +39,9 @@ export class Athlete {
     @Field()
     public lastName: string;
 
+    @Field()
+    public name: string;
+
     @Field((type) => Gender)
     public gender: Gender;
 
@@ -57,7 +60,7 @@ export class Athlete {
     @Field({nullable: true})
     public price?: string;
 
-    @Field((type) => Int,{nullable: true})
+    @Field((type) => Int, {nullable: true})
     public age?: number;
 
     @Field((type) => ID, {nullable: true})
@@ -93,8 +96,8 @@ export class Athlete {
     @Field((type) => Int, { nullable: true })
     public place?: number;
 
-    @Field((type) => Int, { nullable: true })
-    public location?: number;
+    @Field((type) => String, { nullable: true })
+    public location?: string;
 
     @Field((type) => [Attempt])
     public attempts: Attempt[];
@@ -123,11 +126,11 @@ export class AthleteInput implements Partial<Athlete> {
     @Field({nullable: true})
     public lastName?: string;
 
-    @Field((type) => Gender,{nullable: true})
+    @Field((type) => Gender, {nullable: true})
     public gender?: Gender;
 
     @Field({nullable: true})
-    public birthday: Date;
+    public birthday?: Date;
 
     @Field({nullable: true})
     public club?: string;
@@ -169,5 +172,9 @@ export class AthleteUpdateInput extends AthleteInput implements Partial<Athlete>
     @Field((type) => Gender, {nullable: true})
     public gender?: Gender;
 
+    public wilks?: number;
 
+    public total?: number;
+
+    public points?: number;
 }

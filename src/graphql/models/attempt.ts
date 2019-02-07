@@ -11,8 +11,10 @@ export class Attempt {
     @Field((type) => ID)
     public id: string;
 
-    @Field((type) => Float)
-    public weight: number;
+    public athleteId: string;
+
+    @Field((type) => Float, {nullable: true})
+    public weight?: number;
 
     @Field()
     public valid?: boolean;
@@ -25,13 +27,16 @@ export class Attempt {
 
     @Field((type) => Discipline)
     public discipline: Discipline;
+
+    @Field((type) => Int)
+    public index: number;
 }
 
 @InputType()
 export class AttemptInput implements Partial<Attempt> {
 
-    @Field((type) => Float)
-    public weight: number;
+    @Field((type) => Float, {nullable: true})
+    public weight?: number;
 
     @Field({nullable: true})
     public valid?: boolean;

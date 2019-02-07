@@ -11,6 +11,11 @@ export default class AttemptResolver implements ResolverInterface<Attempt> {
     }
 
     @FieldResolver()
+    public index(@Root() attempt: Attempt) {
+        return attempt.index || 0;
+    }
+
+    @FieldResolver()
     public done(@Root() attempt: Attempt) {
         return !!attempt.done;
     }

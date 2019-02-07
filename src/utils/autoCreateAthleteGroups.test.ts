@@ -1,10 +1,10 @@
 import "reflect-metadata";
-import ageClassesMock from "../../tmp/mocks/ageClasses";
-import weightClassesMock from "../../tmp/mocks/weightClasses";
+import ageClassesMock from "../mocks/ageClasses";
+import weightClassesMock from "../mocks/weightClasses";
 import {Athlete} from "../graphql/models/athlete";
 import {AthleteGroupCreationKey} from "../graphql/models/athleteGroupCreationResult";
 import {Gender} from "../graphql/models/gender";
-import athletesMock from "./../../tmp/mocks/athletes";
+import athletesMock from "./../mocks/athletes";
 import createAutoCreateAthleteGroups, {findAthleteGroupByKeyConfig} from "./autoCreateAthleteGroups";
 
 
@@ -40,7 +40,7 @@ describe("Auto create athlete groups", () => {
         });
 
         expect(result.length).toBe(6);
-        expect(result[0].name).toEqual("Männer");
+        expect(result[0].name).toEqual("Männer [1]");
         expect(result[5].name).toEqual("Frauen");
 
     });
@@ -261,9 +261,9 @@ describe("Auto create athlete groups", () => {
         });
 
         expect(result[0].id).toEqual("provided");
-        expect(result[0].name).toEqual("Meine Männer");
+        expect(result[0].name).toEqual("Meine Männer [1]");
         expect(result[1].id).toEqual("provided2");
-        expect(result[1].name).toEqual("Männer 2");
+        expect(result[1].name).toEqual("Männer 2 [2]");
 
     });
 
