@@ -21,6 +21,7 @@ type Props = {
     mutation: () => Promise,
     translateMutationOptions: ({[string]: any}) => any,
     onChange: Function,
+    onSubmit: Function,
 };
 
 type State = {
@@ -60,7 +61,7 @@ class AttributeInlineEditField extends Component<Props, State> {
 
     edit = () => {
         this.setState({ editable: true },()=>{
-            console.log(this.input);
+
             const focusInput = _.get(this.input,'current.focusInput');
             if (focusInput){
                 focusInput();
@@ -109,7 +110,12 @@ class AttributeInlineEditField extends Component<Props, State> {
         if (mutation){
             this.setLoading(true)
               .then(()=>mutation(translateMutationOptions ? translateMutationOptions(attributeValues) : {input: attributeValues}))
-              .then(() => this.showSuccess)
+              .then((res) =>{
+                  this.showSuccess();
+                  if (this.props.onSubmit){
+                      this.props.onSubmit(res);
+                  }
+              } )
               .catch(() => this.showError)
               .finally(() => this.setLoading(false))
         }
@@ -126,7 +132,6 @@ class AttributeInlineEditField extends Component<Props, State> {
 
     handleKeyPress =  (e) => {
 
-        console.log('Press',e.key);
 
         if (e.key === 'Enter') {
             e.preventDefault();

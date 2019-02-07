@@ -4,6 +4,5 @@ mutation updateAttempt($attemptId: ID!, $data: AttemptUpdateInput!) {
         done
         valid
         weight
-        date
     }
 }

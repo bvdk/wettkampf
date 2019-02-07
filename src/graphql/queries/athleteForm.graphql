@@ -1,0 +1,42 @@
+query athelte($id: ID!){
+    athlete(id: $id){
+        id
+        firstName
+        lastName
+        age
+        ageClass {
+            id
+            name
+        }
+        ageClassId
+        athleteGroup {
+            id
+            name
+        }
+        athleteGroupId
+        bodyWeight
+        birthday
+        club
+        gender
+        importId
+        lateRegistration
+        location
+        los
+        norm
+        place
+        points
+        price
+        slot {
+            id
+            name
+        }
+        total
+        wilks
+        weightClassId
+        weightClass {
+            id
+            name
+        }
+
+    }
+}

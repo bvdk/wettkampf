@@ -22,6 +22,8 @@ const Colors = {
   green: 'rgb(185, 244, 188)',
   white: 'white',
   purple: 'rebeccapurple',
+  danger: 'red',
+  success: 'green',
 }
 
 export default Colors;

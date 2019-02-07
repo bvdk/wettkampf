@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import ApolloClient from "apollo-boost";
 import {ApolloProvider} from "react-apollo";
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { HttpLink } from 'apollo-link-http';
+
 import './i18n';
 import Routes from "./routes";
 import {BrowserRouter as Router} from "react-router-dom";
@@ -27,10 +30,14 @@ const defaultOptions = {
     }
 }
 
+const cache = new InMemoryCache();
+
 const client = new ApolloClient({
-    uri: "/",
+    uri: "/graphql",
+    link: new HttpLink(),
+    cache
 });
-client.defaultOptions = defaultOptions;
+//client.defaultOptions = defaultOptions;
 
 class App extends Component {
     render() {

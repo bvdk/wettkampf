@@ -128,7 +128,6 @@ export default function(attributes, values, asArray = true) {
         }
       }
 
-      console.log(item, value);
 
       return {
         index: item.index,

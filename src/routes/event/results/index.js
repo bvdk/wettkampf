@@ -2,12 +2,11 @@
 import React, {Component} from 'react';
 import queryString from "query-string";
 import {compose, graphql} from "react-apollo";
-import waitWhileLoading from "../../../hoc/waitWhileLoading";
 import {mapProps} from "recompose";
 import _ from "lodash";
 import {loader} from "graphql.macro";
-import EventAttempts from "./../../../components/EventAttempts";
-import EventAttemptsToolbar from "../../../components/EventAttemptsToolbar";
+import EventResults from "./../../../components/EventResults";
+import EventResultsToolbar from "../../../components/EventResultsToolbar";
 
 const EventDisciplinesQuery = loader("../../../graphql/queries/eventDisciplines.graphql");
 
@@ -20,28 +19,27 @@ type State = {
 
 }
 
-class EventAttemptsRoute extends Component<Props, State> {
+class EventResultsRoute extends Component<Props, State> {
 
   _handleSearchParamsChange = (params) => {
     this.props.history.push(`?${queryString.stringify(params)}`)
   }
 
   render() {
-    const { queryParameters, eventId, discipline, availableDisciplines } = this.props;
+    const { queryParameters, eventId, availableDisciplines } = this.props;
 
     let tmpParams = {
-      discipline: _.first(availableDisciplines),
       ...queryParameters,
     }
 
     return <div>
-      <EventAttemptsToolbar
+      <EventResultsToolbar
         onChange={this._handleSearchParamsChange}
         availableDisciplines={availableDisciplines}
         eventId={eventId}
         params={tmpParams}/>
       <hr/>
-      <EventAttempts filterParams={tmpParams} eventId={eventId}/>
+      <EventResults availableDisciplines={availableDisciplines} filterParams={tmpParams} eventId={eventId}/>
     </div>
   }
 }
@@ -64,5 +62,5 @@ export default compose(
     discipline: _.get(props,'eventDisciplinesQuery.event.discipline'),
     availableDisciplines: _.get(props,'eventDisciplinesQuery.event.availableDisciplines',[]),
   }))
-)(EventAttemptsRoute);
+)(EventResultsRoute);
 

@@ -62,6 +62,12 @@ class EventMenu extends Component<Props> {
                 Versuche
               </Link>
             </Menu.Item>
+            <Menu.Item key="results">
+              <Link to={`/events/${eventId}/results`}>
+                <Icon type="table" />
+                Ergebnisse
+              </Link>
+            </Menu.Item>
           </MenuItemGroup>
           <MenuItemGroup key="g3" title="Einstellungen">
             <Menu.Item key="edit">

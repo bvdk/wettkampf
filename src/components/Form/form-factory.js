@@ -367,7 +367,7 @@ class FormFactory {
         })(
           <File {...field.config}
                 imageOnly={field.rules.reduce((acc, cur)=>{
-                  console.log(cur);
+
                   if (!acc){
                     return cur.index === 'image'
                   }

@@ -29,7 +29,7 @@ class EventAthletesRoute extends Component<Props, State> {
           <Link style={{paddingLeft: '10px'}} key={"import"} to={`athletes/import`}><Button>Import</Button></Link>
         ]}/>
       <hr/>
-      <EventAthletesTable onAthleteClick={(athlete) => history.push(`athletes/${athlete.id}`)} eventId={eventId}/>
+      <EventAthletesTable onAthleteClick={(athlete) => history.push(`/events/${eventId}/athletes/${athlete.id}`)} eventId={eventId}/>
     </div>;
   }
 }

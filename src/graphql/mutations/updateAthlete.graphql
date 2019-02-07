@@ -1,0 +1,16 @@
+mutation updateAthlete($id: ID!, $data: AthleteUpdateInput!) {
+    updateAthlete(id: $id, data:$data){
+        id
+        birthday
+        firstName
+        lastName
+        club
+        gender
+        lateRegistration
+        location
+        los
+        norm
+        price
+
+    }
+}

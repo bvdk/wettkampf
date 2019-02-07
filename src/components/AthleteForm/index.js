@@ -44,18 +44,23 @@ const attributes = [
     type: 'string',
     inputType: 'date',
   },{
+    index: 'bodyWeight',
+    name: 'Körpergewicht',
+    type: 'float',
+    inputType: 'float',
+  },{
     index: 'club',
     name: 'Verein',
     type: 'string',
     inputType: 'text',
   },{
-    index: 'ageClass',
+    index: 'ageClassId',
     name: 'Altersklasse',
     type: 'string',
     inputType: 'select',
     entityType: 'AgeClass',
   },{
-    index: 'weightClass',
+    index: 'weightClassId',
     name: 'Gewichtsklasse',
     type: 'string',
     inputType: 'select',
@@ -71,19 +76,15 @@ export default class AthleteForm extends Component<Props> {
     useSubmit: false,
     onChange: null,
     onSubmit: null,
-    athlete: {
-
-    }
   };
 
   render() {
-
 
     return (
       <AttributesForm
         useSubmit
         onSubmit={this.props.onSubmit}
-        formValues={this.props.formValues}
+        values={this.props.formValues}
         mutation={this.props.mutation}
         translateMutationOptions={this.props.translateMutationOptions}
         attributes={attributes}

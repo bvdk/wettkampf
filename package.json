@@ -6,6 +6,7 @@
     "@internal/graphql": "file:src/graphql",
     "antd": "^3.13.0",
     "apollo-boost": "^0.1.27",
+    "apollo-cache-inmemory": "^1.4.2",
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
     "font-awesome": "^4.7.0",
@@ -34,6 +35,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "copy": "rm -rf ../kdk-server/dist/client && cp -R build/ ../kdk-server/src/client && cp -R build/ ../kdk-server/dist/client",
+    "build:copy": "yarn run build && yarn run copy",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clear:internal": "rm -rf node_module/@internal && yarn install",

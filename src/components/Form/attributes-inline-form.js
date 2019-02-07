@@ -129,10 +129,6 @@ class AttributesInlineForm extends Component<Props, State> {
   } : null;
 
 
-  componentDidMount(): void {
-    console.log('Mount AttributesInlineForm');
-  }
-
   handleSubmit = (e, fieldKeys) => {
 
     return new Promise((resolve, reject)=>{
@@ -216,7 +212,6 @@ class AttributesInlineForm extends Component<Props, State> {
 
   handleSubmitAttribute = (attribute) => {
 
-    console.log(this.form.getFieldValue(attribute.index));
 
     this.setState(update(this.state,{
       loadingAttributes: { $push: [attribute.index]}
@@ -288,6 +283,7 @@ class AttributesInlineForm extends Component<Props, State> {
         readOnly={readOnly}
         formItemLayout={ formItemLayout }
         attribute={attribute}
+        onSubmit={this.props.onSubmit}
         mutation={mutation}
         translateMutationOptions={translateMutationOptions}
       />
@@ -422,7 +418,7 @@ export default Form.create({
   },
   mapPropsToFields(props) {
     const result =  FormValueTranslator.translateAttributes(props.attributes, props.values);
-    // console.log('mapPropsToFields',result);
+    //console.log('mapPropsToFields',result);
     return result;
   },
   onValuesChange(props, values) {

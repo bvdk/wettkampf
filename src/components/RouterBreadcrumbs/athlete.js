@@ -13,7 +13,6 @@ export default compose(
   graphql(AthleteQuery, {
     name: 'athleteQuery',
     options: (props) =>{
-        console.log(props);
         return {
             variables: {
                 id: _.get(props,'match.params.athleteId'),

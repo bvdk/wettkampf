@@ -67,6 +67,14 @@
   display: inline;
 }
 
+.attribute-inline-edit-field-feedback{
+  position: absolute;
+  right: -65px;
+}
+
+.ant-table .attribute-inline-edit-field .ant-form-item-control-wrapper {
+  width: 100%;
+}
 
 
 .flex {

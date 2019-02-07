@@ -34,6 +34,9 @@ import AgeClassesLoaderConfig from "../DataLoader/AgeClassesLoaderConfig";
 import WeightClassesLoaderConfig from "../DataLoader/WeightClassesLoaderConfig";
 import EventSlotsLoaderConfig from "../DataLoader/EventSlotsLoaderConfig";
 import EventAthleteGroupsLoaderConfig from "../DataLoader/EventAthleteGroupsLoaderConfig";
+import AttemptResultInput from "./fields/AttemptResultInput";
+import Colors from "../../styles/colors";
+import AttemptDisplayLabel from "../AttemptDisplayLabel";
 
 const CheckboxGroup = Checkbox.Group;
 const RangePicker = DatePicker.RangePicker;
@@ -133,7 +136,7 @@ class FormFactory {
 
   }
 
-  static renderAttribute(attribute: Attribute, form: {getFieldDecorator: Function}, t: Function){
+  static renderAttribute(attribute: Attribute, form: {getFieldDecorator: Function}, t: Function, value){
 
     const getFieldDecorator = form.getFieldDecorator;
     let result = null;
@@ -522,6 +525,17 @@ class FormFactory {
         )
         break;
       }
+
+      case 'attempt': {
+
+        result = getFieldDecorator(attribute.index , {
+          rules
+        })(
+          <AttemptResultInput />
+        )
+        break;
+      }
+
       default: {}
     }
     return result;
@@ -530,9 +544,10 @@ class FormFactory {
 
   static renderDisplayAttribute(attribute: Attribute, form: {getFieldDecorator: Function, getFieldValue: Function}, t, val){
 
+
     const value = val || form.getFieldValue(attribute.index);
     const config = FormFactory.getConfigForAttribute(attribute);
-    let result = <span>-</span>;
+    let result = <span>{"-"}</span>;
 
     if (!value || (_.isArray(value) && !value.length)){
       return result;
@@ -593,6 +608,10 @@ class FormFactory {
         break;
       }
 
+      case 'attempt': {
+        result = <AttemptDisplayLabel attempt={value}/>
+        break;
+      }
 
 
       default: {

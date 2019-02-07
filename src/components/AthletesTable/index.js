@@ -103,6 +103,7 @@ class AthletesTable extends Component<Props, State> {
       dataIndex: 'lastName',
       key: 'lastName',
       render: (text, record) => `${record.lastName}, ${record.firstName}`,
+      defaultSortOrder: 'asc',
       sorter: (a, b) => defaultSorter(a, b, 'lastName'),
       filterDropdown: ({
                          setSelectedKeys, selectedKeys, confirm, clearFilters,
@@ -162,7 +163,6 @@ class AthletesTable extends Component<Props, State> {
       title: 'Alter',
       dataIndex: 'age',
       key: 'age',
-      defaultSortOrder: 'descend',
       sorter: (a, b) => defaultSorter(a, b, 'age')
     },{
       title: 'Altersklasse',
@@ -173,7 +173,7 @@ class AthletesTable extends Component<Props, State> {
       sorter: (a, b) => defaultSorter(a, b, 'ageClassId')
     }, {
       title: 'Gewicht',
-      dataIndex: 'weight',
+      dataIndex: 'bodyWeight',
       key: 'weight',
       render: (text) => text ? <span>{text} kg</span> : null,
       sorter: (a, b) => defaultSorter(a, b, 'weight')

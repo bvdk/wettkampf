@@ -71,7 +71,7 @@ class Autocomplete extends Component<Props> {
   }
 
   onSelect = (value) => {
-    console.log(value);
+
 		this.triggerChange(value);
   }
 

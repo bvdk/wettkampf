@@ -7,7 +7,6 @@ import {Icon} from "antd";
 
 type Props = {
   eventId: string,
-  availableDisciplines: string[],
   params: any,
   onChange?: Function,
 };
@@ -16,11 +15,11 @@ type State = {
 
 }
 
-class EventAttemptsToolbar extends Component<Props, State> {
+class EventResultsToolbar extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { t, onChange, availableDisciplines, eventId, params } = this.props;
+    const { t, onChange, eventId, params } = this.props;
 
     const attributes = [{
       index: 'slotId',
@@ -34,17 +33,6 @@ class EventAttemptsToolbar extends Component<Props, State> {
         placeholder: 'Bühne'
       }
     },{
-      index: 'discipline',
-      type: 'string',
-      inputType: 'select',
-      optionValues: availableDisciplines.map(item => ({
-        value: item,
-        name: t(item),
-      })),
-      inputTypeOptions: {
-        placeholder: 'Disziplin'
-      }
-    },{
       index: 'athleteGroupId',
       type: 'string',
       inputType: 'select',
@@ -55,7 +43,7 @@ class EventAttemptsToolbar extends Component<Props, State> {
       inputTypeOptions: {
         placeholder: 'Startgruppe'
       }
-    },];
+    }];
 
     return <Toolbar
       renderLeft={() => <span>
@@ -73,4 +61,4 @@ class EventAttemptsToolbar extends Component<Props, State> {
   }
 }
 
-export default withNamespaces()(EventAttemptsToolbar);
+export default withNamespaces()(EventResultsToolbar);

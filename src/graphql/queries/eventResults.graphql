@@ -1,4 +1,4 @@
-query eventAttempts($eventId: ID!, $filters: [FilterInput!], $discipline: Discipline ) {
+query eventAttempts($eventId: ID!, $filters: [FilterInput!]) {
     event(id: $eventId){
         id
         availableDisciplines
@@ -15,12 +15,6 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!], $discipline: Discip
             points
             total
             wilks
-            nextAttempts(discipline:$discipline) {
-                id
-                weight
-                discipline
-                index
-            }
             bestAttempts {
                 id
                 weight
@@ -28,7 +22,7 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!], $discipline: Discip
                 discipline
                 valid
             }
-            attempts(discipline:$discipline) {
+            attempts {
                 discipline
                 id
                 valid
