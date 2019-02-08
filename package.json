@@ -9,6 +9,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "rimraf dist && tsc && cp -R src/client dist/client",
+    "deploy": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
+    "build:deploy": "yarn run build && yarn run deploy",
     "dev": "npm-run-all --parallel start playground",
     "playground": "graphql playground",
     "kill:port": "kill-port 4000"

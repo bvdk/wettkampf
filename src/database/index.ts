@@ -1,6 +1,7 @@
 import lodashId from "lodash-id";
 import low from "lowdb";
 import FileSync from "lowdb/adapters/FileSync";
+import path from "path";
 import {AgeClass} from "../graphql/models/ageClass";
 import { Athlete } from "../graphql/models/athlete";
 import {AthleteGroup} from "../graphql/models/athleteGroup";
@@ -11,7 +12,7 @@ import {WeightClass} from "../graphql/models/weightClass";
 import AgeClassesSeed from "./seed/ageClasses";
 import WeightClassesSeed from "./seed/weightClasses";
 
-const adapter = new FileSync("db.json");
+const adapter = new FileSync(path.join(__dirname, ".", "db.json"));
 const db = low(adapter);
 
 db.defaults({
