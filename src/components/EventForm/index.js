@@ -16,14 +16,13 @@ const attributes = [
     index: 'name',
     name: 'Bezeichnung',
     type: 'string',
-    rules: [{
-      required: true
-    }],
+    rules: [{name: 'required'}],
     inputType: 'text',
   },{
     index: 'discipline',
     name: 'Disziplin',
     type: 'string',
+    rules: [{name: 'required'}],
     entityType: 'enum',
     enumType: 'Discipline',
     inputType: 'select',
@@ -32,6 +31,7 @@ const attributes = [
     index: 'contestType',
     name: 'Wettbewerb',
     type: 'string',
+    rules: [{name: 'required'}],
     entityType: 'enum',
     enumType: 'ContestType',
     inputType: 'select',
@@ -62,8 +62,7 @@ export default class EventForm extends Component<Props> {
     onChange: null,
     onSubmit: null,
     data: {
-      contestType: 'SINGLE',
-      discipline: 'KDK',
+
     }
   };
 

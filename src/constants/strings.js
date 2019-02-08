@@ -1,8 +1,8 @@
 const Strings = {
-  'errorOccurred': 'An error occurred',
-    'areYouSure': "Are you sure",
-    'pleaseProvideSomeDetails': 'Please provide some details',
-    'success': "Successfully saved",
+  'errorOccurred': 'Es ist ein Fehler aufgetreten',
+    'areYouSure': "Sind Sie sicher?",
+    'pleaseProvideSomeDetails': 'Bitte geben Sie mehr Informationen an',
+    'success': "Gespeichert",
 }
 
 export default Strings;

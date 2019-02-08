@@ -6,7 +6,7 @@ import { HttpLink } from 'apollo-link-http';
 
 import './i18n';
 import Routes from "./routes";
-import {BrowserRouter as Router} from "react-router-dom";
+import {HashRouter as Router} from "react-router-dom";
 import Layout from "./components/Layout";
 import './App.css';
 import { LocaleProvider } from 'antd';
@@ -37,7 +37,7 @@ const client = new ApolloClient({
     link: new HttpLink(),
     cache
 });
-//client.defaultOptions = defaultOptions;
+client.defaultOptions = defaultOptions;
 
 class App extends Component {
     render() {

@@ -10,6 +10,7 @@ type Props = {
   onSelectChange?: Function,
   onAthleteClick?: Function,
   hideKeys?: [],
+  tableProps?: any,
 };
 
 type State = {
@@ -218,8 +219,8 @@ class AthletesTable extends Component<Props, State> {
         const boolValue = value === "true" ? true : value === "false" ? false : null;
         return boolValue ? !!_.get(record,'athleteGroup.slot') : !_.get(record,'athleteGroup.slot');
       },
-      render: (text, record) => _.get(record,'athleteGroup.slot') ? _.get(record,'athleteGroup.slot.name') : <DangerLabel>Keine Bühne zugeweisen</DangerLabel>,
-      sorter: (a, b) => defaultSorter(a, b, 'athleteGroup.slot.name')
+      render: (text, record) => _.get(record,'slot') ? _.get(record,'slot.name') : <DangerLabel>Keine Bühne zugeweisen</DangerLabel>,
+      sorter: (a, b) => defaultSorter(a, b, 'slot.name')
     }
     ]
         .filter( item => hideKeys.indexOf(item.dataIndex) === -1)
@@ -235,7 +236,7 @@ class AthletesTable extends Component<Props, State> {
 
 
   render() {
-    const { athletes, t, onSelectChange, onAthleteClick } = this.props;
+    const { athletes,  onSelectChange, tableProps } = this.props;
 
 
     return <div>
@@ -252,6 +253,7 @@ class AthletesTable extends Component<Props, State> {
         locale={{
           emptyText: <Empty description={'Keine Athleten'} />
         }}
+        {...tableProps}
     />
         </div>
   }

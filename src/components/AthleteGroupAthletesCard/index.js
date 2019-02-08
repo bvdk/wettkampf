@@ -86,6 +86,7 @@ class AthleteGroupAthletesCard extends Component<Props> {
                         <Button onClick={()=>this.setState({visible: true})}>Athleten verknüpfen</Button>
                         <Modal
                             bodyStyle={{padding: 0}}
+                            width={800}
                             title="Athleten verknüpfen"
                             visible={this.state.visible}
                             okText={"Athleten in Startgruppe einfügen"}

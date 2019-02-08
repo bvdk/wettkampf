@@ -10,10 +10,6 @@ query eventAthletes($eventId: ID!) {
             athleteGroup {
                 id
                 name
-                slot {
-                    id
-                    name
-                }
             }
             slot {
                 id

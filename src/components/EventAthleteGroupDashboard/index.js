@@ -41,7 +41,7 @@ class EventAthleteGroupDashboard extends Component<Props> {
 
           <ContentWrapper>
               <Row gutter={16}>
-                  <Col md={12}>
+                  <Col md={24}>
                       <AthleteGroupAthletesCard eventId={eventId} athleteGroupId={athleteGroupId}/>
                   </Col>
               </Row>

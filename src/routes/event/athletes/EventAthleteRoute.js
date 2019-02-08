@@ -1,12 +1,10 @@
 // @flow
-import React, { Component } from 'react';
-
-import {Link} from "react-router-dom";
-import {Button} from "antd";
+import React, {Component} from 'react';
 import AthleteName from "../../../components/AthleteName";
 import Toolbar from "../../../components/Toolbar";
-import AthleteUpdateForm from "../../../components/AthleteUpdateForm";
+import AthleteDeleteButton from "../../../components/AthleteDeleteButton";
 import AthleteDashboard from "../../../components/AthleteDashboard";
+import {withRouter} from "react-router";
 
 type Props = {
 
@@ -20,13 +18,13 @@ class EventAthleteRoute extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { athleteId } = this.props;
+    const { athleteId, history } = this.props;
 
     return <div>
       <Toolbar
         renderLeft={() => <h3><AthleteName athleteId={athleteId}/></h3>}
         renderRight={() => [
-
+          <AthleteDeleteButton key={'delete'} athleteId={athleteId} onDelete={()=>{ history.goBack() }}/>
         ]}/>
       <hr/>
       <div style={{padding: 10}}>
@@ -36,4 +34,4 @@ class EventAthleteRoute extends Component<Props, State> {
   }
 }
 
-export default EventAthleteRoute;
+export default withRouter(EventAthleteRoute);

@@ -12,7 +12,6 @@ import SetAthleteGroupModal from "../SetAthleteGroupModal";
 
 const EventAthletesQuery = loader("../../graphql/queries/eventAthletesQuery.graphql");
 
-
 type Props = {
   eventId: string,
   athletes: any[],
@@ -56,11 +55,11 @@ class EventAthletesTable extends Component<Props, State> {
   }
 
   render() {
-    const { athletes, onAthleteClick } = this.props;
+    const { athletes, onAthleteClick, loading } = this.props;
 
     return <div>
       <Toolbar renderLeft={this.renderLeftTools}/>
-      <AthletesTable onAthleteClick={onAthleteClick} onSelectChange={this._handleSelectChange} athletes={athletes}/>
+      <AthletesTable tableProps={{loading}} onAthleteClick={onAthleteClick} onSelectChange={this._handleSelectChange} athletes={athletes}/>
     </div>
   }
 
@@ -81,8 +80,8 @@ export default compose(
       }
     }),
   }),
-  waitWhileLoading('eventAthletesQuery'),
   mapProps((props)=>({
+    loading: _.get(props,'eventAthletesQuery.loading'),
     eventId: props.eventId,
     onAthleteClick: props.onAthleteClick,
     athletes: _.get(props,'eventAthletesQuery.event.athletes',[])

@@ -1,0 +1,5 @@
+mutation deleteAthlete($id: ID!){
+    deleteAthlete(id: $id){
+        id
+    }
+}

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Toolbar from "../Toolbar";
 import AttributesInlineForm from "../Form/attributes-inline-form";
 import {withNamespaces} from "react-i18next";
-import {Icon} from "antd";
+import {Button, Icon} from "antd";
 
 type Props = {
   eventId: string,
@@ -56,7 +56,9 @@ class EventResultsToolbar extends Component<Props, State> {
           onChange={onChange}/>
       </span>}
       renderRight={() => [
-
+        <Button>
+          <a href={`/export/${eventId}`} download>Drucken</a>
+        </Button>
       ]}/>;
   }
 }
