@@ -4,6 +4,7 @@ import path from "path";
 import { GraphQLServer } from "graphql-yoga";
 import getSchema from "./graphql";
 import importResolver from "./import";
+import exportResultsPdfResolver from "./export/exportResultsPdf";
 
 const init = () => {
 
@@ -17,6 +18,7 @@ const init = () => {
 
     server.use(fileUpload());
     server.post("/import/:eventId", importResolver);
+    server.get("/export/:eventId", exportResultsPdfResolver);
     server.use(express.static(path.resolve(__dirname, '.', 'client')));
 
     return server.start({

@@ -8,7 +8,7 @@
     "start": "ts-node ./src/start.ts",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "rimraf dist && tsc && cp -R src/client dist/client",
+    "build": "rimraf dist && tsc && cp -R src/client dist/client && cp -R fonts dist/fonts",
     "deploy": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
     "build:deploy": "yarn run build && yarn run deploy",
     "dev": "npm-run-all --parallel start playground",
@@ -25,6 +25,7 @@
     "lodash-advanced": "^1.0.4",
     "lodash-id": "^0.14.0",
     "lowdb": "^1.0.0",
+    "pdfmake": "^0.1.50",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.16.0"
   },
@@ -34,15 +35,15 @@
     "jest": "^23.3.13",
     "nodemon": "^1.18.9",
     "npm-run-all": "4.1.5",
-    "ts-node": "6.2.0",
     "ts-jest": "^23.3.13",
+    "ts-node": "6.2.0",
     "tslint": "^5.12.0",
     "typescript": "2.9.2"
   },
   "resolutions": {
     "graphql": "^14.0.0"
   },
-  "jest":{
+  "jest": {
     "roots": [
       "<rootDir>/src"
     ],
