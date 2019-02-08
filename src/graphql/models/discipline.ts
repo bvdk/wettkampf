@@ -8,6 +8,12 @@ export enum Discipline {
     POWERLIFTING = "POWERLIFTING",
 }
 
+export const ShortDisciplines = {
+    [Discipline.SQUAT]: "KB",
+    [Discipline.BENCHPRESS]: "BD",
+    [Discipline.DEADLIFT]: "KH",
+};
+
 registerEnumType(Discipline, {
     name: "Discipline",
 });

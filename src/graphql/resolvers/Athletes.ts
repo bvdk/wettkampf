@@ -5,6 +5,7 @@ import {CrudAdapter} from "../../database/CrudAdapter";
 import wilks from "../../utils/wilks";
 import { Athlete, AthleteInput, AthleteUpdateInput} from "../models/athlete";
 import IdArgs from "./args/IdArgs";
+import AttemptsResolver from "./Attempts";
 
 @ArgsType()
 class CreateAthleteArgs {
@@ -86,9 +87,14 @@ export default class AthletesResolver {
         }, false);
 
         if (shouldUpdateWilks) {
-            return CrudAdapter.updateItem(this.collectionKey, id, {
+            const result = CrudAdapter.updateItem(this.collectionKey, id, {
                 wilks: wilks(_.get(input, "gender", athlete.gender), _.get(input, "bodyWeight", athlete.bodyWeight)),
             });
+
+            const attemptsResolver = new AttemptsResolver();
+            attemptsResolver.autoUpdateTotalAndPoints(athlete.id);
+
+            return result;
         }
 
         return null;
