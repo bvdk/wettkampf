@@ -11,7 +11,6 @@ const importResolver = (req, res) => {
   const data = _.get(req, "files.file.data");
   if (data && eventId) {
 
-
     csv({
       noheader: false,
       output: "json",
@@ -27,11 +26,12 @@ const importResolver = (req, res) => {
             .map((importAthlete: any) => {
               let exisiting = null;
               if (importAthlete.importId) {
-                exisiting = athletesResolver.findAthlete({importId: importAthlete.importId});
+                exisiting = athletesResolver.findAthlete({ eventId, importId: importAthlete.importId});
               }
               if (exisiting) {
                 return athletesResolver.updateAthlete({id: exisiting.id}, importAthlete, null);
               } else {
+                  console.log('createAthlete',importAthlete);
                 return athletesResolver.createAthlete({data: importAthlete, eventId}, null);
               }
 

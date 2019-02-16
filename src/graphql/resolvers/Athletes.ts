@@ -19,8 +19,12 @@ class CreateAthleteArgs {
 
 @ArgsType()
 class FindAthleteArgs {
-    @Field((type) => ID)
-    public importId: string;
+
+    @Field((type) => ID, { nullable: true })
+    public eventId?: string;
+
+    @Field((type) => ID, { nullable: true })
+    public importId?: string;
 
 }
 

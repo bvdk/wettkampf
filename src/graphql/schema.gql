@@ -251,7 +251,7 @@ type Query {
   ageClass(id: ID!): AgeClass!
   athletes: [Athlete!]!
   athlete(id: ID!): Athlete!
-  findAthlete(importId: ID!): Athlete!
+  findAthlete(eventId: ID, importId: ID): Athlete!
 
   # All weight classes
   weightClasses: [WeightClass!]!
