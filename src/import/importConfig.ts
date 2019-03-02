@@ -1,4 +1,5 @@
 import  _ from "lodash";
+import moment from "moment";
 import {CrudAdapter} from "../database/CrudAdapter";
 import {WeightClass} from "../graphql/models/weightClass";
 
@@ -98,7 +99,17 @@ const getRawAthleteKeyMap = () => {
             name: "lateRegistration",
             import: toBool,
         },
-        "Geburtstag": "birthday",
+        "Geburtstag":  {
+            name: "birthday",
+            import: (value) => {
+                const date = moment(value, "DD.MM.YYYY");
+                if (date.isValid()) {
+                    return date.toISOString();
+                }
+                return null;
+            },
+            export: (value) => value ? value.toString() : null,
+        },
         "Geschlecht": {
             name: "gender",
             import: (value) => String(value).toUpperCase(),

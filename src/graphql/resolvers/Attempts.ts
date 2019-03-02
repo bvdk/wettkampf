@@ -2,7 +2,6 @@ import {Context} from "graphql-yoga/dist/types";
 import _ from "lodash";
 import {Arg, Args, ArgsType, Ctx, Field, ID, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
-import wilks from "../../utils/wilks";
 import {Athlete} from "../models/athlete";
 import {Attempt, AttemptInput, AttemptUpdateInput} from "../models/attempt";
 import {Discipline} from "../models/discipline";
@@ -64,14 +63,27 @@ export default class AttemptsResolver {
 
         @Args() {id}: IdArgs,
         @Arg("data") data: AttemptUpdateInput,
+        @Arg("skipAutoCalc",{nullable: true}) skipAutoCalc: boolean,
         @Ctx() ctx: Context,
     ): Attempt {
 
         const attempt: Attempt = CrudAdapter.updateItem(this.collectionKey, id, data);
-        this.autoUpdateTotalAndPoints(attempt.athleteId);
+        if (!skipAutoCalc) {
+            this.autoUpdateTotalAndPoints(attempt.athleteId);
+        }
         return attempt;
 
     }
+
+    @Mutation()
+    public autoCalcAthletePoints(
+        @Args() {id}: IdArgs,
+        @Ctx() ctx: Context,
+    ): boolean {
+        this.autoUpdateTotalAndPoints(id);
+        return true;
+    }
+
 
     public autoUpdateTotalAndPoints(athleteId: string): Athlete | void {
 

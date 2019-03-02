@@ -12,12 +12,24 @@ export default [
     name: "AK 3",
   },
   {
+    id: "ak4",
+    name: "AK 4",
+  },
+  {
     id: "aktive",
     name: "Aktive",
   },
   {
     id: "ak",
     name: "außer Konkurrenz",
+  },
+  {
+    id: "b-jugend",
+    name: "B-Jugend",
+  },
+  {
+    id: "a-jugend",
+    name: "A-Jugend",
   },
   {
     id: "junioren",

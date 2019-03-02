@@ -27,7 +27,8 @@
     "lowdb": "^1.0.0",
     "pdfmake": "^0.1.50",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^0.16.0"
+    "type-graphql": "^0.16.0",
+    "graphql-type-json": "latest"
   },
   "devDependencies": {
     "@types/jest": "^23.3.13",

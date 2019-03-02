@@ -12,7 +12,7 @@ import {WeightClass} from "../models/weightClass";
 import AthletesResolver from "./Athletes";
 import AttemptsResolver from "./Attempts";
 
-function _calculateAge(birthday): number { // birthday is a date
+function _calculateAge(birthday: Date): number { // birthday is a date
     const ageDifMs = Date.now() - birthday.getTime();
     const ageDate = new Date(ageDifMs); // miliseconds from epoch
     return Math.abs(ageDate.getUTCFullYear() - 1970);
@@ -22,7 +22,7 @@ function _calculateAge(birthday): number { // birthday is a date
 export default class AthleteResolver implements ResolverInterface<Athlete> {
 
     public getAttempts(athleteId: string, discipline?: Discipline) {
-        const attempts = CrudAdapter.filter(Attempt.collectionKey, { athleteId });
+        const attempts = _.orderBy(CrudAdapter.filter(Attempt.collectionKey, { athleteId }), ["discipline", "asc"], ["index", "asc"]);
         if (discipline) {
             return _.filter(attempts, {discipline});
         }
@@ -51,7 +51,14 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
 
     @FieldResolver()
     public age(@Root() athlete: Athlete) {
-        return athlete.birthday ? _calculateAge(new Date(athlete.birthday)) : null;
+        const birtday = this.birthday(athlete);
+        return birtday ? _calculateAge(birtday) : null;
+    }
+
+
+    @FieldResolver()
+    public birthday(@Root() athlete: Athlete) {
+        return athlete.birthday ? new Date(athlete.birthday) : null;
     }
 
     @FieldResolver()
@@ -108,7 +115,7 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
         @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
     ) {
         return _.chain(this.attempts(athlete, discipline))
-            .sortBy(["weight"])
+            .sortBy(["index"])
             .filter((attempt: Attempt) => !attempt.done)
             .groupBy("discipline")
             .map((group, key) => {
@@ -162,7 +169,7 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
             const resolver = new AttemptsResolver();
             const result = resolver.autoUpdateTotalAndPoints(athlete.id);
             tmp = _.get(result, "points");
-        }else {
+        } else {
             tmp = athlete.points;
         }
         return tmp ? Math.round(tmp * 100) / 100 : null;

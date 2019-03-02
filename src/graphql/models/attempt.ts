@@ -55,5 +55,5 @@ export class AttemptUpdateInput extends AttemptInput implements Partial<Attempt>
     @Field((type) => Float, {nullable: true})
     public weight: number;
 
-
 }
+

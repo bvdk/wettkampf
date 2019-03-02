@@ -45,8 +45,8 @@ export class Athlete {
     @Field((type) => Gender)
     public gender: Gender;
 
-    @Field({nullable: true})
-    public birthday: Date;
+    @Field((type) => Date, {nullable: true})
+    public birthday?: Date;
 
     @Field({nullable: true})
     public club?: string;
@@ -129,7 +129,7 @@ export class AthleteInput implements Partial<Athlete> {
     @Field((type) => Gender, {nullable: true})
     public gender?: Gender;
 
-    @Field({nullable: true})
+    @Field((type) => Date,{nullable: true})
     public birthday?: Date;
 
     @Field({nullable: true})

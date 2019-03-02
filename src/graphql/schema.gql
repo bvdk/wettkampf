@@ -239,7 +239,8 @@ type Mutation {
   updateEvent(data: EventInput!, id: ID!): Event!
   deleteEvent(id: ID!): Event!
   createAttempt(athleteId: ID!, data: AttemptInput!, discipline: Discipline!): Attempt!
-  updateAttempt(data: AttemptUpdateInput!, id: ID!): Attempt!
+  updateAttempt(skipAutoCalc: Boolean, data: AttemptUpdateInput!, id: ID!): Attempt!
+  autoCalcAthletePoints(id: ID!): Boolean!
   deleteAttempt(id: ID!): Attempt!
   removeAllAttempts(id: ID!): Boolean!
   simulateAttempts(id: ID!): Boolean!
