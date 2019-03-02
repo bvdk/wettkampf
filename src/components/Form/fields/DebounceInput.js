@@ -89,7 +89,7 @@ class DebounceInput extends Component<Props, State> {
   }
 
   render() {
-    const { value, placeholder, addonAfter } = this.props;
+    const { value, placeholder, addonAfter, disabled } = this.props;
 
     const {tmpValue} = this.state;
 
@@ -101,6 +101,7 @@ class DebounceInput extends Component<Props, State> {
       placeholder={placeholder}
       addonAfter={addonAfter}
       onChange={this._handleChange}
+      disabled={disabled}
       value={tmpValue === undefined ? value : tmpValue}
     />
   }

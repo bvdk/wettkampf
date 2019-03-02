@@ -5,6 +5,7 @@ import _ from 'lodash';
 import moment from "moment";
 import AttemptInlineForm from "./../AttemptInlineForm";
 import AttemptDisplayLabel from "../AttemptDisplayLabel";
+import {shortDisciplines} from "../../constants/disciplines";
 
 
 type Props = {
@@ -23,11 +24,7 @@ type State = {
 
 
 
-const shortDisciplines = {
-  'SQUAT': 'KB',
-  'BENCHPRESS': 'BD',
-  'DEADLIFT': 'KH',
-}
+
 
 class AttemptsTable extends Component<Props, State> {
 
@@ -98,7 +95,7 @@ class AttemptsTable extends Component<Props, State> {
     },{
       dataIndex: 'Geb/KG/Los',
       title: 'Geb/KG/Los',
-      render: (text, record) => `${record.birthday ? moment(record.birthday).format('yyyy') : '-'}/${record.bodyWeight ? record.bodyWeight : '-' }/${record.los ? record.los : '-' }`
+      render: (text, record) => `${record.birthday ? moment(record.birthday).format('YYYY') : '-'}/${record.bodyWeight ? record.bodyWeight : '-' }/${record.los ? record.los : '-' }`
     },
       ...this.getDisciplineColumns(availableDisciplines, filterParams.discipline),
       {
@@ -115,7 +112,7 @@ class AttemptsTable extends Component<Props, State> {
     const dataSource = _.chain(athletes)
       .map(item => ({
         ...item,
-          __sortKey: _.get(item,'nextAttempts[0]') ? `${_.get(item,'nextAttempts[0].index')}-${_.get(item,'nextAttempts[0].weight')}` : "999",
+          __sortKey: _.get(item,'nextAttempts[0]') ? `${_.get(item,'nextAttempts[0].index')}-${100000+_.get(item,'nextAttempts[0].weight')}` : "999999",
       }))
       .orderBy(['__sortKey'],['asc'])
       .value()

@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import {Query} from "react-apollo";
+import {translate} from "react-i18next";
 import _ from 'lodash'
 import type {DataLoaderType} from "./DataLoaderType";
 import Loader from "../Loader";
@@ -18,11 +19,14 @@ class DataLoaderValueLabel extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { loaderConfig, value } = this.props;
+    const { loaderConfig, value, t } = this.props;
+
+    const query = loaderConfig.valueQuery || loaderConfig.query;
+    const variables = loaderConfig.getValueQueryVariables ? loaderConfig.getValueQueryVariables(value) : loaderConfig.getQueryVariables ? loaderConfig.getQueryVariables() : null;
 
     return <Query
-            query={loaderConfig.valueQuery}
-            variables={loaderConfig.getValueQueryVariables(value)}
+            query={query}
+            variables={variables}
         >
         {({ loading, error, data }) => {
             if (loading) {
@@ -31,12 +35,24 @@ class DataLoaderValueLabel extends Component<Props, State> {
             if (error) {
                 return `Error! ${error.message}`;
             }
-            return <span>{_.get(data,`${loaderConfig.valueQueryDataKey}.${loaderConfig.textKey}`)}</span>
+
+
+
+            const item = loaderConfig.useListQueryForValue ?
+              _.get(data,`${loaderConfig.valueQueryDataKey || loaderConfig.dataKey}.${loaderConfig.textKey}`) :
+              _.chain(data).get(loaderConfig.dataKey).get(loaderConfig.itemsKey).find({[loaderConfig.valueKey]: value}).get(loaderConfig.textKey).value();
+
+
+            if (item){
+              return <span>{item}</span>
+            }
+
+            return <span>{t(value)}</span>
         }}
         </Query>
   }
 }
 
-export default DataLoaderValueLabel;
+export default translate('translations')(DataLoaderValueLabel);
 
 

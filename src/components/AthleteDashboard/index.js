@@ -2,9 +2,12 @@
 import React, { Component } from 'react';
 import {Col, Row} from "antd";
 import AthleteUpdateForm from "./../AthleteUpdateForm";
+import Panel from "../Panel";
+import AthleteAttemptsTabs from "../AthleteAttemptsTabs";
 
 type Props = {
-  athleteId: string
+  athleteId: string,
+  eventId: string,
 };
 
 type State = {
@@ -15,16 +18,18 @@ class AthleteDashboard extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { athleteId } = this.props;
+    const { athleteId, eventId } = this.props;
 
     return <Row gutter={16}>
       <Col md={12}>
-        <h4>Bearbeiten</h4>
-        <AthleteUpdateForm athleteId={athleteId} />
+        <Panel title={'Stammdaten'}>
+          <AthleteUpdateForm athleteId={athleteId} />
+        </Panel>
       </Col>
       <Col md={12}>
-        <h4>Ergebnisse</h4>
-        <span>TODO</span>
+        <Panel title={'Versuche'}>
+          <AthleteAttemptsTabs athleteId={athleteId} eventId={eventId}/>
+        </Panel>
       </Col>
 
     </Row>;

@@ -20,6 +20,10 @@ export default {
         message: 'Please insert a valid number',
         validator: (rule, value, callback)=>{
 
+            if (!value){
+                return callback();
+            }
+
             const number = Number(value);
             const valid = !_.isNaN(number);
 

@@ -138,6 +138,12 @@ class FormFactory {
 
   static renderAttribute(attribute: Attribute, form: {getFieldDecorator: Function}, t: Function, value){
 
+/*
+    if (attribute.readonly){
+      return this.renderDisplayAttribute(attribute, form, t, value);
+    }
+    */
+
     const getFieldDecorator = form.getFieldDecorator;
     let result = null;
     let rules = [];
@@ -194,6 +200,7 @@ class FormFactory {
           rules
         })(
           <TextArea
+            disabled={attribute.readonly}
             rows={5}
             placeholder={placeholder}
           />
@@ -209,6 +216,7 @@ class FormFactory {
         })(
 
           <DebounceInput
+            disabled={attribute.readonly}
             placeholder={placeholder}
             addonAfter={addonAfter}
           />
@@ -222,7 +230,7 @@ class FormFactory {
         result = getFieldDecorator(attribute.index, {
           valuePropName: 'checked'
         })(
-          <Switch />
+          <Switch disabled={attribute.readonly}/>
         );
         break;
       }
@@ -235,8 +243,8 @@ class FormFactory {
       }
 
       case 'display': {
-        result = <span className="ant-form-text">DISPLAY</span>
-        break;
+        result = <span className="ant-form-text">value</span>
+        break
       }
 
       case 'section': {
@@ -259,6 +267,7 @@ class FormFactory {
           rules
         })(
           <DatePicker
+            disabled={attribute.readonly}
             style={{width: '100%'}}
             format="DD.MM.YYYY"
 
@@ -273,6 +282,7 @@ class FormFactory {
           rules
         })(
           <DatePicker
+            disabled={attribute.readonly}
             showTime
             format="DD.MM.YYYY HH:mm:ss"
 
@@ -287,7 +297,10 @@ class FormFactory {
         result = getFieldDecorator(attribute.index , {
           rules
         })(
-          <RangePicker showTime format="DD.MM.YYYY HH:mm" />
+          <RangePicker
+            disabled={attribute.readonly}
+            showTime
+            format="DD.MM.YYYY HH:mm" />
         )
 
         break;
@@ -298,7 +311,9 @@ class FormFactory {
         result = getFieldDecorator(attribute.index , {
           rules,
         })(
-          <RangePicker format="DD.MM.YYYY" />
+          <RangePicker
+            disabled={attribute.readonly}
+            format="DD.MM.YYYY" />
         )
 
         break;
@@ -309,6 +324,7 @@ class FormFactory {
           rules,
         })(
           <CheckboxGroup
+            disabled={attribute.readonly}
           >
             <Dropdown {...config} overlay={
               config && config.loaderConfig ? (
@@ -389,6 +405,7 @@ class FormFactory {
         })(
           config && config.loaderConfig ? (
             <SelectAsync
+              disabled={attribute.readonly}
               {...config}
               mode={
                 attribute.inputType.toLowerCase() === 'multiselect'
@@ -404,10 +421,12 @@ class FormFactory {
           ) : (
             !attribute.optionValues || !attribute.optionValues.length ?
               <Input
+                disabled={attribute.readonly}
                 placeholder={placeholder}
               />
               :
               <Select
+                disabled={attribute.readonly}
                 {...config}
                 mode={
                   _.get(attribute,'inputTypeOptions.mode',attribute.inputType.toLowerCase() === 'multiselect'
@@ -535,6 +554,7 @@ class FormFactory {
         )
         break;
       }
+
 
       default: {}
     }

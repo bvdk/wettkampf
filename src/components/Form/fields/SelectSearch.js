@@ -74,7 +74,7 @@ class SelectSearch extends Component<Props> {
 
   render(){
 
-      const {getQuery, style, onChange, t, placeholder, valueKey, textKey, local, localFilter, onDeselect, onSelect, value, getValueQuery, valueQueryDataKey, mode, showSearch, groupByValue, groupByTitle} = this.props;
+      const {getQuery, disabled, style, onChange, t, placeholder, valueKey, textKey, local, localFilter, onDeselect, onSelect, value, getValueQuery, valueQueryDataKey, mode, showSearch, groupByValue, groupByTitle} = this.props;
 
     let data = [];
 
@@ -133,6 +133,7 @@ class SelectSearch extends Component<Props> {
     }
 
     return <Select
+      disabled={disabled}
         defaultValue={value}
         showSearch={showSearch}
         mode={mode}

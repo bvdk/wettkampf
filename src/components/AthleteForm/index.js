@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import _ from 'lodash'
 import AttributesForm from "../Form/attributes-inline-form";
 
 type Props = {
@@ -39,20 +40,15 @@ const attributes = [
     }],
     inputType: 'text',
   },{
-    index: 'birthday',
-    name: 'Geburtstag',
-    type: 'string',
-    inputType: 'date',
-  },{
-    index: 'bodyWeight',
-    name: 'Körpergewicht',
-    type: 'float',
-    inputType: 'float',
-  },{
     index: 'club',
     name: 'Verein',
     type: 'string',
     inputType: 'text',
+  },{
+    index: 'birthday',
+    name: 'Geburtstag',
+    type: 'string',
+    inputType: 'date',
   },{
     index: 'ageClassId',
     name: 'Altersklasse',
@@ -65,8 +61,23 @@ const attributes = [
     type: 'string',
     inputType: 'select',
     entityType: 'WeightClass',
+  },{
+    index: 'bodyWeight',
+    name: 'Körpergewicht',
+    type: 'float',
+    inputType: 'float',
+    inputTypeOptions: {
+      addonAfter: 'Kg'
+    }
+  },{
+    index: 'los',
+    name: 'Los',
+    type: 'int',
+    inputType: 'int',
   }
 ];
+
+const lockedIfImported = ['gender','firstName','lastName','club','ageClassId','birthday']
 
 export default class AthleteForm extends Component<Props> {
 
@@ -80,6 +91,20 @@ export default class AthleteForm extends Component<Props> {
 
   render() {
 
+    const formValues = this.props.formValues;
+    const filteredAttributes = attributes.map((attribute)=>{
+      if (_.get(formValues,'importId')){
+        const value = _.get(formValues,attribute.index);
+        if (value && lockedIfImported.indexOf(attribute.index) > -1){
+          return {
+            ...attribute,
+            readonly: true
+          }
+        }
+      }
+      return attribute;
+    })
+
     return (
       <AttributesForm
         useSubmit
@@ -87,7 +112,7 @@ export default class AthleteForm extends Component<Props> {
         values={this.props.formValues}
         mutation={this.props.mutation}
         translateMutationOptions={this.props.translateMutationOptions}
-        attributes={attributes}
+        attributes={filteredAttributes}
       />
     );
   }

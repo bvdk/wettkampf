@@ -11,6 +11,6 @@ mutation updateAthlete($id: ID!, $data: AthleteUpdateInput!) {
         los
         norm
         price
-
+        bodyWeight
     }
 }

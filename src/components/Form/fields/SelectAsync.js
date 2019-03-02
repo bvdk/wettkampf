@@ -13,6 +13,7 @@ type Props = {
   options: [],
     style: any,
   mode: string,
+  disabled: boolean,
   loaderConfig: {
     valueQueryDataKey: string,
     valueQuery: ?any,
@@ -124,12 +125,13 @@ class SelectAsync extends Component<Props> {
 
   render(){
 
-      const {style, placeholder, loaderConfig, options, value, mode, showSearch, groupByValue, groupByTitle} = this.props;
+      const {style, placeholder, loaderConfig, disabled, options, value, mode, showSearch, groupByValue, groupByTitle} = this.props;
     const { query } = this.state;
     const SelectSearchWithData = this.SelectSearchWithData;
 
 
     return <SelectSearchWithData
+        disabled={disabled}
         style={style}
         showSearch={showSearch}
         mode={mode}

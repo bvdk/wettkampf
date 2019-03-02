@@ -18,7 +18,7 @@ class EventAthleteRoute extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { athleteId, history } = this.props;
+    const { athleteId, history, eventId } = this.props;
 
     return <div>
       <Toolbar
@@ -28,7 +28,7 @@ class EventAthleteRoute extends Component<Props, State> {
         ]}/>
       <hr/>
       <div style={{padding: 10}}>
-        <AthleteDashboard athleteId={athleteId}/>
+        <AthleteDashboard eventId={eventId} athleteId={athleteId}/>
       </div>
     </div>;;
   }

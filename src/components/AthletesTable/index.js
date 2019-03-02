@@ -168,10 +168,10 @@ class AthletesTable extends Component<Props, State> {
     },{
       title: 'Altersklasse',
       dataIndex: 'ageClass',
-      key: 'ageClass',
+      key: 'ageClassId',
       defaultSortOrder: 'descend',
       render: (text, record) => _.get(record, 'ageClass.name'),
-      sorter: (a, b) => defaultSorter(a, b, 'ageClassId')
+      sorter: (a, b) => defaultSorter(a, b, 'ageClass.name')
     }, {
       title: 'Gewicht',
       dataIndex: 'bodyWeight',
@@ -184,7 +184,7 @@ class AthletesTable extends Component<Props, State> {
       key: 'weightClass',
       defaultSortOrder: 'descend',
       render: (text, record) => _.get(record, 'weightClass.name'),
-      sorter: (a, b) => defaultSorter(a, b, 'weightClassId')
+      sorter: (a, b) => defaultSorter(a, b, 'weightClass.name')
     },{
       title: 'Startgruppe',
       dataIndex: 'athleteGroup.name',

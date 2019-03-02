@@ -418,11 +418,10 @@ export default Form.create({
   },
   mapPropsToFields(props) {
     const result =  FormValueTranslator.translateAttributes(props.attributes, props.values);
-    //console.log('mapPropsToFields',result);
+
     return result;
   },
   onValuesChange(props, values) {
-    // console.log('onValuesChange',values);
     if (props.onValuesChange){
       const attributeValues = formValueToAttributeValue(props.attributes,values,false);
       props.onValuesChange(attributeValues);

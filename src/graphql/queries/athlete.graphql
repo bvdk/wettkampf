@@ -4,5 +4,6 @@ query athelte($id: ID!){
         firstName
         lastName
         name
+        bodyWeight
     }
 }
