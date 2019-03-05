@@ -153,9 +153,11 @@ const getRawAthleteKeyMap = () => {
 const rawOfficialKeyMap = {
     "Age Category": "lastName",
     "First Name": "club",
+    "Geschlecht": "position",
     "Gewichtsklasse": "firstName",
     "ID": "license",
     "Last Name": "importId",
+    "Verein": "location",
 };
 
 const defaultTranslator = (value) => (value);

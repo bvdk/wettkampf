@@ -33,15 +33,15 @@ type Athlete {
   ageClassId: ID
   ageClass: AgeClass
 
-  # Body weight in kg
+  """Body weight in kg"""
   bodyWeight: Float
   weightClassId: ID
   weightClass: WeightClass
 
-  # Attempt count
+  """Attempt count"""
   attemptCount: Int!
 
-  # Calc wilks
+  """Calc wilks"""
   wilks: Float
   los: Int
   points: Float
@@ -101,7 +101,7 @@ input AthleteInput {
   price: String
   ageClassId: ID
 
-  # Body weight in kg
+  """Body weight in kg"""
   bodyWeight: Float
   weightClassId: String
   los: Int
@@ -120,7 +120,7 @@ input AthleteUpdateInput {
   price: String
   ageClassId: ID
 
-  # Body weight in kg
+  """Body weight in kg"""
   bodyWeight: Float
   weightClassId: String
   los: Int
@@ -155,7 +155,9 @@ enum ContestType {
   TEAM
 }
 
-# The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
 scalar DateTime
 
 enum Discipline {
@@ -178,9 +180,10 @@ type Event {
   slots: [Slot!]!
   athleteGroups: [AthleteGroup!]!
 
-  # Athletes without valid group
+  """Athletes without valid group"""
   unsortedAthletes(filters: [FilterInput!]): [Athlete!]!
   athletes(filters: [FilterInput!]): [Athlete!]!
+  officials: [Official!]!
 }
 
 input EventInput {
@@ -218,18 +221,20 @@ type Mutation {
   addAthletesToAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
   deleteAthleteGroup(id: ID!): AthleteGroup!
   autoCreateAthleteGroups(
-    # Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet.
+    """Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet."""
     athleteIds: [ID!]
     eventId: ID!
     keys: [AthleteGroupCreationKey!]!
 
-    # Maximale Startgruppengröße, wenn 0 werden alle passenden Athleten in eine Gruppe gespeichert.
+    """
+    Maximale Startgruppengröße, wenn 0 werden alle passenden Athleten in eine Gruppe gespeichert.
+    """
     maxGroupSize: Int
 
-    # Wenn true werden bestehende Startgruppen mit einbezogen
+    """Wenn true werden bestehende Startgruppen mit einbezogen"""
     useExisting: Boolean
 
-    # Gruppen auf bestehende Bühnen verteilen
+    """Gruppen auf bestehende Bühnen verteilen"""
     distributeSlots: Boolean
   ): AthleteGroupCreationResult!
   createSlot(eventId: ID!, data: SlotInput!): Slot!
@@ -244,45 +249,75 @@ type Mutation {
   deleteAttempt(id: ID!): Attempt!
   removeAllAttempts(id: ID!): Boolean!
   simulateAttempts(id: ID!): Boolean!
+  createOfficial(eventId: ID!, data: OfficialInput!): Official!
+  updateOfficial(data: OfficialInput!, id: ID!): Official!
+  deleteOfficial(id: ID!): Official!
+}
+
+type Official {
+  id: ID!
+  importId: String
+  firstName: String!
+  lastName: String!
+  name: String!
+  club: String
+  position: String
+  location: String
+  license: String
+}
+
+input OfficialInput {
+  firstName: String
+  lastName: String
+  club: String
+  position: String
+  location: String
+  license: String
 }
 
 type Query {
-  # All age classes
+  """All age classes"""
   ageClasses: [AgeClass!]!
   ageClass(id: ID!): AgeClass!
   athletes: [Athlete!]!
   athlete(id: ID!): Athlete!
   findAthlete(eventId: ID, importId: ID): Athlete!
 
-  # All weight classes
+  """All weight classes"""
   weightClasses: [WeightClass!]!
   weightClass(id: ID!): WeightClass!
   athleteGroup(id: ID!): AthleteGroup!
   autoCreateAthleteGroupsPreview(
-    # Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet.
+    """Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet."""
     athleteIds: [ID!]
     eventId: ID!
     keys: [AthleteGroupCreationKey!]!
 
-    # Maximale Startgruppengröße, wenn 0 werden alle passenden Athleten in eine Gruppe gespeichert.
+    """
+    Maximale Startgruppengröße, wenn 0 werden alle passenden Athleten in eine Gruppe gespeichert.
+    """
     maxGroupSize: Int
 
-    # Wenn true werden bestehende Startgruppen mit einbezogen
+    """Wenn true werden bestehende Startgruppen mit einbezogen"""
     useExisting: Boolean
 
-    # Gruppen auf bestehende Bühnen verteilen
+    """Gruppen auf bestehende Bühnen verteilen"""
     distributeSlots: Boolean
   ): AthleteGroupCreationResult!
 
-  # Get a slot
+  """Get a slot"""
   slot(id: ID!): Slot
 
-  # Get all the events
+  """Get all the events"""
   events: [Event!]!
 
-  # Get a event
+  """Get a event"""
   event(id: ID!): Event!
   attempt(id: ID!): Attempt!
+
+  """Get a Official"""
+  official(id: ID!): Official
+  findOfficial(eventId: ID, importId: ID): Official!
 }
 
 type Slot {

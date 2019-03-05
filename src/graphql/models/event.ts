@@ -1,10 +1,11 @@
 import {Field, ID, InputType, Int, ObjectType} from "type-graphql";
 import {Athlete} from "./athlete";
+import {AthleteGroup} from "./athleteGroup";
 import {ContestType} from "./contentType";
 import {Discipline} from "./discipline";
+import {Official} from "./official";
 import {Gender} from "./gender";
 import {Slot} from "./slot";
-import {AthleteGroup} from "./athleteGroup";
 
 @ObjectType()
 export class Event {
@@ -49,6 +50,9 @@ export class Event {
 
     @Field((type) => [Athlete])
     public athletes: Athlete[];
+
+    @Field((type) => [Official])
+    public officials: Official[];
 
 }
 

@@ -4,7 +4,6 @@ import {CrudAdapter} from "../../database/CrudAdapter";
 import {Slot, SlotInput} from "../models/slot";
 import IdArgs from "./args/IdArgs";
 import AthleteGroupsResolver from "./AthleteGroups";
-import {Event} from "../models/event";
 
 @ArgsType()
 class CreateSlotArgs {

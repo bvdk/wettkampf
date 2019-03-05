@@ -35,4 +35,8 @@ export default [
     id: "junioren",
     name: "Junioren",
   },
+  {
+    id: "jugend",
+    name: "Jugend",
+  },
 ];

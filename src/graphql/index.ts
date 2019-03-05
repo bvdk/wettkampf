@@ -12,9 +12,10 @@ import EventResolver from "./resolvers/Event";
 import EventsResolver from "./resolvers/Events";
 import SlotResolver from "./resolvers/Slot";
 import SlotsResolver from "./resolvers/Slots";
+import OfficialsResolver from "./resolvers/Officials";
+import OfficialResolver from "./resolvers/Official";
 import WeightClass from "./resolvers/weightClass";
 import WeightClasses from "./resolvers/WeightClasses";
-
 
 // @ts-ignore
 const schema = buildSchema({
@@ -33,6 +34,8 @@ const schema = buildSchema({
         WeightClass,
         WeightClasses,
         AgeClasses,
+        OfficialsResolver,
+        OfficialResolver,
     ],
 });
 

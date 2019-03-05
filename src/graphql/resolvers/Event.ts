@@ -5,10 +5,12 @@ import {Athlete} from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Event} from "../models/event";
 
+import {CollectionKeys} from "../../database";
 import {Discipline} from "../models/discipline";
 import {FilterInput} from "../models/filter";
 import {Slot} from "../models/slot";
 import FilterArgs from "./args/FilterArgs";
+import {Official} from "../models/official";
 
 @Resolver((of) => Event)
 export default class EventResolver implements ResolverInterface<Event> {
@@ -74,6 +76,16 @@ export default class EventResolver implements ResolverInterface<Event> {
         }
 
         return athletes;
+    }
+
+
+    @FieldResolver()
+    public officials(
+        @Root() event: Event,
+    ): Official[] {
+        return CrudAdapter.filter(CollectionKeys.officials, {
+            eventId: event.id,
+        });
     }
 
     @FieldResolver()

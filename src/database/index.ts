@@ -1,28 +1,33 @@
 import lodashId from "lodash-id";
 import low from "lowdb";
-import CustomAsyncAdapter from "./CustomAsyncAdapter";
 import path from "path";
-import {AgeClass} from "../graphql/models/ageClass";
-import { Athlete } from "../graphql/models/athlete";
-import {AthleteGroup} from "../graphql/models/athleteGroup";
-import {Attempt} from "../graphql/models/attempt";
-import {Event} from "../graphql/models/event";
-import {Slot} from "../graphql/models/slot";
-import {WeightClass} from "../graphql/models/weightClass";
+import CustomAsyncAdapter from "./CustomAsyncAdapter";
 import AgeClassesSeed from "./seed/ageClasses";
 import WeightClassesSeed from "./seed/weightClasses";
 
 const adapter = new CustomAsyncAdapter(path.join(__dirname, ".", "db.json"));
 const db = low(adapter);
 
+export const CollectionKeys = {
+    ageClasses: "ageClasses",
+    athleteGroups: "athleteGroups",
+    athletes: "athletes",
+    attempts: "attempts",
+    events: "events",
+    officials: "officials",
+    slots: "slots",
+    weightClasses: "weightClasses",
+};
+
 db.defaults({
-    [Event.collectionKey]: [],
-    [Athlete.collectionKey]: [],
-    [Slot.collectionKey]: [],
-    [AthleteGroup.collectionKey]: [],
-    [Attempt.collectionKey]: [],
-    [WeightClass.collectionKey]: WeightClassesSeed,
-    [AgeClass.collectionKey]: AgeClassesSeed,
+    [CollectionKeys.events]: [],
+    [CollectionKeys.athletes]: [],
+    [CollectionKeys.officials]: [],
+    [CollectionKeys.slots]: [],
+    [CollectionKeys.athleteGroups]: [],
+    [CollectionKeys.attempts]: [],
+    [CollectionKeys.weightClasses]: WeightClassesSeed,
+    [CollectionKeys.ageClasses]: AgeClassesSeed,
 })
     .write();
 
