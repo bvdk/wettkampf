@@ -1,9 +1,11 @@
+import GraphQLJSON from "graphql-type-json";
 import {Field, Float, ID, InputType, Int, ObjectType} from "type-graphql";
 import {AgeClass} from "./ageClass";
 import {AthleteGroup} from "./athleteGroup";
 import {Attempt} from "./attempt";
 import {Event} from "./event";
 import {Gender} from "./gender";
+import {ResultClass} from "./resultClass";
 import {Slot} from "./slot";
 import {WeightClass} from "./weightClass";
 
@@ -107,6 +109,18 @@ export class Athlete {
 
     @Field((type) => [Attempt], {nullable: true})
     public bestAttempts?: Attempt[];
+
+    @Field((type) => Boolean, {nullable: true})
+    public valid?: boolean;
+
+    @Field((type) => GraphQLJSON, { nullable: true })
+    public nextAttemptsSortKeys?: {
+        [key: string]: string,
+    };
+
+    @Field((type) => ResultClass, { nullable: true })
+    public resultClass: ResultClass;
+
 }
 
 
@@ -129,7 +143,7 @@ export class AthleteInput implements Partial<Athlete> {
     @Field((type) => Gender, {nullable: true})
     public gender?: Gender;
 
-    @Field((type) => Date,{nullable: true})
+    @Field((type) => Date, {nullable: true})
     public birthday?: Date;
 
     @Field({nullable: true})
@@ -177,4 +191,8 @@ export class AthleteUpdateInput extends AthleteInput implements Partial<Athlete>
     public total?: number;
 
     public points?: number;
+
+    public nextAttemptsSortKeys?: {
+        [key: string]: string,
+    };
 }

@@ -8,9 +8,11 @@ import {Event} from "../models/event";
 import {CollectionKeys} from "../../database";
 import {Discipline} from "../models/discipline";
 import {FilterInput} from "../models/filter";
+import {Official} from "../models/official";
 import {Slot} from "../models/slot";
 import FilterArgs from "./args/FilterArgs";
-import {Official} from "../models/official";
+import SortArgs from "./args/SortArgs";
+import {SortInput} from "../models/sort";
 
 @Resolver((of) => Event)
 export default class EventResolver implements ResolverInterface<Event> {
@@ -57,14 +59,15 @@ export default class EventResolver implements ResolverInterface<Event> {
     public athletes(
         @Root() event: Event,
         @Args() filterArgs?: FilterArgs,
+        @Args() sortArgs?: SortArgs,
     ) {
 
-        const athletes = this.getEventAthletes(event.id);
+        let athletes = this.getEventAthletes(event.id);
         const athleteGroups = this.getEventAthleteGroups(event.id);
 
         const filters = _.get(filterArgs, "filters");
         if (filters) {
-            const filteredAthletes = FilterInput.performFilter(athletes.map((item) => {
+            athletes = FilterInput.performFilter(athletes.map((item) => {
 
                 return {
                     ...item,
@@ -72,7 +75,10 @@ export default class EventResolver implements ResolverInterface<Event> {
                 };
             }), filters);
 
-            return filteredAthletes;
+        }
+
+        if (sortArgs && sortArgs.sort && sortArgs.sort.length){
+            athletes = SortInput.performSort(athletes, sortArgs.sort);
         }
 
         return athletes;

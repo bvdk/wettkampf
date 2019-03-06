@@ -63,7 +63,7 @@ export default class AttemptsResolver {
 
         @Args() {id}: IdArgs,
         @Arg("data") data: AttemptUpdateInput,
-        @Arg("skipAutoCalc",{nullable: true}) skipAutoCalc: boolean,
+        @Arg("skipAutoCalc", {nullable: true}) skipAutoCalc: boolean,
         @Ctx() ctx: Context,
     ): Attempt {
 
@@ -84,6 +84,22 @@ export default class AttemptsResolver {
         return true;
     }
 
+    @Mutation()
+    public autoCalcEventPoints(
+        @Args() {id}: IdArgs,
+        @Ctx() ctx: Context,
+    ): boolean {
+        const eventsResolver = new EventsResolver();
+        const eventResolver = new EventResolver();
+        const event = eventsResolver.event({id});
+        const athletes = eventResolver.athletes(event);
+        athletes.forEach((athlete) => {
+            this.autoUpdateTotalAndPoints(athlete.id);
+        });
+
+        return true;
+    }
+
 
     public autoUpdateTotalAndPoints(athleteId: string): Athlete | void {
 
@@ -92,11 +108,21 @@ export default class AttemptsResolver {
         const athlete = athletesResolver.athlete({id: athleteId});
         if (!athlete) { return null; }
         const bestAttempts = athleteResolver.bestAttempts(athlete);
+
+        const nextAttempts = athleteResolver.nextAttempts(athlete);
+
         const total: number = bestAttempts.map((item) => item.weight).reduce((pv, cv) => pv + cv, 0);
 
         if (!_.isNaN(total) && total > 0) {
+
+            const nextAttemptsSortKeys = nextAttempts.reduce((acc, attempt: Attempt) => ({
+                ...acc,
+                [attempt.discipline]: attempt ? `${attempt.index}-${100000 + attempt.weight}` : "999999",
+            }), {});
+
             return athletesResolver.updateAthlete({id: athleteId}, {
-                points: athlete.wilks ? athlete.wilks * total : null,
+                nextAttemptsSortKeys,
+                points: this.calcAthletePoints(athlete, total),
                 total,
             }, null);
         }
@@ -145,12 +171,20 @@ export default class AttemptsResolver {
         const eventsResolver = new EventsResolver();
         const eventResolver = new EventResolver();
         const athleteResolver = new AthleteResolver();
+        const athletesResolver = new AthletesResolver();
 
         const event = eventsResolver.event({id});
         const athletes = eventResolver.athletes(event);
 
         athletes.forEach((athlete) => {
             const disciplines = [];
+
+            if (!athlete.bodyWeight) {
+                athletesResolver.updateAthlete({id: athlete.id}, {
+                    bodyWeight: 85,
+                }, ctx);
+            }
+
 
             if (event.discipline === Discipline.POWERLIFTING) {
                 disciplines.push(Discipline.BENCHPRESS);
@@ -184,4 +218,13 @@ export default class AttemptsResolver {
 
     }
 
+    private calcAthletePoints(athlete: Athlete, total) {
+
+        const athleteResolver = new AthleteResolver();
+        const valid = athleteResolver.valid(athlete);
+        if (!valid) {
+            return null;
+        }
+        return athlete.wilks ? athlete.wilks * total : null;
+    }
 }

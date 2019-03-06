@@ -51,6 +51,9 @@ type Athlete {
   attempts(discipline: Discipline): [Attempt!]!
   nextAttempts(discipline: Discipline): [Attempt!]
   bestAttempts(discipline: Discipline): [Attempt!]
+  valid: Boolean
+  nextAttemptsSortKeys: JSON
+  resultClass: ResultClass
 }
 
 type AthleteGroup {
@@ -182,7 +185,7 @@ type Event {
 
   """Athletes without valid group"""
   unsortedAthletes(filters: [FilterInput!]): [Athlete!]!
-  athletes(filters: [FilterInput!]): [Athlete!]!
+  athletes(sort: [SortInput!], filters: [FilterInput!]): [Athlete!]!
   officials: [Official!]!
 }
 
@@ -204,6 +207,11 @@ enum Gender {
   MALE
   FEMALE
 }
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
 
 type Mutation {
   createAgeClass(data: AgeClassInput!): AgeClass!
@@ -246,6 +254,7 @@ type Mutation {
   createAttempt(athleteId: ID!, data: AttemptInput!, discipline: Discipline!): Attempt!
   updateAttempt(skipAutoCalc: Boolean, data: AttemptUpdateInput!, id: ID!): Attempt!
   autoCalcAthletePoints(id: ID!): Boolean!
+  autoCalcEventPoints(id: ID!): Boolean!
   deleteAttempt(id: ID!): Attempt!
   removeAllAttempts(id: ID!): Boolean!
   simulateAttempts(id: ID!): Boolean!
@@ -318,6 +327,11 @@ type Query {
   """Get a Official"""
   official(id: ID!): Official
   findOfficial(eventId: ID, importId: ID): Official!
+}
+
+type ResultClass {
+  id: ID!
+  name: String
 }
 
 type Slot {

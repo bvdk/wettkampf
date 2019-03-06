@@ -110,6 +110,26 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
     }
 
     @FieldResolver()
+    public valid(
+        @Root() athlete: Athlete,
+    ) {
+        return _.chain(this.attempts(athlete))
+            .groupBy("discipline")
+            .map((group, key) => {
+                return group.reduce((acc, cur) => {
+                   if (acc) { return acc; }
+                   return cur.valid;
+
+                } , false);
+            })
+            .reduce((acc, cur) => {
+                if (!acc) { return acc; }
+                return cur;
+            }, true)
+            .value();
+    }
+
+    @FieldResolver()
     public nextAttempts(
         @Root() athlete: Athlete,
         @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
