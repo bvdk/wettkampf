@@ -54,6 +54,12 @@ class EventMenu extends Component<Props> {
                 Bühnen
               </Link>
             </Menu.Item>
+            <Menu.Item key="officials">
+              <Link to={`/events/${eventId}/officials`}>
+                <Icon type="flag" />
+                Kampfrichter
+              </Link>
+            </Menu.Item>
           </MenuItemGroup>
           <MenuItemGroup key="g2" title="Wettkampf">
             <Menu.Item key="attempts">

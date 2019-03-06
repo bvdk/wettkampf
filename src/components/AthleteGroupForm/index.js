@@ -76,12 +76,11 @@ export default class AthleteGroupForm extends Component<Props> {
 
   render() {
 
-
     return (
       <AttributesForm
         useSubmit
         onSubmit={this.props.onSubmit}
-        formValues={this.props.formValues}
+        values={this.props.formValues}
         mutation={this.props.mutation}
         translateMutationOptions={this.props.translateMutationOptions}
         attributes={attributes}

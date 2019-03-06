@@ -1,0 +1,13 @@
+query eventOfficials($eventId: ID!){
+    event(id: $eventId){
+        id
+        officials {
+            id
+            firstName
+            lastName
+            location
+            position
+            license
+        }
+    }
+}

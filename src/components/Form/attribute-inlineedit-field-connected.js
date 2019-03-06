@@ -153,6 +153,7 @@ class AttributeInlineEditField extends Component<Props, State> {
             name = `${name}`;
         }
 
+
         return (
           <FormItem
             className={'attribute-inline-edit-field'}

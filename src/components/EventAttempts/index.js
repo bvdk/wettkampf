@@ -5,7 +5,6 @@ import {loader} from "graphql.macro";
 import {compose, graphql} from "react-apollo";
 import {withProps} from "recompose";
 import _ from "lodash";
-import waitWhileLoading from "../../hoc/waitWhileLoading";
 
 type Props = {
   eventId: string,
@@ -64,14 +63,22 @@ const getFilterParams = (filterParams) => {
 export default compose(
   graphql(EventAttemptsQuery, {
     name: 'eventAttemptsQuery',
-    options: (props: Props) =>({
-      fetchPolicy: 'cache-and-network',
-      variables: {
-        eventId: props.eventId,
-        discipline: _.get(props,'filterParams.discipline'),
-        filters: getFilterParams(_.get(props,'filterParams'))
+    options: (props: Props) =>{
+
+      const discipline = _.get(props,'filterParams.discipline');
+      return {
+        fetchPolicy: 'cache-and-network',
+        variables: {
+          eventId: props.eventId,
+          discipline,
+          filters: getFilterParams(_.get(props,'filterParams')),
+          sort: discipline ? [{
+            name: `nextAttemptsSortKeys.${discipline}`,
+            direction: 'ASC'
+          }] : null
+        }
       }
-    }),
+    },
   }),
   withProps((props)=>({
     loading: _.get(props,'eventAttemptsQuery.loading',false),

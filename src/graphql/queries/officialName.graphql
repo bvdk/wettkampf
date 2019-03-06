@@ -1,0 +1,8 @@
+query officialName($id: ID!){
+    official(id: $id){
+        id
+        firstName
+        lastName
+        name
+    }
+}

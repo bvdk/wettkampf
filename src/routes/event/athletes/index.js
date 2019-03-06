@@ -5,7 +5,8 @@ import _ from 'lodash';
 import EventAthletesRoute from "./EventAthletesRoute";
 import NewAthleteRoute from "./NewAthleteRoute";
 import ImportAthletesRoute from "./ImportAthletesRoute";
-import EventAthleteRoute from "./EventAthleteRoute";
+import EventAthleteRoute from "./athlete";
+import RedirectWithParams from "../../Redirect";
 
 export default (props) => {
 
@@ -16,7 +17,8 @@ export default (props) => {
   return <Switch>
     <Route path="/events/:eventId/athletes/new" component={() => <NewAthleteRoute eventId={eventId} />} />
     <Route path="/events/:eventId/athletes/import" component={() => <ImportAthletesRoute eventId={eventId} />} />
-    <Route path="/events/:eventId/athletes/:athleteId" component={({match}) => <EventAthleteRoute history={history} eventId={eventId} athleteId={match.params.athleteId} />} />
+    <Route path="/events/:eventId/athletes/:athleteId/:tabIndex" component={EventAthleteRoute} />
+    <RedirectWithParams from={'/events/:eventId/athletes/:athleteId'} to="/events/:eventId/athletes/:athleteId/form" />
     <Route path="/events/:eventId/athletes" component={() => <EventAthletesRoute history={history} eventId={eventId} />} />
   </Switch>
 }

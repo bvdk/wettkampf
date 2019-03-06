@@ -7,6 +7,7 @@ import EventAthleteGroupMenuList from "../../../../components/EventAthleteGroupM
 import {Link} from "react-router-dom";
 import EventAthleteGroupDashboardRoute from "./EventAthleteGroupDashboardRoute";
 import Toolbar from "../../../../components/Toolbar";
+import EventAthleteGroupFormRoute from "./EventAthleteGroupFormRoute";
 
 const { SubMenu } = Menu;
 
@@ -28,8 +29,8 @@ export default (props) => {
         </Col>
         <Col style={{flexGrow: 1}} >
             <Switch>
+                <Route path="/events/:eventId/athleteGroups/:athleteGroupId/edit" component={EventAthleteGroupFormRoute} />
                 <Route path="/events/:eventId/athleteGroups/:athleteGroupId" component={EventAthleteGroupDashboardRoute} />
-
             </Switch>
         </Col>
     </Row>

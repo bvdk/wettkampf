@@ -1,5 +1,5 @@
 mutation updateAthleteGroup($athleteGroupId: ID!, $data: AthleteGroupInput!) {
-    updateAthleteGroup(id: $$athleteGroupId, data:$data){
+    updateAthleteGroup(id: $athleteGroupId, data:$data){
         id
         name
     }

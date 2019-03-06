@@ -12,6 +12,7 @@ import EventSlotsRoute from "./slots";
 import EventAthleteGroupsRoute from "./athleteGroups";
 import EventResultsRoute from "./results";
 import {Col, Grow, Row} from "../../components/Flex";
+import EventOfficialsRoute from "./officials";
 
 
 export default (props) => {
@@ -33,6 +34,7 @@ export default (props) => {
         <Route path="/events/:eventId/slots" component={() => <EventSlotsRoute history={history} eventId={eventId}/>} />
         <Route path="/events/:eventId/attempts" component={(props) => <EventAttemptsRoute history={_.get(props,'history')} eventId={eventId}/>} />
         <Route path="/events/:eventId/results" component={(props) => <EventResultsRoute history={_.get(props,'history')} eventId={eventId}/>} />
+        <Route path="/events/:eventId/officials" component={(props) => <EventOfficialsRoute history={_.get(props,'history')} eventId={eventId}/>} />
         <Redirect
             from="/events/:eventId"
             to="/events/:eventId/athletes"

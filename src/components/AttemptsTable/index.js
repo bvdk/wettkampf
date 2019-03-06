@@ -109,19 +109,19 @@ class AttemptsTable extends Component<Props, State> {
         title: 'Punkte',
       }];
 
-    const dataSource = _.chain(athletes)
-      .map(item => ({
-        ...item,
-          __sortKey: _.get(item,'nextAttempts[0]') ? `${_.get(item,'nextAttempts[0].index')}-${100000+_.get(item,'nextAttempts[0].weight')}` : "999999",
-      }))
-      .orderBy(['__sortKey'],['asc'])
-      .value()
+    // const dataSource = _.chain(athletes)
+    //   .map(item => ({
+    //     ...item,
+    //       __sortKey: _.get(item,'nextAttempts[0]') ? `${_.get(item,'nextAttempts[0].index')}-${100000+_.get(item,'nextAttempts[0].weight')}` : "999999",
+    //   }))
+    //   .orderBy(['__sortKey'],['asc'])
+    //   .value()
 
     return <div>
       <Table
         rowKey={"id"}
         size={'small'}
-        dataSource={dataSource}// dataSource={dataSource.length ? [_.first(dataSource)] : []}
+        dataSource={athletes}// dataSource={dataSource.length ? [_.first(dataSource)] : []}
         columns={columns}
         {...tableProps}
       />

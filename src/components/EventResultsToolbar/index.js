@@ -56,7 +56,7 @@ class EventResultsToolbar extends Component<Props, State> {
           onChange={onChange}/>
       </span>}
       renderRight={() => [
-        <Button>
+        <Button key={'print'}>
           <a href={`/export/${eventId}`} download>Drucken</a>
         </Button>
       ]}/>;

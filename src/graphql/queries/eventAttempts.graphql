@@ -1,8 +1,8 @@
-query eventAttempts($eventId: ID!, $filters: [FilterInput!], $discipline: Discipline ) {
+query eventAttempts($eventId: ID!, $filters: [FilterInput!], $sort: [SortInput!], $discipline: Discipline ) {
     event(id: $eventId){
         id
         availableDisciplines
-        athletes(filters: $filters) {
+        athletes(filters: $filters, sort: $sort) {
             id
             birthday
             los

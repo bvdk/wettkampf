@@ -40,8 +40,12 @@ class DataLoaderValueLabel extends Component<Props, State> {
 
             const item = loaderConfig.useListQueryForValue ?
               _.get(data,`${loaderConfig.valueQueryDataKey || loaderConfig.dataKey}.${loaderConfig.textKey}`) :
-              _.chain(data).get(loaderConfig.dataKey).get(loaderConfig.itemsKey).find({[loaderConfig.valueKey]: value}).get(loaderConfig.textKey).value();
+                loaderConfig.valueQueryDataKey ?
+                  _.chain(data).get(loaderConfig.valueQueryDataKey).get(loaderConfig.textKey).value()
+                  :
+                  _.chain(data).get(loaderConfig.dataKey).get(loaderConfig.itemsKey).find({[loaderConfig.valueKey]: value}).get(loaderConfig.textKey).value();
 
+            console.log(loaderConfig,data);
 
             if (item){
               return <span>{item}</span>

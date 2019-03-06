@@ -1,0 +1,23 @@
+query athleteGroupForm($id: ID!) {
+    athleteGroup(id: $id){
+        id
+        name
+        slotId
+        slot {
+            id
+            name
+        }
+        gender
+        weightClassId
+        weightClass {
+            id
+            name
+            gender
+        }
+        ageClassId
+        ageClass {
+            id
+            name
+        }
+    }
+}
