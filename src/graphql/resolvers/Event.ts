@@ -9,10 +9,13 @@ import {CollectionKeys} from "../../database";
 import {Discipline} from "../models/discipline";
 import {FilterInput} from "../models/filter";
 import {Official} from "../models/official";
+import {ResultClass} from "../models/resultClass";
 import {Slot} from "../models/slot";
+import {SortInput} from "../models/sort";
+import AgeClassesResolver from "./AgeClasses";
 import FilterArgs from "./args/FilterArgs";
 import SortArgs from "./args/SortArgs";
-import {SortInput} from "../models/sort";
+import WeightClassesResolver from "./WeightClasses";
 
 @Resolver((of) => Event)
 export default class EventResolver implements ResolverInterface<Event> {
@@ -77,7 +80,7 @@ export default class EventResolver implements ResolverInterface<Event> {
 
         }
 
-        if (sortArgs && sortArgs.sort && sortArgs.sort.length){
+        if (sortArgs && sortArgs.sort && sortArgs.sort.length) {
             athletes = SortInput.performSort(athletes, sortArgs.sort);
         }
 
@@ -128,6 +131,41 @@ export default class EventResolver implements ResolverInterface<Event> {
         }
 
         return FilterInput.performFilter(unsortedAthletes, filters);
+    }
+
+
+    @FieldResolver()
+    public resultClasses(
+        @Root() event: Event,
+    ): ResultClass[] {
+
+        const groups = _.chain(this.athletes(event))
+            .groupBy((athlete) => {
+                const keyComponents = [
+                    "gender",
+                    "weightClassId",
+                    "ageClassId",
+                    "raw",
+                ];
+
+                return keyComponents
+                    .map((key) => athlete[key])
+                    .filter((item) => item)
+                    .join("-");
+            })
+            .value();
+
+        return Object.keys(groups).map((groupId) => {
+            const athlete = _.first(groups[groupId]);
+            const resultClass: ResultClass = {
+                ageClassId: athlete.ageClassId,
+                gender: athlete.gender,
+                id: groupId,
+                raw: athlete.raw,
+                weightClassId: athlete.weightClassId,
+            };
+            return resultClass;
+        });
     }
 
 }

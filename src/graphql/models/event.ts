@@ -6,6 +6,7 @@ import {Discipline} from "./discipline";
 import {Official} from "./official";
 import {Gender} from "./gender";
 import {Slot} from "./slot";
+import {ResultClass} from "./resultClass";
 
 @ObjectType()
 export class Event {
@@ -53,6 +54,9 @@ export class Event {
 
     @Field((type) => [Official])
     public officials: Official[];
+
+    @Field((type) => [ResultClass])
+    public resultClasses: ResultClass[];
 
 }
 

@@ -54,6 +54,7 @@ type Athlete {
   valid: Boolean
   nextAttemptsSortKeys: JSON
   resultClass: ResultClass
+  raw: Boolean
 }
 
 type AthleteGroup {
@@ -108,6 +109,7 @@ input AthleteInput {
   bodyWeight: Float
   weightClassId: String
   los: Int
+  raw: Boolean
 }
 
 input AthleteUpdateInput {
@@ -127,6 +129,7 @@ input AthleteUpdateInput {
   bodyWeight: Float
   weightClassId: String
   los: Int
+  raw: Boolean
 }
 
 type Attempt {
@@ -187,6 +190,7 @@ type Event {
   unsortedAthletes(filters: [FilterInput!]): [Athlete!]!
   athletes(sort: [SortInput!], filters: [FilterInput!]): [Athlete!]!
   officials: [Official!]!
+  resultClasses: [ResultClass!]!
 }
 
 input EventInput {
@@ -332,6 +336,10 @@ type Query {
 type ResultClass {
   id: ID!
   name: String
+  ageClassId: String
+  weightClassId: String
+  gender: Gender
+  raw: Boolean
 }
 
 type Slot {

@@ -121,6 +121,9 @@ export class Athlete {
     @Field((type) => ResultClass, { nullable: true })
     public resultClass: ResultClass;
 
+    @Field((type) => Boolean, {nullable: true})
+    public raw?: boolean;
+
 }
 
 
@@ -172,6 +175,9 @@ export class AthleteInput implements Partial<Athlete> {
     @Field((type) => Int, {nullable: true})
     public los?: number;
 
+    @Field({nullable: true})
+    public raw?: boolean;
+
 }
 
 @InputType()
@@ -195,4 +201,7 @@ export class AthleteUpdateInput extends AthleteInput implements Partial<Athlete>
     public nextAttemptsSortKeys?: {
         [key: string]: string,
     };
+
+    @Field({nullable: true})
+    public raw?: boolean;
 }

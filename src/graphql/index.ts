@@ -16,6 +16,7 @@ import OfficialsResolver from "./resolvers/Officials";
 import OfficialResolver from "./resolvers/Official";
 import WeightClass from "./resolvers/weightClass";
 import WeightClasses from "./resolvers/WeightClasses";
+import ResultClassResolver from "./resolvers/ResultClass";
 
 // @ts-ignore
 const schema = buildSchema({
@@ -36,6 +37,7 @@ const schema = buildSchema({
         AgeClasses,
         OfficialsResolver,
         OfficialResolver,
+        ResultClassResolver,
     ],
 });
 
