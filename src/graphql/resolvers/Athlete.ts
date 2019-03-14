@@ -7,6 +7,7 @@ import {Athlete} from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Attempt} from "../models/attempt";
 import {Discipline} from "../models/discipline";
+import {ResultClass} from "../models/resultClass";
 import {Slot} from "../models/slot";
 import {WeightClass} from "../models/weightClass";
 import AthletesResolver from "./Athletes";
@@ -193,6 +194,33 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
             tmp = athlete.points;
         }
         return tmp ? Math.round(tmp * 100) / 100 : null;
+    }
+
+    public resultClassIdFromAthlete(athlete: Athlete) {
+        const keyComponents = [
+            "gender",
+            "weightClassId",
+            "ageClassId",
+            "raw",
+        ];
+
+        return keyComponents
+            .map((key) => athlete[key])
+            .filter((item) => item)
+            .join("-");
+    }
+
+    @FieldResolver()
+    public resultClass(@Root() athlete: Athlete) {
+        const resultClass: ResultClass = {
+            ageClassId: athlete.ageClassId,
+            gender: athlete.gender,
+            id: this.resultClassIdFromAthlete(athlete),
+            raw: athlete.raw,
+            weightClassId: athlete.weightClassId,
+        };
+
+        return resultClass;
     }
 
 }

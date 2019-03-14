@@ -17,7 +17,7 @@
       "gender": "FEMALE",
       "club": "ESV München-Neuaubing",
       "birthday": "1995-08-26T22:00:00.000Z",
-      "total": 572,
+      "total": 494,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
@@ -33,15 +33,14 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": 507.1149859873356,
-      "place": null,
+      "points": 437.96294244360803,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "573bff53-5ef5-4477-9a32-b49a90aa88f7",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {
-        "SQUAT": "2-100163"
-      }
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -74,7 +73,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "8e5af669-4b78-481c-b2bf-638c4d994e33",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -102,12 +102,13 @@
       "KH2": null,
       "KH3": null,
       "points": 367.92433423906346,
-      "place": null,
+      "place": 6,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "057ce4f8-6196-41d5-b619-9a2f4b21ac80",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -135,14 +136,15 @@
       "KH2": null,
       "KH3": null,
       "points": 559.4223009755399,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "5caa2b58-1f9d-44f5-a5ee-f0096501ae20",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
       "nextAttemptsSortKeys": {
         "SQUAT": "2-100166"
-      }
+      },
+      "position": 6
     },
     {
       "ageClassId": "aktive",
@@ -175,7 +177,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "b7b58a88-e203-4ed9-9b43-0d6d709fe6cb",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -208,7 +211,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "7d0ea4d7-3af5-41d6-b37e-67fcbb0b6394",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -236,12 +240,13 @@
       "KH2": null,
       "KH3": null,
       "points": 530.1656671685781,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "8cbe8745-3610-41c3-890f-a6af8a01fd5b",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "aktive",
@@ -269,12 +274,13 @@
       "KH2": null,
       "KH3": null,
       "points": 561.1954302971739,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "6b71150a-1b40-40ad-9ce9-f21bf5ad6482",
       "athleteGroupId": "307cdc90-554a-4aec-ab66-b3388954b3e0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -302,12 +308,13 @@
       "KH2": null,
       "KH3": null,
       "points": 415.79882592318256,
-      "place": null,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "743b8255-b89e-4eb3-95d2-117ef10599d2",
       "athleteGroupId": "307cdc90-554a-4aec-ab66-b3388954b3e0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -335,12 +342,13 @@
       "KH2": null,
       "KH3": null,
       "points": 583.3595468175994,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "ccc0d6ca-c995-414e-a776-dc2b2ca25d7a",
       "athleteGroupId": "307cdc90-554a-4aec-ab66-b3388954b3e0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -373,7 +381,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e9ab7802-d834-4640-85b4-9126c259c4ae",
       "athleteGroupId": "307cdc90-554a-4aec-ab66-b3388954b3e0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -401,12 +410,13 @@
       "KH2": null,
       "KH3": null,
       "points": 447.7151537125953,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "000d185e-89ee-4986-be1a-6f6647a8fca9",
       "athleteGroupId": "307cdc90-554a-4aec-ab66-b3388954b3e0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -670,7 +680,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "6de519b6-5475-4168-ad1c-e9a4a4e12067",
       "athleteGroupId": "0a6bd54c-8749-4711-bde4-83bf91f901ed",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -698,12 +709,13 @@
       "KH2": null,
       "KH3": null,
       "points": 487.61056344936117,
-      "place": null,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "57d89ccc-fe6a-4b98-8af6-5873c322cbf6",
       "athleteGroupId": "0a6bd54c-8749-4711-bde4-83bf91f901ed",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -731,12 +743,13 @@
       "KH2": null,
       "KH3": null,
       "points": 514.2075032738718,
-      "place": null,
+      "place": 2,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "996feef4-5319-425c-ab0d-a545305368ac",
       "athleteGroupId": "0a6bd54c-8749-4711-bde4-83bf91f901ed",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -764,12 +777,13 @@
       "KH2": null,
       "KH3": null,
       "points": 492.9299514142633,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d915f5d7-f9aa-43ee-814f-4024f99ce6bc",
       "athleteGroupId": "0a6bd54c-8749-4711-bde4-83bf91f901ed",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -797,12 +811,13 @@
       "KH2": null,
       "KH3": null,
       "points": 545.2372664024675,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d909b3d6-e17f-4261-80d3-e050920cfd80",
       "athleteGroupId": "0a6bd54c-8749-4711-bde4-83bf91f901ed",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -830,12 +845,13 @@
       "KH2": null,
       "KH3": null,
       "points": 640.0996851098887,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "00a55515-9ede-41c8-945d-a8c89d99a4bf",
       "athleteGroupId": "0a6bd54c-8749-4711-bde4-83bf91f901ed",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "aktive",
@@ -868,7 +884,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d8123d3c-ce9c-4b54-a73d-072f5514a000",
       "athleteGroupId": "76d32c6c-5541-4604-8919-0894faba3127",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -896,12 +913,13 @@
       "KH2": null,
       "KH3": null,
       "points": 427.3241665138038,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "69e21539-6557-444f-a83a-72aee32407bb",
       "athleteGroupId": "76d32c6c-5541-4604-8919-0894faba3127",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -929,12 +947,13 @@
       "KH2": null,
       "KH3": null,
       "points": 523.959714542859,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "20fdf3c2-998d-407f-aeef-a2e4cc0a4235",
       "athleteGroupId": "76d32c6c-5541-4604-8919-0894faba3127",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -995,12 +1014,13 @@
       "KH2": null,
       "KH3": null,
       "points": 424.66447253135277,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "86093ab5-f52a-4ecb-b08e-30edd23ef88e",
       "athleteGroupId": "3a520cb9-62c9-4436-84a9-2a46066d1941",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak1",
@@ -1033,7 +1053,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "8f1aeacd-07dc-4e87-a944-a981cb5762da",
       "athleteGroupId": "3a520cb9-62c9-4436-84a9-2a46066d1941",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -1061,12 +1082,13 @@
       "KH2": null,
       "KH3": null,
       "points": 553.2163483498207,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "816ba831-fca2-4809-bad5-4592ed9262eb",
       "athleteGroupId": "3a520cb9-62c9-4436-84a9-2a46066d1941",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak1",
@@ -1094,12 +1116,13 @@
       "KH2": null,
       "KH3": null,
       "points": 484.95086946691015,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e7a6186b-30ce-4379-8986-52100e8b0515",
       "athleteGroupId": "5f80458a-9b68-4ff0-b5fb-62e726c21f3d",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak1",
@@ -1132,7 +1155,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d328a4ef-b368-4abb-873d-3cd1f6e747a8",
       "athleteGroupId": "5f80458a-9b68-4ff0-b5fb-62e726c21f3d",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -1297,7 +1321,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f7875852-21f3-480f-88b7-233e39a6ba7f",
       "athleteGroupId": "4ec35ece-6acc-40ed-8bb7-0dc9d2e6330b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -1325,12 +1350,13 @@
       "KH2": null,
       "KH3": null,
       "points": 380.5203702509774,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "b79df64f-6d3d-4352-87b8-c6ebcea1ff9d",
       "athleteGroupId": "6cd44d6a-880f-4167-b637-2435d87e9f41",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "ak1",
@@ -1358,12 +1384,13 @@
       "KH2": null,
       "KH3": null,
       "points": 358.1368190597434,
-      "place": null,
+      "place": 2,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "b7cef96a-dd33-413a-a4b7-a9fbac1a62ea",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "ak1",
@@ -1391,12 +1418,13 @@
       "KH2": null,
       "KH3": null,
       "points": 327.8531909774857,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "2c14ec80-1f32-4c7e-870e-809438f19c6b",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "ak1",
@@ -1429,7 +1457,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d9f4878f-1b2e-4741-b0b6-0230a8ba150f",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -1457,12 +1486,13 @@
       "KH2": null,
       "KH3": null,
       "points": 325.21983201381113,
-      "place": null,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "6a2f584a-d985-46da-8185-d46ecbe7e015",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak1",
@@ -1490,12 +1520,13 @@
       "KH2": null,
       "KH3": null,
       "points": 304.8113000453331,
-      "place": null,
+      "place": 5,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "bfbf4127-178b-44b7-9beb-7fdc2817bdab",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak1",
@@ -1561,7 +1592,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "08775119-0c6f-4878-995f-53d02edbc9d0",
       "athleteGroupId": "d3dd2cc9-a960-4f60-af5b-374d6ac37462",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -1589,12 +1621,13 @@
       "KH2": null,
       "KH3": null,
       "points": 282.42774885409915,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "54a82b63-4f31-43d1-a203-0faab7997c48",
       "athleteGroupId": "d3dd2cc9-a960-4f60-af5b-374d6ac37462",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak1",
@@ -1627,7 +1660,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "3335678a-e6b6-418e-a460-2fc5ff28a6b6",
       "athleteGroupId": "d79f35f4-1214-4a89-bf34-53688af0a376",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -1660,7 +1694,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c175a1a0-f863-4ea3-823b-452cd79d0aea",
       "athleteGroupId": "d79f35f4-1214-4a89-bf34-53688af0a376",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -1759,7 +1794,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "31b2d3ef-2a48-4135-9b00-9ef726e66614",
       "athleteGroupId": "23e32ada-1988-4365-8093-7e2259141c0f",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -1792,7 +1828,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "6935e53c-fc62-498b-a741-36ad05bb74a9",
       "athleteGroupId": "23e32ada-1988-4365-8093-7e2259141c0f",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -1825,7 +1862,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "daf250c5-a964-425b-904e-921061e44dd3",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -1853,12 +1891,13 @@
       "KH2": null,
       "KH3": null,
       "points": 379.2036907691401,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "a4a37955-0fcb-4bda-919b-57a0b7e6d6b7",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -1891,7 +1930,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "cca21b84-92d1-46a1-812f-2f1970e3417b",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -1919,12 +1959,13 @@
       "KH2": null,
       "KH3": null,
       "points": 322.58647305013653,
-      "place": null,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "625b1995-8fa6-40d1-b50d-660467321681",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -1952,12 +1993,13 @@
       "KH2": null,
       "KH3": null,
       "points": 330.4865499411603,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "80689333-4312-4998-9a00-1f98691fdabc",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -1990,7 +2032,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c22a5de1-a283-4bca-9ed1-f55c3cd02fdc",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2018,12 +2061,13 @@
       "KH2": null,
       "KH3": null,
       "points": 451.62106227019115,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "b98ebd34-3bd4-4f70-85b3-87888d7c853d",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "aktive",
@@ -2051,12 +2095,13 @@
       "KH2": null,
       "KH3": null,
       "points": 239.63566569438714,
-      "place": null,
+      "place": 5,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d0999222-b045-45ff-aa5a-0e3035ceaae9",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -2084,12 +2129,13 @@
       "KH2": null,
       "KH3": null,
       "points": 331.14488968207894,
-      "place": null,
+      "place": 6,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c203aaa5-cc8e-479a-af9b-86674f1e7f1e",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -2117,12 +2163,13 @@
       "KH2": null,
       "KH3": null,
       "points": 258.0691784401092,
-      "place": null,
+      "place": 7,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "210ec0ca-fb14-4ff3-be6a-31257b60cf82",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -2150,12 +2197,13 @@
       "KH2": null,
       "KH3": null,
       "points": 450.9627225292725,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c8b69b4d-25f8-40f2-a6e3-4845a6d9e280",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 6
     },
     {
       "ageClassId": "aktive",
@@ -2183,12 +2231,13 @@
       "KH2": null,
       "KH3": null,
       "points": 412.1206778150724,
-      "place": null,
+      "place": 3,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "654f4529-33a4-4091-bbfc-cb12ad5cf2c6",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -2221,7 +2270,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "cd79899c-cc51-4eb8-84e0-3d550c747353",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2249,12 +2299,13 @@
       "KH2": null,
       "KH3": null,
       "points": 375.9119920645469,
-      "place": null,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "1c2cb85f-48a2-4122-bfc4-d22badf76e68",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -2282,12 +2333,13 @@
       "KH2": null,
       "KH3": null,
       "points": 383.8120689555706,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f4aa3438-820e-40ec-81dd-0a7dfaefee36",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 8
     },
     {
       "ageClassId": "aktive",
@@ -2315,12 +2367,13 @@
       "KH2": null,
       "KH3": null,
       "points": 394.34550481026895,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "4ffa851a-ad25-45a0-8b81-a376e664fd2e",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 9
     },
     {
       "ageClassId": "aktive",
@@ -2353,7 +2406,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "7b06b70e-6b26-4faa-8a1a-87d41a313e00",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2386,7 +2440,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f3ad0a7a-98e4-44b3-88a8-d0f212222814",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2414,12 +2469,13 @@
       "KH2": null,
       "KH3": null,
       "points": 306.786319268089,
-      "place": null,
+      "place": 5,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f0496a5e-2d43-4213-89df-70c6dbfa927d",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -2452,7 +2508,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "fa69d6e8-d29e-4a08-a7c8-466dd429e580",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2480,12 +2537,13 @@
       "KH2": null,
       "KH3": null,
       "points": 283.08608859501777,
-      "place": null,
+      "place": 7,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "8d83a833-9ca5-4150-ad85-0df7c92fab74",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -2518,7 +2576,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d76094c7-a321-4b10-bf03-fa173e44efa0",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2546,12 +2605,13 @@
       "KH2": null,
       "KH3": null,
       "points": 348.26172294596375,
-      "place": null,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "8bf39628-2d16-4887-a883-52dc5bdba2c0",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "aktive",
@@ -2579,12 +2639,13 @@
       "KH2": null,
       "KH3": null,
       "points": 337.06994735034675,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "a4ab39d2-e340-4452-bc30-911f7aa547bd",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -2612,12 +2673,13 @@
       "KH2": null,
       "KH3": null,
       "points": 292.3028449678788,
-      "place": null,
+      "place": 5,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "eb437be9-4a10-4edd-b3d7-d2d73277c9dc",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -2645,12 +2707,13 @@
       "KH2": null,
       "KH3": null,
       "points": 484.5380493161235,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "ec077d02-0371-4528-bf33-90d6ba1a0fc7",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "aktive",
@@ -2678,12 +2741,13 @@
       "KH2": null,
       "KH3": null,
       "points": 314.6863961591128,
-      "place": null,
+      "place": 2,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "75f3697c-6157-4384-ae0f-16ade651e3de",
       "athleteGroupId": "f2a97ffc-4b22-4968-ae75-623116861439",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -2711,12 +2775,13 @@
       "KH2": null,
       "KH3": null,
       "points": 231.07724906244474,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e569aa9d-f270-4d3e-94cc-910b4c5b1241",
       "athleteGroupId": "f2a97ffc-4b22-4968-ae75-623116861439",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -2744,12 +2809,13 @@
       "KH2": null,
       "KH3": null,
       "points": 356.8201395779061,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "5568aec4-87a3-4c06-ad8c-8c949cb367bc",
       "athleteGroupId": "f2a97ffc-4b22-4968-ae75-623116861439",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -2782,7 +2848,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "1235d65d-6f3f-4d78-9025-d2a43dc0aaa8",
       "athleteGroupId": "f2a97ffc-4b22-4968-ae75-623116861439",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2810,12 +2877,13 @@
       "KH2": null,
       "KH3": null,
       "points": 420.6790944470148,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "904f6d93-418b-406e-8137-f2afe9f187b4",
       "athleteGroupId": "f2a97ffc-4b22-4968-ae75-623116861439",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -2843,12 +2911,13 @@
       "KH2": null,
       "KH3": null,
       "points": 319.95311408646194,
-      "place": null,
+      "place": 4,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "21918fb3-7ed4-4dc6-9985-c31b23f8d109",
       "athleteGroupId": "5394dde3-33d2-44ee-b7e1-858f2910fdae",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -2876,12 +2945,13 @@
       "KH2": null,
       "KH3": null,
       "points": 507.57994024827605,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "ed276a2f-6b51-4893-acb5-7b2eb08e2920",
       "athleteGroupId": "5394dde3-33d2-44ee-b7e1-858f2910fdae",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "aktive",
@@ -2914,7 +2984,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d34e291a-cc67-45e7-bc8d-af4714dcf3ae",
       "athleteGroupId": "5394dde3-33d2-44ee-b7e1-858f2910fdae",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -2942,12 +3013,13 @@
       "KH2": null,
       "KH3": null,
       "points": 256.75249895827193,
-      "place": null,
+      "place": 5,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "4bd6f9fa-939f-4770-943f-36f70be599ab",
       "athleteGroupId": "5394dde3-33d2-44ee-b7e1-858f2910fdae",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -2975,12 +3047,13 @@
       "KH2": null,
       "KH3": null,
       "points": 480.5880108706116,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "91322b1c-a569-4ebb-9e36-cb2202b3da0c",
       "athleteGroupId": "5394dde3-33d2-44ee-b7e1-858f2910fdae",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -3008,12 +3081,13 @@
       "KH2": null,
       "KH3": null,
       "points": 329.82821020024164,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "eb9850aa-60f3-4e4d-8248-417aed51000d",
       "athleteGroupId": "5394dde3-33d2-44ee-b7e1-858f2910fdae",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -3107,12 +3181,13 @@
       "KH2": null,
       "KH3": null,
       "points": 395.0038445511876,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f2be05b2-e903-4db9-98f1-e07f478bf262",
       "athleteGroupId": "797a2bb1-d7ac-4f0c-9749-314327a406ec",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "ak2",
@@ -3140,12 +3215,13 @@
       "KH2": null,
       "KH3": null,
       "points": 279.79438989042455,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "862a7e58-f5ce-41e1-aaa2-dc1c7e153805",
       "athleteGroupId": "797a2bb1-d7ac-4f0c-9749-314327a406ec",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak2",
@@ -3173,12 +3249,13 @@
       "KH2": null,
       "KH3": null,
       "points": 346.2867037232078,
-      "place": null,
+      "place": 2,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "b54dc2e5-3c5a-4990-aef4-585c35b5c53e",
       "athleteGroupId": "797a2bb1-d7ac-4f0c-9749-314327a406ec",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak2",
@@ -3211,7 +3288,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "5df0ff1b-9609-4b04-9a9e-7727caf41713",
       "athleteGroupId": "62bb4379-d8c8-4076-9601-f32e3afd3884",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -3239,12 +3317,13 @@
       "KH2": null,
       "KH3": null,
       "points": 337.06994735034675,
-      "place": null,
+      "place": 3,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "0d961456-3475-4d38-876a-fca446ccdf98",
       "athleteGroupId": "62bb4379-d8c8-4076-9601-f32e3afd3884",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak2",
@@ -3272,12 +3351,13 @@
       "KH2": null,
       "KH3": null,
       "points": 342.33666527769594,
-      "place": null,
+      "place": 2,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "93c72522-d26d-403c-a31a-3452e11f6f71",
       "athleteGroupId": "62bb4379-d8c8-4076-9601-f32e3afd3884",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "ak2",
@@ -3305,12 +3385,13 @@
       "KH2": null,
       "KH3": null,
       "points": 451.62106227019115,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "15c8695b-4069-470b-a4db-e96baf9a5aad",
       "athleteGroupId": "62bb4379-d8c8-4076-9601-f32e3afd3884",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "ak2",
@@ -3338,12 +3419,13 @@
       "KH2": null,
       "KH3": null,
       "points": 429.8958508198758,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "ba344464-4145-46f1-84ed-542e2856a844",
       "athleteGroupId": "62bb4379-d8c8-4076-9601-f32e3afd3884",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "ak2",
@@ -3409,7 +3491,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "4ae1a9df-4b52-4e50-b1fc-e07811765eb9",
       "athleteGroupId": "7db1e996-cfa3-4ce8-9299-5dc6a1ecb3b0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -3475,7 +3558,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f70c2178-0368-4b95-b929-35e64ccc9010",
       "athleteGroupId": "fbd333f9-5852-4d4f-8405-efcb4da0e7f1",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -3541,7 +3625,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e1d1fad2-e5b1-4115-986f-908fef60f70d",
       "athleteGroupId": "ae13f34b-efb6-4f2a-9419-f3a48a81906c",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak3",
@@ -3574,7 +3659,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "12cd9345-efb2-4946-b7f9-f73bd99d67ed",
       "athleteGroupId": "ae13f34b-efb6-4f2a-9419-f3a48a81906c",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak3",
@@ -3602,12 +3688,13 @@
       "KH2": null,
       "KH3": null,
       "points": 342.33666527769594,
-      "place": null,
+      "place": 2,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "eee2f0ae-9cee-4baa-abf9-585c3eaf4977",
       "athleteGroupId": "300acbef-67a8-4b49-ba80-76a2ce926ca7",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak3",
@@ -3635,12 +3722,13 @@
       "KH2": null,
       "KH3": null,
       "points": 375.2536523236282,
-      "place": null,
+      "place": 1,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f344b492-d668-4a3a-a2e8-0c2e258850bc",
       "athleteGroupId": "300acbef-67a8-4b49-ba80-76a2ce926ca7",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak3",
@@ -3673,7 +3761,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "98105f48-bb95-4199-a1d6-05eb5fb497b8",
       "athleteGroupId": "53494a94-664d-49f2-9fdd-c31806a3f1d9",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak3",
@@ -3701,12 +3790,13 @@
       "KH2": null,
       "KH3": null,
       "points": 435.82090848814363,
-      "place": null,
+      "place": 0,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "ea90dbbd-3caa-408b-88c4-39880e891d1e",
       "athleteGroupId": "53494a94-664d-49f2-9fdd-c31806a3f1d9",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "ak3",
@@ -3739,7 +3829,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "a929c8cc-f7cc-43f6-aeff-4662311d715d",
       "athleteGroupId": "15bb2152-1f76-4cf5-9b35-eb502015b342",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak3",
@@ -3772,7 +3863,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "60526dd3-8fbe-4825-92cf-e6590483eb21",
       "athleteGroupId": "014aea19-1187-4cd2-ae4e-bfc6d079fd41",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak4",
@@ -3871,7 +3963,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e1329163-5270-4997-b8a4-753e8ec3f2bd",
       "athleteGroupId": "fe781666-cbe7-46c9-bf39-6df07b0d92cf",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak4",
@@ -3932,12 +4025,13 @@
       "KH2": null,
       "KH3": null,
       "points": 521.3000205604079,
-      "place": null,
+      "place": 2,
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "01e3f6d9-8e2f-40a5-9294-727184fc58d3",
       "athleteGroupId": "307cdc90-554a-4aec-ab66-b3388954b3e0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "jugend",
@@ -3970,7 +4064,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "bbc4250b-0d64-40e1-80c4-eb0cb55ae895",
       "athleteGroupId": "5a557c55-fa2d-4faf-9792-44b0e969febc",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "jugend",
@@ -3998,12 +4093,13 @@
       "KH2": null,
       "KH3": null,
       "points": 445.69600460192333,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "dd3f8ca1-85b6-4a20-aeb8-67143b6498c4",
       "athleteGroupId": "5a557c55-fa2d-4faf-9792-44b0e969febc",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "jugend",
@@ -4196,12 +4292,13 @@
       "KH2": null,
       "KH3": null,
       "points": 393.02882532843165,
-      "place": null,
+      "place": 1,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "3856d4eb-bbc5-475e-9206-3025073a8fa0",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "ak1",
@@ -4229,12 +4326,13 @@
       "KH2": null,
       "KH3": null,
       "points": 395.66218429210625,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e785da94-a940-4a96-879f-f3d13e556cb1",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "ak1",
@@ -4267,7 +4365,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c4d713b0-0f07-4706-a474-6f8b31cbac6b",
       "athleteGroupId": "970ce0cf-5fdd-438f-8bcc-df56331af7f4",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -4460,12 +4559,13 @@
       "KH2": null,
       "KH3": null,
       "points": 427.9208315971199,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "9da89104-a857-43e5-80e8-2664f8721470",
       "athleteGroupId": "d3dd2cc9-a960-4f60-af5b-374d6ac37462",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "ak1",
@@ -4493,12 +4593,13 @@
       "KH2": null,
       "KH3": null,
       "points": 361.4285177643367,
-      "place": null,
+      "place": 1,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "de7ed70d-bf35-4406-b302-8ed2a85b2256",
       "athleteGroupId": "d3dd2cc9-a960-4f60-af5b-374d6ac37462",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "ak1",
@@ -4526,12 +4627,13 @@
       "KH2": null,
       "KH3": null,
       "points": 342.33666527769594,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d4251998-ea0f-4144-b07b-4b32902144bf",
       "athleteGroupId": "d3dd2cc9-a960-4f60-af5b-374d6ac37462",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "ak1",
@@ -4559,12 +4661,13 @@
       "KH2": null,
       "KH3": null,
       "points": 259.3858579219465,
-      "place": null,
+      "place": 4,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "28878e1e-18e9-43ef-b959-33adb4f33215",
       "athleteGroupId": "d3dd2cc9-a960-4f60-af5b-374d6ac37462",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak1",
@@ -4597,7 +4700,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "b6c24361-7e21-4b06-b50d-6883674d0dfe",
       "athleteGroupId": "6cd44d6a-880f-4167-b637-2435d87e9f41",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -4625,12 +4729,13 @@
       "KH2": null,
       "KH3": null,
       "points": 284.40276807685507,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "9d78e6c3-c0e8-4e2e-bc6c-f23c49ea19b2",
       "athleteGroupId": "6cd44d6a-880f-4167-b637-2435d87e9f41",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak1",
@@ -4658,12 +4763,13 @@
       "KH2": null,
       "KH3": null,
       "points": 300.8612615998212,
-      "place": null,
+      "place": 1,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f6a1932d-1a7b-4cb0-8014-5163f90772b8",
       "athleteGroupId": "6cd44d6a-880f-4167-b637-2435d87e9f41",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak1",
@@ -4696,7 +4802,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "2f07901e-3ccd-49e9-ad5a-760449b2df51",
       "athleteGroupId": "6cd44d6a-880f-4167-b637-2435d87e9f41",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -4762,7 +4869,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "3db0a705-8f5d-4bef-bb72-b634ae679a37",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -4790,12 +4898,13 @@
       "KH2": null,
       "KH3": null,
       "points": 433.1875495244691,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c6c7caf3-2963-48c8-b3a0-1c7f898273d2",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 5
     },
     {
       "ageClassId": "aktive",
@@ -4823,12 +4932,13 @@
       "KH2": null,
       "KH3": null,
       "points": 337.7282870912654,
-      "place": null,
+      "place": 5,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "a7ab8f2c-8492-46b7-8b3a-078f933d1ac6",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "aktive",
@@ -4856,12 +4966,13 @@
       "KH2": null,
       "KH3": null,
       "points": 514.8216773983812,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "82f0dbd0-0534-4481-b841-68efee3b4658",
       "athleteGroupId": "1435fa04-578f-4839-8356-65ff72ff87ff",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 7
     },
     {
       "ageClassId": "aktive",
@@ -4889,12 +5000,13 @@
       "KH2": null,
       "KH3": null,
       "points": 348.26172294596375,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "42394b9a-5685-415f-a6b8-31e8b543a0bd",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -4922,12 +5034,13 @@
       "KH2": null,
       "KH3": null,
       "points": 462.15449812488947,
-      "place": null,
+      "place": 1,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "1cedeaec-ea09-4cc2-9098-55219069a6c7",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -4960,7 +5073,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "0da05a2e-e44d-4537-bc22-047e7b5f5d13",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -4993,7 +5107,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "4e3a6622-1f4c-4c44-bfd2-a6786228cf1e",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -5021,12 +5136,13 @@
       "KH2": null,
       "KH3": null,
       "points": 310.7363577136009,
-      "place": null,
+      "place": 4,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "5f186dd6-b4a1-432a-b43b-0c9479cde39f",
       "athleteGroupId": "61f71559-da65-4ce8-b85e-289bc42e6e7b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -5054,12 +5170,13 @@
       "KH2": null,
       "KH3": null,
       "points": 335.75326786850945,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f029a1f7-e689-4077-8c70-3d17e83b409a",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -5092,7 +5209,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "940373cf-6f30-46c0-917c-fea23e7fd23e",
       "athleteGroupId": "922970b2-265c-4b25-9958-e0507278d7d2",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -5120,12 +5238,13 @@
       "KH2": null,
       "KH3": null,
       "points": 359.4534985415807,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "0fa84d55-ffdd-4e38-b037-8f5b84f3f9ce",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 7
     },
     {
       "ageClassId": "aktive",
@@ -5153,12 +5272,13 @@
       "KH2": null,
       "KH3": null,
       "points": 349.57840242780105,
-      "place": null,
+      "place": 3,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "7bd3cae1-e088-484e-87db-db83e017288e",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 6
     },
     {
       "ageClassId": "aktive",
@@ -5186,12 +5306,13 @@
       "KH2": null,
       "KH3": null,
       "points": 269.26095403572623,
-      "place": null,
+      "place": 9,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "7c550695-b39c-4afc-9ec8-0692f107c6ba",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -5224,7 +5345,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "aefb4b42-262a-4156-8960-93a04172103f",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -5252,12 +5374,13 @@
       "KH2": null,
       "KH3": null,
       "points": 272.55265274031945,
-      "place": null,
+      "place": 8,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "22d49af0-472f-49ec-8129-933f9f432ae4",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -5290,7 +5413,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f0e631e2-04e3-4880-a0ba-3232b8539ad9",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -5318,12 +5442,13 @@
       "KH2": null,
       "KH3": null,
       "points": 303.4946205634958,
-      "place": null,
+      "place": 6,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "9ed0dce0-a3ad-4d36-9273-a6993182cb82",
       "athleteGroupId": "aff4ca97-b273-416f-bb0e-0d4954199022",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -5356,7 +5481,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "7093bba2-d75f-4b25-bfbd-bb8643de6c85",
       "athleteGroupId": "f2a97ffc-4b22-4968-ae75-623116861439",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -5384,12 +5510,13 @@
       "KH2": null,
       "KH3": null,
       "points": 406.1956201468046,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e1dfac17-1add-4d89-ac36-4a9f3eda3341",
       "athleteGroupId": "5394dde3-33d2-44ee-b7e1-858f2910fdae",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "ak3",
@@ -5417,12 +5544,13 @@
       "KH2": null,
       "KH3": null,
       "points": 416.7290560015029,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "38bb99f9-3909-42cf-b21d-a84a6d55b03d",
       "athleteGroupId": "300acbef-67a8-4b49-ba80-76a2ce926ca7",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "ak3",
@@ -5455,7 +5583,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "8bbc9247-0fbb-4f3d-9fb5-81b3d47c3d72",
       "athleteGroupId": "300acbef-67a8-4b49-ba80-76a2ce926ca7",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak3",
@@ -5483,12 +5612,13 @@
       "KH2": null,
       "KH3": null,
       "points": 366.6952356916858,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e194e375-b6f8-4c19-8d2f-1ffd3e62ac50",
       "athleteGroupId": "c127ad92-2397-4770-bd81-5fa9fe4ed338",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak3",
@@ -5521,7 +5651,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d1b1f8fe-93c3-4428-a13c-dd1ba6ab9dd3",
       "athleteGroupId": "c127ad92-2397-4770-bd81-5fa9fe4ed338",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak3",
@@ -5549,12 +5680,13 @@
       "KH2": null,
       "KH3": null,
       "points": 314.6863961591128,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "a5468872-9dd6-4341-8b6d-6c3368acd92d",
       "athleteGroupId": "53494a94-664d-49f2-9fdd-c31806a3f1d9",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak3",
@@ -5582,12 +5714,13 @@
       "KH2": null,
       "KH3": null,
       "points": 350.8950819096383,
-      "place": null,
+      "place": 1,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "78b38d3e-5c15-479d-a765-abccd488b1ea",
       "athleteGroupId": "53494a94-664d-49f2-9fdd-c31806a3f1d9",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "ak3",
@@ -5615,12 +5748,13 @@
       "KH2": null,
       "KH3": null,
       "points": 300.2029218589026,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "a7d7ab33-587c-4392-bca3-69385d2792a9",
       "athleteGroupId": "ae13f34b-efb6-4f2a-9419-f3a48a81906c",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak3",
@@ -5653,7 +5787,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "255dc45f-214d-470d-a382-978550d062ea",
       "athleteGroupId": "014aea19-1187-4cd2-ae4e-bfc6d079fd41",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "junioren",
@@ -5681,12 +5816,13 @@
       "KH2": null,
       "KH3": null,
       "points": 318.63643460462464,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c02287ab-7cd8-47f8-ad3f-c31fb3b0a7f5",
       "athleteGroupId": "05007ade-acb6-498b-a72b-7d82952c1dfd",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "junioren",
@@ -5714,12 +5850,13 @@
       "KH2": null,
       "KH3": null,
       "points": 380.5203702509774,
-      "place": null,
+      "place": 1,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "84bad4e8-d237-4fc2-aba9-f63d843a4e3c",
       "athleteGroupId": "05007ade-acb6-498b-a72b-7d82952c1dfd",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "junioren",
@@ -5752,7 +5889,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d9009306-0aae-4a7c-a6e4-6e0029fc7a52",
       "athleteGroupId": "05007ade-acb6-498b-a72b-7d82952c1dfd",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "junioren",
@@ -5780,12 +5918,13 @@
       "KH2": null,
       "KH3": null,
       "points": 392.37048558751303,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "124f07cb-0a0b-44f1-b945-43e73fa8cb14",
       "athleteGroupId": "05007ade-acb6-498b-a72b-7d82952c1dfd",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "junioren",
@@ -5950,7 +6089,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "623ff557-744a-49a8-8b0b-aefb88eebf65",
       "athleteGroupId": "809a5a78-d60a-4145-8bac-8403ae876b83",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "junioren",
@@ -5983,7 +6123,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "452fa156-33e0-44d9-a5d3-648e14bdc290",
       "athleteGroupId": "809a5a78-d60a-4145-8bac-8403ae876b83",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -6011,12 +6152,13 @@
       "KH2": null,
       "KH3": null,
       "points": 225.15219139417692,
-      "place": null,
+      "place": 4,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e385932f-a694-4a4c-b62c-8fb57f7359ce",
       "athleteGroupId": "62bb4379-d8c8-4076-9601-f32e3afd3884",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "ak2",
@@ -6077,12 +6219,13 @@
       "KH2": null,
       "KH3": null,
       "points": 371.3036138781163,
-      "place": null,
+      "place": 1,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c4a87507-920c-4e57-a563-4d1c8e05443b",
       "athleteGroupId": "797a2bb1-d7ac-4f0c-9749-314327a406ec",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 2
     },
     {
       "ageClassId": "ak2",
@@ -6115,7 +6258,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d195d5a2-2d9e-41d8-8bc6-a16c73d469e4",
       "athleteGroupId": "797a2bb1-d7ac-4f0c-9749-314327a406ec",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -6148,7 +6292,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "f0e41553-9d93-4796-a6dd-8f0c362fa06e",
       "athleteGroupId": "9ff0d388-09cf-438d-8e87-cb2a14552931",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -6176,12 +6321,13 @@
       "KH2": null,
       "KH3": null,
       "points": 280.4527296313432,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "3e444178-1072-447d-a78c-7ed6418e6954",
       "athleteGroupId": "7db1e996-cfa3-4ce8-9299-5dc6a1ecb3b0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -6275,12 +6421,13 @@
       "KH2": null,
       "KH3": null,
       "points": 508.8881153089697,
-      "place": null,
+      "place": 2,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "d2e3058f-7031-407b-9a22-1bdd9c715d57",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 4
     },
     {
       "ageClassId": "aktive",
@@ -6313,7 +6460,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "ca55bf84-64ee-4935-b068-88b07fa9d8c1",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -6341,12 +6489,13 @@
       "KH2": null,
       "KH3": null,
       "points": 397.1809680460251,
-      "place": null,
+      "place": 5,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c9711247-e39a-4b12-b8d6-68e29bb82b05",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 1
     },
     {
       "ageClassId": "aktive",
@@ -6374,12 +6523,13 @@
       "KH2": null,
       "KH3": null,
       "points": 446.82858905177824,
-      "place": null,
+      "place": 3,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "1ab445f1-05df-4f2e-9bfc-98f24d71fe46",
       "athleteGroupId": "20332581-b55e-400b-b481-f394b2aaf2a3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 3
     },
     {
       "ageClassId": "aktive",
@@ -6407,12 +6557,13 @@
       "KH2": null,
       "KH3": null,
       "points": 415.79882592318256,
-      "place": null,
+      "place": 5,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c8a5ff92-0875-4c00-bc20-11a5440070fd",
       "athleteGroupId": "0a6bd54c-8749-4711-bde4-83bf91f901ed",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "aktive",
@@ -6445,7 +6596,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "4fe4e69c-de19-4794-9fbf-cd46341caab3",
       "athleteGroupId": "307cdc90-554a-4aec-ab66-b3388954b3e0",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "aktive",
@@ -6511,7 +6663,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "15cc3dd8-706f-47ea-861f-0abee0f3d324",
       "athleteGroupId": "7b51436b-1be8-442a-8a6c-8fb87cdc12e3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -6544,7 +6697,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "e7c1dea6-9dc1-4969-a1f0-230be16599b9",
       "athleteGroupId": "6d7f1d5c-f847-4973-b1b3-d3e7a1dcbe46",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak1",
@@ -6610,7 +6764,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "efa40ea6-119e-404e-9db3-2d01f0171c4e",
       "athleteGroupId": "8c485e2f-5ce1-4ed6-be50-c2aa1893e866",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "junioren",
@@ -6638,12 +6793,13 @@
       "KH2": null,
       "KH3": null,
       "points": 484.95086946691015,
-      "place": null,
+      "place": 0,
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "9a70a01f-b7ed-4111-95b5-3bf53d1ff4bb",
       "athleteGroupId": "8c485e2f-5ce1-4ed6-be50-c2aa1893e866",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": 0
     },
     {
       "ageClassId": "junioren",
@@ -6676,7 +6832,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "6cb41b2b-a504-41ba-9052-50d62a6f9b85",
       "athleteGroupId": "8c485e2f-5ce1-4ed6-be50-c2aa1893e866",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "junioren",
@@ -6709,7 +6866,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "89bdb776-9eda-41f0-8e74-5564f1cd4978",
       "athleteGroupId": "e6bb9a11-cd06-4849-a7f8-eb790d0920cd",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "junioren",
@@ -6742,7 +6900,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "5a8ec72e-d2a1-4843-926d-49f33b4c10e9",
       "athleteGroupId": "e6bb9a11-cd06-4849-a7f8-eb790d0920cd",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "junioren",
@@ -6775,7 +6934,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "0d071ce0-df27-4110-a5b7-91922997d327",
       "athleteGroupId": "37644b8c-1ea8-4ea0-b797-85ea0ba0afe3",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -6841,7 +7001,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "8cb02b85-6cea-4234-80de-fb21727df223",
       "athleteGroupId": "19d6fe36-38cc-469b-aaf4-007a5065cb36",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     },
     {
       "ageClassId": "ak2",
@@ -6907,7 +7068,8 @@
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "ff406d9b-61e8-41de-be2c-59026cefd7c3",
       "athleteGroupId": "d2abba30-aae9-4930-ae2d-0afb63e47c90",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {},
+      "position": null
     }
   ],
   "officials": [
@@ -7760,8 +7922,8 @@
     {
       "discipline": "SQUAT",
       "date": "2019-03-05T22:18:24.095Z",
-      "done": false,
-      "valid": null,
+      "done": true,
+      "valid": true,
       "weight": 163,
       "index": 2,
       "athleteId": "573bff53-5ef5-4477-9a32-b49a90aa88f7",
@@ -7931,7 +8093,7 @@
       "discipline": "SQUAT",
       "date": "2019-03-05T22:18:24.100Z",
       "done": true,
-      "valid": false,
+      "valid": true,
       "weight": 142,
       "index": 1,
       "athleteId": "057ce4f8-6196-41d5-b619-9a2f4b21ac80",

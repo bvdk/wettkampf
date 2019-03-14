@@ -221,9 +221,6 @@ type Mutation {
   createAgeClass(data: AgeClassInput!): AgeClass!
   updateAgeClass(data: AgeClassInput!, id: ID!): AgeClass!
   deleteAgeClass(id: ID!): AgeClass!
-  createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
-  updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
-  deleteAthlete(id: ID!): Athlete!
   createWeightClass(data: WeightClassInput!): WeightClass!
   updateWeightClass(data: WeightClassInput!, id: ID!): WeightClass!
   deleteWeightClass(id: ID!): WeightClass!
@@ -255,6 +252,9 @@ type Mutation {
   createEvent(data: EventInput!): Event!
   updateEvent(data: EventInput!, id: ID!): Event!
   deleteEvent(id: ID!): Event!
+  createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
+  updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
+  deleteAthlete(id: ID!): Athlete!
   createAttempt(athleteId: ID!, data: AttemptInput!, discipline: Discipline!): Attempt!
   updateAttempt(skipAutoCalc: Boolean, data: AttemptUpdateInput!, id: ID!): Attempt!
   autoCalcAthletePoints(id: ID!): Boolean!
@@ -292,9 +292,6 @@ type Query {
   """All age classes"""
   ageClasses: [AgeClass!]!
   ageClass(id: ID!): AgeClass!
-  athletes: [Athlete!]!
-  athlete(id: ID!): Athlete!
-  findAthlete(eventId: ID, importId: ID): Athlete!
 
   """All weight classes"""
   weightClasses: [WeightClass!]!
@@ -326,6 +323,9 @@ type Query {
 
   """Get a event"""
   event(id: ID!): Event!
+  athletes: [Athlete!]!
+  athlete(id: ID!): Athlete!
+  findAthlete(eventId: ID, importId: ID): Athlete!
   attempt(id: ID!): Attempt!
 
   """Get a Official"""

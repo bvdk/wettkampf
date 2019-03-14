@@ -15,6 +15,7 @@ import {SortInput} from "../models/sort";
 import AgeClassesResolver from "./AgeClasses";
 import FilterArgs from "./args/FilterArgs";
 import SortArgs from "./args/SortArgs";
+import AthleteResolver from "./Athlete";
 import WeightClassesResolver from "./WeightClasses";
 
 @Resolver((of) => Event)
@@ -69,13 +70,22 @@ export default class EventResolver implements ResolverInterface<Event> {
         const athleteGroups = this.getEventAthleteGroups(event.id);
 
         const filters = _.get(filterArgs, "filters");
-        if (filters) {
-            athletes = FilterInput.performFilter(athletes.map((item) => {
+        if (filters && filters.length) {
+            const slotFilter = _.find(filters, {index: "slotId"});
+            const resultClassFilter = _.find(filters, {index: "resultClassId"});
+            const athleteResolver = new AthleteResolver();
 
-                return {
+            athletes = FilterInput.performFilter(athletes.map((item) => {
+                const tmp: any = {
                     ...item,
-                    slotId: _.chain(athleteGroups).find({id: item.athleteGroupId}).get("slotId").value(),
                 };
+                if (slotFilter) {
+                    tmp.slotId = _.chain(athleteGroups).find({id: item.athleteGroupId}).get("slotId").value();
+                }
+                if (resultClassFilter) {
+                    tmp.resultClassId = athleteResolver.resultClassIdFromAthlete(item);
+                }
+                return tmp;
             }), filters);
 
         }
@@ -139,32 +149,15 @@ export default class EventResolver implements ResolverInterface<Event> {
         @Root() event: Event,
     ): ResultClass[] {
 
-        const groups = _.chain(this.athletes(event))
-            .groupBy((athlete) => {
-                const keyComponents = [
-                    "gender",
-                    "weightClassId",
-                    "ageClassId",
-                    "raw",
-                ];
+        const athleteResolver = new AthleteResolver();
 
-                return keyComponents
-                    .map((key) => athlete[key])
-                    .filter((item) => item)
-                    .join("-");
-            })
+        const groups = _.chain(this.athletes(event))
+            .groupBy((athlete) => athleteResolver.resultClassIdFromAthlete(athlete))
             .value();
 
         return Object.keys(groups).map((groupId) => {
             const athlete = _.first(groups[groupId]);
-            const resultClass: ResultClass = {
-                ageClassId: athlete.ageClassId,
-                gender: athlete.gender,
-                id: groupId,
-                raw: athlete.raw,
-                weightClassId: athlete.weightClassId,
-            };
-            return resultClass;
+            return athleteResolver.resultClass(athlete);
         });
     }
 

@@ -5,7 +5,10 @@ import {CrudAdapter} from "../../database/CrudAdapter";
 import wilks from "../../utils/wilks";
 import { Athlete, AthleteInput, AthleteUpdateInput} from "../models/athlete";
 import IdArgs from "./args/IdArgs";
+import AthleteResolver from "./Athlete";
 import AttemptsResolver from "./Attempts";
+import EventResolver from "./Event";
+import EventsResolver from "./Events";
 
 @ArgsType()
 class CreateAthleteArgs {
@@ -77,7 +80,11 @@ export default class AthletesResolver {
     ): Athlete {
 
         this.autoUpdateWilks(id, data);
-        return CrudAdapter.updateItem(this.collectionKey, id, data);
+        const updateResult = CrudAdapter.updateItem(this.collectionKey, id, data);
+
+        this.postUpdate(data, updateResult);
+
+        return updateResult;
     }
 
     public autoUpdateWilks(id: string, input: any): Athlete | void {
@@ -111,6 +118,48 @@ export default class AthletesResolver {
     ): Athlete {
 
         return CrudAdapter.removeItem(this.collectionKey, id);
+    }
+
+    public calcPlaces(resultClassId: string, eventId: string) {
+
+        if (!resultClassId || !eventId) {
+            return null;
+        }
+
+        const eventResolver = new EventResolver();
+        const eventsResolver = new EventsResolver();
+        const event = eventsResolver.event({id: eventId});
+        const athletes = eventResolver.athletes(event, { filters: [{ index: "resultClassId", value: [resultClassId] }] });
+
+        const result = _.chain(athletes)
+            .filter((athlete) => athlete.points)
+            .orderBy(["points"], ["desc"])
+            .map((athlete, index) => {
+                return CrudAdapter.updateItem(this.collectionKey, athlete.id, {
+                    place: index + 1,
+                });
+            })
+            .value();
+
+        _.chain(athletes)
+            .filter((athlete) => !athlete.points)
+            .map((athlete, index) => {
+                return CrudAdapter.updateItem(this.collectionKey, athlete.id, {
+                    place: null,
+                });
+            })
+            .value();
+
+        return result;
+    }
+
+
+    private postUpdate(updateObject, athlete: Athlete) {
+        const keys = Object.keys(updateObject);
+        if (keys.indexOf("points")) {
+            const athleteResolver = new AthleteResolver();
+            this.calcPlaces(athleteResolver.resultClassIdFromAthlete(athlete), athlete.eventId);
+        }
     }
 
 }
