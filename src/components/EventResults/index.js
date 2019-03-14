@@ -44,20 +44,25 @@ const getFilterParams = (filterParams) => {
 
   const tmp = [];
 
-  if (filterParams.athleteGroupId){
-    tmp.push({
-      value: filterParams.athleteGroupId,
-      index: 'athleteGroupId'
-    })
-  }
-
-  if (filterParams.slotId){
-    tmp.push({
-      value: filterParams.slotId,
-      index: 'slotId'
-    })
-  }
-  return tmp.length ? tmp : null;
+  // if (filterParams.athleteGroupId){
+  //   tmp.push({
+  //     value: filterParams.athleteGroupId,
+  //     index: 'athleteGroupId'
+  //   })
+  // }
+  //
+  // if (filterParams.slotId){
+  //   tmp.push({
+  //     value: filterParams.slotId,
+  //     index: 'slotId'
+  //   })
+  // }
+  return Object.keys(filterParams).map((filterKey)=>{
+    return {
+      value: filterParams[filterKey],
+      index: filterKey
+    }
+  });
 }
 
 export default compose(

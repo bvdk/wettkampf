@@ -32,16 +32,17 @@ class EventResultsToolbar extends Component<Props, State> {
       inputTypeOptions: {
         placeholder: 'Bühne'
       }
-    },{
-      index: 'athleteGroupId',
+    },
+      {
+      index: 'resultClassId',
       type: 'string',
       inputType: 'select',
-      entityType: 'EventAthleteGroup',
+      entityType: 'ResultClass',
       getQueryVariables: () => ({
         eventId
       }),
       inputTypeOptions: {
-        placeholder: 'Startgruppe'
+        placeholder: 'Wertungsgruppe'
       }
     }];
 

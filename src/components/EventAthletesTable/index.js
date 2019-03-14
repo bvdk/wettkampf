@@ -10,6 +10,7 @@ import Toolbar from "../Toolbar";
 import {Button} from "antd";
 import SetAthleteGroupModal from "../SetAthleteGroupModal";
 
+
 const EventAthletesQuery = loader("../../graphql/queries/eventAthletesQuery.graphql");
 
 type Props = {

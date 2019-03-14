@@ -29,6 +29,10 @@ query eventAthletes($eventId: ID!) {
                 id
                 name
             }
+            resultClass {
+                id
+                name
+            }
             wilks
         }
     }

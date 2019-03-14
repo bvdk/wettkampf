@@ -1,0 +1,9 @@
+query eventResultClasses($eventId: ID!) {
+    event(id: $eventId){
+        id
+        resultClasses {
+            id
+            name
+        }
+    }
+}

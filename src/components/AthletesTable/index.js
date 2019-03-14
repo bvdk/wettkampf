@@ -5,6 +5,7 @@ import _ from "lodash";
 import {withNamespaces} from "react-i18next";
 import DangerLabel from "./../DangerLabel";
 
+
 type Props = {
   athletes: any[],
   onSelectChange?: Function,
@@ -95,7 +96,7 @@ class AthletesTable extends Component<Props, State> {
     this.setState({ [key]: '' });
   }
 
-  getColumns() {
+  getColumns(athletes) {
 
     const { t, onAthleteClick, hideKeys } = this.props;
 
@@ -185,25 +186,38 @@ class AthletesTable extends Component<Props, State> {
       defaultSortOrder: 'descend',
       render: (text, record) => _.get(record, 'weightClass.name'),
       sorter: (a, b) => defaultSorter(a, b, 'weightClass.name')
-    },{
-      title: 'Startgruppe',
-      dataIndex: 'athleteGroup.name',
-      key: 'athleteGroup.name',
-      filters: [{
-        text: 'Ohne Zuteilung',
-        value: false,
-      },{
-        text: 'Zugeteilte Athleten',
-        value: true,
-      }],
-      filterMultiple: false,
-      onFilter: (value, record) => {
-        const boolValue = value === "true" ? true : value === "false" ? false : null;
-        return boolValue ? !!record.athleteGroup : !record.athleteGroup;
+    },
+      {
+        title: 'Wertungsgruppe',
+        dataIndex: 'resultClass.name',
+        key: 'resultClass.name',
+        render: (text, record) => record.resultClass ? record.resultClass.name : <DangerLabel>Ungültige Wertungsgruppe</DangerLabel>,
+        sorter: (a, b) => defaultSorter(a, b, 'resultClass.name'),
+        filters: _.chain(athletes)
+          .groupBy('resultClass.id')
+          .map((athletes)=>{
+            const athlete = _.first(athletes);
+            const resultGroup = _.get(athlete,'resultClass');
+            if (resultGroup){
+              return {
+                text: resultGroup.name,
+                value: resultGroup.id,
+              }
+            }
+            return null
+          })
+          .filter((item)=> item)
+          .orderBy(["text","asc"])
+          .value(),
+        onFilter: (value, record) => {
+          let arrVal = value;
+          if (!Array.isArray(arrVal)){
+            arrVal = [value];
+          }
+          return arrVal.indexOf(_.get(record,'resultClass.id')) !== -1;
+        },
       },
-      render: (text, record) => record.athleteGroup ? record.athleteGroup.name : <DangerLabel>Keine Startgruppe zugeweisen</DangerLabel>,
-      sorter: (a, b) => defaultSorter(a, b, 'athleteGroup.name')
-    },{
+      {
       title: 'Bühne',
       dataIndex: 'athleteGroup.slot.name',
       key: 'athleteGroup.slot.name',
@@ -243,7 +257,7 @@ class AthletesTable extends Component<Props, State> {
       <Table
         rowKey={'id'}
         rowSelection={onSelectChange ? this.getRowSelection() : undefined}
-        columns={this.getColumns()}
+        columns={this.getColumns(athletes)}
         dataSource={athletes}
         onChange={(pagination, filters, sorter, { currentDataSource })=>{
           this.setState({

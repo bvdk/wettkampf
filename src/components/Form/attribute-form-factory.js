@@ -32,6 +32,7 @@ import MenuAsync from "./fields/MenuAsync";
 import OneLineLabel from "../OneLineLabel";
 import AgeClassesLoaderConfig from "../DataLoader/AgeClassesLoaderConfig";
 import WeightClassesLoaderConfig from "../DataLoader/WeightClassesLoaderConfig";
+import ResultClassesLoaderConfig from "../DataLoader/ResultClassesLoaderConfig";
 import EventSlotsLoaderConfig from "../DataLoader/EventSlotsLoaderConfig";
 import EventAthleteGroupsLoaderConfig from "../DataLoader/EventAthleteGroupsLoaderConfig";
 import AttemptResultInput from "./fields/AttemptResultInput";
@@ -97,6 +98,16 @@ class FormFactory {
         config.showSearch = true;
         config.loaderConfig = {
           ...WeightClassesLoaderConfig,
+          local: true,
+        };
+        break;
+      }
+
+      case 'ResultClass': {
+        config.showSearch = true;
+        config.loaderConfig = {
+          ...ResultClassesLoaderConfig,
+          getQueryVariables: attribute.getQueryVariables,
           local: true,
         };
         break;
