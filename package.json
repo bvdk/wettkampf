@@ -1,6 +1,6 @@
 {
-  "name": "minimal",
-  "version": "1.0.0",
+  "name": "kdk-server",
+  "version": "1.1.0",
   "description": "",
   "main": "src/start.ts",
   "scripts": {
@@ -9,11 +9,12 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "build": "rimraf dist && tsc && cp -R src/client dist/client && cp -R fonts dist/fonts",
-    "deploy": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
-    "build:deploy": "yarn run build && yarn run deploy",
+    "deploy:electron": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
+    "build:deploy:electron": "npm version patch && yarn run build && yarn run deploy:electron",
     "dev": "npm-run-all --parallel start playground",
     "playground": "graphql playground",
-    "kill:port": "kill-port 4000"
+    "kill:port": "kill-port 4000",
+    "version:patch": "npm version patch"
   },
   "keywords": [],
   "author": "Toni Möckel",
@@ -23,6 +24,7 @@
     "express-fileupload": "^1.1.1-alpha.1",
     "graphql-type-json": "^0.2.1",
     "graphql-yoga": "^1.17.4",
+    "json2csv": "^4.3.5",
     "lodash-advanced": "^1.0.4",
     "lodash-id": "^0.14.0",
     "lowdb": "^1.0.0",

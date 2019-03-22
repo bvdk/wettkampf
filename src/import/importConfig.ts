@@ -1,6 +1,7 @@
-import  _ from "lodash";
+import _ from "lodash";
 import moment from "moment";
 import {CrudAdapter} from "../database/CrudAdapter";
+import {Discipline} from "../graphql/models/discipline";
 import {WeightClass} from "../graphql/models/weightClass";
 
 const toAttemptResult = (value) => {
@@ -8,20 +9,22 @@ const toAttemptResult = (value) => {
         return null;
     }
     return {
-        attempt: !!value,
+        done: !!value,
         valid: value > 0,
         weight: parseFloat(value < 0 ? value * -1 : value),
     };
 };
 
-const fromAttemptResult =  (value?) => {
-    if (!value) {
-        return null;
-    }
-    if (!value.attempt) {
-        return null;
-    }
-    return value.valid ? value.weight * -1 : value.weight;
+const fromAttemptResult =  (discipline: Discipline, i: number ) => {
+
+    return (value) => {
+        const attempts = value || [];
+        const attempt = _.chain(attempts).filter({discipline}).get(`[${i}]`).value();
+
+        if (!attempt) { return ""; }
+
+        return `${attempt.valid && attempt.done ? "" : "-"}${attempt.weight}`;
+    };
 };
 
 const toNumber = (value) => parseFloat(value);
@@ -40,6 +43,7 @@ const getRawAthleteKeyMap = () => {
     const weightClasses = CrudAdapter.getAll(WeightClass.collectionKey);
 
     return {
+        "Athleten": "athleteNumber",
         "Age Category": "ageClassId",
         "Body Weight": {
             name: "bodyWeight",
@@ -52,48 +56,48 @@ const getRawAthleteKeyMap = () => {
         "Kniebeuge 1": {
             name: "KB1",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.SQUAT, 0),
         },
         "Kniebeuge 2": {
             name: "KB2",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.SQUAT, 1),
         },
         "Kniebeuge 3": {
             name: "KB3",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.SQUAT, 2),
         },
         "Kreuzheben 1": {
             name: "KH1",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.DEADLIFT, 0),
         },
         "Kreuzheben 2": {
             name: "KH2",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.DEADLIFT, 1),
         },
         "Kreuzheben 3": {
             name: "KH3",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.DEADLIFT, 2),
         },
 
         "Bankdrücken 1": {
             name: "BD1",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.BENCHPRESS, 0),
         },
         "Bankdrücken 2": {
             name: "BD2",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.BENCHPRESS, 1),
         },
         "Bankdrücken 3": {
             name: "BD3",
             import: toAttemptResult,
-            export: fromAttemptResult(),
+            export: fromAttemptResult(Discipline.BENCHPRESS, 2),
         },
         "Late Registration": {
             name: "lateRegistration",
@@ -141,6 +145,11 @@ const getRawAthleteKeyMap = () => {
             import: toNumber,
             export: (value) => (`${value}`),
         },
+        "Total Erg": {
+            name: "total",
+            import: toNumber,
+            export: (value) => (`${value}`),
+        },
         "Verein": "club",
         "Wilks": {
             name: "wilks",
@@ -151,6 +160,7 @@ const getRawAthleteKeyMap = () => {
 };
 
 const rawOfficialKeyMap = {
+    "Athleten": "officalNumber",
     "Age Category": "lastName",
     "First Name": "club",
     "Geschlecht": "position",

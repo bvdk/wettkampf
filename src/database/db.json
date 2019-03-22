@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "name": "Import 4",
+      "name": "Träumchen",
       "discipline": "POWERLIFTING",
       "contestType": "SINGLE",
       "id": "221eba61-4121-4ab9-9c07-b1f7b15ffed2"
@@ -7095,7 +7095,7 @@
       "location": "Mainz",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "c48098c4-e5d5-404a-a722-3ff88f0a2f0b",
-      "position": ""
+      "position": "Seitenkampfrichter"
     },
     {
       "lastName": "Falck",
@@ -7107,7 +7107,7 @@
       "location": "Niestetal",
       "eventId": "221eba61-4121-4ab9-9c07-b1f7b15ffed2",
       "id": "071d31d6-db06-4421-95a3-a4f8865f165c",
-      "position": ""
+      "position": "Jury"
     },
     {
       "lastName": "Falk",
@@ -18623,7 +18623,7 @@
       "discipline": "SQUAT",
       "date": "2019-03-05T22:18:24.400Z",
       "done": true,
-      "valid": false,
+      "valid": true,
       "weight": 264,
       "index": 1,
       "athleteId": "bbc4250b-0d64-40e1-80c4-eb0cb55ae895",
