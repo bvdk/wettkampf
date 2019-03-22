@@ -15,6 +15,11 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!]) {
             points
             total
             wilks
+            resultClass {
+                id
+                name
+
+            }
             bestAttempts {
                 id
                 weight

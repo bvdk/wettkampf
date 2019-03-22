@@ -12,6 +12,7 @@ type Props = {
   onAthleteClick?: Function,
   hideKeys?: [],
   tableProps?: any,
+  showRowNumber?: boolean
 };
 
 type State = {
@@ -20,9 +21,10 @@ type State = {
 }
 
 
-const defaultSorter = (a, b, key) => {
-  const aValue = _.get(a,key,null);
-  const bValue = _.get(b,key,null);
+const defaultSorter = (a, b, key, defaultValue) => {
+  const aValue = _.get(a,key) || defaultValue;
+  const bValue = _.get(b,key) || defaultValue;
+
   if(aValue < bValue) { return -1; }
   if(aValue > bValue) { return 1; }
   return 0;
@@ -105,7 +107,6 @@ class AthletesTable extends Component<Props, State> {
       dataIndex: 'lastName',
       key: 'lastName',
       render: (text, record) => `${record.lastName}, ${record.firstName}`,
-      defaultSortOrder: 'asc',
       sorter: (a, b) => defaultSorter(a, b, 'lastName'),
       filterDropdown: ({
                          setSelectedKeys, selectedKeys, confirm, clearFilters,
@@ -155,8 +156,6 @@ class AthletesTable extends Component<Props, State> {
         text: 'Frauen',
         value: 'FEMALE',
       }],
-      // specify the condition of filtering result
-      // here is that finding the name started with `value`
       onFilter: (value, record) => record.gender === value,
       filterMultiple: false,
       render: (text) => t(text),
@@ -244,6 +243,15 @@ class AthletesTable extends Component<Props, State> {
         onClick: onAthleteClick ? () => onAthleteClick(record) : undefined,
       })
     }));
+
+
+    if (this.props.showRowNumber){
+      columns.unshift({
+        title: '#',
+        dataIndex: 'number',
+        render: (text, item, index) => `${_.indexOf(this.state.filteredDataSourceIds,item.id)+1}`
+      })
+    }
 
     return columns;
   }

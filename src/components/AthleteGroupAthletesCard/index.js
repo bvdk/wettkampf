@@ -80,7 +80,7 @@ class AthleteGroupAthletesCard extends Component<Props> {
 
         return (
             <Card
-                title={'Athleten'}
+                title={`Athleten`}
                 extra={
                     <Badge count={_.size(unsortedAthletes)}>
                         <Button onClick={()=>this.setState({visible: true})}>Athleten verknüpfen</Button>

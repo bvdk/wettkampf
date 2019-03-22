@@ -13,6 +13,7 @@ import AthleteGroupTable from "./../AthleteGroupTable";
 
 const EventAthleteGroupsQuery = loader("../../graphql/queries/eventAthleteGroups.graphql");
 
+
 type Props = {
     eventId: string,
     onClickAthleteGroup: Function

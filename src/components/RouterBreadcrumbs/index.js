@@ -19,6 +19,7 @@ const routes = [
   { path: '/events/:eventId/judging', breadcrumb: 'Wertung' },
   { path: '/events/:eventId/athletes', breadcrumb: 'Athleten' },
   { path: '/events/:eventId/officials', breadcrumb: 'Kampfrichter' },
+  { path: '/events/:eventId/officials/new', breadcrumb: 'Neu'},
   { path: '/events/:eventId/officials/:officialId', breadcrumb: OfficialBreadcrumb },
   { path: '/events/:eventId/officials/:officialId/edit', breadcrumb: null },
   { path: '/events/:eventId/slots', breadcrumb: 'Bühnen' },

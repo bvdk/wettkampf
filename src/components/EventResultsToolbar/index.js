@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Toolbar from "../Toolbar";
 import AttributesInlineForm from "../Form/attributes-inline-form";
 import {withNamespaces} from "react-i18next";
-import {Button, Icon} from "antd";
+import {Button, Dropdown, Icon, Menu} from "antd";
 
 type Props = {
   eventId: string,
@@ -46,6 +46,11 @@ class EventResultsToolbar extends Component<Props, State> {
       }
     }];
 
+    const menu = <Menu>
+      <Menu.Item><a href={`/export/${eventId}/pdf`} download>PDF</a></Menu.Item>
+      <Menu.Item><a href={`/export/${eventId}/csv`} download>CSV</a></Menu.Item>
+    </Menu>
+
     return <Toolbar
       renderLeft={() => <span>
         <Icon type={'filter'} style={{ fontSize: '1.5em', paddingTop: 8, paddingRight: 10 }}/>
@@ -57,10 +62,10 @@ class EventResultsToolbar extends Component<Props, State> {
           onChange={onChange}/>
       </span>}
       renderRight={() => [
-        <Button key={'print'}>
-          <a href={`/export/${eventId}`} download>Drucken</a>
-        </Button>
-      ]}/>;
+        <Dropdown overlay={menu}>
+          <Button key={'print'}> Export</Button>
+        </Dropdown>
+          ]}/>;
   }
 }
 

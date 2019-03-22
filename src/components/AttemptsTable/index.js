@@ -1,11 +1,12 @@
 // @flow
 import React, { Component } from 'react';
-import {Table} from "antd";
+import {Button, Checkbox, Dropdown, Icon, Menu, Table} from "antd";
 import _ from 'lodash';
 import moment from "moment";
 import AttemptInlineForm from "./../AttemptInlineForm";
 import AttemptDisplayLabel from "../AttemptDisplayLabel";
 import {shortDisciplines} from "../../constants/disciplines";
+import Toolbar from "../Toolbar";
 
 
 type Props = {
@@ -19,12 +20,18 @@ type Props = {
 };
 
 type State = {
-
+  hiddenCols: string[],
 }
 
 
+const defaultSorter = (a, b, key, defaultValue) => {
+  const aValue = _.get(a,key) || defaultValue;
+  const bValue = _.get(b,key) || defaultValue;
 
-
+  if(aValue < bValue) { return -1; }
+  if(aValue > bValue) { return 1; }
+  return 0;
+}
 
 class AttemptsTable extends Component<Props, State> {
 
@@ -32,6 +39,10 @@ class AttemptsTable extends Component<Props, State> {
     attemptCount: 3,
     filterParams: {},
     availableDisciplines: [],
+  }
+
+  state = {
+    hiddenCols: []
   }
 
   getDisciplineColumns = (availableDisciplines, discipline) => {
@@ -83,15 +94,23 @@ class AttemptsTable extends Component<Props, State> {
   render() {
     const { athletes, availableDisciplines, tableProps, filterParams} = this.props;
 
-    const columns = [{
+    let columns = [{
       dataIndex: 'place',
-      title: 'Pl'
+      title: 'Pl',
+      sorter: (a, b) => {
+        return defaultSorter(a, b, 'place',9999)
+      },
+      defaultSortOrder: 'ascend',
     },{
       dataIndex: 'name',
       title: 'Name'
     },{
       dataIndex: 'club',
       title: 'Verein'
+    },{
+      dataIndex: 'resultClass.name',
+      title: 'Wertungsklasse',
+      render: (text, record) => _.get(record,'resultClass.name')
     },{
       dataIndex: 'Geb/KG/Los',
       title: 'Geb/KG/Los',
@@ -107,15 +126,52 @@ class AttemptsTable extends Component<Props, State> {
       },{
         dataIndex: 'points',
         title: 'Punkte',
-      }];
+      }]
 
-    // const dataSource = _.chain(athletes)
-    //   .map(item => ({
-    //     ...item,
-    //       __sortKey: _.get(item,'nextAttempts[0]') ? `${_.get(item,'nextAttempts[0].index')}-${100000+_.get(item,'nextAttempts[0].weight')}` : "999999",
-    //   }))
-    //   .orderBy(['__sortKey'],['asc'])
-    //   .value()
+    const menu =  <div style={{padding: '6px 0'}}>
+      {
+        _.chain(columns)
+          .map((col)=>{
+            return {
+              text: col.title,
+              value: col.dataIndex,
+            }
+          })
+          .value().map((item)=>{
+
+          return <div style={{margin: '6px 8px'}} key={item.value}><Checkbox checked={!(this.state.hiddenCols.indexOf(item.value)>-1)} onChange={(e) => {
+
+            const checked = e.target.checked;
+
+            let hiddenCols = [...this.state.hiddenCols];
+            if (checked){
+              const index = hiddenCols.indexOf(item.value);
+              if (index > -1) {
+                hiddenCols.splice(index, 1);
+              }
+            }else {
+              const index = hiddenCols.indexOf(item.value);
+              if (index === -1) {
+                hiddenCols.push(item.value);
+              }
+            }
+
+            this.setState({
+              hiddenCols
+            })
+
+          }}>{item.text}</Checkbox></div>
+
+        })
+      }
+    </div>
+
+    columns = columns.filter((col)=>{
+        return this.state.hiddenCols.indexOf(col.dataIndex) === -1
+    });
+
+
+    _.last(columns).filterDropdown = () => menu;
 
     return <div>
       <Table

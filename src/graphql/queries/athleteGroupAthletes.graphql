@@ -17,6 +17,10 @@ query athleteGroup($id: ID!) {
                 id
                 name
             }
+            resultClass {
+                id
+                name
+            }
         }
     }
 }

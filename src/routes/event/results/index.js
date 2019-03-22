@@ -7,8 +7,10 @@ import _ from "lodash";
 import {loader} from "graphql.macro";
 import EventResults from "./../../../components/EventResults";
 import EventResultsToolbar from "../../../components/EventResultsToolbar";
+import waitWhileLoading from "../../../hoc/waitWhileLoading";
 
 const EventDisciplinesQuery = loader("../../../graphql/queries/eventDisciplines.graphql");
+const EventResultClassesQuery = loader("../../../graphql/queries/eventResultClasses.graphql");
 
 
 type Props = {
@@ -53,7 +55,6 @@ export default compose(
       }
     }),
   }),
-  // waitWhileLoading('eventDisciplinesQuery'),
   mapProps((props)=>({
     loading: _.get(props,'eventDisciplinesQuery.loading'),
     history: props.history,

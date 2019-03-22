@@ -30,6 +30,7 @@ query eventAthletesUnsorted($eventId: ID!, $filters: [FilterInput!]) {
                 name
             }
             wilks
+
         }
     }
 }

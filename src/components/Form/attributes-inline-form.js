@@ -181,6 +181,7 @@ class AttributesInlineForm extends Component<Props, State> {
                       form.resetFields();
                     }
 
+                    return res;
                   })
                   .catch((res)=>{
                     message.error(res.message || 'An error occurred while submitting the form data')

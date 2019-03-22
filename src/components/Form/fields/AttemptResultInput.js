@@ -12,7 +12,11 @@ type Props = {
   onPressEnter?: Function
 };
 
-class AttemptResultInput extends Component<Props> {
+type State = {
+  tmpValue?: string
+}
+
+class AttemptResultInput extends Component<Props, State> {
 
   static defaultProps = {
     attemptResult: {
@@ -26,6 +30,10 @@ class AttemptResultInput extends Component<Props> {
     if (this.input){
       this.input.focus();
     }
+  }
+
+  state = {
+    tmpValue: null
   }
 
   render() {
@@ -82,16 +90,29 @@ class AttemptResultInput extends Component<Props> {
       <div className={'attempt-result-input'}>
         <Input
           style={{minWidth: 100}}
-          value={value.weight}
+          value={this.state.tmpValue || value.weight}
           onPressEnter={this.props.onPressEnter}
           onChange={(event)=>{
 
-            const tmp = {
-              ...value,
-              weight: event.target.value ? parseFloat(event.target.value) : null
-            };
-            if (this.props.onChange){
-              this.props.onChange(tmp)
+            let inputValue = event.target.value;
+            inputValue = inputValue.replace(',','.');
+
+            const regex = RegExp('[0-9]+.$');
+            if (regex.test(inputValue)){
+              this.setState({
+                tmpValue: inputValue
+              })
+            }else {
+              const tmp = {
+                ...value,
+                weight: event.target.value ? parseFloat(event.target.value) : null
+              };
+              if (this.props.onChange){
+                this.props.onChange(tmp)
+              }
+              this.setState({
+                tmpValue: null
+              })
             }
 
           }}

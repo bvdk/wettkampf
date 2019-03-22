@@ -92,6 +92,7 @@ class EventOfficialsTable extends Component<Props, State> {
     return (
       <Table
         rowKey="id"
+        size={"middle"}
         pagination={officials.length > 30}
         columns={columns}
         dataSource={officials}

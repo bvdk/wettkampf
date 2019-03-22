@@ -19,6 +19,7 @@ class AthleteGroupsAthletesTable extends Component<Props> {
     return (
       <AthletesTable
           hideKeys={['athleteGroup.name','athleteGroup.slot.name']}
+          showRowNumber
           athletes={_.get(athleteGroupAthletesQuery,'athleteGroup.athletes',[])}/>
     );
   }

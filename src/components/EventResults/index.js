@@ -18,6 +18,7 @@ type State = {
 
 const EventResultsQuery = loader("../../graphql/queries/eventResults.graphql");
 
+
 class EventResults extends Component<Props, State> {
 
 
