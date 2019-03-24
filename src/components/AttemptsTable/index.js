@@ -179,6 +179,7 @@ class AttemptsTable extends Component<Props, State> {
         size={'small'}
         dataSource={athletes}// dataSource={dataSource.length ? [_.first(dataSource)] : []}
         columns={columns}
+        pagination={false}
         {...tableProps}
       />
     </div>;

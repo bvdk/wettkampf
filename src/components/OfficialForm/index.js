@@ -9,7 +9,7 @@ type Props = {
   translateMutationOptions: Function,
 };
 
-const attributes = [
+export const attributes = [
   {
     index: 'firstName',
     name: 'Vorname',

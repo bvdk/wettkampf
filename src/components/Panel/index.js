@@ -38,7 +38,7 @@ class Panel extends Component<Props> {
 
         return <Wrapper className={'Panel'} style={style}>
             <Headline>
-                {title ? <p className="text-bold ph-10">{title}</p> : null}
+                {title ? <p className="ph-10" style={{fontWeight: 600}}>{title}</p> : null}
                 {topRight}
             </Headline>
             <Container bordered={bordered} style={containerStyle} className={ClassNames}>

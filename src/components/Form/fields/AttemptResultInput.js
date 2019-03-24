@@ -91,9 +91,17 @@ class AttemptResultInput extends Component<Props, State> {
         <Input
           style={{minWidth: 100}}
           value={this.state.tmpValue || value.weight}
-          onPressEnter={this.props.onPressEnter}
           onChange={(event)=>{
 
+            let inputValue = event.target.value;
+            const tmp = {
+              ...value,
+              weight: inputValue
+            };
+            if (this.props.onChange){
+              this.props.onChange(tmp)
+            }
+            /*
             let inputValue = event.target.value;
             inputValue = inputValue.replace(',','.');
 
@@ -114,8 +122,10 @@ class AttemptResultInput extends Component<Props, State> {
                 tmpValue: null
               })
             }
+            */
 
           }}
+          onPressEnter={this.props.onPressEnter}
           addonAfter={selectAfter}
         />
       </div>

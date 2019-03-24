@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import _ from "lodash";
 import {graphql} from "react-apollo";
 import {loader} from "graphql.macro";
+import OneLineLabel from "../OneLineLabel";
 
 const EventNameQuery = loader("../../graphql/queries/eventName.graphql");
 
@@ -25,9 +26,11 @@ class EventMenu extends Component<Props> {
     return (
       <div>
         <Header className="event-header">
-          <div>
+          <div style={{display: 'flex', alignItems: 'center'}}>
             <Icon type="trophy"/>
-            <span style={{padding: '0 10px', fontWeight: 700}}>{_.get(eventNameQuery,'event.name')}</span>
+            <OneLineLabel maxWidth={150}>
+              <span style={{padding: '0 10px', fontWeight: 700}}>{_.get(eventNameQuery,'event.name')}</span>
+            </OneLineLabel>
           </div>
         </Header>
         <Menu

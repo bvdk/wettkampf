@@ -27,7 +27,7 @@ export default class EventAthleteGroupRoute extends Component<Props> {
 
         return (
             <div>
-                <EventAthleteGroupDashboard eventId={eventId} athleteGroupId={athleteGroupId}/>
+                <EventAthleteGroupDashboard  eventId={eventId} athleteGroupId={athleteGroupId}/>
             </div>
         );
     }

@@ -117,7 +117,26 @@ export default function(attributes, values, asArray = true) {
             break;
           }
           case 'object': {
-            value.objectValue = formValue;
+
+            if (item.inputType === 'attempt'){
+              let weight = formValue.weight;
+              if (_.isString(weight)){
+                if (weight !== ""){
+                  weight = weight.replace(',','.');
+                  weight = parseFloat(weight);
+                }else {
+                  weight = null
+                }
+
+              }
+               value.objectValue = {
+                 ...formValue,
+                 weight
+               }
+            }else {
+              value.objectValue = formValue;
+            }
+
             break;
           }
           case 'file': {

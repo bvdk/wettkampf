@@ -5,6 +5,9 @@ import Toolbar from "../../../components/Toolbar";
 import AthleteDeleteButton from "../../../components/AthleteDeleteButton";
 import AthleteDashboard from "../../../components/AthleteDashboard";
 import {withRouter} from "react-router";
+import BackButton from "../../../components/BackButton";
+
+import _ from "lodash";
 
 type Props = {
 
@@ -22,7 +25,10 @@ class EventAthleteRoute extends Component<Props, State> {
 
     return <div>
       <Toolbar
-        renderLeft={() => <h3><AthleteName athleteId={athleteId}/></h3>}
+        renderLeft={()=><span>
+                <BackButton />
+                <h3 style={{display: 'inline', marginLeft: 8}}><AthleteName athleteId={athleteId}/></h3>
+              </span>}
         renderRight={() => [
           <AthleteDeleteButton key={'delete'} athleteId={athleteId} onDelete={()=>{ history.goBack() }}/>
         ]}/>

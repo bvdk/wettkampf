@@ -18,6 +18,13 @@ export default (props) => {
     const eventId = props.eventId || _.get(match, 'params.eventId');
     const slotId = _.get(match, 'params.slotId');
 
+    return <Switch>
+        <Route path="/events/:eventId/slots/:slotId" component={() => <SlotDashboardRoute slotId={slotId} eventId={eventId} />} />
+
+    </Switch>
+
+    /*
+
     return <Row  type="flex">
         <Col style={{minWidth: 150}}>
             <Toolbar
@@ -34,5 +41,6 @@ export default (props) => {
             </Switch>
         </Col>
     </Row>
+    */
 }
 ;

@@ -7,6 +7,7 @@ import AthleteGroupUpdateForm from "./../../../../components/AthleteGroupUpdateF
 import Toolbar from "../../../../components/Toolbar";
 import {loader} from "graphql.macro";
 import {withProps} from "recompose";
+import BackButton from "../../../../components/BackButton";
 
 const AthleteGroupNameQuery = loader("./../../../../graphql/queries/athleteGroupName.graphql");
 
@@ -29,7 +30,10 @@ class EventAthleteGroupFormRoute extends Component<Props, State> {
     return (
       <div>
         <Toolbar
-          renderLeft={()=><h3>{_.get(athleteGroupNameQuery,'athleteGroup.name')}</h3>}
+          renderLeft={()=><span>
+                <BackButton />
+                <h3 style={{display: 'inline', marginLeft: 8}}>{_.get(athleteGroupNameQuery,'athleteGroup.name')}</h3>
+              </span>}
           borderBottom
         />
         <Wrapper>

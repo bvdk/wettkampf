@@ -10,6 +10,7 @@ import Strings from "../../../../constants/strings";
 import {withRouter} from "react-router";
 import OfficialUpdateForm from "./../../../../components/OfficialUpdateForm"
 import styled from "styled-components";
+import BackButton from "../../../../components/BackButton";
 
 const OfficialQuery = loader("../../../../graphql/queries/officialName.graphql");
 const DeleteMutation = loader("./../../../../graphql/mutations/deleteOfficial.graphql");
@@ -71,7 +72,11 @@ class OfficialDashboardRoute extends Component<Props, State> {
 
     return <div>
       <Toolbar
-        renderLeft={() => <h3>{_.get(officialQuery, 'official.name')}</h3>}
+        renderLeft={()=><span>
+                <BackButton />
+                <h3 style={{display: 'inline', marginLeft: 8}}>{_.get(officialQuery, 'official.name')}</h3>
+              </span>}
+
         renderRight={() => <Popconfirm
           onConfirm={this._handleDelete}
           title={Strings.areYouSure}>

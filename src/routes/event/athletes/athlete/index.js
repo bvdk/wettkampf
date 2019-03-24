@@ -11,6 +11,7 @@ import AthleteAttemptsTabs from "../../../../components/AthleteAttemptsTabs";
 import Toolbar from "../../../../components/Toolbar";
 import waitWhileLoading from "../../../../hoc/waitWhileLoading";
 import Strings from "../../../../constants/strings";
+import BackButton from "../../../../components/BackButton";
 
 const DeleteAthleteMutation = loader("./../../../../graphql/mutations/deleteAthlete.graphql");
 const AthleteQuery = loader("./../../../../graphql/queries/athlete.graphql");
@@ -77,7 +78,10 @@ class EventAthleteRoute extends React.Component<Props, State> {
     return (
       <div>
         <Toolbar
-          renderLeft={() => _.get(athleteQuery, 'athlete.name')}
+          renderLeft={() => <div>
+            <BackButton/>
+            <h3 style={{display: 'inline', marginLeft: 8}}>{_.get(athleteQuery, 'athlete.name')}</h3>
+          </div>}
           renderRight={() => <Popconfirm
             onConfirm={this._handleDelete}
             title={Strings.areYouSure}>

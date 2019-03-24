@@ -6,6 +6,7 @@ import {withNamespaces} from "react-i18next";
 import {compose, graphql} from "react-apollo";
 import AttributesInlineForm from "../Form/attributes-inline-form";
 import {loader} from "graphql.macro";
+import {defaultFilter, defaultOnFilter, defaultSorter} from "../../utils/tableUtils";
 
 const EventAthleteGroupsQuery = loader("../../graphql/queries/eventAthleteGroups.graphql");
 const DeleteAthleteGroupMutation = loader("../../graphql/mutations/deleteAthleteGroup.graphql");
@@ -101,6 +102,9 @@ class AthleteGroupTable extends Component<Props, State> {
     const columns = [{
       title: 'Bezeichnung',
       dataIndex: 'name',
+      defaultSortOrder: 'ascend',
+      sorter: (a, b) => defaultSorter(a, b, 'name'),
+
       onCell: (record) => ({
         onClick: () => {
           if (onClick){
@@ -113,6 +117,8 @@ class AthleteGroupTable extends Component<Props, State> {
         title: 'Bühne',
         dataIndex: 'slot',
         width: 200,
+        filters: defaultFilter('slot.id', 'slot', 'id', 'name', athleteGroups),
+        onFilter: defaultOnFilter('slot.id'),
         render: (text, record) => {
 
           if (editable){
@@ -158,6 +164,7 @@ class AthleteGroupTable extends Component<Props, State> {
         render: (text, record) => _.get(record,'weightClass.name')
       },{
         title: 'Athleten',
+        sorter: (a, b) => defaultSorter(a, b, 'athleteCount'),
         dataIndex: 'athleteCount'
       },{
         title: 'Aktion',

@@ -1,0 +1,14 @@
+query officialSlot($id: ID!) {
+    officialSlot(id: $id){
+        id
+        official {
+            id
+            name
+        }
+        slot {
+            id
+            name
+        }
+        position
+    }
+}

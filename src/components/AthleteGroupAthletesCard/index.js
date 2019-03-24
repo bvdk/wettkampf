@@ -1,12 +1,16 @@
 // @flow
 import React, { Component } from 'react';
-import AthleteGroupsAthletesTable from "../AthleteGroupsAthletesTable";
+import AthletesTable from "../AthletesTable";
 import {Badge, Button, Card, Modal, message} from "antd";
 import _ from "lodash";
 import {loader} from "graphql.macro";
 import {compose, graphql} from "react-apollo";
+import withSizes from 'react-sizes'
 import waitWhileLoading from "../../hoc/waitWhileLoading";
 import EventAthletesUnsortedTable from "./../EventAthletesUnsortedTable";
+import RemoveAthletesFromAthleteGroupButton from "./../RemoveAthletesFromAthleteGroupButton"
+import Toolbar from "../Toolbar";
+import {withRouter} from "react-router";
 
 const AthleteGroupAthletesQuery = loader("../../graphql/queries/athleteGroupAthletes.graphql");
 const EventAthletesUnsortedQuery = loader("../../graphql/queries/eventAthletesUnsorted.graphql");
@@ -14,124 +18,158 @@ const AddAthletesToAthleteGroupMutation = loader("../../graphql/mutations/addAth
 
 
 type Props = {
-    athleteGroupId: string,
-    eventId: string,
-    addAthletesToAthleteGroupMutation: Function,
+  athleteGroupId: string,
+  eventId: string,
+  addAthletesToAthleteGroupMutation: Function,
+  width?: number,
 };
 
 type State = {
-    visible: boolean
+  visible: boolean,
+  addSelectedAthleteIds: string[],
+  editSelectedAthleteIds: string[],
 }
 
 class AthleteGroupAthletesCard extends Component<Props> {
 
-    state = {
-        visible: false,
-        loadingSync: false,
-        selectedAthleteIds: []
-    }
+  state = {
+    visible: false,
+    loadingSync: false,
+    addSelectedAthleteIds: [],
+    editSelectedAthleteIds: [],
+  }
 
-    props: Props;
+  props: Props;
 
-    _handleSelectChange = (selectedAthleteIds) => {
-        this.setState({
-            selectedAthleteIds,
-        })
-    }
+  _handleSelectChange = (addSelectedAthleteIds) => {
+    this.setState({
+      addSelectedAthleteIds,
+    })
+  }
 
-    setLoading = (loadingSync) => {
-        return new Promise((resolve)=>{
-            this.setState({
-                loadingSync,
-            },() => {
-                resolve();
-            })
-        })
-    }
-    _handleSync = () => {
+  setLoading = (loadingSync) => {
+    return new Promise((resolve)=>{
+      this.setState({
+        loadingSync,
+      },() => {
+        resolve();
+      })
+    })
+  }
+  _handleSync = () => {
 
-        const {athleteGroupId} = this.props;
-        const {selectedAthleteIds} = this.state;
+    const {athleteGroupId} = this.props;
+    const {addSelectedAthleteIds} = this.state;
 
-        this.setLoading(true)
-            .then(() => this.props.addAthletesToAthleteGroupMutation({
-                variables: {
-                    athleteGroupId,
-                    athleteIds: selectedAthleteIds,
-                }
-            }) )
-            .then(() => {
-                message.success("Erfolgreich eingetragen")
-            })
-            .catch(() => {
-                message.error("Aktion konnte nicht durchgeführt werden.")
-            })
-            .finally(() => this.setLoading(false).then(() => this.setState({visible: false})))
+    this.setLoading(true)
+      .then(() => this.props.addAthletesToAthleteGroupMutation({
+        variables: {
+          athleteGroupId,
+          athleteIds: addSelectedAthleteIds,
+        }
+      }) )
+      .then(() => {
+        message.success("Erfolgreich eingetragen")
+      })
+      .catch(() => {
+        message.error("Aktion konnte nicht durchgeführt werden.")
+      })
+      .finally(() => this.setLoading(false).then(() => this.setState({visible: false})))
 
 
-    }
+  }
 
-    render() {
+  render() {
 
-        const {athleteGroupId, eventAthletesUnsortedQuery, eventId} = this.props;
-        const {loadingSync, selectedAthleteIds} = this.state;
+    const {athleteGroupId, eventAthletesUnsortedQuery, eventId, width, history, athleteGroupAthletesQuery} = this.props;
+    const {loadingSync, addSelectedAthleteIds, editSelectedAthleteIds} = this.state;
 
-        const unsortedAthletes = _.get(eventAthletesUnsortedQuery,'event.unsortedAthletes',[]);
+    const unsortedAthletes = _.get(eventAthletesUnsortedQuery,'event.unsortedAthletes',[]);
 
-        return (
-            <Card
-                title={`Athleten`}
-                extra={
-                    <Badge count={_.size(unsortedAthletes)}>
-                        <Button onClick={()=>this.setState({visible: true})}>Athleten verknüpfen</Button>
-                        <Modal
-                            bodyStyle={{padding: 0}}
-                            width={800}
-                            title="Athleten verknüpfen"
-                            visible={this.state.visible}
-                            okText={"Athleten in Startgruppe einfügen"}
-                            okButtonProps={{
-                                loading: loadingSync,
-                                disabled: !selectedAthleteIds.length
-                            }}
-                            onOk={this._handleSync}
-                            onCancel={()=>this.setState({visible: false})}
-                        >
-                            <EventAthletesUnsortedTable onSelectChange={this._handleSelectChange} eventId={eventId} />
-                        </Modal>
-                    </Badge>}
-                bodyStyle={{padding: 0}}>
-                <AthleteGroupsAthletesTable athleteGroupId={athleteGroupId} />
-            </Card>
-        );
-    }
+    const athletes = _.get(athleteGroupAthletesQuery,'athleteGroup.athletes',[]);
+    return (
+      <div>
+        <Toolbar
+          renderLeft={()=> <h4>{athletes.length} Athleten</h4>}
+          renderRight={() => [
+
+            <RemoveAthletesFromAthleteGroupButton onDone={()=> this.setState({editSelectedAthleteIds: []})} style={{marginRight: 10}} key={'remove'} athleteGroupId={this.props.athleteGroupId} athleteIds={editSelectedAthleteIds} />,
+            <Badge key={'add'} count={_.size(unsortedAthletes)}>
+            <Button disabled={!unsortedAthletes.length} onClick={()=>this.setState({visible: true})}>Mehr Athleten verknüpfen</Button>
+            <Modal
+              destroyOnClose
+              bodyStyle={{padding: 0}}
+              width={width-10}
+              title="Athleten verknüpfen"
+              visible={this.state.visible}
+              okText={"Athleten in Startgruppe einfügen"}
+              okButtonProps={{
+                loading: loadingSync,
+                disabled: !addSelectedAthleteIds.length
+              }}
+              onOk={this._handleSync}
+              onCancel={()=>this.setState({visible: false})}
+            >
+              <EventAthletesUnsortedTable onSelectChange={this._handleSelectChange} eventId={eventId} />
+            </Modal>
+          </Badge>
+          ]
+          }
+        />
+
+        <AthletesTable
+          hideKeys={['athleteGroup.name','athleteGroup.slot.name']}
+          tableProps={{
+            pagination: false
+          }}
+          selectedRowIds={editSelectedAthleteIds}
+          onSelectChange={(editSelectedAthleteIds) => this.setState({editSelectedAthleteIds})}
+          onAthleteClick={(item)=> history.push(`/events/${eventId}/athletes/${item.id}`)} athleteGroupId={athleteGroupId}
+          athletes={athletes}/>
+
+      </div>
+    );
+  }
 }
 
 
 export default compose(
-    graphql(AddAthletesToAthleteGroupMutation,{
-        name: 'addAthletesToAthleteGroupMutation',
-        options: (props) => ({
-            refetchQueries: [{
-                query: EventAthletesUnsortedQuery,
-                variables: {
-                    eventId: props.eventId
-                }
-            },{
-                query: AthleteGroupAthletesQuery,
-                variables: {
-                    id: props.athleteGroupId
-                }
-            }]
-        })
-    }),
-    graphql(EventAthletesUnsortedQuery, {
-        name: 'eventAthletesUnsortedQuery',
-        options: (props: Props) => ({
-            variables: {
-                eventId: props.eventId
-            }
-        })
-    }),
-    waitWhileLoading('eventAthletesUnsortedQuery')
+  withRouter,
+  graphql(AddAthletesToAthleteGroupMutation,{
+    name: 'addAthletesToAthleteGroupMutation',
+    options: (props) => ({
+      refetchQueries: [{
+        query: EventAthletesUnsortedQuery,
+        variables: {
+          eventId: props.eventId
+        }
+      },{
+        query: AthleteGroupAthletesQuery,
+        variables: {
+          id: props.athleteGroupId
+        }
+      }]
+    })
+  }),
+  graphql(EventAthletesUnsortedQuery, {
+    name: 'eventAthletesUnsortedQuery',
+    options: (props: Props) => ({
+      variables: {
+        eventId: props.eventId
+      }
+    })
+  }),
+  waitWhileLoading('eventAthletesUnsortedQuery'),
+  graphql(AthleteGroupAthletesQuery, {
+    name: 'athleteGroupAthletesQuery',
+    options: (props: Props) => ({
+      variables: {
+        id: props.athleteGroupId
+      }
+    })
+  }),
+  waitWhileLoading('athleteGroupAthletesQuery'),
+  withSizes(({ width }) => ({
+    width
+  }))
 )(AthleteGroupAthletesCard)

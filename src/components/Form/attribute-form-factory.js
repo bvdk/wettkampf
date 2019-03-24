@@ -34,6 +34,7 @@ import AgeClassesLoaderConfig from "../DataLoader/AgeClassesLoaderConfig";
 import WeightClassesLoaderConfig from "../DataLoader/WeightClassesLoaderConfig";
 import ResultClassesLoaderConfig from "../DataLoader/ResultClassesLoaderConfig";
 import EventSlotsLoaderConfig from "../DataLoader/EventSlotsLoaderConfig";
+import EventOfficialsLoaderConfig from "../DataLoader/EventOfficialsLoaderConfig";
 import EventAthleteGroupsLoaderConfig from "../DataLoader/EventAthleteGroupsLoaderConfig";
 import AttemptResultInput from "./fields/AttemptResultInput";
 import Colors from "../../styles/colors";
@@ -107,6 +108,16 @@ class FormFactory {
         config.showSearch = true;
         config.loaderConfig = {
           ...ResultClassesLoaderConfig,
+          getQueryVariables: attribute.getQueryVariables,
+          local: true,
+        };
+        break;
+      }
+
+      case 'EventOfficial': {
+        config.showSearch = true;
+        config.loaderConfig = {
+          ...EventOfficialsLoaderConfig,
           getQueryVariables: attribute.getQueryVariables,
           local: true,
         };

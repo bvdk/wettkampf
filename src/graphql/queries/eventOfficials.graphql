@@ -8,6 +8,7 @@ query eventOfficials($eventId: ID!){
             location
             position
             license
+            name
         }
     }
 }

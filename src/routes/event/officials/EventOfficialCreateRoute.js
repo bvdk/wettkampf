@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import _ from 'lodash';
 import OfficialCreateForm from "../../../components/OfficialCreateForm";
 import Toolbar from "../../../components/Toolbar";
+import BackButton from "../../../components/BackButton";
 
 type Props = {
   eventId: string,
@@ -22,7 +23,11 @@ class EventOfficialCreateRoute extends Component<Props, State> {
 
     return <div>
       <Toolbar
-        renderLeft={()=> <h3>{`Neuer Kampfrichter`}</h3>}
+        renderLeft={()=><span>
+                <BackButton />
+                <h3 style={{display: 'inline', marginLeft: 8}}>{`Neuer Kampfrichter`}</h3>
+              </span>}
+
         borderBottom={true}/>
 
         <div style={{padding: 16}}>

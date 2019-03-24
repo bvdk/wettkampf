@@ -19,8 +19,14 @@ export default (props) => {
     const eventId = props.eventId || _.get(match, 'params.eventId');
     const athleteGroupId = _.get(match, 'params.athleteGroupId');
 
+    return <Switch>
+        <Route path="/events/:eventId/athleteGroups/:athleteGroupId/edit" component={EventAthleteGroupFormRoute} />
+        <Route path="/events/:eventId/athleteGroups/:athleteGroupId" component={EventAthleteGroupDashboardRoute} />
+    </Switch>
+
+    /*
     return <Row  type="flex">
-        <Col>
+        <Col style={{maxWidth: 160}}>
             <Toolbar
                 renderLeft={()=><h3>Startgruppen</h3>}
                 borderBottom
@@ -34,5 +40,6 @@ export default (props) => {
             </Switch>
         </Col>
     </Row>
+    */
 }
 ;

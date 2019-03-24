@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 import {Button, Col, message, Popconfirm, Row} from "antd";
 import {graphql, compose} from "react-apollo";
 import SlotUpdateForm from "../../../../components/SlotUpdateForm";
+import BackButton from "../../../../components/BackButton";
 import Toolbar from "../../../../components/Toolbar";
+import SlotOfficialSlotsTable from "../../../../components/SlotOfficialSlots";
 import {loader} from "graphql.macro";
 import {withRouter} from "react-router";
 import waitWhileLoading from "../../../../hoc/waitWhileLoading";
 import _ from "lodash";
 import Strings from "../../../../constants/strings";
 import styled from "styled-components";
+import Bold from "../../../../components/Bold";
 
 const SlotQuery = loader("../../../../graphql/queries/slotName.graphql");
 const DeleteMutation = loader("./../../../../graphql/mutations/deleteSlot.graphql");
@@ -63,11 +66,15 @@ class SlotDashboardRoute extends Component<Props, State> {
   }
 
   render() {
-    const { slotId, slotQuery } = this.props;
+    const { slotId, slotQuery, eventId } = this.props;
 
     return <div>
       <Toolbar
-        renderLeft={() => <h3>{_.get(slotQuery, 'slot.name')}</h3>}
+        renderLeft={()=><span>
+                <BackButton />
+                <h3 style={{display: 'inline', marginLeft: 8}}>{_.get(slotQuery, 'slot.name')}</h3>
+              </span>}
+
         renderRight={() => <Popconfirm
           onConfirm={this._handleDelete}
           title={Strings.areYouSure}>
@@ -77,14 +84,25 @@ class SlotDashboardRoute extends Component<Props, State> {
         borderBottom={true}/>
       <Row>
         <Col md={12}>
+
           <Wrapper>
-            <SlotUpdateForm slotId={slotId}/>
+            <div style={{marginTop: 10}}>
+              <div  style={{marginBottom: 12}}>
+                <Bold>Informationen</Bold>
+              </div>
+              <SlotUpdateForm slotId={slotId}/>
+            </div>
+
+
           </Wrapper>
 
         </Col>
 
         <Col md={12}>
+          <Wrapper>
 
+              <SlotOfficialSlotsTable eventId={eventId} slotId={slotId}/>
+          </Wrapper>
         </Col>
       </Row>
     </div>;

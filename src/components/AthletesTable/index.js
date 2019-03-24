@@ -4,6 +4,7 @@ import {Empty, Table, Input, Button, Icon} from "antd";
 import _ from "lodash";
 import {withNamespaces} from "react-i18next";
 import DangerLabel from "./../DangerLabel";
+import {defaultFilter, defaultOnFilter, defaultSorter} from "../../utils/tableUtils";
 
 
 type Props = {
@@ -12,7 +13,8 @@ type Props = {
   onAthleteClick?: Function,
   hideKeys?: [],
   tableProps?: any,
-  showRowNumber?: boolean
+  showRowNumber?: boolean,
+  selectedRowIds?: string[],
 };
 
 type State = {
@@ -21,14 +23,11 @@ type State = {
 }
 
 
-const defaultSorter = (a, b, key, defaultValue) => {
-  const aValue = _.get(a,key) || defaultValue;
-  const bValue = _.get(b,key) || defaultValue;
 
-  if(aValue < bValue) { return -1; }
-  if(aValue > bValue) { return 1; }
-  return 0;
-}
+
+
+
+
 
 class AthletesTable extends Component<Props, State> {
 
@@ -66,7 +65,8 @@ class AthletesTable extends Component<Props, State> {
 
   getRowSelection = () => {
 
-    const { selectedRowKeys } = this.state;
+
+    const selectedRowKeys = this.props.selectedRowIds || this.state.selectedRowKeys;
 
     const rowSelection = {
       selectedRowKeys,
@@ -169,7 +169,14 @@ class AthletesTable extends Component<Props, State> {
       title: 'Altersklasse',
       dataIndex: 'ageClass',
       key: 'ageClassId',
-      defaultSortOrder: 'descend',
+      filters: defaultFilter('ageClass.id', 'ageClass', 'id', 'name', athletes),
+      onFilter: (value, record) => {
+        let arrVal = value;
+        if (!Array.isArray(arrVal)){
+          arrVal = [value];
+        }
+        return arrVal.indexOf(_.get(record,'ageClass.id')) !== -1;
+      },
       render: (text, record) => _.get(record, 'ageClass.name'),
       sorter: (a, b) => defaultSorter(a, b, 'ageClass.name')
     }, {
@@ -182,7 +189,8 @@ class AthletesTable extends Component<Props, State> {
       title: 'Gewichtsklasse',
       dataIndex: 'weightClass',
       key: 'weightClass',
-      defaultSortOrder: 'descend',
+      filters: defaultFilter('weightClass.id', 'weightClass', 'id', 'name', athletes),
+      onFilter: defaultOnFilter('weightClass.id'),
       render: (text, record) => _.get(record, 'weightClass.name'),
       sorter: (a, b) => defaultSorter(a, b, 'weightClass.name')
     },

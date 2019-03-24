@@ -1,6 +1,7 @@
 // @flow
 import React, {Component} from 'react';
 import {loader} from "graphql.macro";
+import BackButton from "./../BackButton";
 import {compose, graphql} from "react-apollo";
 import _ from "lodash";
 import waitWhileLoading from "../../hoc/waitWhileLoading";
@@ -35,18 +36,14 @@ class EventAthleteGroupDashboard extends Component<Props> {
       <div>
           <Toolbar
               borderBottom
-              renderLeft={()=><h3>{_.get(athleteGroup,'name')}</h3>}
+              renderLeft={()=><span>
+                <BackButton />
+                <h3 style={{display: 'inline', marginLeft: 8}}>{_.get(athleteGroup,'name')}</h3>
+              </span>}
               renderRight={()=> <Link to={`/events/${eventId}/athleteGroups/${athleteGroupId}/edit`}>Bearbeiten</Link>}
           />
 
-          <ContentWrapper>
-              <Row gutter={16}>
-                  <Col md={24}>
-                      <AthleteGroupAthletesCard eventId={eventId} athleteGroupId={athleteGroupId}/>
-                  </Col>
-              </Row>
-          </ContentWrapper>
-
+        <AthleteGroupAthletesCard eventId={eventId} athleteGroupId={athleteGroupId}/>
 
       </div>
     );
