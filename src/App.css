@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -76,6 +77,15 @@
   width: 100%;
 }
 
+#root .ant-table-small {
+  border: none;
+}
+
+.resultClassSection {
+  background-color: rgb(173, 201, 231);
+  font-weight: bold;
+  text-align: center;
+}
 
 .flex {
   display: flex; }

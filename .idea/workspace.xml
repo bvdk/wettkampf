@@ -2,45 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0b5efdc-5ccc-4d08-b131-31876f7bf59b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BackButton/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/DataLoader/EventOfficialsLoaderConfig.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OfficialSlotCreateForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OfficialSlotUpdateForm/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/OfficialSlotsTable/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/RemoveAthletesFromAthleteGroupButton/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/SlotOfficialSlots/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/createOfficialSlot.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/deleteOfficialSlot.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/removeAthletesFromAthleteGroup.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/updateOfficialSlot.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/queries/officialSlot.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graphql/queries/slotOfficialSlots.graphql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/tableUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/EventAthletePointsCalcButton/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/OrderedEventAthletes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/mutations/autoCalcEventAthletePoints.graphql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graphql/queries/eventSlotsDisciplinesAthleteGroups.graphql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AthleteGroupAthletesCard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AthleteGroupAthletesCard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AthleteGroupTable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AthleteGroupTable/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AthleteGroupsAthletesTable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AthleteGroupsAthletesTable/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AthletesTable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AthletesTable/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/AttemptsTable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AttemptsTable/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventAthleteGroupDashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventAthleteGroupDashboard/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventDashboard/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventDashboard/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/attribute-form-factory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/attribute-form-factory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/fields/AttemptResultInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/fields/AttemptResultInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/fomValues-to-attributeValues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/fomValues-to-attributeValues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OfficialForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OfficialForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OneLineLabel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OneLineLabel/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Panel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Panel/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/graphql/queries/eventOfficials.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries/eventOfficials.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup/EventAthleteGroupDashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup/EventAthleteGroupDashboardRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup/EventAthleteGroupFormRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup/EventAthleteGroupFormRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/athletes/EventAthleteRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/athletes/EventAthleteRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/athletes/athlete/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/athletes/athlete/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/officials/EventOfficialCreateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/officials/EventOfficialCreateRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/officials/official/OfficialDashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/officials/official/OfficialDashboardRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/slots/slot/SlotDashboardRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/slots/slot/SlotDashboardRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/event/slots/slot/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/slots/slot/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventAttempts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventAttempts/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventAttemptsToolbar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventAttemptsToolbar/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphql/queries/eventAttempts.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphql/queries/eventAttempts.graphql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/event/attempts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/event/attempts/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -58,35 +30,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/AthleteGroupAthletesCard/index.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/AttemptsTable/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+            <state relative-caret-position="341">
+              <caret line="192" column="43" lean-forward="true" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="81" column="1" lean-forward="true" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/routes/event/attempts/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="54" column="148" selection-start-line="54" selection-start-column="148" selection-end-line="54" selection-end-column="148" />
               <folding>
-                <element signature="e#9#50#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/AthletesTable/index.js">
+        <entry file="file://$PROJECT_DIR$/src/components/EventAttempts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
+            <state relative-caret-position="85">
+              <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
               <folding>
-                <element signature="e#9#50#0" expanded="true" />
+                <element signature="e#9#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventAthletesUnsorted.graphql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="13" lean-forward="true" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventAttempts.graphql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="mock://kdk-web.graphqls">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>margin</find>
       <find>flex</find>
       <find>slot</find>
       <find>onSubmit</find>
@@ -116,6 +128,7 @@
       <find>h3</find>
       <find>rules</find>
       <find>selectedAthleteIds</find>
+      <find>eventDisciplines</find>
     </findStrings>
     <replaceStrings>
       <replace>attempt</replace>
@@ -130,11 +143,11 @@
       <replace>slot</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$PROJECT_DIR$/src</dir>
       <dir>$PROJECT_DIR$/src/components/Form</dir>
       <dir>$PROJECT_DIR$/src/routes</dir>
       <dir>$PROJECT_DIR$/src/components</dir>
       <dir>$PROJECT_DIR$/src/components/RemoveAthletesFromAthleteGroupButtton</dir>
+      <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -143,16 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/EventOfficialsTable/index.js" />
-        <option value="$PROJECT_DIR$/src/components/EventResultsToolbar/index.js" />
-        <option value="$PROJECT_DIR$/src/graphql/queries/athleteGroupAthletes.graphql" />
-        <option value="$PROJECT_DIR$/src/components/EventAthleteGroupsDashboard/index.js" />
-        <option value="$PROJECT_DIR$/src/components/RouterBreadcrumbs/index.js" />
-        <option value="$PROJECT_DIR$/src/routes/event/officials/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Form/attributes-inline-form.js" />
-        <option value="$PROJECT_DIR$/src/routes/event/officials/EventOfficialsTableRoute.js" />
-        <option value="$PROJECT_DIR$/src/graphql/queries/eventAthletesUnsorted.graphql" />
-        <option value="$PROJECT_DIR$/src/components/OneLineLabel/index.js" />
         <option value="$PROJECT_DIR$/src/components/EventDashboard/menu.js" />
         <option value="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup/index.js" />
         <option value="$PROJECT_DIR$/src/components/BackButton/index.js" />
@@ -163,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/routes/event/slots/slot/index.js" />
         <option value="$PROJECT_DIR$/src/components/Form/fields/AttemptResultInput.js" />
         <option value="$PROJECT_DIR$/src/components/Form/fomValues-to-attributeValues.js" />
-        <option value="$PROJECT_DIR$/src/components/AttemptsTable/index.js" />
         <option value="$PROJECT_DIR$/src/utils/tableUtils.js" />
         <option value="$PROJECT_DIR$/src/components/AthleteGroupTable/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
@@ -194,6 +196,17 @@
         <option value="$PROJECT_DIR$/src/components/RemoveAthletesFromAthleteGroupButton/index.js" />
         <option value="$PROJECT_DIR$/src/components/AthletesTable/index.js" />
         <option value="$PROJECT_DIR$/src/components/AthleteGroupAthletesCard/index.js" />
+        <option value="$PROJECT_DIR$/src/graphql/queries/eventDisciplines.graphql" />
+        <option value="$PROJECT_DIR$/src/graphql/queries/eventSlotsDisciplinesAthleteGroups.graphql" />
+        <option value="$PROJECT_DIR$/src/components/EventAttemptsToolbar/index.js" />
+        <option value="$PROJECT_DIR$/src/graphql/mutations/autoCalcEventAthletePoints.graphql" />
+        <option value="$PROJECT_DIR$/src/components/OrderedEventAthletes/index.js" />
+        <option value="$PROJECT_DIR$/src/components/EventAthletePointsCalcButton/index.js" />
+        <option value="$PROJECT_DIR$/src/components/EventAttempts/index.js" />
+        <option value="$PROJECT_DIR$/src/graphql/queries/eventAttempts.graphql" />
+        <option value="$PROJECT_DIR$/src/components/AttemptsTable/index.js" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/routes/event/attempts/index.js" />
       </list>
     </option>
   </component>
@@ -203,11 +216,10 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1626" />
-    <option name="height" value="956" />
+    <option name="width" value="1680" />
+    <option name="height" value="964" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -239,13 +251,6 @@
               <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="AthleteGroupAthletesCard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="AthleteGroupsAthletesTable" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -254,6 +259,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="AthletesTable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AttemptsTable" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
@@ -274,35 +286,14 @@
               <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="EventTable" type="462c0819:PsiDirectoryNode" />
+              <item name="EventAttempts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="OfficialCreateForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="OfficialForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="OfficialSlotCreateForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="OfficialSlotsTable" type="462c0819:PsiDirectoryNode" />
+              <item name="EventAttemptsToolbar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
@@ -310,6 +301,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="OfficialSlotUpdateForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="OrderedEventAthletes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
@@ -343,13 +341,6 @@
               <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="graphql" type="462c0819:PsiDirectoryNode" />
-              <item name="mutations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="graphql" type="462c0819:PsiDirectoryNode" />
               <item name="queries" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -371,50 +362,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
               <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="athleteGroups" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="athleteGroups" type="462c0819:PsiDirectoryNode" />
-              <item name="athleteGroup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="athletes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="athletes" type="462c0819:PsiDirectoryNode" />
-              <item name="athlete" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="slots" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kdk-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="event" type="462c0819:PsiDirectoryNode" />
-              <item name="slots" type="462c0819:PsiDirectoryNode" />
-              <item name="slot" type="462c0819:PsiDirectoryNode" />
+              <item name="attempts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kdk-web" type="b2602c69:ProjectViewProjectNode" />
@@ -447,19 +395,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/routes/event/officials/official" />
-      <recent name="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup" />
-      <recent name="$PROJECT_DIR$/src/routes/event/slots" />
-      <recent name="$PROJECT_DIR$/src/routes/event/athletes" />
-      <recent name="$PROJECT_DIR$/src/routes/event" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/graphql/mutations" />
       <recent name="$PROJECT_DIR$/src/components/DataLoader" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/graphql/queries" />
       <recent name="$PROJECT_DIR$/src/components/RouterBreadcrumbs" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/routes/event/officials/official" />
+      <recent name="$PROJECT_DIR$/src/routes/event/athleteGroups/athleteGroup" />
+      <recent name="$PROJECT_DIR$/src/routes/event/slots" />
+      <recent name="$PROJECT_DIR$/src/routes/event/athletes" />
+      <recent name="$PROJECT_DIR$/src/routes/event" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -527,8 +475,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build:copy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build:copy" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.copy" />
         <item itemvalue="npm.clear:babel-cache" />
@@ -573,26 +521,28 @@
       <workItem from="1552651188610" duration="2126000" />
       <workItem from="1553180996998" duration="4638000" />
       <workItem from="1553262133797" duration="5146000" />
-      <workItem from="1553361137125" duration="14509000" />
+      <workItem from="1553361137125" duration="14640000" />
+      <workItem from="1553617919700" duration="7600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196690000" />
+    <option name="totallyTimeSpent" value="204421000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="23" width="1626" height="956" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="964" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.46780303" visible="true" weight="0.2556818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.46760896" visible="true" weight="0.21367522" />
       <window_info id="Structure" order="1" sideWeight="0.5185185" side_tool="true" weight="0.308634" />
-      <window_info id="npm" order="2" sideWeight="0.532197" side_tool="true" visible="true" weight="0.2556818" />
+      <window_info id="npm" order="2" sideWeight="0.5323911" side_tool="true" weight="0.24725275" />
       <window_info id="Favorites" order="3" sideWeight="0.5294118" side_tool="true" weight="0.2045177" />
       <window_info id="DB Browser" order="4" />
       <window_info id="Project Explorer" order="5" />
       <window_info id="Job Explorer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936978" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49891657" visible="true" weight="0.372176" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49891657" weight="0.37102473" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -601,7 +551,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32924837" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50108343" side_tool="true" weight="0.3296146" />
-      <window_info anchor="bottom" x="42" y="605" width="1638" height="185" id="GraphQL" order="11" sideWeight="0.49945828" weight="0.22116528" />
+      <window_info anchor="bottom" x="42" y="605" width="1638" height="185" id="GraphQL" order="11" sideWeight="0.49945828" visible="true" weight="0.21908127" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49945828" weight="0.32104638" />
       <window_info anchor="bottom" id="DB Execution Console" order="13" />
       <window_info anchor="bottom" id="Console" order="14" />
@@ -616,130 +566,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Form/attributes-inline-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="415" column="37" selection-start-line="415" selection-start-column="37" selection-end-line="415" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Form/fields/AttemptResultInput.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="53" />
-          <folding>
-            <element signature="e#9#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AthleteAttemptsForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Form/fomValues-to-attributeValues.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="127" column="31" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AttemptsTable/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="181" column="26" selection-start-line="181" selection-start-column="26" selection-end-line="181" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/tableUtils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/flow/node.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="2158" column="10" selection-start-line="2158" selection-start-column="10" selection-end-line="2158" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Layout/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="58" column="109" selection-start-line="58" selection-start-column="92" selection-end-line="58" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="50" column="28" selection-start-line="50" selection-start-column="28" selection-end-line="50" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AthleteGroupTable/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="166" column="59" selection-start-line="166" selection-start-column="59" selection-end-line="166" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventTable/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphql/queries/slot.graphql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Panel/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="40" column="67" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphql/mutations/updateOfficial.graphql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphql/queries/slotOfficialSlots.graphql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphql/queries/officialSlot.graphql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Bold/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -961,9 +787,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AthleteGroupAthletesCard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/event/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="34" column="80" lean-forward="true" selection-start-line="34" selection-start-column="80" selection-end-line="34" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventSlots.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventAthletesQuery.graphql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventAthleteGroups.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventDisciplines.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventSlotsDisciplinesAthleteGroups.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventAttemptsToolbar/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/athleteAttempts.graphql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/AthletesTable/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
+        <state relative-caret-position="-2501">
           <caret line="68" column="25" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="25" />
           <folding>
             <element signature="e#9#50#0" expanded="true" />
@@ -971,12 +855,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AthleteGroupAthletesCard/index.js">
+    <entry file="file://$PROJECT_DIR$/src/graphql/mutations/autoCalcAthletePoints.graphql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/mutations/autoCalcEventAthletePoints.graphql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="99" column="28" selection-start-line="99" selection-start-column="28" selection-end-line="99" selection-end-column="28" />
+        <state relative-caret-position="17">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/OrderedEventAthletes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
           <folding>
             <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventAthletePointsCalcButton/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <element signature="e#9#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventAthletesUnsorted.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="13" lean-forward="true" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphql/queries/eventAttempts.graphql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/EventAttempts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="19" column="70" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
+          <folding>
+            <element signature="e#9#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="81" column="1" lean-forward="true" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AttemptsTable/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="192" column="43" lean-forward="true" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/event/attempts/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="54" column="148" selection-start-line="54" selection-start-column="148" selection-end-line="54" selection-end-column="148" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

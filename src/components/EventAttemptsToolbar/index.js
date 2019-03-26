@@ -10,6 +10,7 @@ type Props = {
   availableDisciplines: string[],
   params: any,
   onChange?: Function,
+  renderRight?: () => void
 };
 
 type State = {
@@ -67,9 +68,7 @@ class EventAttemptsToolbar extends Component<Props, State> {
           attributes={attributes}
           onChange={onChange}/>
       </span>}
-      renderRight={() => [
-
-      ]}/>;
+      renderRight={this.props.renderRight}/>;
   }
 }
 

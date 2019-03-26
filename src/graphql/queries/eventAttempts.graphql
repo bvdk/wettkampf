@@ -36,6 +36,10 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!], $sort: [SortInput!]
                 done
                 index
             }
+            resultClass {
+                id
+                name
+            }
         }
     }
 }

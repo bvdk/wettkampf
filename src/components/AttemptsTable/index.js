@@ -17,6 +17,7 @@ type Props = {
   tableProps?: any,
   onChange?: Function,
   editableAttemptCols?: boolean,
+  groupWeightClasses?: boolean,
 };
 
 type State = {
@@ -91,15 +92,33 @@ class AttemptsTable extends Component<Props, State> {
     },[]);
   }
 
+  getDataSource() {
+
+    const result = _.chain(this.props.athletes)
+      .groupBy('resultClass.id')
+      .reduce((result, value, key) => {
+        return result.concat([
+          {
+            type: 'resultClass',
+            id: key,
+            ..._.get(value,'[0].resultClass')
+          },
+          ..._.chain(value).orderBy(['place']).value()
+        ])
+      }, [])
+      .flatten()
+      .value()
+
+    return result;
+
+  }
+
   render() {
     const { athletes, availableDisciplines, tableProps, filterParams} = this.props;
 
     let columns = [{
       dataIndex: 'place',
       title: 'Pl',
-      sorter: (a, b) => {
-        return defaultSorter(a, b, 'place',9999)
-      },
       defaultSortOrder: 'ascend',
     },{
       dataIndex: 'name',
@@ -171,13 +190,55 @@ class AttemptsTable extends Component<Props, State> {
     });
 
 
+    columns = columns.map((col, index) => {
+
+      if (index === 0){
+        return {
+          ...col,
+          render: (text, record) => {
+
+            if (record.type === 'resultClass'){
+              return {
+                children: record.name,
+                props: {
+                  className: 'resultClassSection',
+                  colSpan:columns.length,
+                },
+              };
+            }
+
+            return text;
+
+          }
+        }
+      }
+
+      return {
+        ...col,
+        render: (text, record) => {
+          if (record.type === 'resultClass'){
+            return {
+              props: {
+                children: '',
+                colSpan: 0
+              },
+            };
+          }
+          return col.render ? col.render(text, record) : text;
+        }
+      }
+
+    })
+
+
+
     _.last(columns).filterDropdown = () => menu;
 
     return <div>
       <Table
         rowKey={"id"}
         size={'small'}
-        dataSource={athletes}// dataSource={dataSource.length ? [_.first(dataSource)] : []}
+        dataSource={this.getDataSource()}// dataSource={dataSource.length ? [_.first(dataSource)] : []}
         columns={columns}
         pagination={false}
         {...tableProps}

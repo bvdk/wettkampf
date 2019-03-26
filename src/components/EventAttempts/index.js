@@ -1,10 +1,11 @@
 // @flow
 import React, {Component} from 'react';
+import _ from "lodash";
 import AttemptsTable from "../AttemptsTable";
 import {loader} from "graphql.macro";
 import {compose, graphql} from "react-apollo";
 import {withProps} from "recompose";
-import _ from "lodash";
+
 
 type Props = {
   eventId: string,
@@ -29,6 +30,7 @@ class EventAttempts extends Component<Props, State> {
     return <div>
 
       <AttemptsTable
+        groupWeightClasses
         editableAttemptCols
         onChange={this._handleAttemptChange}
         filterParams={filterParams}
