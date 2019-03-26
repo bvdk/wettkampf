@@ -53,7 +53,7 @@ export default class AttemptsResolver {
             athleteId,
         });
 
-        this.autoUpdateTotalAndPoints(attempt.athleteId);
+        this.autoUpdateTotalAndPoints(athleteId);
 
         return attempt;
     }
@@ -113,20 +113,22 @@ export default class AttemptsResolver {
 
         const total: number = bestAttempts.map((item) => item.weight).reduce((pv, cv) => pv + cv, 0);
 
+        const nextAttemptsSortKeys = nextAttempts.reduce((acc, attempt: Attempt) => ({
+            ...acc,
+            [attempt.discipline]: attempt ? `${attempt.index}-${100000 + attempt.weight}` : "999999",
+        }), {});
+
+        const updateData: any = {
+            nextAttemptsSortKeys,
+            points: null,
+            total: null,
+        };
+
         if (!_.isNaN(total) && total > 0) {
-
-            const nextAttemptsSortKeys = nextAttempts.reduce((acc, attempt: Attempt) => ({
-                ...acc,
-                [attempt.discipline]: attempt ? `${attempt.index}-${100000 + attempt.weight}` : "999999",
-            }), {});
-
-            return athletesResolver.updateAthlete({id: athleteId}, {
-                nextAttemptsSortKeys,
-                points: this.calcAthletePoints(athlete, total),
-                total,
-            }, null);
+            updateData.points = this.calcAthletePoints(athlete, total);
+            updateData.total = total;
         }
-        return null;
+        return athletesResolver.updateAthlete({id: athleteId}, updateData, null);
     }
 
     @Mutation()

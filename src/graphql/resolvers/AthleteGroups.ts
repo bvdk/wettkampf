@@ -75,6 +75,8 @@ class AddAthletesToAthleteGroupArgs {
 }
 
 
+
+
 @Resolver()
 export default class AthleteGroupsResolver {
 
@@ -140,6 +142,18 @@ export default class AthleteGroupsResolver {
 
         const athletes = athleteIds.map((athleteId: string) => CrudAdapter.updateItem(Athlete.collectionKey, athleteId, {
             athleteGroupId,
+        }));
+        return this.athleteGroup({id: athleteGroupId});
+    }
+
+    @Mutation((type) => AthleteGroup)
+    public removeAthletesFromAthleteGroup(
+        @Args() {athleteGroupId, athleteIds}: AddAthletesToAthleteGroupArgs,
+        @Ctx() ctx: Context,
+    ): AthleteGroup {
+
+        const athletes = athleteIds.map((athleteId: string) => CrudAdapter.updateItem(Athlete.collectionKey, athleteId, {
+            athleteGroupId: null,
         }));
         return this.athleteGroup({id: athleteGroupId});
     }

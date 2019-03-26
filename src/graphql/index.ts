@@ -1,4 +1,4 @@
-import  path from "path";
+import path from "path";
 import "reflect-metadata";
 import {buildSchema} from "type-graphql";
 import AgeClasses from "./resolvers/AgeClasses";
@@ -10,13 +10,15 @@ import AttemptResolver from "./resolvers/Attempt";
 import AttemptsResolver from "./resolvers/Attempts";
 import EventResolver from "./resolvers/Event";
 import EventsResolver from "./resolvers/Events";
+import OfficialResolver from "./resolvers/Official";
+import OfficialsResolver from "./resolvers/Officials";
+import OfficialSlotsResolver from "./resolvers/OfficialSlots";
+import ResultClassResolver from "./resolvers/ResultClass";
 import SlotResolver from "./resolvers/Slot";
 import SlotsResolver from "./resolvers/Slots";
-import OfficialsResolver from "./resolvers/Officials";
-import OfficialResolver from "./resolvers/Official";
 import WeightClass from "./resolvers/weightClass";
 import WeightClasses from "./resolvers/WeightClasses";
-import ResultClassResolver from "./resolvers/ResultClass";
+import OfficialSlotResolver from "./resolvers/OfficialSlot";
 
 // @ts-ignore
 const schema = buildSchema({
@@ -37,6 +39,8 @@ const schema = buildSchema({
         AgeClasses,
         OfficialsResolver,
         OfficialResolver,
+        OfficialSlotsResolver,
+        OfficialSlotResolver,
         ResultClassResolver,
     ],
 });

@@ -5,6 +5,8 @@ import { Athlete } from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Event} from "../models/event";
 import {Slot} from "../models/slot";
+import {OfficialSlot} from "../models/officialSlot";
+import {CollectionKeys} from "../../database";
 
 @Resolver((of) => Slot)
 export default class SlotResolver implements ResolverInterface<Slot> {
@@ -44,6 +46,11 @@ export default class SlotResolver implements ResolverInterface<Slot> {
     @FieldResolver()
     public athleteGroups(@Root() slot: Slot) {
         return CrudAdapter.filter(AthleteGroup.collectionKey, { slotId: slot.id }) || [];
+    }
+
+    @FieldResolver()
+    public officialSlots(@Root() slot: Slot) {
+        return CrudAdapter.filter(CollectionKeys.officialSlots, { slotId: slot.id }) || [];
     }
 
 }

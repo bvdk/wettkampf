@@ -228,6 +228,7 @@ type Mutation {
   updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
   setAthleteGroupSlot(athleteGroupId: ID!, slotId: ID!): AthleteGroup!
   addAthletesToAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
+  removeAthletesFromAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
   deleteAthleteGroup(id: ID!): AthleteGroup!
   autoCreateAthleteGroups(
     """Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet."""
@@ -265,6 +266,9 @@ type Mutation {
   createOfficial(eventId: ID!, data: OfficialInput!): Official!
   updateOfficial(data: OfficialInput!, id: ID!): Official!
   deleteOfficial(id: ID!): Official!
+  createOfficialSlot(slotId: ID!, officialId: ID!, input: OfficialSlotInput): OfficialSlot!
+  updateOfficialSlot(input: OfficialSlotInput!, id: ID!): OfficialSlot!
+  deleteOfficialSlot(id: ID!): OfficialSlot!
 }
 
 type Official {
@@ -286,6 +290,19 @@ input OfficialInput {
   position: String
   location: String
   license: String
+}
+
+type OfficialSlot {
+  id: ID!
+  officialId: ID!
+  official: Official!
+  slotId: ID!
+  slot: Slot!
+  position: String!
+}
+
+input OfficialSlotInput {
+  position: String!
 }
 
 type Query {
@@ -331,6 +348,9 @@ type Query {
   """Get a Official"""
   official(id: ID!): Official
   findOfficial(eventId: ID, importId: ID): Official!
+
+  """Get a OfficialSlot"""
+  officialSlot(id: ID!): OfficialSlot
 }
 
 type ResultClass {
@@ -351,6 +371,7 @@ type Slot {
   athletes: [Athlete!]!
   athleteCount: Int!
   athleteGroups: [AthleteGroup!]!
+  officialSlots: [OfficialSlot!]!
 }
 
 input SlotInput {

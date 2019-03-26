@@ -14,6 +14,7 @@ export const CollectionKeys = {
     athletes: "athletes",
     attempts: "attempts",
     events: "events",
+    officialSlots: "officialSlots",
     officials: "officials",
     slots: "slots",
     weightClasses: "weightClasses",
@@ -28,6 +29,7 @@ db.defaults({
     [CollectionKeys.attempts]: [],
     [CollectionKeys.weightClasses]: WeightClassesSeed,
     [CollectionKeys.ageClasses]: AgeClassesSeed,
+    [CollectionKeys.officialSlots]: [],
 })
     .write();
 

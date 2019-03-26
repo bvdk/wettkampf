@@ -2,6 +2,7 @@ import {Field, ID, InputType, Int, ObjectType} from "type-graphql";
 import { Athlete } from "./athlete";
 import {Event} from "./event";
 import {AthleteGroup} from "./athleteGroup";
+import {OfficialSlot} from "./officialSlot";
 
 @ObjectType()
 export class Slot {
@@ -31,6 +32,11 @@ export class Slot {
 
     @Field((type) => AthleteGroup)
     public athleteGroups: AthleteGroup[];
+
+    @Field((type) => OfficialSlot)
+    public officialSlots: OfficialSlot[];
+
+
 }
 
 @InputType()
