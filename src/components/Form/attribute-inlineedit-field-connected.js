@@ -40,6 +40,8 @@ class AttributeInlineEditField extends Component<Props, State> {
         this.input = React.createRef();
     }
 
+    node = null;
+
     static defaultProps = {
         formItemLayout: undefined,
         readOnly: false,
@@ -50,6 +52,28 @@ class AttributeInlineEditField extends Component<Props, State> {
         editable: false,
         success: false,
         error: false,
+    }
+
+
+    componentWillMount(): void {
+        document.addEventListener('mousedown',this.handleAnyClick, false)
+    }
+
+    componentWillUnmount(): void {
+        document.removeEventListener('mousedown',this.handleAnyClick, false)
+    }
+
+    handleAnyClick = (e) => {
+        if (!this.node || this.node.contains(e.target)){
+            // Inside click
+            return;
+        }
+
+        setTimeout(()=>{
+            this.check();
+        },500)
+        // Outside Click
+
     }
 
     check = () => {
@@ -162,7 +186,7 @@ class AttributeInlineEditField extends Component<Props, State> {
           >
               {
                   !readOnly && editable ? (
-                    <div className={'editable-cell'} >
+                    <div ref={node => this.node = node} className={'editable-cell'} >
                         <div className={'attribute-inline-edit-field-input-content'}>
                             {React.cloneElement(AttributeFormFactory.renderAttribute(attribute, form, t),{
                                 onKeyPress: this.handleKeyPress,
@@ -172,18 +196,21 @@ class AttributeInlineEditField extends Component<Props, State> {
                         {
                             loading ? <Loader useIcon /> : null
                         }
-                        <div
+                        { this.props.circleCheck ?
+                          <div
                             className="editable-icon-check" style={{paddingLeft: 5}}>
-                            <Button
+                              <Button
                                 shape={"circle"}
                                 size={"small"}
                                 onClick={this.check}
-                            >
-                                <Icon
+                              >
+                                  <Icon
                                     type="check"
-                                />
-                            </Button>
-                        </div>
+                                  />
+                              </Button>
+                          </div> : null
+                        }
+
 
                     </div>
                   ) : (

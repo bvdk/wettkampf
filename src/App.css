@@ -82,9 +82,13 @@
 }
 
 .resultClassSection {
-  background-color: rgb(173, 201, 231);
+  background-color: #f3f3f3;
   font-weight: bold;
   text-align: center;
+}
+
+.active-athlete-row {
+  background-color: #d9e2f1;
 }
 
 .flex {

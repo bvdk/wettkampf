@@ -103,11 +103,12 @@ class AttributeInlineField extends Component<Props, State> {
                             {
                                 loading ? <Loader useIcon /> : null
                             }
-                            <Icon
-                                type="check"
-                                className="editable-icon-check"
-                                onClick={this.check}
-                            />
+
+                            {/*<Icon*/}
+                                {/*type="check"*/}
+                                {/*className="editable-icon-check"*/}
+                                {/*onClick={this.check}*/}
+                            {/*/>*/}
                         </div>
                     ) : (
                         <div onClick={this.edit} className={'AttributeInlineField-display-wrapper'} >

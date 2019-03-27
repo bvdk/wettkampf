@@ -19,6 +19,7 @@ type State = {
 
 const EventAttemptsQuery = loader("../../graphql/queries/eventAttempts.graphql");
 
+
 class EventAttempts extends Component<Props, State> {
 
   _handleAttemptChange = (res) => {
@@ -30,11 +31,15 @@ class EventAttempts extends Component<Props, State> {
     return <div>
 
       <AttemptsTable
+        highlightFirstAthlete
         groupWeightClasses
         editableAttemptCols
         onChange={this._handleAttemptChange}
         filterParams={filterParams}
-        tableProps={{loading}}
+        tableProps={{
+          loading,
+          scroll:{ x: 900 }
+        }}
         loading={loading}
         availableDisciplines={availableDisciplines}
         athletes={athletes} />

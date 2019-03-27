@@ -228,18 +228,20 @@ class AthletesTable extends Component<Props, State> {
       title: 'Bühne',
       dataIndex: 'athleteGroup.slot.name',
       key: 'athleteGroup.slot.name',
-      filters: [{
-        text: 'Ohne Zuteilung',
-        value: false,
-      },{
-        text: 'Zugeteilte Athleten',
-        value: true,
-      }],
-      filterMultiple: false,
-      onFilter: (value, record) => {
-        const boolValue = value === "true" ? true : value === "false" ? false : null;
-        return boolValue ? !!_.get(record,'athleteGroup.slot') : !_.get(record,'athleteGroup.slot');
-      },
+        filters: defaultFilter('slot.id', 'slot', 'id', 'name', athletes),
+        onFilter: defaultOnFilter('slot.id'),
+      // filters: [{
+      //   text: 'Ohne Zuteilung',
+      //   value: false,
+      // },{
+      //   text: 'Zugeteilte Athleten',
+      //   value: true,
+      // }],
+      // filterMultiple: false,
+      // onFilter: (value, record) => {
+      //   const boolValue = value === "true" ? true : value === "false" ? false : null;
+      //   return boolValue ? !!_.get(record,'slot') : !_.get(record,'slot');
+      // },
       render: (text, record) => _.get(record,'slot') ? _.get(record,'slot.name') : <DangerLabel>Keine Bühne zugeweisen</DangerLabel>,
       sorter: (a, b) => defaultSorter(a, b, 'slot.name')
     }

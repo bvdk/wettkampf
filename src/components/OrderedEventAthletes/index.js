@@ -4,7 +4,7 @@ import {loader} from "graphql.macro";
 import {compose, graphql} from "react-apollo";
 import _ from "lodash";
 import {withProps} from "recompose";
-import {Button, Table} from "antd";
+import {Button, Icon, Table} from "antd";
 import Toolbar from "../Toolbar";
 import waitWhileLoading from "../../hoc/waitWhileLoading";
 import EventAthletePointsCalcButton from "./../EventAthletePointsCalcButton";
@@ -12,7 +12,7 @@ import EventAthletePointsCalcButton from "./../EventAthletePointsCalcButton";
 const EventAttemptsQuery = loader("../../graphql/queries/eventAttempts.graphql");
 
 type Props = {
-
+  highlightFirstAthlete?: boolean
 };
 
 type State = {
@@ -23,21 +23,27 @@ class OrderedEventAthletes extends Component<Props, State> {
   componentDidMount() {}
 
   render() {
-    const { athletes } = this.props;
+    const { athletes, highlightFirstAthlete } = this.props;
+
+    const firstAthleteId = _.get(athletes,'[0].id');
 
     return <Table
       size={'small'}
       pagination={false}
+      rowClassName={highlightFirstAthlete ? (record, index) => {
+        return record.id === firstAthleteId ? 'active-athlete-row' : ''
+      } : null}
       columns={[{
         dataIndex: '#',
         title: '#',
         width: 30,
+        render: (text, record) => record.id === firstAthleteId ? <Icon type={'right'} /> : text
       },{
         dataIndex: 'name',
         title: 'Name',
       },{
         dataIndex: 'nextAttempt.weight',
-        title: 'Versuch',
+        title: 'Gewicht',
         render: (text, item) => {
           const weight = _.chain(item).get('nextAttempts[0].weight').value();
           if (weight){
@@ -45,7 +51,18 @@ class OrderedEventAthletes extends Component<Props, State> {
           }
           return null
         }
+      },{
+        dataIndex: 'nextAttemptCount',
+        title: 'V.',
+        render: (text, item) => {
+          const index = _.chain(item).get('nextAttempts[0].index').value();
+          if (index < 3){
+            return index +1 ;
+          }
+          return null
+        }
       }]}
+      scroll={{x: 200}}
       dataSource={athletes}
       footer={() => <Toolbar
         style={{padding: 0}}

@@ -60,7 +60,7 @@ class EventAttemptsRoute extends Component<Props, State> {
           <EventAttempts filterParams={tmpParams} eventId={eventId}/>
         </Col>
         { !collapsed ? <Col md={6}>
-          <OrderedEventAthletes filterParams={tmpParams} eventId={eventId}/>
+          <OrderedEventAthletes highlightFirstAthlete filterParams={tmpParams} eventId={eventId}/>
         </Col> : null }
 
       </Row>

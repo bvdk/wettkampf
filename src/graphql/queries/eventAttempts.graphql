@@ -39,6 +39,15 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!], $sort: [SortInput!]
             resultClass {
                 id
                 name
+                gender
+                weightClass {
+                    id
+                    name
+                }
+                ageClass {
+                    id
+                    name
+                }
             }
         }
     }

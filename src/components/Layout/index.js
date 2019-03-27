@@ -49,8 +49,8 @@ class AppLayout extends Component<Props, State> {
 
     return (
       <Layout style={{height: 'auto', minHeight: '100vh'}} className="layout">
-          <Content style={{ padding: '0 50px' }}>
-            <RouterBreadcrumbs />
+          <Content>
+
             <div style={{ background: '#fff' }}>
               {this.props.children}
             </div>

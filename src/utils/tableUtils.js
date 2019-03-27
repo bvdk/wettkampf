@@ -21,7 +21,10 @@ export const defaultFilter = (groupKeyPath, dataKeyPath, valueKeyPath, textKeyPa
           value: _.get(item,valueKeyPath),
         }
       }
-      return null
+      return {
+        text: 'Ohne',
+        value: 'null'
+      }
     })
     .filter((item)=> item)
     .orderBy(["text","asc"])
@@ -37,6 +40,6 @@ export const defaultOnFilter = (keyPath) => {
     if (!Array.isArray(arrVal)){
       arrVal = [value];
     }
-    return arrVal.indexOf(_.get(record,keyPath)) !== -1;
+    return arrVal.indexOf(_.get(record,keyPath, 'null')) !== -1;
   }
 }

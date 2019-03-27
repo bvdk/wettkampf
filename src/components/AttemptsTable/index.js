@@ -1,11 +1,12 @@
 // @flow
 import React, { Component } from 'react';
-import {Button, Checkbox, Dropdown, Icon, Menu, Table} from "antd";
+import {Button, Checkbox, Dropdown, Icon, Menu, Table, Tooltip} from "antd";
 import _ from 'lodash';
 import moment from "moment";
 import AttemptInlineForm from "./../AttemptInlineForm";
 import AttemptDisplayLabel from "../AttemptDisplayLabel";
 import {shortDisciplines} from "../../constants/disciplines";
+import Bold from "../Bold";
 import Toolbar from "../Toolbar";
 
 
@@ -18,6 +19,7 @@ type Props = {
   onChange?: Function,
   editableAttemptCols?: boolean,
   groupWeightClasses?: boolean,
+  highlightFirstAthlete?: boolean,
 };
 
 type State = {
@@ -43,7 +45,9 @@ class AttemptsTable extends Component<Props, State> {
   }
 
   state = {
-    hiddenCols: []
+    hiddenCols: [
+      'resultClass'
+    ]
   }
 
   getDisciplineColumns = (availableDisciplines, discipline) => {
@@ -84,7 +88,7 @@ class AttemptsTable extends Component<Props, State> {
             .first()
             .value();
 
-          return <span>{_.get(attempt,'weight','')}</span>//<AttemptDisplayLabel attempt={attempt}/>
+          return <Bold>{_.get(attempt,'weight','')}</Bold>//<AttemptDisplayLabel attempt={attempt}/>
         }
       })
 
@@ -94,7 +98,13 @@ class AttemptsTable extends Component<Props, State> {
 
   getDataSource() {
 
+
+    if (!this.props.groupWeightClasses){
+      return this.props.athletes;
+    }
+
     const result = _.chain(this.props.athletes)
+      .orderBy(['resultClass.gender','resultClass.ageClass.name','resultClass.weightClass.name', 'place'],['asc','asc','asc','asc'])
       .groupBy('resultClass.id')
       .reduce((result, value, key) => {
         return result.concat([
@@ -106,7 +116,6 @@ class AttemptsTable extends Component<Props, State> {
           ..._.chain(value).orderBy(['place']).value()
         ])
       }, [])
-      .flatten()
       .value()
 
     return result;
@@ -114,20 +123,29 @@ class AttemptsTable extends Component<Props, State> {
   }
 
   render() {
-    const { athletes, availableDisciplines, tableProps, filterParams} = this.props;
+    const { athletes, groupWeightClasses, availableDisciplines, tableProps, filterParams, highlightFirstAthlete} = this.props;
+
+    const firstAthleteId = _.get(athletes,'[0].id');
 
     let columns = [{
       dataIndex: 'place',
       title: 'Pl',
       defaultSortOrder: 'ascend',
+
     },{
       dataIndex: 'name',
-      title: 'Name'
+      title: 'Name',
+      render: (text, record) => {
+        if (record.id === firstAthleteId){
+          return <Tooltip title="Dieser Athlet ist an der Reihe">{text}</Tooltip>
+        }
+        return text
+      }
     },{
       dataIndex: 'club',
       title: 'Verein'
     },{
-      dataIndex: 'resultClass.name',
+      dataIndex: 'resultClass',
       title: 'Wertungsklasse',
       render: (text, record) => _.get(record,'resultClass.name')
     },{
@@ -139,12 +157,14 @@ class AttemptsTable extends Component<Props, State> {
       {
         dataIndex: 'total',
         title: 'Total',
+        render: (text, record) => <Bold>{text}</Bold>
       },{
         dataIndex: 'wilks',
         title: 'Wilks',
       },{
         dataIndex: 'points',
         title: 'Punkte',
+        render: (text, record) => <Bold>{text}</Bold>
       }]
 
     const menu =  <div style={{padding: '6px 0'}}>
@@ -237,6 +257,9 @@ class AttemptsTable extends Component<Props, State> {
     return <div>
       <Table
         rowKey={"id"}
+        rowClassName={highlightFirstAthlete ? (record, index) => {
+          return record.id === firstAthleteId ? 'active-athlete-row' : ''
+        } : null}
         size={'small'}
         dataSource={this.getDataSource()}// dataSource={dataSource.length ? [_.first(dataSource)] : []}
         columns={columns}

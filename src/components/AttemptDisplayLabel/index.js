@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import _ from "lodash";
 import Colors from "../../styles/colors";
+import Bold from "../Bold"
 
 type Props = {
   attempt: any,
@@ -19,7 +20,7 @@ class AttemptDisplayLabel extends Component<Props, State> {
 
     const done = _.get(attempt,'done');
     const valid = _.get(attempt,'valid');
-    return <span style={{color: done ? valid ? Colors.success : Colors.danger : null}}>{_.get(attempt,'weight')}</span>
+    return <Bold style={{color: done ? valid ? Colors.success : Colors.danger : null}}>{_.get(attempt,'weight')}</Bold>
 
   }
 }
