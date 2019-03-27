@@ -4,6 +4,10 @@ import {getDescriptionForGender} from "../models/gender";
 import {ResultClass} from "../models/resultClass";
 import AgeClassesResolver from "./AgeClasses";
 import WeightClassesResolver from "./WeightClasses";
+import {Athlete} from "../models/athlete";
+import {CrudAdapter} from "../../database/CrudAdapter";
+import {AgeClass} from "../models/ageClass";
+import {WeightClass} from "../models/weightClass";
 
 @Resolver((of) => ResultClass)
 export default class ResultClassResolver implements ResolverInterface<ResultClass> {
@@ -32,5 +36,20 @@ export default class ResultClassResolver implements ResolverInterface<ResultClas
         return nameComponents.join(" - ");
     }
 
+    @FieldResolver()
+    public ageClass(@Root() resultClass: ResultClass) {
+        if (resultClass.ageClassId) {
+            return CrudAdapter.getItem(AgeClass.collectionKey, resultClass.ageClassId );
+        }
+        return null;
+    }
+
+    @FieldResolver()
+    public weightClass(@Root() resultClass: ResultClass) {
+        if (resultClass.weightClassId) {
+            return CrudAdapter.getItem(WeightClass.collectionKey, resultClass.weightClassId );
+        }
+        return null;
+    }
 
 }

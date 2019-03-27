@@ -8599,7 +8599,7 @@
       "KH2": null,
       "KH3": null,
       "points": 67.23625784128483,
-      "place": 1,
+      "place": 2,
       "location": "Mainz",
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
@@ -8618,12 +8618,12 @@
       "gender": "MALE",
       "club": "Turn Club Hameln",
       "birthday": "1954-05-03T23:00:00.000Z",
-      "total": null,
+      "total": 120,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
-      "bodyWeight": null,
-      "wilks": null,
+      "bodyWeight": 83,
+      "wilks": 0.6674994266033587,
       "los": null,
       "KB1": null,
       "KB2": null,
@@ -8634,14 +8634,14 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 80.09993119240305,
+      "place": 1,
       "location": "Mainz",
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "fd7e595b-ef16-49a7-a880-61c846c99abc",
       "athleteGroupId": "75859272-84c8-4637-a229-fbe51cf6075b",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100120"
+        "SQUAT": "1-100130"
       }
     },
     {
@@ -10381,7 +10381,9 @@
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "fc92f5bb-6efe-4fd2-b419-3b019d77f705",
       "athleteGroupId": "75859272-84c8-4637-a229-fbe51cf6075b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {
+        "SQUAT": "0-100100"
+      }
     },
     {
       "athleteNumber": "1",
@@ -10415,7 +10417,9 @@
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "87d1b254-984c-414f-9375-c2c5900a7633",
       "athleteGroupId": "75859272-84c8-4637-a229-fbe51cf6075b",
-      "nextAttemptsSortKeys": {}
+      "nextAttemptsSortKeys": {
+        "SQUAT": "0-100120"
+      }
     },
     {
       "athleteNumber": "1",
@@ -30361,8 +30365,8 @@
       "index": 0,
       "athleteId": "fd7e595b-ef16-49a7-a880-61c846c99abc",
       "id": "8793d376-6184-43c0-bd7f-688f9a6f0e42",
-      "valid": false,
-      "done": false
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
@@ -30471,6 +30475,26 @@
       "index": 1,
       "athleteId": "c63cfe32-27d4-420d-9cb9-822bf1637810",
       "id": "9c410400-847d-4080-87bd-c1389f9ca8bf"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-03-27T08:21:11.282Z",
+      "weight": 120,
+      "index": 0,
+      "athleteId": "87d1b254-984c-414f-9375-c2c5900a7633",
+      "id": "30556bd1-5834-44f1-87f5-d1e471b97849",
+      "valid": null,
+      "done": false
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-03-27T08:23:21.657Z",
+      "weight": 100,
+      "index": 0,
+      "athleteId": "fc92f5bb-6efe-4fd2-b419-3b019d77f705",
+      "id": "b1a3c6ac-04c6-4447-a472-6ec23dc753f1",
+      "valid": null,
+      "done": false
     }
   ],
   "weightClasses": [

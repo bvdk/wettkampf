@@ -357,7 +357,9 @@ type ResultClass {
   id: ID!
   name: String
   ageClassId: String
+  ageClass: AgeClass
   weightClassId: String
+  weightClass: WeightClass
   gender: Gender
   raw: Boolean
 }
