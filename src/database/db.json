@@ -8582,7 +8582,7 @@
       "gender": "MALE",
       "club": "AC Oppenau 1984 e.V.",
       "birthday": "1957-08-09T23:00:00.000Z",
-      "total": 100,
+      "total": 110,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
@@ -8598,14 +8598,14 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": 67.23625784128483,
+      "points": 73.9598836254133,
       "place": 2,
       "location": "Mainz",
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
       "athleteGroupId": "75859272-84c8-4637-a229-fbe51cf6075b",
       "nextAttemptsSortKeys": {
-        "SQUAT": "1-100110"
+        "BENCHPRESS": "2-100120"
       }
     },
     {
@@ -8618,12 +8618,12 @@
       "gender": "MALE",
       "club": "Turn Club Hameln",
       "birthday": "1954-05-03T23:00:00.000Z",
-      "total": 120,
+      "total": 230,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
-      "bodyWeight": 83,
-      "wilks": 0.6674994266033587,
+      "bodyWeight": 82,
+      "wilks": 0.6723625784128482,
       "los": null,
       "KB1": null,
       "KB2": null,
@@ -8634,14 +8634,14 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": 80.09993119240305,
+      "points": 154.6433930349551,
       "place": 1,
       "location": "Mainz",
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "fd7e595b-ef16-49a7-a880-61c846c99abc",
       "athleteGroupId": "75859272-84c8-4637-a229-fbe51cf6075b",
       "nextAttemptsSortKeys": {
-        "SQUAT": "1-100130"
+        "SQUAT": "2-100130"
       }
     },
     {
@@ -10395,7 +10395,7 @@
       "gender": "FEMALE",
       "club": "HAV 77 e.V.",
       "birthday": "1965-01-07T23:00:00.000Z",
-      "total": null,
+      "total": 130,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
@@ -10417,9 +10417,7 @@
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "87d1b254-984c-414f-9375-c2c5900a7633",
       "athleteGroupId": "75859272-84c8-4637-a229-fbe51cf6075b",
-      "nextAttemptsSortKeys": {
-        "SQUAT": "0-100120"
-      }
+      "nextAttemptsSortKeys": {}
     },
     {
       "athleteNumber": "1",
@@ -30390,7 +30388,9 @@
       "weight": 110,
       "index": 1,
       "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
-      "id": "04d7c89e-a368-4396-a129-e3b333ded1f2"
+      "id": "04d7c89e-a368-4396-a129-e3b333ded1f2",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
@@ -30458,7 +30458,9 @@
       "weight": 130,
       "index": 1,
       "athleteId": "fd7e595b-ef16-49a7-a880-61c846c99abc",
-      "id": "a0eab6ac-58d8-4a8a-8ace-d95c6aa978bb"
+      "id": "a0eab6ac-58d8-4a8a-8ace-d95c6aa978bb",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
@@ -30483,8 +30485,8 @@
       "index": 0,
       "athleteId": "87d1b254-984c-414f-9375-c2c5900a7633",
       "id": "30556bd1-5834-44f1-87f5-d1e471b97849",
-      "valid": null,
-      "done": false
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
@@ -30495,6 +30497,94 @@
       "id": "b1a3c6ac-04c6-4447-a472-6ec23dc753f1",
       "valid": null,
       "done": false
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-03-27T11:36:09.512Z",
+      "weight": 130,
+      "index": 1,
+      "athleteId": "87d1b254-984c-414f-9375-c2c5900a7633",
+      "id": "f9abe743-6e61-4d95-acf9-f882e0918c24",
+      "valid": true,
+      "done": true
+    },
+    {
+      "discipline": "BENCHPRESS",
+      "date": "2019-03-27T11:39:19.083Z",
+      "weight": 100,
+      "index": 0,
+      "athleteId": "fd7e595b-ef16-49a7-a880-61c846c99abc",
+      "id": "9c1ad327-0e98-4cd4-b574-a0a9f059b7c5",
+      "valid": false,
+      "done": true
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-03-27T17:12:14.060Z",
+      "weight": 200,
+      "valid": false,
+      "done": true,
+      "index": 2,
+      "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
+      "id": "cf18850a-ae22-48f1-ab6f-8b87f3dd524f"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-03-27T17:16:43.526Z",
+      "weight": 130,
+      "index": 2,
+      "athleteId": "fd7e595b-ef16-49a7-a880-61c846c99abc",
+      "id": "bc6fddbe-8027-4e28-8981-35c6ad5df86e",
+      "valid": false,
+      "done": false
+    },
+    {
+      "discipline": "BENCHPRESS",
+      "date": "2019-03-27T17:22:28.095Z",
+      "weight": 200,
+      "valid": false,
+      "done": true,
+      "index": 1,
+      "athleteId": "fd7e595b-ef16-49a7-a880-61c846c99abc",
+      "id": "be87c532-e2cf-4917-92fb-bb05bc6cbb3d"
+    },
+    {
+      "discipline": "BENCHPRESS",
+      "date": "2019-03-27T17:22:37.407Z",
+      "weight": 100,
+      "index": 2,
+      "athleteId": "fd7e595b-ef16-49a7-a880-61c846c99abc",
+      "id": "8e86089a-7d11-4f3d-b21c-a4136790ea95",
+      "valid": true,
+      "done": true
+    },
+    {
+      "discipline": "BENCHPRESS",
+      "date": "2019-03-27T17:23:25.305Z",
+      "weight": 120,
+      "index": 0,
+      "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
+      "id": "3bf0c83f-f87a-416f-bda0-fa70789a9539",
+      "valid": false,
+      "done": true
+    },
+    {
+      "discipline": "BENCHPRESS",
+      "date": "2019-03-27T17:23:28.127Z",
+      "weight": 120,
+      "index": 1,
+      "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
+      "id": "efd0f20c-20e6-4413-9f97-a94376467d6f",
+      "valid": false,
+      "done": true
+    },
+    {
+      "discipline": "BENCHPRESS",
+      "date": "2019-03-27T17:23:55.640Z",
+      "weight": 120,
+      "index": 2,
+      "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
+      "id": "baab829f-3ea6-428a-8e42-ca02b496140b"
     }
   ],
   "weightClasses": [

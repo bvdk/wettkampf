@@ -98,16 +98,19 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
         @Root() athlete: Athlete,
         @Arg("discipline", (type) => Discipline, {nullable: true}) discipline?: Discipline,
     ) {
-        return _.chain(this.attempts(athlete, discipline))
-            .sortBy(["weight"])
+        const bestAttempts =  _.chain(this.attempts(athlete, discipline))
             .filter({
                 valid: true,
             })
             .groupBy("discipline")
-            .map((group, key) => {
-                return _.first(group);
+            .map((attempts, key) => {
+                return _.chain(attempts).orderBy(["weight"], ["desc"]).first().value();
             })
+            .filter((item) => item)
             .value();
+
+
+        return bestAttempts;
     }
 
     @FieldResolver()
@@ -119,7 +122,7 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
             .map((group, key) => {
                 return group.reduce((acc, cur) => {
                    if (acc) { return acc; }
-                   return cur.valid;
+                   return cur.valid || !cur.done;
 
                 } , false);
             })
