@@ -1,13 +1,15 @@
-const {
-  override,
-  fixBabelImports,
-  addLessLoader,
-} = require("customize-cra");
+const { override, addBabelPlugins, fixBabelImports, addLessLoader } = require('customize-cra');
+
 
 
 module.exports = override(
-  fixBabelImports("import", {
-    libraryName: "antd", libraryDirectory: "es", style: true // change importing css to less
+  ...addBabelPlugins(
+    "import-graphql",
+  ),
+  fixBabelImports('import', {
+    libraryName: 'antd',
+    libraryDirectory: 'es',
+    style: true,
   }),
   addLessLoader({
     javascriptEnabled: true,

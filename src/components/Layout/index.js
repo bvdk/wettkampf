@@ -1,14 +1,10 @@
 // @flow
-import React, { Component } from "react";
-import { Icon, Layout, Breadcrumb } from "antd";
-
-import RouterBreadcrumbs from "./../RouterBreadcrumbs";
-
-import menu from "./menu";
-import rightMenu from "./rightMenu";
-import Header from "./Header";
+import React, {Component} from "react";
+import {Layout} from "antd";
 
 import "./styles.css";
+import LogoutButton from "../LogoutButton";
+
 const { Content, Footer } = Layout;
 
 type Props = {
@@ -57,6 +53,7 @@ class AppLayout extends Component<Props, State> {
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             <span>Bundesverband Deutscher Kraftdreikämpfer e.V. 2018 | Version {process.env.REACT_APP_VERSION}</span>
+            <LogoutButton/>
           </Footer>
       </Layout>
     );

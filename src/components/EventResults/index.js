@@ -31,12 +31,12 @@ class EventResults extends Component<Props, State> {
     return <div>
 
       <AttemptsTable
-        availableDisciplines={availableDisciplines}
-        onChange={this._handleResultChange}
-        filterParams={filterParams}
-        tableProps={{loading}}
-        loading={loading}
-        athletes={athletes} />
+          availableDisciplines={availableDisciplines}
+          onChange={this._handleResultChange}
+          filterParams={filterParams}
+          tableProps={{loading}}
+          loading={loading}
+          athletes={athletes} />
     </div>;
   }
 }

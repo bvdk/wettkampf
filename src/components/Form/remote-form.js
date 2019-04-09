@@ -128,7 +128,7 @@ class RemoteForm extends Component<Props> {
 
   render(){
 
-    const  {layout, t} = this.props;
+    const  {layout, t, submitFormItemLayout} = this.props;
 
     let formFactory = new FormFactory(this.props.formConfig, this.props.form);
     formFactory.layout = layout;
@@ -143,6 +143,10 @@ class RemoteForm extends Component<Props> {
       submitformItemLayout = {
         wrapperCol:{ span: 12, offset: 7 }
       }
+    }
+
+    if (this.props.submitFormItemLayout){
+      submitformItemLayout = this.props.submitFormItemLayout
     }
 
     return <div style={{position: 'relative'}}>

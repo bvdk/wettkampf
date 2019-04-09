@@ -61,11 +61,9 @@ class EventResultsToolbar extends Component<Props, State> {
           attributes={attributes}
           onChange={onChange}/>
       </span>}
-      renderRight={() => [
-        <Dropdown overlay={menu}>
-          <Button key={'print'}> Export</Button>
-        </Dropdown>
-          ]}/>;
+      renderRight={() => <Dropdown overlay={menu}>
+        <Button key={'print'}> Export</Button>
+      </Dropdown>}/>;
   }
 }
 

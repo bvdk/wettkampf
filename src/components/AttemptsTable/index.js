@@ -254,19 +254,17 @@ class AttemptsTable extends Component<Props, State> {
 
     _.last(columns).filterDropdown = () => menu;
 
-    return <div>
-      <Table
+    return <Table
         rowKey={"id"}
         rowClassName={highlightFirstAthlete ? (record, index) => {
           return record.id === firstAthleteId ? 'active-athlete-row' : ''
-        } : null}
+        } : undefined}
         size={'small'}
         dataSource={this.getDataSource()}// dataSource={dataSource.length ? [_.first(dataSource)] : []}
         columns={columns}
         pagination={false}
         {...tableProps}
-      />
-    </div>;
+    />;
   }
 }
 

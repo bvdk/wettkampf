@@ -3,7 +3,7 @@ import React, {Component} from "react"
 
 import {Button, Form} from "antd";
 import FormFactory from "./form-factory";
-import {saveForm} from "../../actions/settings";
+import {saveForm} from "../../redux/actions/settings";
 import FormValueTranslator from "./form-value-translator";
 import { debounce } from 'lodash'
 const FormItem = Form.Item;

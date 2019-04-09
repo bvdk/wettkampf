@@ -9,6 +9,7 @@ import EventAttempts from "./../../../components/EventAttempts";
 import EventAttemptsToolbar from "../../../components/EventAttemptsToolbar";
 import OrderedEventAthletes from "../../../components/OrderedEventAthletes";
 import {Button, Col, Row} from "antd";
+import withAuth from "../../../hoc/withAuth";
 
 const EventSlotsDisciplinesAthleteGroups = loader("../../../graphql/queries/eventSlotsDisciplinesAthleteGroups.graphql");
 
