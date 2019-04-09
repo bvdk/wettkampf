@@ -30757,5 +30757,25 @@
       "slotId": "c81783c2-ee50-41e5-a971-f7807c0dfcce",
       "id": "9b5ad83a-2aa6-4839-81d6-32c039e8b6a3"
     }
+  ],
+  "users": [
+    {
+      "id": "ddab8ead-989b-4c33-b473-e2af70e509c3",
+      "role": "admin",
+      "username": "admin",
+      "authInfo": {
+        "salt": "59b1d",
+        "passwordHash": "61616c176357f3f04633c51c4c5c31aa88d3410e9683725278c08236a30bcd2cc8df938d510187ddca9d278f1526e64147fb1ba2bdb5191d5d2ea038da165f62"
+      }
+    },
+    {
+      "id": "e49ad3e6-4fb7-4762-a854-4d9cf3e9b7ad",
+      "role": "guest",
+      "username": "guest",
+      "authInfo": {
+        "salt": "57244",
+        "passwordHash": "f848bc1c99236fe73400ef34348366468751686028a1606678804ffbd655f1877efc50453a887f3ee2384e8d68bfcbfe50e11fd4642b7d75788be96a23ea886f"
+      }
+    }
   ]
 }

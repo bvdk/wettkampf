@@ -3,6 +3,7 @@ import low from "lowdb";
 import path from "path";
 import CustomAsyncAdapter from "./CustomAsyncAdapter";
 import AgeClassesSeed from "./seed/ageClasses";
+import UsersSeed from "./seed/users";
 import WeightClassesSeed from "./seed/weightClasses";
 
 const adapter = new CustomAsyncAdapter(path.join(__dirname, ".", "db.json"));
@@ -17,6 +18,7 @@ export const CollectionKeys = {
     officialSlots: "officialSlots",
     officials: "officials",
     slots: "slots",
+    users: "users",
     weightClasses: "weightClasses",
 };
 
@@ -30,6 +32,7 @@ db.defaults({
     [CollectionKeys.weightClasses]: WeightClassesSeed,
     [CollectionKeys.ageClasses]: AgeClassesSeed,
     [CollectionKeys.officialSlots]: [],
+    [CollectionKeys.users]: UsersSeed,
 })
     .write();
 
