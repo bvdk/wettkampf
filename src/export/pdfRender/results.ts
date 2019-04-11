@@ -1,6 +1,8 @@
 import _ from "lodash";
 import moment from "moment";
+import {Athlete} from "../../graphql/models/athlete";
 import {getDescriptionForGender} from "../../graphql/models/gender";
+import {WeightClass} from "../../graphql/models/weightClass";
 import AgeClassesResolver from "../../graphql/resolvers/AgeClasses";
 import AthleteResolver from "../../graphql/resolvers/Athlete";
 import EventResolver from "../../graphql/resolvers/Event";
@@ -119,6 +121,7 @@ const getEventResultsDoc = (eventId) => {
     const event = eventsResolver.event({id: eventId});
     const athletes = eventResolver.athletes(event);
     const groups = _.chain(athletes)
+        .filter((athlete: Athlete) => athlete.bodyWeight)
         .groupBy((athlete) => {
             const ageClass = ageClassResolver.ageClass({id: athlete.ageClassId});
             return `${_.get(ageClass, "name")} ${getDescriptionForGender(athlete.gender)}`;
@@ -127,7 +130,18 @@ const getEventResultsDoc = (eventId) => {
 
     const columns = getColumns(eventResolver.availableDisciplines(event));
 
-    const tables = Object.keys(groups).map((key) => {
+    const tables = _.chain(Object.keys(groups))
+        .filter(key => _.size(groups, key) > 0)
+        .sortBy((key) => {
+            const athlete = _.first(_.get(groups, key));
+            const ageClassId = _.get(athlete, "ageClassId");
+            if (ageClassId) {
+                const sortId = _.get(ageClassResolver.ageClass({id: ageClassId}), "sortId");
+                return sortId;
+            }
+            return 0;
+        })
+        .map((key) => {
 
         const header = {
             text: key,
@@ -142,20 +156,23 @@ const getEventResultsDoc = (eventId) => {
             .groupBy((athlete) => athlete.weightClassId)
             .value();
 
-        const weightClassTables = Object.keys(weightClassGroups).map((weightClassId) => {
+        const weightClassTables = _.chain(Object.keys(weightClassGroups))
+            .map((weightClassId) => weightClassesResolver.weightClass({id: weightClassId}) )
+            .orderBy(["min"], ["asc"])
+            .map((weightClass: WeightClass) => {
 
             const weightClassRow = {
-                text: _.get(weightClassesResolver.weightClass({id: weightClassId}), "name"),
-                marginTop: 8,
-                marginBottom: 4,
+                text: _.get(weightClass, "name"),
                 fontSize: 14,
+                marginBottom: 4,
+                marginTop: 8,
             };
             const table = {
                 table: {
                     body: [
                         columns.map((col) => _.get(col, "title")),
                         ..._.chain(weightClassGroups)
-                            .get(weightClassId)
+                            .get(weightClass.id)
                             .map((athlete) => ({
                                 ...athlete,
                                 attempts: athleteResolver.attempts(athlete),
@@ -186,11 +203,11 @@ const getEventResultsDoc = (eventId) => {
             };
 
             return [weightClassRow, table];
-        });
+        }).value();
 
         return [header, ..._.flatten(weightClassTables)];
 
-    });
+    }).value();
 
     return {
         content: _.flatten(tables),

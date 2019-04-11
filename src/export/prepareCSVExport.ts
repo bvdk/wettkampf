@@ -1,5 +1,7 @@
 import _ from "lodash";
 import {exportAthleteKeyMap, importAthleteKeyMap, importOfficialsKeyMap} from "../import/importConfig";
+import {Athlete} from "../graphql/models/athlete";
+import AthleteResolver from "../graphql/resolvers/Athlete";
 
 const exportKeys = [
     "Athleten",
@@ -61,14 +63,22 @@ const generateOfficialsHeader = (officials: any[]): any[] => {
 
         return acc;
     }, {});
-    console.log(tmp);
     return [tmp];
 };
 
 export default (athletes = [], officials = []) => {
 
+    const athlteResolver = new AthleteResolver();
+
     const result = [
-        ...athletes.map((item) => generateExportItem(importAthleteKeyMap, item)),
+        ...athletes
+            .filter((athlete: Athlete) => athlete.bodyWeight)
+            .map((item) => ({
+                ...item,
+                points: athlteResolver.points(item),
+                wilks: athlteResolver.wilks(item),
+            }))
+            .map((item) => generateExportItem(importAthleteKeyMap, item)),
         ...generateOfficialsHeader(officials),
         ...officials.map((item) => generateExportItem(importOfficialsKeyMap, item)),
     ];
