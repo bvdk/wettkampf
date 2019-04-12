@@ -125,8 +125,9 @@ export default class AttemptsResolver {
         };
 
         if (!_.isNaN(total) && total > 0) {
-            updateData.points = this.calcAthletePoints(athlete, total);
-            updateData.total = total;
+            const points = this.calcAthletePoints(athlete, total);
+            updateData.points = points;
+            updateData.total = points ? total : null;
         }
         return athletesResolver.updateAthlete({id: athleteId}, updateData, null);
     }

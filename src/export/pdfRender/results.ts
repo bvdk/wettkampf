@@ -10,8 +10,73 @@ import EventsResolver from "../../graphql/resolvers/Events";
 import WeightClassResolver from "../../graphql/resolvers/WeightClass";
 import WeightClassesResolver from "../../graphql/resolvers/WeightClasses";
 import {Discipline, ShortDisciplines} from "./../../graphql/models/discipline";
+import {Slot} from "../../graphql/models/slot";
+import SlotResolver from "../../graphql/resolvers/Slot";
 
 const attemptCount = 3;
+
+const renderOfficialsTable = (event) => {
+
+    const eventResolver = new EventResolver();
+
+    const officials = eventResolver.officials(event);
+    const columns = getOfficialColumns();
+    const slots = eventResolver.slots(event);
+    const slotResolver = new SlotResolver();
+
+
+    const table = {
+        table: {
+            body: [
+                columns.map((col) => _.get(col, "title")),
+                ..._.chain(officials)
+                    .map((item) => {
+
+                        return {
+                            ...item,
+                            slotText: slots.filter((slot: Slot ) => {
+                                const officialSlots = slotResolver.officialSlots(slot);
+                                return _.find(officialSlots,{officialId: item.id});
+                            } ).map( slot => slot.name).join(", "),
+                        };
+                    })
+                    .map((official) => {
+                        return columns.map((col) => {
+                            const text = _.get(official, col.dataIndex, "");
+                            if (typeof col.render === "function") {
+                                return col.render(text, official);
+                            }
+                            return text;
+                        });
+                    })
+                    .value(),
+            ],
+            headerRows: 1,
+            widths: columns.map((col) => _.get(col, "width", "auto")),
+        },
+    };
+
+    return table;
+
+}
+
+const getOfficialColumns = () => {
+    return [{
+        dataIndex: "name",
+        render: (text, record) => `${record.lastName}, ${record.firstName}`,
+        title: "Name",
+        width: 200,
+    }, {
+        dataIndex: "license",
+        render: (text, record) => record.license,
+        title: "Lizenz",
+        width: 185,
+    }, {
+        dataIndex: "slotText",
+        title: "Bühne",
+        width: 390,
+    }];
+};
 
 const getDisciplineColumns = (availableDisciplines: Discipline[], discipline?: Discipline) => {
     return availableDisciplines.reduce((acc, key) => {
@@ -209,8 +274,21 @@ const getEventResultsDoc = (eventId) => {
 
     }).value();
 
+    const officialsTable = renderOfficialsTable(event);
+
     return {
-        content: _.flatten(tables),
+        content: [
+            ..._.flatten(tables),
+            {
+                text: "Kampfrichter",
+                fontSize: 16,
+                marginTop: 16,
+                marginBottom: 8,
+                bold: true,
+                alignment: "center",
+            },
+            officialsTable,
+        ],
         defaultStyle: {
             font: "Roboto",
             fontSize: 9,

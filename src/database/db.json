@@ -8582,7 +8582,7 @@
       "gender": "MALE",
       "club": "AC Oppenau 1984 e.V.",
       "birthday": "1957-08-09T23:00:00.000Z",
-      "total": 110,
+      "total": 320,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
@@ -8598,15 +8598,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": 73.9598836254133,
-      "place": 2,
+      "points": 215.1560250921114,
+      "place": 1,
       "location": "Mainz",
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
       "athleteGroupId": "75859272-84c8-4637-a229-fbe51cf6075b",
-      "nextAttemptsSortKeys": {
-        "BENCHPRESS": "2-100120"
-      }
+      "nextAttemptsSortKeys": {}
     },
     {
       "athleteNumber": "2",
@@ -8635,7 +8633,7 @@
       "KH2": null,
       "KH3": null,
       "points": 154.6433930349551,
-      "place": 1,
+      "place": 2,
       "location": "Mainz",
       "eventId": "327c63e1-ef59-4bfe-9828-3fdff575f2eb",
       "id": "fd7e595b-ef16-49a7-a880-61c846c99abc",
@@ -8870,7 +8868,7 @@
       "gender": "MALE",
       "club": "ACO Schrobenhausen",
       "birthday": "1957-12-06T23:00:00.000Z",
-      "total": 70,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
@@ -8904,7 +8902,7 @@
       "gender": "MALE",
       "club": "HSV Weimar",
       "birthday": "1953-04-07T23:00:00.000Z",
-      "total": 50,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
@@ -10395,7 +10393,7 @@
       "gender": "FEMALE",
       "club": "HAV 77 e.V.",
       "birthday": "1965-01-07T23:00:00.000Z",
-      "total": 130,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "40,00 Euro",
@@ -30353,7 +30351,7 @@
       "index": 0,
       "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
       "id": "56cb9406-cdc8-4757-9d06-46056d3f43c5",
-      "valid": true,
+      "valid": false,
       "done": true
     },
     {
@@ -30389,7 +30387,7 @@
       "index": 1,
       "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
       "id": "04d7c89e-a368-4396-a129-e3b333ded1f2",
-      "valid": true,
+      "valid": false,
       "done": true
     },
     {
@@ -30522,7 +30520,7 @@
       "discipline": "SQUAT",
       "date": "2019-03-27T17:12:14.060Z",
       "weight": 200,
-      "valid": false,
+      "valid": true,
       "done": true,
       "index": 2,
       "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
@@ -30584,7 +30582,9 @@
       "weight": 120,
       "index": 2,
       "athleteId": "6b18e7a2-e1c5-46a2-96ad-302da8fb032e",
-      "id": "baab829f-3ea6-428a-8e42-ca02b496140b"
+      "id": "baab829f-3ea6-428a-8e42-ca02b496140b",
+      "valid": true,
+      "done": true
     }
   ],
   "weightClasses": [
