@@ -15,6 +15,7 @@ const EventResultClassesQuery = loader("../../../graphql/queries/eventResultClas
 
 type Props = {
   eventId: string,
+  isFullscreen: boolean,
 };
 
 type State = {
@@ -28,7 +29,7 @@ class EventResultsRoute extends Component<Props, State> {
   }
 
   render() {
-    const { queryParameters, eventId, availableDisciplines } = this.props;
+    const { queryParameters, eventId, availableDisciplines, isFullscreen } = this.props;
 
     let tmpParams = {
       ...queryParameters,
@@ -36,6 +37,7 @@ class EventResultsRoute extends Component<Props, State> {
 
     return <div>
       <EventResultsToolbar
+          showFullscreen={!isFullscreen}
         onChange={this._handleSearchParamsChange}
         availableDisciplines={availableDisciplines}
         eventId={eventId}
@@ -56,6 +58,7 @@ export default compose(
     }),
   }),
   mapProps((props)=>({
+    isFullscreen: props.isFullscreen,
     loading: _.get(props,'eventDisciplinesQuery.loading'),
     history: props.history,
     queryParameters: queryString.parse(_.get(props, 'history.location.search')),

@@ -13,6 +13,7 @@ import EventAthleteGroupsRoute from "./athleteGroups";
 import EventResultsRoute from "./results";
 import {Col, Grow, Row} from "../../components/Flex";
 import EventOfficialsRoute from "./officials";
+import IfRole from "../../hoc/ifRole";
 
 
 export default (props) => {

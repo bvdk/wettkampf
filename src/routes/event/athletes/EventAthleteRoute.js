@@ -8,6 +8,7 @@ import {withRouter} from "react-router";
 import BackButton from "../../../components/BackButton";
 
 import _ from "lodash";
+import IfRole from "../../../hoc/ifRole";
 
 type Props = {
 
@@ -23,7 +24,7 @@ class EventAthleteRoute extends Component<Props, State> {
   render() {
     const { athleteId, history, eventId } = this.props;
 
-    return <div>
+    return <IfRole>
       <Toolbar
         renderLeft={()=><span>
                 <BackButton />
@@ -36,7 +37,7 @@ class EventAthleteRoute extends Component<Props, State> {
       <div style={{padding: 10}}>
         <AthleteDashboard eventId={eventId} athleteId={athleteId}/>
       </div>
-    </div>;;
+    </IfRole>
   }
 }
 

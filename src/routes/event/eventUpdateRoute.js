@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import EventUpdateForm from "../../components/EventUpdateForm";
 import _ from "lodash";
+import IfRole from "../../hoc/ifRole";
 
 type Props = {
   eventId: any,
@@ -17,10 +18,12 @@ class EventUpdateRoute extends Component<Props, State> {
   render() {
     const { eventId } = this.props;
 
-    return <div style={{padding: 10}}>
-      <h3>Wettkampf bearbeiten</h3>
-      <EventUpdateForm eventId={eventId}/>
-    </div>;
+    return <IfRole showError>
+      <div style={{padding: 10}}>
+        <h3>Wettkampf bearbeiten</h3>
+        <EventUpdateForm eventId={eventId}/>
+      </div>
+    </IfRole>;
   }
 }
 

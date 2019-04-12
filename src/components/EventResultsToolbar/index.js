@@ -4,11 +4,13 @@ import Toolbar from "../Toolbar";
 import AttributesInlineForm from "../Form/attributes-inline-form";
 import {withNamespaces} from "react-i18next";
 import {Button, Dropdown, Icon, Menu} from "antd";
+import {Link} from "react-router-dom";
 
 type Props = {
   eventId: string,
   params: any,
   onChange?: Function,
+  showFullscreen?: boolean,
 };
 
 type State = {
@@ -61,9 +63,13 @@ class EventResultsToolbar extends Component<Props, State> {
           attributes={attributes}
           onChange={onChange}/>
       </span>}
-      renderRight={() => <Dropdown overlay={menu}>
-        <Button key={'print'}> Export</Button>
-      </Dropdown>}/>;
+      renderRight={() => <div>
+        { this.props.showFullscreen ? <Link style={{ marginRight: 10 }} to={`/fullscreen/events/${eventId}/results`} target={"_BLANK"}><Button icon={"fullscreen"}>Vollansicht</Button></Link> : undefined}
+        <Dropdown overlay={menu}>
+          <Button icon={"export"} key={'print'}> Export</Button>
+        </Dropdown>
+      </div>}
+      />
   }
 }
 

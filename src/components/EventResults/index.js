@@ -28,16 +28,14 @@ class EventResults extends Component<Props, State> {
 
   render() {
     const { athletes, loading, filterParams, availableDisciplines } = this.props;
-    return <div>
-
-      <AttemptsTable
-          availableDisciplines={availableDisciplines}
-          onChange={this._handleResultChange}
-          filterParams={filterParams}
-          tableProps={{loading}}
-          loading={loading}
-          athletes={athletes} />
-    </div>;
+    return <AttemptsTable
+        groupWeightClasses
+        availableDisciplines={availableDisciplines}
+        onChange={this._handleResultChange}
+        filterParams={filterParams}
+        tableProps={{loading}}
+        loading={loading}
+        athletes={athletes} />
   }
 }
 
@@ -70,7 +68,7 @@ export default compose(
   graphql(EventResultsQuery, {
     name: 'eventResultsQuery',
     options: (props: Props) =>({
-      fetchPolicy: 'cache-and-network',
+      pollInterval: 30000,
       variables: {
         eventId: props.eventId,
         filters: getFilterParams(_.get(props,'filterParams'))

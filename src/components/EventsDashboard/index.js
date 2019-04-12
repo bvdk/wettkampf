@@ -12,6 +12,7 @@ import EventCreateForm from "../EventCreateForm";
 import waitWhileLoading from "../../hoc/waitWhileLoading";
 
 import { loader } from 'graphql.macro';
+import IfRole from "../../hoc/ifRole";
 const EventsQuery = loader("../../graphql/queries/events.graphql");
 
 
@@ -59,7 +60,11 @@ class EventsDashboard extends Component<Props, State> {
 
     return (
       <Wrapper>
-        <Toolbar renderRight={()=>(<Button type="primary" onClick={()=>{this.setState({createModal: true})}}>Neues Event</Button>)} />
+        <Toolbar
+            renderLeft={() => <h3>BVDK - Wettkämpfe</h3>}
+            renderRight={()=>(<IfRole>
+            <Button type="primary" onClick={()=>{this.setState({createModal: true})}}>Neues Event</Button>
+        </IfRole>)} />
         <EventTable
           onClick={onClickEvent}
           events={events}

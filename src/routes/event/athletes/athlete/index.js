@@ -12,6 +12,7 @@ import Toolbar from "../../../../components/Toolbar";
 import waitWhileLoading from "../../../../hoc/waitWhileLoading";
 import Strings from "../../../../constants/strings";
 import BackButton from "../../../../components/BackButton";
+import IfRole from "../../../../hoc/ifRole";
 
 const DeleteAthleteMutation = loader("./../../../../graphql/mutations/deleteAthlete.graphql");
 const AthleteQuery = loader("./../../../../graphql/queries/athlete.graphql");
@@ -76,7 +77,7 @@ class EventAthleteRoute extends React.Component<Props, State> {
     const {eventId, athleteId, tabIndex, athleteQuery, history} = this.props;
 
     return (
-      <div>
+      <IfRole showError>
         <Toolbar
           renderLeft={() => <div>
             <BackButton/>
@@ -105,7 +106,7 @@ class EventAthleteRoute extends React.Component<Props, State> {
             </Wrapper>
           </TabPane>
         </Tabs>
-      </div>
+      </IfRole>
 
     );
   }

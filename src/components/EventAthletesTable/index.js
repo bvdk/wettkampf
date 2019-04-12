@@ -9,6 +9,7 @@ import {mapProps} from "recompose";
 import Toolbar from "../Toolbar";
 import {Button} from "antd";
 import SetAthleteGroupModal from "../SetAthleteGroupModal";
+import IfRole from "../../hoc/ifRole";
 
 
 const EventAthletesQuery = loader("../../graphql/queries/eventAthletesQuery.graphql");
@@ -40,7 +41,7 @@ class EventAthletesTable extends Component<Props, State> {
     const { eventId } = this.props;
     const { selectedAthleteIds, showSetAthleteGroupsModal } = this.state;
 
-    return <div>
+    return <IfRole>
       <Button disabled={!selectedAthleteIds.length} onClick={()=>{this.setAthleteGroupsModal(true)}}>
         Startgruppe zuweisen
       </Button>
@@ -52,7 +53,7 @@ class EventAthletesTable extends Component<Props, State> {
             visible: showSetAthleteGroupsModal
           }}
       />
-    </div>
+    </IfRole>
   }
 
   render() {
