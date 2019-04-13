@@ -71,12 +71,14 @@ type AthleteGroup {
   athletes(sort: [SortInput!]): [Athlete!]!
   athleteCount: Int!
   shallow: Boolean!
+  raw: Boolean!
 }
 
 enum AthleteGroupCreationKey {
   GENDER
   AGE_CLASS
   WEIGHT_CLASS
+  RAW
 }
 
 type AthleteGroupCreationResult {
@@ -90,6 +92,7 @@ input AthleteGroupInput {
   gender: Gender
   ageClassId: ID
   weightClassId: ID
+  raw: Boolean!
 }
 
 input AthleteInput {
@@ -140,6 +143,7 @@ type Attempt {
   date: DateTime!
   discipline: Discipline!
   index: Int!
+  raw: Boolean
 }
 
 input AttemptInput {
@@ -147,6 +151,7 @@ input AttemptInput {
   valid: Boolean
   done: Boolean
   date: DateTime
+  raw: Boolean
 }
 
 input AttemptUpdateInput {
@@ -154,6 +159,7 @@ input AttemptUpdateInput {
   valid: Boolean
   done: Boolean
   date: DateTime
+  raw: Boolean
 }
 
 enum ContestType {

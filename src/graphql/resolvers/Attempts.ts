@@ -42,12 +42,15 @@ export default class AttemptsResolver {
         @Ctx() ctx: Context,
     ): Attempt {
 
+        const athletesResolver = new AthletesResolver();
+        const athlete = athletesResolver.athlete({id: athleteId});
         const athleteResolver = new AthleteResolver();
         const existingAttempts = athleteResolver.getAttempts(athleteId, discipline);
 
         const attempt: Attempt = CrudAdapter.insertItem(this.collectionKey, {
             discipline,
             date: new Date(),
+            raw: athleteResolver.raw(athlete),
             ...data,
             index: existingAttempts.length,
             athleteId,
@@ -67,7 +70,14 @@ export default class AttemptsResolver {
         @Ctx() ctx: Context,
     ): Attempt {
 
-        const attempt: Attempt = CrudAdapter.updateItem(this.collectionKey, id, data);
+        const updateData = {
+            ...data,
+        };
+        if (data.done) {
+            updateData.date = new Date();
+        }
+
+        const attempt: Attempt = CrudAdapter.updateItem(this.collectionKey, id, updateData);
         if (!skipAutoCalc) {
             this.autoUpdateTotalAndPoints(attempt.athleteId);
         }
@@ -128,6 +138,7 @@ export default class AttemptsResolver {
             const points = this.calcAthletePoints(athlete, total);
             updateData.points = points;
             updateData.total = points ? total : null;
+            updateData.latestBestAttemptsDate = _.chain(bestAttempts).orderBy(["date"], ["desc"]).get("date").value();
         }
         return athletesResolver.updateAthlete({id: athleteId}, updateData, null);
     }

@@ -6,6 +6,7 @@ export enum AthleteGroupCreationKey {
     GENDER = "gender",
     AGE_CLASS = "ageClassId",
     WEIGHT_CLASS = "weightClassId",
+    RAW = "raw",
 }
 
 export function getDescriptionForKeys(key: AthleteGroupCreationKey) {
@@ -13,6 +14,7 @@ export function getDescriptionForKeys(key: AthleteGroupCreationKey) {
         case AthleteGroupCreationKey.GENDER: return "Geschlecht";
         case AthleteGroupCreationKey.AGE_CLASS: return "Alterklasse";
         case AthleteGroupCreationKey.WEIGHT_CLASS: return "Gewichtsklasse";
+        case AthleteGroupCreationKey.RAW: return "Raw";
     }
 }
 

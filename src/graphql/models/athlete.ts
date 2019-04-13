@@ -124,6 +124,8 @@ export class Athlete {
     @Field((type) => Boolean, {nullable: true})
     public raw?: boolean;
 
+    public latestBestAttemptsDate?: string;
+
 }
 
 
@@ -178,6 +180,8 @@ export class AthleteInput implements Partial<Athlete> {
     @Field({nullable: true})
     public raw?: boolean;
 
+    public latestBestAttemptsDate?: string;
+
 }
 
 @InputType()
@@ -197,6 +201,8 @@ export class AthleteUpdateInput extends AthleteInput implements Partial<Athlete>
     public total?: number;
 
     public points?: number;
+
+    public latestBestAttemptsDate?: string;
 
     public nextAttemptsSortKeys?: {
         [key: string]: string,

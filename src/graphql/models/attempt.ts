@@ -30,6 +30,9 @@ export class Attempt {
 
     @Field((type) => Int)
     public index: number;
+
+    @Field((type) => Boolean, {nullable: true})
+    public raw?: boolean;
 }
 
 @InputType()
@@ -46,6 +49,9 @@ export class AttemptInput implements Partial<Attempt> {
 
     @Field({nullable: true})
     public date?: Date;
+
+    @Field((type) => Boolean, {nullable: true})
+    public raw?: boolean;
 
 }
 

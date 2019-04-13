@@ -176,6 +176,12 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
 
 
     @FieldResolver()
+    public raw(@Root() athlete: Athlete) {
+        return !!athlete.raw;
+    }
+
+
+    @FieldResolver()
     public total(@Root() athlete: Athlete) {
         if (!athlete.total) {
             const resolver = new AttemptsResolver();

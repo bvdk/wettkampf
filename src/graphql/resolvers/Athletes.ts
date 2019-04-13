@@ -133,7 +133,7 @@ export default class AthletesResolver {
 
         const result = _.chain(athletes)
             .filter((athlete) => athlete.points)
-            .orderBy(["points"], ["desc"])
+            .orderBy(["total", "bodyweight", "latestBestAttemptsDate"], ["desc", "asc", "asc"])
             .map((athlete, index) => {
                 return CrudAdapter.updateItem(this.collectionKey, athlete.id, {
                     place: index + 1,

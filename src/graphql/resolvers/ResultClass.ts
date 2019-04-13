@@ -1,13 +1,13 @@
 import _ from "lodash";
 import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
-import {getDescriptionForGender} from "../models/gender";
-import {ResultClass} from "../models/resultClass";
-import AgeClassesResolver from "./AgeClasses";
-import WeightClassesResolver from "./WeightClasses";
-import {Athlete} from "../models/athlete";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {AgeClass} from "../models/ageClass";
+import {Athlete} from "../models/athlete";
+import {getDescriptionForGender} from "../models/gender";
+import {ResultClass} from "../models/resultClass";
 import {WeightClass} from "../models/weightClass";
+import AgeClassesResolver from "./AgeClasses";
+import WeightClassesResolver from "./WeightClasses";
 
 @Resolver((of) => ResultClass)
 export default class ResultClassResolver implements ResolverInterface<ResultClass> {
@@ -32,6 +32,9 @@ export default class ResultClassResolver implements ResolverInterface<ResultClas
             nameComponents.push(_.get(weightClassesResolver.weightClass({id: resultClass.weightClassId}), "name"));
         }
 
+        if (resultClass.raw) {
+            nameComponents.push("Raw");
+        }
 
         return nameComponents.join(" - ");
     }
