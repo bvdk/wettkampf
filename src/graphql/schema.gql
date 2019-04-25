@@ -71,7 +71,9 @@ type AthleteGroup {
   athletes(sort: [SortInput!]): [Athlete!]!
   athleteCount: Int!
   shallow: Boolean!
-  raw: Boolean!
+  active: Boolean!
+  raw: Boolean
+  sortId: Int
 }
 
 enum AthleteGroupCreationKey {
@@ -92,7 +94,8 @@ input AthleteGroupInput {
   gender: Gender
   ageClassId: ID
   weightClassId: ID
-  raw: Boolean!
+  raw: Boolean
+  sortId: Int
 }
 
 input AthleteInput {
@@ -195,6 +198,7 @@ type Event {
   """Athletes without valid group"""
   unsortedAthletes(filters: [FilterInput!]): [Athlete!]!
   athletes(sort: [SortInput!], filters: [FilterInput!]): [Athlete!]!
+  results(sort: [SortInput!], filters: [FilterInput!]): [Athlete!]!
   officials: [Official!]!
   resultClasses: [ResultClass!]!
 }
@@ -230,8 +234,12 @@ type Mutation {
   createWeightClass(data: WeightClassInput!): WeightClass!
   updateWeightClass(data: WeightClassInput!, id: ID!): WeightClass!
   deleteWeightClass(id: ID!): WeightClass!
+  createEvent(data: EventInput!): Event!
+  updateEvent(data: EventInput!, id: ID!): Event!
+  deleteEvent(id: ID!): Event!
   createAthleteGroup(eventId: ID!, slotId: ID, data: AthleteGroupInput!): AthleteGroup!
   updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
+  updateAthleteGroupSort(slotId: ID!, oldIndex: Int!, newIndex: Int!): [AthleteGroup!]!
   setAthleteGroupSlot(athleteGroupId: ID!, slotId: ID!): AthleteGroup!
   addAthletesToAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
   removeAthletesFromAthleteGroup(athleteGroupId: ID!, athleteIds: [ID!]!): AthleteGroup!
@@ -256,9 +264,6 @@ type Mutation {
   createSlot(eventId: ID!, data: SlotInput!): Slot!
   updateSlot(data: SlotInput!, id: ID!): Slot!
   deleteSlot(id: ID!): Slot!
-  createEvent(data: EventInput!): Event!
-  updateEvent(data: EventInput!, id: ID!): Event!
-  deleteEvent(id: ID!): Event!
   createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
   updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
   deleteAthlete(id: ID!): Athlete!
@@ -319,7 +324,14 @@ type Query {
   """All weight classes"""
   weightClasses: [WeightClass!]!
   weightClass(id: ID!): WeightClass!
+
+  """Get all the events"""
+  events: [Event!]!
+
+  """Get a event"""
+  event(id: ID!): Event!
   athleteGroup(id: ID!): AthleteGroup!
+  athleteGroups(sort: [SortInput!], filters: [FilterInput!]): [AthleteGroup!]!
   autoCreateAthleteGroupsPreview(
     """Wenn nicht gewählt werden alle Athleten ohne Startgruppe verwendet."""
     athleteIds: [ID!]
@@ -340,12 +352,6 @@ type Query {
 
   """Get a slot"""
   slot(id: ID!): Slot
-
-  """Get all the events"""
-  events: [Event!]!
-
-  """Get a event"""
-  event(id: ID!): Event!
   athletes: [Athlete!]!
   athlete(id: ID!): Athlete!
   findAthlete(eventId: ID, importId: ID): Athlete!
@@ -368,6 +374,7 @@ type ResultClass {
   weightClass: WeightClass
   gender: Gender
   raw: Boolean
+  athletes: [Athlete!]!
 }
 
 type Slot {
@@ -375,8 +382,12 @@ type Slot {
   name: String!
   event: Event!
   eventId: String!
+  activeAthleteGroupId: ID
+  activeAthleteGroup: AthleteGroup
+  activeDiscipline: Discipline
   index: Int!
   athletes: [Athlete!]!
+  nextAthletes: [Athlete!]!
   athleteCount: Int!
   athleteGroups: [AthleteGroup!]!
   officialSlots: [OfficialSlot!]!
@@ -384,6 +395,8 @@ type Slot {
 
 input SlotInput {
   name: String
+  activeAthleteGroupId: ID
+  activeDiscipline: Discipline
 }
 
 enum SortDirection {

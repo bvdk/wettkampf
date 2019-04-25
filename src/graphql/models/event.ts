@@ -52,6 +52,9 @@ export class Event {
     @Field((type) => [Athlete])
     public athletes: Athlete[];
 
+    @Field((type) => [Athlete])
+    public results: Athlete[];
+
     @Field((type) => [Official])
     public officials: Official[];
 

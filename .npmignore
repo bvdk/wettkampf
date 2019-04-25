@@ -1,0 +1,33 @@
+# sources
+/lib
+/src
+/tmp
+
+# node modules
+/node_modules
+
+# dependencies
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+# public
+/public
+
+# misc
+db.json
+nodemon.json
+tsconfig.json
+tslint.json
+typings.d.ts
+yarn.lock
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.idea

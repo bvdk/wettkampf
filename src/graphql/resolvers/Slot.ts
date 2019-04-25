@@ -1,12 +1,17 @@
 import  _ from "lodash";
-import {FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
+import {ArgsType, Field, FieldResolver, ID, Resolver, ResolverInterface, Root} from "type-graphql";
+import {CollectionKeys} from "../../database";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Event} from "../models/event";
-import {Slot} from "../models/slot";
 import {OfficialSlot} from "../models/officialSlot";
-import {CollectionKeys} from "../../database";
+import {Slot} from "../models/slot";
+import {Args} from "type-graphql/dist/decorators/Args";
+import {Discipline} from "../models/discipline";
+import {findFieldsThatChangedTypeOnInputObjectTypes} from "graphql/utilities/findBreakingChanges";
+
+
 
 @Resolver((of) => Slot)
 export default class SlotResolver implements ResolverInterface<Slot> {
@@ -35,7 +40,10 @@ export default class SlotResolver implements ResolverInterface<Slot> {
 
     @FieldResolver()
     public athletes(@Root() slot: Slot) {
-        return CrudAdapter.filter(Athlete.collectionKey, { slotId: slot.id }) || [];
+        const athleteGroupIds = this.athleteGroups(slot).map((item) => item.id);
+        return CrudAdapter.filter(Athlete.collectionKey, (athlete) => {
+            return athleteGroupIds.indexOf(athlete.athleteGroupId) !== -1;
+        }) || [];
     }
 
     @FieldResolver()
@@ -51,6 +59,32 @@ export default class SlotResolver implements ResolverInterface<Slot> {
     @FieldResolver()
     public officialSlots(@Root() slot: Slot) {
         return CrudAdapter.filter(CollectionKeys.officialSlots, { slotId: slot.id }) || [];
+    }
+
+    @FieldResolver()
+    public activeAthleteGroup(
+        @Root() slot: Slot,
+    ) {
+        if (slot.activeAthleteGroupId) {
+            return CrudAdapter.getItem(AthleteGroup.collectionKey, slot.activeAthleteGroupId);
+        }
+        return null;
+    }
+
+    @FieldResolver()
+    public nextAthletes(
+        @Root() slot: Slot,
+    ) {
+
+        if (!slot.activeDiscipline || !slot.activeAthleteGroupId){
+            return [];
+        }
+
+        const athletes = this.athletes(slot);
+        return _.chain(athletes)
+            .orderBy([`nextAttemptsSortKeys.${slot.activeDiscipline}`, "ASC"])
+            .value();
+
     }
 
 }

@@ -13,22 +13,26 @@ const myFilter = (item, {value, index}: FilterInput) => {
 export class FilterInput {
 
     public static convertToFilterObject = (filters: FilterInput[]): {[key: string]: any} => {
-        console.log(filters);
         return filters.reduce((acc: {[key: string]: any}, {value, index}) => {
-            if (Array.isArray(value)) {
+            let tmp = value;
+            if (Array.isArray(tmp) && tmp.length === 1) {
+                tmp = _.first(tmp);
+            }
+
+            if (Array.isArray(tmp)) {
                 if (!acc[index]) {
                     acc[index] = {};
                 }
                 if (!acc[index].or) {
                     acc[index].or = [];
                 }
-                value.forEach((singleValue) => {
+                tmp.forEach((singleValue) => {
                     acc[index].or.push({
                         [index]: singleValue,
                     });
                 });
             } else {
-                acc[index] = value;
+                acc[index] = tmp;
             }
 
             return acc;

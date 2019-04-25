@@ -1,5 +1,5 @@
 import _ from "lodash";
-import {Args, FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
+import {Args, ArgsType, Field, FieldResolver, ID, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import {Athlete} from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
@@ -12,11 +12,13 @@ import {Official} from "../models/official";
 import {ResultClass} from "../models/resultClass";
 import {Slot} from "../models/slot";
 import {SortInput} from "../models/sort";
-import AgeClassesResolver from "./AgeClasses";
 import FilterArgs from "./args/FilterArgs";
 import SortArgs from "./args/SortArgs";
 import AthleteResolver from "./Athlete";
-import WeightClassesResolver from "./WeightClasses";
+import ResultClassResolver from "./ResultClass";
+import SlotResolver from "./Slot";
+import SlotsResolver from "./Slots";
+
 
 @Resolver((of) => Event)
 export default class EventResolver implements ResolverInterface<Event> {
@@ -95,6 +97,52 @@ export default class EventResolver implements ResolverInterface<Event> {
         }
 
         return athletes;
+    }
+
+    @FieldResolver()
+    public results(
+        @Root() event: Event,
+        @Args() filterArgs?: FilterArgs,
+        @Args() sortArgs?: SortArgs,
+    ) {
+
+        let result = [];
+        let resultClassIds = [];
+
+        const resultClassId = _.chain(filterArgs.filters).find({ index: "resultClassId" }).get("value").value();
+
+        if (resultClassId) {
+            resultClassIds.push(resultClassId);
+        }
+
+        const slotId = _.chain(filterArgs.filters).find({ index: "slotId" }).get("value").value();
+
+        if (!resultClassIds.length && slotId) {
+            const slotsResolver = new SlotsResolver();
+            const slotResolver = new SlotResolver();
+            const athleteResolver = new AthleteResolver();
+            const slot = slotsResolver.slot({id: slotId});
+            const slotAthletes = slotResolver.athletes(slot);
+            const slotGroups = _.groupBy(slotAthletes, (athlete) => athleteResolver.resultClassIdFromAthlete(athlete));
+            resultClassIds = Object.keys(slotGroups);
+        }
+
+        if (resultClassIds.length) {
+            const resultClassResolver = new ResultClassResolver();
+            result = _.chain(resultClassIds)
+                .map((id: string) => resultClassResolver.athletes({id}))
+                .flatten()
+                .value();
+        } else {
+            result = this.athletes(event);
+        }
+
+        result = result.filter((athlete) => athlete.bodyWeight);
+
+        if (sortArgs && sortArgs.sort && sortArgs.sort.length) {
+            result = SortInput.performSort(result, sortArgs.sort);
+        }
+        return result;
     }
 
 

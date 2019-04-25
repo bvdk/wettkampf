@@ -2,6 +2,7 @@ import {Field, ID, ObjectType} from "type-graphql";
 import {Gender} from "./gender";
 import {WeightClass} from "./weightClass";
 import {AgeClass} from "./ageClass";
+import {Athlete} from "./athlete";
 
 @ObjectType()
 export class ResultClass {
@@ -29,5 +30,8 @@ export class ResultClass {
 
     @Field((type) => Boolean, {nullable: true})
     public raw?: boolean;
+
+    @Field((type) => [Athlete])
+    public athletes?: Athlete[];
 
 }

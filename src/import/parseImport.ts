@@ -23,7 +23,6 @@ export default (importList, defaultAthleteProps) => {
             type = "official";
             return;
         }
-        console.log(item);
         if (type === "athlete") {
             athletes.push(parseImportItem(item, importAthleteKeyMap, defaultAthleteProps));
         } else if (type === "official") {

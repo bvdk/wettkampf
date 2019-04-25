@@ -50,7 +50,13 @@ export class AthleteGroup {
     public shallow?: boolean;
 
     @Field( (type) => Boolean )
+    public active?: boolean;
+
+    @Field( (type) => Boolean, { nullable: true })
     public raw?: boolean;
+
+    @Field( (type) => Int, { nullable: true })
+    public sortId?: number;
 
 }
 
@@ -70,7 +76,10 @@ export class AthleteGroupInput implements Partial<AthleteGroup> {
     @Field((type) => ID, { nullable: true })
     public weightClassId?: string;
 
-    @Field( (type) => Boolean )
+    @Field( (type) => Boolean , { nullable: true })
     public raw?: boolean;
+
+    @Field( (type) => Int, { nullable: true })
+    public sortId?: number;
 
 }

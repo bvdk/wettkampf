@@ -8,6 +8,7 @@ import {ResultClass} from "../models/resultClass";
 import {WeightClass} from "../models/weightClass";
 import AgeClassesResolver from "./AgeClasses";
 import WeightClassesResolver from "./WeightClasses";
+import AthleteResolver from "./Athlete";
 
 @Resolver((of) => ResultClass)
 export default class ResultClassResolver implements ResolverInterface<ResultClass> {
@@ -53,6 +54,17 @@ export default class ResultClassResolver implements ResolverInterface<ResultClas
             return CrudAdapter.getItem(WeightClass.collectionKey, resultClass.weightClassId );
         }
         return null;
+    }
+
+    @FieldResolver()
+    public athletes(@Root() resultClass: ResultClass) {
+
+        const athleteResolver = new AthleteResolver();
+        return CrudAdapter.filter(Athlete.collectionKey, (athlete) => {
+            const resultClassId = athleteResolver.resultClassIdFromAthlete(athlete);
+            return resultClassId === resultClass.id;
+        } );
+
     }
 
 }

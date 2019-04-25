@@ -3,6 +3,7 @@ import { Athlete } from "./athlete";
 import {Event} from "./event";
 import {AthleteGroup} from "./athleteGroup";
 import {OfficialSlot} from "./officialSlot";
+import {Discipline} from "./discipline";
 
 @ObjectType()
 export class Slot {
@@ -21,11 +22,23 @@ export class Slot {
     @Field()
     public eventId: string;
 
+    @Field((type) => ID, {nullable: true})
+    public activeAthleteGroupId?: string;
+
+    @Field((type) => AthleteGroup, {nullable: true})
+    public activeAthleteGroup?: AthleteGroup;
+
+    @Field((type) => Discipline, {nullable: true})
+    public activeDiscipline?: Discipline;
+
     @Field((type) => Int)
     public index: number;
 
     @Field((type) => Athlete)
     public athletes: Athlete[];
+
+    @Field((type) => Athlete)
+    public nextAthletes: Athlete[];
 
     @Field((type) => Int)
     public athleteCount: number;
@@ -45,4 +58,9 @@ export class SlotInput {
     @Field({nullable: true})
     public name?: string;
 
+    @Field((type) => ID, {nullable: true})
+    public activeAthleteGroupId?: string;
+
+    @Field((type) => Discipline, {nullable: true})
+    public activeDiscipline?: Discipline;
 }

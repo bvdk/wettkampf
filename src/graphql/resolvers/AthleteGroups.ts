@@ -2,13 +2,18 @@ import {Context} from "graphql-yoga/dist/types";
 import  _ from "lodash";
 import {Arg, Args, ArgsType, Ctx, Field, ID, Int, Mutation, Query, Resolver} from "type-graphql";
 import {CrudAdapter} from "../../database/CrudAdapter";
+import {arrayMove} from "../../utils/arrayMove";
 import createAutoCreateAthleteGroups from "../../utils/autoCreateAthleteGroups";
 import {Athlete} from "../models/athlete";
 import {AthleteGroup, AthleteGroupInput} from "../models/athleteGroup";
 import {AthleteGroupCreationKey, AthleteGroupCreationResult} from "../models/athleteGroupCreationResult";
+import {FilterInput} from "../models/filter";
 import {Gender} from "../models/gender";
+import {SortDirection, SortInput} from "../models/sort";
 import AgeClassesResolver from "./AgeClasses";
+import FilterArgs from "./args/FilterArgs";
 import IdArgs from "./args/IdArgs";
+import SortArgs from "./args/SortArgs";
 import AthletesResolver from "./Athletes";
 import EventResolver from "./Event";
 import EventsResolver from "./Events";
@@ -33,6 +38,18 @@ class SetAthleteGroupSlotArgs {
 
     @Field((type) => ID)
     public slotId: string;
+}
+
+@ArgsType()
+class AthleteGroupSortArgs {
+    @Field((type) => ID)
+    public slotId: string;
+
+    @Field((type) => Int)
+    public oldIndex: number;
+
+    @Field((type) => Int)
+    public newIndex: number;
 }
 
 @ArgsType()
@@ -90,6 +107,14 @@ export default class AthleteGroupsResolver {
         return CrudAdapter.getItem(this.collectionKey, id);
     }
 
+    @Query((returns) => AthleteGroup)
+    public athleteGroups(
+        @Args() {filters}: FilterArgs,
+        @Args() {sort}: SortArgs,
+    ): AthleteGroup[] {
+        return SortInput.performSort(CrudAdapter.filter(this.collectionKey, FilterInput.convertToFilterObject(filters)), sort);
+    }
+
     @Mutation()
     public createAthleteGroup(
         @Args() {data, slotId, eventId}: CreateAthleteGroupArgs,
@@ -120,6 +145,33 @@ export default class AthleteGroupsResolver {
     ): AthleteGroup {
 
         return CrudAdapter.updateItem(this.collectionKey, id, data);
+    }
+
+    @Mutation((type) => AthleteGroup)
+    public updateAthleteGroupSort(
+        @Args() {slotId, newIndex, oldIndex}: AthleteGroupSortArgs,
+        @Ctx() ctx: Context,
+    ): AthleteGroup[] {
+
+        const getAthleteGroups = (): AthleteGroup[] => {
+            return this.athleteGroups(
+                {
+                    filters: [{value: [slotId], index: "slotId"}],
+                },
+                {
+                    sort: [{direction: SortDirection.ASC, name: "sortId"}],
+                },
+            );
+        };
+
+
+        const list = arrayMove(getAthleteGroups(), oldIndex, newIndex).filter((item) => item);
+        list.forEach((item, index) => {
+            CrudAdapter.updateItem(this.collectionKey, item.id, { sortId: index });
+        });
+
+        return getAthleteGroups();
+
     }
 
     @Mutation()
@@ -201,12 +253,12 @@ export default class AthleteGroupsResolver {
             athleteGroups = eventResolver.getEventAthleteGroups(eventId);
         }
 
-        let slots = eventResolver.getEventSlots(eventId);;
+        let slots = eventResolver.getEventSlots(eventId);
         if (!distributeSlots) {
             const firstSlot = _.first(slots);
-            if (firstSlot){
+            if (firstSlot) {
                 slots = [firstSlot];
-            }else {
+            } else {
                 slots = [];
             }
         }

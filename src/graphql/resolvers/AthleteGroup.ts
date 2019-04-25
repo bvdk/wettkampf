@@ -42,6 +42,11 @@ export default class AthleteGroupResolver implements ResolverInterface<AthleteGr
         return _.get(athleteGroup, "shallow", false);
     }
 
+    @FieldResolver()
+    public raw(@Root() athleteGroup: AthleteGroup) {
+        return _.get(athleteGroup, "raw", false);
+    }
+
 
     @FieldResolver()
     public weightClass(@Root() athleteGroup: AthleteGroup) {
@@ -83,4 +88,10 @@ export default class AthleteGroupResolver implements ResolverInterface<AthleteGr
         return null;
     }
 
+    @FieldResolver()
+    public active(@Root() athleteGroup: AthleteGroup) {
+        const slot: Slot = this.slot(athleteGroup);
+        if (!slot) { return false; }
+        return athleteGroup.id === slot.activeAthleteGroupId;
+    }
 }

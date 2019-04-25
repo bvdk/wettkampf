@@ -19,6 +19,8 @@ export class SortInput {
 
     public static performSort = (array, sortInputs: SortInput[]) => {
 
+        if (!sortInputs || !sortInputs.length) { return  array; }
+
         const sortArgs = sortInputs.reduce((acc, sortInput: SortInput) => {
             acc[0].push(sortInput.name);
             acc[1].push(sortInput.direction);
