@@ -6,7 +6,7 @@ import AgeClassesSeed from "./seed/ageClasses";
 import UsersSeed from "./seed/users";
 import WeightClassesSeed from "./seed/weightClasses";
 
-const adapter = new CustomAsyncAdapter(path.join(__dirname, ".", "db.json"));
+const adapter = new CustomAsyncAdapter(path.join(process.env.DB || __dirname, ".", "db.json"));
 const db = low(adapter);
 
 export const CollectionKeys = {
