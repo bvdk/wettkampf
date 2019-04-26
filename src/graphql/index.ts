@@ -12,13 +12,14 @@ import EventResolver from "./resolvers/Event";
 import EventsResolver from "./resolvers/Events";
 import OfficialResolver from "./resolvers/Official";
 import OfficialsResolver from "./resolvers/Officials";
+import OfficialSlotResolver from "./resolvers/OfficialSlot";
 import OfficialSlotsResolver from "./resolvers/OfficialSlots";
 import ResultClassResolver from "./resolvers/ResultClass";
 import SlotResolver from "./resolvers/Slot";
 import SlotsResolver from "./resolvers/Slots";
+import SystemsResolver from "./resolvers/Systems";
 import WeightClass from "./resolvers/weightClass";
 import WeightClasses from "./resolvers/WeightClasses";
-import OfficialSlotResolver from "./resolvers/OfficialSlot";
 
 // @ts-ignore
 const schema = buildSchema({
@@ -42,6 +43,7 @@ const schema = buildSchema({
         OfficialSlotsResolver,
         OfficialSlotResolver,
         ResultClassResolver,
+        SystemsResolver,
     ],
 });
 

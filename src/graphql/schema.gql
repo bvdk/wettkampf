@@ -363,6 +363,9 @@ type Query {
 
   """Get a OfficialSlot"""
   officialSlot(id: ID!): OfficialSlot
+
+  """System info"""
+  system: System!
 }
 
 type ResultClass {
@@ -407,6 +410,12 @@ enum SortDirection {
 input SortInput {
   name: String
   direction: SortDirection
+}
+
+type System {
+  id: ID!
+  version: String!
+  name: String!
 }
 
 type WeightClass {
