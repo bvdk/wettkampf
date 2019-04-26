@@ -1,6 +1,6 @@
 import _ from "lodash";
 import {ArgsType, Field, Query, Resolver} from "type-graphql";
-import packageJSON from "../../../package.json";
+import packageJSON from "../../package.json";
 import {System} from "../models/System";
 
 
