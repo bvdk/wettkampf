@@ -1,6 +1,6 @@
 {
   "name": "bvdk-wertung",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "",
   "main": "src/start.ts",
   "scripts": {
@@ -11,7 +11,7 @@
     "build": "rimraf dist && cp package.json src/package.json  && tsc && cp -R src/client dist/client && cp -R src/fonts dist/fonts",
     "deploy:electron": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
     "build:deploy:electron": "npm version patch && yarn run build && yarn run deploy:electron",
-    "build:publish:npm": "npm version patch && npm run build && npm publish",
+    "build:publish:npm": "npm run build && npm version patch && npm publish",
     "dev": "npm-run-all --parallel start playground",
     "playground": "graphql playground",
     "kill:port": "kill-port 4000",
