@@ -1,6 +1,6 @@
 {
   "name": "bvdk-wertung",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "",
   "main": "src/start.ts",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "ts-node ./src/start.ts",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "yarn run version && rimraf dist && cp package.json src/package.json  && tsc && cp -R src/client dist/client && cp -R src/fonts dist/fonts",
+    "build": "rimraf dist && cp package.json src/package.json  && tsc && cp -R src/client dist/client && cp -R src/fonts dist/fonts",
     "deploy:electron": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
     "build:deploy:electron": "npm version patch && yarn run build && yarn run deploy:electron",
     "version": "npm version patch",
