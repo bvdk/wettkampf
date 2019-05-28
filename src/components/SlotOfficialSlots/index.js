@@ -84,10 +84,12 @@ class SlotOfficialSlotsTable extends Component<Props, State> {
         >
           <OfficialSlotCreateForm onCreate={()=> this.setState({showModal: false})} eventId={eventId} slotId={slotId}/>
         </Modal>
-      <OfficialSlotsTable
-        onSelectionChange={(selectedRowKeys) => this.setState({selectedRowKeys})}
-        selectedRowKeys={selectedRowKeys}
-        officialSlots={officialSlots}/>
+      <div className={"border"}>
+        <OfficialSlotsTable
+            onSelectionChange={(selectedRowKeys) => this.setState({selectedRowKeys})}
+            selectedRowKeys={selectedRowKeys}
+            officialSlots={officialSlots}/>
+      </div>
     </div>;
   }
 }

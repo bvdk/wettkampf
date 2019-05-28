@@ -62,6 +62,11 @@ const attributes = [
     inputType: 'select',
     entityType: 'WeightClass',
   },{
+    index: 'raw',
+    name: 'Raw',
+    type: 'bool',
+    inputType: 'checkbox',
+  },{
     index: 'bodyWeight',
     name: 'Körpergewicht',
     type: 'float',

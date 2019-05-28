@@ -12,7 +12,10 @@ import waitWhileLoading from "../../../../hoc/waitWhileLoading";
 import _ from "lodash";
 import Strings from "../../../../constants/strings";
 import styled from "styled-components";
-import Bold from "../../../../components/Bold";
+import SlotAthleteGroupsSortableList from "../../../../components/SlotAthleteGroupsSortableList";
+import Panel from "../../../../components/Panel";
+import AttributesInlineForm from "../../../../components/Form/attributes-inline-form";
+import SlotAthleteGroupActivationForm from "../../../../components/SlotAthleteGroupActivationForm";
 
 const SlotQuery = loader("../../../../graphql/queries/slotName.graphql");
 const DeleteMutation = loader("./../../../../graphql/mutations/deleteSlot.graphql");
@@ -82,25 +85,33 @@ class SlotDashboardRoute extends Component<Props, State> {
                   loading={this.state.deleting}>Löschen</Button>
         </Popconfirm>}
         borderBottom={true}/>
-      <Row>
+      <Row gutter={16}>
         <Col md={12}>
 
           <Wrapper>
-            <div style={{marginTop: 10}}>
-              <div  style={{marginBottom: 12}}>
-                <Bold>Informationen</Bold>
-              </div>
+            <Panel bordered title={'Informationen'}>
               <SlotUpdateForm slotId={slotId}/>
-            </div>
+            </Panel>
+
+            <Panel bordered title={'Startgruppen'}>
+
+              <SlotAthleteGroupActivationForm slotId={slotId}/>
+
+              <SlotAthleteGroupsSortableList slotId={slotId}/>
+              <p>
+                Hier kann die Reihenfolge der Startgruppen angegeben werden. Diese Änderungen haben Auswirkung auf die Darstellung der Startgruppen in der LIVE Ansicht.
+                Zum Ändern der Reihenfolgen einfach die Listeneinträge mittels Drag & Drop anordnen.
+              </p>
+            </Panel>
 
 
           </Wrapper>
+
 
         </Col>
 
         <Col md={12}>
           <Wrapper>
-
               <SlotOfficialSlotsTable eventId={eventId} slotId={slotId}/>
           </Wrapper>
         </Col>

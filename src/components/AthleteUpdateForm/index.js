@@ -11,6 +11,7 @@ import {withProps} from "recompose";
 const UpdateAthleteMutation = loader("../../graphql/mutations/updateAthlete.graphql");
 const AthleteQuery = loader("../../graphql/queries/athleteForm.graphql");
 
+
 type Props = {
   mutation: Function,
   onUpdate: Function,

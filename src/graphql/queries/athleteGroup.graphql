@@ -7,6 +7,7 @@ query athleteGroup($id: ID!) {
             id
             name
         }
+        raw
         gender
         weightClass {
             id

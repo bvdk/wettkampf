@@ -39,6 +39,7 @@ import EventAthleteGroupsLoaderConfig from "../DataLoader/EventAthleteGroupsLoad
 import AttemptResultInput from "./fields/AttemptResultInput";
 import Colors from "../../styles/colors";
 import AttemptDisplayLabel from "../AttemptDisplayLabel";
+import SlotAthleteGroupsLoaderConfig from "../DataLoader/SlotAthleteGroupsLoaderConfig";
 
 const CheckboxGroup = Checkbox.Group;
 const RangePicker = DatePicker.RangePicker;
@@ -64,7 +65,9 @@ class FormFactory {
           ...EnumLoaderConfig,
           getQueryVariables: ()=> ({
             name: attribute.enumType
-          })
+          }),
+          localFilter: attribute.localFilter,
+          local: true,
         };
         break;
       }
@@ -89,6 +92,15 @@ class FormFactory {
       case 'EventAthleteGroup': {
         config.loaderConfig = {
           ...EventAthleteGroupsLoaderConfig,
+          getQueryVariables: attribute.getQueryVariables,
+          local: true,
+        };
+        break;
+      }
+
+      case 'SlotAthleteGroup': {
+        config.loaderConfig = {
+          ...SlotAthleteGroupsLoaderConfig,
           getQueryVariables: attribute.getQueryVariables,
           local: true,
         };

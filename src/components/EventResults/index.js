@@ -18,7 +18,6 @@ type State = {
 
 const EventResultsQuery = loader("../../graphql/queries/eventResults.graphql");
 
-
 class EventResults extends Component<Props, State> {
 
 
@@ -29,11 +28,15 @@ class EventResults extends Component<Props, State> {
   render() {
     const { athletes, loading, filterParams, availableDisciplines } = this.props;
     return <AttemptsTable
+        settingsKey={'eventResults'}
         groupWeightClasses
         availableDisciplines={availableDisciplines}
         onChange={this._handleResultChange}
         filterParams={filterParams}
-        tableProps={{loading}}
+        tableProps={{
+          loading,
+          scroll:{ x: 900 }
+        }}
         loading={loading}
         athletes={athletes} />
   }
@@ -79,7 +82,7 @@ export default compose(
     loading: _.get(props,'eventResultsQuery.loading',false),
     eventId: props.eventId,
     onAthleteClick: props.onAthleteClick,
-    athletes: _.get(props,'eventResultsQuery.event.athletes',[])
+    athletes: _.get(props,'eventResultsQuery.event.results',[])
   }))
 )(EventResults);
 

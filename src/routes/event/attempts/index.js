@@ -10,6 +10,7 @@ import EventAttemptsToolbar from "../../../components/EventAttemptsToolbar";
 import OrderedEventAthletes from "../../../components/OrderedEventAthletes";
 import {Button, Col, Row} from "antd";
 import withAuth from "../../../hoc/withAuth";
+import Toolbar from "../../../components/Toolbar";
 
 const EventSlotsDisciplinesAthleteGroups = loader("../../../graphql/queries/eventSlotsDisciplinesAthleteGroups.graphql");
 
@@ -48,47 +49,51 @@ class EventAttemptsRoute extends Component<Props, State> {
       ...queryParameters,
     }
 
-    return <div>
-      <EventAttemptsToolbar
-        onChange={this._handleSearchParamsChange}
-        availableDisciplines={availableDisciplines}
-        eventId={eventId}
-        renderRight={()=> <Button onClick={this._toggleCollapse} icon={'menu-fold'}>{this.state.collapsed ? 'Reihenfolge einblenden' : 'Reihenfolge ausblenden'}</Button>}
-        params={tmpParams}/>
-      <hr/>
-      <Row>
-        <Col md={collapsed ? 24 : 18}>
-          <EventAttempts filterParams={tmpParams} eventId={eventId}/>
-        </Col>
-        { !collapsed ? <Col md={6}>
-          <OrderedEventAthletes highlightFirstAthlete filterParams={tmpParams} eventId={eventId}/>
-        </Col> : null }
+    return <Row>
+      <Col md={collapsed ? 24 : 18}>
+        <EventAttemptsToolbar
+            onChange={this._handleSearchParamsChange}
+            availableDisciplines={availableDisciplines}
+            eventId={eventId}
+            renderRight={()=> this.state.collapsed ? <Button onClick={this._toggleCollapse} icon={'menu-fold'}>{this.state.collapsed ? 'Reihenfolge einblenden' : 'Reihenfolge ausblenden'}</Button> : undefined}
+            params={tmpParams}/>
+        <hr/>
+        <EventAttempts filterParams={tmpParams} eventId={eventId}/>
+      </Col>
+      { !collapsed ? <Col md={6}>
+        <Toolbar
+            style={{paddingTop: 16}}
+            renderLeft={() => <h3>Nächste Athleten</h3>}
+            renderRight={() => <Button onClick={this._toggleCollapse} icon={'close'}/>}
+        />
+        <hr/>
+        <OrderedEventAthletes highlightFirstAthlete slotId={tmpParams.slotId}/>
+      </Col> : null }
 
-      </Row>
+    </Row>
 
-    </div>
   }
 }
 
 export default compose(
-  graphql(EventSlotsDisciplinesAthleteGroups, {
-    name: 'query',
-    options: (props: Props) =>({
-      variables: {
-        id: props.eventId
-      }
+    graphql(EventSlotsDisciplinesAthleteGroups, {
+      name: 'query',
+      options: (props: Props) =>({
+        variables: {
+          id: props.eventId
+        }
+      }),
     }),
-  }),
-  waitWhileLoading('query'),
-  mapProps((props)=>({
-    loading: _.get(props,'query.loading'),
-    history: props.history,
-    queryParameters: queryString.parse(_.get(props, 'history.location.search')),
-    eventId: props.eventId,
-    discipline: _.get(props,'query.event.discipline'),
-    slots: _.get(props,'query.event.slots',[]),
-    athleteGroups: _.get(props,'query.event.athleteGroups',[]),
-    availableDisciplines: _.get(props,'query.event.availableDisciplines',[]),
-  }))
+    waitWhileLoading('query'),
+    mapProps((props)=>({
+      loading: _.get(props,'query.loading'),
+      history: props.history,
+      queryParameters: queryString.parse(_.get(props, 'history.location.search')),
+      eventId: props.eventId,
+      discipline: _.get(props,'query.event.discipline'),
+      slots: _.get(props,'query.event.slots',[]),
+      athleteGroups: _.get(props,'query.event.athleteGroups',[]),
+      availableDisciplines: _.get(props,'query.event.availableDisciplines',[]),
+    }))
 )(EventAttemptsRoute);
 

@@ -3,13 +3,14 @@
     "schema": {
         "README_request": "To request the schema from a url instead, remove the 'file' JSON property above (and optionally delete the default graphql.schema.json file).",
         "request": {
-            "url": "http://127.0.0.1:4000",
+            "url": "http://127.0.0.1:4000/graphql",
             "method": "GET",
             "README_postIntrospectionQuery": "Whether to POST an introspectionQuery to the url. If the url always returns the schema JSON, set to false and consider using GET",
             "postIntrospectionQuery": true,
             "README_options": "See the 'Options' section at https://github.com/then/then-request",
             "options": {
                 "headers": {
+                    "Authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZGRhYjhlYWQtOTg5Yi00YzMzLWI0NzMtZTJhZjcwZTUwOWMzIiwicm9sZSI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImF1dGhJbmZvIjp7InNhbHQiOiI1OWIxZCIsInBhc3N3b3JkSGFzaCI6IjYxNjE2YzE3NjM1N2YzZjA0NjMzYzUxYzRjNWMzMWFhODhkMzQxMGU5NjgzNzI1Mjc4YzA4MjM2YTMwYmNkMmNjOGRmOTM4ZDUxMDE4N2RkY2E5ZDI3OGYxNTI2ZTY0MTQ3ZmIxYmEyYmRiNTE5MWQ1ZDJlYTAzOGRhMTY1ZjYyIn19LCJpYXQiOjE1NTUwODQxODZ9.BmyNiYPfzLhsKE3OQiNJgUZAU9A_jRyimPffYwwj6_o"
 
                 }
             }
@@ -23,6 +24,7 @@
             "url": "http://127.0.0.1:4000?debug=true",
             "options": {
                 "headers": {
+                    "Authorization": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZGRhYjhlYWQtOTg5Yi00YzMzLWI0NzMtZTJhZjcwZTUwOWMzIiwicm9sZSI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImF1dGhJbmZvIjp7InNhbHQiOiI1OWIxZCIsInBhc3N3b3JkSGFzaCI6IjYxNjE2YzE3NjM1N2YzZjA0NjMzYzUxYzRjNWMzMWFhODhkMzQxMGU5NjgzNzI1Mjc4YzA4MjM2YTMwYmNkMmNjOGRmOTM4ZDUxMDE4N2RkY2E5ZDI3OGYxNTI2ZTY0MTQ3ZmIxYmEyYmRiNTE5MWQ1ZDJlYTAzOGRhMTY1ZjYyIn19LCJpYXQiOjE1NTUwODQxODZ9.BmyNiYPfzLhsKE3OQiNJgUZAU9A_jRyimPffYwwj6_o"
 
                 }
             }

@@ -11,6 +11,6 @@ mutation createAthlete($eventId: ID!, $data: AthleteInput!) {
         los
         norm
         price
-
+        raw
     }
 }

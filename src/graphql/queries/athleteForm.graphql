@@ -1,9 +1,10 @@
-query athelte($id: ID!){
+query athelteForm($id: ID!){
     athlete(id: $id){
         id
         firstName
         lastName
         age
+        raw
         ageClass {
             id
             name

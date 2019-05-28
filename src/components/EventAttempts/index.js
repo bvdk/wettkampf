@@ -19,7 +19,6 @@ type State = {
 
 const EventAttemptsQuery = loader("../../graphql/queries/eventAttempts.graphql");
 
-
 class EventAttempts extends Component<Props, State> {
 
   _handleAttemptChange = (res) => {
@@ -66,6 +65,7 @@ const getFilterParams = (filterParams) => {
   }
   return tmp.length ? tmp : null;
 }
+
 
 export default compose(
   graphql(EventAttemptsQuery, {

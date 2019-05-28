@@ -36,13 +36,17 @@ class App extends Component {
           <PersistGate persistor={this.persistor}>
               <Provider store={store}>
                   <LocaleProvider locale={de_DE}>
-                      <Layout>
-                          <AuthWrapper>
+
+                      <AuthWrapper>
+
+                          <Layout>
                               <Router>
                                   <Routes />
                               </Router>
-                          </AuthWrapper>
-                      </Layout>
+                          </Layout>
+
+                      </AuthWrapper>
+
                   </LocaleProvider>
               </Provider>
           </PersistGate>

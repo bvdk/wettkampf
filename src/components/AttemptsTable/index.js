@@ -8,6 +8,9 @@ import AttemptDisplayLabel from "../AttemptDisplayLabel";
 import {shortDisciplines} from "../../constants/disciplines";
 import Bold from "../Bold";
 import Toolbar from "../Toolbar";
+import {compose} from "recompose";
+import {connect} from "react-redux";
+import {setSetting} from "../../redux/actions/settings";
 
 
 type Props = {
@@ -20,10 +23,12 @@ type Props = {
   editableAttemptCols?: boolean,
   groupWeightClasses?: boolean,
   highlightFirstAthlete?: boolean,
+  settingsKey?: string,
+  hiddenCols?: string[],
 };
 
 type State = {
-  hiddenCols: string[],
+
 }
 
 
@@ -44,11 +49,6 @@ class AttemptsTable extends Component<Props, State> {
     availableDisciplines: [],
   }
 
-  state = {
-    hiddenCols: [
-      'resultClass'
-    ]
-  }
 
   getDisciplineColumns = (availableDisciplines, discipline) => {
     return availableDisciplines.reduce((acc, key) => {
@@ -122,6 +122,12 @@ class AttemptsTable extends Component<Props, State> {
 
   }
 
+  setHiddenCols = (hiddenCols) => {
+    this.props.setColConfig({
+      hiddenCols
+    });
+  }
+
   render() {
     const { athletes, groupWeightClasses, availableDisciplines, tableProps, filterParams, highlightFirstAthlete} = this.props;
 
@@ -178,11 +184,11 @@ class AttemptsTable extends Component<Props, State> {
           })
           .value().map((item)=>{
 
-          return <div style={{margin: '6px 8px'}} key={item.value}><Checkbox checked={!(this.state.hiddenCols.indexOf(item.value)>-1)} onChange={(e) => {
+          return <div style={{margin: '6px 8px'}} key={item.value}><Checkbox checked={!(this.props.hiddenCols.indexOf(item.value)>-1)} onChange={(e) => {
 
             const checked = e.target.checked;
 
-            let hiddenCols = [...this.state.hiddenCols];
+            let hiddenCols = [...this.props.hiddenCols];
             if (checked){
               const index = hiddenCols.indexOf(item.value);
               if (index > -1) {
@@ -195,9 +201,7 @@ class AttemptsTable extends Component<Props, State> {
               }
             }
 
-            this.setState({
-              hiddenCols
-            })
+            this.setHiddenCols(hiddenCols)
 
           }}>{item.text}</Checkbox></div>
 
@@ -206,7 +210,7 @@ class AttemptsTable extends Component<Props, State> {
     </div>
 
     columns = columns.filter((col)=>{
-        return this.state.hiddenCols.indexOf(col.dataIndex) === -1
+        return this.props.hiddenCols.indexOf(col.dataIndex) === -1
     });
 
 
@@ -268,4 +272,18 @@ class AttemptsTable extends Component<Props, State> {
   }
 }
 
-export default AttemptsTable;
+export default compose(
+    connect((state, props) => {
+
+      const colConfig = _.get(state,'settings.'+_.get(props,'settingsKey','attemptsTableColConfig'));
+      return {
+        hiddenCols: _.get(colConfig, 'hiddenCols', [
+          'resultClass'
+        ])
+      }
+    }, (dispatch, props) => {
+      return {
+        setColConfig: (colConfig) => dispatch(setSetting(_.get(props,'settingsKey','attemptsTableColConfig'), colConfig))
+      }
+    })
+)(AttemptsTable);

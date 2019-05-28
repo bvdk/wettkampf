@@ -11,6 +11,8 @@ type Props = {
   params: any,
   onChange?: Function,
   showFullscreen?: boolean,
+  showExport?: boolean,
+  renderRight?: Function,
 };
 
 type State = {
@@ -40,9 +42,12 @@ class EventResultsToolbar extends Component<Props, State> {
       type: 'string',
       inputType: 'select',
       entityType: 'ResultClass',
-      getQueryVariables: () => ({
-        eventId
-      }),
+      getQueryVariables: () => {
+        console.log("getQueryVariables")
+        return {
+          eventId
+        }
+      },
       inputTypeOptions: {
         placeholder: 'Wertungsgruppe'
       }
@@ -65,9 +70,11 @@ class EventResultsToolbar extends Component<Props, State> {
       </span>}
       renderRight={() => <div>
         { this.props.showFullscreen ? <Link style={{ marginRight: 10 }} to={`/fullscreen/events/${eventId}/results`} target={"_BLANK"}><Button icon={"fullscreen"}>Vollansicht</Button></Link> : undefined}
+        { this.props.showExport ?
         <Dropdown overlay={menu}>
           <Button icon={"export"} key={'print'}> Export</Button>
-        </Dropdown>
+        </Dropdown> : undefined }
+        { this.props.renderRight ? this.props.renderRight() : undefined}
       </div>}
       />
   }

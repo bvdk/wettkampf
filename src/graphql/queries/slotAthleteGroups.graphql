@@ -1,0 +1,9 @@
+query slotAthleteGroups($slotId: String!){
+   athleteGroups(filters: [{value: [$slotId], index: "slotId" }], sort: [{direction: ASC, name: "sortId"}]){
+        id
+        name
+        athleteCount
+        sortId
+       active
+   }
+}

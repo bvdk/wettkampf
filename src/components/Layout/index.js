@@ -1,14 +1,20 @@
 // @flow
+import _ from "lodash";
 import React, {Component} from "react";
 import {Layout} from "antd";
 
 import "./styles.css";
 import LogoutButton from "../LogoutButton";
+import {graphql} from "react-apollo";
+import {loader} from "graphql.macro";
+
+const SystemQuery = loader("../../graphql/queries/system.graphql");
 
 const { Content, Footer } = Layout;
 
 type Props = {
-  menuOpen: boolean
+  menuOpen: boolean,
+  systemQuery?: any,
 };
 
 type State = {
@@ -43,6 +49,8 @@ class AppLayout extends Component<Props, State> {
 
   render() {
 
+    const {systemQuery} = this.props;
+
     return (
       <Layout style={{height: 'auto', minHeight: '100vh'}} className="layout">
           <Content>
@@ -52,7 +60,7 @@ class AppLayout extends Component<Props, State> {
             </div>
           </Content>
           <Footer style={{ textAlign: 'center' }}>
-            <span>Bundesverband Deutscher Kraftdreikämpfer e.V. 2018 | Version {process.env.REACT_APP_VERSION}</span>
+            <span>{_.get(systemQuery, 'system.name')} | Version {_.get(systemQuery, 'system.version')}</span>
             <LogoutButton/>
           </Footer>
       </Layout>
@@ -60,4 +68,6 @@ class AppLayout extends Component<Props, State> {
   }
 }
 
-export default AppLayout;
+export default graphql(SystemQuery,{
+  name: 'systemQuery',
+})(AppLayout)

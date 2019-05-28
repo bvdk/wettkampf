@@ -5,5 +5,7 @@ query slot($id: ID!) {
         index
         athleteCount
         eventId
+        activeDiscipline
+        activeAthleteGroupId
     }
 }
