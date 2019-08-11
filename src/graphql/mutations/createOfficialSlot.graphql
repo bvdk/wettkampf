@@ -1,0 +1,14 @@
+mutation createOfficialSlot($officialId: ID!,$slotId: ID!, $input: OfficialSlotInput!) {
+    createOfficialSlot(officialId: $officialId, slotId: $slotId, input:$input){
+        id
+        slot {
+            id
+            name
+        }
+        official {
+            id
+            name
+        }
+        position
+    }
+}

@@ -1,0 +1,8 @@
+mutation updateEvent($id: ID!, $data: EventInput!) {
+    updateEvent(id: $id, data:$data){
+        id
+        name
+        contestType
+        discipline
+    }
+}

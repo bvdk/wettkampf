@@ -1,0 +1,9 @@
+query enums($name: String!) {
+    __type(name: $name) {
+        name
+        enumValues {
+            name
+            description
+        }
+    }
+}

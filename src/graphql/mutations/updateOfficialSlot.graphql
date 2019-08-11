@@ -1,0 +1,6 @@
+mutation updateOfficialSlot($officialSlotId: ID!, $input: OfficialSlotInput!) {
+    updateOfficialSlot(id: $officialSlotId, input:$input){
+        id
+        position
+    }
+}

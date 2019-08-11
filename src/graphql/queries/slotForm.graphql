@@ -1,0 +1,8 @@
+query slotForm($id: ID!) {
+    slot(id: $id){
+        id
+        name
+        activeAthleteGroupId
+        activeDiscipline
+    }
+}

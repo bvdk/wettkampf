@@ -1,0 +1,10 @@
+mutation removeAthletesFromAthleteGroup($athleteGroupId: ID!, $athleteIds: [ID!]!){
+    removeAthletesFromAthleteGroup(athleteGroupId: $athleteGroupId, athleteIds: $athleteIds){
+        id
+        athletes {
+            id
+            firstName
+            lastName
+        }
+    }
+}

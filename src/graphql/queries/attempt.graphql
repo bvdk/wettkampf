@@ -1,0 +1,8 @@
+query attempt($id: ID!) {
+    attempt(id: $id){
+        id
+        valid
+        weight
+        done
+    }
+}

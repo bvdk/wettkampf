@@ -1,0 +1,7 @@
+mutation createSlot($eventId: ID!, $data: SlotInput!) {
+    createSlot(eventId: $eventId, data:$data){
+        id
+        name
+        index
+    }
+}

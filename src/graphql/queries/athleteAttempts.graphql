@@ -1,0 +1,23 @@
+query athelteAttempts($id: ID!){
+    athlete(id: $id){
+        id
+        nextAttempts {
+            id
+            discipline
+            weight
+        }
+        bestAttempts {
+            id
+            discipline
+            weight
+        }
+        attempts {
+            id
+            discipline
+            index
+            weight
+            done
+            valid
+        }
+    }
+}

@@ -1,0 +1,6 @@
+query eventName($id: ID!){
+    event(id: $id){
+        id
+        name
+    }
+}

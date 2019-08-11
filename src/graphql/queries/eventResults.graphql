@@ -1,0 +1,40 @@
+query eventResults($eventId: ID!, $filters: [FilterInput!]) {
+    event(id: $eventId){
+        id
+        availableDisciplines
+        results(filters: $filters) {
+            id
+            birthday
+            los
+            place
+            bodyWeight
+            club
+            firstName
+            lastName
+            name
+            points
+            total
+            wilks
+            resultClass {
+                id
+                name
+
+            }
+            bestAttempts {
+                id
+                weight
+                done
+                discipline
+                valid
+            }
+            attempts {
+                discipline
+                id
+                valid
+                weight
+                done
+                index
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+query nextSlotAthletes($slotId: ID!) {
+    slot(id: $slotId){
+        id
+        name
+        eventId
+        activeAthleteGroupId
+        activeDiscipline
+        activeAthleteGroup {
+            id
+            name
+        }
+        nextAthletes {
+            id
+            birthday
+            los
+            place
+            bodyWeight
+            club
+            firstName
+            lastName
+            name
+            points
+            total
+            wilks
+            nextAttempts {
+                id
+                weight
+                discipline
+                index
+            }
+            bestAttempts {
+                id
+                weight
+                done
+                discipline
+                valid
+            }
+            attempts {
+                discipline
+                id
+                valid
+                weight
+                done
+                index
+            }
+            resultClass {
+                id
+                name
+                gender
+                weightClass {
+                    id
+                    name
+                }
+                ageClass {
+                    id
+                    name
+                }
+            }
+        }
+    }
+}

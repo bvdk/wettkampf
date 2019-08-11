@@ -1,0 +1,24 @@
+query autoCreateAthleteGroupsPreview($eventId: ID!, $keys: [AthleteGroupCreationKey!]!, $maxGroupSize: Int, $useExisting: Boolean, $distributeSlots: Boolean){
+    autoCreateAthleteGroupsPreview(eventId: $eventId, keys: $keys, maxGroupSize: $maxGroupSize, useExisting: $useExisting, distributeSlots: $distributeSlots){
+        athleteGroups {
+            id
+            name
+            slotId
+            slot {
+                id
+                name
+            }
+            gender
+            weightClass {
+                id
+                name
+                gender
+            }
+            ageClass {
+                id
+                name
+            }
+            athleteCount
+        }
+    }
+}

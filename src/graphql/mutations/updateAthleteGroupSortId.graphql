@@ -1,0 +1,7 @@
+mutation updateAthleteGroupSort($slotId: ID!, $oldIndex: Int!, $newIndex: Int! ){
+    updateAthleteGroupSort(slotId: $slotId, newIndex: $newIndex, oldIndex: $oldIndex){
+        id
+        name
+        sortId
+    }
+}

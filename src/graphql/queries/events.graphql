@@ -1,0 +1,9 @@
+query events{
+    events{
+        id
+        name
+        contestType
+        discipline
+
+    }
+}

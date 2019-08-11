@@ -1,0 +1,3 @@
+mutation autoCalcEventPoints($eventId: ID!){
+    autoCalcEventPoints(id: $eventId)
+}

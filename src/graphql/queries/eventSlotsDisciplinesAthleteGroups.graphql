@@ -1,0 +1,15 @@
+query eventSlotsDisciplinesAthleteGroups($id: ID!){
+    event(id: $id){
+        id
+        discipline
+        availableDisciplines
+        athleteGroups {
+            id
+            name
+        }
+        slots {
+            id
+            name
+        }
+    }
+}

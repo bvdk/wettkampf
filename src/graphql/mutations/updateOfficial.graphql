@@ -1,0 +1,10 @@
+mutation updateOfficial($officialId: ID!, $data: OfficialInput!) {
+    updateOfficial(id: $officialId, data:$data){
+        id
+        firstName
+        lastName
+        location
+        position
+        license
+    }
+}

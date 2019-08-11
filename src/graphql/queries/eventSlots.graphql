@@ -1,0 +1,12 @@
+query eventSlots($eventId: ID!) {
+    event(id: $eventId){
+        id
+        slots {
+            id
+            name
+            index
+            athleteCount
+            eventId
+        }
+    }
+}

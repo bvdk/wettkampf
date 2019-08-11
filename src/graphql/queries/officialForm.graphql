@@ -1,0 +1,10 @@
+query officialForm($id: ID!){
+    official(id: $id){
+        id
+        firstName
+        lastName
+        location
+        position
+        license
+    }
+}

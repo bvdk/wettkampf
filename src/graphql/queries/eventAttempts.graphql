@@ -1,0 +1,54 @@
+query eventAttempts($eventId: ID!, $filters: [FilterInput!], $sort: [SortInput!], $discipline: Discipline ) {
+    event(id: $eventId){
+        id
+        availableDisciplines
+        athletes(filters: $filters, sort: $sort) {
+            id
+            birthday
+            los
+            place
+            bodyWeight
+            club
+            firstName
+            lastName
+            name
+            points
+            total
+            wilks
+            nextAttempts(discipline:$discipline) {
+                id
+                weight
+                discipline
+                index
+            }
+            bestAttempts {
+                id
+                weight
+                done
+                discipline
+                valid
+            }
+            attempts(discipline:$discipline) {
+                discipline
+                id
+                valid
+                weight
+                done
+                index
+            }
+            resultClass {
+                id
+                name
+                gender
+                weightClass {
+                    id
+                    name
+                }
+                ageClass {
+                    id
+                    name
+                }
+            }
+        }
+    }
+}

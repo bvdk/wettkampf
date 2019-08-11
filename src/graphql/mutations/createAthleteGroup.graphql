@@ -1,0 +1,6 @@
+mutation createAthleteGroup($eventId: ID!, $slotId: ID, $data: AthleteGroupInput!) {
+    createAthleteGroup(eventId: $eventId, slotId: $slotId, data:$data){
+        id
+        name
+    }
+}

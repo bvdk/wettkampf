@@ -1,0 +1,25 @@
+mutation autoCreateAthleteGroups($eventId: ID!, $keys: [AthleteGroupCreationKey!]!, $maxGroupSize: Int, $useExisting: Boolean, $distributeSlots: Boolean){
+    autoCreateAthleteGroups(eventId: $eventId, keys: $keys, maxGroupSize: $maxGroupSize, useExisting: $useExisting, distributeSlots: $distributeSlots){
+        athleteGroups {
+            id
+            name
+            slotId
+            slot {
+                id
+                name
+            }
+            raw
+            gender
+            weightClass {
+                id
+                name
+                gender
+            }
+            ageClass {
+                id
+                name
+            }
+            athleteCount
+        }
+    }
+}

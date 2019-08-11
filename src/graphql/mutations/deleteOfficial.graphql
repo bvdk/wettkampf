@@ -1,0 +1,5 @@
+mutation deleteOfficial($id: ID!){
+    deleteOfficial(id: $id){
+        id
+    }
+}

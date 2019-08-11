@@ -1,0 +1,7 @@
+query weightClasses{
+    weightClasses{
+        id
+        name
+        gender
+    }
+}

@@ -1,0 +1,6 @@
+query slotName($id: ID!) {
+    slot(id: $id){
+        id
+        name
+    }
+}

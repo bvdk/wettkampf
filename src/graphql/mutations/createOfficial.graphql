@@ -1,0 +1,10 @@
+mutation createOfficial($eventId: ID!, $data: OfficialInput!) {
+    createOfficial(eventId: $eventId, data:$data){
+        id
+        firstName
+        lastName
+        location
+        license
+        position
+    }
+}
