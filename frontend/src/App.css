@@ -1,0 +1,204 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 40vmin;
+}
+
+.App-header {
+    background-color: #131b2a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+.ant-table-row .ant-form-item {
+    margin-bottom: 0;
+}
+
+.event-header.ant-layout-header {
+    padding: 0 15px;
+    font-size: 18px;
+    background: #070c18;
+    color: white;
+}
+
+.border {
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.event-sidebar {
+    background: #001529;
+}
+
+.event-detail {
+    background: white;
+}
+
+.toolbar h3 {
+    margin-top: 0.3em;
+    margin-bottom: 0;
+}
+
+.ant-select-selection {
+    min-width: 200px;
+}
+
+.ant-form-inline {
+    display: inline;
+}
+
+.attribute-inline-edit-field-feedback {
+    position: absolute;
+    right: -65px;
+}
+
+.ant-table .attribute-inline-edit-field .ant-form-item-control-wrapper {
+    width: 100%;
+}
+
+#root .ant-table-small {
+    border: none;
+}
+
+.resultClassSection {
+    background-color: #f3f3f3;
+    font-weight: bold;
+    text-align: center;
+}
+
+.active-athlete-row {
+    background-color: #d9e2f1;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: end;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-space-around {
+    justify-content: space-around;
+}
+
+.flex-space-evenly {
+    justify-content: space-evenly;
+}
+
+.flex-self-start {
+    align-self: flex-start;
+}
+
+.flex-self-end {
+    align-self: flex-end;
+}
+
+.flex-self-start {
+    align-self: flex-start;
+}
+
+.flex-self-center {
+    align-self: center;
+}
+
+.flex-self-baseline {
+    align-self: baseline;
+}
+
+.flex-self-stretch {
+    align-self: stretch;
+}
+
+.flex-content-start {
+    align-content: flex-start;
+}
+
+.flex-content-end {
+    align-content: flex-end;
+}
+
+.flex-content-center {
+    align-content: center;
+}
+
+.flex-content-space-between {
+    align-content: space-between;
+}
+
+.flex-content-space-around {
+    align-content: space-around;
+}
+
+.flex-content-strech {
+    align-content: stretch;
+}
+
+.flex-align-items-center {
+    align-items: center;
+}
+
+.flex-align-items-start {
+    align-items: flex-start;
+}
+
+.flex-align-items-end {
+    align-items: flex-end;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.link-button:hover,
+.link-button:focus {
+  text-decoration: none;
+}

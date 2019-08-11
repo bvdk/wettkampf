@@ -1,0 +1,75 @@
+{
+  "name": "bvdk-wertung",
+  "version": "1.1.10",
+  "description": "",
+  "main": "src/start.ts",
+  "scripts": {
+    "watch": "nodemon",
+    "start": "ts-node ./src/start.ts",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "rimraf dist && cp package.json src/package.json  && tsc && cp -R src/client dist/client && cp -R src/fonts dist/fonts",
+    "deploy:electron": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
+    "build:deploy:electron": "npm version patch && yarn run build && yarn run deploy:electron",
+    "version": "npm version patch",
+    "dev": "npm-run-all --parallel start playground",
+    "playground": "graphql playground",
+    "kill:port": "kill-port 4000",
+    "version:patch": "npm version patch"
+  },
+  "keywords": [],
+  "author": "Toni Möckel",
+  "license": "ISC",
+  "dependencies": {
+    "csvtojson": "^2.0.8",
+    "express-fileupload": "^1.1.1-alpha.1",
+    "graphql-type-json": "^0.2.1",
+    "graphql-yoga": "^1.17.4",
+    "json2csv": "^4.3.5",
+    "jsonwebtoken": "^8.5.1",
+    "lodash-advanced": "^1.0.4",
+    "lodash-id": "^0.14.0",
+    "lowdb": "^1.0.0",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pdfmake": "^0.1.50",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^0.17.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "graphql-cli": "2.17.0",
+    "jest": "^23.3.13",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "4.1.5",
+    "ts-jest": "^23.3.13",
+    "ts-node": "6.2.0",
+    "tslint": "^5.12.0",
+    "typescript": "2.9.2"
+  },
+  "resolutions": {
+    "graphql": "^14.1.1"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/(build|tmp|node_modules)/"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

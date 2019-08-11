@@ -1,0 +1,116 @@
+Athleten,"Age Category",Gewichtsklasse,"Last Name","First Name",ID,Geschlecht,Verein,Geburtstag,Total,Norm,"Late Registration",Preis,"Body Weight",Wilks,Los,"Kniebeuge 1","Kniebeuge 2","Kniebeuge 3","Bankdrücken 1","Bankdrücken 2","Bankdrücken 3","Kreuzheben 1","Kreuzheben 2","Kreuzheben 3",Total,Punkte,Platz,Ort
+1,jugend,-93,Alber,Lennart,4335,male,"VfB Klötze 07",18.07.2002,"395,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,jugend,-93,Glok,Max,4007,male,"VfB Friedrichshafen e.V.",10.06.2001,"410,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,jugend,-83,Eida,Eduard,5048,male,"SV Quitt Ankum e.V. 1919",06.07.2001,"570,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,jugend,-83,Kalmlage,Bernd,5327,male,"SV Quitt Ankum e.V. 1919",25.09.2001,"500,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,jugend,-74,Geserer,Timo,2664,male,"Hantelsport-Club Pfatter e.V",24.04.2001,"538,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,jugend,-74,Weigandt,Maximilian,5470,male,"SV Quitt Ankum e.V. 1919",12.09.2001,"520,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,jugend,-105,Kruse,Till,4384,male,"SV Quitt Ankum e.V. 1919",05.04.2001,"640,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,-93,Berndt,Ronny,3118,male,"KSV Renchtal",23.03.1979,"780,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak1,-93,Bugert,Tobias,2261,male,"Athletik Club 1892 Weinheim e. V.",19.11.1978,"702,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,ak1,-93,Nieland,Guido,2243,male,"Athletik Club 1892 Weinheim e. V.",25.09.1970,"725,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,-105,Dittmar,Oliver,2256,male,"Athletik Club 1892 Weinheim e. V.",20.06.1970,"552,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak1,-105,Hinz,Markus,2330,male,"AC Siegfried Darmstadt e.V.",11.10.1971,"642,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,ak1,-105,Hüter,Axel,2317,male,"AC Siegfried Darmstadt e.V.",20.05.1971,"610,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,ak1,-105,Leffers,Thomas,3941,male,"Turnverein Papenburg v. 1896 e.V.",10.11.1977,"775,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+5,ak1,-105,Motzkus,Dirk,4569,male,"SG Randersacker",15.05.1977,"667,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,-83,Dömling,Marco,3467,male,"SG Randersacker",23.08.1976,"615,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak1,-83,Krüger,Heiko,4119,male,"Fitness-Club Rhein-Main e.V.",09.03.1971,"532,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,ak1,-83,Stach,Matthias,3114,male,"Athletik Club 1892 Weinheim e. V.",17.02.1979,"677,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,ak1,-83,Staude,Andreas,3504,male,"STC Bavaria 20 Landshut",07.04.1979,"630,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,-120,Geitner,Alexander,3957,male,"KSV Essen 1888 e.V.",02.01.1978,"747,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak1,-120,Lorenz,Sven,3527,male,"STC Bavaria 20 Landshut",07.05.1979,"762,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,ak1,-120,Reinbold,Roman,3881,male,"TSV Katzwang 05",20.02.1972,"822,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,ak1,-120,Thenhart,Thorsten,3384,male,"Powerlifting Würzburg e.V.",03.08.1975,"650,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,-74,Sach,Martin,4797,male,"Corpus Fitness Weightplayers 1999 e.V.",27.11.1976,"517,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-105,Bogner,Milan,3098,male,"KSV Mainz 08",05.07.1988,"752,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,aktive,-105,James,Marc,2329,male,"AC Siegfried Darmstadt e.V.",29.12.1993,"715,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,aktive,-105,Krause,Sascha,2695,male,"HAV 77 e.V.",22.06.1990,"735,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,aktive,-105,Persen,Tobias,3667,male,"SV Motor Barth e.V.",07.10.1990,"900,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+5,aktive,-105,Saiko,Sven,2335,male,"AC Siegfried Darmstadt e.V.",16.12.1991,"742,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-120,Fleissner,Malte,2225,male,"AC Siegen e.V.",18.12.1989,"930,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,aktive,-120,Lamper,Christian,4831,male,"ESV München-Neuaubing",11.09.1995,"812,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,aktive,-120,Pahl,Dominik,3933,male,"Schwerathletik Verein Erfurt e.V.",20.04.1992,"982,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,aktive,-120,Rzehak,Stefan,3055,male,"KSV Essen 1888 e.V.",28.02.1991,"900,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+5,aktive,-120,Seefeld,Christoph,3329,male,"AC Bavaria Forchheim 1908 e.V.",29.11.1980,"952,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-83,Gonnermann,Manuel,3374,male,"Schwerathletik Verein Erfurt e.V.",26.06.1993,"688,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,aktive,-83,Schuhmacher,Jakob,4591,male,"ESV München-Neuaubing",03.07.1992,"717,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-93,Heger,Sebastian,3350,male,"SC Oberölsbach",04.07.1992,"725,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,aktive,-93,Hochlov,Alex,5159,male,"KSV Renchtal",23.11.1989,"680,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,aktive,-93,Lehmeier,Thomas,3351,male,"SC Oberölsbach",20.01.1991,"730,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,aktive,-93,Lochschmidt,Max,2147,male,"AC Germania 1900 Aschaffenburg-Schweinheim",29.11.1983,"840,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+5,aktive,-93,Lorenz,Nikolai,3552,male,"Athletik Club 1892 Weinheim e. V.",12.01.1985,"687,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+6,aktive,-93,Schmid,Andreas,2358,male,"ASV 1897 Neu-Ulm e.V.",06.04.1991,"770,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+7,aktive,-93,Schweda,Philipp,2489,male,"ESV München-Neuaubing",01.02.1992,"868,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-74,Milla,Marius,3836,male,"Schwerathletik Verein Erfurt e.V.",16.06.1993,"725,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,+120,Zinserling,Tobias,2613,male,"Gothaer Bierfassheberverein e.V.",08.02.1978,"1040,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak3,-83,Bösch,Norbert,2175,male,"AC Oppenau 1984 e.V.",10.08.1957,"420,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak3,-83,Hundertmark,Dieter,3122,male,"Turn Club Hameln",04.05.1954,"0,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak3,+120,Dörfert,Uwe,3242,male,"Powerlifting Duisburg e.V.",07.09.1959,"505,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak3,+120,May,Karl-Heinz,3207,male,"Polizeisportverein Sonneberg e.V.",17.05.1953,"500,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak3,-120,Ehinger,Armin,2452,male,"Corpus Fitness Weightplayers 1999 e.V.",26.08.1957,"600,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak3,-120,Slosarek,Krystian,3797,male,"Todtglüsinger Sportverein von 1930 e.V.",16.09.1958,"620,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak3,-74,Escher,Egon,3200,male,"Polizeisportverein Sonneberg e.V.",21.05.1954,"415,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak3,-74,Griesch,Klaus,2699,male,"Iron Athletik Sportclub Erfurt e.V.",05.03.1959,"0,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak3,-93,Goldstein,Johann,2408,male,"ACO Schrobenhausen",07.12.1957,"540,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak3,-93,Waidmann,Gustav,2698,male,"HSV Weimar",08.04.1953,"565,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,junioren,-83,Diefenbach,Jonas,2222,male,"KSV Essen 1888 e.V.",23.04.1998,"612,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,junioren,-83,Geserer,Thomas,2663,male,"Hantelsport-Club Pfatter e.V",19.09.1997,"652,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,junioren,-83,Haase,Hannes,3652,male,"SV Motor Barth e.V.",05.04.1998,"720,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,junioren,-83,Scholz,Michael,4709,male,"SC Oberölsbach",05.07.2000,"615,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,junioren,-74,Fischer,Johannes,4842,male,"Hantelsport-Club Pfatter e.V",06.09.1996,"547,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,junioren,-74,Krejci,Silas,4856,male,"SC Oberölsbach",24.10.1999,"657,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,junioren,-105,Flueras,Christian,3297,male,"Sanssouci Gym e. V. Potsdam",16.03.1996,"742,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,junioren,-105,Stockdreher,Eric,2686,male,"HAV 77 e.V.",21.01.1996,"710,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,junioren,-93,Lösel,Patrick,3992,male,"VfB Klötze 07",30.07.2000,"742,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,junioren,-93,Opitz,Vincent,4003,male,"VfB Klötze 07",04.05.2000,"575,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-83,Geerhardt,János,3464,male,"SG Randersacker",15.08.1967,"607,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak2,-83,Woschny,Ingo,3302,male,"Sanssouci Gym e. V. Potsdam",26.05.1965,"575,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-120,Herteux,Peter,3036,male,"Kraftsportverein 1959 Langen e.V.",21.04.1968,"605,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak2,-120,Kircher,Achim,2316,male,"AC Siegfried Darmstadt e.V.",08.11.1968,"642,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-93,Schnurr,Mario,3112,male,"KSV Renchtal",28.07.1966,"740,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,ak2,-93,Ziegler,Thomas,3882,male,"TSV Katzwang 05",01.08.1967,"645,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-105,Sharov,Oleksandr,3159,male,KSV-Lippe-Bad-Salzuflen,21.11.1964,"685,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-74,Siegle,Matthias,3615,male,"Sportverein Fellbach 1890 e. V.",11.07.1963,"650,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,+120,Thielking,Udo,2196,male,"AC Power Elite Haiger e.V.",30.05.1961,"685,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-66,Wimmer,Michael,3782,male,"Turngemeinde Landshut 1861 e.V.",29.11.1961,"442,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak4,-74,Häusler,Wilfried,3192,male,"MTV VJ Peine",03.07.1942,"0,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak4,-59,Werner,Ludwig,2145,male,"AC Germania 1900 Aschaffenburg-Schweinheim",18.03.1938,"340,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-84,Beyer,Sandra,4686,female,"Fitness-Club Rhein-Main e.V.",01.09.1988,"450,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,aktive,-84,"von Gleichen",Valérie,4623,female,"Powerlifting Würzburg e.V.",20.12.1992,"465,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-72,Broxtermann,Katja,3303,female,"Sanssouci Gym e. V. Potsdam",03.02.1986,"470,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,aktive,-72,Hauschild,Marie,2942,female,"Schwerathletik Verein Erfurt e.V.",13.06.1995,"505,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,aktive,-72,Krüger,"Sonja Stefanie",2544,female,"Fitness-Club Rhein-Main e.V.",04.12.1999,"575,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+4,aktive,-72,Silberzahn,"Cathrin Monika",3387,female,"Powerlifting Würzburg e.V.",17.12.1988,"575,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-63,Materne,Isabelle,4069,female,"Schwerathletik Verein Erfurt e.V.",30.03.1985,"405,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-57,Moszynska,Karolina,4943,female,"KSV Mainz 08",14.07.1986,"430,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,aktive,-57,Nguyen,Phuong-Anh,4962,female,"Hantelsport-Club Pfatter e.V",18.06.1995,"345,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,aktive,-47,Schreiner,Anja,3325,female,"SC Oberölsbach",30.07.1993,"395,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,-72,Börsch,Nicole,2189,female,"AC Power Elite Haiger e.V.",19.06.1976,"490,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,-57,Horst,Manuela,2995,female,"KSC Amberg II",11.04.1972,"260,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak1,+84,Krüger,Silvia,2543,female,"Fitness-Club Rhein-Main e.V.",29.08.1978,"255,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,junioren,-63,Gersberg,Lea-Sophie,5111,female,"Turnverein Papenburg v. 1896 e.V.",21.07.1997,"350,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,junioren,-63,Graumann,Sonja,2136,female,"SC Oberölsbach",08.10.1996,"382,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+3,junioren,-63,Schlagbauer,Lisa,5011,female,"Powerlifting Würzburg e.V.",31.10.1996,"372,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,junioren,-72,Hiss,Caroline,4779,female,"HAV 77 e.V.",16.02.1999,"385,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+2,junioren,-72,Walter,Sofia,4708,female,"SC Oberölsbach",15.10.1996,"442,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,junioren,-84,Hübenthal,Johanna,4603,female,"ESV München-Neuaubing",27.10.1996,"540,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-72,Hampel,Sybille,2177,female,"AC Oppenau 1984 e.V.",26.08.1967,"370,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-63,Normann-Escher,Beate,3198,female,"Polizeisportverein Sonneberg e.V.",17.03.1960,"212,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-52,Resch,Catrin,2682,female,"HAV 77 e.V.",08.01.1965,"342,50 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak2,-84,Steidle,Susanne,3383,female,"Schwimmverein Würzburg 05",30.05.1964,"430,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+1,ak3,-57,Kring,Pia,2192,female,"AC Power Elite Haiger e.V.",05.09.1957,"305,00 kg",Ja,Nein,"40,00 Euro",,,,,,,,,,,,,,,,Mainz
+Kampfrichter,"Last Name","First Name",ID,Verein,Lizenz,Position,Ort,,,,,,,,,,,,,,,,,,,,,
+1,Ehliger,Andreas,4230,"Schwerathletik Verein Erfurt e.V.","Bundeslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
+2,Geerhardt,János,3464,"SG Randersacker","Bundeslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
+3,Häfner,Werner,4110,"SV-Chemie Gotha e.V.","IPF I 2016 - 2019",,Mainz,,,,,,,,,,,,,,,,,,,,,
+4,Häusler,Wilfried,3192,"MTV VJ Peine","Landeslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
+5,Kondraschow,Veronika,3022,"KSC Puch e.V.","IPF II 2016 - 2019",,Mainz,,,,,,,,,,,,,,,,,,,,,
+6,Kondraschow,Jewgenij,3010,"KSC Puch e.V.","IPF II 2016 - 2019",,Mainz,,,,,,,,,,,,,,,,,,,,,
+7,Paul,Harald,2563,"FSV Blau-Weiß Bergen e.V.","Bundeslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
+8,Runniger,Günter,3231,"Powerlifting Duisburg e.V.","IPF II 2016 - 2019",,Mainz,,,,,,,,,,,,,,,,,,,,,
+9,Schnurr,Mario,3112,"KSV Renchtal","Landeslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
+10,Schulz,Christopher,4287,"VfB Klötze 07","Bezirkslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
+11,Steidle,Wolfgang,4087,"Schwimmverein Würzburg 05","Bundeslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
+12,Thimm,Anita,3032,"Kraftsportverein 1959 Langen e.V.","IPF I 2016 - 2019",,Mainz,,,,,,,,,,,,,,,,,,,,,
+13,Trivolis,Janis,3096,"KSV Mainz 08","Bezirkslizenz 2017 - 2020",,Mainz,,,,,,,,,,,,,,,,,,,,,
