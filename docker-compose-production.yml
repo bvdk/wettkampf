@@ -2,23 +2,17 @@ version: '3'
 services:
   entry:
     container_name: entry
-    build:
-      context: .
-      dockerfile: docker/production/entry/Dockerfile
+    image: bvdk2019/entry
     ports:
       - 80:80
   frontend:
     container_name: frontend
-    build:
-      context: .
-      dockerfile: docker/production/frontend/Dockerfile
+    image: bvdk2019/frontend
     volumes:
       - ./frontend:/usr/src/app
   backend:
     container_name: backend
-    build:
-      context: .
-      dockerfile: ./docker/production/backend/Dockerfile
+    image: bvdk2019/backend
     volumes:
       - ./backend:/usr/src/app
       - /var/data/bvdk/db:/usr/src/app/db
