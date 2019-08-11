@@ -2,7 +2,11 @@
 
 VERSION="$(npx -c 'echo "$npm_package_version"')"
 
-echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
+echo "$VERSION";
+echo "$DOCKER_PASSWORD";
+echo "$DOCKER_USERNAME";
+
+docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" --password-stdin;
 docker push bvdk2019/entry:latest;
 docker push bvdk2019/backend:latest;
 docker push bvdk2019/frontend:latest;
