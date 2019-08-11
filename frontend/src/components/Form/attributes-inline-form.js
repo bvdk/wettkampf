@@ -63,15 +63,15 @@ const GroupTitle = styled.div`
   padding: 8px 16px;
   border-bottom: 1px solid #ccc;
   margin: 16px 0 12px;
-`
+`;
 
 const Footer = styled.div`
   padding: 16px 8px;
-`
+`;
 
 const InnerPadding = styled.div`
   padding: 0 16px;
-`
+`;
 
 // const transformField = (obj, arr = [], parent = '') => {
 //     if (!obj) return [];
@@ -88,7 +88,6 @@ const InnerPadding = styled.div`
 // };
 
 class AttributesInlineForm extends Component<Props, State> {
-
     static defaultProps = {
         layout: 'horizontal',
         values: {},
@@ -96,7 +95,7 @@ class AttributesInlineForm extends Component<Props, State> {
         inline: false,
         useSubmit: true,
         readOnly: false,
-    }
+    };
 
     state = {
         collapsed: true,
@@ -107,7 +106,7 @@ class AttributesInlineForm extends Component<Props, State> {
         successAttributes: [],
         errorAttributes: [],
         activeTab: undefined,
-    }
+    };
 
     formItemLayout = this.props.layout === 'horizontal' ? {
         labelCol: {
@@ -128,95 +127,78 @@ class AttributesInlineForm extends Component<Props, State> {
     } : null;
 
 
-    handleSubmit = (e, fieldKeys) => {
+    handleSubmit = (e, fieldKeys) => new Promise((resolve, reject) => {
+        if (e) {
+            e.preventDefault();
+        }
+        const {form, mutation, translateMutationOptions, attributes, t} = this.props;
 
-        return new Promise((resolve, reject) => {
-            if (e) {
-                e.preventDefault();
-            }
-
-            const {form, mutation, translateMutationOptions, attributes, t} = this.props;
-
-            form.validateFields((err) => {
-                if (!err) {
-                    // Get an array of changed fields
-                    const arr = Object.keys(form.getFieldsValue()).filter(x => {
-                        return form.isFieldTouched(x)
+        form.validateFields((err) => {
+            if (!err) {
+                // Get an array of changed fields
+                const arr = Object.keys(form.getFieldsValue()).filter(x => form.isFieldTouched(x));
+                const values = form.getFieldsValue(fieldKeys || arr);
+                const attributeValues = formValueToAttributeValue(attributes, values, false);
+                const done = (res) => {
+                    if (this.props.onSubmit) {
+                        this.props.onSubmit(res, attributeValues);
+                    }
+                    this.setState({
+                        submitting: false
                     });
-                    const values = form.getFieldsValue(fieldKeys || arr);
+                    resolve();
+                };
 
-                    const attributeValues = formValueToAttributeValue(attributes, values, false);
-
-                    const done = (res) => {
-                        if (this.props.onSubmit) {
-                            this.props.onSubmit(res, attributeValues);
+                if (mutation) {
+                    this.setState({
+                        submitting: true,
+                    }, () => {
+                        let promise = null;
+                        if (translateMutationOptions) {
+                            promise = mutation(translateMutationOptions(attributeValues, values));
+                        } else {
+                            promise = mutation({
+                                variables: {
+                                    attributes: attributeValues
+                                }
+                            })
                         }
-                        this.setState({
-                            submitting: false
-                        });
-                        resolve();
-                    }
+                        if (promise) {
+                            promise
+                                .then((res) => {
+                                    message.success(t('Gespeichert'))
 
-                    if (mutation) {
-                        this.setState({
-                            submitting: true,
-                        }, () => {
-                            let promise = null;
-                            if (translateMutationOptions) {
-                                promise = mutation(translateMutationOptions(attributeValues, values));
-                            } else {
-                                promise = mutation({
-                                    variables: {
-                                        attributes: attributeValues
+                                    if (this.props.resetFields) {
+                                        form.resetFields();
                                     }
+
+                                    return res;
                                 })
-                            }
-                            if (promise) {
-                                promise
-                                    .then((res) => {
-                                        message.success(t('Gespeichert'))
-
-                                        if (this.props.resetFields) {
-                                            form.resetFields();
-                                        }
-
-                                        return res;
-                                    })
-                                    .catch((res) => {
-                                        message.error(res.message || 'An error occurred while submitting the form data')
-                                    })
-                                    .then(done)
-                            } else {
-                                done();
-                            }
-                        })
-                    } else {
-                        done();
-                    }
-
+                                .catch((res) => {
+                                    message.error(res.message || 'An error occurred while submitting the form data')
+                                })
+                                .then(done)
+                        } else {
+                            done();
+                        }
+                    })
                 } else {
-                    reject();
+                    done();
                 }
+            } else {
+                reject();
+            }
+        });
+    });
 
-            });
-        })
-
-
-    }
-
-    _toggleCollapse = () => {
-        this.setState({
-            collapsed: !this.state.collapsed,
-        })
-    }
+    _toggleCollapse = () => this.setState({
+        collapsed: !this.state.collapsed,
+    });
 
     handleSubmitAttribute = (attribute) => {
-
-
         this.setState(update(this.state, {
             loadingAttributes: {$push: [attribute.index]}
         }), () => {
-
             this.handleSubmit(null, [attribute.index])
                 .then(() => {
                     this.showSuccess(attribute.index)
@@ -229,11 +211,8 @@ class AttributesInlineForm extends Component<Props, State> {
                         loadingAttributes: {$splice: [[this.state.loadingAttributes.indexOf(attribute.index), 1]]}
                     }))
                 })
-
         })
-
-
-    }
+    };
 
     showSuccess(index: string) {
         this.setState(update(this.state, {
@@ -260,9 +239,7 @@ class AttributesInlineForm extends Component<Props, State> {
     }
 
     renderAttribute = (attribute, index) => {
-
         const {t, form, inline, customFormItemLayouts, readOnly, mutation, translateMutationOptions} = this.props;
-
         const formItemLayout = _.get(
             attribute, 'config.formItemLayout',
             customFormItemLayouts && customFormItemLayouts[attribute.index] ?
@@ -285,34 +262,33 @@ class AttributesInlineForm extends Component<Props, State> {
         }
 
         return <FormItem
-            key={`${index}`}
-            className={'AttributeField'}
+            key={index}
+            className="AttributeField"
             label={attribute.name ? `${attribute.name}` : undefined}
             {...formItemLayout}
         >
-
             {AttributeFormFactory.renderAttribute(attribute, form, t)}
         </FormItem>
 
     }
 
-    filterCategoryAttributes = (attributes, group) => {
-        return attributes.filter(item => _.get(item, 'categories', []).map(cat => _.isString(cat) ? cat : _.get(cat, 'index', 'default')).indexOf(group.categoryIndex) !== -1)
-            .map(item => ({
-                ...item,
-                config: {
-                    formItemLayout: group.formItemLayout,
-                    ...item.config,
-                }
-            }))
-    }
+    filterCategoryAttributes = (attributes, group) => attributes
+        .filter(item => _.get(item, 'categories', [])
+            .map(cat => _.isString(cat) ? cat : _.get(cat, 'index', 'default'))
+            .indexOf(group.categoryIndex) !== -1
+        )
+        .map(item => ({
+            ...item,
+            config: {
+                formItemLayout: group.formItemLayout,
+                ...item.config,
+            }
+        }));
 
     renderGroups = (attributes) => {
-
         const {useTabs, groups} = this.props;
 
         if (groups && groups.length) {
-
             if (useTabs) {
                 return <Tabs activeKey={this.state.activeTab || _.get(_.first(groups), 'categoryIndex')}
                              onChange={(activeTab) => this.setState({activeTab})}>
@@ -339,12 +315,9 @@ class AttributesInlineForm extends Component<Props, State> {
                     </Row>
                 </InnerPadding>
             }
-
-
         }
 
         const fields = attributes.map(this.renderAttribute);
-
         if (this.props.layout === 'inline') {
             return <span>
                 {fields}
@@ -354,16 +327,14 @@ class AttributesInlineForm extends Component<Props, State> {
         return <div>
             {fields}
         </div>
-
-    }
+    };
 
     render() {
-
         let {attributes} = this.props;
         const {layout, t, inline, useSubmit, form} = this.props;
 
         if (!attributes || !attributes.length) {
-            return <Error t={"No Attributes defined"}/>
+            return <Error t="No Attributes defined"/>
         }
 
         const {submitting} = this.state;
@@ -379,24 +350,40 @@ class AttributesInlineForm extends Component<Props, State> {
             }
 
             return !hidden;
-        })
+        });
 
 
         return <div className={this.props.className}
                     style={{position: 'relative', display: layout === 'inline' ? 'inline' : undefined}}>
             <Form layout={layout} onSubmit={this.handleSubmit}>
-
                 {this.renderGroups(attributes)}
-                {!inline && useSubmit ? <FormItem
-                    style={{marginTop: 16, ...this.props.submitButtonWrapperStyle}} {...this.offsetFormItemLayout}>
-                    {this.props.collapse ?
-                        <button className="link-button" onClick={this._toggleCollapse}>{t(this.state.collapsed ? 'Display more' : 'Display less')}</button> : null}
-                    <Button className={this.props.collapse ? "pull-right" : null} type="primary" htmlType="submit"
-                            loading={submitting}>
-                        {this.props.submitTitle ? this.props.submitTitle : 'Speichern'}
-                    </Button>
-                </FormItem> : this.props.collapse ? <button className="link-button" style={{display: 'inline-block', padding: Sizes.grid}}
-                                                       onClick={this._toggleCollapse}>{t(this.state.collapsed ? 'Display more' : 'Display less')}</button> : null}
+                {!inline && useSubmit ?
+                    <FormItem
+                        style={{marginTop: 16, ...this.props.submitButtonWrapperStyle}} {...this.offsetFormItemLayout}
+                    >
+                        {this.props.collapse ?
+                            <button className="link-button"
+                                    onClick={this._toggleCollapse}>
+                                {t(this.state.collapsed ? 'Display more' : 'Display less')}
+                            </button> : null
+                        }
+                        <Button
+                            className={this.props.collapse ? "pull-right" : null}
+                            type="primary"
+                            htmlType="submit"
+                            loading={submitting}
+                        >
+                            {this.props.submitTitle ? this.props.submitTitle : 'Speichern'}
+                        </Button>
+                    </FormItem> :
+                        this.props.collapse ?
+                            <button
+                                className="link-button"
+                                style={{display: 'inline-block', padding: Sizes.grid}}
+                                onClick={this._toggleCollapse}>
+                                {t(this.state.collapsed ? 'Display more' : 'Display less')}
+                            </button> : null
+                }
 
             </Form>
         </div>;
@@ -405,7 +392,6 @@ class AttributesInlineForm extends Component<Props, State> {
 
 export default Form.create({
     onFieldsChange(props, changedFields) {
-
         if (props.onChange) {
             let reducedChanges = Object.keys(changedFields).reduce((res, cur) => {
                 res[cur] = changedFields[cur].value;
@@ -417,12 +403,9 @@ export default Form.create({
             };
             props.onChange(formValueToAttributeValue(props.attributes, completeValues, false));
         }
-
     },
     mapPropsToFields(props) {
-        const result = FormValueTranslator.translateAttributes(props.attributes, props.values);
-
-        return result;
+        return FormValueTranslator.translateAttributes(props.attributes, props.values);
     },
     onValuesChange(props, values) {
         if (props.onValuesChange) {

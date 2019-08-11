@@ -11,22 +11,23 @@ import {withProps} from "recompose";
 import EventCreateForm from "../EventCreateForm";
 import waitWhileLoading from "../../hoc/waitWhileLoading";
 
-import { loader } from 'graphql.macro';
+import {loader} from 'graphql.macro';
 import IfRole from "../../hoc/ifRole";
+
 const EventsQuery = loader("../../graphql/queries/events.graphql");
 
 
 type Props = {
-  events: Event[],
-  onAddEvent: Function,
-  onClickEvent?: (event: Event) => void,
-  onEditEvent?: (event: Event) => void,
-  onRemoveEvent?: (event: Event) => void
+    events: Event[],
+    onAddEvent: Function,
+    onClickEvent?: (event: Event) => void,
+    onEditEvent?: (event: Event) => void,
+    onRemoveEvent?: (event: Event) => void
 };
 
 type State = {
-  createModal: boolean,
-  createEvent?: any
+    createModal: boolean,
+    createEvent?: any
 };
 
 const Wrapper = styled.div`
@@ -34,63 +35,71 @@ const Wrapper = styled.div`
 `;
 
 class EventsDashboard extends Component<Props, State> {
-  props: Props;
+    props: Props;
 
-  static defaultProps = {
-    onClickEvent: undefined,
-    onEditEvent: undefined,
-    onRemoveEvent: undefined,
-  }
+    static defaultProps = {
+        onClickEvent: undefined,
+        onEditEvent: undefined,
+        onRemoveEvent: undefined,
+    };
 
-  state = {
-    createModal: false
-  }
+    state = {
+        createModal: false
+    };
 
-  handleCancelAddEvent = () => {
-    this.setState({createModal: false});
-  }
+    handleCancelAddEvent = () => {
+        this.setState({createModal: false});
+    };
 
-  render() {
-    const {events, onClickEvent } = this.props;
-    const { createModal } = this.state;
+    handleAddEvent = (...args) => {
+        console.log(args);
+    };
 
-    return (
-      <Wrapper>
-        <Toolbar
-            renderLeft={() => <h3>BVDK - Wettkämpfe</h3>}
-            renderRight={()=>(<IfRole>
-            <Button type="primary" onClick={()=>{this.setState({createModal: true})}}>Neues Event</Button>
-        </IfRole>)} />
-        <EventTable
-          onClick={onClickEvent}
-          events={events}
-        />
-        <Modal
-          title="Neues Event"
-          footer={false}
-          visible={createModal}
-          onOk={this.handleAddEvent}
-          onCancel={this.handleCancelAddEvent}
-        >
-          <EventCreateForm
-            onCreate={(created)=>{
-              this.setState({
-                createModal: false
-              })}}
-          />
-        </Modal>
-      </Wrapper>
-    );
-  }
+    render() {
+        const {events, onClickEvent} = this.props;
+        const {createModal} = this.state;
+
+        return (
+            <Wrapper>
+                <Toolbar
+                    renderLeft={() => <h3>BVDK - Wettkämpfe</h3>}
+                    renderRight={() => <IfRole>
+                        <Button type="primary" onClick={() => {
+                            this.setState({createModal: true})
+                        }}>Neues Event</Button>
+                    </IfRole>}/>
+                <EventTable
+                    onClick={onClickEvent}
+                    events={events}
+                />
+                <Modal
+                    title="Neues Event"
+                    footer={false}
+                    visible={createModal}
+                    onOk={this.handleAddEvent}
+                    onCancel={this.handleCancelAddEvent}
+                >
+                    <EventCreateForm
+                        onCreate={(created) => {
+                            console.log(created)
+                            this.setState({
+                                createModal: false
+                            })
+                        }}
+                    />
+                </Modal>
+            </Wrapper>
+        );
+    }
 }
 
 
 export default compose(
-  graphql(EventsQuery, {
-    name: 'eventsQuery',
-  }),
-  waitWhileLoading('eventsQuery'),
-  withProps((props) => ({
-    events: _.get(props, 'eventsQuery.events',[]),
-  }))
+    graphql(EventsQuery, {
+        name: 'eventsQuery',
+    }),
+    waitWhileLoading('eventsQuery'),
+    withProps((props) => ({
+        events: _.get(props, 'eventsQuery.events', []),
+    }))
 )(EventsDashboard)

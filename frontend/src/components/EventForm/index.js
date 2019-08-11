@@ -54,20 +54,15 @@ const attributes = [
 ];
 
 export default class EventForm extends Component<Props> {
-
   props: Props;
-
   static defaultProps = {
     useSubmit: false,
     onChange: null,
     onSubmit: null,
-    data: {
-
-    }
+    data: {}
   };
 
   render() {
-
     return (
       <AttributesForm
         mutation={this.props.mutation}

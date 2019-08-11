@@ -4,6 +4,5 @@ query events{
         name
         contestType
         discipline
-
     }
 }

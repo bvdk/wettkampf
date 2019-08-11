@@ -44,15 +44,13 @@ const Option = Select.Option;
 const {TextArea} = Input;
 
 class FormFactory {
-
     static getConfigForAttribute(attribute: Attribute) {
-
         let config = {
             ...attribute.config
         };
 
+        console.log(attribute)
         switch (attribute.entityType) {
-
             case 'enum': {
                 config.showSearch = true;
                 config.loaderConfig = {
@@ -151,7 +149,6 @@ class FormFactory {
                 break;
             }
 
-
             default:
                 break;
         }
@@ -161,7 +158,6 @@ class FormFactory {
         }
 
         return config;
-
     }
 
     static renderAttribute(attribute: Attribute, form: { getFieldDecorator: Function }, t: Function, value) {
@@ -320,7 +316,6 @@ class FormFactory {
             }
 
             case 'datetimerange': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
@@ -334,7 +329,6 @@ class FormFactory {
             }
 
             case 'daterange': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules,
                 })(
@@ -375,7 +369,6 @@ class FormFactory {
             }
 
             case 'checkbox': {
-
                 if (attribute.optionValues && attribute.optionValues.length) {
                     result = getFieldDecorator(attribute.index, {
                         rules
@@ -397,7 +390,6 @@ class FormFactory {
             }
 
             case 'radio': {
-
                 const radioStyle = {
                     display: 'block',
                     height: '30px',
@@ -429,7 +421,6 @@ class FormFactory {
 
             case 'multiselect':
             case 'select': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
@@ -493,20 +484,18 @@ class FormFactory {
 
 
             case 'autocomplete': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
                     <Autocomplete {...config}
                                   placeholder={placeholder}
                     />
-                )
+                );
                 break;
 
             }
 
             case 'file': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
@@ -522,13 +511,12 @@ class FormFactory {
                         multiple={false}
                         placeholder={placeholder}
                     />
-                )
+                );
                 break;
 
             }
 
             case 'files': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
@@ -544,9 +532,8 @@ class FormFactory {
                         multiple={true}
                         placeholder={placeholder}
                     />
-                )
+                );
                 break;
-
             }
 
             case 'tablepicker': {
@@ -558,32 +545,28 @@ class FormFactory {
                         loaderConfig={config.loaderConfig}
                         searchPlaceholder={placeholder}
                     />
-                )
+                );
                 break;
             }
 
 
             case 'button': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
                     <Button {...config}>{attribute.name || placeholder}</Button>
-                )
+                );
                 break;
             }
 
             case 'attempt': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
                     <AttemptResultInput/>
-                )
+                );
                 break;
             }
-
-
             default: {
             }
         }
@@ -592,8 +575,6 @@ class FormFactory {
 
 
     static renderDisplayAttribute(attribute: Attribute, form: { getFieldDecorator: Function, getFieldValue: Function }, t, val) {
-
-
         const value = val || form.getFieldValue(attribute.index);
         const config = FormFactory.getConfigForAttribute(attribute);
         let result = <span>{"-"}</span>;
@@ -619,7 +600,6 @@ class FormFactory {
             }
 
             case 'datetimerange': {
-
                 if (value.length === 2) {
                     result =
                         <OneLineLabel>{moment(value[0]).format('LLL')} - {moment(value[1]).format('LLL')}</OneLineLabel>
@@ -631,7 +611,6 @@ class FormFactory {
             }
 
             case 'daterange': {
-
                 if (value.length === 2) {
                     result =
                         <OneLineLabel>{moment(value[0]).format('LL')} - {moment(value[1]).format('LL')}</OneLineLabel>
@@ -645,7 +624,6 @@ class FormFactory {
             case 'dropdowncheckbox':
             case 'multiselect':
             case 'select': {
-
                 const option = _.find(attribute.optionValues, {value});
                 if (option) {
                     result = <OneLineLabel>{option.name}</OneLineLabel>
@@ -663,7 +641,6 @@ class FormFactory {
                 result = <AttemptDisplayLabel attempt={value}/>
                 break;
             }
-
 
             default: {
                 result = <OneLineLabel>{value}</OneLineLabel>

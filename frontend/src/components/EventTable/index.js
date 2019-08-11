@@ -1,5 +1,7 @@
 // @flow
-import React, {Component} from 'react';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core'
+import React, {Fragment, Component} from 'react';
 import {Divider, Table} from "antd";
 import {graphql, compose} from "react-apollo";
 import {loader} from 'graphql.macro';
@@ -14,6 +16,16 @@ type Props = {
     onRemove?: ?Function,
     onClick?: (event: any) => void
 };
+
+const tableCSS = css({
+    '& thead > tr': {
+        cursor: 'pointer'
+    },
+    '& tbody > tr': {
+        cursor: 'pointer'
+    }
+});
+console.log(tableCSS)
 
 class EventTable extends Component<Props> {
     props: Props;
@@ -62,21 +74,26 @@ class EventTable extends Component<Props> {
             columns.push({
                 title: 'Aktion',
                 key: 'action',
-                render: (text, record) => (
-                    <span>
-            <Link to={`events/${record.id}/edit`}>Bearbeiten</Link> {this.props.onRemove ?
-                        <Divider type="vertical"/> : null}
-                        {this.props.onRemove ? <span><button className="link-button" onClick={() => {
-                                this.props.onRemove(record)
-                            }}>Löschen</button></span>
-                            : null}
-          </span>
-                ),
+                render: (text, record) => <span>
+                    <Link to={`events/${record.id}/edit`}>Bearbeiten</Link>
+                    {this.props.onRemove ? <Fragment>
+                        <Divider type="vertical"/>
+                        <span>
+                            <button className="link-button"
+                                    onClick={() => {
+                                        this.props.onRemove(record)
+                                    }}>
+                                Löschen
+                            </button>
+                        </span>
+                    </Fragment> : null}
+          </span>,
             });
         }
 
         return (
             <Table
+                css={tableCSS}
                 rowKey="id"
                 pagination={events.length > 30}
                 columns={columns}
