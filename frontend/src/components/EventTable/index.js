@@ -1,7 +1,7 @@
 // @flow
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core'
-import React, {Fragment, Component} from 'react';
+import {Fragment, Component} from 'react';
 import {Divider, Table} from "antd";
 import {graphql, compose} from "react-apollo";
 import {loader} from 'graphql.macro';
