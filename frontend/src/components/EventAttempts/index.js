@@ -28,7 +28,6 @@ class EventAttempts extends Component<Props, State> {
   render() {
     const { athletes, availableDisciplines, loading, filterParams } = this.props;
     return <div>
-
       <AttemptsTable
         highlightFirstAthlete
         groupWeightClasses

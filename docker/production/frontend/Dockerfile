@@ -1,8 +1,4 @@
-FROM node:alpine
+FROM nginx:alpine
 
-ENV NPM_CONFIG_LOGLEVEL verbose
-
-WORKDIR /usr/src/app
-
-EXPOSE 3000
-CMD npm start
+COPY ./docker/production/frontend/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./frontend/build /usr/share/nginx/html

@@ -50,7 +50,7 @@ class FileUploader extends Component<Props> {
     const blob =  base64ImageToBlob(data);
     formData.append('file', blob, oldFile.name);
 
-    return axios.post('/file', formData,{
+    return axios.post('/api/file', formData,{
       headers: this.getHeader()
     }).then(response => {
       const {size, type} = blob;

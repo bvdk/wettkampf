@@ -30,7 +30,7 @@ class Login extends Component<Props> {
 
         const {t, setLogin} = this.props;
 
-        return fetch('/auth/login', {
+        return fetch('/api/auth/login', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",

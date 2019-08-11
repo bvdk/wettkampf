@@ -33,7 +33,7 @@ export default class PassportJSConfig {
     public static init(app: express.Application) {
         app.use(passport.initialize());
         app.use(passport.session());
-        app.post("/graphql", passport.authenticate(["jwt"], {session: false}));
+        app.post("/api/graphql", passport.authenticate(["jwt"], {session: false}));
 
         const secret = "BVDK";
 
@@ -41,15 +41,14 @@ export default class PassportJSConfig {
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
             secretOrKey: secret,
         }, (payload: any, next: any) => {
-                const user = _.get(payload, "user");
-                if (!user) {
+            const user = _.get(payload, "user");
+            if (!user) {
                 next(new Error("Es wurde keine gültige Session gefunden"), user);
             }
-
-                next(null, user);
+            next(null, user);
         }));
 
-        app.post("/auth/login", express.json(), (req: Request, res: Response) => {
+        app.post("/api/auth/login", express.json(), (req: Request, res: Response) => {
             const dbUser = CrudAdapter.find(CollectionKeys.users, {username: req.body.username});
             if (!dbUser) {
                 return res.status(400).json({
@@ -74,8 +73,6 @@ export default class PassportJSConfig {
                     },
                 });
             }
-
-
         });
     }
 }

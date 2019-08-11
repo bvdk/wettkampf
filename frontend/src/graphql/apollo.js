@@ -6,23 +6,14 @@ import {onError} from 'apollo-link-error';
 
 import {logout} from "../redux/actions/auth";
 
-// const networkInterface = createNetworkInterface({
-//   uri: process.env.REACT_APP_GRAPHQL_URI || '/graphql',
-//   opts: {
-//     credentials: 'same-origin',
-//   },
-// });
-
-
 export default (token, dispatch) => {
-
     const fragmentMatcher = new IntrospectionFragmentMatcher({});
 
-    let cache = new InMemoryCache({
-        fragmentMatcher,
+    const cache = new InMemoryCache({
+        fragmentMatcher
     });
 
-    const httpLink = createHttpLink({uri: '/graphql' });
+    const httpLink = createHttpLink({uri: '/api/graphql' });
 
     const middlewareLink = setContext(() => ({
         headers: {
@@ -36,13 +27,10 @@ export default (token, dispatch) => {
         }
     });
 
-
     const link = middlewareLink.concat(errorLink).concat(httpLink);
 
-    const client = new ApolloClient({
+    return new ApolloClient({
         link,
         cache
     });
-
-    return client;
 };

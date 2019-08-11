@@ -38,7 +38,7 @@ class FileUploadDropZone extends Component<Props, State> {
     const formData = new FormData();
     formData.append('file', file );
 
-    return axios.post('/file', formData,{
+    return axios.post('/api/file', formData,{
       headers: this.getHeader()
     }).then(response => {
       return response.data

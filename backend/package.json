@@ -8,7 +8,7 @@
     "start": "ts-node src/start.ts",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "build": "rimraf dist && cp package.json src/package.json  && tsc && cp -R src/client dist/client && cp -R src/fonts dist/fonts",
+    "build": "cp package.json src/package.json && tsc",
     "deploy:electron": "rimraf ./../kdk-electron/resources/app && cp -R dist ./../kdk-electron/resources/app",
     "build:deploy:electron": "npm version patch && yarn run build && yarn run deploy:electron",
     "version": "npm version patch",
@@ -47,7 +47,7 @@
     "ts-jest": "24.0.2",
     "ts-node": "6.2.0",
     "tslint": "5.12.0",
-    "typescript": "2.9.2"
+    "typescript": "3.5.3"
   },
   "resolutions": {
     "graphql": "14.1.1"
