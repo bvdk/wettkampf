@@ -11,7 +11,7 @@ env:
   - VERSION="$(npx -c 'echo "$npm_package_version"')"
 
 before_install:
-  - npm i -g npm
+  - npm i -g npm@latest
 
 script:
   - bash ./travis/install.sh
