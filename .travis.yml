@@ -3,21 +3,24 @@ cache: npm
 services:
   - docker
 
+branches:
+  only:
+    - master
+
 env:
   - VERSION=$(npx -c 'echo "$npm_package_version"')
 
 before_install:
   - npm i -g npm
 
-install:
-  - cd backend && npm i && cd ..
-  - cd frontend && npm i && cd ..
-
-before_script:
-  - cd backend && npm run build && cd ..
-  - cd frontend && npm run build && cd ..
-
 script:
+  - cd backend
+  - npm i
+  - npm run build
+  - cd ../frontend
+  - npm i
+  - npm run build
+  - cd ..
   - docker build -f docker/production/entry/Dockerfile -t bvdk2019/wettkampf/entry .
   - docker build -f docker/production/backend/Dockerfile -t bvdk2019/wettkampf/backend .
   - docker build -f docker/production/frontend/Dockerfile -t bvdk2019/wettkampf/frontend .
