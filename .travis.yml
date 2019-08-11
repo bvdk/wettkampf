@@ -9,9 +9,6 @@ branches:
   only:
     - master
 
-env:
-  - VERSION="$(npx -c 'echo "$npm_package_version"')"
-
 before_install:
   - npm i -g npm@latest
 
