@@ -18,8 +18,8 @@ before_install:
 script:
   - bash ./travis/install.sh
   - bash ./travis/build.sh
-  - bash export VERSION="$(npx -c 'echo "$npm_package_version"')" && ./travis/tag.sh
-  - bash export VERSION="$(npx -c 'echo "$npm_package_version"')" && ./travis/publish.sh
+  - bash ./travis/tag.sh
+  - bash ./travis/publish.sh
 
 before_deploy:
   - bash ./travis/publish.sh
