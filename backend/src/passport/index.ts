@@ -1,26 +1,24 @@
-
 import crypto from "crypto";
 import * as express from "express";
 import {Request, Response} from "express";
 import * as jwt from "jsonwebtoken";
 import _ from "lodash";
-
 import passport from "passport";
 import * as PasswortJWT from "passport-jwt";
 import {CollectionKeys} from "../database";
 import {CrudAdapter} from "../database/CrudAdapter";
 
-
 const JwtStrategy = PasswortJWT.Strategy;
 const ExtractJwt = PasswortJWT.ExtractJwt;
 
 export const sha512 = (password, salt) => {
-    let hash = crypto.createHmac("sha512", salt); /** Hashing algorithm sha512 */
+    const hash = crypto.createHmac("sha512", salt);
+    /** Hashing algorithm sha512 */
     hash.update(password);
-    let value = hash.digest("hex");
+    const value = hash.digest("hex");
     return {
-        salt,
         passwordHash: value,
+        salt,
     };
 };
 
@@ -32,30 +30,28 @@ export const genRandomString = (length) => {
 
 
 export default class PassportJSConfig {
-    public static init( app: express.Application ) {
+    public static init(app: express.Application) {
         app.use(passport.initialize());
         app.use(passport.session());
         app.post("/graphql", passport.authenticate(["jwt"], {session: false}));
 
         const secret = "BVDK";
 
-        passport.use( new JwtStrategy( {
+        passport.use(new JwtStrategy({
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
             secretOrKey: secret,
-        }, ( payload: any, next: any ) => {
-
-            const user = _.get(payload, "user");
-            if (!user) {
+        }, (payload: any, next: any) => {
+                const user = _.get(payload, "user");
+                if (!user) {
                 next(new Error("Es wurde keine gültige Session gefunden"), user);
             }
 
-            next(null, user);
-
+                next(null, user);
         }));
 
         app.post("/auth/login", express.json(), (req: Request, res: Response) => {
-            const dbUser = CrudAdapter.find(CollectionKeys.users, { username: req.body.username });
-            if ( !dbUser ) {
+            const dbUser = CrudAdapter.find(CollectionKeys.users, {username: req.body.username});
+            if (!dbUser) {
                 return res.status(400).json({
                     message: "Nutzer wurde nicht gefunden",
                 });
@@ -69,7 +65,7 @@ export default class PassportJSConfig {
                     message: "Falsches Passwort",
                 });
             } else {
-                const token = jwt.sign({ user: dbUser }, secret );
+                const token = jwt.sign({user: dbUser}, secret);
                 res.json({
                     token,
                     user: {

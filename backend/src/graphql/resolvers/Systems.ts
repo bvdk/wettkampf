@@ -1,9 +1,7 @@
 import _ from "lodash";
-import {ArgsType, Field, Query, Resolver} from "type-graphql";
-import packageJSON from "../../package.json";
+import {Query, Resolver} from "type-graphql";
+import packageJSON from "../../../package.json";
 import {System} from "../models/system";
-
-
 
 @Resolver()
 export default class SystemsResolver {
@@ -12,10 +10,8 @@ export default class SystemsResolver {
     public system(): System {
         return {
             id: _.get(packageJSON, "name", "bvdk-wertung"),
-            version: _.get(packageJSON, "version", ""),
             name: "Bundesverband Deutscher Kraftdreikämpfer e.V. 2018 ",
+            version: _.get(packageJSON, "version", ""),
         };
     }
-
-
 }

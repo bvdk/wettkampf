@@ -234,9 +234,6 @@ type Mutation {
   createWeightClass(data: WeightClassInput!): WeightClass!
   updateWeightClass(data: WeightClassInput!, id: ID!): WeightClass!
   deleteWeightClass(id: ID!): WeightClass!
-  createEvent(data: EventInput!): Event!
-  updateEvent(data: EventInput!, id: ID!): Event!
-  deleteEvent(id: ID!): Event!
   createAthleteGroup(eventId: ID!, slotId: ID, data: AthleteGroupInput!): AthleteGroup!
   updateAthleteGroup(data: AthleteGroupInput!, id: ID!): AthleteGroup!
   updateAthleteGroupSort(slotId: ID!, oldIndex: Int!, newIndex: Int!): [AthleteGroup!]!
@@ -264,6 +261,9 @@ type Mutation {
   createSlot(eventId: ID!, data: SlotInput!): Slot!
   updateSlot(data: SlotInput!, id: ID!): Slot!
   deleteSlot(id: ID!): Slot!
+  createEvent(data: EventInput!): Event!
+  updateEvent(data: EventInput!, id: ID!): Event!
+  deleteEvent(id: ID!): Event!
   createAthlete(eventId: ID!, data: AthleteInput!): Athlete!
   updateAthlete(data: AthleteUpdateInput!, id: ID!): Athlete!
   deleteAthlete(id: ID!): Athlete!
@@ -324,12 +324,6 @@ type Query {
   """All weight classes"""
   weightClasses: [WeightClass!]!
   weightClass(id: ID!): WeightClass!
-
-  """Get all the events"""
-  events: [Event!]!
-
-  """Get a event"""
-  event(id: ID!): Event!
   athleteGroup(id: ID!): AthleteGroup!
   athleteGroups(sort: [SortInput!], filters: [FilterInput!]): [AthleteGroup!]!
   autoCreateAthleteGroupsPreview(
@@ -352,6 +346,12 @@ type Query {
 
   """Get a slot"""
   slot(id: ID!): Slot
+
+  """Get all the events"""
+  events: [Event!]!
+
+  """Get a event"""
+  event(id: ID!): Event!
   athletes: [Athlete!]!
   athlete(id: ID!): Athlete!
   findAthlete(eventId: ID, importId: ID): Athlete!

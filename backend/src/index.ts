@@ -1,22 +1,17 @@
-import fileUpload from "express-fileupload";
-import _ from "lodash";
 import express from "express";
-import path from "path";
+import fileUpload from "express-fileupload";
 import { GraphQLServer } from "graphql-yoga";
-import passport from "src/passport";
+import passport from "passport";
+import path from "path";
+import exportResultsCSVResolver from "./export/exportResultsCSV";
+import exportResultsPdfResolver from "./export/exportResultsPdf";
 import getSchema from "./graphql";
 import importResolver from "./import";
-import exportResultsPdfResolver from "./export/exportResultsPdf";
-import exportResultsCSVResolver from "./export/exportResultsCSV";
 import PassportJSConfig from "./passport";
 
-const init = () => {
-
-  return getSchema.then((schema) => {
-
-    // @ts-ignore
+const init = () => getSchema.then((schema) => {
     const server = new GraphQLServer({
-      schema
+      schema,
     });
 
     PassportJSConfig.init(server.express);
@@ -32,14 +27,7 @@ const init = () => {
       endpoint: "/graphql",
       playground: "/playground",
       port: 4000,
-    },({ port }) => console.log(`Server is running on http://localhost:${port}`))
-        .catch((error) => console.error(error));
-
+    }, ({ port }) => console.warn(`Server is running on http://localhost:${port}`));
   });
-
-
-
-
-};
 
 export default init;
