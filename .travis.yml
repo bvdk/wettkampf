@@ -1,0 +1,35 @@
+language: node_js
+cache: npm
+services:
+  - docker
+
+env:
+  - VERSION=$(npx -c 'echo "$npm_package_version"')
+
+before_install:
+  - npm i -g npm
+
+install:
+  - cd backend && npm i
+  - cd frontend && npm i
+
+before_script:
+  - cd backend && npm run build
+  - cd frontend && npm run build
+
+script:
+  - docker build -f docker/production/entry/Dockerfile -t bvdk2019/wettkampf/entry .
+  - docker build -f docker/production/backend/Dockerfile -t bvdk2019/wettkampf/backend .
+  - docker build -f docker/production/frontend/Dockerfile -t bvdk2019/wettkampf/frontend .
+  - docker tag bvdk2019/wettkampf/entry bvdk2019/wettkampf/entry:$VERSION
+  - docker tag bvdk2019/wettkampf/backend bvdk2019/wettkampf/backend:$VERSION
+  - docker tag bvdk2019/wettkampf/frontend bvdk2019/wettkampf/frontend:$VERSION
+
+before_deploy:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push bvdk2019/wettkampf/entry:latest
+  - docker push bvdk2019/wettkampf/backend:latest
+  - docker push bvdk2019/wettkampf/frontend:latest
+  - docker push bvdk2019/wettkampf/entry:$VERSION
+  - docker push bvdk2019/wettkampf/backend:$VERSION
+  - docker push bvdk2019/wettkampf/frontend:$VERSION
