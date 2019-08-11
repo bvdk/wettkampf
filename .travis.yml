@@ -2,6 +2,13 @@ language: node_js
 node_js:
   - "12"
 cache: npm
+env:
+  matrix:
+    - ARCH=x86_64
+    - ARCH=rpi
+
+sudo: required
+
 services:
   - docker
 
@@ -10,6 +17,7 @@ branches:
     - master
 
 before_install:
+  - sudo docker run --privileged linuxkit/binfmt:v0.6
   - npm i -g npm@latest
 
 script:
