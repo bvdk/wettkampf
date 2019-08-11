@@ -1,0 +1,22 @@
+version: '3'
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: docker/develop/frontend/Dockerfile
+    volumes:
+      - ./frontend:/usr/src/app
+    ports:
+      - 3000:3000
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: ./docker/develop/backend/Dockerfile
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - 4000:4000
+    environment:
+      - DB=/usr/src/app/db

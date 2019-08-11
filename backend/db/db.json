@@ -33,7 +33,7 @@
       "KH2": null,
       "KH3": null,
       "points": 476.6008079441756,
-      "place": null,
+      "place": 1,
       "location": "Greifswald",
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "512ce1ea-fa50-4454-8dc6-99cde6e2cb3f",
@@ -48,7 +48,7 @@
       "gender": "FEMALE",
       "club": "ESV München-Neuaubing",
       "birthday": "08.09.1988",
-      "total": 518,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -70,7 +70,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "41fcc15d-3088-4843-a9ac-d59f365664c0",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -80,7 +81,7 @@
       "gender": "FEMALE",
       "club": "Aachener Kraftsport e.V.",
       "birthday": "21.03.1996",
-      "total": 590,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -102,7 +103,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "8df176b0-ce39-4dda-8ea3-b6c1b9e656b4",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -112,7 +114,7 @@
       "gender": "FEMALE",
       "club": "Gothaer Bierfassheberverein e.V.",
       "birthday": "18.03.1993",
-      "total": 492,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -134,7 +136,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "50ec74e0-919d-4920-99aa-946a7bf05828",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -144,7 +147,7 @@
       "gender": "FEMALE",
       "club": "FSV von 1861 Sarstedt e.V.",
       "birthday": "07.11.1992",
-      "total": 627,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -166,7 +169,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9494113c-6893-46b1-8dcd-405913e31a86",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -176,7 +180,7 @@
       "gender": "FEMALE",
       "club": "TSV 1892 Heiligenrode e.V.",
       "birthday": "06.01.1993",
-      "total": 630,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -198,7 +202,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "fd84a1c3-d34a-4b3c-9d34-cbf40b31fa52",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -208,7 +213,7 @@
       "gender": "FEMALE",
       "club": "AC Power Elite Haiger e.V.",
       "birthday": "19.04.1994",
-      "total": 660,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -230,7 +235,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "611d97ec-16b1-4ab7-92b8-6451c9c6a25c",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -240,7 +246,7 @@
       "gender": "FEMALE",
       "club": "Berlin Strength e.V.",
       "birthday": "14.04.1984",
-      "total": 510,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -262,7 +268,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "803f0746-7a1c-4126-bb7a-ad061bdff0a1",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -272,7 +279,7 @@
       "gender": "FEMALE",
       "club": "Kraftsport Colonia",
       "birthday": "08.11.1989",
-      "total": 674,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -294,7 +301,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "09ab3513-7db9-4943-b673-1c1ca91169b5",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -304,7 +312,7 @@
       "gender": "FEMALE",
       "club": "USV TU Dresden",
       "birthday": "01.07.1980",
-      "total": 448,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -326,7 +334,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "4f5024e4-bfc7-4b10-894e-60b107582977",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -336,7 +345,7 @@
       "gender": "FEMALE",
       "club": "Schwerathletik Verein Erfurt e.V.",
       "birthday": "24.02.1996",
-      "total": 485,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -358,7 +367,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "e0c1c481-ff47-4b70-9de5-26887b97322a",
       "weightClassId": "-63",
-      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69"
+      "athleteGroupId": "1ac4cbf7-1a47-48f7-8a3a-ea5a113f5e69",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -368,7 +378,7 @@
       "gender": "FEMALE",
       "club": "Aachener Kraftsport e.V.",
       "birthday": "07.05.1993",
-      "total": 542,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -390,7 +400,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "552c1424-fe6f-4599-a27e-d003b79f7ef1",
       "weightClassId": "-52",
-      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd"
+      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -400,7 +411,7 @@
       "gender": "FEMALE",
       "club": "Kraftsport Colonia",
       "birthday": "06.01.1993",
-      "total": 333,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -422,7 +433,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "31b03247-8abf-4809-a87b-bed90444f3cd",
       "weightClassId": "-52",
-      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd"
+      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -432,7 +444,7 @@
       "gender": "FEMALE",
       "club": "Schmiede-Kraftsport e.V.",
       "birthday": "30.06.1981",
-      "total": 535,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -454,7 +466,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "8ec66544-fe85-4b89-83d3-aa557e21eb1c",
       "weightClassId": "-52",
-      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd"
+      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -464,7 +477,7 @@
       "gender": "FEMALE",
       "club": "VfK Hannover v. 1903 e.V.",
       "birthday": "08.04.1991",
-      "total": 531,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -486,7 +499,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "42626247-8ef4-4acc-9ed0-71c0b579a678",
       "weightClassId": "-52",
-      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd"
+      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -496,7 +510,7 @@
       "gender": "FEMALE",
       "club": "Greifenpower e.V.",
       "birthday": "05.04.1994",
-      "total": 542,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -518,7 +532,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "71a6c15b-4e3f-450f-9e10-33bc955e132a",
       "weightClassId": "-52",
-      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd"
+      "athleteGroupId": "1fbeb794-54bc-482d-a993-ce79980600fd",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -528,7 +543,7 @@
       "gender": "FEMALE",
       "club": "Fitness-Club Rhein-Main e.V.",
       "birthday": "01.09.1988",
-      "total": 106,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -550,7 +565,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "4adcd50b-3775-4bc9-a452-8deeca153a87",
       "weightClassId": "-84",
-      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567"
+      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -560,7 +576,7 @@
       "gender": "FEMALE",
       "club": "TSV 1892 Heiligenrode e.V.",
       "birthday": "02.06.1979",
-      "total": 246,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -582,7 +598,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a99df1d6-cf41-46f3-9cc5-ab7aab4060f0",
       "weightClassId": "-84",
-      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567"
+      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -592,7 +609,7 @@
       "gender": "FEMALE",
       "club": "KTV Sparta 1896 e.V.",
       "birthday": "28.03.1987",
-      "total": 393,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -614,7 +631,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9ccbd5e0-b582-416e-97d1-dff3b527f985",
       "weightClassId": "-84",
-      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567"
+      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -624,7 +642,7 @@
       "gender": "FEMALE",
       "club": "STC Bavaria 20 Landshut",
       "birthday": "22.05.1993",
-      "total": 472,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -646,7 +664,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c89c7f88-f34b-439d-a7ad-7a8e5685e9c7",
       "weightClassId": "-84",
-      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567"
+      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -656,7 +675,7 @@
       "gender": "FEMALE",
       "club": "Greifenpower e.V.",
       "birthday": "09.05.1984",
-      "total": 700,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -678,7 +697,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "68cea6ef-7a75-4066-8194-4ddbcc687cc4",
       "weightClassId": "-84",
-      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567"
+      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -688,7 +708,7 @@
       "gender": "FEMALE",
       "club": "Schwerathletik Verein Erfurt e.V.",
       "birthday": "08.12.1987",
-      "total": 539,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -710,7 +730,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "01287b4d-b4d1-4efd-86b8-00b50803efb3",
       "weightClassId": "-84",
-      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567"
+      "athleteGroupId": "e3dfcbaf-b6b7-47ec-9e99-a6dee3953567",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -720,7 +741,7 @@
       "gender": "FEMALE",
       "club": "KSC Puch e.V.",
       "birthday": "12.07.1988",
-      "total": 683,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -742,7 +763,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "b3f88b00-8d13-41f8-b2a9-dca891086944",
       "weightClassId": "-57",
-      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92"
+      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -752,7 +774,7 @@
       "gender": "FEMALE",
       "club": "1. AC Bayreuth",
       "birthday": "08.01.1979",
-      "total": 412,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -774,7 +796,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "4f20f221-4a11-4c16-9122-d9d529b73ae8",
       "weightClassId": "-57",
-      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92"
+      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -784,7 +807,7 @@
       "gender": "FEMALE",
       "club": "Schmiede-Kraftsport e.V.",
       "birthday": "29.04.1991",
-      "total": 414,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -806,7 +829,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "5f018a35-f873-4d99-b54d-929629ed5fcb",
       "weightClassId": "-57",
-      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92"
+      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -816,7 +840,7 @@
       "gender": "FEMALE",
       "club": "AC Siegen e.V.",
       "birthday": "11.01.1985",
-      "total": 523,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -838,7 +862,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "05ee702a-cec1-46da-81c7-accf70acc40f",
       "weightClassId": "-57",
-      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92"
+      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -848,7 +873,7 @@
       "gender": "FEMALE",
       "club": "Berlin Strength e.V.",
       "birthday": "14.06.1989",
-      "total": 641,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -870,7 +895,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "117705e6-85c0-4310-afdb-c0f3beb50580",
       "weightClassId": "-57",
-      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92"
+      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -880,7 +906,7 @@
       "gender": "FEMALE",
       "club": "KSV Mainz 08",
       "birthday": "14.07.1986",
-      "total": 603,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -902,7 +928,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "0bc6ed72-e077-4f3c-acd1-fc13fb837742",
       "weightClassId": "-57",
-      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92"
+      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -912,7 +939,7 @@
       "gender": "FEMALE",
       "club": "Berlin Strength e.V.",
       "birthday": "07.07.1987",
-      "total": 286,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -934,7 +961,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "6cdeeaed-6f37-42fb-837d-25142f7ee382",
       "weightClassId": "-57",
-      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92"
+      "athleteGroupId": "27522a2f-9c88-4aa1-9e63-552f14494f92",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -944,7 +972,7 @@
       "gender": "FEMALE",
       "club": "Kraftsportverein Weissensee e.V.",
       "birthday": "13.06.1995",
-      "total": 166,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -966,7 +994,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "87f99004-4f05-4ac5-b6e8-4b006bb165b9",
       "weightClassId": "-72",
-      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f"
+      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -976,7 +1005,7 @@
       "gender": "FEMALE",
       "club": "Kraftsport Colonia",
       "birthday": "16.09.1984",
-      "total": 447,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -998,7 +1027,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f6f08c82-9d97-492d-91f5-2a6fa06f4897",
       "weightClassId": "-72",
-      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f"
+      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -1008,7 +1038,7 @@
       "gender": "FEMALE",
       "club": "KSV Mainz 08",
       "birthday": "04.12.1999",
-      "total": 579,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1030,7 +1060,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "d8370409-44bf-469f-b31a-302d6162d4e9",
       "weightClassId": "-72",
-      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f"
+      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -1040,7 +1071,7 @@
       "gender": "FEMALE",
       "club": "BSC Rapid Chemnitz",
       "birthday": "15.06.1989",
-      "total": 292,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1062,7 +1093,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "4efbafd2-7bbf-4040-abda-0b523725deeb",
       "weightClassId": "-72",
-      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f"
+      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -1072,7 +1104,7 @@
       "gender": "FEMALE",
       "club": "Schwerathletik Verein Erfurt e.V.",
       "birthday": "30.03.1985",
-      "total": 479,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1094,7 +1126,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "dda6a8c3-46b6-4a5c-8089-ee5c05f1317a",
       "weightClassId": "-72",
-      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f"
+      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -1104,7 +1137,7 @@
       "gender": "FEMALE",
       "club": "VfK Hannover v. 1903 e.V.",
       "birthday": "24.03.1997",
-      "total": 510,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1126,7 +1159,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "004dc18c-6929-4e5c-8c82-123188edb522",
       "weightClassId": "-72",
-      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f"
+      "athleteGroupId": "395028bd-8ff1-44ba-b0e6-5073c742495f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -1136,7 +1170,7 @@
       "gender": "FEMALE",
       "club": "Kraftsport Colonia",
       "birthday": "22.06.1979",
-      "total": 502,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1158,7 +1192,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "b7dcce39-6128-4c4d-b763-3f00fc03bdd5",
       "weightClassId": "+84",
-      "athleteGroupId": "531901e1-0c5f-4fbc-85f7-6c6eae7c9ded"
+      "athleteGroupId": "531901e1-0c5f-4fbc-85f7-6c6eae7c9ded",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -1168,7 +1203,7 @@
       "gender": "FEMALE",
       "club": "ACO Schrobenhausen",
       "birthday": "17.02.1967",
-      "total": 652,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1190,7 +1225,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "60c06755-0049-4972-92a5-9d68386b6cca",
       "weightClassId": "-84",
-      "athleteGroupId": "77d7e8cf-bd05-48b4-bac1-377f5a18e801"
+      "athleteGroupId": "77d7e8cf-bd05-48b4-bac1-377f5a18e801",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -1200,7 +1236,7 @@
       "gender": "FEMALE",
       "club": "FSV von 1861 Sarstedt e.V.",
       "birthday": "02.03.1965",
-      "total": 256,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1222,7 +1258,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "243dadc5-0871-42c1-b30e-31fa28fd8b26",
       "weightClassId": "-63",
-      "athleteGroupId": "fed97501-69ae-4ba4-8de6-93f28fcefd74"
+      "athleteGroupId": "fed97501-69ae-4ba4-8de6-93f28fcefd74",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -1232,7 +1269,7 @@
       "gender": "FEMALE",
       "club": "KSC Puch e.V.",
       "birthday": "10.09.1965",
-      "total": 108,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1254,7 +1291,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "55610469-717b-49dd-9a60-b75e1bd7099a",
       "weightClassId": "+84",
-      "athleteGroupId": "e919960f-095a-451e-b744-31e6f5f8ff63"
+      "athleteGroupId": "e919960f-095a-451e-b744-31e6f5f8ff63",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1264,7 +1302,7 @@
       "gender": "FEMALE",
       "club": "Sportverein Fellbach 1890 e. V.",
       "birthday": "06.12.1973",
-      "total": 181,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1286,7 +1324,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "fbdaf3f2-5bfe-4988-a406-5ae19182dbbf",
       "weightClassId": "-72",
-      "athleteGroupId": "cf0b2b42-7f7c-4e95-a668-bab2f125e285"
+      "athleteGroupId": "cf0b2b42-7f7c-4e95-a668-bab2f125e285",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1296,7 +1335,7 @@
       "gender": "FEMALE",
       "club": "AC Siegen e.V.",
       "birthday": "20.10.1972",
-      "total": 536,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1318,7 +1357,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f44a2395-6a7b-4bd6-baf1-0a0ee3402d1c",
       "weightClassId": "-72",
-      "athleteGroupId": "cf0b2b42-7f7c-4e95-a668-bab2f125e285"
+      "athleteGroupId": "cf0b2b42-7f7c-4e95-a668-bab2f125e285",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1328,7 +1368,7 @@
       "gender": "FEMALE",
       "club": "STC Bavaria 20 Landshut",
       "birthday": "23.10.1975",
-      "total": 349,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1350,7 +1390,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "6101c767-e76c-4394-a487-8a3a3f2e2a52",
       "weightClassId": "-63",
-      "athleteGroupId": "58aea1a7-8e3a-4a37-90a7-746f3deb9b1e"
+      "athleteGroupId": "58aea1a7-8e3a-4a37-90a7-746f3deb9b1e",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1360,7 +1401,7 @@
       "gender": "FEMALE",
       "club": "TSV 1888 Waging am See e.V.",
       "birthday": "12.11.1977",
-      "total": 581,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1382,7 +1423,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "1ae4e7f3-bb73-444f-a4e8-19b1ad729db4",
       "weightClassId": "-63",
-      "athleteGroupId": "58aea1a7-8e3a-4a37-90a7-746f3deb9b1e"
+      "athleteGroupId": "58aea1a7-8e3a-4a37-90a7-746f3deb9b1e",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1392,7 +1434,7 @@
       "gender": "FEMALE",
       "club": "Greifenpower e.V.",
       "birthday": "03.07.1977",
-      "total": 434,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1414,7 +1456,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2a57477d-b8bf-4250-b63b-966899c99b60",
       "weightClassId": "-63",
-      "athleteGroupId": "58aea1a7-8e3a-4a37-90a7-746f3deb9b1e"
+      "athleteGroupId": "58aea1a7-8e3a-4a37-90a7-746f3deb9b1e",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1424,7 +1467,7 @@
       "gender": "FEMALE",
       "club": "AC Power Elite Haiger e.V.",
       "birthday": "08.07.1973",
-      "total": 529,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1446,7 +1489,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "36a7e887-22f7-420f-acdb-7f4022662c91",
       "weightClassId": "-57",
-      "athleteGroupId": "4b3043d4-6c36-4d50-8211-97a67f713898"
+      "athleteGroupId": "4b3043d4-6c36-4d50-8211-97a67f713898",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1456,7 +1500,7 @@
       "gender": "FEMALE",
       "club": "Berlin Strength e.V.",
       "birthday": "19.07.1976",
-      "total": 519,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1478,7 +1522,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "bc72f348-2afa-4bed-a4a5-6870e43b3a79",
       "weightClassId": "-57",
-      "athleteGroupId": "4b3043d4-6c36-4d50-8211-97a67f713898"
+      "athleteGroupId": "4b3043d4-6c36-4d50-8211-97a67f713898",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1488,7 +1533,7 @@
       "gender": "FEMALE",
       "club": "Todtglüsinger Sportverein von 1930 e.V.",
       "birthday": "07.08.1976",
-      "total": 436,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1510,7 +1555,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "1bc8d2ce-b1e1-4047-b59e-5c91ac1a38c4",
       "weightClassId": "-57",
-      "athleteGroupId": "4b3043d4-6c36-4d50-8211-97a67f713898"
+      "athleteGroupId": "4b3043d4-6c36-4d50-8211-97a67f713898",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1520,7 +1566,7 @@
       "gender": "FEMALE",
       "club": "Preetzer TSV",
       "birthday": "11.01.1978",
-      "total": 575,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1542,7 +1588,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "05c5c7e0-ad43-4560-9eca-98f02a4a601f",
       "weightClassId": "-84",
-      "athleteGroupId": "c7bf30dc-92e7-4653-ab6e-d4a6c5c54edd"
+      "athleteGroupId": "c7bf30dc-92e7-4653-ab6e-d4a6c5c54edd",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -1552,7 +1599,7 @@
       "gender": "FEMALE",
       "club": "TV Röhlinghausen",
       "birthday": "20.11.1957",
-      "total": 637,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1574,7 +1621,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "15144355-f315-4b86-9699-b76df6565b97",
       "weightClassId": "-63",
-      "athleteGroupId": "1c54c675-ea1a-4f0e-9844-168435e527f6"
+      "athleteGroupId": "1c54c675-ea1a-4f0e-9844-168435e527f6",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1584,7 +1632,7 @@
       "gender": "MALE",
       "club": "SV Hellas 09 Oranienbaum",
       "birthday": "08.12.1973",
-      "total": 386,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1606,7 +1654,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "6f54faec-042d-4d55-8b20-1e873d386fae",
       "weightClassId": "-120",
-      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b"
+      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1616,7 +1665,7 @@
       "gender": "MALE",
       "club": "HAV 77 e.V.",
       "birthday": "10.05.1973",
-      "total": 643,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -1638,7 +1687,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "23e76ab1-10e2-4290-874e-d2b5bf585007",
       "weightClassId": "-120",
-      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b"
+      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1648,7 +1698,7 @@
       "gender": "MALE",
       "club": "KSV Essen 1888 e.V.",
       "birthday": "02.01.1978",
-      "total": 439,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1670,7 +1720,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "978a0d76-a776-44e5-8738-23b33baf0b9b",
       "weightClassId": "-120",
-      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b"
+      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1680,7 +1731,7 @@
       "gender": "MALE",
       "club": "TSV Katzwang 05",
       "birthday": "20.02.1972",
-      "total": 480,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1702,7 +1753,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9bd1be02-2aec-43b3-8073-51fbe7cb776d",
       "weightClassId": "-120",
-      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b"
+      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1712,7 +1764,7 @@
       "gender": "MALE",
       "club": "Powerlifting Würzburg e.V.",
       "birthday": "03.08.1975",
-      "total": 674,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -1734,7 +1786,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "8a4eaad2-4ba6-4bb2-a294-d92ea0715913",
       "weightClassId": "-120",
-      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b"
+      "athleteGroupId": "3feb74de-ca62-403a-878e-ee861c57257b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1744,7 +1797,7 @@
       "gender": "MALE",
       "club": "USV TU Dresden",
       "birthday": "11.12.1977",
-      "total": 416,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1766,7 +1819,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "23ebdc06-6406-4944-ba03-57873e59ae00",
       "weightClassId": "-74",
-      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c"
+      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1776,7 +1830,7 @@
       "gender": "MALE",
       "club": "Turngemeinde Landshut 1861 e.V.",
       "birthday": "02.08.1978",
-      "total": 516,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1798,7 +1852,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "0e3dfbc9-42b4-4aca-98cf-e4ae9cc9d221",
       "weightClassId": "-74",
-      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c"
+      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1808,7 +1863,7 @@
       "gender": "MALE",
       "club": "TSV 1888 Waging am See e.V.",
       "birthday": "21.02.1969",
-      "total": 613,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1830,7 +1885,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "665d8100-581a-4985-8008-2ab2bf0d3422",
       "weightClassId": "-74",
-      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c"
+      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1840,7 +1896,7 @@
       "gender": "MALE",
       "club": "KSC Amberg II",
       "birthday": "16.09.1978",
-      "total": 727,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1862,7 +1918,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "842e08a7-8362-482c-b7d4-e005b453c676",
       "weightClassId": "-74",
-      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c"
+      "athleteGroupId": "2e825961-b36e-44bd-8453-d5898cac441c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1872,7 +1929,7 @@
       "gender": "MALE",
       "club": "KSV Mainz 08",
       "birthday": "09.01.1974",
-      "total": 564,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1894,7 +1951,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "af91e21a-7b2a-4070-822c-0f27acdcad29",
       "weightClassId": "+120",
-      "athleteGroupId": "0472d821-1bf4-49ea-8fdb-8293fe53cbc4"
+      "athleteGroupId": "0472d821-1bf4-49ea-8fdb-8293fe53cbc4",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1904,7 +1962,7 @@
       "gender": "MALE",
       "club": "SG Fortschritt Eibau e.V.",
       "birthday": "13.10.1977",
-      "total": 484,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1926,7 +1984,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "165be717-7b13-4d6b-838e-7e66bca81ce8",
       "weightClassId": "+120",
-      "athleteGroupId": "0472d821-1bf4-49ea-8fdb-8293fe53cbc4"
+      "athleteGroupId": "0472d821-1bf4-49ea-8fdb-8293fe53cbc4",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1936,7 +1995,7 @@
       "gender": "MALE",
       "club": "TSV 1892 Heiligenrode e.V.",
       "birthday": "28.04.1976",
-      "total": 318,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1958,7 +2017,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "68db5e8f-8942-4dd9-8f3c-a2191f87b542",
       "weightClassId": "+120",
-      "athleteGroupId": "0472d821-1bf4-49ea-8fdb-8293fe53cbc4"
+      "athleteGroupId": "0472d821-1bf4-49ea-8fdb-8293fe53cbc4",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -1968,7 +2028,7 @@
       "gender": "MALE",
       "club": "Preetzer TSV",
       "birthday": "03.08.1972",
-      "total": 251,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -1990,7 +2050,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "18d69d53-1ab9-4ed4-944e-22d16102aeb4",
       "weightClassId": "-93",
-      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c"
+      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2000,7 +2061,7 @@
       "gender": "MALE",
       "club": "KSV-Lippe-Bad-Salzuflen",
       "birthday": "30.09.1970",
-      "total": 123,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2022,7 +2083,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "78836c5d-3676-492d-b0a8-cf1fc605009c",
       "weightClassId": "-93",
-      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c"
+      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2032,7 +2094,7 @@
       "gender": "MALE",
       "club": "Hantelsport-Club Pfatter e.V",
       "birthday": "25.09.1970",
-      "total": 494,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2054,7 +2116,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ca6c18ff-dca2-4876-8a67-62f389fee127",
       "weightClassId": "-93",
-      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c"
+      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2064,7 +2127,7 @@
       "gender": "MALE",
       "club": "V.f.V Braunschweig e.V.",
       "birthday": "14.06.1977",
-      "total": 549,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2086,7 +2149,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "d03afecd-4b80-462d-9ae4-6f5be3cdf17f",
       "weightClassId": "-93",
-      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c"
+      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2096,7 +2160,7 @@
       "gender": "MALE",
       "club": "SV Großräschen e.V. Abt. Kraftsport",
       "birthday": "03.02.1975",
-      "total": 390,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2118,7 +2182,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "55c034ff-fdb5-433f-ac3a-3c15c6d59f99",
       "weightClassId": "-93",
-      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c"
+      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2128,7 +2193,7 @@
       "gender": "MALE",
       "club": "Berlin Strength e.V.",
       "birthday": "25.06.1976",
-      "total": 418,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2150,7 +2215,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2c40a9ae-19e5-4389-b8f4-1df208fcea6c",
       "weightClassId": "-93",
-      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c"
+      "athleteGroupId": "2b56ab39-ff27-4f63-bdc0-baba22c8dc7c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2160,7 +2226,7 @@
       "gender": "MALE",
       "club": "SV Großräschen e.V. Abt. Kraftsport",
       "birthday": "30.01.1976",
-      "total": 477,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2182,7 +2248,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "e186f7a2-bf6e-4b37-84b3-3bc4a2bde820",
       "weightClassId": "-105",
-      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661"
+      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2192,7 +2259,7 @@
       "gender": "MALE",
       "club": "FSV Blau-Weiß Bergen e.V.",
       "birthday": "01.12.1971",
-      "total": 586,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2214,7 +2281,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9085c43c-9c18-4799-bcce-f38818eea772",
       "weightClassId": "-105",
-      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661"
+      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2224,7 +2292,7 @@
       "gender": "MALE",
       "club": "SV Großräschen e.V. Abt. Kraftsport",
       "birthday": "11.04.1978",
-      "total": 301,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2246,7 +2314,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ca3d5ee9-b2ca-47c8-bd3b-ba51e5f6d9bb",
       "weightClassId": "-105",
-      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661"
+      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2256,7 +2325,7 @@
       "gender": "MALE",
       "club": "Sanssouci Gym e. V. Potsdam",
       "birthday": "24.06.1971",
-      "total": 349,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2278,7 +2347,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "eb24098d-5bce-42c5-b5ee-5166610f96b6",
       "weightClassId": "-105",
-      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661"
+      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2288,7 +2358,7 @@
       "gender": "MALE",
       "club": "Gostorfer SV e.V.",
       "birthday": "07.04.1978",
-      "total": 488,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2310,7 +2380,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a37bf639-62f8-4f13-a79e-e1dec6288292",
       "weightClassId": "-105",
-      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661"
+      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak1",
@@ -2320,7 +2391,7 @@
       "gender": "MALE",
       "club": "Berlin Strength e.V.",
       "birthday": "21.02.1978",
-      "total": 634,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2342,7 +2413,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "802cb32e-55e7-4680-b735-900450fbff89",
       "weightClassId": "-105",
-      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661"
+      "athleteGroupId": "f45a425c-7639-4fe2-bfb9-c612423d5661",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2352,7 +2424,7 @@
       "gender": "MALE",
       "club": "SV Motor Eberswalde e.V. Abteilung Gewichtheben/Kraftdreikampf",
       "birthday": "26.11.1960",
-      "total": 490,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2374,7 +2446,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "fdf34efe-dcbd-40fa-933b-2f91ef053ab9",
       "weightClassId": "-74",
-      "athleteGroupId": "eeffb70d-090d-410b-8943-ca586f9c9ac9"
+      "athleteGroupId": "eeffb70d-090d-410b-8943-ca586f9c9ac9",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2384,7 +2457,7 @@
       "gender": "MALE",
       "club": "KSV Team Harz e.V.",
       "birthday": "11.07.1964",
-      "total": 488,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2406,7 +2479,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "efe4484f-174f-4e81-bb22-621ee2d8f71f",
       "weightClassId": "-74",
-      "athleteGroupId": "eeffb70d-090d-410b-8943-ca586f9c9ac9"
+      "athleteGroupId": "eeffb70d-090d-410b-8943-ca586f9c9ac9",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2416,7 +2490,7 @@
       "gender": "MALE",
       "club": "AC Oppenau 1984 e.V.",
       "birthday": "02.10.1961",
-      "total": 507,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2438,7 +2512,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f6a2255a-c0e0-4a35-9210-1ac5c1085d4a",
       "weightClassId": "-83",
-      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969"
+      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2448,7 +2523,7 @@
       "gender": "MALE",
       "club": "Sanssouci Gym e. V. Potsdam",
       "birthday": "28.01.1965",
-      "total": 532,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2470,7 +2545,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "6cc5cd1e-813e-4852-9312-f54070042e66",
       "weightClassId": "-83",
-      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969"
+      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2480,7 +2556,7 @@
       "gender": "MALE",
       "club": "Turngemeinde Landshut 1861 e.V.",
       "birthday": "22.02.1963",
-      "total": 570,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2502,7 +2578,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "e0bcbe5a-58b9-402c-bb33-e59104924800",
       "weightClassId": "-83",
-      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969"
+      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2512,7 +2589,7 @@
       "gender": "MALE",
       "club": "KSV Fitnesskreis",
       "birthday": "14.06.1967",
-      "total": 252,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2534,7 +2611,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c175fd5c-9808-4847-abe3-e9b74d359bc6",
       "weightClassId": "-83",
-      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969"
+      "athleteGroupId": "50c012ac-7381-40b1-ac8a-b79651823969",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2544,7 +2622,7 @@
       "gender": "MALE",
       "club": "Gewichtheberabt. VfB 48/64 Hüls e.V.",
       "birthday": "11.12.1968",
-      "total": 528,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2566,7 +2644,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "966aaf02-810d-4789-8030-d24dfae6ab04",
       "weightClassId": "-93",
-      "athleteGroupId": "1d4a364e-f3c7-4673-be52-316f0e079cb6"
+      "athleteGroupId": "1d4a364e-f3c7-4673-be52-316f0e079cb6",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2576,7 +2655,7 @@
       "gender": "MALE",
       "club": "V.f.V Braunschweig e.V.",
       "birthday": "08.05.1959",
-      "total": 555,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2598,7 +2677,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "e29541a3-823c-4434-ad8c-305059afc6eb",
       "weightClassId": "-93",
-      "athleteGroupId": "1d4a364e-f3c7-4673-be52-316f0e079cb6"
+      "athleteGroupId": "1d4a364e-f3c7-4673-be52-316f0e079cb6",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2608,7 +2688,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "20.03.1968",
-      "total": 536,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2630,7 +2710,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f1addbeb-7230-4695-a241-e7326e6a1978",
       "weightClassId": "-120",
-      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89"
+      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2640,7 +2721,7 @@
       "gender": "MALE",
       "club": "KSC Frauenau",
       "birthday": "23.12.1962",
-      "total": 238,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2662,7 +2743,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a4f58d21-1c75-42ec-99cf-1f8cd72f2ab0",
       "weightClassId": "-120",
-      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89"
+      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2672,7 +2754,7 @@
       "gender": "MALE",
       "club": "Gostorfer SV e.V.",
       "birthday": "03.10.1963",
-      "total": 360,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2694,7 +2776,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "6bda6a84-5570-41e8-b567-0bdaf4fa10cf",
       "weightClassId": "-120",
-      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89"
+      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2704,7 +2787,7 @@
       "gender": "MALE",
       "club": "AC Power Elite Haiger e.V.",
       "birthday": "23.05.1965",
-      "total": 626,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2726,7 +2809,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "95d3ba99-8acd-4132-9aef-b769cb933ac5",
       "weightClassId": "-120",
-      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89"
+      "athleteGroupId": "2cdda3bd-dd77-490b-97b1-359b92831b89",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2736,7 +2820,7 @@
       "gender": "MALE",
       "club": "SV Hellas 09 Oranienbaum",
       "birthday": "19.09.1966",
-      "total": 237,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2758,7 +2842,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a6b1c564-2c1a-4bce-b4e7-8ba650f6ea92",
       "weightClassId": "-66",
-      "athleteGroupId": "a9fefc9c-4f77-4ffc-b285-4dd3490f0da5"
+      "athleteGroupId": "a9fefc9c-4f77-4ffc-b285-4dd3490f0da5",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2768,7 +2853,7 @@
       "gender": "MALE",
       "club": "KSC Puch e.V.",
       "birthday": "24.02.1964",
-      "total": 392,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2790,7 +2875,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "98102ff0-73d5-436a-9ffc-2293dd857566",
       "weightClassId": "-66",
-      "athleteGroupId": "a9fefc9c-4f77-4ffc-b285-4dd3490f0da5"
+      "athleteGroupId": "a9fefc9c-4f77-4ffc-b285-4dd3490f0da5",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2800,7 +2886,7 @@
       "gender": "MALE",
       "club": "KSV-Lippe-Bad-Salzuflen",
       "birthday": "21.11.1964",
-      "total": 433,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2822,7 +2908,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "409a3940-8074-4b8c-a38b-6847101ce519",
       "weightClassId": "-105",
-      "athleteGroupId": "8a388927-2dda-4dce-9a66-c9a9a38602d2"
+      "athleteGroupId": "8a388927-2dda-4dce-9a66-c9a9a38602d2",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak2",
@@ -2832,7 +2919,7 @@
       "gender": "MALE",
       "club": "SV Motor Eberswalde e.V. Abteilung Gewichtheben/Kraftdreikampf",
       "birthday": "26.07.1960",
-      "total": 236,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2854,7 +2941,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "cbcba79c-e041-4dde-854f-444ed8746412",
       "weightClassId": "-59",
-      "athleteGroupId": "8d8a1133-5d9d-4885-a7f2-cf752a362f9c"
+      "athleteGroupId": "8d8a1133-5d9d-4885-a7f2-cf752a362f9c",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -2864,7 +2952,7 @@
       "gender": "MALE",
       "club": "SV Motor Barth e.V.",
       "birthday": "28.04.1977",
-      "total": 301,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2886,7 +2974,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c5ce7c00-7d8b-4702-9826-7cb7c839e12c",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -2896,7 +2985,7 @@
       "gender": "MALE",
       "club": "KSV-Lippe-Bad-Salzuflen",
       "birthday": "30.04.1994",
-      "total": 234,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2918,7 +3007,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ab62ee5f-2c5c-4a35-a3c2-8df9152403db",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -2928,7 +3018,7 @@
       "gender": "MALE",
       "club": "AC Siegfried Darmstadt e.V.",
       "birthday": "19.04.1974",
-      "total": 472,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2950,7 +3040,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "de346c98-e3d0-4626-a38c-997c8c72d411",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -2960,7 +3051,7 @@
       "gender": "MALE",
       "club": "SV 1956 Großkochberg",
       "birthday": "27.11.1986",
-      "total": 619,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -2982,7 +3073,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "8f15f143-0f3e-410e-9f69-4e15fa363b20",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -2992,7 +3084,7 @@
       "gender": "MALE",
       "club": "TAV Germania 04 Düsseldorf",
       "birthday": "29.12.1984",
-      "total": 580,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3014,7 +3106,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "569b8738-ee86-4bec-b284-c17524f83b02",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3024,7 +3117,7 @@
       "gender": "MALE",
       "club": "Sportverein Fellbach 1890 e. V.",
       "birthday": "27.01.1992",
-      "total": 504,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3046,7 +3139,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ab86b295-25e8-484c-8497-361053b4d9ae",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3056,7 +3150,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "09.05.1989",
-      "total": 428,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3078,7 +3172,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f54881ec-a2b9-4264-abc0-5ae21492c070",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3088,7 +3183,7 @@
       "gender": "MALE",
       "club": "Köthener Sport Verein 2009 e.V.",
       "birthday": "04.09.1990",
-      "total": 381,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3110,7 +3205,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "7d797dc4-7952-4653-813c-f26c9c5d6191",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3120,7 +3216,7 @@
       "gender": "MALE",
       "club": "Gütersloher Schwerathletik e.V.",
       "birthday": "22.04.1991",
-      "total": 367,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3142,7 +3238,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c99beb19-496e-47df-91f7-97ccf9ea7fd4",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3152,7 +3249,7 @@
       "gender": "MALE",
       "club": "VfB Friedrichshafen e.V.",
       "birthday": "29.07.1993",
-      "total": 384,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -3174,7 +3271,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a4b35dcb-5684-4e2f-9685-e2b54d5a360c",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3184,7 +3282,7 @@
       "gender": "MALE",
       "club": "TSV 1892 Heiligenrode e.V.",
       "birthday": "06.09.1981",
-      "total": 393,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3206,7 +3304,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "3276ef76-d05a-4e6a-8c43-6b9e8e8d23ea",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3216,7 +3315,7 @@
       "gender": "MALE",
       "club": "Greifenpower e.V.",
       "birthday": "09.01.1979",
-      "total": 485,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3238,7 +3337,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ba4e9deb-3e7f-4c19-92be-6c2cdb1b6590",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3248,7 +3348,7 @@
       "gender": "MALE",
       "club": "HAV 77 e.V.",
       "birthday": "21.01.1996",
-      "total": 289,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3270,7 +3370,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "3e4b868e-9498-4d4f-8bca-d9e51a3506a3",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3280,7 +3381,7 @@
       "gender": "MALE",
       "club": "Athletik Club 1892 Weinheim e. V.",
       "birthday": "29.07.1992",
-      "total": 619,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -3302,7 +3403,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ce570944-9687-45a0-a879-5182d2394071",
       "weightClassId": "-105",
-      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664"
+      "athleteGroupId": "83e8cef9-be22-4461-9129-095e532c8664",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3312,7 +3414,7 @@
       "gender": "MALE",
       "club": "Gothaer Bierfassheberverein e.V.",
       "birthday": "30.01.1981",
-      "total": 388,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3334,7 +3436,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a3837a4d-2d22-4790-8482-2159c0e34bd2",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3344,7 +3447,7 @@
       "gender": "MALE",
       "club": "SV 1956 Großkochberg",
       "birthday": "17.10.1986",
-      "total": 490,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3366,7 +3469,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a2f0bb6b-30ef-44c5-9027-f6f72477825c",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3376,7 +3480,7 @@
       "gender": "MALE",
       "club": "SV Quitt Ankum e.V. 1919",
       "birthday": "29.09.1987",
-      "total": 475,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3398,7 +3502,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9762feba-d1a4-446a-9dc8-d8975fd472b3",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3408,7 +3513,7 @@
       "gender": "MALE",
       "club": "SV Rotation Langenbach e.V.",
       "birthday": "04.10.1990",
-      "total": 586,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3430,7 +3535,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "d4cd426c-1638-40ad-b19b-4d39e8a5d2bf",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3440,7 +3546,7 @@
       "gender": "MALE",
       "club": "FSV von 1861 Sarstedt e.V.",
       "birthday": "13.01.1992",
-      "total": 398,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3462,7 +3568,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "50ebf2ec-7ff9-49d2-9e7a-14c147e89da3",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3472,7 +3579,7 @@
       "gender": "MALE",
       "club": "KSV 1884 Mannheim",
       "birthday": "02.05.1994",
-      "total": 384,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3494,7 +3601,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a44df080-4a8a-4b97-b3a0-5d2a0fdf2350",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3504,7 +3612,7 @@
       "gender": "MALE",
       "club": "AC Heros Berlin",
       "birthday": "14.09.1988",
-      "total": 228,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3526,7 +3634,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "6448d8f1-cdc6-4fef-adb6-e03e547bbde0",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3536,7 +3645,7 @@
       "gender": "MALE",
       "club": "SV Rotation Langenbach e.V.",
       "birthday": "27.01.1990",
-      "total": 469,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -3558,7 +3667,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "7f8bb28a-af04-4f83-9fca-7f10888f7d21",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3568,7 +3678,7 @@
       "gender": "MALE",
       "club": "1. AC Bayreuth",
       "birthday": "26.03.1986",
-      "total": 513,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3590,7 +3700,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "d1b297b7-9b1c-4862-918d-0dc76100b8df",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3600,7 +3711,7 @@
       "gender": "MALE",
       "club": "Kraft & Fitness Eilenburg",
       "birthday": "08.09.1986",
-      "total": 351,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3622,7 +3733,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2f12126a-a0f9-4e23-9846-874f05ffa43c",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3632,7 +3744,7 @@
       "gender": "MALE",
       "club": "SV Rotation Langenbach e.V.",
       "birthday": "29.04.1987",
-      "total": 413,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3654,7 +3766,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "0b7bd9f7-9035-464c-abee-45b59bd21d61",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3664,7 +3777,7 @@
       "gender": "MALE",
       "club": "FSV Blau-Weiß Bergen e.V.",
       "birthday": "06.07.1983",
-      "total": 480,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3686,7 +3799,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c5d6b094-a474-4499-93be-3e753e1790f3",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3696,7 +3810,7 @@
       "gender": "MALE",
       "club": "FSV Blau-Weiß Bergen e.V.",
       "birthday": "26.10.1979",
-      "total": 396,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3718,7 +3832,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "fbd1e8d6-850c-4f33-9a34-dd679892164c",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3728,7 +3843,7 @@
       "gender": "MALE",
       "club": "KSV Mainz 08",
       "birthday": "11.06.1991",
-      "total": 409,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3750,7 +3865,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "522b0419-1388-49e6-98a3-5512aba11914",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3760,7 +3876,7 @@
       "gender": "MALE",
       "club": "VfB Friedrichshafen e.V.",
       "birthday": "02.10.1994",
-      "total": 456,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3782,7 +3898,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "cd533e3a-4605-4284-8a15-8426f0365cae",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3792,7 +3909,7 @@
       "gender": "MALE",
       "club": "SV Rotation Langenbach e.V.",
       "birthday": "19.12.1992",
-      "total": 302,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3814,7 +3931,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f8d9aa32-3ea9-4a92-9e47-3a3ce2f3437c",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3824,7 +3942,7 @@
       "gender": "MALE",
       "club": "Schwerathletik Verein Erfurt e.V.",
       "birthday": "05.11.1991",
-      "total": 386,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3846,7 +3964,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "28f27181-d164-4aa2-bf41-978a46a32be3",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3856,7 +3975,7 @@
       "gender": "MALE",
       "club": "VfK Hannover v. 1903 e.V.",
       "birthday": "30.04.1994",
-      "total": 481,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3878,7 +3997,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "e8a55380-0179-46e6-8ad2-404c4de96212",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3888,7 +4008,7 @@
       "gender": "MALE",
       "club": "Turngemeinde Landshut 1861 e.V.",
       "birthday": "25.06.1987",
-      "total": 565,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3910,7 +4030,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "3a88237e-1869-43c5-ace2-d780ac905783",
       "weightClassId": "-93",
-      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7"
+      "athleteGroupId": "d1ea20b1-da8d-45b9-86bc-bcca22a147e7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3920,7 +4041,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "08.03.1983",
-      "total": 438,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3942,7 +4063,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "97c03558-2e66-4b55-9101-c47ff3d5c90b",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3952,7 +4074,7 @@
       "gender": "MALE",
       "club": "Kraft & Fitness Eilenburg",
       "birthday": "24.10.1991",
-      "total": 622,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -3974,7 +4096,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2c160bda-ca31-4d6c-9621-7a1c11fbdcce",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -3984,7 +4107,7 @@
       "gender": "MALE",
       "club": "Schwerathletik Verein Erfurt e.V.",
       "birthday": "03.06.1989",
-      "total": 346,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4006,7 +4129,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "d2477504-1532-4465-883c-f0a6071e5238",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4016,7 +4140,7 @@
       "gender": "MALE",
       "club": "KTV Sparta 1896 e.V.",
       "birthday": "08.07.1990",
-      "total": 412,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4038,7 +4162,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c721e25b-d72a-4f3d-afa3-51f42603ffc4",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4048,7 +4173,7 @@
       "gender": "MALE",
       "club": "USV TU Dresden",
       "birthday": "10.06.1994",
-      "total": 368,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4070,7 +4195,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "1f4f99a8-8a27-4e87-96c9-b7f71702caf7",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4080,7 +4206,7 @@
       "gender": "MALE",
       "club": "KSV 1884 Mannheim",
       "birthday": "06.06.1986",
-      "total": 541,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4102,7 +4228,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2bf52517-9fc4-4d5c-9b82-404744baf60e",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4112,7 +4239,7 @@
       "gender": "MALE",
       "club": "Greifenpower e.V.",
       "birthday": "03.02.1984",
-      "total": 516,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4134,7 +4261,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ed3557f0-a773-4347-9c7b-fe13982d8ad7",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4144,7 +4272,7 @@
       "gender": "MALE",
       "club": "Turngemeinde Landshut 1861 e.V.",
       "birthday": "02.08.1984",
-      "total": 307,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4166,7 +4294,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "8541b5e9-c185-4469-9ef9-9c2bfbb06be4",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4176,7 +4305,7 @@
       "gender": "MALE",
       "club": "AC Heros Berlin",
       "birthday": "19.04.1991",
-      "total": 294,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4198,7 +4327,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "e3bd3355-a9ad-4202-826d-dd5755bb2103",
       "weightClassId": "-120",
-      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b"
+      "athleteGroupId": "77bf1fc4-9261-4589-859d-fca65819727b",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4208,7 +4338,7 @@
       "gender": "MALE",
       "club": "KSV Zillbach e.V.",
       "birthday": "03.10.1985",
-      "total": 460,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4230,7 +4360,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "d1e8453d-740e-449a-96b7-3ff2c4122688",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4240,7 +4371,7 @@
       "gender": "MALE",
       "club": "ESV München-Neuaubing",
       "birthday": "21.07.1988",
-      "total": 496,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4262,7 +4393,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c64743be-4d29-4353-9cf5-f36a9c9e075f",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4272,7 +4404,7 @@
       "gender": "MALE",
       "club": "VfB Klötze 07",
       "birthday": "03.07.1993",
-      "total": 621,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4294,7 +4426,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "38cb8ab9-281b-432b-bfaf-a34253d1de2f",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4304,7 +4437,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "01.01.1988",
-      "total": 542,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4326,7 +4459,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "3beb1186-3101-4bce-9c47-2d1421a6a25e",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4336,7 +4470,7 @@
       "gender": "MALE",
       "club": "KSV Mainz 08",
       "birthday": "25.08.1995",
-      "total": 551,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4358,7 +4492,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "dca2cba4-946e-4495-b44a-bf3d4e1da43b",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4368,7 +4503,7 @@
       "gender": "MALE",
       "club": "KSC Puch e.V.",
       "birthday": "23.02.1983",
-      "total": 242,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4390,7 +4525,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "8d2b5d04-bcfc-4ddb-89c8-25818175bfb0",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4400,7 +4536,7 @@
       "gender": "MALE",
       "club": "HAV 77 e.V.",
       "birthday": "20.06.1993",
-      "total": 351,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -4422,7 +4558,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ce9d812e-2771-44a6-9927-78b23ff54d05",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4432,7 +4569,7 @@
       "gender": "MALE",
       "club": "SV Motor Barth e.V.",
       "birthday": "16.10.1992",
-      "total": 409,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4454,7 +4591,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "5b495fd3-341b-45a4-8578-9213f1a74960",
       "weightClassId": "+120",
-      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73"
+      "athleteGroupId": "8cc8eed4-451c-419b-99ff-aeb380e81e73",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4464,7 +4602,7 @@
       "gender": "MALE",
       "club": "Todtglüsinger Sportverein von 1930 e.V.",
       "birthday": "24.01.1990",
-      "total": 536,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4486,7 +4624,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9a8f3091-3706-4109-bfc9-4d8002cbc27a",
       "weightClassId": "-66",
-      "athleteGroupId": "b17c3720-1ed9-480a-af14-7927c05c789e"
+      "athleteGroupId": "b17c3720-1ed9-480a-af14-7927c05c789e",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4496,7 +4635,7 @@
       "gender": "MALE",
       "club": "Fitness-Club Rhein-Main e.V.",
       "birthday": "09.06.1990",
-      "total": 347,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4518,7 +4657,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "ac805305-8985-40e1-ba5c-d4732f7e6e71",
       "weightClassId": "-66",
-      "athleteGroupId": "b17c3720-1ed9-480a-af14-7927c05c789e"
+      "athleteGroupId": "b17c3720-1ed9-480a-af14-7927c05c789e",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4528,7 +4668,7 @@
       "gender": "MALE",
       "club": "Berlin Strength e.V.",
       "birthday": "26.07.1991",
-      "total": 459,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4550,7 +4690,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "515519cd-7c45-456d-ac25-464eade3d5cf",
       "weightClassId": "-66",
-      "athleteGroupId": "b17c3720-1ed9-480a-af14-7927c05c789e"
+      "athleteGroupId": "b17c3720-1ed9-480a-af14-7927c05c789e",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4560,7 +4701,7 @@
       "gender": "MALE",
       "club": "HAV 77 e.V.",
       "birthday": "26.01.1992",
-      "total": 275,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4582,7 +4723,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2035eae9-4133-43c3-a6bf-e58f7322a351",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4592,7 +4734,7 @@
       "gender": "MALE",
       "club": "Coburger Turnerschaft 1861 e.V.",
       "birthday": "18.07.1986",
-      "total": 713,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4614,7 +4756,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "0eeb452e-5c84-4967-b8ce-09ca2f56771c",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4624,7 +4767,7 @@
       "gender": "MALE",
       "club": "ESV München-Neuaubing",
       "birthday": "19.05.1993",
-      "total": 572,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4646,7 +4789,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "e9de7d34-f706-4d21-ae11-07f840f642d9",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4656,7 +4800,7 @@
       "gender": "MALE",
       "club": "ESV München-Neuaubing",
       "birthday": "12.06.1992",
-      "total": 580,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4678,7 +4822,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "4e453f05-8c0a-46ca-983c-588a46a02ee8",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4688,7 +4833,7 @@
       "gender": "MALE",
       "club": "KSV-Lippe-Bad-Salzuflen",
       "birthday": "05.10.1991",
-      "total": 656,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4710,7 +4855,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2c1ce5e9-329e-4e02-9798-599019c7eeab",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4720,7 +4866,7 @@
       "gender": "MALE",
       "club": "KSV Team Harz e.V.",
       "birthday": "16.02.1995",
-      "total": 608,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4742,7 +4888,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9eea83eb-ffba-4d66-9939-6f2c1057d439",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4752,7 +4899,7 @@
       "gender": "MALE",
       "club": "TAV Germania 04 Düsseldorf",
       "birthday": "12.05.1995",
-      "total": 391,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4774,7 +4921,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c1b47d5b-2450-408b-b461-7043184e8f95",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4784,7 +4932,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "14.12.1990",
-      "total": 456,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4806,7 +4954,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "d334e942-fea9-4c43-96e7-cc53bebc8a2e",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4816,7 +4965,7 @@
       "gender": "MALE",
       "club": "AV \"Vorwärts\" 05 Groß-Zimmern",
       "birthday": "13.10.1991",
-      "total": 497,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4838,7 +4987,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "7839bece-3202-4880-a2d3-45e78c524fd4",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4848,7 +4998,7 @@
       "gender": "MALE",
       "club": "KSV Fitnesskreis",
       "birthday": "21.09.1987",
-      "total": 479,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4870,7 +5020,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "27aa7566-7a1d-4443-92f4-3ce5038bd811",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4880,7 +5031,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "05.03.1992",
-      "total": 458,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4902,7 +5053,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2ade55ce-30c1-4494-9872-25b5a92bb01c",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4912,7 +5064,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "20.08.1990",
-      "total": 604,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4934,7 +5086,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "3d684dc4-bcec-47ce-87ac-af0e35b3ae69",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4944,7 +5097,7 @@
       "gender": "MALE",
       "club": "FSV von 1861 Sarstedt e.V.",
       "birthday": "23.01.1991",
-      "total": 508,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4966,7 +5119,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c046e28f-223e-47f9-9fe7-8ed4385944b6",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -4976,7 +5130,7 @@
       "gender": "MALE",
       "club": "Berlin Strength e.V.",
       "birthday": "17.10.1989",
-      "total": 356,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -4998,7 +5152,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "14cbdab8-e869-4887-bf4f-cb77ce626150",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5008,7 +5163,7 @@
       "gender": "MALE",
       "club": "Kraftsport Colonia",
       "birthday": "20.06.1989",
-      "total": 411,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5030,7 +5185,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "30ac021a-90f1-41b8-8cdf-1449b3fd2d1b",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5040,7 +5196,7 @@
       "gender": "MALE",
       "club": "K.S.P. Weiden e.V.",
       "birthday": "20.07.1999",
-      "total": 495,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -5062,7 +5218,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "b05f0716-251e-404b-a049-6f6bcdf61760",
       "weightClassId": "-83",
-      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957"
+      "athleteGroupId": "cbb6c0b6-7560-4a40-9e92-9a46c68c6957",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5072,7 +5229,7 @@
       "gender": "MALE",
       "club": "Powerlifting Mühl Rosin e.V.",
       "birthday": "20.07.1981",
-      "total": 333,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5094,7 +5251,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "1f01aa55-2a13-4ef8-a34d-b306877f6ff0",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5104,7 +5262,7 @@
       "gender": "MALE",
       "club": "VfB Friedrichshafen e.V.",
       "birthday": "19.09.1993",
-      "total": 509,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5126,7 +5284,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "c17405cb-9b4c-4fdf-bc10-2af1ea98121a",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5136,7 +5295,7 @@
       "gender": "MALE",
       "club": "ESV München-Neuaubing",
       "birthday": "25.09.1993",
-      "total": 464,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5158,7 +5317,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "cb5f5690-a550-483c-9b7f-c3ec8657bc72",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5168,7 +5328,7 @@
       "gender": "MALE",
       "club": "FSV Blau-Weiß Bergen e.V.",
       "birthday": "19.10.1991",
-      "total": 581,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5190,7 +5350,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "29151c35-9763-494e-ae97-42a9c9078b50",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5200,7 +5361,7 @@
       "gender": "MALE",
       "club": "Powerlifting Lauchhammer e.V.",
       "birthday": "06.10.1989",
-      "total": 335,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5222,7 +5383,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "4abf5274-c6d9-4214-a023-cdccec993e9a",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5232,7 +5394,7 @@
       "gender": "MALE",
       "club": "Greifenpower e.V.",
       "birthday": "16.01.1991",
-      "total": 513,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5254,7 +5416,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "fb37499e-d073-4beb-86af-87345b86a2ea",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5264,7 +5427,7 @@
       "gender": "MALE",
       "club": "VfK Hannover v. 1903 e.V.",
       "birthday": "14.01.1995",
-      "total": 380,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5286,7 +5449,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a49e4074-7c05-4ffb-9ed5-ed081aca7ef6",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5296,7 +5460,7 @@
       "gender": "MALE",
       "club": "Gothaer Bierfassheberverein e.V.",
       "birthday": "06.08.1993",
-      "total": 374,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5318,7 +5482,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f0ef8860-c098-4b62-9e19-86c7867add67",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "aktive",
@@ -5328,7 +5493,7 @@
       "gender": "MALE",
       "club": "Greifenpower e.V.",
       "birthday": "30.08.1986",
-      "total": 436,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5350,7 +5515,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "80f626f4-df77-4395-81da-4d5d2b3c2e58",
       "weightClassId": "-74",
-      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f"
+      "athleteGroupId": "e0afc883-a32b-4b85-a0f1-e91169f9413f",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5360,7 +5526,7 @@
       "gender": "MALE",
       "club": "SC Elite v. 1921 e.V.",
       "birthday": "11.02.1952",
-      "total": 529,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5382,7 +5548,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "07a91f19-7742-4c3a-8439-576a629c8a9f",
       "weightClassId": "-105",
-      "athleteGroupId": "e26c0f9f-adbc-46dc-93d6-534de4e20be4"
+      "athleteGroupId": "e26c0f9f-adbc-46dc-93d6-534de4e20be4",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5392,7 +5559,7 @@
       "gender": "MALE",
       "club": "Powerlifting Duisburg e.V.",
       "birthday": "02.06.1956",
-      "total": 271,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5414,7 +5581,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "a9ff24b8-29c9-4ece-8615-d7ea091f38f6",
       "weightClassId": "-105",
-      "athleteGroupId": "e26c0f9f-adbc-46dc-93d6-534de4e20be4"
+      "athleteGroupId": "e26c0f9f-adbc-46dc-93d6-534de4e20be4",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5424,7 +5592,7 @@
       "gender": "MALE",
       "club": "AC Oppenau 1984 e.V.",
       "birthday": "24.09.1958",
-      "total": 465,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5446,7 +5614,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "b1ebc6ea-e6b6-4249-8e11-c278bd25d781",
       "weightClassId": "-105",
-      "athleteGroupId": "e26c0f9f-adbc-46dc-93d6-534de4e20be4"
+      "athleteGroupId": "e26c0f9f-adbc-46dc-93d6-534de4e20be4",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5456,7 +5625,7 @@
       "gender": "MALE",
       "club": "Turn Club Hameln",
       "birthday": "04.05.1954",
-      "total": 360,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -5478,7 +5647,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2a0eecb7-9897-4156-9207-c5d022779e3a",
       "weightClassId": "-83",
-      "athleteGroupId": "e5821dbd-0e7b-4609-b626-a34042fc00d7"
+      "athleteGroupId": "e5821dbd-0e7b-4609-b626-a34042fc00d7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5488,7 +5658,7 @@
       "gender": "MALE",
       "club": "ACO Schrobenhausen",
       "birthday": "13.05.1958",
-      "total": 403,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5510,7 +5680,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "66dfc306-261b-4155-8099-d3df77ffa2a3",
       "weightClassId": "-83",
-      "athleteGroupId": "e5821dbd-0e7b-4609-b626-a34042fc00d7"
+      "athleteGroupId": "e5821dbd-0e7b-4609-b626-a34042fc00d7",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5520,7 +5691,7 @@
       "gender": "MALE",
       "club": "TAV Germania 04 Düsseldorf",
       "birthday": "07.02.1953",
-      "total": 531,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5542,7 +5713,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "b7a12dfa-6470-42b8-8781-ba47511f4836",
       "weightClassId": "-120",
-      "athleteGroupId": "f90b79f7-90ac-4ca1-b7cc-fdf82293f947"
+      "athleteGroupId": "f90b79f7-90ac-4ca1-b7cc-fdf82293f947",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5552,7 +5724,7 @@
       "gender": "MALE",
       "club": "SC Elite v. 1921 e.V.",
       "birthday": "16.03.1954",
-      "total": 732,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5574,7 +5746,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "f4daac74-76aa-47a4-b5bc-57a3f771eeef",
       "weightClassId": "-120",
-      "athleteGroupId": "f90b79f7-90ac-4ca1-b7cc-fdf82293f947"
+      "athleteGroupId": "f90b79f7-90ac-4ca1-b7cc-fdf82293f947",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5584,7 +5757,7 @@
       "gender": "MALE",
       "club": "AC Heros Berlin",
       "birthday": "29.04.1953",
-      "total": 556,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5606,7 +5779,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "227c2936-33f6-4cb9-a7f5-55bdfaca39f5",
       "weightClassId": "-120",
-      "athleteGroupId": "f90b79f7-90ac-4ca1-b7cc-fdf82293f947"
+      "athleteGroupId": "f90b79f7-90ac-4ca1-b7cc-fdf82293f947",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5616,7 +5790,7 @@
       "gender": "MALE",
       "club": "FSV Blau-Weiß Bergen e.V.",
       "birthday": "15.10.1954",
-      "total": 259,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5638,7 +5812,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "11587706-a433-41a8-9dfc-56033ec79cfe",
       "weightClassId": "+120",
-      "athleteGroupId": "49b55294-2f87-475f-b535-ecf1adb2e7ad"
+      "athleteGroupId": "49b55294-2f87-475f-b535-ecf1adb2e7ad",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5648,7 +5823,7 @@
       "gender": "MALE",
       "club": "Todtglüsinger Sportverein von 1930 e.V.",
       "birthday": "01.09.1951",
-      "total": 388,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5670,7 +5845,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "257170ff-590b-4d49-a72d-197bf8bd0611",
       "weightClassId": "-93",
-      "athleteGroupId": "0344c756-6a36-43c4-8cfd-ea73a4bd2278"
+      "athleteGroupId": "0344c756-6a36-43c4-8cfd-ea73a4bd2278",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5680,7 +5856,7 @@
       "gender": "MALE",
       "club": "HSV Weimar",
       "birthday": "08.04.1953",
-      "total": 450,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5702,7 +5878,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "727de7a0-f283-4859-a268-e6c1c03b2911",
       "weightClassId": "-93",
-      "athleteGroupId": "0344c756-6a36-43c4-8cfd-ea73a4bd2278"
+      "athleteGroupId": "0344c756-6a36-43c4-8cfd-ea73a4bd2278",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak3",
@@ -5712,7 +5889,7 @@
       "gender": "MALE",
       "club": "KSC Frauenau",
       "birthday": "09.06.1954",
-      "total": 458,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5734,7 +5911,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "8ee46e15-f278-4ffd-842e-8b2c67633242",
       "weightClassId": "-93",
-      "athleteGroupId": "0344c756-6a36-43c4-8cfd-ea73a4bd2278"
+      "athleteGroupId": "0344c756-6a36-43c4-8cfd-ea73a4bd2278",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak4",
@@ -5744,7 +5922,7 @@
       "gender": "MALE",
       "club": "MTV VJ Peine",
       "birthday": "03.07.1942",
-      "total": 613,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5766,7 +5944,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "edb0e051-47a3-492f-8237-187ef7b87753",
       "weightClassId": "-74",
-      "athleteGroupId": "1f6920f8-b6ee-434c-91f0-5f8ed998100d"
+      "athleteGroupId": "1f6920f8-b6ee-434c-91f0-5f8ed998100d",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak4",
@@ -5776,7 +5955,7 @@
       "gender": "MALE",
       "club": "VfB Klötze 07",
       "birthday": "21.06.1948",
-      "total": 574,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5798,7 +5977,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "9176fc5b-27d3-4324-ab3c-2ae879c35f0d",
       "weightClassId": "-93",
-      "athleteGroupId": "36344894-7852-4b87-a18c-a2a953f346b2"
+      "athleteGroupId": "36344894-7852-4b87-a18c-a2a953f346b2",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak4",
@@ -5808,7 +5988,7 @@
       "gender": "MALE",
       "club": "PSV-Stralsund e.V.",
       "birthday": "23.10.1946",
-      "total": 562,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5830,7 +6010,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "2d843fae-3b03-4584-bcf0-e60394999c61",
       "weightClassId": "-93",
-      "athleteGroupId": "36344894-7852-4b87-a18c-a2a953f346b2"
+      "athleteGroupId": "36344894-7852-4b87-a18c-a2a953f346b2",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak4",
@@ -5840,7 +6021,7 @@
       "gender": "MALE",
       "club": "KSC Frauenau",
       "birthday": "04.11.1947",
-      "total": 504,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5862,7 +6043,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "5d1e6141-91f3-4f80-bf52-ce384fe4dadb",
       "weightClassId": "-105",
-      "athleteGroupId": "fddea32c-aab9-4e54-b3ad-5d6914ed15f0"
+      "athleteGroupId": "fddea32c-aab9-4e54-b3ad-5d6914ed15f0",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak4",
@@ -5872,7 +6054,7 @@
       "gender": "MALE",
       "club": "Turngemeinde Landshut 1861 e.V.",
       "birthday": "03.09.1940",
-      "total": 681,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "35,00 Euro",
@@ -5894,7 +6076,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "3e08da11-66d2-4b00-a13c-3d9697fac024",
       "weightClassId": "-83",
-      "athleteGroupId": "54a39763-eac8-4a9f-8f04-2e6dec99f1ad"
+      "athleteGroupId": "54a39763-eac8-4a9f-8f04-2e6dec99f1ad",
+      "nextAttemptsSortKeys": {}
     },
     {
       "ageClassId": "ak4",
@@ -5904,7 +6087,7 @@
       "gender": "MALE",
       "club": "AC Germania 1900 Aschaffenburg-Schweinheim",
       "birthday": "18.03.1938",
-      "total": 531,
+      "total": null,
       "norm": true,
       "lateRegistration": true,
       "price": "105,00 Euro",
@@ -5926,7 +6109,8 @@
       "eventId": "1fa310f9-be32-4e30-9e30-ae0e2e7f3a1a",
       "id": "b92f5850-687f-4fad-8ce0-fced679922d0",
       "weightClassId": "-59",
-      "athleteGroupId": "a5022db8-ab7f-42e4-a599-9d74a526f7e3"
+      "athleteGroupId": "a5022db8-ab7f-42e4-a599-9d74a526f7e3",
+      "nextAttemptsSortKeys": {}
     }
   ],
   "slots": [
@@ -23148,6 +23332,28 @@
       "id": "jugend",
       "name": "Jugend",
       "sortId": 960
+    }
+  ],
+  "officials": [],
+  "officialSlots": [],
+  "users": [
+    {
+      "id": "ddab8ead-989b-4c33-b473-e2af70e509c3",
+      "role": "admin",
+      "username": "admin",
+      "authInfo": {
+        "passwordHash": "b9a220bf329b3c4d79417707037e0eb00a7435cb3129fb7cf30d661b52896ae64919ba07967168f3cb4429defdff313a8ed044dc7e5b0f454a243021e9f05462",
+        "salt": "7c8bb"
+      }
+    },
+    {
+      "id": "e49ad3e6-4fb7-4762-a854-4d9cf3e9b7ad",
+      "role": "guest",
+      "username": "guest",
+      "authInfo": {
+        "passwordHash": "9a9c119001af2840119410802879da73b3de8b28bca0a10ca41785c4cbdbf5f4f698690b09feaea697c916be1b0b45776e80668141733dfc3f6e57847410f7d0",
+        "salt": "c9593"
+      }
     }
   ]
 }
