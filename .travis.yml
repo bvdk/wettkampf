@@ -10,12 +10,12 @@ before_install:
   - npm i -g npm
 
 install:
-  - cd backend && npm i
-  - cd frontend && npm i
+  - cd backend && npm i && cd ..
+  - cd frontend && npm i && cd ..
 
 before_script:
-  - cd backend && npm run build
-  - cd frontend && npm run build
+  - cd backend && npm run build && cd ..
+  - cd frontend && npm run build && cd ..
 
 script:
   - docker build -f docker/production/entry/Dockerfile -t bvdk2019/wettkampf/entry .
