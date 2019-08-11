@@ -25,6 +25,5 @@ yarn-error.log*
 ../.idea
 
 .env*
-dist
 .vscode
 *.log
