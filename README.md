@@ -12,3 +12,7 @@ then execute the following commands
 
     chmod +x install.sh
     ./install.sh
+
+when the script finished run
+
+    wget 

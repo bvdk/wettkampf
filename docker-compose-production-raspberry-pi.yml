@@ -2,15 +2,15 @@ version: '3'
 services:
   entry:
     container_name: entry
-    image: bvdk2019/entry
+    image: bvdk2019/entry:arm64v8-latest
     ports:
       - 80:80
   frontend:
     container_name: frontend
-    image: bvdk2019/frontend
+    image: bvdk2019/frontend:arm64v8-latest
   backend:
     container_name: backend
-    image: bvdk2019/backend
+    image: bvdk2019/backend:arm64v8-latest
     volumes:
       - /var/data/bvdk/db:/usr/src/app/db
     environment:
