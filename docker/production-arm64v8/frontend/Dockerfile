@@ -1,4 +1,4 @@
-FROM linuxserver/nginx:arm64v8-latest
+FROM nginx:alpine
 
-COPY ./docker/production-arm64v8/frontend/nginx.conf /config/default.conf
-COPY ./frontend/build /config/www
+COPY ./docker/production-arm64v8/frontend/nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./frontend/build /usr/share/nginx/html
