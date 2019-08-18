@@ -7,11 +7,8 @@ sudo apt-get -y install apt-transport-https ca-certificates software-properties-
 echo "start install docker";
 newgrp docker
 sudo groupadd docker
+sudo usermod -aG docker $USER;
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh;
-sudo usermod -aG docker pi;
-sudo curl https://download.docker.com/linux/raspbian/gpg;
-curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -;
-sudo add-apt-repository "deb https://download.docker.com/linux/raspbian/ $(lsb_release -cs) stable";
 
 echo "run docker";
 sudo docker run hello-world;
