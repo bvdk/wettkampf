@@ -1,7 +1,7 @@
 #! /bin/bash
 
 echo "start install dependencies";
-sudo apt-get update && sudo apt-get dist-upgrade;
+sudo apt-get update && sudo apt-get -y dist-upgrade;
 sudo apt-get -y install apt-transport-https ca-certificates software-properties-common;
 
 echo "start install docker";
