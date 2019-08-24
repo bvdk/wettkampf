@@ -18,4 +18,6 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh;
 
 sudo apt-get -y install docker-compose;
 
+echo "{ \"storage-driver\": \"devicemapper\" }" | sudo tee /etc/docker/daemon.json
+
 sudo reboot now;
