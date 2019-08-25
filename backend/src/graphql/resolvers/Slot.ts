@@ -1,17 +1,11 @@
 import  _ from "lodash";
-import {ArgsType, Field, FieldResolver, ID, Resolver, ResolverInterface, Root} from "type-graphql";
+import { FieldResolver, Resolver, ResolverInterface, Root} from "type-graphql";
 import {CollectionKeys} from "../../database";
 import {CrudAdapter} from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";
 import {AthleteGroup} from "../models/athleteGroup";
 import {Event} from "../models/event";
-import {OfficialSlot} from "../models/officialSlot";
 import {Slot} from "../models/slot";
-import {Args} from "type-graphql/dist/decorators/Args";
-import {Discipline} from "../models/discipline";
-import {findFieldsThatChangedTypeOnInputObjectTypes} from "graphql/utilities/findBreakingChanges";
-
-
 
 @Resolver((of) => Slot)
 export default class SlotResolver implements ResolverInterface<Slot> {
