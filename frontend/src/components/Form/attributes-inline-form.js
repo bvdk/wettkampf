@@ -73,20 +73,6 @@ const InnerPadding = styled.div`
   padding: 0 16px;
 `;
 
-// const transformField = (obj, arr = [], parent = '') => {
-//     if (!obj) return [];
-//     if (parent) parent = `${parent}.`;
-//     Object.keys(obj).forEach(key => {
-//         const fullKey = `${parent}${key}`;
-//         if (obj[key] && typeof obj[key] === 'object') {
-//             transformField(obj[key], arr, fullKey);
-//         } else {
-//             arr.push(fullKey);
-//         }
-//     });
-//     return arr;
-// };
-
 class AttributesInlineForm extends Component<Props, State> {
     static defaultProps = {
         layout: 'horizontal',
@@ -195,49 +181,6 @@ class AttributesInlineForm extends Component<Props, State> {
         collapsed: !this.state.collapsed,
     });
 
-    handleSubmitAttribute = (attribute) => {
-        this.setState(update(this.state, {
-            loadingAttributes: {$push: [attribute.index]}
-        }), () => {
-            this.handleSubmit(null, [attribute.index])
-                .then(() => {
-                    this.showSuccess(attribute.index)
-                })
-                .catch(() => {
-                    this.showError(attribute.index)
-                })
-                .finally(() => {
-                    this.setState(update(this.state, {
-                        loadingAttributes: {$splice: [[this.state.loadingAttributes.indexOf(attribute.index), 1]]}
-                    }))
-                })
-        })
-    };
-
-    showSuccess(index: string) {
-        this.setState(update(this.state, {
-            successAttributes: {$push: [index]}
-        }), () => {
-            setTimeout(() => {
-                this.setState(update(this.state, {
-                    successAttributes: {$splice: [[this.state.successAttributes.indexOf(index), 1]]}
-                }))
-            }, 1000)
-        })
-    }
-
-    showError(index: string) {
-        this.setState(update(this.state, {
-            errorAttributes: {$push: [index]}
-        }), () => {
-            setTimeout(() => {
-                this.setState(update(this.state, {
-                    errorAttributes: {$splice: [[this.state.errorAttributes.indexOf(index), 1]]}
-                }))
-            }, 1000)
-        })
-    }
-
     renderAttribute = (attribute, index) => {
         const {t, form, inline, customFormItemLayouts, readOnly, mutation, translateMutationOptions} = this.props;
         const formItemLayout = _.get(
@@ -269,8 +212,7 @@ class AttributesInlineForm extends Component<Props, State> {
         >
             {AttributeFormFactory.renderAttribute(attribute, form, t)}
         </FormItem>
-
-    }
+    };
 
     filterCategoryAttributes = (attributes, group) => attributes
         .filter(item => _.get(item, 'categories', [])
@@ -331,12 +273,11 @@ class AttributesInlineForm extends Component<Props, State> {
 
     render() {
         let {attributes} = this.props;
-        const {layout, t, inline, useSubmit, form} = this.props;
-
         if (!attributes || !attributes.length) {
             return <Error t="No Attributes defined"/>
         }
 
+        const {layout, t, inline, useSubmit, form} = this.props;
         const {submitting} = this.state;
 
         if (this.props.collapse && this.state.collapsed) {
@@ -376,15 +317,14 @@ class AttributesInlineForm extends Component<Props, State> {
                             {this.props.submitTitle ? this.props.submitTitle : 'Speichern'}
                         </Button>
                     </FormItem> :
-                        this.props.collapse ?
-                            <button
-                                className="link-button"
-                                style={{display: 'inline-block', padding: Sizes.grid}}
-                                onClick={this._toggleCollapse}>
-                                {t(this.state.collapsed ? 'Display more' : 'Display less')}
-                            </button> : null
+                    this.props.collapse ?
+                        <button
+                            className="link-button"
+                            style={{display: 'inline-block', padding: Sizes.grid}}
+                            onClick={this._toggleCollapse}>
+                            {t(this.state.collapsed ? 'Display more' : 'Display less')}
+                        </button> : null
                 }
-
             </Form>
         </div>;
     }

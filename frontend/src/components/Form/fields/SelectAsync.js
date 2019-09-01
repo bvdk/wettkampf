@@ -76,7 +76,7 @@ class SelectAsync extends Component<Props> {
     });
 
     onChange = (value) => {
-        if (this.selectedValue === value) {
+        if (this.selectedValue !== value) {
             this.triggerChange(value);
         } else {
             this.triggerChange(undefined);

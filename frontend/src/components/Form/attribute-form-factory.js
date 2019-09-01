@@ -49,7 +49,6 @@ class FormFactory {
             ...attribute.config
         };
 
-        console.log(attribute)
         switch (attribute.entityType) {
             case 'enum': {
                 config.showSearch = true;
@@ -464,21 +463,18 @@ class FormFactory {
                                 ))}
                             </Select>
                     ),
-                )
-
-
+                );
                 break;
             }
 
             case 'table': {
-
                 result = getFieldDecorator(attribute.index, {
                     rules
                 })(
                     <EditTable
                         columns={[]}
                     />
-                )
+                );
                 break;
             }
 
@@ -492,7 +488,6 @@ class FormFactory {
                     />
                 );
                 break;
-
             }
 
             case 'file': {
@@ -645,9 +640,7 @@ class FormFactory {
             default: {
                 result = <OneLineLabel>{value}</OneLineLabel>
             }
-
         }
-
         return result;
     }
 }

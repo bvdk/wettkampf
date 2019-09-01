@@ -28,21 +28,19 @@ class App extends Component {
 
     render() {
         return (
-          <PersistGate persistor={this.persistor}>
-              <Provider store={store}>
-                  <LocaleProvider locale={de_DE}>
-                      <AuthWrapper>
-                          <Layout>
-                              <Router>
-                                  <Routes />
-                              </Router>
-                          </Layout>
-                      </AuthWrapper>
-                  </LocaleProvider>
-              </Provider>
-          </PersistGate>
-
-
+            <PersistGate persistor={this.persistor}>
+                <Provider store={store}>
+                    <LocaleProvider locale={de_DE}>
+                        <AuthWrapper>
+                            <Layout>
+                                <Router>
+                                    <Routes/>
+                                </Router>
+                            </Layout>
+                        </AuthWrapper>
+                    </LocaleProvider>
+                </Provider>
+            </PersistGate>
         );
     }
 }
