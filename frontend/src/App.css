@@ -169,6 +169,11 @@
     flex-grow: 1;
 }
 
+.grow-size-overflow {
+    max-height: calc(100vh - 72px);
+    overflow-y: scroll;
+}
+
 .link-button {
   background-color: transparent;
   border: none;
