@@ -2,7 +2,6 @@
 import React, {Component} from 'react';
 import {Button, Col, Form, message, Row, Tabs} from "antd";
 import _ from "lodash";
-import update from 'immutability-helper';
 import styled from 'styled-components';
 import type {Attribute, AttributeValue, FormItemLayout} from "./../../types";
 import FormValueTranslator from "./form-value-translator";
