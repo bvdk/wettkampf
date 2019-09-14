@@ -22,10 +22,8 @@ import SlotsResolver from "./Slots";
 
 @Resolver((of) => Event)
 export default class EventResolver implements ResolverInterface<Event> {
-
-
     public getEventAthletes(eventId: string): Athlete[] {
-        return CrudAdapter.filter(Athlete.collectionKey, { eventId });
+        return CrudAdapter.filter(Athlete.collectionKey, {eventId});
     }
 
     public getEventAthleteGroups(eventId: string): AthleteGroup[] {
@@ -109,13 +107,13 @@ export default class EventResolver implements ResolverInterface<Event> {
         let result = [];
         let resultClassIds = [];
 
-        const resultClassId = _.chain(filterArgs.filters).find({ index: "resultClassId" }).get("value").value();
+        const resultClassId = _.chain(filterArgs.filters).find({index: "resultClassId"}).get("value").value();
 
         if (resultClassId) {
             resultClassIds.push(resultClassId);
         }
 
-        const slotId = _.chain(filterArgs.filters).find({ index: "slotId" }).get("value").value();
+        const slotId = _.chain(filterArgs.filters).find({index: "slotId"}).get("value").value();
 
         if (!resultClassIds.length && slotId) {
             const slotsResolver = new SlotsResolver();
@@ -157,30 +155,22 @@ export default class EventResolver implements ResolverInterface<Event> {
 
     @FieldResolver()
     public athleteGroups(@Root() event: Event) {
-
-        // const slots = this.slots(event);
-        // const athleteGroups = _.chain(slots)
-        //     .map((slot: Slot) => CrudAdapter.filter(AthleteGroup.collectionKey, { slotId: slot.id }))
-        //     .flatten()
-        //     .value();
-
         return this.getEventAthleteGroups(event.id);
     }
 
     @FieldResolver()
     public unsortedAthletes(
         @Root() event: Event,
-        @Args() { filters }: FilterArgs,
+        @Args() {filters}: FilterArgs,
     ) {
-
         const athleteGroupIds = _.chain(this.athleteGroups(event))
             .uniqBy("id")
             .map((item: AthleteGroup) => item.id)
             .value();
 
-        const atheltes = this.athletes(event);
+        const athletes = this.athletes(event);
 
-        const unsortedAthletes = _.filter(atheltes, (athlete) => {
+        const unsortedAthletes = _.filter(athletes, (athlete) => {
             return athleteGroupIds.indexOf(athlete.athleteGroupId) === -1;
         });
 
