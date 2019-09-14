@@ -20,6 +20,6 @@ export default compose(
     },
   }),
   mapProps((props) => ({
-    slot: _.get(props,'slotQuery.slot'),
+    slot: _.get(props,'slotQuery.Slot'),
   }))
 )(SlotBreadcrumb);

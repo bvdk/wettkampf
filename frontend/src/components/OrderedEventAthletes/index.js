@@ -8,9 +8,9 @@ import { Button, Icon, Modal } from 'antd';
 import { withNamespaces } from 'react-i18next';
 import Toolbar from '../Toolbar';
 import waitWhileLoading from '../../hoc/waitWhileLoading';
-import EventAthletePointsCalcButton from '../EventAthletePointsCalcButton';
+import EventAthletePointsCalcButton from '../Event/AthletePointsCalcButton';
 import Bold from '../Bold';
-import SlotAthleteGroupActivationForm from '../SlotAthleteGroupActivationForm';
+import SlotAthleteGroupActivationForm from '../Slot/AthleteGroupActivationForm';
 
 const EventAttemptsQuery = loader(
   '../../graphql/queries/nextSlotAthletes.graphql'

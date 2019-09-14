@@ -216,10 +216,10 @@ class AthletesTable extends Component<Props, State> {
       },
       {
       title: 'Bühne',
-      dataIndex: 'athleteGroup.slot.name',
-      key: 'athleteGroup.slot.name',
-        filters: defaultFilter('slot.id', 'slot', 'id', 'name', athletes),
-        onFilter: defaultOnFilter('slot.id'),
+      dataIndex: 'athleteGroup.Slot.name',
+      key: 'athleteGroup.Slot.name',
+        filters: defaultFilter('Slot.id', 'slot', 'id', 'name', athletes),
+        onFilter: defaultOnFilter('Slot.id'),
       // filters: [{
       //   text: 'Ohne Zuteilung',
       //   value: false,
@@ -230,10 +230,10 @@ class AthletesTable extends Component<Props, State> {
       // filterMultiple: false,
       // onFilter: (value, record) => {
       //   const boolValue = value === "true" ? true : value === "false" ? false : null;
-      //   return boolValue ? !!_.get(record,'slot') : !_.get(record,'slot');
+      //   return boolValue ? !!_.get(record,'Slot') : !_.get(record,'Slot');
       // },
-      render: (text, record) => _.get(record,'slot') ? _.get(record,'slot.name') : <DangerLabel>Keine Bühne zugeweisen</DangerLabel>,
-      sorter: (a, b) => defaultSorter(a, b, 'slot.name')
+      render: (text, record) => _.get(record,'slot') ? _.get(record,'Slot.name') : <DangerLabel>Keine Bühne zugeweisen</DangerLabel>,
+      sorter: (a, b) => defaultSorter(a, b, 'Slot.name')
     }
     ]
         .filter( item => hideKeys.indexOf(item.dataIndex) === -1)

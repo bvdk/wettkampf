@@ -1,26 +1,24 @@
 // @flow
-import React, {Component} from "react"
-import PropTypes from "prop-types"
+import React from 'react';
 
-class ColorBar extends Component {
+type Props = {
+  color: string,
+  height: number
+};
 
-    static propTypes = {
-      color: PropTypes.string,
-      height: PropTypes.number
-    };
+const ColorBar = ({ height, color }: Props) => (
+  <div
+    style={{
+      height,
+      width: '100%',
+      backgroundColor: color
+    }}
+  />
+);
 
-  static defaultProps = {
-    color: '#033b77',
-    height: 2
-  };
-
-
-    render(){
-        return <div style={{height: this.props.height, width: '100%', backgroundColor: this.props.color}}>
-
-        </div>;
-    }
-
-}
+ColorBar.defaultProps = {
+  color: '#033b77',
+  height: 2
+};
 
 export default ColorBar;
