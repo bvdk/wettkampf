@@ -5,7 +5,7 @@ import { compose, graphql } from 'react-apollo';
 import { mapProps } from 'recompose';
 import _ from 'lodash';
 import { loader } from 'graphql.macro';
-import { Button, Col, Row } from 'antd';
+import { Col, Row } from 'antd';
 import { connect } from 'react-redux';
 import EventResults from '../Results';
 import EventResultsToolbar from '../ResultsToolbar';
@@ -51,18 +51,6 @@ class EventResultsRoute extends Component<Props, {}> {
             availableDisciplines={availableDisciplines}
             eventId={eventId}
             params={tmpParams}
-            renderRight={() =>
-              this.props.collapsed ? (
-                <Button
-                  style={{ marginLeft: 8 }}
-                  onClick={this._toggleCollapse}
-                  icon={'menu-fold'}>
-                  {this.props.collapsed
-                    ? 'Reihenfolge einblenden'
-                    : 'Reihenfolge ausblenden'}
-                </Button>
-              ) : null
-            }
           />
           <hr />
           <EventResults
