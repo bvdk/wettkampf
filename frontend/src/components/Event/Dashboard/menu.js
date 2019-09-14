@@ -22,14 +22,17 @@ class EventMenu extends Component<Props> {
     return (
       <Fragment>
         <Header className="event-header">
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Icon type="trophy" />
-            <OneLineLabel maxWidth={150}>
-              <span style={{ padding: '0 10px', fontWeight: 700 }}>
-                {_.get(eventNameQuery, 'event.name')}
-              </span>
-            </OneLineLabel>
-          </div>
+          <Link to="/events">
+            <div
+              style={{ display: 'flex', alignItems: 'center', color: 'white' }}>
+              <Icon type="trophy" />
+              <OneLineLabel maxWidth={150}>
+                <span style={{ padding: '0 10px', fontWeight: 700 }}>
+                  {_.get(eventNameQuery, 'event.name')}
+                </span>
+              </OneLineLabel>
+            </div>
+          </Link>
         </Header>
         <Menu
           style={{ minWidth: 200 }}
