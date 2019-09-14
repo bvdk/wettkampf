@@ -5,13 +5,11 @@ import { compose, graphql } from 'react-apollo';
 import { mapProps } from 'recompose';
 import _ from 'lodash';
 import { loader } from 'graphql.macro';
-import { Button, Col, Empty, Row } from 'antd';
+import { Button, Col, Row } from 'antd';
 import { connect } from 'react-redux';
 import EventResults from '../Results';
 import EventResultsToolbar from '../ResultsToolbar';
 import { setSetting } from '../../../redux/actions/settings';
-import OrderedEventAthletes from '../../../components/OrderedEventAthletes';
-import Toolbar from '../../../components/Toolbar';
 
 const EventDisciplinesQuery = loader(
   '../../../graphql/queries/eventDisciplines.graphql'
@@ -19,15 +17,11 @@ const EventDisciplinesQuery = loader(
 
 type Props = {
   eventId: string,
-  isFullscreen: boolean,
-  collapsed: boolean
+  isFullscreen: boolean
 };
 
-type State = {};
-
-class EventResultsRoute extends Component<Props, State> {
+class EventResultsRoute extends Component<Props, {}> {
   _toggleCollapse = () => {
-    console.log(this.props);
     this.props.setCollapsed(!this.props.collapsed);
   };
 
@@ -40,8 +34,7 @@ class EventResultsRoute extends Component<Props, State> {
       queryParameters,
       eventId,
       availableDisciplines,
-      isFullscreen,
-      collapsed
+      isFullscreen
     } = this.props;
 
     const tmpParams = {
@@ -50,7 +43,7 @@ class EventResultsRoute extends Component<Props, State> {
 
     return (
       <Row>
-        <Col md={collapsed ? 24 : 18}>
+        <Col md={24}>
           <EventResultsToolbar
             showFullscreen={!isFullscreen}
             showExport={!isFullscreen}
@@ -78,26 +71,6 @@ class EventResultsRoute extends Component<Props, State> {
             eventId={eventId}
           />
         </Col>
-        {!collapsed ? (
-          <Col md={6}>
-            <Toolbar
-              style={{ paddingTop: 12, paddingBottom: 12 }}
-              renderLeft={() => <h3>Nächste Athleten</h3>}
-              renderRight={() => (
-                <Button onClick={this._toggleCollapse} icon={'close'} />
-              )}
-            />
-            <hr />
-            {tmpParams.slotId ? (
-              <OrderedEventAthletes
-                highlightFirstAthlete
-                slotId={tmpParams.slotId}
-              />
-            ) : (
-              <Empty description={'Keine Bühne gewählt'} />
-            )}
-          </Col>
-        ) : null}
       </Row>
     );
   }
