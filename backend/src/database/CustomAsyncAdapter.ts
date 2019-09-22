@@ -1,7 +1,6 @@
 import * as fs from "fs";
-import * as _ from 'lodash';
+import * as _ from "lodash";
 import Base from "lowdb/adapters/Base";
-
 
 export default class CustomFileAsync extends Base {
   public lastWrite = null;
@@ -15,19 +14,8 @@ export default class CustomFileAsync extends Base {
 
     this.writeDebounce = _.debounce((data: any) => {
       fs.writeFile(this.source, this.serialize(data), () => true);
-  }, 1000);
-
-
+    }, 1000);
   }
-
-  private deserialize(data) {
-    super.deserialize(data);
-  }
-
-  private serialize(data) {
-    super.serialize(data);
-  }
-
 
   public read() {
     // fs.exists is deprecated but not fs.existsSync
@@ -52,6 +40,14 @@ export default class CustomFileAsync extends Base {
 
   public write(data) {
     this.writeDebounce(data);
+  }
+
+  private deserialize(data) {
+    super.deserialize(data);
+  }
+
+  private serialize(data) {
+    super.serialize(data);
   }
 }
 

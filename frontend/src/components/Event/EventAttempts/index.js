@@ -31,6 +31,7 @@ class EventAttempts extends Component<Props, State> {
       filterParams
     } = this.props;
 
+
     return (
       <AttemptsTable
         highlightFirstAthlete

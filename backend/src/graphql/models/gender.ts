@@ -1,18 +1,19 @@
-import {registerEnumType} from "type-graphql";
-import {Discipline} from "./discipline";
+import { registerEnumType } from "type-graphql";
 
 export enum Gender {
-    MALE = "MALE",
-    FEMALE = "FEMALE",
+  MALE = "MALE",
+  FEMALE = "FEMALE"
 }
 
 export function getDescriptionForGender(gender: Gender) {
-    switch (gender) {
-        case Gender.MALE: return "Männer";
-        case Gender.FEMALE: return "Frauen";
-    }
+  switch (gender) {
+    case Gender.MALE:
+      return "Männer";
+    case Gender.FEMALE:
+      return "Frauen";
+  }
 }
 
 registerEnumType(Gender, {
-    name: "Gender",
+  name: "Gender"
 });

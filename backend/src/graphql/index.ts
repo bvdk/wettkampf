@@ -1,6 +1,6 @@
 import path from "path";
 import "reflect-metadata";
-import {buildSchema} from "type-graphql";
+import { buildSchema } from "type-graphql";
 import AgeClasses from "./resolvers/AgeClasses";
 import AthleteResolver from "./resolvers/Athlete";
 import AthleteGroupResolver from "./resolvers/AthleteGroup";
@@ -21,30 +21,29 @@ import SystemsResolver from "./resolvers/Systems";
 import WeightClass from "./resolvers/WeightClass";
 import WeightClasses from "./resolvers/WeightClasses";
 
-// @ts-ignore
 const schema = buildSchema({
-    emitSchemaFile: path.resolve(__dirname, "schema.gql"),
-    resolvers: [
-        EventsResolver,
-        EventResolver,
-        AthletesResolver,
-        AthleteGroupResolver,
-        AthleteGroupsResolver,
-        SlotsResolver,
-        SlotResolver,
-        AthleteResolver,
-        AttemptsResolver,
-        AttemptResolver,
-        WeightClass,
-        WeightClasses,
-        AgeClasses,
-        OfficialsResolver,
-        OfficialResolver,
-        OfficialSlotsResolver,
-        OfficialSlotResolver,
-        ResultClassResolver,
-        SystemsResolver,
-    ],
+  emitSchemaFile: path.resolve(__dirname, "schema.gql"),
+  resolvers: [
+    EventsResolver,
+    EventResolver,
+    AthletesResolver,
+    AthleteGroupResolver,
+    AthleteGroupsResolver,
+    SlotsResolver,
+    SlotResolver,
+    AthleteResolver,
+    AttemptsResolver,
+    AttemptResolver,
+    WeightClass,
+    WeightClasses,
+    AgeClasses,
+    OfficialsResolver,
+    OfficialResolver,
+    OfficialSlotsResolver,
+    OfficialSlotResolver,
+    ResultClassResolver,
+    SystemsResolver
+  ]
 });
 
 export default schema;

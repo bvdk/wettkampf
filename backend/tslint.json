@@ -1,25 +1,29 @@
 {
-  "extends": "tslint:recommended",
-
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "plugins": ["prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
-    "max-line-length": {
-      "options": [120]
-    },
-    "ordered-imports": true,
-    "member-ordering": false,
+    "prettier": true,
     "new-parens": true,
     "no-arg": true,
     "no-bitwise": true,
     "no-conditional-assignment": true,
     "no-consecutive-blank-lines": false,
+    "object-literal-sort-keys": false,
     "no-console": {
       "severity": "warning",
-      "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
-    }
+      "options": [
+        "debug",
+        "info",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
+    },
+    "interface-name": false
   },
-  "jsRules": {
-    "max-line-length": {
-      "options": [120]
-    }
-  }
+  "jsRules": {}
 }

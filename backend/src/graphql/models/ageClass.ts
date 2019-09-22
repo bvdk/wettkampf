@@ -1,21 +1,19 @@
 import "reflect-metadata";
-import {Field, ID, InputType, ObjectType} from "type-graphql";
+import { Field, ID, InputType, ObjectType } from "type-graphql";
 
 @ObjectType()
 export class AgeClass {
-    public static collectionKey: string = "ageClasses";
+  public static collectionKey: string = "ageClasses";
 
-    @Field((type) => ID)
-    public id: string;
+  @Field(type => ID)
+  public id: string;
 
-    @Field()
-    public name: string;
+  @Field()
+  public name: string;
 }
 
 @InputType()
 export class AgeClassInput {
-
-    @Field()
-    public name: string;
-
+  @Field()
+  public name: string;
 }

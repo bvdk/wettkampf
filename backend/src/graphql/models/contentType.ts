@@ -1,11 +1,10 @@
-import {registerEnumType} from "type-graphql";
-import {Discipline} from "./discipline";
+import { registerEnumType } from "type-graphql";
 
 export enum ContestType {
-    SINGLE = "SINGLE",
-    TEAM = "TEAM",
+  SINGLE = "SINGLE",
+  TEAM = "TEAM"
 }
 
 registerEnumType(ContestType, {
-    name: "ContestType",
+  name: "ContestType"
 });
