@@ -1,27 +1,40 @@
 // @flow
 import React, { Component } from 'react';
-import _ from "lodash";
-import Colors from "../../styles/colors";
-import Bold from "../Bold"
+import _ from 'lodash';
+import Colors from '../../styles/colors';
+import Bold from '../Bold';
 
 type Props = {
-  attempt: any,
+  attempt: any
 };
 
-type State = {
-
-}
-
-class AttemptDisplayLabel extends Component<Props, State> {
-  componentDidMount() {}
-
+class AttemptDisplayLabel extends Component<Props, {}> {
   render() {
     const { attempt } = this.props;
 
-    const done = _.get(attempt,'done');
-    const valid = _.get(attempt,'valid');
-    return <Bold style={{color: done ? valid ? Colors.success : Colors.danger : null}}>{_.get(attempt,'weight')}</Bold>
+    const done = _.get(attempt, 'done');
+    const valid = _.get(attempt, 'valid');
+    const resign = _.get(attempt, 'resign');
 
+    let color = null;
+    if (resign) {
+      color = Colors.warning;
+    } else if (done) {
+      if (valid) {
+        color = Colors.success;
+      } else {
+        color = Colors.danger;
+      }
+    }
+
+    return (
+      <Bold
+        style={{
+          color
+        }}>
+        {_.get(attempt, 'weight')}
+      </Bold>
+    );
   }
 }
 

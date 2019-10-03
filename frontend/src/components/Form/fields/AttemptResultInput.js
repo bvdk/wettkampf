@@ -95,7 +95,7 @@ class AttemptResultInput extends Component<Props, State> {
         </Option>
         <Option value="resign">
           <Tooltip placement="left" title="Versuch verzichtet">
-            <Icon style={{ color: Colors.danger }} type="forward" />
+            <Icon style={{ color: Colors.warning }} type="forward" />
           </Tooltip>
         </Option>
       </Select>
