@@ -6,7 +6,7 @@ sudo apt-get -y install apt-transport-https ca-certificates software-properties-
 
 echo "start install docker";
 curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh;
-sudo usermod -aG docker pi;
+sudo usermod -aG docker $USER;
 sudo curl https://download.docker.com/linux/raspbian/gpg;
 curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -;
 sudo add-apt-repository "deb https://download.docker.com/linux/raspbian/ $(lsb_release -cs) stable";
