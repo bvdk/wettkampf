@@ -4,5 +4,6 @@ mutation createAttempt($athleteId: ID!, $data: AttemptInput!, $discipline: Disci
         done
         valid
         weight
+        resign
     }
 }

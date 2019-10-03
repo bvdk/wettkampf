@@ -143,6 +143,7 @@ type Attempt {
   weight: Float
   valid: Boolean!
   done: Boolean!
+  resign: Boolean!
   date: DateTime!
   discipline: Discipline!
   index: Int!
@@ -153,6 +154,7 @@ input AttemptInput {
   weight: Float
   valid: Boolean
   done: Boolean
+  resign: Boolean
   date: DateTime
   raw: Boolean
 }
@@ -161,6 +163,7 @@ input AttemptUpdateInput {
   weight: Float
   valid: Boolean
   done: Boolean
+  resign: Boolean
   date: DateTime
   raw: Boolean
 }

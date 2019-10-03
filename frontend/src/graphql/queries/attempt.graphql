@@ -3,6 +3,7 @@ query attempt($id: ID!) {
         id
         valid
         weight
+        resign
         done
     }
 }

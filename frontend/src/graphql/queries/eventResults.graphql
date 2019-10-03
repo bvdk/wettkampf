@@ -24,6 +24,7 @@ query eventResults($eventId: ID!, $filters: [FilterInput!]) {
                 id
                 weight
                 done
+                resign
                 discipline
                 valid
             }
@@ -34,6 +35,7 @@ query eventResults($eventId: ID!, $filters: [FilterInput!]) {
                 weight
                 done
                 index
+                resign
             }
         }
     }

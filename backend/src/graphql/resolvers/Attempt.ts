@@ -19,6 +19,11 @@ export default class AttemptResolver implements ResolverInterface<Attempt> {
   }
 
   @FieldResolver()
+  public resign(@Root() attempt: Attempt) {
+    return !!attempt.resign;
+  }
+
+  @FieldResolver()
   public date(@Root() attempt: Attempt) {
     return new Date(attempt.date);
   }

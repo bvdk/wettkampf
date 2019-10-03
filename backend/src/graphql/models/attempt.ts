@@ -22,6 +22,9 @@ export class Attempt {
   public done?: boolean;
 
   @Field()
+  public resign?: boolean;
+
+  @Field()
   public date: Date;
 
   @Field(type => Discipline)
@@ -44,6 +47,9 @@ export class AttemptInput implements Partial<Attempt> {
 
   @Field({ nullable: true })
   public done?: boolean;
+
+  @Field({ nullable: true })
+  public resign?: boolean;
 
   @Field({ nullable: true })
   public date?: Date;

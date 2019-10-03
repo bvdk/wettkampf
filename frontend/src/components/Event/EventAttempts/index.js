@@ -19,7 +19,7 @@ const EventAttemptsQuery = loader(
 );
 
 class EventAttempts extends Component<Props, State> {
-  _handleAttemptChange = res => {
+  _handleAttemptChange = () => {
     this.props.eventAttemptsQuery.refetch();
   };
 
@@ -30,7 +30,6 @@ class EventAttempts extends Component<Props, State> {
       loading,
       filterParams
     } = this.props;
-
 
     return (
       <AttemptsTable

@@ -34,6 +34,7 @@ query nextSlotAthletes($slotId: ID!) {
                 done
                 discipline
                 valid
+                resign
             }
             attempts {
                 discipline
@@ -42,6 +43,7 @@ query nextSlotAthletes($slotId: ID!) {
                 weight
                 done
                 index
+                resign
             }
             resultClass {
                 id

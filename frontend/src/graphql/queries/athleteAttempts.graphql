@@ -17,6 +17,7 @@ query athelteAttempts($id: ID!){
             index
             weight
             done
+            resign
             valid
         }
     }

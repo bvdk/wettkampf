@@ -296,7 +296,7 @@ class AttemptsTable extends Component<Props, State> {
               }
             : undefined
         }
-        size={'small'}
+        size="small"
         dataSource={this.getDataSource()} // dataSource={dataSource.length ? [_.first(dataSource)] : []}
         columns={columns}
         pagination={false}

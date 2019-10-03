@@ -3,6 +3,7 @@ mutation updateAttempt($attemptId: ID!, $data: AttemptUpdateInput!) {
         id
         done
         valid
+        resign
         weight
     }
 }

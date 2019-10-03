@@ -6372,9 +6372,7 @@
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "09642b9f-d8a3-4cb8-8377-f8dc8a9eaf2e",
-      "nextAttemptsSortKeys": {
-        "SQUAT": "1-100140"
-      },
+      "nextAttemptsSortKeys": {},
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
     {
@@ -6409,9 +6407,7 @@
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "4af008ba-4f32-42f0-a66e-cdc54749fca1",
-      "nextAttemptsSortKeys": {
-        "SQUAT": "1-100142"
-      },
+      "nextAttemptsSortKeys": {},
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
     {
@@ -25081,21 +25077,27 @@
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T08:40:39.775Z",
+      "date": "2019-10-03T09:36:32.608Z",
       "raw": false,
       "weight": 140,
       "index": 1,
       "athleteId": "09642b9f-d8a3-4cb8-8377-f8dc8a9eaf2e",
-      "id": "eaa2a1dc-aaf8-47b8-a867-f409191a2381"
+      "id": "eaa2a1dc-aaf8-47b8-a867-f409191a2381",
+      "valid": false,
+      "done": true,
+      "resign": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T08:40:53.804Z",
+      "date": "2019-10-03T09:35:32.599Z",
       "raw": false,
       "weight": 142,
       "index": 1,
       "athleteId": "4af008ba-4f32-42f0-a66e-cdc54749fca1",
-      "id": "386954b4-9eca-4d4b-8ff7-e911fb3b9cac"
+      "id": "386954b4-9eca-4d4b-8ff7-e911fb3b9cac",
+      "valid": false,
+      "done": true,
+      "resign": true
     },
     {
       "discipline": "SQUAT",
