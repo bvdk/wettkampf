@@ -1,11 +1,10 @@
-const Colors = {
-
+export default {
   backgroundGreyColor: '#f0f0f0',
   blue: {
     deep: 'rgb(0, 121, 191)',
     light: 'lightblue',
     lighter: '#d9fcff',
-    soft: '#E6FCFF',
+    soft: '#E6FCFF'
   },
   black: '#4d4d4d',
   shadow: 'rgba(0,0,0,0.2)',
@@ -17,13 +16,12 @@ const Colors = {
     light: '#c9cacc',
     N30: '#EBECF0',
     lighter: '#dfe0e2',
-    lightest: '#F4F5F7',
+    lightest: '#F4F5F7'
   },
   green: 'rgb(185, 244, 188)',
   white: 'white',
   purple: 'rebeccapurple',
   danger: 'red',
   success: 'green',
-}
-
-export default Colors;
+  warning: 'orange'
+};

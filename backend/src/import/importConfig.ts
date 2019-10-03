@@ -39,7 +39,7 @@ const toBool = value => {
   if (value === "false" || value === "Nein") {
     return true;
   }
-  return !!parseInt(value);
+  return !!parseInt(value, 10);
 };
 
 const getRawAthleteKeyMap = () => {
