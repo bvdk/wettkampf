@@ -199,7 +199,7 @@ class AttemptsTable extends Component<Props, State> {
       {
         dataIndex: 'points',
         title: 'Punkte',
-        render: (text, record) => <Bold>{text}</Bold>
+        render: text => <Bold>{text}</Bold>
       }
     ];
 
@@ -288,7 +288,7 @@ class AttemptsTable extends Component<Props, State> {
 
     return (
       <Table
-        rowKey={'id'}
+        rowKey="id"
         rowClassName={
           highlightFirstAthlete
             ? (record, index) => {

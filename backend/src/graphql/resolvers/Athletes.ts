@@ -131,29 +131,27 @@ export default class AthletesResolver {
       filters: [{ index: "resultClassId", value: [resultClassId] }]
     });
 
-    const result = _.chain(athletes)
+    _.chain(athletes)
       .filter(athlete => athlete.points)
       .orderBy(
-        ["total", "bodyweight", "latestBestAttemptsDate"],
+        ["total", "bodyWeight", "latestBestAttemptsDate"],
         ["desc", "asc", "asc"]
       )
-      .map((athlete, index) => {
-        return CrudAdapter.updateItem(this.collectionKey, athlete.id, {
+      .map((athlete, index) =>
+        CrudAdapter.updateItem(this.collectionKey, athlete.id, {
           place: index + 1
-        });
-      })
+        })
+      )
       .value();
 
     _.chain(athletes)
       .filter(athlete => !athlete.points)
-      .map((athlete, index) => {
-        return CrudAdapter.updateItem(this.collectionKey, athlete.id, {
+      .map(athlete =>
+        CrudAdapter.updateItem(this.collectionKey, athlete.id, {
           place: null
-        });
-      })
+        })
+      )
       .value();
-
-    return result;
   }
 
   private postUpdate(updateObject, athlete: Athlete) {

@@ -31,7 +31,6 @@ class AttemptResultInput extends Component<Props, State> {
 
   render() {
     let { value } = this.props;
-    console.log(value)
 
     if (!value) {
       value = {};
