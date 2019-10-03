@@ -17,13 +17,11 @@ type Props = {
 };
 
 type State = {
-  loading: boolean,
-  showModal: boolean
+  loading: boolean
 };
 
 class EventAthletePointsCalcButton extends Component<Props, State> {
   state = {
-    showModal: false,
     loading: false
   };
 
@@ -31,16 +29,6 @@ class EventAthletePointsCalcButton extends Component<Props, State> {
     this.setLoading(true)
       .then(this.props.autoCalcAthletePointsMutation)
       .then(() => this.setLoading(false));
-
-  handleMenuClick = () =>
-    this.setState({
-      showModal: true
-    });
-
-  hideModal = () =>
-    this.setState({
-      showModal: false
-    });
 
   setLoading = loading =>
     new Promise(resolve => this.setState({ loading }, resolve));
@@ -50,30 +38,9 @@ class EventAthletePointsCalcButton extends Component<Props, State> {
 
     return (
       <div>
-        <Button.Group>
-          <Button onClick={this.handleClick} loading={loading} icon={'reload'}>
-            Aktualisieren
-          </Button>
-          <Dropdown
-            overlay={
-              <Menu onClick={this.handleMenuClick}>
-                <Menu.Item key="1">
-                  Aktive Startgruppe / Disziplin ändern
-                </Menu.Item>
-              </Menu>
-            }>
-            <Button>
-              <Icon type="down" />
-            </Button>
-          </Dropdown>
-        </Button.Group>
-        <Modal
-          title={'Aktive Startgruppe und Disziplin ändern'}
-          visible={this.state.showModal}
-          onCancel={this.hideModal}
-          footer={null}>
-          <SlotAthleteGroupActivationForm slotId={this.props.slotId} />
-        </Modal>
+        <Button onClick={this.handleClick} loading={loading} icon={'reload'}>
+          Aktualisieren
+        </Button>
       </div>
     );
   }

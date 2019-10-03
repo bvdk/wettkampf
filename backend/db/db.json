@@ -6151,7 +6151,7 @@
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "75c8d715-d96d-41e0-a1f6-c75a995667fa",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100100"
+        "SQUAT": "1-100110"
       },
       "athleteGroupId": "bb58ef69-0e9a-4d39-a670-0189dd601295"
     },
@@ -6166,7 +6166,7 @@
       "gender": "FEMALE",
       "club": "SV 1919 Grimma Abt. Kraftsport",
       "birthday": "1993-11-03T00:00:00.000Z",
-      "total": null,
+      "total": 100,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6182,13 +6182,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 104.91029444093478,
+      "place": 3,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "a086a7ec-3c06-4a22-a0b4-953973d7c40f",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100100"
+        "SQUAT": "1-100150"
       },
       "athleteGroupId": "bb58ef69-0e9a-4d39-a670-0189dd601295"
     },
@@ -6203,7 +6203,7 @@
       "gender": "FEMALE",
       "club": "Kraft & Fitness Eilenburg",
       "birthday": "1989-03-27T00:00:00.000Z",
-      "total": null,
+      "total": 115,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6219,13 +6219,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 113.30335550376105,
+      "place": 2,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "3a170083-15b8-440b-943a-3c87d29763e9",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100115"
+        "SQUAT": "1-100145"
       },
       "athleteGroupId": "bb58ef69-0e9a-4d39-a670-0189dd601295"
     },
@@ -6240,7 +6240,7 @@
       "gender": "FEMALE",
       "club": "BSC Rapid Chemnitz",
       "birthday": "1989-06-15T00:00:00.000Z",
-      "total": null,
+      "total": 130,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6256,13 +6256,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 130.6294779831443,
+      "place": 1,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "6c294246-c13e-4bce-a2e9-c795676679d8",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100130"
+        "SQUAT": "1-100140"
       },
       "athleteGroupId": "bb58ef69-0e9a-4d39-a670-0189dd601295"
     },
@@ -6277,7 +6277,7 @@
       "gender": "FEMALE",
       "club": "BSC Rapid Chemnitz",
       "birthday": "1981-12-26T00:00:00.000Z",
-      "total": null,
+      "total": 100,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6293,13 +6293,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 112.95386012171792,
+      "place": 2,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "378b0e48-3292-4e62-bd79-144fb78e9fcc",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100100"
+        "SQUAT": "1-100140"
       },
       "athleteGroupId": "bb58ef69-0e9a-4d39-a670-0189dd601295"
     },
@@ -6314,7 +6314,7 @@
       "gender": "FEMALE",
       "club": "SV 1919 Grimma Abt. Kraftsport",
       "birthday": "1994-08-12T00:00:00.000Z",
-      "total": null,
+      "total": 120,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6330,13 +6330,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 132.08936828179685,
+      "place": 1,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "61cd5d10-e13c-4b3b-80f9-14e4b8f58182",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100120"
+        "SQUAT": "1-100130"
       },
       "athleteGroupId": "bb58ef69-0e9a-4d39-a670-0189dd601295"
     },
@@ -6351,7 +6351,7 @@
       "gender": "FEMALE",
       "club": "SV 1919 Grimma Abt. Kraftsport",
       "birthday": "1989-11-16T00:00:00.000Z",
-      "total": null,
+      "total": 100,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6367,13 +6367,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 91.50087716058079,
+      "place": 3,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "09642b9f-d8a3-4cb8-8377-f8dc8a9eaf2e",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100100"
+        "SQUAT": "1-100140"
       },
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
@@ -6388,7 +6388,7 @@
       "gender": "FEMALE",
       "club": "Riesear AC",
       "birthday": "1984-12-08T00:00:00.000Z",
-      "total": null,
+      "total": 120,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6404,13 +6404,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 109.05441424663093,
+      "place": 2,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "4af008ba-4f32-42f0-a66e-cdc54749fca1",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100120"
+        "SQUAT": "1-100142"
       },
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
@@ -6425,7 +6425,7 @@
       "gender": "FEMALE",
       "club": "SV 1919 Grimma Abt. Kraftsport",
       "birthday": "1987-02-11T00:00:00.000Z",
-      "total": null,
+      "total": 138,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6441,13 +6441,13 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 123.80843428901387,
+      "place": 1,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "7dd82843-2f2e-4f07-95e0-152ab06530eb",
       "nextAttemptsSortKeys": {
-        "SQUAT": "0-100138"
+        "SQUAT": "1-100150"
       },
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
@@ -6462,7 +6462,7 @@
       "gender": "FEMALE",
       "club": "SV 1919 Grimma Abt. Kraftsport",
       "birthday": "1999-02-17T00:00:00.000Z",
-      "total": null,
+      "total": 100,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6478,14 +6478,12 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 101.5255515506807,
+      "place": 3,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "d5211a04-8e7a-471d-8ad1-779a390a20a7",
-      "nextAttemptsSortKeys": {
-        "SQUAT": "0-100100"
-      },
+      "nextAttemptsSortKeys": {},
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
     {
@@ -6499,7 +6497,7 @@
       "gender": "FEMALE",
       "club": "USV TU Dresden",
       "birthday": "1998-02-13T00:00:00.000Z",
-      "total": null,
+      "total": 150,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6515,14 +6513,12 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 149.22648228117157,
+      "place": 2,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "2bc2c9ce-1427-4480-b94d-9d8f976df187",
-      "nextAttemptsSortKeys": {
-        "SQUAT": "0-100150"
-      },
+      "nextAttemptsSortKeys": {},
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
     {
@@ -6536,7 +6532,7 @@
       "gender": "FEMALE",
       "club": "BSC Rapid Chemnitz",
       "birthday": "1997-02-11T00:00:00.000Z",
-      "total": null,
+      "total": 180,
       "norm": true,
       "lateRegistration": true,
       "price": "12,00 Euro",
@@ -6552,14 +6548,12 @@
       "KH1": null,
       "KH2": null,
       "KH3": null,
-      "points": null,
-      "place": null,
+      "points": 177.344382527626,
+      "place": 1,
       "location": "Eilenburg",
       "eventId": "d9feb904-bad8-4d54-b0d4-aaeb6802d0e3",
       "id": "463d4591-b974-4cdf-8a7e-bb1a1cb1c352",
-      "nextAttemptsSortKeys": {
-        "SQUAT": "0-100180"
-      },
+      "nextAttemptsSortKeys": {},
       "athleteGroupId": "6918eb96-337e-4d16-9bfc-55915af34be8"
     },
     {
@@ -24955,111 +24949,216 @@
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:20:40.417Z",
+      "date": "2019-10-03T08:42:26.108Z",
       "raw": false,
       "weight": 100,
       "index": 0,
       "athleteId": "75c8d715-d96d-41e0-a1f6-c75a995667fa",
-      "id": "c8665b66-82c8-4244-a48a-378c0ee92e74"
+      "id": "c8665b66-82c8-4244-a48a-378c0ee92e74",
+      "valid": false,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:20:46.382Z",
+      "date": "2019-10-03T08:41:16.225Z",
       "raw": false,
       "weight": 100,
       "index": 0,
       "athleteId": "378b0e48-3292-4e62-bd79-144fb78e9fcc",
-      "id": "07ad58a5-fbe1-44d0-9bb4-1fced4e273c3"
+      "id": "07ad58a5-fbe1-44d0-9bb4-1fced4e273c3",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:20:52.429Z",
+      "date": "2019-10-03T08:41:20.424Z",
       "raw": false,
       "weight": 120,
       "index": 0,
       "athleteId": "61cd5d10-e13c-4b3b-80f9-14e4b8f58182",
-      "id": "e4336ccb-b70e-4d7e-9e16-6764da7b29ba"
+      "id": "e4336ccb-b70e-4d7e-9e16-6764da7b29ba",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:21:00.216Z",
+      "date": "2019-10-03T08:41:24.929Z",
       "raw": false,
       "weight": 100,
       "index": 0,
       "athleteId": "a086a7ec-3c06-4a22-a0b4-953973d7c40f",
-      "id": "7fd751b3-0baf-4bab-9be9-4de9bbd82cdd"
+      "id": "7fd751b3-0baf-4bab-9be9-4de9bbd82cdd",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:21:02.954Z",
+      "date": "2019-10-03T08:41:27.420Z",
       "raw": false,
       "weight": 115,
       "index": 0,
       "athleteId": "3a170083-15b8-440b-943a-3c87d29763e9",
-      "id": "8d1d1e64-1296-4f07-9090-1aa4ba6e5e92"
+      "id": "8d1d1e64-1296-4f07-9090-1aa4ba6e5e92",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:21:06.827Z",
+      "date": "2019-10-03T08:41:30.400Z",
       "raw": false,
       "weight": 130,
       "index": 0,
       "athleteId": "6c294246-c13e-4bce-a2e9-c795676679d8",
-      "id": "74766e8d-19fe-4085-88f9-f3e0edb545a7"
+      "id": "74766e8d-19fe-4085-88f9-f3e0edb545a7",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:37:09.480Z",
+      "date": "2019-10-03T08:39:54.039Z",
       "raw": false,
       "weight": 100,
       "index": 0,
       "athleteId": "09642b9f-d8a3-4cb8-8377-f8dc8a9eaf2e",
-      "id": "d8d21fed-57eb-41b8-8b09-4d60135052b4"
+      "id": "d8d21fed-57eb-41b8-8b09-4d60135052b4",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:37:15.620Z",
+      "date": "2019-10-03T08:39:57.348Z",
       "raw": false,
       "weight": 120,
       "index": 0,
       "athleteId": "4af008ba-4f32-42f0-a66e-cdc54749fca1",
-      "id": "3ba7257a-03df-41a1-b0f2-3ddafef83e12"
+      "id": "3ba7257a-03df-41a1-b0f2-3ddafef83e12",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:37:22.323Z",
+      "date": "2019-10-03T08:40:01.145Z",
       "raw": false,
       "weight": 138,
       "index": 0,
       "athleteId": "7dd82843-2f2e-4f07-95e0-152ab06530eb",
-      "id": "afe38d34-f999-4990-af69-0e83dbe2d114"
+      "id": "afe38d34-f999-4990-af69-0e83dbe2d114",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:37:27.289Z",
+      "date": "2019-10-03T08:40:07.374Z",
       "raw": false,
       "weight": 100,
       "index": 0,
       "athleteId": "d5211a04-8e7a-471d-8ad1-779a390a20a7",
-      "id": "ce4f7f68-aaf9-4b04-b134-c63081ee8b48"
+      "id": "ce4f7f68-aaf9-4b04-b134-c63081ee8b48",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:37:32.425Z",
+      "date": "2019-10-03T08:40:10.638Z",
       "raw": false,
       "weight": 150,
       "index": 0,
       "athleteId": "2bc2c9ce-1427-4480-b94d-9d8f976df187",
-      "id": "47b06206-4d23-41cf-9eae-d978bd559383"
+      "id": "47b06206-4d23-41cf-9eae-d978bd559383",
+      "valid": true,
+      "done": true
     },
     {
       "discipline": "SQUAT",
-      "date": "2019-10-03T07:37:36.762Z",
+      "date": "2019-10-03T08:40:13.715Z",
       "raw": false,
       "weight": 180,
       "index": 0,
       "athleteId": "463d4591-b974-4cdf-8a7e-bb1a1cb1c352",
-      "id": "3920e97a-73f7-48c1-9a94-96c1e5163e28"
+      "id": "3920e97a-73f7-48c1-9a94-96c1e5163e28",
+      "valid": true,
+      "done": true
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:40:39.775Z",
+      "raw": false,
+      "weight": 140,
+      "index": 1,
+      "athleteId": "09642b9f-d8a3-4cb8-8377-f8dc8a9eaf2e",
+      "id": "eaa2a1dc-aaf8-47b8-a867-f409191a2381"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:40:53.804Z",
+      "raw": false,
+      "weight": 142,
+      "index": 1,
+      "athleteId": "4af008ba-4f32-42f0-a66e-cdc54749fca1",
+      "id": "386954b4-9eca-4d4b-8ff7-e911fb3b9cac"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:40:57.837Z",
+      "raw": false,
+      "weight": 150,
+      "index": 1,
+      "athleteId": "7dd82843-2f2e-4f07-95e0-152ab06530eb",
+      "id": "9e49e29d-2915-481b-a1bd-c49bd9f7941c"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:44:01.665Z",
+      "raw": false,
+      "weight": 110,
+      "index": 1,
+      "athleteId": "75c8d715-d96d-41e0-a1f6-c75a995667fa",
+      "id": "1c6939f2-d25c-4e0d-a588-355df77bebc8"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:44:07.674Z",
+      "raw": false,
+      "weight": 130,
+      "index": 1,
+      "athleteId": "61cd5d10-e13c-4b3b-80f9-14e4b8f58182",
+      "id": "2a81d98e-f5b1-4c03-ba34-950061ec26c1"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:44:11.562Z",
+      "raw": false,
+      "weight": 140,
+      "index": 1,
+      "athleteId": "378b0e48-3292-4e62-bd79-144fb78e9fcc",
+      "id": "3e453ecf-f913-423d-ad53-9ca8979b34a3"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:44:19.763Z",
+      "raw": false,
+      "weight": 140,
+      "index": 1,
+      "athleteId": "6c294246-c13e-4bce-a2e9-c795676679d8",
+      "id": "70d3fcda-1232-4694-95a2-da237c2f4226"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:44:26.228Z",
+      "raw": false,
+      "weight": 145,
+      "index": 1,
+      "athleteId": "3a170083-15b8-440b-943a-3c87d29763e9",
+      "id": "7c2982ed-f702-4b61-a816-c26cce54c571"
+    },
+    {
+      "discipline": "SQUAT",
+      "date": "2019-10-03T08:44:36.120Z",
+      "raw": false,
+      "weight": 150,
+      "index": 1,
+      "athleteId": "a086a7ec-3c06-4a22-a0b4-953973d7c40f",
+      "id": "3de4c20f-5b75-4ae3-8b4e-cf2f638b097c"
     }
   ],
   "weightClasses": [

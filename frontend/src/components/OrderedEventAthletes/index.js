@@ -4,13 +4,11 @@ import { loader } from 'graphql.macro';
 import { compose, graphql } from 'react-apollo';
 import _ from 'lodash';
 import { withProps } from 'recompose';
-import { Button, Icon, Modal } from 'antd';
+import { Icon } from 'antd';
 import { withNamespaces } from 'react-i18next';
 import Toolbar from '../Toolbar';
 import waitWhileLoading from '../../hoc/waitWhileLoading';
 import EventAthletePointsCalcButton from '../Event/AthletePointsCalcButton';
-import Bold from '../Bold';
-import SlotAthleteGroupActivationForm from '../Slot/AthleteGroupActivationForm';
 
 const EventAttemptsQuery = loader(
   '../../graphql/queries/nextSlotAthletes.graphql'
@@ -21,70 +19,19 @@ type Props = {
   highlightFirstAthlete?: boolean
 };
 
-type State = {
-  showModal: boolean
-};
-
-class OrderedEventAthletes extends Component<Props, State> {
-  state = {
-    showModal: false
-  };
-
-  _hideModal = () =>
-    this.setState({
-      showModal: false
-    });
-
-  renderHeader() {
-    const { slot, t, discipline, activeAthleteGroup } = this.props;
-
-    if (!activeAthleteGroup || !discipline) {
-      let button = null;
-      const onClick = () => this.setState({ showModal: true });
-      if (!activeAthleteGroup) {
-        button = (
-          <Button onClick={onClick} type="danger">
-            Keine aktive Startgruppe
-          </Button>
-        );
-      } else if (!discipline) {
-        button = (
-          <Button onClick={onClick} type="danger">
-            Keine aktive Disziplin
-          </Button>
-        );
-      }
-      return <div>{button}</div>;
-    }
-
-    return (
-      <div className="link" onClick={() => this.setState({ showModal: true })}>
-        <Bold>{slot.name}:</Bold>{' '}
-        <span>{_.get(activeAthleteGroup, 'name')}</span> -{' '}
-        <span>{t(discipline)}</span>
-      </div>
-    );
-  }
-
+class OrderedEventAthletes extends Component<Props, {}> {
   render() {
     const { athletes, highlightFirstAthlete, discipline } = this.props;
     const style = { width: '25%', padding: 8 };
 
+    const athleteHelper = {};
+
     return (
       <div>
-        <Modal
-          title={'Aktive Startgruppe und Disziplin ändern'}
-          visible={this.state.showModal}
-          onCancel={this._hideModal}
-          onOk={this._hideModal}>
-          <SlotAthleteGroupActivationForm slotId={this.props.slotId} />
-        </Modal>
-
         <div className="ant-table-wrapper">
           <div className="ant-spin-nested-loading">
             <div className="ant-spin-container">
               <div className="ant-table ant-table-small ant-table-empty ant-table-scroll-position-left">
-                <div className="ant-table-title">{this.renderHeader()}</div>
                 <div className="ant-table-content">
                   <div
                     className="ant-table-body"
@@ -134,42 +81,44 @@ class OrderedEventAthletes extends Component<Props, State> {
                         style={{
                           display: 'block',
                           overflowY: 'scroll',
-                          maxHeight: 'calc(100vh - 300px)'
+                          maxHeight: 'calc(100vh - 246px)'
                         }}>
-                        {athletes.map((athlet, index) => {
+                        {athletes.map((athlete, index) => {
+                          const actualAttempt =
+                            athlete.attempts[athlete.attempts.length - 1];
+
+                          if (athleteHelper[athlete.id] === undefined) {
+                            athleteHelper[athlete.id] = actualAttempt.index;
+                          } else {
+                            athleteHelper[athlete.id] += 1;
+                          }
+
                           const indexColumnValue =
                             highlightFirstAthlete && index === 0 ? (
-                              <Icon type={'right'} />
+                              <Icon type="right" />
                             ) : (
                               index + 1
                             );
 
-                          let weight = _.chain(athlet)
-                            .get('nextAttempts')
-                            .filter({
-                              discipline
-                            })
-                            .first()
-                            .get('weight')
-                            .value();
-                          if (weight) {
-                            weight = `${weight} kg`;
+                          let weight = '';
+                          const attempt =
+                            athlete.attempts[athleteHelper[athlete.id]];
+                          if (attempt) {
+                            if (attempt.weight) {
+                              weight = `${attempt.weight} kg`;
+                            }
                           }
 
-                          let i = _.chain(athlet)
-                            .get('nextAttempts[0].index')
-                            .value();
-                          if (i < 3) {
-                            i += 1;
-                          }
-
-                          // active-athlete-row
                           return (
-                            <tr className="ant-table-row ant-table-row-level-0">
+                            <tr
+                              key={indexColumnValue}
+                              className="ant-table-row ant-table-row-level-0">
                               <td style={style}>{indexColumnValue}</td>
-                              <td style={style}>{athlet.name}</td>
+                              <td style={style}>{athlete.name}</td>
                               <td style={style}>{weight}</td>
-                              <td style={style}>{i}</td>
+                              <td style={style}>
+                                {(athleteHelper[athlete.id] % 3) + 1}
+                              </td>
                             </tr>
                           );
                         })}
