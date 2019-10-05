@@ -2,7 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
   user: null,
-  token: null,
+  token: null
 };
 
 const reducer = (state = initialState, action) => {

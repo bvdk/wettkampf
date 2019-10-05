@@ -1,5 +1,14 @@
 import _ from "lodash";
-import { FieldResolver, Resolver, ResolverInterface, Root } from "type-graphql";
+import {
+  Args,
+  Field,
+  FieldResolver,
+  ObjectType,
+  Resolver,
+  ResolverInterface,
+  Root,
+  Subscription
+} from "type-graphql";
 import { CollectionKeys } from "../../database";
 import { CrudAdapter } from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";
@@ -21,6 +30,12 @@ function* countTo(max) {
   while (index < max) {
     yield index++;
   }
+}
+
+@ObjectType()
+export class UpdateNotification {
+  @Field(type => Date)
+  public date: Date;
 }
 
 @Resolver(of => Slot)
@@ -188,5 +203,14 @@ export default class SlotResolver implements ResolverInterface<Slot> {
       })
       .flat()
       .slice(0, 50);
+  }
+
+  @Subscription(returns => UpdateNotification, {
+    topics: "UPDATE_NEXT_ATHLETE_NOTIFICATIONS"
+  })
+  public updateNextAthletesNotification(): UpdateNotification {
+    return {
+      date: new Date()
+    };
   }
 }

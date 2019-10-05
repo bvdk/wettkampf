@@ -23,6 +23,7 @@
   "dependencies": {
     "csvtojson": "2.0.8",
     "express-fileupload": "1.1.1-alpha.1",
+    "graphql-subscriptions": "1.1.0",
     "graphql-type-json": "0.2.1",
     "graphql-yoga": "1.17.4",
     "json2csv": "4.3.5",

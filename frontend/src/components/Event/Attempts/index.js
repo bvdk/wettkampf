@@ -16,6 +16,10 @@ const EventSlotsDisciplinesAthleteGroups = loader(
   '../../../graphql/queries/eventSlotsDisciplinesAthleteGroups.graphql'
 );
 
+const UpdateNextAthletesNotification = loader(
+  '../../../graphql/subscriptions/updateNextAthletesNotification.graphql'
+);
+
 type Props = {
   eventId: string
 };
@@ -45,7 +49,8 @@ class EventAttemptsRoute extends Component<Props, State> {
       eventId,
       athleteGroups,
       slots,
-      availableDisciplines
+      availableDisciplines,
+      orderedEventAthletesKey
     } = this.props;
     const { collapsed } = this.state;
 
@@ -94,6 +99,7 @@ class EventAttemptsRoute extends Component<Props, State> {
             />
             <hr />
             <OrderedEventAthletes
+              key={orderedEventAthletesKey}
               highlightFirstAthlete
               slotId={tmpParams.slotId}
             />
@@ -113,8 +119,16 @@ export default compose(
       }
     })
   }),
+  graphql(UpdateNextAthletesNotification, {
+    name: 'updateNextAthletesNotification'
+  }),
   waitWhileLoading('query'),
   mapProps(props => ({
+    orderedEventAthletesKey: _.get(
+      props,
+      'updateNextAthletesNotification.updateNextAthletesNotification.date',
+      null
+    ),
     loading: _.get(props, 'query.loading'),
     history: props.history,
     queryParameters: queryString.parse(_.get(props, 'history.location.search')),

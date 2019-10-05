@@ -4,13 +4,16 @@ import passport from "passport";
 import exportResultsCSVResolver from "./export/exportResultsCSV";
 import exportResultsPdfResolver from "./export/exportResultsPdf";
 import getSchema from "./graphql";
+import getPubSub from "./graphql/getPubSub";
 import importResolver from "./import";
 import PassportJSConfig from "./passport";
 
 const init = () =>
   getSchema.then(schema => {
+    const pubSub = getPubSub();
     const server = new GraphQLServer({
-      schema
+      schema,
+      context: { pubSub }
     });
 
     PassportJSConfig.init(server.express);

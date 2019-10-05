@@ -8,6 +8,8 @@ import {
   Field,
   ID,
   Mutation,
+  Publisher,
+  PubSub,
   Query,
   Resolver
 } from "type-graphql";
@@ -45,7 +47,8 @@ export default class AttemptsResolver {
   @Mutation()
   public createAttempt(
     @Args() { data, athleteId, discipline }: CreateAttemptArgs,
-    @Ctx() ctx: Context
+    @Ctx() ctx: Context,
+    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS") publish: Publisher<{}>
   ): Attempt {
     const athletesResolver = new AthletesResolver();
     const athlete = athletesResolver.athlete({ id: athleteId });
@@ -63,6 +66,7 @@ export default class AttemptsResolver {
 
     this.autoUpdateTotalAndPoints(athleteId);
 
+    publish({}).catch(e => console.error(e));
     return attempt;
   }
 
@@ -71,7 +75,8 @@ export default class AttemptsResolver {
     @Args() { id }: IdArgs,
     @Arg("data") data: AttemptUpdateInput,
     @Arg("skipAutoCalc", { nullable: true }) skipAutoCalc: boolean,
-    @Ctx() ctx: Context
+    @Ctx() ctx: Context,
+    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS") publish: Publisher<{}>
   ): Attempt {
     const updateData = {
       ...data
@@ -88,6 +93,7 @@ export default class AttemptsResolver {
     if (!skipAutoCalc) {
       this.autoUpdateTotalAndPoints(attempt.athleteId);
     }
+    publish({}).catch(e => console.error(e));
     return attempt;
   }
 
@@ -189,7 +195,8 @@ export default class AttemptsResolver {
   @Mutation()
   public simulateAttempts(
     @Args() { id }: IdArgs,
-    @Ctx() ctx: Context
+    @Ctx() ctx: Context,
+    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS") publish: Publisher<{}>
   ): boolean {
     const eventsResolver = new EventsResolver();
     const eventResolver = new EventResolver();
@@ -237,7 +244,8 @@ export default class AttemptsResolver {
                 },
                 discipline
               },
-              ctx
+              ctx,
+              publish
             );
           }
         }

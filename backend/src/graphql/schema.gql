@@ -415,10 +415,18 @@ input SortInput {
   direction: SortDirection
 }
 
+type Subscription {
+  updateNextAthletesNotification: UpdateNotification!
+}
+
 type System {
   id: ID!
   version: String!
   name: String!
+}
+
+type UpdateNotification {
+  date: DateTime!
 }
 
 type WeightClass {

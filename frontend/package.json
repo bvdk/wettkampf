@@ -12,6 +12,7 @@
     "apollo-link-context": "1.0.12",
     "apollo-link-error": "1.1.5",
     "apollo-link-http": "1.5.9",
+    "apollo-link-ws": "1.0.19",
     "axios": "0.18.1",
     "classnames": "2.2.6",
     "font-awesome": "4.7.0",
@@ -42,7 +43,8 @@
     "recompose": "0.30.0",
     "redux": "3.7.2",
     "redux-persist": "5.10.0",
-    "styled-components": "4.2.0"
+    "styled-components": "4.2.0",
+    "subscriptions-transport-ws": "0.9.16"
   },
   "scripts": {
     "start": "react-app-rewired start",

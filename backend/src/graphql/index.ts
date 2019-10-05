@@ -1,6 +1,7 @@
 import path from "path";
 import "reflect-metadata";
 import { buildSchema } from "type-graphql";
+import getPubSub from "./getPubSub";
 import AgeClasses from "./resolvers/AgeClasses";
 import AthleteResolver from "./resolvers/Athlete";
 import AthleteGroupResolver from "./resolvers/AthleteGroup";
@@ -21,7 +22,10 @@ import SystemsResolver from "./resolvers/Systems";
 import WeightClass from "./resolvers/WeightClass";
 import WeightClasses from "./resolvers/WeightClasses";
 
+const pubSub = getPubSub();
+
 const schema = buildSchema({
+  pubSub,
   emitSchemaFile: path.resolve(__dirname, "schema.gql"),
   resolvers: [
     EventsResolver,

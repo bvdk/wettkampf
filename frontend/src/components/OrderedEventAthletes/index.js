@@ -88,7 +88,11 @@ class OrderedEventAthletes extends Component<Props, {}> {
                             athlete.attempts[athlete.attempts.length - 1];
 
                           if (athleteHelper[athlete.id] === undefined) {
-                            athleteHelper[athlete.id] = actualAttempt.index;
+                            if (actualAttempt) {
+                              athleteHelper[athlete.id] = actualAttempt.index;
+                            } else {
+                              athleteHelper[athlete.id] = 0;
+                            }
                           } else {
                             athleteHelper[athlete.id] += 1;
                           }
