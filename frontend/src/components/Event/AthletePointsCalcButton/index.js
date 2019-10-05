@@ -1,9 +1,8 @@
 // @flow
 import React, { Component } from 'react';
-import { Button, Dropdown, Icon, Menu, Modal } from 'antd';
+import { Button } from 'antd';
 import { loader } from 'graphql.macro';
 import { graphql, compose } from 'react-apollo';
-import SlotAthleteGroupActivationForm from '../../Slot/AthleteGroupActivationForm';
 
 const AutoCalcAthletePointsMutation = loader(
   '../../../graphql/mutations/autoCalcEventAthletePoints.graphql'

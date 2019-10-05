@@ -21,7 +21,7 @@ type Props = {
 
 class OrderedEventAthletes extends Component<Props, {}> {
   render() {
-    const { athletes, highlightFirstAthlete, discipline } = this.props;
+    const { athletes, highlightFirstAthlete } = this.props;
     const style = { width: '25%', padding: 8 };
 
     const athleteHelper = {};
