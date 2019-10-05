@@ -1,3 +1,3 @@
 FROM haproxy:alpine
 
-COPY ./docker/production-amd64/entry/haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
+COPY ./docker/config/haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
