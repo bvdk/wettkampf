@@ -1,13 +1,13 @@
 import * as actionTypes from './actionTypes';
 
-export const login = ({user, token}) => ({
+export const login = ({ user, token }) => ({
   type: actionTypes.USER_LOGGED_IN,
   user,
-  token,
+  token
 });
 
 export function logout() {
   return {
-    type: actionTypes.USER_LOGGED_OUT,
+    type: actionTypes.USER_LOGGED_OUT
   };
 }

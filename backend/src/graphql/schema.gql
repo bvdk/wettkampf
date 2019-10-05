@@ -283,6 +283,7 @@ type Mutation {
   createOfficialSlot(slotId: ID!, officialId: ID!, input: OfficialSlotInput): OfficialSlot!
   updateOfficialSlot(input: OfficialSlotInput!, id: ID!): OfficialSlot!
   deleteOfficialSlot(id: ID!): OfficialSlot!
+  setEventID(eventId: String!): PublicConfig!
 }
 
 type Official {
@@ -317,6 +318,10 @@ type OfficialSlot {
 
 input OfficialSlotInput {
   position: String!
+}
+
+type PublicConfig {
+  eventId: String!
 }
 
 type Query {
@@ -417,6 +422,7 @@ input SortInput {
 
 type Subscription {
   updateNextAthletesNotification: UpdateNotification!
+  subscribePublicConfig: PublicConfig!
 }
 
 type System {
@@ -427,6 +433,11 @@ type System {
 
 type UpdateNotification {
   date: DateTime!
+  slotId: String!
+}
+
+type UpdateNotificationPayload {
+  slotId: String!
 }
 
 type WeightClass {

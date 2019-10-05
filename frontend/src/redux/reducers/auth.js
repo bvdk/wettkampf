@@ -8,10 +8,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.USER_LOGGED_IN:
-      return {
-        user: action.user,
-        token: action.token
-      };
+      return { ...action };
     case actionTypes.USER_LOGGED_OUT:
       return initialState;
     default:

@@ -15,10 +15,12 @@ import {
 } from "type-graphql";
 import { CrudAdapter } from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";
+import { AthleteGroup } from "../models/athleteGroup";
 import { Attempt, AttemptInput, AttemptUpdateInput } from "../models/attempt";
 import { Discipline } from "../models/discipline";
 import IdArgs from "./args/IdArgs";
 import AthleteResolver from "./Athlete";
+import AthleteGroupResolver from "./AthleteGroup";
 import AthletesResolver from "./Athletes";
 import EventResolver from "./Event";
 import EventsResolver from "./Events";
@@ -48,10 +50,15 @@ export default class AttemptsResolver {
   public createAttempt(
     @Args() { data, athleteId, discipline }: CreateAttemptArgs,
     @Ctx() ctx: Context,
-    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS") publish: Publisher<{}>
+    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS")
+    publish: Publisher<{ slotId: string }>
   ): Attempt {
     const athletesResolver = new AthletesResolver();
     const athlete = athletesResolver.athlete({ id: athleteId });
+    const athleteGroup = CrudAdapter.getItem(
+      AthleteGroup.collectionKey,
+      athlete.athleteGroupId
+    );
     const athleteResolver = new AthleteResolver();
     const existingAttempts = athleteResolver.getAttempts(athleteId, discipline);
 
@@ -66,7 +73,7 @@ export default class AttemptsResolver {
 
     this.autoUpdateTotalAndPoints(athleteId);
 
-    publish({}).catch(e => console.error(e));
+    publish({ slotId: athleteGroup.slotId }).catch(e => console.error(e));
     return attempt;
   }
 
@@ -76,7 +83,8 @@ export default class AttemptsResolver {
     @Arg("data") data: AttemptUpdateInput,
     @Arg("skipAutoCalc", { nullable: true }) skipAutoCalc: boolean,
     @Ctx() ctx: Context,
-    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS") publish: Publisher<{}>
+    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS")
+    publish: Publisher<{ slotId: string }>
   ): Attempt {
     const updateData = {
       ...data
@@ -90,10 +98,16 @@ export default class AttemptsResolver {
       id,
       updateData
     );
+    const athletesResolver = new AthletesResolver();
+    const athlete = athletesResolver.athlete({ id: attempt.athleteId });
+    const athleteGroup = CrudAdapter.getItem(
+      AthleteGroup.collectionKey,
+      athlete.athleteGroupId
+    );
     if (!skipAutoCalc) {
       this.autoUpdateTotalAndPoints(attempt.athleteId);
     }
-    publish({}).catch(e => console.error(e));
+    publish({ slotId: athleteGroup.slotId }).catch(e => console.error(e));
     return attempt;
   }
 
@@ -196,7 +210,8 @@ export default class AttemptsResolver {
   public simulateAttempts(
     @Args() { id }: IdArgs,
     @Ctx() ctx: Context,
-    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS") publish: Publisher<{}>
+    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS")
+    publish: Publisher<{ slotId: string }>
   ): boolean {
     const eventsResolver = new EventsResolver();
     const eventResolver = new EventResolver();

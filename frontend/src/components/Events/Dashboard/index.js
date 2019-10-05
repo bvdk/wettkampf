@@ -15,6 +15,9 @@ import waitWhileLoading from '../../../hoc/waitWhileLoading';
 import IfRole from '../../../hoc/ifRole';
 
 const EventsQuery = loader('../../../graphql/queries/events.graphql');
+const SetEventIdMutation = loader(
+  '../../../graphql/mutations/setEventIdMutation.graphql'
+);
 
 type Props = {
   events: Event[],
@@ -55,9 +58,17 @@ class EventsDashboard extends Component<Props, State> {
   };
 
   render() {
-    const { events, onClickEvent } = this.props;
+    const { events, onClickEvent, setEventIdMutation } = this.props;
     const { createModal } = this.state;
 
+    const onClick = event => {
+      setEventIdMutation({
+        variables: {
+          eventId: event.id
+        }
+      });
+      onClickEvent(event);
+    };
     return (
       <Wrapper>
         <Toolbar
@@ -74,7 +85,7 @@ class EventsDashboard extends Component<Props, State> {
             </IfRole>
           )}
         />
-        <EventTable onClick={onClickEvent} events={events} />
+        <EventTable onClick={onClick} events={events} />
         <Modal
           title="Neues Event"
           footer={false}
@@ -97,6 +108,9 @@ class EventsDashboard extends Component<Props, State> {
 export default compose(
   graphql(EventsQuery, {
     name: 'eventsQuery'
+  }),
+  graphql(SetEventIdMutation, {
+    name: 'setEventIdMutation'
   }),
   waitWhileLoading('eventsQuery'),
   withProps(props => ({

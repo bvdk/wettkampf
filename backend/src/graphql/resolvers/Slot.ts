@@ -1,6 +1,5 @@
 import _ from "lodash";
 import {
-  Args,
   Field,
   FieldResolver,
   ObjectType,
@@ -36,6 +35,15 @@ function* countTo(max) {
 export class UpdateNotification {
   @Field(type => Date)
   public date: Date;
+
+  @Field(type => String)
+  public slotId: string;
+}
+
+@ObjectType()
+export class UpdateNotificationPayload {
+  @Field(type => String)
+  public slotId: string;
 }
 
 @Resolver(of => Slot)
@@ -208,8 +216,12 @@ export default class SlotResolver implements ResolverInterface<Slot> {
   @Subscription(returns => UpdateNotification, {
     topics: "UPDATE_NEXT_ATHLETE_NOTIFICATIONS"
   })
-  public updateNextAthletesNotification(): UpdateNotification {
+  public updateNextAthletesNotification(
+    @Root() payload: UpdateNotificationPayload
+  ): UpdateNotification {
+    console.log(payload)
     return {
+      slotId: payload.slotId,
       date: new Date()
     };
   }

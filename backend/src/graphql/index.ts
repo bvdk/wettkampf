@@ -15,6 +15,7 @@ import OfficialResolver from "./resolvers/Official";
 import OfficialsResolver from "./resolvers/Officials";
 import OfficialSlotResolver from "./resolvers/OfficialSlot";
 import OfficialSlotsResolver from "./resolvers/OfficialSlots";
+import PublicResolver from "./resolvers/Public";
 import ResultClassResolver from "./resolvers/ResultClass";
 import SlotResolver from "./resolvers/Slot";
 import SlotsResolver from "./resolvers/Slots";
@@ -45,6 +46,7 @@ const schema = buildSchema({
     OfficialResolver,
     OfficialSlotsResolver,
     OfficialSlotResolver,
+    PublicResolver,
     ResultClassResolver,
     SystemsResolver
   ]
