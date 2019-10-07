@@ -36,7 +36,7 @@ export default class PublicResolver {
   ) {
     const publicConfig = getPublicConfigInstance();
     publicConfig.setEventId(eventId);
-    publish({}).catch(e => console.error(e));
+    publish({});
     return {
       eventId: publicConfig.getEventId()
     };

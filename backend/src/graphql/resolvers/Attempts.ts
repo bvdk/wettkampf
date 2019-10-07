@@ -20,7 +20,6 @@ import { Attempt, AttemptInput, AttemptUpdateInput } from "../models/attempt";
 import { Discipline } from "../models/discipline";
 import IdArgs from "./args/IdArgs";
 import AthleteResolver from "./Athlete";
-import AthleteGroupResolver from "./AthleteGroup";
 import AthletesResolver from "./Athletes";
 import EventResolver from "./Event";
 import EventsResolver from "./Events";
@@ -73,7 +72,7 @@ export default class AttemptsResolver {
 
     this.autoUpdateTotalAndPoints(athleteId);
 
-    publish({ slotId: athleteGroup.slotId }).catch(e => console.error(e));
+    publish({ slotId: athleteGroup.slotId });
     return attempt;
   }
 
@@ -107,7 +106,7 @@ export default class AttemptsResolver {
     if (!skipAutoCalc) {
       this.autoUpdateTotalAndPoints(attempt.athleteId);
     }
-    publish({ slotId: athleteGroup.slotId }).catch(e => console.error(e));
+    publish({ slotId: athleteGroup.slotId });
     return attempt;
   }
 

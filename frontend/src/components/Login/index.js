@@ -56,7 +56,7 @@ class Login extends Component<Props> {
           <img className="logo" alt="logo" src={logo} />
         </div>
         <RemoteForm
-          onSubmit={this.onSubmit}
+          onSubmit={v => this.onSubmit(v)}
           submitTitle="Login"
           fullWidthSubmit
           formConfig={LoginFormConfig}

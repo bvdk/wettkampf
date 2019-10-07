@@ -26,6 +26,7 @@ import WeightClasses from "./resolvers/WeightClasses";
 const pubSub = getPubSub();
 
 const schema = buildSchema({
+  // @ts-ignore
   pubSub,
   emitSchemaFile: path.resolve(__dirname, "schema.gql"),
   resolvers: [
