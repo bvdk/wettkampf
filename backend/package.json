@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@types/jest": "23.3.13",
+    "@types/lodash": "4.14.141",
     "graphql-cli": "2.17.0",
     "jest": "24.8.0",
     "nodemon": "1.18.9",

@@ -1,4 +1,4 @@
-import _ from "lodash";
+import { get, groupBy, orderBy, size } from "lodash";
 import {
   Field,
   FieldResolver,
@@ -50,7 +50,7 @@ export class UpdateNotificationPayload {
 export default class SlotResolver implements ResolverInterface<Slot> {
   @FieldResolver()
   public name(@Root() slot: Slot) {
-    const name = _.get(slot, "name");
+    const name = get(slot, "name");
     if (name) {
       return name;
     }
@@ -73,7 +73,7 @@ export default class SlotResolver implements ResolverInterface<Slot> {
   }
 
   @FieldResolver()
-  public athletes(@Root() slot: Slot) {
+  public athletes(@Root() slot: Slot): Athlete[] {
     const athleteGroupIds = this.athleteGroups(slot).map(item => item.id);
     return (
       CrudAdapter.filter(Athlete.collectionKey, athlete => {
@@ -84,7 +84,7 @@ export default class SlotResolver implements ResolverInterface<Slot> {
 
   @FieldResolver()
   public athleteCount(@Root() slot: Slot) {
-    return _.size(this.athletes(slot));
+    return size(this.athletes(slot));
   }
 
   @FieldResolver()
@@ -118,30 +118,25 @@ export default class SlotResolver implements ResolverInterface<Slot> {
     // At first every Athlete does 3 squats, then 3 benchpresses and then 3 deadlifts
     const disciplines = ["SQUAT", "BENCHPRESS", "DEADLIFT"];
 
-    const athletesData = _.chain(
-      this.athletes(slot).filter(athlete => athlete.bodyWeight !== null)
-    )
-      .orderBy([`nextAttemptsSortKeys.${slot.activeDiscipline}`, "ASC"])
-      .value();
-
-    const athleteGroupedAthletes: {
-      [athleteGroupId: string]: ExtendedAthlete[];
-    } = _.groupBy(athletesData, "athleteGroupId");
+    const athleteGroupedAthletes = groupBy(
+      this.athletes(slot).filter(athlete => athlete.bodyWeight !== null),
+      "athleteGroupId"
+    );
 
     return Object.entries(athleteGroupedAthletes)
       .map(entry => {
-        let athletes = entry[1];
+        let athletes = entry[1] as ExtendedAthlete[];
         athletes = athletes
           .map(athlete => {
-            const attempts = _.orderBy(
+            const attempts = orderBy(
               CrudAdapter.filter(Attempt.collectionKey, {
                 athleteId: athlete.id
               }),
-              ["discipline", "asc"],
-              ["index", "asc"]
+              ["discipline", "index"],
+              ["asc", "asc"]
             );
 
-            const disciplineAttempts = _.groupBy(attempts, "discipline");
+            const disciplineAttempts = groupBy(attempts, "discipline");
 
             return {
               ...athlete,
@@ -219,7 +214,7 @@ export default class SlotResolver implements ResolverInterface<Slot> {
   public updateNextAthletesNotification(
     @Root() payload: UpdateNotificationPayload
   ): UpdateNotification {
-    console.log(payload)
+    console.log(payload);
     return {
       slotId: payload.slotId,
       date: new Date()
