@@ -29,8 +29,8 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
   public getAttempts(athleteId: string, discipline?: Discipline) {
     const attempts = _.orderBy(
       CrudAdapter.filter(Attempt.collectionKey, { athleteId }),
-      ["discipline", "asc"],
-      ["index", "asc"]
+      ["discipline", "index"],
+      ["asc", "asc"]
     );
     if (discipline) {
       return _.filter(attempts, { discipline });
@@ -118,13 +118,13 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
     @Root() athlete: Athlete,
     @Arg("discipline", type => Discipline, { nullable: true })
     discipline?: Discipline
-  ) {
+  ): Attempt[] {
     return _.chain(this.attempts(athlete, discipline))
       .filter({
         valid: true
       })
       .groupBy("discipline")
-      .map((attempts, key) => {
+      .map(attempts => {
         return _.chain(attempts)
           .orderBy(["weight"], ["desc"])
           .first()

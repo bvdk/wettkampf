@@ -15,7 +15,7 @@ export class FilterInput {
     filters: FilterInput[]
   ): { [key: string]: any } => {
     return filters.reduce((acc: { [key: string]: any }, { value, index }) => {
-      let tmp = value;
+      let tmp: string | string[] = value;
       if (Array.isArray(tmp) && tmp.length === 1) {
         tmp = _.first(tmp);
       }

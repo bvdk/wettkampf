@@ -120,9 +120,10 @@ export default class EventResolver implements ResolverInterface<Event> {
       resultClassIds.push(resultClassId);
     }
 
-    const slotId = _.chain(filterArgs.filters)
+    const slotId: string = _.chain(filterArgs.filters)
       .find({ index: "slotId" })
       .get("value")
+      .first()
       .value();
 
     if (!resultClassIds.length && slotId) {

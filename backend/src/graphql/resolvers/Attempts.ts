@@ -172,6 +172,7 @@ export default class AttemptsResolver {
       updateData.total = points ? total : null;
       updateData.latestBestAttemptsDate = _.chain(bestAttempts)
         .orderBy(["date"], ["desc"])
+        .first()
         .get("date")
         .value();
     }

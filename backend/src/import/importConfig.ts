@@ -1,6 +1,7 @@
 import _ from "lodash";
 import moment from "moment";
 import { CrudAdapter } from "../database/CrudAdapter";
+import { Attempt } from "../graphql/models/attempt";
 import { Discipline } from "../graphql/models/discipline";
 import { WeightClass } from "../graphql/models/weightClass";
 
@@ -16,11 +17,11 @@ const toAttemptResult = value => {
 };
 
 const fromAttemptResult = (discipline: Discipline, i: number) => {
-  return value => {
+  return (value: Attempt[] | null | undefined) => {
     const attempts = value || [];
     const attempt = _.chain(attempts)
       .filter({ discipline })
-      .get(`[${i}]`)
+      .get(i)
       .value();
 
     if (!attempt) {

@@ -92,11 +92,10 @@ const getDisciplineColumns = (
         acc.push({
           dataIndex: iDataIndex,
           render: (text, record) => {
-            const attempt = _.chain(record)
+            const attempt = _(record)
               .get("attempts")
               .filter({ discipline: key })
-              .get(`[${i}]`)
-              .value();
+              .get(`[${i}]`);
 
             if (attempt && attempt.done) {
               return {
@@ -115,11 +114,10 @@ const getDisciplineColumns = (
     acc.push({
       dataIndex,
       render: (text, record) => {
-        const attempt = _.chain(record)
+        const attempt = _(record)
           .get("bestAttempts")
           .filter({ discipline: key })
-          .first()
-          .value();
+          .first();
 
         if (attempt && attempt.done) {
           return {
@@ -193,8 +191,8 @@ const getEventResultsDoc = eventId => {
   const athleteResolver = new AthleteResolver();
   const event = eventsResolver.event({ id: eventId });
   const athletes = eventResolver.athletes(event);
-  const groups = _.chain(athletes)
-    .filter((athlete: Athlete) => athlete.bodyWeight)
+  const groups = _(athletes)
+    .filter((athlete: Athlete) => !!athlete.bodyWeight)
     .groupBy(athlete => {
       const ageClass = ageClassResolver.ageClass({ id: athlete.ageClassId });
       return `${_.get(ageClass, "name")} ${getDescriptionForGender(
@@ -206,7 +204,7 @@ const getEventResultsDoc = eventId => {
   const columns = getColumns(eventResolver.availableDisciplines(event));
 
   const tables = _.chain(Object.keys(groups))
-    .filter(key => _.size(groups, key) > 0)
+    .filter(key => _.size(groups[key]) > 0)
     .sortBy(key => {
       const athlete = _.first(_.get(groups, key));
       const ageClassId = _.get(athlete, "ageClassId");

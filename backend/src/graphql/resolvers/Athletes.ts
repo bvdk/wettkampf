@@ -132,7 +132,7 @@ export default class AthletesResolver {
     });
 
     _.chain(athletes)
-      .filter(athlete => athlete.points)
+      .filter(athlete => !!athlete.points)
       .orderBy(
         ["total", "bodyWeight", "latestBestAttemptsDate"],
         ["desc", "asc", "asc"]
