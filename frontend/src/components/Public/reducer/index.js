@@ -6,9 +6,10 @@ export const ActionTypes = {
 export const getInitialState = props => ({
   ...props,
   publicConfig: {
-    eventId: null,
-    nextAthletes: []
-  }
+    eventId: null
+  },
+  nextAthletesUpdated: new Date(),
+  nextAthletes: {}
 });
 
 export const reducer = (state, action) => {
@@ -19,7 +20,11 @@ export const reducer = (state, action) => {
       break;
     }
     case ActionTypes.nextAthletes: {
-      nextState.nextAthletes = action.data;
+      nextState.nextAthletes = Object.assign(
+        nextState.nextAthletes,
+        action.data
+      );
+      nextState.nextAthletesUpdated = new Date();
       break;
     }
     default: {

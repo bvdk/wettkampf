@@ -31,6 +31,7 @@ const init = () =>
     return server.start(
       {
         endpoint: "/api/graphql",
+        subscriptions: "/api",
         playground: "/api/playground",
         port: 4000
       },

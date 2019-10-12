@@ -18,7 +18,7 @@ export default (token, dispatch) => {
 
   const httpLink = createHttpLink({ uri: '/api/graphql' });
   const wsLink = new WebSocketLink({
-    uri: `ws://${window.location.hostname}/`,
+    uri: `ws://${window.location.hostname}/api`,
     options: {
       reconnect: true,
       connectionParams: {
