@@ -1,6 +1,5 @@
 import React from 'react';
 import { Icon } from 'antd';
-import Toolbar from '../Toolbar';
 
 const NextAthletes = ({ athletes }) => {
   const athleteHelper = {};
