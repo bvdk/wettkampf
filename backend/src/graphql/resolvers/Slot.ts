@@ -181,9 +181,9 @@ export default class SlotResolver implements ResolverInterface<Slot> {
         const attemptAmount =
           disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
 
-        const iterator = countTo(attemptAmount);
+        const cumulatedAthletes: ExtendedAthlete[] = [];
 
-        const cumulatedAthletes = [];
+        const iterator = countTo(attemptAmount);
         for (const value of iterator) {
           cumulatedAthletes.push(...athletes);
         }
