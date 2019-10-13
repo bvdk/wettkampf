@@ -1,10 +1,12 @@
-FROM arm64v8/node:alpine
+FROM hypriot/rpi-node:slim
 
 WORKDIR /usr/src/app
 
-COPY ./docker/production-arm64v8/backend/cmd.sh ./cmd.sh
 COPY ./backend/package.json ./
+
+RUN npm install --only=production
+
 COPY ./backend/dist ./dist
 
 EXPOSE 4000
-CMD ./cmd.sh
+CMD node dist/start.js
