@@ -92,10 +92,8 @@ const getDisciplineColumns = (
         acc.push({
           dataIndex: iDataIndex,
           render: (text, record) => {
-            const attempt = _(record)
-              .get("attempts")
-              .filter({ discipline: key })
-              .get(`[${i}]`);
+            const attempts = _(record).get("attempts");
+            const attempt = attempts.filter(att => att.discipline === key)[i];
 
             if (attempt && attempt.done) {
               return {
@@ -114,10 +112,8 @@ const getDisciplineColumns = (
     acc.push({
       dataIndex,
       render: (text, record) => {
-        const attempt = _(record)
-          .get("bestAttempts")
-          .filter({ discipline: key })
-          .first();
+        const attempts = _(record).get("bestAttempts");
+        const attempt = attempts.filter(att => att.discipline === key)[0];
 
         if (attempt && attempt.done) {
           return {
