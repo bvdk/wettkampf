@@ -94,7 +94,7 @@ class EventAttemptsRoute extends Component<Props, State> {
               style={{ paddingTop: 16 }}
               renderLeft={() => <h3>Nächste Athleten</h3>}
               renderRight={() => (
-                <Button onClick={this._toggleCollapse} icon={'close'} />
+                <Button onClick={this._toggleCollapse} icon="close" />
               )}
             />
             <hr />

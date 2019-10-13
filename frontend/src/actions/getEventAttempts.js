@@ -1,16 +1,16 @@
 import { loader } from 'graphql.macro';
 
-const EventAttemptsQuery = loader(
-  '../graphql/queries/nextSlotAthletes.graphql'
-);
+const EventAttemptsQuery = loader('../graphql/queries/eventAttempts.graphql');
 
-export default (client, slotId, cb) =>
+export default (client, eventId, discipline, cb) =>
   client
     .query({
       query: EventAttemptsQuery,
       variables: {
-        slotId
-      },
-      fetchPolicy: 'network-only'
+        eventId,
+        discipline,
+        filter: [],
+        sort: []
+      }
     })
-    .then(resp => cb(resp.data.slot));
+    .then(resp => cb(resp.data.event));

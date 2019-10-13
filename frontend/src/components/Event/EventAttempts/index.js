@@ -12,13 +12,11 @@ type Props = {
   eventAttemptsQuery: any
 };
 
-type State = {};
-
 const EventAttemptsQuery = loader(
   '../../../graphql/queries/eventAttempts.graphql'
 );
 
-class EventAttempts extends Component<Props, State> {
+class EventAttempts extends Component<Props, {}> {
   _handleAttemptChange = () => {
     this.props.eventAttemptsQuery.refetch();
   };

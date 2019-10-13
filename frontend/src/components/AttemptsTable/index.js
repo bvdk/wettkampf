@@ -48,7 +48,7 @@ class AttemptsTable extends Component<Props, State> {
       const dataIndex = `${shortDisciplines[key]}`;
 
       if (!discipline || key === discipline) {
-        for (let i = 0; i < this.props.attemptCount; i++) {
+        for (let i = 0; i < this.props.attemptCount; i += 1) {
           const iDataIndex = `${dataIndex}${i + 1}`;
 
           acc.push({
@@ -291,9 +291,8 @@ class AttemptsTable extends Component<Props, State> {
         rowKey="id"
         rowClassName={
           highlightFirstAthlete
-            ? (record, index) => {
-                return record.id === firstAthleteId ? 'active-athlete-row' : '';
-              }
+            ? record =>
+                record.id === firstAthleteId ? 'active-athlete-row' : ''
             : undefined
         }
         size="small"

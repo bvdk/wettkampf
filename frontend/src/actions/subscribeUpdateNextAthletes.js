@@ -1,5 +1,5 @@
 import { loader } from 'graphql.macro';
-import getEventAttempts from './getEventAttempts';
+import getNextSlotAthletes from './getNextSlotAthletes';
 
 const UpdateNextAthletesNotification = loader(
   '../graphql/subscriptions/updateNextAthletesNotification.graphql'
@@ -12,7 +12,7 @@ export default (client, cb) =>
     })
     .subscribe({
       next({ data }) {
-        getEventAttempts(
+        getNextSlotAthletes(
           client,
           data.updateNextAthletesNotification.slotId,
           slot =>
