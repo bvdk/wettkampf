@@ -1,5 +1,7 @@
 FROM arm64v8/node:alpine
 
+RUN apk add --update npm
+
 WORKDIR /usr/src/app
 
 COPY ./backend/package.json ./
