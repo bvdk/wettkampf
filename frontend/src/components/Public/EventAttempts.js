@@ -24,11 +24,19 @@ const columns = [
   }
 ];
 
+const shortDisciplines = {
+  SQUAT: 'KB',
+  BENCHPRESS: 'BD',
+  DEADLIFT: 'KH'
+};
+
 const EventAttempts = ({ eventId, client }) => {
   const [attemptAthletes, setAttemptAthletes] = useState([]);
+  const [availableDisciplines, setAvailableDisciplines] = useState([]);
   useEffect(() => {
     getEventAttempts(client, eventId, undefined, data => {
       setAttemptAthletes(data.athletes.filter(a => a.bodyWeight !== null));
+      setAvailableDisciplines(data.availableDisciplines);
     });
   }, [client, eventId]);
 
@@ -47,11 +55,46 @@ const EventAttempts = ({ eventId, client }) => {
     attemptAthletes.filter(a => a.resultClass.name === weightClass)
   );
 
+  const renderColumns = [
+    ...columns,
+    ...availableDisciplines.map(availableDiscipline => ({
+      dataIndex: availableDiscipline,
+      title: shortDisciplines[availableDiscipline]
+    }))
+  ];
+
+  const renderDisciplineAttempts = (athlete, column) =>
+    athlete.attempts
+      .filter(attempt => attempt.discipline === column.dataIndex)
+      .sort((a, b) => b.index - a.index)
+      .reverse()
+      .concat([null, null, null])
+      .slice(0, 3)
+      .map((attempt, index) => {
+        let className = '';
+        if (attempt) {
+          if (attempt.resign) {
+            className = 'text-warning';
+          } else if (attempt.done && attempt.valid) {
+            className = 'text-success';
+          } else if (attempt.done && !attempt.valid) {
+            className = 'text-danger';
+          }
+        }
+
+        return (
+          <Fragment key={index}>
+            {index !== 0 ? '/' : ''}
+            <span className={className}>{attempt ? attempt.weight : '-'}</span>
+          </Fragment>
+        );
+      });
+
   return (
     <table className="table table-hover" style={{ width: '100%' }}>
       <thead>
         <tr>
-          {columns.map(c => (
+          {renderColumns.map(c => (
             <th scope="col" key={c.title} style={thStyle}>
               {c.title}
             </th>
@@ -62,7 +105,7 @@ const EventAttempts = ({ eventId, client }) => {
         {weightClasses.map((weightClass, index) => (
           <Fragment key={weightClass}>
             <tr className="table-sm bg-secondary text-white">
-              <td colSpan={columns.length}>{weightClass}</td>
+              <td colSpan={renderColumns.length}>{weightClass}</td>
             </tr>
             {weightClassesAthletes[index]
               .sort((a, b) => {
@@ -85,11 +128,24 @@ const EventAttempts = ({ eventId, client }) => {
               .reverse()
               .map(athlete => (
                 <tr key={athlete.id} className="table-sm">
-                  {columns.map((column, i) => {
+                  {renderColumns.map((column, i) => {
                     let data = athlete[column.dataIndex];
-                    if (column.title === 'Gewicht') {
-                      data += ' kg';
+                    switch (column.title) {
+                      case 'Gewicht': {
+                        data += ' kg';
+                        break;
+                      }
+                      case 'KB':
+                      case 'BD':
+                      case 'KH': {
+                        data = renderDisciplineAttempts(athlete, column);
+                        break;
+                      }
+                      default: {
+                        break;
+                      }
                     }
+
                     return <td key={i}>{data}</td>;
                   })}
                 </tr>

@@ -11,6 +11,7 @@ export default (client, eventId, discipline, cb) =>
         discipline,
         filter: [],
         sort: []
-      }
+      },
+      fetchPolicy: 'network-only'
     })
     .then(resp => cb(resp.data.event));
