@@ -54,14 +54,17 @@ class AttemptResultInput extends Component<Props, State> {
             case 'waiting':
               tmp.done = false;
               tmp.valid = null;
+              tmp.resign = false;
               break;
             case 'valid':
               tmp.done = true;
               tmp.valid = true;
+              tmp.resign = false;
               break;
             case 'invalid':
               tmp.valid = false;
               tmp.done = true;
+              tmp.resign = false;
               break;
             case 'resign':
               tmp.valid = false;
