@@ -124,6 +124,7 @@ export default class SlotResolver implements ResolverInterface<Slot> {
       !this.nextAthleteCacheUpdate ||
       (this.nextAthleteCacheUpdate && now - this.nextAthleteCacheUpdate > 100)
     ) {
+      // TODO get active disciplines
       // At first every Athlete does 3 squats, then 3 benchpresses and then 3 deadlifts
       const disciplines = ["SQUAT", "BENCHPRESS", "DEADLIFT"];
 
@@ -179,41 +180,43 @@ export default class SlotResolver implements ResolverInterface<Slot> {
           })
           .reverse();
 
-        const dones = {
-          SQUAT: Math.min(...athletes.map(a => a.done.SQUAT)),
-          BENCHPRESS: Math.min(...athletes.map(a => a.done.BENCHPRESS)),
-          DEADLIFT: Math.min(...athletes.map(a => a.done.DEADLIFT))
-        };
+        return athletes;
+      });
+      const flattedAthletes = flatten(entries);
 
-        const activeDiscipline = disciplines.find(d => dones[d] < 3);
-        const attemptAmount =
-          disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
+      const dones = {
+        SQUAT: Math.min(...flattedAthletes.map(a => a.done.SQUAT)),
+        BENCHPRESS: Math.min(...flattedAthletes.map(a => a.done.BENCHPRESS)),
+        DEADLIFT: Math.min(...flattedAthletes.map(a => a.done.DEADLIFT))
+      };
 
-        const cumulatedAthletes: ExtendedAthlete[] = [];
+      const activeDiscipline = disciplines.find(d => dones[d] < 3);
+      const attemptAmount =
+        disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
 
-        const iterator = countTo(attemptAmount);
-        for (const value of iterator) {
-          cumulatedAthletes.push(...athletes);
+      const cumulatedAthletes: ExtendedAthlete[] = [];
+
+      const iterator = countTo(attemptAmount);
+      for (const value of iterator) {
+        cumulatedAthletes.push(...flattedAthletes);
+      }
+
+      flattedAthletes.forEach(athlete => {
+        const doneAttempts = Object.entries(athlete.done).reduce(
+          (acc: number, val: [string, number]) => {
+            acc += val[1];
+            return acc;
+          },
+          0
+        );
+
+        const doneIterator = countTo(doneAttempts);
+        for (const value of doneIterator) {
+          cumulatedAthletes.splice(cumulatedAthletes.indexOf(athlete), 1);
         }
-
-        athletes.forEach(athlete => {
-          const doneAttempts = Object.entries(athlete.done).reduce(
-            (acc: number, val: [string, number]) => {
-              acc += val[1];
-              return acc;
-            },
-            0
-          );
-
-          const doneIterator = countTo(doneAttempts);
-          for (const value of doneIterator) {
-            cumulatedAthletes.splice(cumulatedAthletes.indexOf(athlete), 1);
-          }
-        });
-        return cumulatedAthletes;
       });
 
-      const returnValue = flatten(entries).slice(0, 50);
+      const returnValue = cumulatedAthletes.slice(0, 50);
 
       this.nextAthleteCache = returnValue;
       this.nextAthleteCacheUpdate = new Date().getTime();
