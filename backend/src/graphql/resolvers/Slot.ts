@@ -15,6 +15,7 @@ import { AthleteGroup } from "../models/athleteGroup";
 import { Attempt } from "../models/attempt";
 import { Event } from "../models/event";
 import { Slot } from "../models/slot";
+import EventResolver from "./Event";
 
 type ExtendedAthlete = Athlete & {
   done: {
@@ -66,7 +67,7 @@ export default class SlotResolver implements ResolverInterface<Slot> {
   }
 
   @FieldResolver()
-  public event(@Root() slot: Slot) {
+  public event(@Root() slot: Slot): Event {
     return CrudAdapter.getItem(Event.collectionKey, slot.eventId);
   }
 
@@ -124,9 +125,9 @@ export default class SlotResolver implements ResolverInterface<Slot> {
       !this.nextAthleteCacheUpdate ||
       (this.nextAthleteCacheUpdate && now - this.nextAthleteCacheUpdate > 100)
     ) {
-      // TODO get active disciplines
-      // At first every Athlete does 3 squats, then 3 benchpresses and then 3 deadlifts
-      const disciplines = ["SQUAT", "BENCHPRESS", "DEADLIFT"];
+      const eventResolver = new EventResolver();
+      const event = this.event(slot);
+      const disciplines = eventResolver.availableDisciplines(event);
 
       const athleteGroupedAthletes = groupBy(
         this.athletes(slot).filter(athlete => athlete.bodyWeight !== null),
