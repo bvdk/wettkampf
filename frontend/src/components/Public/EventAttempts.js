@@ -15,6 +15,10 @@ const columns = [
     title: 'Gewicht'
   },
   {
+    dataIndex: 'los',
+    title: 'Losnummer'
+  },
+  {
     dataIndex: 'total',
     title: 'Total'
   },
