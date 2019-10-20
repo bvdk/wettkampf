@@ -48,6 +48,9 @@ export class UpdateNotificationPayload {
 
 @Resolver(of => Slot)
 export default class SlotResolver implements ResolverInterface<Slot> {
+  private nextAthleteCache: ExtendedAthlete[] = [];
+  private nextAthleteCacheUpdate: number | null = null;
+
   @FieldResolver()
   public name(@Root() slot: Slot) {
     const name = get(slot, "name");
@@ -115,96 +118,111 @@ export default class SlotResolver implements ResolverInterface<Slot> {
 
   @FieldResolver()
   public nextAthletes(@Root() slot: Slot) {
-    // At first every Athlete does 3 squats, then 3 benchpresses and then 3 deadlifts
-    const disciplines = ["SQUAT", "BENCHPRESS", "DEADLIFT"];
+    const now = new Date().getTime();
+    console.log(now);
+    console.log(this.nextAthleteCacheUpdate);
+    if (
+      !this.nextAthleteCacheUpdate ||
+      (this.nextAthleteCacheUpdate && now - this.nextAthleteCacheUpdate > 100)
+    ) {
+      // At first every Athlete does 3 squats, then 3 benchpresses and then 3 deadlifts
+      const disciplines = ["SQUAT", "BENCHPRESS", "DEADLIFT"];
 
-    const athleteGroupedAthletes = groupBy(
-      this.athletes(slot).filter(athlete => athlete.bodyWeight !== null),
-      "athleteGroupId"
-    );
+      const athleteGroupedAthletes = groupBy(
+        this.athletes(slot).filter(athlete => athlete.bodyWeight !== null),
+        "athleteGroupId"
+      );
 
-    const entries = Object.entries(athleteGroupedAthletes).map(entry => {
-      let athletes = entry[1] as ExtendedAthlete[];
-      athletes = athletes
-        .map(athlete => {
-          const attempts = orderBy(
-            CrudAdapter.filter(Attempt.collectionKey, {
-              athleteId: athlete.id
-            }),
-            ["discipline", "index"],
-            ["asc", "asc"]
+      const entries = Object.entries(athleteGroupedAthletes).map(entry => {
+        let athletes = entry[1] as ExtendedAthlete[];
+        athletes = athletes
+          .map(athlete => {
+            const attempts = orderBy(
+              CrudAdapter.filter(Attempt.collectionKey, {
+                athleteId: athlete.id
+              }),
+              ["discipline", "index"],
+              ["asc", "asc"]
+            );
+
+            const disciplineAttempts = groupBy(attempts, "discipline");
+
+            return {
+              ...athlete,
+              attempts,
+              done: {
+                SQUAT: disciplineAttempts.SQUAT
+                  ? disciplineAttempts.SQUAT.filter(d => d.done).length
+                  : 0,
+                BENCHPRESS: disciplineAttempts.BENCHPRESS
+                  ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
+                  : 0,
+                DEADLIFT: disciplineAttempts.DEADLIFT
+                  ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
+                  : 0
+              }
+            };
+          })
+          .sort((a, b) => {
+            const nextAAttempt = a.attempts.find(attempt => !attempt.done);
+            const nextBAttempt = b.attempts.find(attempt => !attempt.done);
+
+            if (nextAAttempt && nextBAttempt) {
+              const diff = nextBAttempt.weight - nextAAttempt.weight;
+
+              if (diff === 0) {
+                return b.los - a.los;
+              }
+              return diff;
+            }
+
+            return 0;
+          })
+          .reverse();
+
+        const dones = {
+          SQUAT: Math.min(...athletes.map(a => a.done.SQUAT)),
+          BENCHPRESS: Math.min(...athletes.map(a => a.done.BENCHPRESS)),
+          DEADLIFT: Math.min(...athletes.map(a => a.done.DEADLIFT))
+        };
+
+        const activeDiscipline = disciplines.find(d => dones[d] < 3);
+        const attemptAmount =
+          disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
+
+        const cumulatedAthletes: ExtendedAthlete[] = [];
+
+        const iterator = countTo(attemptAmount);
+        for (const value of iterator) {
+          cumulatedAthletes.push(...athletes);
+        }
+
+        athletes.forEach(athlete => {
+          const doneAttempts = Object.entries(athlete.done).reduce(
+            (acc: number, val: [string, number]) => {
+              acc += val[1];
+              return acc;
+            },
+            0
           );
 
-          const disciplineAttempts = groupBy(attempts, "discipline");
-
-          return {
-            ...athlete,
-            attempts,
-            done: {
-              SQUAT: disciplineAttempts.SQUAT
-                ? disciplineAttempts.SQUAT.filter(d => d.done).length
-                : 0,
-              BENCHPRESS: disciplineAttempts.BENCHPRESS
-                ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
-                : 0,
-              DEADLIFT: disciplineAttempts.DEADLIFT
-                ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
-                : 0
-            }
-          };
-        })
-        .sort((a, b) => {
-          const nextAAttempt = a.attempts.find(attempt => !attempt.done);
-          const nextBAttempt = b.attempts.find(attempt => !attempt.done);
-
-          if (nextAAttempt && nextBAttempt) {
-            const diff = nextBAttempt.weight - nextAAttempt.weight;
-
-            if (diff === 0) {
-              return b.los - a.los;
-            }
-            return diff;
+          const doneIterator = countTo(doneAttempts);
+          for (const value of doneIterator) {
+            cumulatedAthletes.splice(cumulatedAthletes.indexOf(athlete), 1);
           }
-
-          return 0;
-        })
-        .reverse();
-
-      const dones = {
-        SQUAT: Math.min(...athletes.map(a => a.done.SQUAT)),
-        BENCHPRESS: Math.min(...athletes.map(a => a.done.BENCHPRESS)),
-        DEADLIFT: Math.min(...athletes.map(a => a.done.DEADLIFT))
-      };
-
-      const activeDiscipline = disciplines.find(d => dones[d] < 3);
-      const attemptAmount =
-        disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
-
-      const cumulatedAthletes: ExtendedAthlete[] = [];
-
-      const iterator = countTo(attemptAmount);
-      for (const value of iterator) {
-        cumulatedAthletes.push(...athletes);
-      }
-
-      athletes.forEach(athlete => {
-        const doneAttempts = Object.entries(athlete.done).reduce(
-          (acc: number, val: [string, number]) => {
-            acc += val[1];
-            return acc;
-          },
-          0
-        );
-
-        const doneIterator = countTo(doneAttempts);
-        for (const value of doneIterator) {
-          cumulatedAthletes.splice(cumulatedAthletes.indexOf(athlete), 1);
-        }
+        });
+        return cumulatedAthletes;
       });
-      return cumulatedAthletes;
-    });
 
-    return flatten(entries).slice(0, 50);
+      const returnValue = flatten(entries).slice(0, 50);
+
+      this.nextAthleteCache = returnValue;
+      this.nextAthleteCacheUpdate = new Date().getTime();
+
+      return returnValue;
+    }
+
+    return this.nextAthleteCache;
   }
 
   @Subscription(returns => UpdateNotification, {

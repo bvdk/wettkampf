@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import { compose, graphql } from 'react-apollo';
 import _ from 'lodash';
 import { loader } from 'graphql.macro';
