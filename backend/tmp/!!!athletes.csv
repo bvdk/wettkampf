@@ -1,0 +1,60 @@
+Athleten,"Age Category",Gewichtsklasse,"Last Name","First Name",ID,Geschlecht,Verein,Geburtstag,Total,Norm,"Late Registration",Preis,"Body Weight",Wilks,Los,"Kniebeuge 1","Kniebeuge 2","Kniebeuge 3","Bankdrücken 1","Bankdrücken 2","Bankdrücken 3","Kreuzheben 1","Kreuzheben 2","Kreuzheben 3",Total,Punkte,Platz,Ort
+1,aktive,-57,Amelal,Mirjam,5175,female,"Kraft & Fitness Eilenburg",09.09.1992,"330,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-72,Bosse,Juliane,4825,female,"SV 1919 Grimma Abt. Kraftsport",03.11.1993,"370,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-72,Dietrich,Hjördis,2795,female,"Kraft & Fitness Eilenburg",27.03.1989,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,aktive,-72,Liebs,Patricia,2449,female,"BSC Rapid Chemnitz",15.06.1989,"372,50 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-63,Fydrich,Nicole,2448,female,"BSC Rapid Chemnitz",26.12.1981,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-63,"Pham Viet",Ha,2793,female,"SV 1919 Grimma Abt. Kraftsport",12.08.1994,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-84,Jörger-Hickfang,Theresa,5112,female,"SV 1919 Grimma Abt. Kraftsport",16.11.1989,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-84,Sacher,Anne,5846,female,"Riesear AC",08.12.1984,"225,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,aktive,-84,Schaller,Katharina,5843,female,"SV 1919 Grimma Abt. Kraftsport",11.02.1987,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-72,Blechschmidt,Charlotte,5792,female,"SV 1919 Grimma Abt. Kraftsport",17.02.1999,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,junioren,-72,Fricke,Tatjana,5071,female,"USV TU Dresden",13.02.1998,"305,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,junioren,-72,Lohr,Janka-Maria,5838,female,"BSC Rapid Chemnitz",11.02.1997,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-57,Gebhardt,Sabrina,2809,female,"Kraft & Fitness Eilenburg",07.02.1996,"267,50 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-63,Zapf,Shirley,5836,female,"USV TU Dresden",17.08.1997,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak1,-63,Grandl,Irina,5602,female,"SV Rotation Langenbach e.V.",29.05.1973,"240,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-93,Apitzsch,Tony,4965,male,"Kraft & Fitness Eilenburg",20.08.1995,"552,50 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-93,Nütz,Robert,5178,male,"Kraft & Fitness Eilenburg",08.09.1986,"535,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,aktive,-93,Otto,Andreas,3959,male,"USV TU Dresden",19.11.1987,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+4,aktive,-93,Schöngarth,Arno,4539,male,"BSC Rapid Chemnitz",21.12.1993,"585,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+5,aktive,-93,Voigt,Stefan,3731,male,"SV Rotation Langenbach e.V.",19.12.1992,"582,50 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-83,Drechsel,Dominic,5189,male,"BSC Rapid Chemnitz",06.03.1994,"535,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-83,Fischer,Rick,5829,male,"USV TU Dresden",14.06.1988,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,aktive,-83,Fuhrig,Max,3295,male,"Riesear AC",15.05.1990,"495,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+4,aktive,-83,Lysenko,Alex,3560,male,"SV 1919 Grimma Abt. Kraftsport",28.11.1984,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+5,aktive,-83,Quinque,Max,5793,male,"SV 1919 Grimma Abt. Kraftsport",04.07.1992,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+6,aktive,-83,Schweigler,Eric,4788,male,"SV 1919 Grimma Abt. Kraftsport",14.05.1988,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-74,Göckeritz,Maik,5627,male,"FC Erzgebirge Aue e.V. Abt. Kraftsport",12.06.1988,"400,00 kg",Ja,Ja,"22,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-74,Locke,Oliver,4365,male,"USV TU Dresden",07.10.1988,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-120,Groß,Alexander,4525,male,"SV 1919 Grimma Abt. Kraftsport",28.11.1994,"567,50 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-120,Jüngling,Frieder,2720,male,"KFV Döbeln",28.12.1989,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,aktive,-120,Kozma,Kevin,5847,male,"Riesear AC",05.01.1995,"330,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,+120,Ihme,Marcel,5600,male,"SV Rotation Langenbach e.V.",01.06.1993,"560,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,aktive,-105,Reinerth,Peter,5755,male,"SV 1919 Grimma Abt. Kraftsport",12.11.1989,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,aktive,-105,Riehl,Maximilian,5211,male,"SV 1919 Grimma Abt. Kraftsport",22.10.1995,"617,50 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,aktive,-105,Uhlig,Denis,5762,male,"Annaberger Kraftsportclub e.V.",23.05.1983,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak1,-74,Bischof,Swen,5092,male,"KBV Bautzen e.V.",10.07.1976,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak1,-83,Efthymiou,Georgios,2721,male,"KFV Döbeln",03.08.1977,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak1,+120,Grandl,Johann,5077,male,"SV Rotation Langenbach e.V.",15.01.1974,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak1,-120,Ludwig,Patrick,3432,male,"SG Fortschritt Eibau e.V.",13.10.1977,"595,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-105,Bittner,Florian,5802,male,"SG Fortschritt Eibau e.V.",15.01.1998,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-83,Ebisch,Nick-Julien,3430,male,"SG Fortschritt Eibau e.V.",29.05.1997,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-93,Goller,Lukas,5848,male,"Riesear AC",03.01.1999,"405,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+2,junioren,-93,Jankowski,Erik,5830,male,"USV TU Dresden",15.04.1997,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+3,junioren,-93,Johst,Philipp,5768,male,"SV 1919 Grimma Abt. Kraftsport",13.02.1996,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+4,junioren,-93,Wittig,Jakob,5837,male,"USV TU Dresden",18.05.1998,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-74,Koppatsch,Jannis,5850,male,"SG Fortschritt Eibau e.V.",06.02.1998,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-120,Pommer,Falk,5769,male,"SV 1919 Grimma Abt. Kraftsport",01.05.1998,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,junioren,-66,Radecker,Marvin,4921,male,"Kraftsportfreunde Erzgebirge e.V.",11.02.2000,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak,-93,Fädrich,Christian,3293,male,"Riesear AC",30.01.1987,"450,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak,-83,Slansky,Dirk,4538,male,"BSC Rapid Chemnitz",13.08.1988,"452,50 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+1,ak2,-105,Kammer,Torsten,2814,male,"Kraft & Fitness Eilenburg",04.05.1969,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
+Kampfrichter,"Last Name","First Name",ID,Verein,Lizenz,Position,Ort,,,,,,,,,,,,,,,,,,,,,
+1,Arnold,Roberto,3572,"SV 1919 Grimma Abt. Kraftsport","Landeslizenz 2017 - 2020",,Eilenburg,,,,,,,,,,,,,,,,,,,,,
+2,Hieke,Rene,3433,"SG Fortschritt Eibau e.V.","Bezirkslizenz 2017 - 2020",,Eilenburg,,,,,,,,,,,,,,,,,,,,,
+3,Kästner,Jan,3565,"SV 1919 Grimma Abt. Kraftsport","Bezirkslizenz 2017 - 2020",,Eilenburg,,,,,,,,,,,,,,,,,,,,,
+4,Lang,Diethard,3712,"SV Rotation Langenbach e.V.","Bundeslizenz 2017 - 2020",,Eilenburg,,,,,,,,,,,,,,,,,,,,,
+5,Pufe,Danilo,3421,"SG Fortschritt Eibau e.V.","Landeslizenz 2017 - 2020",,Eilenburg,,,,,,,,,,,,,,,,,,,,,
+6,Sickert,Hans-Ulrich,3563,"SV 1919 Grimma Abt. Kraftsport","Landeslizenz 2017 - 2020",,Eilenburg,,,,,,,,,,,,,,,,,,,,,
+7,Ziegler,Nico,3974,"USV TU Dresden","Bezirkslizenz 2017 - 2020",,Eilenburg,,,,,,,,,,,,,,,,,,,,,

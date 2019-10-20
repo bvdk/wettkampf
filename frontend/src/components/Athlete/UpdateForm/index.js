@@ -19,23 +19,19 @@ type Props = {
   athleteId: string
 };
 
-class AthleteUpdateForm extends Component<Props, {}> {
-  render() {
-    return (
-      <AthleteForm
-        formValues={this.props.athlete}
-        onSubmit={this.props.onUpdate}
-        mutation={this.props.mutation}
-        translateMutationOptions={data => ({
-          variables: {
-            id: this.props.athleteId,
-            data
-          }
-        })}
-      />
-    );
-  }
-}
+const AthleteUpdateForm = (props: Props) => (
+  <AthleteForm
+    formValues={props.athlete}
+    onSubmit={props.onUpdate}
+    mutation={props.mutation}
+    translateMutationOptions={data => ({
+      variables: {
+        id: props.athleteId,
+        data
+      }
+    })}
+  />
+);
 
 export default compose(
   graphql(AthleteQuery, {

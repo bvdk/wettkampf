@@ -18,7 +18,6 @@ import { WeightClass } from "../models/weightClass";
 import AttemptsResolver from "./Attempts";
 
 function _calculateAge(birthday: Date): number {
-  // birthday is a date
   const ageDifMs = Date.now() - birthday.getTime();
   const ageDate = new Date(ageDifMs); // miliseconds from epoch
   return Math.abs(ageDate.getUTCFullYear() - 1970);
@@ -60,19 +59,14 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
 
   @FieldResolver()
   public age(@Root() athlete: Athlete) {
-    const birtday = this.birthday(athlete);
-    return birtday ? _calculateAge(birtday) : null;
+    const birthday = this.birthday(athlete);
+    return birthday ? _calculateAge(birthday) : null;
   }
 
   @FieldResolver()
   public birthday(@Root() athlete: Athlete) {
     const { birthday } = athlete;
     if (birthday) {
-      if (typeof birthday === "string") {
-        const parts = birthday.match(/(\d+)/g);
-        const parsedParts = parts.map(p => parseInt(p, 10));
-        return new Date(parsedParts[2], parsedParts[1] - 1, parsedParts[0]);
-      }
       return new Date(birthday);
     }
     return null;
@@ -190,11 +184,6 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
 
   @FieldResolver()
   public wilks(@Root() athlete: Athlete) {
-    // if (!athlete.wilks) {
-    //     const resolver = new AthletesResolver();
-    //     const result = resolver.autoUpdateWilks(athlete.id, athlete);
-    //     return _.get(result, "wilks");
-    // }
     return athlete.wilks ? Math.round(athlete.wilks * 10000) / 10000 : null;
   }
 

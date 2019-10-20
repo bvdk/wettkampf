@@ -28,7 +28,7 @@ export default props => {
         component={EventAthleteRoute}
       />
       <RedirectWithParams
-        from={'/events/:eventId/athletes/:athleteId'}
+        from="/events/:eventId/athletes/:athleteId"
         to="/events/:eventId/athletes/:athleteId/form"
       />
       <Route
