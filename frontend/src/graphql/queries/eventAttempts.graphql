@@ -15,6 +15,7 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!], $sort: [SortInput!]
             points
             total
             wilks
+            athleteGroupId
             nextAttempts(discipline:$discipline) {
                 id
                 weight

@@ -1,0 +1,6 @@
+subscription {
+    slotGroupChangedNotification {
+        athleteGroupIds
+        date
+    }
+}

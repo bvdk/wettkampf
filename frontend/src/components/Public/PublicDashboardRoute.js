@@ -7,6 +7,7 @@ import Redirect from '../../Redirect';
 import subscribePublicConfig from '../../actions/subscribePublicConfig';
 import { ActionTypes, getInitialState, reducer } from './reducer';
 import subscribeUpdateNextAthletes from '../../actions/subscribeUpdateNextAthletes';
+import subscribeSlotGroupChangedNotification from '../../actions/subscribeSlotGroupChangedNotification';
 import getNextSlotAthletes from '../../actions/getNextSlotAthletes';
 import getEventSlots from '../../actions/getEventSlots';
 import NextAthletes from './NextAthletes';
@@ -28,6 +29,12 @@ const Dashboard = (props: DasboardProps) => {
     subscribeUpdateNextAthletes(state.client, data => {
       dispatch({
         type: ActionTypes.nextAthletes,
+        data
+      });
+    });
+    subscribeSlotGroupChangedNotification(state.client, data => {
+      dispatch({
+        type: ActionTypes.nextAthleteGroups,
         data
       });
     });
@@ -65,6 +72,7 @@ const Dashboard = (props: DasboardProps) => {
             key={state.nextAthletesUpdated}
             client={state.client}
             eventId={state.publicConfig.eventId}
+            athleteGroups={state.athleteGroups}
           />
         </div>
         <div className="col-3">

@@ -186,7 +186,7 @@ class AttributeInlineEditField extends Component<Props, State> {
 
     return (
       <FormItem
-        className={'attribute-inline-edit-field'}
+        className="attribute-inline-edit-field"
         label={name}
         {...formItemLayout}>
         {!readOnly && editable ? (
@@ -194,8 +194,8 @@ class AttributeInlineEditField extends Component<Props, State> {
             ref={node => {
               this.node = node;
             }}
-            className={'editable-cell'}>
-            <div className={'attribute-inline-edit-field-input-content'}>
+            className="editable-cell">
+            <div className="attribute-inline-edit-field-input-content">
               {React.cloneElement(
                 AttributeFormFactory.renderAttribute(attribute, form, t),
                 {
@@ -207,15 +207,15 @@ class AttributeInlineEditField extends Component<Props, State> {
             {loading ? <Loader useIcon /> : null}
             {this.props.circleCheck ? (
               <div className="editable-icon-check" style={{ paddingLeft: 5 }}>
-                <Button shape={'circle'} size={'small'} onClick={this.check}>
+                <Button shape="circle" size="small" onClick={this.check}>
                   <Icon type="check" />
                 </Button>
               </div>
             ) : null}
           </div>
         ) : (
-          <div onClick={this.edit} className={'editable-cell-value-wrap'}>
-            <div className={'editable-cell-value-content'}>
+          <div onClick={this.edit} className="editable-cell-value-wrap">
+            <div className="editable-cell-value-content">
               {AttributeFormFactory.renderDisplayAttribute(
                 attribute,
                 form,
@@ -223,11 +223,9 @@ class AttributeInlineEditField extends Component<Props, State> {
                 value
               )}
             </div>
-
             {loading ? <Loader useIcon /> : null}
-
             {success || error ? (
-              <div className={'attribute-inline-edit-field-feedback'}>
+              <div className="attribute-inline-edit-field-feedback">
                 <SuccessPose pose={success ? 'visible' : 'hidden'}>
                   <Icon
                     style={{ margin: '0 8px', color: Colors.success }}

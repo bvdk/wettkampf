@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useMemo, useState } from 'react';
 import getEventAttempts from '../../actions/getEventAttempts';
 
 const columns = [
@@ -34,15 +34,45 @@ const shortDisciplines = {
   DEADLIFT: 'KH'
 };
 
-const EventAttempts = ({ eventId, client }) => {
-  const [attemptAthletes, setAttemptAthletes] = useState([]);
+const EventAttempts = ({ eventId, client, athleteGroups }) => {
+  const [allAttemptAthletes, setAllAttemptAthletes] = useState([]);
   const [availableDisciplines, setAvailableDisciplines] = useState([]);
+
   useEffect(() => {
     getEventAttempts(client, eventId, undefined, data => {
-      setAttemptAthletes(data.athletes.filter(a => a.bodyWeight !== null));
+      setAllAttemptAthletes(data.athletes.filter(a => a.bodyWeight !== null));
       setAvailableDisciplines(data.availableDisciplines);
     });
   }, [client, eventId]);
+
+  const attemptAthletes = useMemo(
+    () =>
+      allAttemptAthletes.filter(a => athleteGroups.includes(a.athleteGroupId)),
+    [allAttemptAthletes, athleteGroups]
+  );
+
+  const weightClasses = useMemo(
+    () => [...new Set(attemptAthletes.map(a => a.resultClass.name))],
+    [attemptAthletes]
+  );
+  const weightClassesAthletes = useMemo(
+    () =>
+      weightClasses.map(weightClass =>
+        attemptAthletes.filter(a => a.resultClass.name === weightClass)
+      ),
+    [weightClasses, attemptAthletes]
+  );
+
+  const renderColumns = useMemo(
+    () => [
+      ...columns,
+      ...availableDisciplines.map(availableDiscipline => ({
+        dataIndex: availableDiscipline,
+        title: shortDisciplines[availableDiscipline]
+      }))
+    ],
+    [availableDisciplines]
+  );
 
   const thStyle = {
     position: 'sticky',
@@ -51,21 +81,6 @@ const EventAttempts = ({ eventId, client }) => {
     background: 'white',
     borderTop: 'none'
   };
-
-  const weightClasses = [
-    ...new Set(attemptAthletes.map(a => a.resultClass.name))
-  ];
-  const weightClassesAthletes = weightClasses.map(weightClass =>
-    attemptAthletes.filter(a => a.resultClass.name === weightClass)
-  );
-
-  const renderColumns = [
-    ...columns,
-    ...availableDisciplines.map(availableDiscipline => ({
-      dataIndex: availableDiscipline,
-      title: shortDisciplines[availableDiscipline]
-    }))
-  ];
 
   const renderDisciplineAttempts = (athlete, column) =>
     athlete.attempts

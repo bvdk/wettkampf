@@ -404,6 +404,15 @@ type Slot {
   officialSlots: [OfficialSlot!]!
 }
 
+type SlotGroupChangedNotification {
+  date: DateTime!
+  athleteGroupIds: [String!]!
+}
+
+type SlotGroupChangedPayload {
+  athleteGroupIds: [String!]!
+}
+
 input SlotInput {
   name: String
   activeAthleteGroupId: ID
@@ -422,6 +431,7 @@ input SortInput {
 
 type Subscription {
   updateNextAthletesNotification: UpdateNotification!
+  slotGroupChangedNotification: SlotGroupChangedNotification!
   subscribePublicConfig: PublicConfig!
 }
 

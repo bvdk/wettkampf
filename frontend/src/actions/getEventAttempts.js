@@ -9,7 +9,7 @@ export default (client, eventId, discipline, cb) =>
       variables: {
         eventId,
         discipline,
-        filter: [],
+        filters: [],
         sort: []
       },
       fetchPolicy: 'network-only'

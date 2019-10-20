@@ -1,10 +1,15 @@
 import _ from "lodash";
 import {
   Args,
+  Field,
   FieldResolver,
+  ObjectType,
+  Publisher,
+  PubSub,
   Resolver,
   ResolverInterface,
-  Root
+  Root,
+  Subscription
 } from "type-graphql";
 import { CrudAdapter } from "../../database/CrudAdapter";
 import { Athlete } from "../models/athlete";
@@ -24,6 +29,21 @@ import AthleteResolver from "./Athlete";
 import ResultClassResolver from "./ResultClass";
 import SlotResolver from "./Slot";
 import SlotsResolver from "./Slots";
+
+@ObjectType()
+export class SlotGroupChangedNotification {
+  @Field(type => Date)
+  public date: Date;
+
+  @Field(type => [String])
+  public athleteGroupIds: string[];
+}
+
+@ObjectType()
+export class SlotGroupChangedPayload {
+  @Field(type => [String])
+  public athleteGroupIds: string[];
+}
 
 @Resolver(of => Event)
 export default class EventResolver implements ResolverInterface<Event> {
@@ -63,6 +83,8 @@ export default class EventResolver implements ResolverInterface<Event> {
   @FieldResolver()
   public athletes(
     @Root() event: Event,
+    @PubSub("SLOP_GROUP_CHANGED")
+    publish?: Publisher<{ athleteGroupIds: string[] }>,
     @Args() filterArgs?: FilterArgs,
     @Args() sortArgs?: SortArgs
   ) {
@@ -73,7 +95,12 @@ export default class EventResolver implements ResolverInterface<Event> {
     if (filters && filters.length) {
       const slotFilter = _.find(filters, { index: "slotId" });
       const resultClassFilter = _.find(filters, { index: "resultClassId" });
+      const athleteGroupIdFilter = _.find(filters, { index: "athleteGroupId" });
       const athleteResolver = new AthleteResolver();
+
+      if (athleteGroupIdFilter && publish) {
+        publish({ athleteGroupIds: athleteGroupIdFilter.value });
+      }
 
       athletes = FilterInput.performFilter(
         athletes.map(item => {
@@ -203,5 +230,18 @@ export default class EventResolver implements ResolverInterface<Event> {
       const athlete = _.first(groups[groupId]);
       return athleteResolver.resultClass(athlete);
     });
+  }
+
+  @Subscription(returns => SlotGroupChangedNotification, {
+    topics: "SLOP_GROUP_CHANGED"
+  })
+  public slotGroupChangedNotification(
+    @Root() payload: SlotGroupChangedPayload
+  ): SlotGroupChangedNotification {
+    console.log(payload);
+    return {
+      athleteGroupIds: payload.athleteGroupIds,
+      date: new Date()
+    };
   }
 }

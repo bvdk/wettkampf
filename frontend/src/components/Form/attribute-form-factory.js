@@ -161,15 +161,8 @@ class FormFactory {
   static renderAttribute(
     attribute: Attribute,
     form: { getFieldDecorator: Function },
-    t: Function,
-    value
+    t: Function
   ) {
-    /*
-            if (attribute.readonly){
-              return this.renderDisplayAttribute(attribute, form, t, value);
-            }
-            */
-
     const { getFieldDecorator } = form;
     let result = null;
     let rules = [];
@@ -178,13 +171,6 @@ class FormFactory {
         .map(item => _.get(item, 'name'))
         .filter(ruleKey => AttributeRulesMap[ruleKey])
         .map(ruleKey => AttributeRulesMap[ruleKey]);
-
-    // if (!rules || rules.length === 0){
-    //   const attributeTypeRule = this.ruleForAttribute(attribute);
-    //   if (attributeTypeRule){
-    //     rules = [attributeTypeRule];
-    //   }
-    // }
 
     const config = FormFactory.getConfigForAttribute(attribute);
     const placeholder = attribute.inputTypeOptions

@@ -1,6 +1,7 @@
 export const ActionTypes = {
   setPublicConfig: 'SET_PUBLIC_CONFIG',
-  nextAthletes: 'NEXT_ATHLETES'
+  nextAthletes: 'NEXT_ATHLETES',
+  nextAthleteGroups: 'NEXT_ATHLETEGROUPS'
 };
 
 export const getInitialState = props => ({
@@ -9,7 +10,8 @@ export const getInitialState = props => ({
     eventId: null
   },
   nextAthletesUpdated: new Date(),
-  nextAthletes: {}
+  nextAthletes: {},
+  athleteGroups: []
 });
 
 export const reducer = (state, action) => {
@@ -25,6 +27,10 @@ export const reducer = (state, action) => {
         action.data
       );
       nextState.nextAthletesUpdated = new Date();
+      break;
+    }
+    case ActionTypes.nextAthleteGroups: {
+      nextState.athleteGroups = action.data;
       break;
     }
     default: {

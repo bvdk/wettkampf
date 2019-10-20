@@ -33,9 +33,8 @@ class EventAttemptsRoute extends Component<Props, State> {
     collapsed: false
   };
 
-  _handleSearchParamsChange = params => {
+  _handleSearchParamsChange = params =>
     this.props.history.push(`?${queryString.stringify(params)}`);
-  };
 
   _toggleCollapse = () => {
     this.setState({
