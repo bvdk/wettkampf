@@ -127,7 +127,7 @@ export default class AthletesResolver {
     const eventResolver = new EventResolver();
     const eventsResolver = new EventsResolver();
     const event = eventsResolver.event({ id: eventId });
-    const athletes = eventResolver.athletes(event, {
+    const athletes = eventResolver.athletes(event, undefined, {
       filters: [{ index: "resultClassId", value: [resultClassId] }]
     });
 
