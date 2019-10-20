@@ -119,8 +119,7 @@ export default class SlotResolver implements ResolverInterface<Slot> {
   @FieldResolver()
   public nextAthletes(@Root() slot: Slot) {
     const now = new Date().getTime();
-    console.log(now);
-    console.log(this.nextAthleteCacheUpdate);
+
     if (
       !this.nextAthleteCacheUpdate ||
       (this.nextAthleteCacheUpdate && now - this.nextAthleteCacheUpdate > 100)

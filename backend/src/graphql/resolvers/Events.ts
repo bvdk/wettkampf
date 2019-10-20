@@ -7,6 +7,9 @@ import SlotsResolver from "./Slots";
 
 @Resolver()
 export default class EventsResolver {
+  private nextCache: Event | null = null;
+  private nextCacheUpdate: number | null = null;
+
   @Query(returns => [Event], { description: "Get all the events" })
   public events(): Event[] {
     return CrudAdapter.getAll(Event.collectionKey);
@@ -14,7 +17,15 @@ export default class EventsResolver {
 
   @Query(returns => Event, { description: "Get a event" })
   public event(@Args() { id }: IdArgs): Event {
-    return CrudAdapter.getItem(Event.collectionKey, id);
+    const now = new Date().getTime();
+    if (
+      !this.nextCacheUpdate ||
+      (this.nextCacheUpdate && now - this.nextCacheUpdate > 1000)
+    ) {
+      this.nextCache = CrudAdapter.getItem(Event.collectionKey, id);
+      this.nextCacheUpdate = new Date().getTime();
+    }
+    return this.nextCache;
   }
 
   @Mutation()
