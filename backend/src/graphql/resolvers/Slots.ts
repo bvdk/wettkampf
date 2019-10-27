@@ -12,7 +12,7 @@ import {
 } from "type-graphql";
 import { CrudAdapter } from "../../database/CrudAdapter";
 import { Slot, SlotInput } from "../models/slot";
-import IdArgs from "./args/IdArgs";
+import { IdArgs } from "./args/IdArgs";
 import AthleteGroupsResolver from "./AthleteGroups";
 
 @ArgsType()

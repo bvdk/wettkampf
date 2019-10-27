@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useMemo, useState } from 'react';
 import getEventAttempts from '../../actions/getEventAttempts';
+import DisciplineAttempts from './DisciplineAttempts';
 
 const columns = [
   {
@@ -35,14 +36,20 @@ const shortDisciplines = {
 };
 
 const EventAttempts = ({ eventId, client, athleteGroups }) => {
-  const [allAttemptAthletes, setAllAttemptAthletes] = useState([]);
-  const [availableDisciplines, setAvailableDisciplines] = useState([]);
+  const [{ allAttemptAthletes, availableDisciplines }, setData] = useState({
+    allAttemptAthletes: [],
+    availableDisciplines: []
+  });
 
   useEffect(() => {
-    getEventAttempts(client, eventId, undefined, data => {
-      setAllAttemptAthletes(data.athletes.filter(a => a.bodyWeight !== null));
-      setAvailableDisciplines(data.availableDisciplines);
-    });
+    if (eventId) {
+      getEventAttempts(client, eventId, data => {
+        setData({
+          allAttemptAthletes: data.athletes.filter(a => a.bodyWeight !== null),
+          availableDisciplines: data.availableDisciplines
+        });
+      });
+    }
   }, [client, eventId]);
 
   const attemptAthletes = useMemo(
@@ -81,33 +88,6 @@ const EventAttempts = ({ eventId, client, athleteGroups }) => {
     background: 'white',
     borderTop: 'none'
   };
-
-  const renderDisciplineAttempts = (athlete, column) =>
-    athlete.attempts
-      .filter(attempt => attempt.discipline === column.dataIndex)
-      .sort((a, b) => b.index - a.index)
-      .reverse()
-      .concat([null, null, null])
-      .slice(0, 3)
-      .map((attempt, index) => {
-        let className = '';
-        if (attempt) {
-          if (attempt.resign) {
-            className = 'text-warning';
-          } else if (attempt.done && attempt.valid) {
-            className = 'text-success';
-          } else if (attempt.done && !attempt.valid) {
-            className = 'text-danger';
-          }
-        }
-
-        return (
-          <Fragment key={index}>
-            {index !== 0 ? '/' : ''}
-            <span className={className}>{attempt ? attempt.weight : '-'}</span>
-          </Fragment>
-        );
-      });
 
   return (
     <table className="table table-hover" style={{ width: '100%' }}>
@@ -157,7 +137,12 @@ const EventAttempts = ({ eventId, client, athleteGroups }) => {
                       case 'KB':
                       case 'BD':
                       case 'KH': {
-                        data = renderDisciplineAttempts(athlete, column);
+                        data = (
+                          <DisciplineAttempts
+                            athlete={athlete}
+                            column={column}
+                          />
+                        );
                         break;
                       }
                       default: {

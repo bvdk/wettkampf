@@ -23,42 +23,54 @@ const Dashboard = (props: DasboardProps) => {
   const prevState = usePrevious(state);
 
   useEffect(() => {
-    subscribePublicConfig(state.client, publicConfig =>
-      dispatch({ type: ActionTypes.setPublicConfig, data: publicConfig })
+    const { client, athleteGroups, publicConfig } = state;
+    const { eventId } = publicConfig;
+    subscribePublicConfig(client, data =>
+      dispatch({ type: ActionTypes.setPublicConfig, data })
     );
-    subscribeUpdateNextAthletes(state.client, state.athleteGroups, data => {
+    subscribeUpdateNextAthletes(client, athleteGroups, data =>
       dispatch({
         type: ActionTypes.nextAthletes,
         data
-      });
-    });
-    subscribeSlotGroupChangedNotification(state.client, data => {
-      getEventSlots(state.client, state.publicConfig.eventId, event => {
-        if (event.slots.length) {
-          event.slots.forEach(({ id }) => {
-            getNextSlotAthletes(state.client, id, state.athleteGroups, slot => {
-              dispatch({
-                type: ActionTypes.nextAthletes,
-                data: {
-                  [id]: slot.nextAthletes
-                }
+      })
+    );
+    subscribeSlotGroupChangedNotification(client, data => {
+      if (eventId) {
+        getEventSlots(client, eventId, event => {
+          if (event.slots.length) {
+            event.slots.forEach(({ id }) => {
+              getNextSlotAthletes(client, id, athleteGroups, slot => {
+                dispatch({
+                  type: ActionTypes.nextAthletes,
+                  data: {
+                    [id]: slot.nextAthletes
+                  }
+                });
               });
             });
-          });
-        }
-      });
+          }
+        });
+      }
+
       dispatch({
         type: ActionTypes.nextAthleteGroups,
         data
       });
     });
-  }, [state.client, state.athleteGroups, dispatch, state.publicConfig.eventId]);
+  }, [
+    state.client,
+    state.athleteGroups,
+    dispatch,
+    state.publicConfig.eventId,
+    state.publicConfig,
+    state
+  ]);
 
   useEffect(() => {
     const { eventId } = state.publicConfig;
     if (prevState) {
       const { eventId: prevEventId } = prevState.publicConfig;
-      if (prevEventId !== eventId) {
+      if (eventId && prevEventId !== eventId) {
         getEventSlots(state.client, eventId, event => {
           if (event.slots.length) {
             event.slots.forEach(({ id }) => {
@@ -106,13 +118,11 @@ const Dashboard = (props: DasboardProps) => {
   return <div>Warte auf die Auswahl der aktuellen Veranstaltung</div>;
 };
 
-const PublicDashboardRoute = () => {
-  return (
-    <Switch>
-      <Route path="/public/dashboard" component={withApollo(Dashboard)} />
-      <Redirect exact from="/public" to="/public/dashboard" />
-    </Switch>
-  );
-};
+const PublicDashboardRoute = () => (
+  <Switch>
+    <Route path="/public/dashboard" component={withApollo(Dashboard)} />
+    <Redirect exact from="/public" to="/public/dashboard" />
+  </Switch>
+);
 
-export default PublicDashboardRoute;
+export default React.memo(PublicDashboardRoute);

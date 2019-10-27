@@ -50,7 +50,8 @@ const schema = buildSchema({
     PublicResolver,
     ResultClassResolver,
     SystemsResolver
-  ]
+  ],
+  validate: false
 });
 
 export default schema;

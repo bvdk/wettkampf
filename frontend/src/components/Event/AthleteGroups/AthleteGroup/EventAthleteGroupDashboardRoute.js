@@ -1,25 +1,28 @@
 // @flow
 import React, { Component } from 'react';
-import _ from "lodash";
-import EventAthleteGroupDashboard from "../../AthleteGroupDashboard";
+import _ from 'lodash';
+import EventAthleteGroupDashboard from '../../AthleteGroupDashboard';
 
 type Props = {
-    eventId: string,
+  eventId: string
 };
 
 export default class EventAthleteGroupRoute extends Component<Props> {
-    props: Props;
+  props: Props;
 
-    render() {
-        const { match } = this.props;
+  render() {
+    const { match } = this.props;
 
-        const eventId = this.props.eventId || _.get(match, 'params.eventId');
-        const athleteGroupId = _.get(match, 'params.athleteGroupId');
+    const eventId = this.props.eventId || _.get(match, 'params.eventId');
+    const athleteGroupId = _.get(match, 'params.athleteGroupId');
 
-        return (
-            <div>
-                <EventAthleteGroupDashboard  eventId={eventId} athleteGroupId={athleteGroupId}/>
-            </div>
-        );
-    }
+    return (
+      <div>
+        <EventAthleteGroupDashboard
+          eventId={eventId}
+          athleteGroupId={athleteGroupId}
+        />
+      </div>
+    );
+  }
 }

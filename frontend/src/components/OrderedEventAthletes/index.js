@@ -220,13 +220,7 @@ export default compose(
     loading: _.get(props, 'nextSlotAthletesQuery.loading', false),
     slotId: props.slotId,
     onAthleteClick: props.onAthleteClick,
-    slot: _.get(props, 'nextSlotAthletesQuery.slot'),
     eventId: _.get(props, 'nextSlotAthletesQuery.slot.eventId'),
-    discipline: _.get(props, 'nextSlotAthletesQuery.slot.activeDiscipline'),
-    activeAthleteGroup: _.get(
-      props,
-      'nextSlotAthletesQuery.slot.activeAthleteGroup'
-    ),
     athletes: _.get(props, 'nextSlotAthletesQuery.slot.nextAthletes', []).map(
       (item, index) => ({
         ...item,

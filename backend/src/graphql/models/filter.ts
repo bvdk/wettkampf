@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { Field, InputType, ObjectType } from "type-graphql";
+import { Field, InputType } from "type-graphql";
 
 const myFilter = (item, { value, index }: FilterInput) => {
   if (Array.isArray(value)) {

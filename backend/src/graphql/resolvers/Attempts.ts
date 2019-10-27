@@ -18,7 +18,7 @@ import { Athlete } from "../models/athlete";
 import { AthleteGroup } from "../models/athleteGroup";
 import { Attempt, AttemptInput, AttemptUpdateInput } from "../models/attempt";
 import { Discipline } from "../models/discipline";
-import IdArgs from "./args/IdArgs";
+import { IdArgs } from "./args/IdArgs";
 import AthleteResolver from "./Athlete";
 import AthletesResolver from "./Athletes";
 import EventResolver from "./Event";

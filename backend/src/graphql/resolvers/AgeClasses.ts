@@ -11,7 +11,7 @@ import {
 } from "type-graphql";
 import { CrudAdapter } from "../../database/CrudAdapter";
 import { AgeClass, AgeClassInput } from "../models/ageClass";
-import IdArgs from "./args/IdArgs";
+import { IdArgs } from "./args/IdArgs";
 
 @ArgsType()
 class CreateAgeClassArgs {

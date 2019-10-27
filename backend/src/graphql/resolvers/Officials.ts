@@ -11,7 +11,7 @@ import {
 import { CollectionKeys } from "../../database";
 import { CrudAdapter } from "../../database/CrudAdapter";
 import { Official, OfficialInput } from "../models/official";
-import IdArgs from "./args/IdArgs";
+import { IdArgs } from "./args/IdArgs";
 
 @ArgsType()
 class CreateOfficialArgs {

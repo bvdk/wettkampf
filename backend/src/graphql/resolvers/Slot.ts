@@ -51,9 +51,6 @@ export class UpdateNotificationPayload {
 
 @Resolver(of => Slot)
 export default class SlotResolver implements ResolverInterface<Slot> {
-  private nextAthleteCache: ExtendedAthlete[] = [];
-  private nextAthleteCacheUpdate: number | null = null;
-
   @FieldResolver()
   public name(@Root() slot: Slot) {
     const name = get(slot, "name");
@@ -121,7 +118,6 @@ export default class SlotResolver implements ResolverInterface<Slot> {
 
   @FieldResolver()
   public nextAthletes(@Root() slot: Slot, @Args() { filters }: FilterArgs) {
-    const now = new Date().getTime();
     let athleteGroupIds: string[] = [];
     if (filters) {
       const athleteGroups = filters.find(f => f.index === "athleteGroupId");
@@ -130,113 +126,101 @@ export default class SlotResolver implements ResolverInterface<Slot> {
       }
     }
 
-    if (
-      !this.nextAthleteCacheUpdate ||
-      (this.nextAthleteCacheUpdate && now - this.nextAthleteCacheUpdate > 100)
-    ) {
-      const eventResolver = new EventResolver();
-      const event = this.event(slot);
-      const disciplines = eventResolver.availableDisciplines(event);
+    const eventResolver = new EventResolver();
+    const event = this.event(slot);
+    const disciplines = eventResolver.availableDisciplines(event);
 
-      const athleteGroupedAthletes = groupBy(
-        this.athletes(slot).filter(athlete => athlete.bodyWeight !== null),
-        "athleteGroupId"
-      );
+    const athleteGroupedAthletes = groupBy(
+      this.athletes(slot).filter(athlete => athlete.bodyWeight !== null),
+      "athleteGroupId"
+    );
 
-      const entries = Object.entries(athleteGroupedAthletes)
-        .filter(entry => athleteGroupIds.includes(entry[0]))
-        .map(entry => {
-          let athletes = entry[1] as ExtendedAthlete[];
-          athletes = athletes
-            .map(athlete => {
-              const attempts = orderBy(
-                CrudAdapter.filter(Attempt.collectionKey, {
-                  athleteId: athlete.id
-                }),
-                ["discipline", "index"],
-                ["asc", "asc"]
-              );
+    const entries = Object.entries(athleteGroupedAthletes)
+      .filter(entry => athleteGroupIds.includes(entry[0]))
+      .map(entry => {
+        let athletes = entry[1] as ExtendedAthlete[];
+        athletes = athletes
+          .map(athlete => {
+            const attempts = orderBy(
+              CrudAdapter.filter(Attempt.collectionKey, {
+                athleteId: athlete.id
+              }),
+              ["discipline", "index"],
+              ["asc", "asc"]
+            );
 
-              const disciplineAttempts = groupBy(attempts, "discipline");
+            const disciplineAttempts = groupBy(attempts, "discipline");
 
-              return {
-                ...athlete,
-                attempts,
-                done: {
-                  SQUAT: disciplineAttempts.SQUAT
-                    ? disciplineAttempts.SQUAT.filter(d => d.done).length
-                    : 0,
-                  BENCHPRESS: disciplineAttempts.BENCHPRESS
-                    ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
-                    : 0,
-                  DEADLIFT: disciplineAttempts.DEADLIFT
-                    ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
-                    : 0
-                }
-              };
-            })
-            .sort((a, b) => {
-              const nextAAttempt = a.attempts.find(attempt => !attempt.done);
-              const nextBAttempt = b.attempts.find(attempt => !attempt.done);
-
-              if (nextAAttempt && nextBAttempt) {
-                const diff = nextBAttempt.weight - nextAAttempt.weight;
-
-                if (diff === 0) {
-                  return b.los - a.los;
-                }
-                return diff;
+            return {
+              ...athlete,
+              attempts,
+              done: {
+                SQUAT: disciplineAttempts.SQUAT
+                  ? disciplineAttempts.SQUAT.filter(d => d.done).length
+                  : 0,
+                BENCHPRESS: disciplineAttempts.BENCHPRESS
+                  ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
+                  : 0,
+                DEADLIFT: disciplineAttempts.DEADLIFT
+                  ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
+                  : 0
               }
+            };
+          })
+          .sort((a, b) => {
+            const nextAAttempt = a.attempts.find(attempt => !attempt.done);
+            const nextBAttempt = b.attempts.find(attempt => !attempt.done);
 
-              return 0;
-            })
-            .reverse();
+            if (nextAAttempt && nextBAttempt) {
+              const diff = nextBAttempt.weight - nextAAttempt.weight;
 
-          return athletes;
-        });
-      const flattedAthletes = flatten(entries);
+              if (diff === 0) {
+                return b.los - a.los;
+              }
+              return diff;
+            }
 
-      const dones = {
-        SQUAT: Math.min(...flattedAthletes.map(a => a.done.SQUAT)),
-        BENCHPRESS: Math.min(...flattedAthletes.map(a => a.done.BENCHPRESS)),
-        DEADLIFT: Math.min(...flattedAthletes.map(a => a.done.DEADLIFT))
-      };
+            return 0;
+          })
+          .reverse();
 
-      const activeDiscipline = disciplines.find(d => dones[d] < 3);
-      const attemptAmount =
-        disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
-
-      const cumulatedAthletes: ExtendedAthlete[] = [];
-
-      const iterator = countTo(attemptAmount);
-      for (const value of iterator) {
-        cumulatedAthletes.push(...flattedAthletes);
-      }
-
-      flattedAthletes.forEach(athlete => {
-        const doneAttempts = Object.entries(athlete.done).reduce(
-          (acc: number, val: [string, number]) => {
-            acc += val[1];
-            return acc;
-          },
-          0
-        );
-
-        const doneIterator = countTo(doneAttempts);
-        for (const value of doneIterator) {
-          cumulatedAthletes.splice(cumulatedAthletes.indexOf(athlete), 1);
-        }
+        return athletes;
       });
+    const flattedAthletes = flatten(entries);
 
-      const returnValue = cumulatedAthletes.slice(0, 50);
+    const dones = {
+      SQUAT: Math.min(...flattedAthletes.map(a => a.done.SQUAT)),
+      BENCHPRESS: Math.min(...flattedAthletes.map(a => a.done.BENCHPRESS)),
+      DEADLIFT: Math.min(...flattedAthletes.map(a => a.done.DEADLIFT))
+    };
 
-      this.nextAthleteCache = returnValue;
-      this.nextAthleteCacheUpdate = new Date().getTime();
+    const activeDiscipline = disciplines.find(d => dones[d] < 3);
+    const attemptAmount =
+      disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
 
-      return returnValue;
+    const cumulatedAthletes: ExtendedAthlete[] = [];
+
+    const iterator = countTo(attemptAmount);
+    for (const value of iterator) {
+      cumulatedAthletes.push(...flattedAthletes);
     }
 
-    return this.nextAthleteCache;
+    flattedAthletes.forEach(athlete => {
+      const doneAttempts = Object.entries(athlete.done).reduce(
+        (acc: number, val: [string, number]) => {
+          acc += val[1];
+          return acc;
+        },
+        0
+      );
+
+      const doneIterator = countTo(doneAttempts);
+      for (const value of doneIterator) {
+        cumulatedAthletes.splice(cumulatedAthletes.indexOf(athlete), 1);
+      }
+    });
+
+    return cumulatedAthletes.slice(0, 50);
   }
 
   @Subscription(returns => UpdateNotification, {
@@ -245,9 +229,8 @@ export default class SlotResolver implements ResolverInterface<Slot> {
   public updateNextAthletesNotification(
     @Root() payload: UpdateNotificationPayload
   ): UpdateNotification {
-    console.log(payload);
     return {
-      slotId: payload.slotId,
+      ...payload,
       date: new Date()
     };
   }

@@ -25,7 +25,7 @@ import { FilterInput } from "../models/filter";
 import { SortDirection, SortInput } from "../models/sort";
 import AgeClassesResolver from "./AgeClasses";
 import FilterArgs from "./args/FilterArgs";
-import IdArgs from "./args/IdArgs";
+import { IdArgs } from "./args/IdArgs";
 import SortArgs from "./args/SortArgs";
 import EventResolver from "./Event";
 import EventsResolver from "./Events";

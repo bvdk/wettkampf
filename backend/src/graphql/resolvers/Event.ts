@@ -1,6 +1,7 @@
 import _ from "lodash";
 import {
   Args,
+  ArgsType,
   Field,
   FieldResolver,
   ObjectType,
@@ -29,6 +30,12 @@ import AthleteResolver from "./Athlete";
 import ResultClassResolver from "./ResultClass";
 import SlotResolver from "./Slot";
 import SlotsResolver from "./Slots";
+
+@ArgsType()
+class FilterBodyWeightArgs {
+  @Field(type => Boolean, { nullable: true })
+  public filterBodyWeight: boolean;
+}
 
 @ObjectType()
 export class SlotGroupChangedNotification {
@@ -86,47 +93,54 @@ export default class EventResolver implements ResolverInterface<Event> {
     @PubSub("SLOP_GROUP_CHANGED")
     publish?: Publisher<{ athleteGroupIds: string[] }>,
     @Args() filterArgs?: FilterArgs,
-    @Args() sortArgs?: SortArgs
+    @Args() sortArgs?: SortArgs,
+    @Args()
+    { filterBodyWeight }: FilterBodyWeightArgs = { filterBodyWeight: false }
   ) {
-    let athletes = this.getEventAthletes(event.id);
+    let eventAthletes = this.getEventAthletes(event.id);
+    if (filterBodyWeight) {
+      eventAthletes = eventAthletes.filter(
+        athlete => athlete.bodyWeight !== null
+      );
+    }
     const athleteGroups = this.getEventAthleteGroups(event.id);
+    let filteredAthletes = null;
 
     const filters = _.get(filterArgs, "filters");
     if (filters && filters.length) {
       const slotFilter = _.find(filters, { index: "slotId" });
       const resultClassFilter = _.find(filters, { index: "resultClassId" });
       const athleteGroupIdFilter = _.find(filters, { index: "athleteGroupId" });
-      const athleteResolver = new AthleteResolver();
+      const athleteResolver = resultClassFilter ? new AthleteResolver() : null;
 
       if (athleteGroupIdFilter && publish) {
         publish({ athleteGroupIds: athleteGroupIdFilter.value });
       }
 
-      athletes = FilterInput.performFilter(
-        athletes.map(item => {
-          const tmp: any = {
-            ...item
-          };
-          if (slotFilter) {
-            tmp.slotId = _.chain(athleteGroups)
-              .find({ id: item.athleteGroupId })
-              .get("slotId")
-              .value();
+      const items = eventAthletes.map((item: any) => {
+        if (slotFilter) {
+          const athleteGroup = athleteGroups.find(
+            ag => ag.id === item.athleteGroupId
+          );
+          if (athleteGroup) {
+            item.slotId = athleteGroup.slotId;
           }
-          if (resultClassFilter) {
-            tmp.resultClassId = athleteResolver.resultClassIdFromAthlete(item);
-          }
-          return tmp;
-        }),
-        filters
-      );
+        }
+        if (resultClassFilter) {
+          item.resultClassId = athleteResolver.resultClassIdFromAthlete(item);
+        }
+        return item;
+      });
+
+      filteredAthletes = FilterInput.performFilter(items, filters);
     }
 
+    let sortedAthletes = filteredAthletes || eventAthletes;
     if (sortArgs && sortArgs.sort && sortArgs.sort.length) {
-      athletes = SortInput.performSort(athletes, sortArgs.sort);
+      sortedAthletes = SortInput.performSort(sortedAthletes, sortArgs.sort);
     }
 
-    return athletes;
+    return sortedAthletes;
   }
 
   @FieldResolver()
@@ -238,7 +252,6 @@ export default class EventResolver implements ResolverInterface<Event> {
   public slotGroupChangedNotification(
     @Root() payload: SlotGroupChangedPayload
   ): SlotGroupChangedNotification {
-    console.log(payload);
     return {
       athleteGroupIds: payload.athleteGroupIds,
       date: new Date()

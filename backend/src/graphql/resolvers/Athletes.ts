@@ -14,7 +14,7 @@ import {
 import { CrudAdapter } from "../../database/CrudAdapter";
 import wilks from "../../utils/wilks";
 import { Athlete, AthleteInput, AthleteUpdateInput } from "../models/athlete";
-import IdArgs from "./args/IdArgs";
+import { IdArgs } from "./args/IdArgs";
 import AthleteResolver from "./Athlete";
 import AttemptsResolver from "./Attempts";
 import EventResolver from "./Event";

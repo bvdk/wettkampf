@@ -200,7 +200,7 @@ type Event {
 
   """Athletes without valid group"""
   unsortedAthletes(filters: [FilterInput!]): [Athlete!]!
-  athletes(sort: [SortInput!], filters: [FilterInput!]): [Athlete!]!
+  athletes(filterBodyWeight: Boolean, sort: [SortInput!], filters: [FilterInput!]): [Athlete!]!
   results(sort: [SortInput!], filters: [FilterInput!]): [Athlete!]!
   officials: [Official!]!
   resultClasses: [ResultClass!]!

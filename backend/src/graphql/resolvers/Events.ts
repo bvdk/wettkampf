@@ -2,14 +2,11 @@ import { Context } from "graphql-yoga/dist/types";
 import { Arg, Args, Ctx, Mutation, Query, Resolver } from "type-graphql";
 import { CrudAdapter } from "../../database/CrudAdapter";
 import { Event, EventInput } from "../models/event";
-import IdArgs from "./args/IdArgs";
+import { IdArgs } from "./args/IdArgs";
 import SlotsResolver from "./Slots";
 
 @Resolver()
 export default class EventsResolver {
-  private nextCache: Event | null = null;
-  private nextCacheUpdate: number | null = null;
-
   @Query(returns => [Event], { description: "Get all the events" })
   public events(): Event[] {
     return CrudAdapter.getAll(Event.collectionKey);
@@ -17,15 +14,7 @@ export default class EventsResolver {
 
   @Query(returns => Event, { description: "Get a event" })
   public event(@Args() { id }: IdArgs): Event {
-    const now = new Date().getTime();
-    if (
-      !this.nextCacheUpdate ||
-      (this.nextCacheUpdate && now - this.nextCacheUpdate > 1000)
-    ) {
-      this.nextCache = CrudAdapter.getItem(Event.collectionKey, id);
-      this.nextCacheUpdate = new Date().getTime();
-    }
-    return this.nextCache;
+    return CrudAdapter.getItem(Event.collectionKey, id);
   }
 
   @Mutation()

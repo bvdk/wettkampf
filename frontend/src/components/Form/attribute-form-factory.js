@@ -561,6 +561,7 @@ class FormFactory {
         break;
       }
       default: {
+        break;
       }
     }
     return result;
