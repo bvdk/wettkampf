@@ -1,5 +1,6 @@
 import { flatten, get, groupBy, orderBy, size } from "lodash";
 import {
+  Args,
   Field,
   FieldResolver,
   ObjectType,
@@ -15,6 +16,7 @@ import { AthleteGroup } from "../models/athleteGroup";
 import { Attempt } from "../models/attempt";
 import { Event } from "../models/event";
 import { Slot } from "../models/slot";
+import FilterArgs from "./args/FilterArgs";
 import EventResolver from "./Event";
 
 type ExtendedAthlete = Athlete & {
@@ -118,8 +120,15 @@ export default class SlotResolver implements ResolverInterface<Slot> {
   }
 
   @FieldResolver()
-  public nextAthletes(@Root() slot: Slot) {
+  public nextAthletes(@Root() slot: Slot, @Args() { filters }: FilterArgs) {
     const now = new Date().getTime();
+    let athleteGroupIds: string[] = [];
+    if (filters) {
+      const athleteGroups = filters.find(f => f.index === "athleteGroupId");
+      if (athleteGroups) {
+        athleteGroupIds = athleteGroups.value;
+      }
+    }
 
     if (
       !this.nextAthleteCacheUpdate ||
@@ -134,55 +143,57 @@ export default class SlotResolver implements ResolverInterface<Slot> {
         "athleteGroupId"
       );
 
-      const entries = Object.entries(athleteGroupedAthletes).map(entry => {
-        let athletes = entry[1] as ExtendedAthlete[];
-        athletes = athletes
-          .map(athlete => {
-            const attempts = orderBy(
-              CrudAdapter.filter(Attempt.collectionKey, {
-                athleteId: athlete.id
-              }),
-              ["discipline", "index"],
-              ["asc", "asc"]
-            );
+      const entries = Object.entries(athleteGroupedAthletes)
+        .filter(entry => athleteGroupIds.includes(entry[0]))
+        .map(entry => {
+          let athletes = entry[1] as ExtendedAthlete[];
+          athletes = athletes
+            .map(athlete => {
+              const attempts = orderBy(
+                CrudAdapter.filter(Attempt.collectionKey, {
+                  athleteId: athlete.id
+                }),
+                ["discipline", "index"],
+                ["asc", "asc"]
+              );
 
-            const disciplineAttempts = groupBy(attempts, "discipline");
+              const disciplineAttempts = groupBy(attempts, "discipline");
 
-            return {
-              ...athlete,
-              attempts,
-              done: {
-                SQUAT: disciplineAttempts.SQUAT
-                  ? disciplineAttempts.SQUAT.filter(d => d.done).length
-                  : 0,
-                BENCHPRESS: disciplineAttempts.BENCHPRESS
-                  ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
-                  : 0,
-                DEADLIFT: disciplineAttempts.DEADLIFT
-                  ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
-                  : 0
+              return {
+                ...athlete,
+                attempts,
+                done: {
+                  SQUAT: disciplineAttempts.SQUAT
+                    ? disciplineAttempts.SQUAT.filter(d => d.done).length
+                    : 0,
+                  BENCHPRESS: disciplineAttempts.BENCHPRESS
+                    ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
+                    : 0,
+                  DEADLIFT: disciplineAttempts.DEADLIFT
+                    ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
+                    : 0
+                }
+              };
+            })
+            .sort((a, b) => {
+              const nextAAttempt = a.attempts.find(attempt => !attempt.done);
+              const nextBAttempt = b.attempts.find(attempt => !attempt.done);
+
+              if (nextAAttempt && nextBAttempt) {
+                const diff = nextBAttempt.weight - nextAAttempt.weight;
+
+                if (diff === 0) {
+                  return b.los - a.los;
+                }
+                return diff;
               }
-            };
-          })
-          .sort((a, b) => {
-            const nextAAttempt = a.attempts.find(attempt => !attempt.done);
-            const nextBAttempt = b.attempts.find(attempt => !attempt.done);
 
-            if (nextAAttempt && nextBAttempt) {
-              const diff = nextBAttempt.weight - nextAAttempt.weight;
+              return 0;
+            })
+            .reverse();
 
-              if (diff === 0) {
-                return b.los - a.los;
-              }
-              return diff;
-            }
-
-            return 0;
-          })
-          .reverse();
-
-        return athletes;
-      });
+          return athletes;
+        });
       const flattedAthletes = flatten(entries);
 
       const dones = {

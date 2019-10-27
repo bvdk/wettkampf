@@ -183,6 +183,25 @@ class OrderedEventAthletes extends Component<Props, {}> {
   }
 }
 
+const getFilterParams = filterParams => {
+  const tmp = [];
+
+  if (filterParams.athleteGroupId) {
+    tmp.push({
+      value: filterParams.athleteGroupId,
+      index: 'athleteGroupId'
+    });
+  }
+
+  if (filterParams.slotId) {
+    tmp.push({
+      value: filterParams.slotId,
+      index: 'slotId'
+    });
+  }
+  return tmp.length ? tmp : null;
+};
+
 export default compose(
   graphql(EventAttemptsQuery, {
     name: 'nextSlotAthletesQuery',
@@ -190,7 +209,8 @@ export default compose(
       return {
         fetchPolicy: 'cache-and-network',
         variables: {
-          slotId: props.slotId
+          slotId: props.slotId,
+          filters: getFilterParams(props.filterParams)
         }
       };
     }

@@ -26,19 +26,33 @@ const Dashboard = (props: DasboardProps) => {
     subscribePublicConfig(state.client, publicConfig =>
       dispatch({ type: ActionTypes.setPublicConfig, data: publicConfig })
     );
-    subscribeUpdateNextAthletes(state.client, data => {
+    subscribeUpdateNextAthletes(state.client, state.athleteGroups, data => {
       dispatch({
         type: ActionTypes.nextAthletes,
         data
       });
     });
     subscribeSlotGroupChangedNotification(state.client, data => {
+      getEventSlots(state.client, state.publicConfig.eventId, event => {
+        if (event.slots.length) {
+          event.slots.forEach(({ id }) => {
+            getNextSlotAthletes(state.client, id, state.athleteGroups, slot => {
+              dispatch({
+                type: ActionTypes.nextAthletes,
+                data: {
+                  [id]: slot.nextAthletes
+                }
+              });
+            });
+          });
+        }
+      });
       dispatch({
         type: ActionTypes.nextAthleteGroups,
         data
       });
     });
-  }, [state.client, dispatch]);
+  }, [state.client, state.athleteGroups, dispatch, state.publicConfig.eventId]);
 
   useEffect(() => {
     const { eventId } = state.publicConfig;
@@ -48,20 +62,25 @@ const Dashboard = (props: DasboardProps) => {
         getEventSlots(state.client, eventId, event => {
           if (event.slots.length) {
             event.slots.forEach(({ id }) => {
-              getNextSlotAthletes(state.client, id, slot => {
-                dispatch({
-                  type: ActionTypes.nextAthletes,
-                  data: {
-                    [id]: slot.nextAthletes
-                  }
-                });
-              });
+              getNextSlotAthletes(
+                state.client,
+                id,
+                state.athleteGroups,
+                slot => {
+                  dispatch({
+                    type: ActionTypes.nextAthletes,
+                    data: {
+                      [id]: slot.nextAthletes
+                    }
+                  });
+                }
+              );
             });
           }
         });
       }
     }
-  }, [prevState, state.client, state.publicConfig]);
+  }, [prevState, state.athleteGroups, state.client, state.publicConfig]);
 
   const nextAthletesEntries = Object.entries(state.nextAthletes);
   if (nextAthletesEntries.length) {

@@ -398,7 +398,7 @@ type Slot {
   activeDiscipline: Discipline
   index: Int!
   athletes: [Athlete!]!
-  nextAthletes: [Athlete!]!
+  nextAthletes(filters: [FilterInput!]): [Athlete!]!
   athleteCount: Int!
   athleteGroups: [AthleteGroup!]!
   officialSlots: [OfficialSlot!]!

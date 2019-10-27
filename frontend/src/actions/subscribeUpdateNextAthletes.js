@@ -5,7 +5,7 @@ const UpdateNextAthletesNotification = loader(
   '../graphql/subscriptions/updateNextAthletesNotification.graphql'
 );
 
-export default (client, cb) =>
+export default (client, athleteGroups, cb) =>
   client
     .subscribe({
       query: UpdateNextAthletesNotification
@@ -15,6 +15,7 @@ export default (client, cb) =>
         getNextSlotAthletes(
           client,
           data.updateNextAthletesNotification.slotId,
+          athleteGroups,
           slot =>
             cb({
               [slot.id]: slot.nextAthletes

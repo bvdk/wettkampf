@@ -1,4 +1,4 @@
-query nextSlotAthletes($slotId: ID!) {
+query nextSlotAthletes($slotId: ID!, $filters: [FilterInput!]) {
     slot(id: $slotId){
         id
         name
@@ -9,7 +9,7 @@ query nextSlotAthletes($slotId: ID!) {
             id
             name
         }
-        nextAthletes {
+        nextAthletes(filters: $filters) {
             id
             birthday
             los
