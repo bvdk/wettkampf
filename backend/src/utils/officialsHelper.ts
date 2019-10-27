@@ -1,6 +1,6 @@
 import { CollectionKeys } from "../database";
 import { CrudAdapter } from "../database/CrudAdapter";
-import IdArgs from "../graphql/resolvers/args/IdArgs";
+import { IdArgs } from "../graphql/resolvers/args/IdArgs";
 
 interface ICreateOfficialArgs {
   eventId: string;
