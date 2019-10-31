@@ -146,7 +146,12 @@ class AttemptsTable extends Component<Props, State> {
       highlightFirstAthlete
     } = this.props;
 
-    const firstAthleteId = _.get(athletes, '[0].id');
+    const athleteGroupIds = Array.isArray(filterParams.athleteGroupId)
+      ? filterParams.athleteGroupId
+      : [filterParams.athleteGroupId];
+
+    const groupedAthletes = _.groupBy(athletes, 'athleteGroupId');
+    const firstAthleteId = _.get(groupedAthletes[athleteGroupIds[0]], '[0].id');
 
     let columns = [
       {

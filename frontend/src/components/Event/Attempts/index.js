@@ -91,12 +91,14 @@ class EventAttemptsRoute extends Component<Props, State> {
           <Col md={6}>
             <Toolbar
               style={{ paddingTop: 16 }}
-              renderLeft={() => <h3>Nächste Athleten</h3>}
+              renderLeft={() => (
+                <h3 style={{ fontSize: '1.17em' }}>Nächste Athleten</h3>
+              )}
               renderRight={() => (
                 <Button onClick={this._toggleCollapse} icon="close" />
               )}
             />
-            <hr />
+            <hr className="mb-0" />
             <OrderedEventAthletes
               key={orderedEventAthletesKey}
               highlightFirstAthlete

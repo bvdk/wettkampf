@@ -21,10 +21,58 @@ type Props = {
 
 class OrderedEventAthletes extends Component<Props, {}> {
   render() {
-    const { athletes, highlightFirstAthlete } = this.props;
+    const { athletes, highlightFirstAthlete, filterParams } = this.props;
     const style = { width: '25%', padding: 8 };
 
+    const athleteGroupIds = Array.isArray(filterParams.athleteGroupId)
+      ? filterParams.athleteGroupId
+      : [filterParams.athleteGroupId];
+
+    const groupedAthletes = _.groupBy(athletes, 'athleteGroupId');
     const athleteHelper = {};
+    const athletesData = athleteGroupIds.flatMap(id =>
+      groupedAthletes[id]
+        .map(athlete => {
+          const actualAttempt = athlete.attempts[athlete.attempts.length - 1];
+
+          if (athleteHelper[athlete.id] === undefined) {
+            if (actualAttempt) {
+              athleteHelper[athlete.id] = actualAttempt.index;
+            } else {
+              athleteHelper[athlete.id] = 0;
+            }
+          } else {
+            athleteHelper[athlete.id] += 1;
+          }
+
+          const v = (athleteHelper[athlete.id] % 3) + 1;
+          const attempt = athlete.attempts[v - 1];
+          if (attempt && attempt.done) {
+            return undefined;
+          }
+
+          return {
+            ...athlete,
+            attempt,
+            v
+          };
+        })
+        .filter(e => e)
+        .sort((a, b) => {
+          const max = Number.MAX_VALUE;
+          const attemptA = a.attempts[a.v - 1];
+          const attemptB = b.attempts[b.v - 1];
+          const weightA = attemptA ? attemptA.weight : max;
+          const weightB = attemptB ? attemptB.weight : max;
+
+          if (weightA === weightB) {
+            return a.los - b.los;
+          }
+
+          return weightA - weightB;
+        })
+        .sort((a, b) => a.v - b.v)
+    );
 
     return (
       <div>
@@ -81,22 +129,11 @@ class OrderedEventAthletes extends Component<Props, {}> {
                         style={{
                           display: 'block',
                           overflowY: 'scroll',
-                          maxHeight: 'calc(100vh - 246px)'
+                          maxHeight: 'calc(100vh - 250px)'
                         }}>
-                        {athletes.map((athlete, index) => {
-                          const actualAttempt =
-                            athlete.attempts[athlete.attempts.length - 1];
-
-                          if (athleteHelper[athlete.id] === undefined) {
-                            if (actualAttempt) {
-                              athleteHelper[athlete.id] = actualAttempt.index;
-                            } else {
-                              athleteHelper[athlete.id] = 0;
-                            }
-                          } else {
-                            athleteHelper[athlete.id] += 1;
-                          }
-
+                        {athletesData.map((athlete, index) => {
+                          const { v } = athlete;
+                          const attempt = athlete.attempts[v - 1];
                           const indexColumnValue =
                             highlightFirstAthlete && index === 0 ? (
                               <Icon type="right" />
@@ -105,8 +142,6 @@ class OrderedEventAthletes extends Component<Props, {}> {
                             );
 
                           let weight = '';
-                          const attempt =
-                            athlete.attempts[athleteHelper[athlete.id]];
                           if (attempt) {
                             if (attempt.weight) {
                               weight = `${attempt.weight} kg`;
@@ -120,9 +155,7 @@ class OrderedEventAthletes extends Component<Props, {}> {
                               <td style={style}>{indexColumnValue}</td>
                               <td style={style}>{athlete.name}</td>
                               <td style={style}>{weight}</td>
-                              <td style={style}>
-                                {(athleteHelper[athlete.id] % 3) + 1}
-                              </td>
+                              <td style={style}>{v}</td>
                             </tr>
                           );
                         })}
@@ -164,7 +197,9 @@ class OrderedEventAthletes extends Component<Props, {}> {
                   <div className="ant-table-footer">
                     <Toolbar
                       style={{ padding: 0 }}
-                      renderLeft={() => <span>{athletes.length} Athleten</span>}
+                      renderLeft={() => (
+                        <span>{athletesData.length} Athleten</span>
+                      )}
                       renderRight={() => (
                         <EventAthletePointsCalcButton
                           slotId={this.props.slotId}
@@ -217,9 +252,8 @@ export default compose(
   }),
   waitWhileLoading('nextSlotAthletesQuery'),
   withProps(props => ({
+    ...props,
     loading: _.get(props, 'nextSlotAthletesQuery.loading', false),
-    slotId: props.slotId,
-    onAthleteClick: props.onAthleteClick,
     eventId: _.get(props, 'nextSlotAthletesQuery.slot.eventId'),
     athletes: _.get(props, 'nextSlotAthletesQuery.slot.nextAthletes', []).map(
       (item, index) => ({

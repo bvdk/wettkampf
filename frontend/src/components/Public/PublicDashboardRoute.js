@@ -39,14 +39,14 @@ const Dashboard = (props: DasboardProps) => {
         getEventSlots(client, eventId, event => {
           if (event.slots.length) {
             event.slots.forEach(({ id }) => {
-              getNextSlotAthletes(client, id, athleteGroups, slot => {
+              getNextSlotAthletes(client, id, athleteGroups, slot =>
                 dispatch({
                   type: ActionTypes.nextAthletes,
                   data: {
                     [id]: slot.nextAthletes
                   }
-                });
-              });
+                })
+              );
             });
           }
         });
@@ -74,18 +74,13 @@ const Dashboard = (props: DasboardProps) => {
         getEventSlots(state.client, eventId, event => {
           if (event.slots.length) {
             event.slots.forEach(({ id }) => {
-              getNextSlotAthletes(
-                state.client,
-                id,
-                state.athleteGroups,
-                slot => {
-                  dispatch({
-                    type: ActionTypes.nextAthletes,
-                    data: {
-                      [id]: slot.nextAthletes
-                    }
-                  });
-                }
+              getNextSlotAthletes(state.client, id, state.athleteGroups, slot =>
+                dispatch({
+                  type: ActionTypes.nextAthletes,
+                  data: {
+                    [id]: slot.nextAthletes
+                  }
+                })
               );
             });
           }
@@ -109,7 +104,8 @@ const Dashboard = (props: DasboardProps) => {
         <div className="col-3">
           <NextAthletes
             key={state.nextAthletesUpdated}
-            athletes={nextAthletesEntries[0][1].slice(0, 25)}
+            athletes={nextAthletesEntries[0][1]}
+            athleteGroups={state.athleteGroups}
           />
         </div>
       </div>

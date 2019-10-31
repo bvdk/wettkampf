@@ -5,6 +5,8 @@ query nextSlotAthletes($slotId: ID!, $filters: [FilterInput!]) {
         nextAthletes(filters: $filters) {
             id
             name
+            los
+            athleteGroupId
             attempts {
                 discipline
                 id

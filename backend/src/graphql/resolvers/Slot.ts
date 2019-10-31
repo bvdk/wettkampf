@@ -130,59 +130,40 @@ export default class SlotResolver implements ResolverInterface<Slot> {
     const event = this.event(slot);
     const disciplines = eventResolver.availableDisciplines(event);
 
-    const athleteGroupedAthletes = groupBy(
-      this.athletes(slot).filter(athlete => athlete.bodyWeight !== null),
-      "athleteGroupId"
-    );
+    const slotAthletes = this.athletes(slot).filter(a => a.bodyWeight);
+    const athleteGroupedAthletes = groupBy(slotAthletes, "athleteGroupId");
 
     const entries = Object.entries(athleteGroupedAthletes)
       .filter(entry => athleteGroupIds.includes(entry[0]))
       .map(entry => {
         let athletes = entry[1] as ExtendedAthlete[];
-        athletes = athletes
-          .map(athlete => {
-            const attempts = orderBy(
-              CrudAdapter.filter(Attempt.collectionKey, {
-                athleteId: athlete.id
-              }),
-              ["discipline", "index"],
-              ["asc", "asc"]
-            );
+        athletes = athletes.map(athlete => {
+          const attempts = orderBy(
+            CrudAdapter.filter(Attempt.collectionKey, {
+              athleteId: athlete.id
+            }),
+            ["discipline", "index"],
+            ["asc", "asc"]
+          );
 
-            const disciplineAttempts = groupBy(attempts, "discipline");
+          const disciplineAttempts = groupBy(attempts, "discipline");
 
-            return {
-              ...athlete,
-              attempts,
-              done: {
-                SQUAT: disciplineAttempts.SQUAT
-                  ? disciplineAttempts.SQUAT.filter(d => d.done).length
-                  : 0,
-                BENCHPRESS: disciplineAttempts.BENCHPRESS
-                  ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
-                  : 0,
-                DEADLIFT: disciplineAttempts.DEADLIFT
-                  ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
-                  : 0
-              }
-            };
-          })
-          .sort((a, b) => {
-            const nextAAttempt = a.attempts.find(attempt => !attempt.done);
-            const nextBAttempt = b.attempts.find(attempt => !attempt.done);
-
-            if (nextAAttempt && nextBAttempt) {
-              const diff = nextBAttempt.weight - nextAAttempt.weight;
-
-              if (diff === 0) {
-                return b.los - a.los;
-              }
-              return diff;
+          return {
+            ...athlete,
+            attempts,
+            done: {
+              SQUAT: disciplineAttempts.SQUAT
+                ? disciplineAttempts.SQUAT.filter(d => d.done).length
+                : 0,
+              BENCHPRESS: disciplineAttempts.BENCHPRESS
+                ? disciplineAttempts.BENCHPRESS.filter(d => d.done).length
+                : 0,
+              DEADLIFT: disciplineAttempts.DEADLIFT
+                ? disciplineAttempts.DEADLIFT.filter(d => d.done).length
+                : 0
             }
-
-            return 0;
-          })
-          .reverse();
+          };
+        });
 
         return athletes;
       });
@@ -198,29 +179,14 @@ export default class SlotResolver implements ResolverInterface<Slot> {
     const attemptAmount =
       disciplines.slice(disciplines.indexOf(activeDiscipline)).length * 3;
 
-    const cumulatedAthletes: ExtendedAthlete[] = [];
+    const multiAthletes: ExtendedAthlete[] = [];
 
     const iterator = countTo(attemptAmount);
     for (const value of iterator) {
-      cumulatedAthletes.push(...flattedAthletes);
+      multiAthletes.push(...flattedAthletes);
     }
 
-    flattedAthletes.forEach(athlete => {
-      const doneAttempts = Object.entries(athlete.done).reduce(
-        (acc: number, val: [string, number]) => {
-          acc += val[1];
-          return acc;
-        },
-        0
-      );
-
-      const doneIterator = countTo(doneAttempts);
-      for (const value of doneIterator) {
-        cumulatedAthletes.splice(cumulatedAthletes.indexOf(athlete), 1);
-      }
-    });
-
-    return cumulatedAthletes.slice(0, 50);
+    return multiAthletes;
   }
 
   @Subscription(returns => UpdateNotification, {
