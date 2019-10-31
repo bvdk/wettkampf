@@ -30,8 +30,11 @@ class OrderedEventAthletes extends Component<Props, {}> {
 
     const groupedAthletes = _.groupBy(athletes, 'athleteGroupId');
     const athleteHelper = {};
-    const athletesData = athleteGroupIds.flatMap(id =>
-      groupedAthletes[id]
+    const athletesData = athleteGroupIds.flatMap(id => {
+      if (!groupedAthletes[id]) {
+        return [];
+      }
+      return groupedAthletes[id]
         .map(athlete => {
           const actualAttempt = athlete.attempts[athlete.attempts.length - 1];
 
@@ -71,8 +74,8 @@ class OrderedEventAthletes extends Component<Props, {}> {
 
           return weightA - weightB;
         })
-        .sort((a, b) => a.v - b.v)
-    );
+        .sort((a, b) => a.v - b.v);
+    });
 
     return (
       <div>
