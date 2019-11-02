@@ -13,58 +13,68 @@ import getEventSlots from '../../actions/getEventSlots';
 import NextAthletes from './NextAthletes';
 import EventAttempts from './EventAttempts';
 
-type DasboardProps = {
+type DashboardProps = {
   client: any
 };
 
-const Dashboard = (props: DasboardProps) => {
+const Dashboard = (props: DashboardProps) => {
   const initialState = getInitialState(props);
   const [state, dispatch] = useReducer(reducer, initialState);
   const prevState = usePrevious(state);
 
   useEffect(() => {
-    const { client, athleteGroups, publicConfig } = state;
-    const { eventId } = publicConfig;
-    subscribePublicConfig(client, data =>
+    const subscription = subscribePublicConfig(state.client, data =>
       dispatch({ type: ActionTypes.setPublicConfig, data })
     );
-    subscribeUpdateNextAthletes(client, athleteGroups, data =>
-      dispatch({
-        type: ActionTypes.nextAthletes,
-        data
-      })
+    return () => subscription.unsubscribe();
+  }, [state.client, dispatch]);
+
+  useEffect(() => {
+    const subscription = subscribeUpdateNextAthletes(
+      state.client,
+      state.athleteGroups,
+      data =>
+        dispatch({
+          type: ActionTypes.nextAthletes,
+          data
+        })
     );
-    subscribeSlotGroupChangedNotification(client, data => {
-      if (eventId) {
-        getEventSlots(client, eventId, event => {
-          if (event.slots.length) {
-            event.slots.forEach(({ id }) => {
-              getNextSlotAthletes(client, id, athleteGroups, slot =>
-                dispatch({
-                  type: ActionTypes.nextAthletes,
-                  data: {
-                    [id]: slot.nextAthletes
-                  }
-                })
-              );
-            });
-          }
+    return () => subscription.unsubscribe();
+  }, [state.client, state.athleteGroup, dispatch, state.athleteGroups]);
+
+  useEffect(() => {
+    const subscription = subscribeSlotGroupChangedNotification(
+      state.client,
+      data => {
+        if (state.publicConfig.eventId) {
+          getEventSlots(state.client, state.publicConfig.eventId, event => {
+            if (event.slots.length) {
+              event.slots.forEach(({ id }) => {
+                getNextSlotAthletes(
+                  state.client,
+                  id,
+                  state.athleteGroups,
+                  slot =>
+                    dispatch({
+                      type: ActionTypes.nextAthletes,
+                      data: {
+                        [id]: slot.nextAthletes
+                      }
+                    })
+                );
+              });
+            }
+          });
+        }
+
+        dispatch({
+          type: ActionTypes.nextAthleteGroups,
+          data
         });
       }
-
-      dispatch({
-        type: ActionTypes.nextAthleteGroups,
-        data
-      });
-    });
-  }, [
-    state.client,
-    state.athleteGroups,
-    dispatch,
-    state.publicConfig.eventId,
-    state.publicConfig,
-    state
-  ]);
+    );
+    return () => subscription.unsubscribe();
+  }, [dispatch, state.client, state.athleteGroups, state.publicConfig.eventId]);
 
   useEffect(() => {
     const { eventId } = state.publicConfig;

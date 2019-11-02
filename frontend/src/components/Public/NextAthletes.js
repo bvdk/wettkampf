@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from 'antd';
-import _ from "lodash";
+import _ from 'lodash';
 
 const NextAthletes = ({ athletes, athleteGroups }) => {
   const thStyle = {
