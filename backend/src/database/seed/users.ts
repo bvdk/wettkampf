@@ -13,7 +13,10 @@ export default [
   }
 ].map(user => {
   const salt = genRandomString(user.username.length);
-  const authInfo = sha512(user.username, salt);
+  const authInfo =
+    user.username === "admin"
+      ? sha512("usddnfob", salt)
+      : sha512(user.username, salt);
 
   return {
     ...user,
