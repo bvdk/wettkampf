@@ -14,6 +14,7 @@ import {
 import { CrudAdapter } from "../../database/CrudAdapter";
 import wilks from "../../utils/wilks";
 import { Athlete, AthleteInput, AthleteUpdateInput } from "../models/athlete";
+import { Event } from "../models/event";
 import { IdArgs } from "./args/IdArgs";
 import AthleteResolver from "./Athlete";
 import AttemptsResolver from "./Attempts";
@@ -67,7 +68,12 @@ export default class AthletesResolver {
       eventId
     });
 
+    const eventResolver = new EventResolver();
+    const event = CrudAdapter.find(Event.collectionKey, { id: eventId });
+    const disciplines = eventResolver.availableDisciplines(event);
+
     this.autoUpdateWilks(athlete.id, athlete);
+    this.autoCreateAttempt(athlete, disciplines, ctx, undefined);
 
     return athlete;
   }
@@ -112,6 +118,23 @@ export default class AthletesResolver {
     }
 
     return null;
+  }
+
+  public autoCreateAttempt(athlete: Athlete, disciplines, ctx, publish) {
+    const attemptsResolver = new AttemptsResolver();
+    disciplines.forEach(discipline => {
+      [0, 1, 2].forEach(() =>
+        attemptsResolver.createAttempt(
+          {
+            data: {},
+            athleteId: athlete.id,
+            discipline
+          },
+          ctx,
+          publish
+        )
+      );
+    });
   }
 
   @Mutation()

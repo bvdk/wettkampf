@@ -104,6 +104,7 @@ class EventAttemptsRoute extends Component<Props, State> {
               highlightFirstAthlete
               slotId={tmpParams.slotId}
               filterParams={tmpParams}
+              availableDisciplines={availableDisciplines}
             />
           </Col>
         ) : null}

@@ -32,7 +32,7 @@ import EventsResolver from "./Events";
 import WeightClassesResolver from "./WeightClasses";
 
 @ArgsType()
-class CreateAthleteGroupArgs {
+export class CreateAthleteGroupArgs {
   @Field(type => ID)
   public eventId: string;
 

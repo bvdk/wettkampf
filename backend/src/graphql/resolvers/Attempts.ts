@@ -72,7 +72,9 @@ export default class AttemptsResolver {
 
     this.autoUpdateTotalAndPoints(athleteId);
 
-    publish({ slotId: athleteGroup.slotId });
+    if (publish) {
+      publish({ slotId: athleteGroup.slotId });
+    }
     return attempt;
   }
 
