@@ -19,38 +19,39 @@ const NextAthletes = ({ athletes, athleteGroups }) => {
       return [];
     }
     return groupedAthletes[id]
-      .map(athlete => {
-        const actualAttempt = athlete.attempts[athlete.attempts.length - 1];
-
+      .flatMap(athlete => {
+        const attempts = athlete.attempts
+          .map((a, i) => ({ ...a, i }))
+          .filter(a => !a.done);
         if (athleteHelper[athlete.id] === undefined) {
-          if (actualAttempt) {
-            athleteHelper[athlete.id] = actualAttempt.index;
-          } else {
-            athleteHelper[athlete.id] = 0;
-          }
+          athleteHelper[athlete.id] = 0;
         } else {
           athleteHelper[athlete.id] += 1;
         }
 
-        const v = (athleteHelper[athlete.id] % 3) + 1;
-        const attempt = athlete.attempts[v - 1];
+        const attempt = attempts[athleteHelper[athlete.id]];
+
         if (attempt && attempt.done) {
           return undefined;
         }
 
-        return {
+        return attempts.map(a => ({
           ...athlete,
-          attempt,
-          v
-        };
+          attempts,
+          attempt: a,
+          v: (a.i % 3) + 1,
+          i: a.i
+        }));
       })
       .filter(e => e)
       .sort((a, b) => {
+        const attemptA = a.attempt;
+        const attemptB = b.attempt;
+
         const max = Number.MAX_VALUE;
-        const attemptA = a.attempts[a.v - 1];
-        const attemptB = b.attempts[b.v - 1];
-        const weightA = attemptA ? attemptA.weight : max;
-        const weightB = attemptB ? attemptB.weight : max;
+
+        const weightA = attemptA && attemptA.weight ? attemptA.weight : max;
+        const weightB = attemptB && attemptB.weight ? attemptB.weight : max;
 
         if (weightA === weightB) {
           return a.los - b.los;
@@ -58,7 +59,7 @@ const NextAthletes = ({ athletes, athleteGroups }) => {
 
         return weightA - weightB;
       })
-      .sort((a, b) => a.v - b.v);
+      .sort((a, b) => a.i - b.i);
   });
 
   return (
@@ -81,8 +82,7 @@ const NextAthletes = ({ athletes, athleteGroups }) => {
       </thead>
       <tbody>
         {athletesData.slice(0, 25).map((athlete, index) => {
-          const { v } = athlete;
-          const attempt = athlete.attempts[v - 1];
+          const { attempt, v } = athlete;
           const indexColumnValue =
             index === 0 ? <Icon type="right" /> : index + 1;
 

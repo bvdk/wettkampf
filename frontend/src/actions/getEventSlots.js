@@ -4,6 +4,7 @@ const EventSlotsQuery = gql`
   query eventSlots($eventId: ID!) {
     event(id: $eventId) {
       id
+      availableDisciplines
       slots {
         id
       }

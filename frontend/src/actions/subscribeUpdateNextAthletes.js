@@ -5,6 +5,8 @@ const UpdateNextAthletesNotification = loader(
   '../graphql/subscriptions/updateNextAthletesNotification.graphql'
 );
 
+const availableDisciplines = ['SQUAT', 'BENCHPRESS', 'DEADLIFT'];
+
 export default (client, athleteGroups, cb) =>
   client
     .subscribe({
@@ -18,7 +20,12 @@ export default (client, athleteGroups, cb) =>
           athleteGroups,
           slot =>
             cb({
-              [slot.id]: slot.nextAthletes
+              [slot.id]: slot.nextAthletes.map(item => ({
+                ...item,
+                attempts: availableDisciplines.flatMap(discipline =>
+                  item.attempts.filter(a => a.discipline === discipline)
+                )
+              }))
             })
         );
       },

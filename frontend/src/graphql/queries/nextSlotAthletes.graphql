@@ -2,6 +2,9 @@ query nextSlotAthletes($slotId: ID!, $filters: [FilterInput!]) {
     slot(id: $slotId){
         id
         eventId
+        event {
+            availableDisciplines
+        }
         nextAthletes(filters: $filters) {
             id
             name
