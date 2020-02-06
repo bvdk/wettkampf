@@ -198,8 +198,8 @@ class AttemptsTable extends Component<Props, State> {
         render: text => <Bold>{text}</Bold>
       },
       {
-        dataIndex: 'wilks',
-        title: 'Wilks'
+        dataIndex: 'dots',
+        title: 'Dots'
       },
       {
         dataIndex: 'points',

@@ -188,6 +188,11 @@ export default class AthleteResolver implements ResolverInterface<Athlete> {
   }
 
   @FieldResolver()
+  public dots(@Root() athlete: Athlete) {
+    return athlete.dots ? Math.round(athlete.dots * 10000) / 10000 : null;
+  }
+
+  @FieldResolver()
   public raw(@Root() athlete: Athlete) {
     return !!athlete.raw;
   }

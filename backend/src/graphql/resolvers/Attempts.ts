@@ -278,6 +278,6 @@ export default class AttemptsResolver {
     if (!valid) {
       return null;
     }
-    return athlete.wilks ? athlete.wilks * total : null;
+    return athlete.dots ? athlete.dots * total : null;
   }
 }

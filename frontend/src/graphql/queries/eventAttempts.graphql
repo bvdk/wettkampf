@@ -14,7 +14,7 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!], $sort: [SortInput!]
             name
             points
             total
-            wilks
+            dots
             athleteGroupId
             nextAttempts(discipline:$discipline) {
                 id

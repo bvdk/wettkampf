@@ -155,8 +155,8 @@ const getRawAthleteKeyMap = () => {
       export: value => `${value}`
     },
     Verein: "club",
-    Wilks: {
-      name: "wilks",
+    Dots: {
+      name: "dots",
       import: toNumber,
       export: value => `${value}`
     }

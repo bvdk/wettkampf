@@ -43,6 +43,9 @@ type Athlete {
 
   """Calc wilks"""
   wilks: Float
+
+  """Calc dots"""
+  dots: Float
   los: Int
   points: Float
   total: Float

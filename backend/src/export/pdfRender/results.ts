@@ -167,8 +167,8 @@ const getColumns = availableDisciplines => {
       width: 30
     },
     {
-      dataIndex: "wilks",
-      title: "Wilks",
+      dataIndex: "dots",
+      title: "Dots",
       width: 30
     },
     {
@@ -247,7 +247,7 @@ const getEventResultsDoc = eventId => {
                     bestAttempts: athleteResolver.bestAttempts(athlete),
                     points: athleteResolver.points(athlete) || 0,
                     total: athleteResolver.total(athlete) || 0,
-                    wilks: athleteResolver.wilks(athlete) || 0
+                    dots: athleteResolver.dots(athlete) || 0
                   }))
                   .orderBy(["points", "total"], ["desc", "desc"])
                   .map((athlete, index) => ({

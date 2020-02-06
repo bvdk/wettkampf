@@ -1,4 +1,4 @@
-Athleten,"Age Category",Gewichtsklasse,"Last Name","First Name",ID,Geschlecht,Verein,Geburtstag,Total,Norm,"Late Registration",Preis,"Body Weight",Wilks,Los,"Kniebeuge 1","Kniebeuge 2","Kniebeuge 3","Bankdrücken 1","Bankdrücken 2","Bankdrücken 3","Kreuzheben 1","Kreuzheben 2","Kreuzheben 3",Total,Punkte,Platz,Ort
+Athleten,"Age Category",Gewichtsklasse,"Last Name","First Name",ID,Geschlecht,Verein,Geburtstag,Total,Norm,"Late Registration",Preis,"Body Weight",Dots,Los,"Kniebeuge 1","Kniebeuge 2","Kniebeuge 3","Bankdrücken 1","Bankdrücken 2","Bankdrücken 3","Kreuzheben 1","Kreuzheben 2","Kreuzheben 3",Total,Punkte,Platz,Ort
 1,aktive,-57,Amelal,Mirjam,5175,female,"Kraft & Fitness Eilenburg",09.09.1992,"330,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
 1,aktive,-72,Bosse,Juliane,4825,female,"SV 1919 Grimma Abt. Kraftsport",03.11.1993,"370,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg
 2,aktive,-72,Dietrich,Hjördis,2795,female,"Kraft & Fitness Eilenburg",27.03.1989,"0,00 kg",Ja,Nein,"12,00 Euro",,,,,,,,,,,,,,,,Eilenburg

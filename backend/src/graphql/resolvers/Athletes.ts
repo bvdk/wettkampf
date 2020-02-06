@@ -12,6 +12,7 @@ import {
   Resolver
 } from "type-graphql";
 import { CrudAdapter } from "../../database/CrudAdapter";
+import dots from "../../utils/dots";
 import wilks from "../../utils/wilks";
 import { Athlete, AthleteInput, AthleteUpdateInput } from "../models/athlete";
 import { Event } from "../models/event";
@@ -85,6 +86,7 @@ export default class AthletesResolver {
     @Ctx() ctx: Context
   ): Athlete {
     this.autoUpdateWilks(id, data);
+    this.autoUpdateDots(id, data);
     const updateResult = CrudAdapter.updateItem(this.collectionKey, id, data);
 
     this.postUpdate(data, updateResult);
@@ -106,6 +108,34 @@ export default class AthletesResolver {
     if (shouldUpdateWilks) {
       const result = CrudAdapter.updateItem(this.collectionKey, id, {
         wilks: wilks(
+          _.get(input, "gender", athlete.gender),
+          _.get(input, "bodyWeight", athlete.bodyWeight)
+        )
+      });
+
+      const attemptsResolver = new AttemptsResolver();
+      attemptsResolver.autoUpdateTotalAndPoints(athlete.id);
+
+      return result;
+    }
+
+    return null;
+  }
+
+  public autoUpdateDots(id: string, input: any): Athlete | void {
+    const athlete = this.athlete({ id });
+    const updateProps = Object.keys(input);
+    const dotsUpdateProps = ["bodyWeight", "gender"];
+    const shouldUpdateDots = dotsUpdateProps.reduce((acc, cur) => {
+      if (acc) {
+        return acc;
+      }
+      return updateProps.indexOf(cur) > -1;
+    }, false);
+
+    if (shouldUpdateDots) {
+      const result = CrudAdapter.updateItem(this.collectionKey, id, {
+        dots: dots(
           _.get(input, "gender", athlete.gender),
           _.get(input, "bodyWeight", athlete.bodyWeight)
         )

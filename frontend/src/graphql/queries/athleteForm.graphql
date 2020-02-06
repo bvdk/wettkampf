@@ -32,7 +32,7 @@ query athelteForm($id: ID!){
             name
         }
         total
-        wilks
+        dots
         weightClassId
         weightClass {
             id

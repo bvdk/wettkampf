@@ -14,7 +14,7 @@ query eventResults($eventId: ID!, $filters: [FilterInput!]) {
             name
             points
             total
-            wilks
+            dots
             resultClass {
                 id
                 name

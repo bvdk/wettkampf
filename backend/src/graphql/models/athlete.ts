@@ -85,6 +85,9 @@ export class Athlete {
   @Field(type => Float, { description: "Calc wilks", nullable: true })
   public wilks?: number;
 
+  @Field(type => Float, { description: "Calc dots", nullable: true })
+  public dots?: number;
+
   @Field(type => Int, { nullable: true })
   public los?: number;
 
@@ -191,6 +194,8 @@ export class AthleteUpdateInput extends AthleteInput
   public gender?: Gender;
 
   public wilks?: number;
+
+  public dots?: number;
 
   public total?: number;
 

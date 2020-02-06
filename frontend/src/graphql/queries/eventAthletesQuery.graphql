@@ -33,7 +33,7 @@ query eventAthletes($eventId: ID!) {
                 id
                 name
             }
-            wilks
+            dots
         }
     }
 }
