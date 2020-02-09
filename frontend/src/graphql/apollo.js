@@ -8,9 +8,12 @@ import { getMainDefinition } from 'apollo-utilities';
 import { split } from 'apollo-link';
 
 import { logout } from '../redux/actions/auth';
+import introspectionQueryResultData from './fragmentTypes.json';
 
 export default (token, dispatch) => {
-  const fragmentMatcher = new IntrospectionFragmentMatcher({});
+  const fragmentMatcher = new IntrospectionFragmentMatcher({
+    introspectionQueryResultData
+  });
 
   const cache = new InMemoryCache({
     fragmentMatcher

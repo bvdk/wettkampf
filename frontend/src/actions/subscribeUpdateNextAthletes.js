@@ -1,33 +1,32 @@
-import { loader } from 'graphql.macro';
-import getNextSlotAthletes from './getNextSlotAthletes';
+import { gql, loader } from 'graphql.macro';
+import { PublicConfigFragment } from './subscribePublicConfig';
 
 const UpdateNextAthletesNotification = loader(
   '../graphql/subscriptions/updateNextAthletesNotification.graphql'
 );
 
-const availableDisciplines = ['SQUAT', 'BENCHPRESS', 'DEADLIFT'];
+const PUBLIC_CONFIG_QUERY = gql`
+  query getPublicConfig {
+    getPublicConfig {
+      ...PublicConfigFragment
+    }
+  }
 
-export default (client, athleteGroups, cb) =>
+  ${PublicConfigFragment}
+`;
+
+export default (client, cb) =>
   client
     .subscribe({
       query: UpdateNextAthletesNotification
     })
     .subscribe({
-      next({ data }) {
-        getNextSlotAthletes(
-          client,
-          data.updateNextAthletesNotification.slotId,
-          athleteGroups,
-          slot =>
-            cb({
-              [slot.id]: slot.nextAthletes.map(item => ({
-                ...item,
-                attempts: availableDisciplines.flatMap(discipline =>
-                  item.attempts.filter(a => a.discipline === discipline)
-                )
-              }))
-            })
-        );
+      next() {
+        client
+          .query({
+            query: PUBLIC_CONFIG_QUERY
+          })
+          .then(resp => cb(resp.data.getPublicConfig));
       },
       error(err) {
         console.error('err', err);

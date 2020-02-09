@@ -1,14 +1,54 @@
 import { gql } from 'graphql.macro';
 
-const PUBLIC_CONFIG_SUBSCRIPTION = gql`
-  subscription subscribePublicConfig {
-    subscribePublicConfig {
-      eventId
+export const PublicConfigFragment = gql`
+  fragment PublicConfigFragment on PublicConfig {
+    event {
+      id
+      availableDisciplines
+    }
+    slot {
+      id
+    }
+    athleteGroups {
+      id
+    }
+    nextAthletes {
+      id
+      place
+      name
+      bodyWeight
+      los
+      total
+      points
+      athleteGroupId
+      resultClass {
+        id
+        name
+      }
+      attempts {
+        id
+        index
+        discipline
+        weight
+        valid
+        done
+        resign
+      }
     }
   }
 `;
 
-export default (client, cb) =>
+const PUBLIC_CONFIG_SUBSCRIPTION = gql`
+  subscription subscribePublicConfig {
+    subscribePublicConfig {
+      ...PublicConfigFragment
+    }
+  }
+
+  ${PublicConfigFragment}
+`;
+
+export default (client, cb) => {
   client
     .subscribe({
       query: PUBLIC_CONFIG_SUBSCRIPTION
@@ -21,3 +61,4 @@ export default (client, cb) =>
         console.error('err', err);
       }
     });
+};

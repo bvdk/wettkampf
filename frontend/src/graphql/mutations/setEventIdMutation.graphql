@@ -1,5 +1,0 @@
-mutation set($eventId: String!) {
-    setEventID(eventId: $eventId) {
-        eventId
-    }
-}

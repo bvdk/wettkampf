@@ -1,0 +1,28 @@
+mutation set($data: PublicConfigInput! ) {
+    setPublicConfig(data: $data) {
+        event {
+            id
+        }
+        slot {
+            id
+        }
+        athleteGroups {
+            id
+        }
+        nextAthletes {
+            id
+            name
+            los
+            athleteGroupId
+            attempts {
+                discipline
+                id
+                valid
+                weight
+                done
+                index
+                resign
+            }
+        }
+    }
+}

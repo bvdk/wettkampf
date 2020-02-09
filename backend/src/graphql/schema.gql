@@ -286,7 +286,7 @@ type Mutation {
   createOfficialSlot(slotId: ID!, officialId: ID!, input: OfficialSlotInput): OfficialSlot!
   updateOfficialSlot(input: OfficialSlotInput!, id: ID!): OfficialSlot!
   deleteOfficialSlot(id: ID!): OfficialSlot!
-  setEventID(eventId: String!): PublicConfig!
+  setPublicConfig(data: PublicConfigInput!): PublicConfig!
 }
 
 type Official {
@@ -324,7 +324,16 @@ input OfficialSlotInput {
 }
 
 type PublicConfig {
+  event: Event!
+  slot: Slot!
+  nextAthletes: [Athlete!]!
+  athleteGroups: [AthleteGroup!]!
+}
+
+input PublicConfigInput {
   eventId: String!
+  slotId: String!
+  athleteGroupIds: [String!]!
 }
 
 type Query {
@@ -374,6 +383,7 @@ type Query {
 
   """Get a OfficialSlot"""
   officialSlot(id: ID!): OfficialSlot
+  getPublicConfig: PublicConfig!
 
   """System info"""
   system: System!

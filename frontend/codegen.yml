@@ -1,0 +1,9 @@
+schema:
+  - http://localhost/api/graphql:
+      headers:
+        authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZTQ5YWQzZTYtNGZiNy00NzYyLWE4NTQtNGQ5Y2YzZTliN2FkIiwicm9sZSI6Imd1ZXN0IiwidXNlcm5hbWUiOiJndWVzdCIsImF1dGhJbmZvIjp7InBhc3N3b3JkSGFzaCI6IjQ5NTFjNjc4YmJjMWRkMDE2NzQyZWQ3NTBkZjExMDFhYTU0NmQ1NjViNmNlZTBmNzE5NWMwNDRjMjI1ZTMyNmNiMmY5OThjMGZiZWE1ZDRlYmU3NmZlMzZiN2U4N2VmYTI1NWE2Yzc2MzJiOGQ3ZjM1ZDllZTY5OThhNGNlODM2Iiwic2FsdCI6ImViNDk5In19LCJpYXQiOjE1ODEyNTcyOTV9.rqoWTZbpc8T0GLdzHsgGajGzrShMZzb6uIoAY3JM8x8
+overwrite: true
+generates:
+  ./src/graphql/fragmentTypes.json:
+    plugins:
+      - fragment-matcher

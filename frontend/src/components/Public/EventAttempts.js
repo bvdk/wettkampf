@@ -1,67 +1,52 @@
-import React, { Fragment, useEffect, useMemo, useState } from 'react';
-import getEventAttempts from '../../actions/getEventAttempts';
+import React, { Fragment, useMemo } from 'react';
 import DisciplineAttempts from './DisciplineAttempts';
 
 const columns = [
   {
-    dataIndex: 'place',
-    title: 'Pl'
+    key: 'place',
+    label: 'Pl'
   },
   {
-    dataIndex: 'name',
-    title: 'Name'
+    key: 'name',
+    label: 'Name'
   },
   {
-    dataIndex: 'bodyWeight',
-    title: 'Gewicht'
+    key: 'bodyWeight',
+    label: 'Gewicht'
   },
   {
-    dataIndex: 'los',
-    title: 'Losnummer'
+    key: 'los',
+    label: 'Losnummer'
   },
   {
-    dataIndex: 'total',
-    title: 'Total'
+    key: 'total',
+    label: 'Total'
   },
   {
-    dataIndex: 'points',
-    title: 'Punkte'
+    key: 'points',
+    label: 'Punkte'
   }
 ];
 
-const shortDisciplines = {
-  SQUAT: 'KB',
-  BENCHPRESS: 'BD',
-  DEADLIFT: 'KH'
+const thStyle = {
+  position: 'sticky',
+  top: -1,
+  zIndex: 2,
+  background: 'white',
+  borderTop: 'none'
 };
 
-const EventAttempts = ({ eventId, client, athleteGroups }) => {
-  const [{ allAttemptAthletes, availableDisciplines }, setData] = useState({
-    allAttemptAthletes: [],
-    availableDisciplines: []
-  });
-
-  useEffect(() => {
-    if (eventId) {
-      getEventAttempts(client, eventId, data => {
-        setData({
-          allAttemptAthletes: data.athletes.filter(a => a.bodyWeight !== null),
-          availableDisciplines: data.availableDisciplines
-        });
-      });
-    }
-  }, [client, eventId]);
-
+const EventAttempts = ({ athleteGroups, athletes, disciplines }) => {
   const attemptAthletes = useMemo(
-    () =>
-      allAttemptAthletes.filter(a => athleteGroups.includes(a.athleteGroupId)),
-    [allAttemptAthletes, athleteGroups]
+    () => athletes.filter(a => athleteGroups.includes(a.athleteGroupId)),
+    [athleteGroups, athletes]
   );
 
   const weightClasses = useMemo(
     () => [...new Set(attemptAthletes.map(a => a.resultClass.name))],
     [attemptAthletes]
   );
+
   const weightClassesAthletes = useMemo(
     () =>
       weightClasses.map(weightClass =>
@@ -70,32 +55,15 @@ const EventAttempts = ({ eventId, client, athleteGroups }) => {
     [weightClasses, attemptAthletes]
   );
 
-  const renderColumns = useMemo(
-    () => [
-      ...columns,
-      ...availableDisciplines.map(availableDiscipline => ({
-        dataIndex: availableDiscipline,
-        title: shortDisciplines[availableDiscipline]
-      }))
-    ],
-    [availableDisciplines]
-  );
-
-  const thStyle = {
-    position: 'sticky',
-    top: -1,
-    zIndex: 2,
-    background: 'white',
-    borderTop: 'none'
-  };
+  const renderColumns = [...columns, ...disciplines];
 
   return (
     <table className="table table-hover" style={{ width: '100%' }}>
       <thead>
         <tr>
-          {renderColumns.map(c => (
-            <th scope="col" key={c.title} style={thStyle}>
-              {c.title}
+          {renderColumns.map(({ label }) => (
+            <th scope="col" key={label} style={thStyle}>
+              {label}
             </th>
           ))}
         </tr>
@@ -128,8 +96,8 @@ const EventAttempts = ({ eventId, client, athleteGroups }) => {
               .map(athlete => (
                 <tr key={athlete.id} className="table-sm">
                   {renderColumns.map((column, i) => {
-                    let data = athlete[column.dataIndex];
-                    switch (column.title) {
+                    let data = athlete[column.key];
+                    switch (column.label) {
                       case 'Gewicht': {
                         data += ' kg';
                         break;
