@@ -1,6 +1,12 @@
 import * as _ from 'lodash';
 
-const multipleTypes = ['multiSelect', 'multiCheckbox', 'edittable','dropdowncheckbox','dropdownCheckbox'];
+const multipleTypes = [
+  'multiSelect',
+  'multiCheckbox',
+  'edittable',
+  'dropdowncheckbox',
+  'dropdownCheckbox'
+];
 
 const getOptionForType = (options, value, inputType, exportType) => {
   const res = _.first(options.filter(item => item[inputType] === value));
@@ -11,39 +17,32 @@ const getOptionForType = (options, value, inputType, exportType) => {
 };
 
 export default function(attributes, values, asArray = true) {
-
-  if (!values){
-    return null
+  if (!values) {
+    return null;
   }
-
 
   const valuesKeys = Object.keys(values);
 
   let result = _.chain(valuesKeys)
-    .map(
-      key => {
-        let result = null;
-        attributes.forEach((attribute) => {
-          if (_.get(attribute,'index') === key){
-            result = attribute;
-          }
-          if (_.get(attribute,'inputTypeOptions.addonAfter.index') === key){
-            result = _.get(attribute,'inputTypeOptions.addonAfter');
-          }
-        });
-        return result;
-      }
-    )
-    .filter( item => !!item)
+    .map(key => {
+      let result = null;
+      attributes.forEach(attribute => {
+        if (_.get(attribute, 'index') === key) {
+          result = attribute;
+        }
+        if (_.get(attribute, 'inputTypeOptions.addonAfter.index') === key) {
+          result = _.get(attribute, 'inputTypeOptions.addonAfter');
+        }
+      });
+      return result;
+    })
+    .filter(item => !!item)
     .map(item => {
-
       let formValue = values[item.index];
-      if (formValue === ""){
+      if (formValue === '') {
         formValue = null;
       }
-      const value = {
-
-      };
+      const value = {};
       const multiple = multipleTypes.indexOf(item.inputType) !== -1;
 
       if (multiple) {
@@ -75,7 +74,8 @@ export default function(attributes, values, asArray = true) {
             value.stringValueList = formValue;
             break;
           }
-          default: {}
+          default: {
+          }
         }
       } else {
         switch (item.type) {
@@ -83,17 +83,17 @@ export default function(attributes, values, asArray = true) {
             if (item.optionValueList && item.optionValueList.length > 0) {
               if (_.isNumber(formValue)) {
                 value.stringValue = getOptionForType(
-                    item.optionValueList,
-                    formValue,
-                    'intValue',
-                    'stringValue',
+                  item.optionValueList,
+                  formValue,
+                  'intValue',
+                  'stringValue'
                 );
               } else if (_.isBoolean(formValue)) {
                 value.stringValue = getOptionForType(
-                    item.optionValueList,
-                    formValue,
-                    'boolValue',
-                    'stringValue',
+                  item.optionValueList,
+                  formValue,
+                  'boolValue',
+                  'stringValue'
                 );
               } else {
                 value.stringValue = formValue;
@@ -117,23 +117,21 @@ export default function(attributes, values, asArray = true) {
             break;
           }
           case 'object': {
-
-            if (item.inputType === 'attempt'){
-              let weight = formValue.weight;
-              if (_.isString(weight)){
-                if (weight !== ""){
-                  weight = weight.replace(',','.');
+            if (item.inputType === 'attempt') {
+              let { weight } = formValue;
+              if (_.isString(weight)) {
+                if (weight !== '') {
+                  weight = weight.replace(',', '.');
                   weight = parseFloat(weight);
-                }else {
-                  weight = null
+                } else {
+                  weight = null;
                 }
-
               }
-               value.objectValue = {
-                 ...formValue,
-                 weight
-               }
-            }else {
+              value.objectValue = {
+                ...formValue,
+                weight
+              };
+            } else {
               value.objectValue = formValue;
             }
 
@@ -143,16 +141,17 @@ export default function(attributes, values, asArray = true) {
             value.stringValue = formValue;
             break;
           }
-          default: {}
+          default: {
+          }
         }
       }
 
-
       return {
         index: item.index,
-        ...value,
+        ...value
       };
-    }).value();
+    })
+    .value();
 
   if (!asArray) {
     result = result.reduce((acc, cur) => {

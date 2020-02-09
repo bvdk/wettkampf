@@ -166,11 +166,12 @@ class FormFactory {
     const { getFieldDecorator } = form;
     let result = null;
     let rules = [];
-    if (attribute.rules)
+    if (attribute.rules) {
       rules = attribute.rules
         .map(item => _.get(item, 'name'))
         .filter(ruleKey => AttributeRulesMap[ruleKey])
         .map(ruleKey => AttributeRulesMap[ruleKey]);
+    }
 
     const config = FormFactory.getConfigForAttribute(attribute);
     const placeholder = attribute.inputTypeOptions
@@ -192,11 +193,6 @@ class FormFactory {
           normalize: value => {
             let result = value;
             if (
-              attribute.type.toLowerCase() === 'float' &&
-              /^[0-9]+(\.[0-9]+)?$/g.test(value)
-            ) {
-              result = Number.parseFloat(value);
-            } else if (
               attribute.type.toLowerCase() === 'float' &&
               /[+]?\d*(?:\.\d*)?(?:[eE][+]?\d+)$/g.test(value)
             ) {
