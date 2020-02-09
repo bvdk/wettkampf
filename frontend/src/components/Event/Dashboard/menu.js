@@ -85,6 +85,12 @@ class EventMenu extends Component<Props> {
                 Bearbeiten
               </Link>
             </Menu.Item>
+            <Menu.Item key="public">
+              <Link to={`/public/settings/${eventId}`}>
+                <Icon type="setting" />
+                Anzeigeeinstellungen
+              </Link>
+            </Menu.Item>
           </MenuItemGroup>
         </Menu>
       </Fragment>
