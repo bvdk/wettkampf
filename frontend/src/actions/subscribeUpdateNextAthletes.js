@@ -24,7 +24,8 @@ export default (client, cb) =>
       next() {
         client
           .query({
-            query: PUBLIC_CONFIG_QUERY
+            query: PUBLIC_CONFIG_QUERY,
+            fetchPolicy: 'network-only'
           })
           .then(resp => cb(resp.data.getPublicConfig));
       },
