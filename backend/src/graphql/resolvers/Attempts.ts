@@ -48,16 +48,10 @@ export default class AttemptsResolver {
   @Mutation()
   public createAttempt(
     @Args() { data, athleteId, discipline }: CreateAttemptArgs,
-    @Ctx() ctx: Context,
-    @PubSub("UPDATE_NEXT_ATHLETE_NOTIFICATIONS")
-    publish: Publisher<{ slotId: string }>
+    @Ctx() ctx: Context
   ): Attempt {
     const athletesResolver = new AthletesResolver();
     const athlete = athletesResolver.athlete({ id: athleteId });
-    const athleteGroup = CrudAdapter.getItem(
-      AthleteGroup.collectionKey,
-      athlete.athleteGroupId
-    );
     const athleteResolver = new AthleteResolver();
     const existingAttempts = athleteResolver.getAttempts(athleteId, discipline);
 
@@ -71,10 +65,6 @@ export default class AttemptsResolver {
     });
 
     this.autoUpdateTotalAndPoints(athleteId);
-
-    if (publish) {
-      publish({ slotId: athleteGroup.slotId });
-    }
     return attempt;
   }
 

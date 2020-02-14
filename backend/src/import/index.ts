@@ -23,17 +23,10 @@ const importResolver = (req, res) => {
         const athletesResolver = new AthletesResolver();
         const officialsResolver = new OfficialsResolver();
 
-        const athleteGroupsResolver = new AthleteGroupsResolver();
-        const athleteGroup = athleteGroupsResolver.createAthleteGroup(
-          { eventId, slotId: null },
-          {}
-        );
-
         const athletes = _.chain(parsed)
           .get("athletes")
           .map((importAthlete: any) => {
             let exisiting = null;
-            importAthlete.athleteGroupId = athleteGroup.id;
             if (importAthlete.importId) {
               exisiting = athletesResolver.findAthlete({
                 eventId,

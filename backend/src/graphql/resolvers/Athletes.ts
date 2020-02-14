@@ -74,7 +74,7 @@ export default class AthletesResolver {
     const disciplines = eventResolver.availableDisciplines(event);
 
     this.autoUpdateWilks(athlete.id, athlete);
-    this.autoCreateAttempt(athlete, disciplines, ctx, undefined);
+    this.autoCreateAttempt(athlete, disciplines, ctx);
 
     return athlete;
   }
@@ -150,7 +150,7 @@ export default class AthletesResolver {
     return null;
   }
 
-  public autoCreateAttempt(athlete: Athlete, disciplines, ctx, publish) {
+  public autoCreateAttempt(athlete: Athlete, disciplines, ctx) {
     const attemptsResolver = new AttemptsResolver();
     disciplines.forEach(discipline => {
       [0, 1, 2].forEach(() =>
@@ -160,8 +160,7 @@ export default class AthletesResolver {
             athleteId: athlete.id,
             discipline
           },
-          ctx,
-          publish
+          ctx
         )
       );
     });
