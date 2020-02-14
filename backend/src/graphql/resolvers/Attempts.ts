@@ -251,8 +251,7 @@ export default class AttemptsResolver {
                 },
                 discipline
               },
-              ctx,
-              publish
+              ctx
             );
           }
         }
