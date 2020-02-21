@@ -21,6 +21,10 @@ branches:
 before_install:
   - sudo docker run --privileged linuxkit/binfmt:v0.6
   - npm i -g npm@latest
+  - npm i -g pkg
+  - dpkg --add-architecture i386
+  - apt-get update
+  - apt-get install -y libc6:i386 libstdc++6:i386
 
 script:
   - if [ "$ARCH" = "amd64" ]; then bash ./travis/docker.sh; fi

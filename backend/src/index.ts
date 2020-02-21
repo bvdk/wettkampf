@@ -1,6 +1,8 @@
+import express from "express";
 import fileUpload from "express-fileupload";
 import { GraphQLServer } from "graphql-yoga";
 import passport from "passport";
+import path from "path";
 import exportResultsCSVResolver from "./export/exportResultsCSV";
 import exportResultsPdfResolver from "./export/exportResultsPdf";
 import getSchema from "./graphql";
@@ -17,6 +19,8 @@ const init = () =>
     });
 
     PassportJSConfig.init(server.express);
+
+    server.use(express.static(path.join(__dirname, "public")));
     server.use(fileUpload());
     server.post("/api/import/:eventId", importResolver);
     server.get("/api/export/:eventId/pdf", exportResultsPdfResolver);
@@ -27,6 +31,9 @@ const init = () =>
       passport.authenticate(["jwt"], { session: false }),
       (req, res) => res.json({ success: true })
     );
+    server.get("*", (req, res) => {
+      res.sendFile(path.join(__dirname + "/public/index.html"));
+    });
 
     return server.start(
       {
