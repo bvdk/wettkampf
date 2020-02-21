@@ -22,13 +22,6 @@ before_install:
   - sudo docker run --privileged linuxkit/binfmt:v0.6
   - npm i -g npm@latest
 
-jobs:
-  exclude:
-    - if: branch = master
-      env: ARCH=amd64
-    - if: branch = master
-      env: ARCH=arm64v8
-
 script:
   - if [ "$ARCH" = "amd64" ]; then bash ./travis/docker.sh; fi
   - if [ "$ARCH" = "arm64v8" ]; then bash ./travis/docker.sh; fi
