@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon } from 'antd';
 import _ from 'lodash';
 
-const NextAthletes = ({ athletes, athleteGroups }) => {
+const NextAthletes = ({ athletes, athleteGroups, discipline }) => {
   const thStyle = {
     position: 'sticky',
     top: -1,
@@ -21,6 +21,7 @@ const NextAthletes = ({ athletes, athleteGroups }) => {
     return groupedAthletes[id]
       .flatMap(athlete => {
         const attempts = athlete.attempts
+          .filter(a => a.discipline === discipline)
           .map((a, i) => ({ ...a, i }))
           .filter(a => !a.done);
         if (athleteHelper[athlete.id] === undefined) {

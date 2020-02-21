@@ -325,6 +325,7 @@ input OfficialSlotInput {
 
 type PublicConfig {
   event: Event!
+  discipline: String!
   slot: Slot!
   nextAthletes: [Athlete!]!
   athleteGroups: [AthleteGroup!]!
@@ -332,6 +333,7 @@ type PublicConfig {
 
 input PublicConfigInput {
   eventId: String!
+  discipline: String!
   slotId: String!
   athleteGroupIds: [String!]!
 }

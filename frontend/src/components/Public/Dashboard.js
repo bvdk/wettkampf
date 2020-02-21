@@ -13,7 +13,7 @@ type DashboardProps = {
 const Dashboard = (props: DashboardProps) => {
   const initialState = getInitialState(props);
   const [
-    { client, nextAthletes, disciplines, athleteGroups },
+    { client, nextAthletes, disciplines, athleteGroups, publicConfig },
     dispatch
   ] = useReducer(reducer, initialState);
 
@@ -39,7 +39,11 @@ const Dashboard = (props: DashboardProps) => {
           />
         </div>
         <div className="col-3">
-          <NextAthletes athleteGroups={athleteGroups} athletes={nextAthletes} />
+          <NextAthletes
+            athleteGroups={athleteGroups}
+            athletes={nextAthletes}
+            discipline={publicConfig.discipline}
+          />
         </div>
       </div>
     );

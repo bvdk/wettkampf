@@ -17,12 +17,14 @@ import { AthleteGroup } from "../models/athleteGroup";
 import { Event } from "../models/event";
 import { PublicConfig } from "../models/publicConfig";
 import { Slot } from "../models/slot";
-import EventResolver from "./Event";
 
 @InputType()
 export class PublicConfigInput {
   @Field(type => String)
   public eventId: string;
+
+  @Field(type => String)
+  public discipline: string;
 
   @Field(type => String)
   public slotId: string;
@@ -58,6 +60,7 @@ export default class PublicResolver {
 
     return {
       event: publicConfig.getEvent(),
+      discipline: publicConfig.getDiscipline(),
       slot: publicConfig.getSlot(),
       athleteGroups: publicConfig.getAthleteGroups(),
       nextAthletes: publicConfig.getNextAthletes()
@@ -71,23 +74,18 @@ export default class PublicResolver {
   ) {
     const event = CrudAdapter.find(Event.collectionKey, { id: data.eventId });
     const slot = CrudAdapter.find(Slot.collectionKey, { id: data.slotId });
-    const athleteGroups = CrudAdapter.filter(
-      AthleteGroup.collectionKey,
-      athleteGroup => data.athleteGroupIds.includes(athleteGroup.id)
+    const athleteGroups = data.athleteGroupIds.map(id =>
+      CrudAdapter.find(AthleteGroup.collectionKey, { id })
     );
 
     const publicConfig = getPublicConfigInstance();
     publicConfig.setEvent(event);
+    publicConfig.setDiscipline(data.discipline);
     publicConfig.setSlot(slot);
     publicConfig.setAthleteGroups(athleteGroups);
     publicConfig.setNextAthletes();
 
-    const returnData = {
-      event: publicConfig.getEvent(),
-      slot: publicConfig.getSlot(),
-      athleteGroups: publicConfig.getAthleteGroups(),
-      nextAthletes: publicConfig.getNextAthletes()
-    };
+    const returnData = this.getPublicConfig();
 
     publish(returnData);
     return returnData;

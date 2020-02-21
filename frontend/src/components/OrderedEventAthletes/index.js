@@ -37,6 +37,7 @@ class OrderedEventAthletes extends Component<Props, {}> {
       return groupedAthletes[id]
         .flatMap(athlete => {
           const attempts = athlete.attempts
+            .filter(a => a.discipline === filterParams.discipline)
             .map((a, i) => ({ ...a, i }))
             .filter(a => !a.done);
           if (athleteHelper[athlete.id] === undefined) {

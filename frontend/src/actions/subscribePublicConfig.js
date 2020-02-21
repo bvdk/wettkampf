@@ -12,6 +12,7 @@ export const PublicConfigFragment = gql`
     athleteGroups {
       id
     }
+    discipline
     nextAthletes {
       id
       place

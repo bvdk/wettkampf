@@ -40,6 +40,9 @@ export class PublicConfig {
   @Field(type => Event)
   public event: Event;
 
+  @Field(type => String)
+  public discipline: string;
+
   @Field(type => Slot)
   public slot: Slot;
 
@@ -55,6 +58,14 @@ export class PublicConfig {
 
   public setEvent(event: Event): void {
     this.event = event;
+  }
+
+  public getDiscipline(): string {
+    return this.discipline;
+  }
+
+  public setDiscipline(discipline: string): void {
+    this.discipline = discipline;
   }
 
   public getSlot(): Slot {
