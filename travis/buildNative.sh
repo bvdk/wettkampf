@@ -7,4 +7,4 @@ cp -R frontend/build/* backend/dist/public;
 
 npm i -g pkg;
 
-cd backend && pkg . -d
+cd backend && pkg .
