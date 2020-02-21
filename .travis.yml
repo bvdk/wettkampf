@@ -4,9 +4,9 @@ node_js:
   - "12"
 cache: npm
 env:
-  matrix:
-    - ARCH=amd64
-    - ARCH=arm64v8
+  - ARCH=amd64
+  - ARCH=arm64v8
+  - ARCH=native
 
 sudo: required
 
@@ -21,11 +21,17 @@ before_install:
   - sudo docker run --privileged linuxkit/binfmt:v0.6
   - npm i -g npm@latest
 
+jobs:
+  exclude:
+    - if: branch = master
+      env: ARCH=amd64
+    - if: branch = master
+      env: ARCH=arm64v8
+
 script:
-  - bash ./travis/install.sh
-  - bash ./travis/build.sh
-  - bash ./travis/tag.sh
-  - bash ./travis/publish.sh
+  - test $ARCH = "amd64" && bash ./travis/docker.sh
+  - test $ARCH = "arm64v8" && bash ./travis/docker.sh
+  - test $ARCH = "native" && bash ./travis/native.sh
 
 before_deploy:
   - bash ./travis/publish.sh
