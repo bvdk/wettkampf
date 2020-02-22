@@ -150,8 +150,19 @@ class AttemptsTable extends Component<Props, State> {
       ? filterParams.athleteGroupId
       : [filterParams.athleteGroupId];
 
-    const groupedAthletes = _.groupBy(athletes, 'athleteGroupId');
-    const firstAthleteId = _.get(groupedAthletes[athleteGroupIds[0]], '[0].id');
+    const filteredAthletes = athletes.filter(athlete => {
+      const attempts = athlete.attempts
+        .filter(a => a.discipline === filterParams.discipline && a.weight)
+        .map((a, i) => ({ ...a, i }))
+        .filter(a => !a.done);
+
+      return attempts.length > 0;
+    });
+
+    const groupedAthletes = _.groupBy(filteredAthletes, 'athleteGroupId');
+
+    const athleteGroup = athleteGroupIds.find(id => groupedAthletes[id]);
+    const firstAthleteId = _.get(groupedAthletes[athleteGroup], '[0].id');
 
     let columns = [
       {

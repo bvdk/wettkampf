@@ -21,7 +21,7 @@ const NextAthletes = ({ athletes, athleteGroups, discipline }) => {
     return groupedAthletes[id]
       .flatMap(athlete => {
         const attempts = athlete.attempts
-          .filter(a => a.discipline === discipline)
+          .filter(a => a.discipline === discipline && a.weight)
           .map((a, i) => ({ ...a, i }))
           .filter(a => !a.done);
         if (athleteHelper[athlete.id] === undefined) {
