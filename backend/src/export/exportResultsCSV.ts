@@ -1,9 +1,10 @@
+import { Response } from "express";
 import { Parser } from "json2csv";
 import EventResolver from "../graphql/resolvers/Event";
 import EventsResolver from "../graphql/resolvers/Events";
 import prepareCSVExport from "./prepareCSVExport";
 
-const exportResultsPdfResolver = (req, res) => {
+const exportResultsPdfResolver = (req: any, res: Response) => {
   const eventId = req.params.eventId;
 
   const eventsResolver = new EventsResolver();

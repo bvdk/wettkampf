@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Response } from "express";
 import fileUpload from "express-fileupload";
 import { GraphQLServer } from "graphql-yoga";
 import passport from "passport";
@@ -25,13 +25,15 @@ const init = () =>
     server.post("/api/import/:eventId", importResolver);
     server.get("/api/export/:eventId/pdf", exportResultsPdfResolver);
     server.get("/api/export/:eventId/csv", exportResultsCSVResolver);
-    server.get("/api/test", (req, res) => res.json({ success: true }));
+    server.get("/api/test", (req: any, res: Response) =>
+      res.json({ success: true })
+    );
     server.get(
       "/api/authTest",
       passport.authenticate(["jwt"], { session: false }),
-      (req, res) => res.json({ success: true })
+      (req: any, res: Response) => res.json({ success: true })
     );
-    server.get("*", (req, res) => {
+    server.get("*", (req: any, res: Response) => {
       res.sendFile(path.join(__dirname + "/public/index.html"));
     });
 
