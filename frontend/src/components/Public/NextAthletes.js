@@ -2,6 +2,22 @@ import React from 'react';
 import { Icon } from 'antd';
 import _ from 'lodash';
 
+export const sortAthletes = (a, b) => {
+  const attemptA = a.attempt;
+  const attemptB = b.attempt;
+
+  const max = Number.MAX_VALUE;
+
+  const weightA = attemptA && attemptA.weight ? attemptA.weight : max;
+  const weightB = attemptB && attemptB.weight ? attemptB.weight : max;
+
+  if (weightA === weightB) {
+    return a.los - b.los;
+  }
+
+  return weightA - weightB;
+};
+
 const NextAthletes = ({ athletes, athleteGroups, discipline }) => {
   const thStyle = {
     position: 'sticky',
@@ -45,21 +61,7 @@ const NextAthletes = ({ athletes, athleteGroups, discipline }) => {
         }));
       })
       .filter(e => e)
-      .sort((a, b) => {
-        const attemptA = a.attempt;
-        const attemptB = b.attempt;
-
-        const max = Number.MAX_VALUE;
-
-        const weightA = attemptA && attemptA.weight ? attemptA.weight : max;
-        const weightB = attemptB && attemptB.weight ? attemptB.weight : max;
-
-        if (weightA === weightB) {
-          return a.los - b.los;
-        }
-
-        return weightA - weightB;
-      })
+      .sort(sortAthletes)
       .sort((a, b) => a.i - b.i);
   });
 

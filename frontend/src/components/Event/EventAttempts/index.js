@@ -5,6 +5,7 @@ import { loader } from 'graphql.macro';
 import { compose, graphql } from 'react-apollo';
 import { withProps } from 'recompose';
 import AttemptsTable from '../../AttemptsTable';
+import { sortAthletes } from '../../Public/NextAthletes';
 
 type Props = {
   eventId: string,
@@ -42,7 +43,7 @@ class EventAttempts extends Component<Props, {}> {
         }}
         loading={loading}
         availableDisciplines={availableDisciplines}
-        athletes={athletes}
+        athletes={athletes.sort(sortAthletes)}
       />
     );
   }
