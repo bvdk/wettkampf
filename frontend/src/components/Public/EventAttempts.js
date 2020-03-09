@@ -1,4 +1,5 @@
 import React, { Fragment, useMemo } from 'react';
+import { orderBy } from 'lodash';
 import DisciplineAttempts from './DisciplineAttempts';
 
 const columns = [
@@ -38,7 +39,17 @@ const thStyle = {
 
 const EventAttempts = ({ athleteGroups, athletes, disciplines }) => {
   const attemptAthletes = useMemo(
-    () => athletes.filter(a => athleteGroups.includes(a.athleteGroupId)),
+    () =>
+      orderBy(
+        athletes.filter(a => athleteGroups.includes(a.athleteGroupId)),
+        [
+          'resultClass.gender',
+          'resultClass.ageClass.sortId',
+          'resultClass.weightClass.max',
+          'place'
+        ],
+        ['desc', 'asc', 'asc', 'desc']
+      ),
     [athleteGroups, athletes]
   );
 

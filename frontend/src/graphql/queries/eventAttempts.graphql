@@ -46,10 +46,12 @@ query eventAttempts($eventId: ID!, $filters: [FilterInput!], $sort: [SortInput!]
                 weightClass {
                     id
                     name
+                    max
                 }
                 ageClass {
                     id
                     name
+                    sortId
                 }
             }
         }

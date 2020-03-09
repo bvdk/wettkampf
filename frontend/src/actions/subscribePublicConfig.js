@@ -25,6 +25,17 @@ export const PublicConfigFragment = gql`
       resultClass {
         id
         name
+        gender
+        weightClass {
+          id
+          name
+          max
+        }
+        ageClass {
+          id
+          name
+          sortId
+        }
       }
       attempts {
         id

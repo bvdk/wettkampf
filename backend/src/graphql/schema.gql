@@ -6,6 +6,7 @@
 type AgeClass {
   id: ID!
   name: String!
+  sortId: Int!
 }
 
 input AgeClassInput {

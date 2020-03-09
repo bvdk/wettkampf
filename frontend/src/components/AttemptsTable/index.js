@@ -109,11 +109,11 @@ class AttemptsTable extends Component<Props, State> {
       .orderBy(
         [
           'resultClass.gender',
-          'resultClass.ageClass.name',
-          'resultClass.weightClass.name',
+          'resultClass.ageClass.sortId',
+          'resultClass.weightClass.max',
           'place'
         ],
-        ['asc', 'asc', 'asc', 'asc']
+        ['desc', 'asc', 'asc', 'desc']
       )
       .groupBy('resultClass.id')
       .reduce((result, value, key) => {
