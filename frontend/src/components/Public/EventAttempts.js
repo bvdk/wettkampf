@@ -37,7 +37,12 @@ const thStyle = {
   borderTop: 'none'
 };
 
-const EventAttempts = ({ athleteGroups, athletes, disciplines }) => {
+const EventAttempts = ({
+  athleteGroups,
+  athletes,
+  disciplines,
+  nextAthleteId
+}) => {
   const attemptAthletes = useMemo(
     () =>
       orderBy(
@@ -105,7 +110,11 @@ const EventAttempts = ({ athleteGroups, athletes, disciplines }) => {
               })
               .reverse()
               .map(athlete => (
-                <tr key={athlete.id} className="table-sm">
+                <tr
+                  key={athlete.id}
+                  className={`${
+                    athlete.id === nextAthleteId ? 'active-athlete-row' : ''
+                  } table-sm`}>
                   {renderColumns.map((column, i) => {
                     let data = athlete[column.key];
                     switch (column.label) {

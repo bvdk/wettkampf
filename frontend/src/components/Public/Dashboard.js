@@ -1,9 +1,10 @@
 // @flow
 import React, { useEffect, useReducer } from 'react';
+import _ from 'lodash';
 import subscribePublicConfig from '../../actions/subscribePublicConfig';
 import { setPublicConfig, getInitialState, reducer } from './reducer';
 import subscribeUpdateNextAthletes from '../../actions/subscribeUpdateNextAthletes';
-import NextAthletes from './NextAthletes';
+import NextAthletes, { sortAthletes } from './NextAthletes';
 import EventAttempts from './EventAttempts';
 
 type DashboardProps = {
@@ -29,21 +30,57 @@ const Dashboard = (props: DashboardProps) => {
   }, [client]);
 
   if (nextAthletes.length) {
+    const groupedAthletes = _.groupBy(nextAthletes, 'athleteGroupId');
+
+    const athleteHelper = {};
+    const athletesData = athleteGroups.flatMap(id => {
+      if (!groupedAthletes[id]) {
+        return [];
+      }
+      return groupedAthletes[id]
+        .flatMap(athlete => {
+          const attempts = athlete.attempts
+            .filter(a => a.discipline === publicConfig.discipline && a.weight)
+            .map((a, i) => ({ ...a, i }))
+            .filter(a => !a.done);
+          if (athleteHelper[athlete.id] === undefined) {
+            athleteHelper[athlete.id] = 0;
+          } else {
+            athleteHelper[athlete.id] += 1;
+          }
+
+          const attempt = attempts[athleteHelper[athlete.id]];
+
+          if (attempt && attempt.done) {
+            return undefined;
+          }
+
+          return attempts.map(a => ({
+            ...athlete,
+            attempts,
+            attempt: a,
+            v: (a.i % 3) + 1,
+            i: a.i
+          }));
+        })
+        .filter(e => e)
+        .sort(sortAthletes)
+        .sort((a, b) => a.i - b.i);
+    });
+
+    const nextAthleteId = athletesData[0].id;
     return (
       <div className="row no-gutters">
         <div className="col-9">
           <EventAttempts
             athleteGroups={athleteGroups}
             athletes={nextAthletes}
+            nextAthleteId={nextAthleteId}
             disciplines={disciplines}
           />
         </div>
         <div className="col-3">
-          <NextAthletes
-            athleteGroups={athleteGroups}
-            athletes={nextAthletes}
-            discipline={publicConfig.discipline}
-          />
+          <NextAthletes athletesData={athletesData} />
         </div>
       </div>
     );

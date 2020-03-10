@@ -1,6 +1,5 @@
 import React from 'react';
 import { Icon } from 'antd';
-import _ from 'lodash';
 
 export const sortAthletes = (a, b) => {
   const attemptA = a.attempt;
@@ -18,7 +17,7 @@ export const sortAthletes = (a, b) => {
   return weightA - weightB;
 };
 
-const NextAthletes = ({ athletes, athleteGroups, discipline }) => {
+const NextAthletes = ({ athletesData }) => {
   const thStyle = {
     position: 'sticky',
     top: -1,
@@ -26,44 +25,6 @@ const NextAthletes = ({ athletes, athleteGroups, discipline }) => {
     background: 'white',
     borderTop: 'none'
   };
-
-  const groupedAthletes = _.groupBy(athletes, 'athleteGroupId');
-
-  const athleteHelper = {};
-  const athletesData = athleteGroups.flatMap(id => {
-    if (!groupedAthletes[id]) {
-      return [];
-    }
-    return groupedAthletes[id]
-      .flatMap(athlete => {
-        const attempts = athlete.attempts
-          .filter(a => a.discipline === discipline && a.weight)
-          .map((a, i) => ({ ...a, i }))
-          .filter(a => !a.done);
-        if (athleteHelper[athlete.id] === undefined) {
-          athleteHelper[athlete.id] = 0;
-        } else {
-          athleteHelper[athlete.id] += 1;
-        }
-
-        const attempt = attempts[athleteHelper[athlete.id]];
-
-        if (attempt && attempt.done) {
-          return undefined;
-        }
-
-        return attempts.map(a => ({
-          ...athlete,
-          attempts,
-          attempt: a,
-          v: (a.i % 3) + 1,
-          i: a.i
-        }));
-      })
-      .filter(e => e)
-      .sort(sortAthletes)
-      .sort((a, b) => a.i - b.i);
-  });
 
   return (
     <table className="table table-hover" style={{ width: '100%' }}>
