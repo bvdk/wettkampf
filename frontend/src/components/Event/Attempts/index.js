@@ -85,7 +85,11 @@ class EventAttemptsRoute extends Component<Props, State> {
             params={tmpParams}
           />
           <hr />
-          <EventAttempts filterParams={tmpParams} eventId={eventId} />
+          <EventAttempts
+            filterParams={tmpParams}
+            eventId={eventId}
+            athleteGroups={athleteGroups}
+          />
         </Col>
         {!collapsed ? (
           <Col md={6}>

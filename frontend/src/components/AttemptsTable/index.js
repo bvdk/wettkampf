@@ -96,7 +96,7 @@ class AttemptsTable extends Component<Props, State> {
     }, []);
   };
 
-  getDataSource() {
+  getDataSource(athleteGroups) {
     const athletes = this.props.athletes.filter(
       athlete => athlete.bodyWeight !== null
     );
@@ -106,26 +106,45 @@ class AttemptsTable extends Component<Props, State> {
     }
 
     return _.chain(athletes)
-      .orderBy(
-        [
-          'resultClass.gender',
-          'resultClass.ageClass.sortId',
-          'resultClass.weightClass.max',
-          'place'
-        ],
-        ['desc', 'asc', 'asc', 'desc']
-      )
-      .groupBy('resultClass.id')
+      .orderBy(a => {
+        const group = athleteGroups.find(ag => ag.id === a.athleteGroupId);
+        return athleteGroups.indexOf(group);
+      })
+      .groupBy('athleteGroupId')
       .reduce((result, value, key) => {
+        const athleteGroup = value.find(v => v.athleteGroupId);
+        const group = athleteGroups.find(
+          ag => athleteGroup && ag.id === athleteGroup.athleteGroupId
+        );
         return result.concat([
           {
             type: 'resultClass',
             id: key,
-            ..._.get(value, '[0].resultClass')
+            ...group
           },
           ..._.chain(value)
-            .orderBy(['place'])
-            .value()
+            .orderBy(
+              [
+                'resultClass.gender',
+                'resultClass.ageClass.sortId',
+                'resultClass.weightClass.max',
+                'place'
+              ],
+              ['desc', 'asc', 'asc', 'desc']
+            )
+            .groupBy('resultClass.id')
+            .reduce((result2, value2, key2) => {
+              return result2.concat([
+                {
+                  type: 'resultClass',
+                  id: key2,
+                  ..._.get(value2, '[0].resultClass')
+                },
+                ..._.chain(value2)
+                  .orderBy(['place'])
+                  .value()
+              ]);
+            }, [])
         ]);
       }, [])
       .value();
@@ -143,7 +162,8 @@ class AttemptsTable extends Component<Props, State> {
       availableDisciplines,
       tableProps,
       filterParams,
-      highlightFirstAthlete
+      highlightFirstAthlete,
+      athleteGroups
     } = this.props;
 
     const athleteGroupIds = Array.isArray(filterParams.athleteGroupId)
@@ -159,10 +179,7 @@ class AttemptsTable extends Component<Props, State> {
       return attempts.length > 0;
     });
 
-    const groupedAthletes = _.groupBy(filteredAthletes, 'athleteGroupId');
-
-    const athleteGroup = athleteGroupIds.find(id => groupedAthletes[id]);
-    const firstAthleteId = _.get(groupedAthletes[athleteGroup], '[0].id');
+    const firstAthleteId = _.get(filteredAthletes, '[0].id');
 
     let columns = [
       {
@@ -219,47 +236,6 @@ class AttemptsTable extends Component<Props, State> {
       }
     ];
 
-    const menu = (
-      <div style={{ padding: '6px 0' }}>
-        {_.chain(columns)
-          .map(col => {
-            return {
-              text: col.title,
-              value: col.dataIndex
-            };
-          })
-          .value()
-          .map(item => {
-            return (
-              <div style={{ margin: '6px 8px' }} key={item.value}>
-                <Checkbox
-                  checked={!(this.props.hiddenCols.indexOf(item.value) > -1)}
-                  onChange={e => {
-                    const { checked } = e.target;
-
-                    const hiddenCols = [...this.props.hiddenCols];
-                    if (checked) {
-                      const index = hiddenCols.indexOf(item.value);
-                      if (index > -1) {
-                        hiddenCols.splice(index, 1);
-                      }
-                    } else {
-                      const index = hiddenCols.indexOf(item.value);
-                      if (index === -1) {
-                        hiddenCols.push(item.value);
-                      }
-                    }
-
-                    this.setHiddenCols(hiddenCols);
-                  }}>
-                  {item.text}
-                </Checkbox>
-              </div>
-            );
-          })}
-      </div>
-    );
-
     columns = columns.filter(col => {
       return this.props.hiddenCols.indexOf(col.dataIndex) === -1;
     });
@@ -300,7 +276,51 @@ class AttemptsTable extends Component<Props, State> {
       };
     });
 
+    const menu = (
+      <div style={{ padding: '6px 0' }}>
+        {_.chain(columns)
+          .map(col => {
+            return {
+              text: col.title,
+              value: col.dataIndex
+            };
+          })
+          .value()
+          .map(item => {
+            return (
+              <div style={{ margin: '6px 8px' }} key={item.value}>
+                <Checkbox
+                  checked={!(this.props.hiddenCols.indexOf(item.value) > -1)}
+                  onChange={e => {
+                    const { checked } = e.target;
+
+                    const hiddenCols = [...this.props.hiddenCols];
+                    if (checked) {
+                      const index = hiddenCols.indexOf(item.value);
+                      if (index > -1) {
+                        hiddenCols.splice(index, 1);
+                      }
+                    } else {
+                      const index = hiddenCols.indexOf(item.value);
+                      if (index === -1) {
+                        hiddenCols.push(item.value);
+                      }
+                    }
+
+                    this.setHiddenCols(hiddenCols);
+                  }}>
+                  {item.text}
+                </Checkbox>
+              </div>
+            );
+          })}
+      </div>
+    );
     _.last(columns).filterDropdown = () => menu;
+
+    const dataSource = this.getDataSource(
+      athleteGroupIds.map(id => athleteGroups.find(ag => ag.id === id))
+    );
 
     return (
       <Table
@@ -312,7 +332,7 @@ class AttemptsTable extends Component<Props, State> {
             : undefined
         }
         size="small"
-        dataSource={this.getDataSource()} // dataSource={dataSource.length ? [_.first(dataSource)] : []}
+        dataSource={dataSource} // dataSource={dataSource.length ? [_.first(dataSource)] : []}
         columns={columns}
         pagination={false}
         {...tableProps}

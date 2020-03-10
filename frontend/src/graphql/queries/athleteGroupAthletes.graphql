@@ -1,6 +1,7 @@
 query athleteGroup($id: ID!) {
     athleteGroup(id: $id){
         id
+        name
         athletes {
             id
             firstName

@@ -208,7 +208,8 @@ export default compose(
     name: 'athleteGroupAthletesQuery',
     options: (props: Props) => ({
       variables: {
-        id: props.athleteGroupId
+        id: props.athleteGroupId,
+        name: props.name
       }
     })
   }),

@@ -27,7 +27,8 @@ class EventAttempts extends Component<Props, {}> {
       athletes,
       availableDisciplines,
       loading,
-      filterParams
+      filterParams,
+      athleteGroups
     } = this.props;
 
     return (
@@ -44,6 +45,7 @@ class EventAttempts extends Component<Props, {}> {
         loading={loading}
         availableDisciplines={availableDisciplines}
         athletes={athletes.sort(sortAthletes)}
+        athleteGroups={athleteGroups}
       />
     );
   }
@@ -92,6 +94,7 @@ export default compose(
     }
   }),
   withProps(props => ({
+    ...props,
     loading: _.get(props, 'eventAttemptsQuery.loading', false),
     eventId: props.eventId,
     onAthleteClick: props.onAthleteClick,
