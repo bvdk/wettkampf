@@ -116,36 +116,43 @@ class AttemptsTable extends Component<Props, State> {
         const group = athleteGroups.find(
           ag => athleteGroup && ag.id === athleteGroup.athleteGroupId
         );
-        return result.concat([
-          {
-            type: 'resultClass',
-            id: key,
-            ...group
-          },
-          ..._.chain(value)
-            .orderBy(
-              [
-                'resultClass.gender',
-                'resultClass.ageClass.sortId',
-                'resultClass.weightClass.max',
-                'place'
-              ],
-              ['desc', 'asc', 'asc', 'desc']
-            )
-            .groupBy('resultClass.id')
-            .reduce((result2, value2, key2) => {
-              return result2.concat([
-                {
-                  type: 'resultClass',
-                  id: key2,
-                  ..._.get(value2, '[0].resultClass')
-                },
-                ..._.chain(value2)
-                  .orderBy(['place'])
-                  .value()
-              ]);
-            }, [])
-        ]);
+
+        const values = _.chain(value)
+          .orderBy(
+            [
+              'resultClass.gender',
+              'resultClass.ageClass.sortId',
+              'resultClass.weightClass.max',
+              'place'
+            ],
+            ['desc', 'asc', 'asc', 'desc']
+          )
+          .groupBy('resultClass.id')
+          .reduce((result2, value2, key2) => {
+            return result2.concat([
+              {
+                type: 'resultClass',
+                id: key2,
+                ..._.get(value2, '[0].resultClass')
+              },
+              ..._.chain(value2)
+                .orderBy(['place'])
+                .value()
+            ]);
+          }, []);
+
+        const results = group
+          ? [
+              {
+                type: 'resultClass',
+                id: key,
+                ...group
+              },
+              ...values
+            ]
+          : [...values];
+
+        return result.concat(results);
       }, [])
       .value();
   }
@@ -319,7 +326,9 @@ class AttemptsTable extends Component<Props, State> {
     _.last(columns).filterDropdown = () => menu;
 
     const dataSource = this.getDataSource(
-      athleteGroupIds.map(id => athleteGroups.find(ag => ag.id === id))
+      athleteGroupIds
+        .map(id => athleteGroups.find(ag => ag.id === id))
+        .filter(e => e)
     );
 
     return (

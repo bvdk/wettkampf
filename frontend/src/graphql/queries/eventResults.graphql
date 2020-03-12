@@ -2,6 +2,10 @@ query eventResults($eventId: ID!, $filters: [FilterInput!]) {
     event(id: $eventId){
         id
         availableDisciplines
+        athleteGroups {
+            id
+            name
+        }
         results(filters: $filters) {
             id
             birthday
@@ -18,7 +22,6 @@ query eventResults($eventId: ID!, $filters: [FilterInput!]) {
             resultClass {
                 id
                 name
-
             }
             bestAttempts {
                 id

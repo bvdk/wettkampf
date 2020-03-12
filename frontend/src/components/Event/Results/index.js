@@ -17,7 +17,7 @@ const EventResultsQuery = loader(
 );
 
 class EventResults extends Component<Props, {}> {
-  _handleResultChange = res => {
+  _handleResultChange = () => {
     this.props.eventResultsQuery.refetch();
   };
 
@@ -26,7 +26,8 @@ class EventResults extends Component<Props, {}> {
       athletes,
       loading,
       filterParams,
-      availableDisciplines
+      availableDisciplines,
+      athleteGroups
     } = this.props;
     return (
       <AttemptsTable
@@ -41,6 +42,7 @@ class EventResults extends Component<Props, {}> {
         }}
         loading={loading}
         athletes={athletes}
+        athleteGroups={athleteGroups}
       />
     );
   }
@@ -67,6 +69,7 @@ export default compose(
     loading: _.get(props, 'eventResultsQuery.loading', false),
     eventId: props.eventId,
     onAthleteClick: props.onAthleteClick,
-    athletes: _.get(props, 'eventResultsQuery.event.results', [])
+    athletes: _.get(props, 'eventResultsQuery.event.results', []),
+    athleteGroups: _.get(props, 'eventResultsQuery.event.athleteGroups', [])
   }))
 )(EventResults);
