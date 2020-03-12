@@ -10,6 +10,7 @@ import AttemptDisplayLabel from '../AttemptDisplayLabel';
 import { shortDisciplines } from '../../constants/disciplines';
 import Bold from '../Bold';
 import { setSetting } from '../../redux/actions/settings';
+import { sortAthletes } from '../Public/NextAthletes';
 
 type Props = {
   athletes: any[],
@@ -27,14 +28,7 @@ type Props = {
 
 type State = {};
 
-// const defaultSorter = (a, b, key, defaultValue) => {
-//   const aValue = _.get(a,key) || defaultValue;
-//   const bValue = _.get(b,key) || defaultValue;
-//
-//   if(aValue < bValue) { return -1; }
-//   if(aValue > bValue) { return 1; }
-//   return 0;
-// }
+const getDoneAttempts = attempts => attempts.filter(at => at.done);
 
 class AttemptsTable extends Component<Props, State> {
   static defaultProps = {
@@ -96,10 +90,8 @@ class AttemptsTable extends Component<Props, State> {
     }, []);
   };
 
-  getDataSource(athleteGroups) {
-    const athletes = this.props.athletes.filter(
-      athlete => athlete.bodyWeight !== null
-    );
+  getDataSource(athletesData, athleteGroups) {
+    const athletes = athletesData;
 
     if (!this.props.groupWeightClasses) {
       return athletes;
@@ -118,15 +110,6 @@ class AttemptsTable extends Component<Props, State> {
         );
 
         const values = _.chain(value)
-          .orderBy(
-            [
-              'resultClass.gender',
-              'resultClass.ageClass.sortId',
-              'resultClass.weightClass.max',
-              'place'
-            ],
-            ['desc', 'asc', 'asc', 'desc']
-          )
           .groupBy('resultClass.id')
           .reduce((result2, value2, key2) => {
             return result2.concat([
@@ -177,16 +160,50 @@ class AttemptsTable extends Component<Props, State> {
       ? filterParams.athleteGroupId
       : [filterParams.athleteGroupId];
 
-    const filteredAthletes = athletes.filter(athlete => {
-      const attempts = athlete.attempts
-        .filter(a => a.discipline === filterParams.discipline && a.weight)
-        .map((a, i) => ({ ...a, i }))
-        .filter(a => !a.done);
+    const groupedAthletes = _.groupBy(athletes, 'athleteGroupId');
 
-      return attempts.length > 0;
+    const groups = athleteGroupIds
+      .map(id => athleteGroups.find(ag => ag.id === id))
+      .filter(e => e);
+
+    const athleteHelper = {};
+    const athletesData = athleteGroups.flatMap(({ id }) => {
+      if (!groupedAthletes[id]) {
+        return [];
+      }
+      return groupedAthletes[id]
+        .flatMap(athlete => {
+          const attempts = athlete.attempts
+            .filter(a => a.discipline === filterParams.discipline && a.weight)
+            .map((a, i) => ({ ...a, i }));
+          if (athleteHelper[athlete.id] === undefined) {
+            athleteHelper[athlete.id] = 0;
+          } else {
+            athleteHelper[athlete.id] += 1;
+          }
+
+          return attempts.map(a => ({
+            ...athlete,
+            attempts,
+            attempt: a,
+            v: (a.i % 3) + 1,
+            i: a.i
+          }));
+        })
+        .filter(e => e)
+        .sort(sortAthletes)
+        .sort((a, b) => a.i - b.i);
     });
 
-    const firstAthleteId = _.get(filteredAthletes, '[0].id');
+    const uniqueAthletes = [...new Set(athletesData.map(a => a.id))].map(id =>
+      athletesData.find(a => a.id === id)
+    );
+
+    const placedAthletes = uniqueAthletes.sort(
+      (a, b) =>
+        getDoneAttempts(a.attempts).length - getDoneAttempts(b.attempts).length
+    );
+    const firstAthleteId = _.get(placedAthletes, '[0].id');
 
     let columns = [
       {
@@ -325,11 +342,7 @@ class AttemptsTable extends Component<Props, State> {
     );
     _.last(columns).filterDropdown = () => menu;
 
-    const dataSource = this.getDataSource(
-      athleteGroupIds
-        .map(id => athleteGroups.find(ag => ag.id === id))
-        .filter(e => e)
-    );
+    const dataSource = this.getDataSource(uniqueAthletes, groups);
 
     return (
       <Table
