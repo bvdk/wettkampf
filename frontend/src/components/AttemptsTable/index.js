@@ -199,11 +199,32 @@ class AttemptsTable extends Component<Props, State> {
       athletesData.find(a => a.id === id)
     );
 
-    const placedAthletes = uniqueAthletes.sort(
-      (a, b) =>
-        getDoneAttempts(a.attempts).length - getDoneAttempts(b.attempts).length
-    );
-    const firstAthleteId = _.get(placedAthletes, '[0].id');
+    const groupedData = _.groupBy(athletesData, 'athleteGroupId');
+    const athleteGroupAthletes = groups
+      .map(group => groupedData[group.id])
+      .find(
+        aga =>
+          aga &&
+          !aga.map(a => getDoneAttempts(a.attempts).length).every(a => a === 3)
+      );
+    let firstAthleteId = null;
+    if (athleteGroupAthletes) {
+      athleteGroupAthletes
+        .sort(sortAthletes)
+        .sort(
+          (a, b) =>
+            getDoneAttempts(a.attempts).length -
+            getDoneAttempts(b.attempts).length
+        )
+        .reverse();
+      const unique = [...new Set(athleteGroupAthletes.map(a => a.id))]
+        .map(id =>
+          athleteGroupAthletes.find(a => !a.attempt.done && a.id === id)
+        )
+        .filter(e => e)
+        .reverse();
+      firstAthleteId = _.get(unique, '[0].id');
+    }
 
     let columns = [
       {
