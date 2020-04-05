@@ -153,7 +153,8 @@ class AttemptsTable extends Component<Props, State> {
       tableProps,
       filterParams,
       highlightFirstAthlete,
-      athleteGroups
+      athleteGroups,
+      filterByDiscipline
     } = this.props;
 
     const athleteGroupIds = Array.isArray(filterParams.athleteGroupId)
@@ -174,7 +175,12 @@ class AttemptsTable extends Component<Props, State> {
       return groupedAthletes[id]
         .flatMap(athlete => {
           const attempts = athlete.attempts
-            .filter(a => a.discipline === filterParams.discipline && a.weight)
+            .filter(a => {
+              if (filterByDiscipline) {
+                return a.discipline === filterParams.discipline && a.weight;
+              }
+              return a.weight;
+            })
             .map((a, i) => ({ ...a, i }));
           if (athleteHelper[athlete.id] === undefined) {
             athleteHelper[athlete.id] = 0;

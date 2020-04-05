@@ -19,6 +19,7 @@ query eventResults($eventId: ID!, $filters: [FilterInput!]) {
             points
             total
             dots
+            athleteGroupId
             resultClass {
                 id
                 name

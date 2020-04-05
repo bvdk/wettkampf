@@ -46,6 +46,7 @@ class EventAttempts extends Component<Props, {}> {
         availableDisciplines={availableDisciplines}
         athletes={athletes.sort(sortAthletes)}
         athleteGroups={athleteGroups}
+        filterByDiscipline={true}
       />
     );
   }

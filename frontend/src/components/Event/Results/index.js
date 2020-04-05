@@ -43,6 +43,7 @@ class EventResults extends Component<Props, {}> {
         loading={loading}
         athletes={athletes}
         athleteGroups={athleteGroups}
+        filterByDiscipline={false}
       />
     );
   }
