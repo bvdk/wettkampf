@@ -2,6 +2,2325 @@
 ### Do not make changes to this file directly
 
 
+type AgeClass {
+  id: String!
+  name: String!
+  sortId: Int!
+}
+
+input AgeClassCreateInput {
+  athletes: AthleteCreateManyWithoutAgeClassInput
+  createdAt: DateTime
+  id: String
+  name: String!
+  sortId: Int!
+  updatedAt: DateTime
+}
+
+input AgeClassCreateOneWithoutAthletesInput {
+  connect: AgeClassWhereUniqueInput
+  create: AgeClassCreateWithoutAthletesInput
+}
+
+input AgeClassCreateWithoutAthletesInput {
+  createdAt: DateTime
+  id: String
+  name: String!
+  sortId: Int!
+  updatedAt: DateTime
+}
+
+input AgeClassUpdateInput {
+  athletes: AthleteUpdateManyWithoutAgeClassInput
+  createdAt: DateTime
+  id: String
+  name: String
+  sortId: Int
+  updatedAt: DateTime
+}
+
+input AgeClassUpdateManyMutationInput {
+  createdAt: DateTime
+  id: String
+  name: String
+  sortId: Int
+  updatedAt: DateTime
+}
+
+input AgeClassUpdateOneRequiredWithoutAthletesInput {
+  connect: AgeClassWhereUniqueInput
+  create: AgeClassCreateWithoutAthletesInput
+  update: AgeClassUpdateWithoutAthletesDataInput
+  upsert: AgeClassUpsertWithoutAthletesInput
+}
+
+input AgeClassUpdateWithoutAthletesDataInput {
+  createdAt: DateTime
+  id: String
+  name: String
+  sortId: Int
+  updatedAt: DateTime
+}
+
+input AgeClassUpsertWithoutAthletesInput {
+  create: AgeClassCreateWithoutAthletesInput!
+  update: AgeClassUpdateWithoutAthletesDataInput!
+}
+
+input AgeClassWhereInput {
+  AND: [AgeClassWhereInput!]
+  athletes: AthleteFilter
+  createdAt: DateTimeFilter
+  id: UUIDFilter
+  name: StringFilter
+  NOT: [AgeClassWhereInput!]
+  OR: [AgeClassWhereInput!]
+  sortId: IntFilter
+  updatedAt: DateTimeFilter
+}
+
+input AgeClassWhereUniqueInput {
+  id: String
+}
+
+type Athlete {
+  ageClass: AgeClass!
+  ageClassId: String!
+  athleteNumber: Int!
+  BD1: Float!
+  BD2: Float!
+  BD3: Float!
+  birthday: DateTime!
+  bodyWeight: Float!
+  club: String!
+  createdAt: DateTime!
+  dots: Float!
+  event: Event!
+  eventId: String!
+  firstName: String!
+  gender: Gender!
+  id: String!
+  importId: Int!
+  KB1: Float!
+  KB2: Float!
+  KB3: Float!
+  KH1: Float!
+  KH2: Float!
+  KH3: Float!
+  lastName: String!
+  lateRegistration: Boolean!
+  location: String!
+  los: Int!
+  nextAttemptsSortKeys: String!
+  norm: Boolean!
+  place: Int!
+  points: Float!
+  price: Float!
+  raw: Boolean!
+  resultClassId: String!
+  total: Float!
+  updatedAt: DateTime!
+  weightClass: WeightClass!
+  weightClassId: String!
+  wilks: Float!
+}
+
+input AthleteCreateInput {
+  ageClass: AgeClassCreateOneWithoutAthletesInput!
+  athleteNumber: Int!
+  attempts: AttemptCreateManyWithoutAthleteInput
+  BD1: Float!
+  BD2: Float!
+  BD3: Float!
+  birthday: DateTime!
+  bodyWeight: Float!
+  club: String!
+  createdAt: DateTime
+  dots: Float!
+  event: EventCreateOneWithoutAthletesInput!
+  firstName: String!
+  gender: Gender!
+  id: String
+  importId: Int!
+  KB1: Float!
+  KB2: Float!
+  KB3: Float!
+  KH1: Float!
+  KH2: Float!
+  KH3: Float!
+  lastName: String!
+  lateRegistration: Boolean!
+  location: String!
+  los: Int!
+  nextAttemptsSortKeys: String!
+  norm: Boolean!
+  place: Int!
+  points: Float!
+  price: Float!
+  raw: Boolean!
+  resultClassId: String!
+  total: Float!
+  updatedAt: DateTime
+  weightClass: WeightClassCreateOneWithoutAthletesInput!
+  wilks: Float!
+}
+
+input AthleteCreateManyWithoutAgeClassInput {
+  connect: [AthleteWhereUniqueInput!]
+  create: [AthleteCreateWithoutAgeClassInput!]
+}
+
+input AthleteCreateManyWithoutEventInput {
+  connect: [AthleteWhereUniqueInput!]
+  create: [AthleteCreateWithoutEventInput!]
+}
+
+input AthleteCreateManyWithoutWeightClassInput {
+  connect: [AthleteWhereUniqueInput!]
+  create: [AthleteCreateWithoutWeightClassInput!]
+}
+
+input AthleteCreateOneWithoutAttemptsInput {
+  connect: AthleteWhereUniqueInput
+  create: AthleteCreateWithoutAttemptsInput
+}
+
+input AthleteCreateWithoutAgeClassInput {
+  athleteNumber: Int!
+  attempts: AttemptCreateManyWithoutAthleteInput
+  BD1: Float!
+  BD2: Float!
+  BD3: Float!
+  birthday: DateTime!
+  bodyWeight: Float!
+  club: String!
+  createdAt: DateTime
+  dots: Float!
+  event: EventCreateOneWithoutAthletesInput!
+  firstName: String!
+  gender: Gender!
+  id: String
+  importId: Int!
+  KB1: Float!
+  KB2: Float!
+  KB3: Float!
+  KH1: Float!
+  KH2: Float!
+  KH3: Float!
+  lastName: String!
+  lateRegistration: Boolean!
+  location: String!
+  los: Int!
+  nextAttemptsSortKeys: String!
+  norm: Boolean!
+  place: Int!
+  points: Float!
+  price: Float!
+  raw: Boolean!
+  resultClassId: String!
+  total: Float!
+  updatedAt: DateTime
+  weightClass: WeightClassCreateOneWithoutAthletesInput!
+  wilks: Float!
+}
+
+input AthleteCreateWithoutAttemptsInput {
+  ageClass: AgeClassCreateOneWithoutAthletesInput!
+  athleteNumber: Int!
+  BD1: Float!
+  BD2: Float!
+  BD3: Float!
+  birthday: DateTime!
+  bodyWeight: Float!
+  club: String!
+  createdAt: DateTime
+  dots: Float!
+  event: EventCreateOneWithoutAthletesInput!
+  firstName: String!
+  gender: Gender!
+  id: String
+  importId: Int!
+  KB1: Float!
+  KB2: Float!
+  KB3: Float!
+  KH1: Float!
+  KH2: Float!
+  KH3: Float!
+  lastName: String!
+  lateRegistration: Boolean!
+  location: String!
+  los: Int!
+  nextAttemptsSortKeys: String!
+  norm: Boolean!
+  place: Int!
+  points: Float!
+  price: Float!
+  raw: Boolean!
+  resultClassId: String!
+  total: Float!
+  updatedAt: DateTime
+  weightClass: WeightClassCreateOneWithoutAthletesInput!
+  wilks: Float!
+}
+
+input AthleteCreateWithoutEventInput {
+  ageClass: AgeClassCreateOneWithoutAthletesInput!
+  athleteNumber: Int!
+  attempts: AttemptCreateManyWithoutAthleteInput
+  BD1: Float!
+  BD2: Float!
+  BD3: Float!
+  birthday: DateTime!
+  bodyWeight: Float!
+  club: String!
+  createdAt: DateTime
+  dots: Float!
+  firstName: String!
+  gender: Gender!
+  id: String
+  importId: Int!
+  KB1: Float!
+  KB2: Float!
+  KB3: Float!
+  KH1: Float!
+  KH2: Float!
+  KH3: Float!
+  lastName: String!
+  lateRegistration: Boolean!
+  location: String!
+  los: Int!
+  nextAttemptsSortKeys: String!
+  norm: Boolean!
+  place: Int!
+  points: Float!
+  price: Float!
+  raw: Boolean!
+  resultClassId: String!
+  total: Float!
+  updatedAt: DateTime
+  weightClass: WeightClassCreateOneWithoutAthletesInput!
+  wilks: Float!
+}
+
+input AthleteCreateWithoutWeightClassInput {
+  ageClass: AgeClassCreateOneWithoutAthletesInput!
+  athleteNumber: Int!
+  attempts: AttemptCreateManyWithoutAthleteInput
+  BD1: Float!
+  BD2: Float!
+  BD3: Float!
+  birthday: DateTime!
+  bodyWeight: Float!
+  club: String!
+  createdAt: DateTime
+  dots: Float!
+  event: EventCreateOneWithoutAthletesInput!
+  firstName: String!
+  gender: Gender!
+  id: String
+  importId: Int!
+  KB1: Float!
+  KB2: Float!
+  KB3: Float!
+  KH1: Float!
+  KH2: Float!
+  KH3: Float!
+  lastName: String!
+  lateRegistration: Boolean!
+  location: String!
+  los: Int!
+  nextAttemptsSortKeys: String!
+  norm: Boolean!
+  place: Int!
+  points: Float!
+  price: Float!
+  raw: Boolean!
+  resultClassId: String!
+  total: Float!
+  updatedAt: DateTime
+  wilks: Float!
+}
+
+input AthleteFilter {
+  every: AthleteWhereInput
+  none: AthleteWhereInput
+  some: AthleteWhereInput
+}
+
+type AthleteGroup {
+  createdAt: DateTime!
+  event: Event!
+  eventId: String!
+  id: String!
+  name: String!
+  slot: Slot!
+  slotId: String!
+  updatedAt: DateTime!
+}
+
+input AthleteGroupCreateInput {
+  createdAt: DateTime
+  event: EventCreateOneWithoutAthleteGroupsInput!
+  id: String
+  name: String!
+  slot: SlotCreateOneWithoutAthleteGroupsInput!
+  updatedAt: DateTime
+}
+
+input AthleteGroupCreateManyWithoutEventInput {
+  connect: [AthleteGroupWhereUniqueInput!]
+  create: [AthleteGroupCreateWithoutEventInput!]
+}
+
+input AthleteGroupCreateManyWithoutSlotInput {
+  connect: [AthleteGroupWhereUniqueInput!]
+  create: [AthleteGroupCreateWithoutSlotInput!]
+}
+
+input AthleteGroupCreateWithoutEventInput {
+  createdAt: DateTime
+  id: String
+  name: String!
+  slot: SlotCreateOneWithoutAthleteGroupsInput!
+  updatedAt: DateTime
+}
+
+input AthleteGroupCreateWithoutSlotInput {
+  createdAt: DateTime
+  event: EventCreateOneWithoutAthleteGroupsInput!
+  id: String
+  name: String!
+  updatedAt: DateTime
+}
+
+input AthleteGroupFilter {
+  every: AthleteGroupWhereInput
+  none: AthleteGroupWhereInput
+  some: AthleteGroupWhereInput
+}
+
+input AthleteGroupScalarWhereInput {
+  AND: [AthleteGroupScalarWhereInput!]
+  createdAt: DateTimeFilter
+  eventId: StringFilter
+  id: UUIDFilter
+  name: StringFilter
+  NOT: [AthleteGroupScalarWhereInput!]
+  OR: [AthleteGroupScalarWhereInput!]
+  slotId: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input AthleteGroupUpdateInput {
+  createdAt: DateTime
+  event: EventUpdateOneRequiredWithoutAthleteGroupsInput
+  id: String
+  name: String
+  slot: SlotUpdateOneRequiredWithoutAthleteGroupsInput
+  updatedAt: DateTime
+}
+
+input AthleteGroupUpdateManyDataInput {
+  createdAt: DateTime
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input AthleteGroupUpdateManyMutationInput {
+  createdAt: DateTime
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input AthleteGroupUpdateManyWithoutEventInput {
+  connect: [AthleteGroupWhereUniqueInput!]
+  create: [AthleteGroupCreateWithoutEventInput!]
+  delete: [AthleteGroupWhereUniqueInput!]
+  deleteMany: [AthleteGroupScalarWhereInput!]
+  disconnect: [AthleteGroupWhereUniqueInput!]
+  set: [AthleteGroupWhereUniqueInput!]
+  update: [AthleteGroupUpdateWithWhereUniqueWithoutEventInput!]
+  updateMany: [AthleteGroupUpdateManyWithWhereNestedInput!]
+  upsert: [AthleteGroupUpsertWithWhereUniqueWithoutEventInput!]
+}
+
+input AthleteGroupUpdateManyWithoutSlotInput {
+  connect: [AthleteGroupWhereUniqueInput!]
+  create: [AthleteGroupCreateWithoutSlotInput!]
+  delete: [AthleteGroupWhereUniqueInput!]
+  deleteMany: [AthleteGroupScalarWhereInput!]
+  disconnect: [AthleteGroupWhereUniqueInput!]
+  set: [AthleteGroupWhereUniqueInput!]
+  update: [AthleteGroupUpdateWithWhereUniqueWithoutSlotInput!]
+  updateMany: [AthleteGroupUpdateManyWithWhereNestedInput!]
+  upsert: [AthleteGroupUpsertWithWhereUniqueWithoutSlotInput!]
+}
+
+input AthleteGroupUpdateManyWithWhereNestedInput {
+  data: AthleteGroupUpdateManyDataInput!
+  where: AthleteGroupScalarWhereInput!
+}
+
+input AthleteGroupUpdateWithoutEventDataInput {
+  createdAt: DateTime
+  id: String
+  name: String
+  slot: SlotUpdateOneRequiredWithoutAthleteGroupsInput
+  updatedAt: DateTime
+}
+
+input AthleteGroupUpdateWithoutSlotDataInput {
+  createdAt: DateTime
+  event: EventUpdateOneRequiredWithoutAthleteGroupsInput
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input AthleteGroupUpdateWithWhereUniqueWithoutEventInput {
+  data: AthleteGroupUpdateWithoutEventDataInput!
+  where: AthleteGroupWhereUniqueInput!
+}
+
+input AthleteGroupUpdateWithWhereUniqueWithoutSlotInput {
+  data: AthleteGroupUpdateWithoutSlotDataInput!
+  where: AthleteGroupWhereUniqueInput!
+}
+
+input AthleteGroupUpsertWithWhereUniqueWithoutEventInput {
+  create: AthleteGroupCreateWithoutEventInput!
+  update: AthleteGroupUpdateWithoutEventDataInput!
+  where: AthleteGroupWhereUniqueInput!
+}
+
+input AthleteGroupUpsertWithWhereUniqueWithoutSlotInput {
+  create: AthleteGroupCreateWithoutSlotInput!
+  update: AthleteGroupUpdateWithoutSlotDataInput!
+  where: AthleteGroupWhereUniqueInput!
+}
+
+input AthleteGroupWhereInput {
+  AND: [AthleteGroupWhereInput!]
+  createdAt: DateTimeFilter
+  event: EventWhereInput
+  eventId: StringFilter
+  id: UUIDFilter
+  name: StringFilter
+  NOT: [AthleteGroupWhereInput!]
+  OR: [AthleteGroupWhereInput!]
+  slot: SlotWhereInput
+  slotId: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input AthleteGroupWhereUniqueInput {
+  id: String
+}
+
+input AthleteScalarWhereInput {
+  ageClassId: StringFilter
+  AND: [AthleteScalarWhereInput!]
+  athleteNumber: IntFilter
+  attempts: AttemptFilter
+  BD1: FloatFilter
+  BD2: FloatFilter
+  BD3: FloatFilter
+  birthday: DateTimeFilter
+  bodyWeight: FloatFilter
+  club: StringFilter
+  createdAt: DateTimeFilter
+  dots: FloatFilter
+  eventId: StringFilter
+  firstName: StringFilter
+  gender: Gender
+  id: UUIDFilter
+  importId: IntFilter
+  KB1: FloatFilter
+  KB2: FloatFilter
+  KB3: FloatFilter
+  KH1: FloatFilter
+  KH2: FloatFilter
+  KH3: FloatFilter
+  lastName: StringFilter
+  lateRegistration: BooleanFilter
+  location: StringFilter
+  los: IntFilter
+  nextAttemptsSortKeys: StringFilter
+  norm: BooleanFilter
+  NOT: [AthleteScalarWhereInput!]
+  OR: [AthleteScalarWhereInput!]
+  place: IntFilter
+  points: FloatFilter
+  price: FloatFilter
+  raw: BooleanFilter
+  resultClassId: StringFilter
+  total: FloatFilter
+  updatedAt: DateTimeFilter
+  weightClassId: StringFilter
+  wilks: FloatFilter
+}
+
+input AthleteUpdateInput {
+  ageClass: AgeClassUpdateOneRequiredWithoutAthletesInput
+  athleteNumber: Int
+  attempts: AttemptUpdateManyWithoutAthleteInput
+  BD1: Float
+  BD2: Float
+  BD3: Float
+  birthday: DateTime
+  bodyWeight: Float
+  club: String
+  createdAt: DateTime
+  dots: Float
+  event: EventUpdateOneRequiredWithoutAthletesInput
+  firstName: String
+  gender: Gender
+  id: String
+  importId: Int
+  KB1: Float
+  KB2: Float
+  KB3: Float
+  KH1: Float
+  KH2: Float
+  KH3: Float
+  lastName: String
+  lateRegistration: Boolean
+  location: String
+  los: Int
+  nextAttemptsSortKeys: String
+  norm: Boolean
+  place: Int
+  points: Float
+  price: Float
+  raw: Boolean
+  resultClassId: String
+  total: Float
+  updatedAt: DateTime
+  weightClass: WeightClassUpdateOneRequiredWithoutAthletesInput
+  wilks: Float
+}
+
+input AthleteUpdateManyDataInput {
+  athleteNumber: Int
+  BD1: Float
+  BD2: Float
+  BD3: Float
+  birthday: DateTime
+  bodyWeight: Float
+  club: String
+  createdAt: DateTime
+  dots: Float
+  firstName: String
+  gender: Gender
+  id: String
+  importId: Int
+  KB1: Float
+  KB2: Float
+  KB3: Float
+  KH1: Float
+  KH2: Float
+  KH3: Float
+  lastName: String
+  lateRegistration: Boolean
+  location: String
+  los: Int
+  nextAttemptsSortKeys: String
+  norm: Boolean
+  place: Int
+  points: Float
+  price: Float
+  raw: Boolean
+  resultClassId: String
+  total: Float
+  updatedAt: DateTime
+  wilks: Float
+}
+
+input AthleteUpdateManyMutationInput {
+  athleteNumber: Int
+  BD1: Float
+  BD2: Float
+  BD3: Float
+  birthday: DateTime
+  bodyWeight: Float
+  club: String
+  createdAt: DateTime
+  dots: Float
+  firstName: String
+  gender: Gender
+  id: String
+  importId: Int
+  KB1: Float
+  KB2: Float
+  KB3: Float
+  KH1: Float
+  KH2: Float
+  KH3: Float
+  lastName: String
+  lateRegistration: Boolean
+  location: String
+  los: Int
+  nextAttemptsSortKeys: String
+  norm: Boolean
+  place: Int
+  points: Float
+  price: Float
+  raw: Boolean
+  resultClassId: String
+  total: Float
+  updatedAt: DateTime
+  wilks: Float
+}
+
+input AthleteUpdateManyWithoutAgeClassInput {
+  connect: [AthleteWhereUniqueInput!]
+  create: [AthleteCreateWithoutAgeClassInput!]
+  delete: [AthleteWhereUniqueInput!]
+  deleteMany: [AthleteScalarWhereInput!]
+  disconnect: [AthleteWhereUniqueInput!]
+  set: [AthleteWhereUniqueInput!]
+  update: [AthleteUpdateWithWhereUniqueWithoutAgeClassInput!]
+  updateMany: [AthleteUpdateManyWithWhereNestedInput!]
+  upsert: [AthleteUpsertWithWhereUniqueWithoutAgeClassInput!]
+}
+
+input AthleteUpdateManyWithoutEventInput {
+  connect: [AthleteWhereUniqueInput!]
+  create: [AthleteCreateWithoutEventInput!]
+  delete: [AthleteWhereUniqueInput!]
+  deleteMany: [AthleteScalarWhereInput!]
+  disconnect: [AthleteWhereUniqueInput!]
+  set: [AthleteWhereUniqueInput!]
+  update: [AthleteUpdateWithWhereUniqueWithoutEventInput!]
+  updateMany: [AthleteUpdateManyWithWhereNestedInput!]
+  upsert: [AthleteUpsertWithWhereUniqueWithoutEventInput!]
+}
+
+input AthleteUpdateManyWithoutWeightClassInput {
+  connect: [AthleteWhereUniqueInput!]
+  create: [AthleteCreateWithoutWeightClassInput!]
+  delete: [AthleteWhereUniqueInput!]
+  deleteMany: [AthleteScalarWhereInput!]
+  disconnect: [AthleteWhereUniqueInput!]
+  set: [AthleteWhereUniqueInput!]
+  update: [AthleteUpdateWithWhereUniqueWithoutWeightClassInput!]
+  updateMany: [AthleteUpdateManyWithWhereNestedInput!]
+  upsert: [AthleteUpsertWithWhereUniqueWithoutWeightClassInput!]
+}
+
+input AthleteUpdateManyWithWhereNestedInput {
+  data: AthleteUpdateManyDataInput!
+  where: AthleteScalarWhereInput!
+}
+
+input AthleteUpdateOneRequiredWithoutAttemptsInput {
+  connect: AthleteWhereUniqueInput
+  create: AthleteCreateWithoutAttemptsInput
+  update: AthleteUpdateWithoutAttemptsDataInput
+  upsert: AthleteUpsertWithoutAttemptsInput
+}
+
+input AthleteUpdateWithoutAgeClassDataInput {
+  athleteNumber: Int
+  attempts: AttemptUpdateManyWithoutAthleteInput
+  BD1: Float
+  BD2: Float
+  BD3: Float
+  birthday: DateTime
+  bodyWeight: Float
+  club: String
+  createdAt: DateTime
+  dots: Float
+  event: EventUpdateOneRequiredWithoutAthletesInput
+  firstName: String
+  gender: Gender
+  id: String
+  importId: Int
+  KB1: Float
+  KB2: Float
+  KB3: Float
+  KH1: Float
+  KH2: Float
+  KH3: Float
+  lastName: String
+  lateRegistration: Boolean
+  location: String
+  los: Int
+  nextAttemptsSortKeys: String
+  norm: Boolean
+  place: Int
+  points: Float
+  price: Float
+  raw: Boolean
+  resultClassId: String
+  total: Float
+  updatedAt: DateTime
+  weightClass: WeightClassUpdateOneRequiredWithoutAthletesInput
+  wilks: Float
+}
+
+input AthleteUpdateWithoutAttemptsDataInput {
+  ageClass: AgeClassUpdateOneRequiredWithoutAthletesInput
+  athleteNumber: Int
+  BD1: Float
+  BD2: Float
+  BD3: Float
+  birthday: DateTime
+  bodyWeight: Float
+  club: String
+  createdAt: DateTime
+  dots: Float
+  event: EventUpdateOneRequiredWithoutAthletesInput
+  firstName: String
+  gender: Gender
+  id: String
+  importId: Int
+  KB1: Float
+  KB2: Float
+  KB3: Float
+  KH1: Float
+  KH2: Float
+  KH3: Float
+  lastName: String
+  lateRegistration: Boolean
+  location: String
+  los: Int
+  nextAttemptsSortKeys: String
+  norm: Boolean
+  place: Int
+  points: Float
+  price: Float
+  raw: Boolean
+  resultClassId: String
+  total: Float
+  updatedAt: DateTime
+  weightClass: WeightClassUpdateOneRequiredWithoutAthletesInput
+  wilks: Float
+}
+
+input AthleteUpdateWithoutEventDataInput {
+  ageClass: AgeClassUpdateOneRequiredWithoutAthletesInput
+  athleteNumber: Int
+  attempts: AttemptUpdateManyWithoutAthleteInput
+  BD1: Float
+  BD2: Float
+  BD3: Float
+  birthday: DateTime
+  bodyWeight: Float
+  club: String
+  createdAt: DateTime
+  dots: Float
+  firstName: String
+  gender: Gender
+  id: String
+  importId: Int
+  KB1: Float
+  KB2: Float
+  KB3: Float
+  KH1: Float
+  KH2: Float
+  KH3: Float
+  lastName: String
+  lateRegistration: Boolean
+  location: String
+  los: Int
+  nextAttemptsSortKeys: String
+  norm: Boolean
+  place: Int
+  points: Float
+  price: Float
+  raw: Boolean
+  resultClassId: String
+  total: Float
+  updatedAt: DateTime
+  weightClass: WeightClassUpdateOneRequiredWithoutAthletesInput
+  wilks: Float
+}
+
+input AthleteUpdateWithoutWeightClassDataInput {
+  ageClass: AgeClassUpdateOneRequiredWithoutAthletesInput
+  athleteNumber: Int
+  attempts: AttemptUpdateManyWithoutAthleteInput
+  BD1: Float
+  BD2: Float
+  BD3: Float
+  birthday: DateTime
+  bodyWeight: Float
+  club: String
+  createdAt: DateTime
+  dots: Float
+  event: EventUpdateOneRequiredWithoutAthletesInput
+  firstName: String
+  gender: Gender
+  id: String
+  importId: Int
+  KB1: Float
+  KB2: Float
+  KB3: Float
+  KH1: Float
+  KH2: Float
+  KH3: Float
+  lastName: String
+  lateRegistration: Boolean
+  location: String
+  los: Int
+  nextAttemptsSortKeys: String
+  norm: Boolean
+  place: Int
+  points: Float
+  price: Float
+  raw: Boolean
+  resultClassId: String
+  total: Float
+  updatedAt: DateTime
+  wilks: Float
+}
+
+input AthleteUpdateWithWhereUniqueWithoutAgeClassInput {
+  data: AthleteUpdateWithoutAgeClassDataInput!
+  where: AthleteWhereUniqueInput!
+}
+
+input AthleteUpdateWithWhereUniqueWithoutEventInput {
+  data: AthleteUpdateWithoutEventDataInput!
+  where: AthleteWhereUniqueInput!
+}
+
+input AthleteUpdateWithWhereUniqueWithoutWeightClassInput {
+  data: AthleteUpdateWithoutWeightClassDataInput!
+  where: AthleteWhereUniqueInput!
+}
+
+input AthleteUpsertWithoutAttemptsInput {
+  create: AthleteCreateWithoutAttemptsInput!
+  update: AthleteUpdateWithoutAttemptsDataInput!
+}
+
+input AthleteUpsertWithWhereUniqueWithoutAgeClassInput {
+  create: AthleteCreateWithoutAgeClassInput!
+  update: AthleteUpdateWithoutAgeClassDataInput!
+  where: AthleteWhereUniqueInput!
+}
+
+input AthleteUpsertWithWhereUniqueWithoutEventInput {
+  create: AthleteCreateWithoutEventInput!
+  update: AthleteUpdateWithoutEventDataInput!
+  where: AthleteWhereUniqueInput!
+}
+
+input AthleteUpsertWithWhereUniqueWithoutWeightClassInput {
+  create: AthleteCreateWithoutWeightClassInput!
+  update: AthleteUpdateWithoutWeightClassDataInput!
+  where: AthleteWhereUniqueInput!
+}
+
+input AthleteWhereInput {
+  ageClass: AgeClassWhereInput
+  ageClassId: StringFilter
+  AND: [AthleteWhereInput!]
+  athleteNumber: IntFilter
+  attempts: AttemptFilter
+  BD1: FloatFilter
+  BD2: FloatFilter
+  BD3: FloatFilter
+  birthday: DateTimeFilter
+  bodyWeight: FloatFilter
+  club: StringFilter
+  createdAt: DateTimeFilter
+  dots: FloatFilter
+  event: EventWhereInput
+  eventId: StringFilter
+  firstName: StringFilter
+  gender: Gender
+  id: UUIDFilter
+  importId: IntFilter
+  KB1: FloatFilter
+  KB2: FloatFilter
+  KB3: FloatFilter
+  KH1: FloatFilter
+  KH2: FloatFilter
+  KH3: FloatFilter
+  lastName: StringFilter
+  lateRegistration: BooleanFilter
+  location: StringFilter
+  los: IntFilter
+  nextAttemptsSortKeys: StringFilter
+  norm: BooleanFilter
+  NOT: [AthleteWhereInput!]
+  OR: [AthleteWhereInput!]
+  place: IntFilter
+  points: FloatFilter
+  price: FloatFilter
+  raw: BooleanFilter
+  resultClassId: StringFilter
+  total: FloatFilter
+  updatedAt: DateTimeFilter
+  weightClass: WeightClassWhereInput
+  weightClassId: StringFilter
+  wilks: FloatFilter
+}
+
+input AthleteWhereUniqueInput {
+  id: String
+}
+
+type Attempt {
+  athlete: Athlete!
+  athleteId: String!
+  createdAt: DateTime!
+  date: DateTime!
+  discipline: Discipline!
+  done: Boolean!
+  id: String!
+  index: Int!
+  raw: Boolean!
+  resign: Boolean!
+  updatedAt: DateTime!
+  valid: Boolean!
+  weight: Int!
+}
+
+input AttemptCreateInput {
+  athlete: AthleteCreateOneWithoutAttemptsInput!
+  createdAt: DateTime
+  date: DateTime!
+  discipline: Discipline!
+  done: Boolean!
+  id: String
+  index: Int!
+  raw: Boolean!
+  resign: Boolean!
+  updatedAt: DateTime
+  valid: Boolean!
+  weight: Int!
+}
+
+input AttemptCreateManyWithoutAthleteInput {
+  connect: [AttemptWhereUniqueInput!]
+  create: [AttemptCreateWithoutAthleteInput!]
+}
+
+input AttemptCreateWithoutAthleteInput {
+  createdAt: DateTime
+  date: DateTime!
+  discipline: Discipline!
+  done: Boolean!
+  id: String
+  index: Int!
+  raw: Boolean!
+  resign: Boolean!
+  updatedAt: DateTime
+  valid: Boolean!
+  weight: Int!
+}
+
+input AttemptFilter {
+  every: AttemptWhereInput
+  none: AttemptWhereInput
+  some: AttemptWhereInput
+}
+
+input AttemptScalarWhereInput {
+  AND: [AttemptScalarWhereInput!]
+  athleteId: StringFilter
+  createdAt: DateTimeFilter
+  date: DateTimeFilter
+  discipline: Discipline
+  done: BooleanFilter
+  id: UUIDFilter
+  index: IntFilter
+  NOT: [AttemptScalarWhereInput!]
+  OR: [AttemptScalarWhereInput!]
+  raw: BooleanFilter
+  resign: BooleanFilter
+  updatedAt: DateTimeFilter
+  valid: BooleanFilter
+  weight: IntFilter
+}
+
+input AttemptUpdateInput {
+  athlete: AthleteUpdateOneRequiredWithoutAttemptsInput
+  createdAt: DateTime
+  date: DateTime
+  discipline: Discipline
+  done: Boolean
+  id: String
+  index: Int
+  raw: Boolean
+  resign: Boolean
+  updatedAt: DateTime
+  valid: Boolean
+  weight: Int
+}
+
+input AttemptUpdateManyDataInput {
+  createdAt: DateTime
+  date: DateTime
+  discipline: Discipline
+  done: Boolean
+  id: String
+  index: Int
+  raw: Boolean
+  resign: Boolean
+  updatedAt: DateTime
+  valid: Boolean
+  weight: Int
+}
+
+input AttemptUpdateManyMutationInput {
+  createdAt: DateTime
+  date: DateTime
+  discipline: Discipline
+  done: Boolean
+  id: String
+  index: Int
+  raw: Boolean
+  resign: Boolean
+  updatedAt: DateTime
+  valid: Boolean
+  weight: Int
+}
+
+input AttemptUpdateManyWithoutAthleteInput {
+  connect: [AttemptWhereUniqueInput!]
+  create: [AttemptCreateWithoutAthleteInput!]
+  delete: [AttemptWhereUniqueInput!]
+  deleteMany: [AttemptScalarWhereInput!]
+  disconnect: [AttemptWhereUniqueInput!]
+  set: [AttemptWhereUniqueInput!]
+  update: [AttemptUpdateWithWhereUniqueWithoutAthleteInput!]
+  updateMany: [AttemptUpdateManyWithWhereNestedInput!]
+  upsert: [AttemptUpsertWithWhereUniqueWithoutAthleteInput!]
+}
+
+input AttemptUpdateManyWithWhereNestedInput {
+  data: AttemptUpdateManyDataInput!
+  where: AttemptScalarWhereInput!
+}
+
+input AttemptUpdateWithoutAthleteDataInput {
+  createdAt: DateTime
+  date: DateTime
+  discipline: Discipline
+  done: Boolean
+  id: String
+  index: Int
+  raw: Boolean
+  resign: Boolean
+  updatedAt: DateTime
+  valid: Boolean
+  weight: Int
+}
+
+input AttemptUpdateWithWhereUniqueWithoutAthleteInput {
+  data: AttemptUpdateWithoutAthleteDataInput!
+  where: AttemptWhereUniqueInput!
+}
+
+input AttemptUpsertWithWhereUniqueWithoutAthleteInput {
+  create: AttemptCreateWithoutAthleteInput!
+  update: AttemptUpdateWithoutAthleteDataInput!
+  where: AttemptWhereUniqueInput!
+}
+
+input AttemptWhereInput {
+  AND: [AttemptWhereInput!]
+  athlete: AthleteWhereInput
+  athleteId: StringFilter
+  createdAt: DateTimeFilter
+  date: DateTimeFilter
+  discipline: Discipline
+  done: BooleanFilter
+  id: UUIDFilter
+  index: IntFilter
+  NOT: [AttemptWhereInput!]
+  OR: [AttemptWhereInput!]
+  raw: BooleanFilter
+  resign: BooleanFilter
+  updatedAt: DateTimeFilter
+  valid: BooleanFilter
+  weight: IntFilter
+}
+
+input AttemptWhereUniqueInput {
+  id: String
+}
+
+type BatchPayload {
+  count: Int!
+}
+
+input BooleanFilter {
+  equals: Boolean
+  not: Boolean
+}
+
+enum ContestType {
+  SINGLE
+  TEAM
+}
+
+scalar DateTime
+
+input DateTimeFilter {
+  equals: DateTime
+  gt: DateTime
+  gte: DateTime
+  in: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  not: DateTime
+  notIn: [DateTime!]
+}
+
+enum Discipline {
+  BENCHPRESS
+  DEADLIFT
+  POWERLIFTING
+  SQUAT
+}
+
+type Event {
+  contestType: ContestType!
+  createdAt: DateTime!
+  discipline: Discipline!
+  id: String!
+  name: String!
+  updatedAt: DateTime!
+}
+
+input EventCreateInput {
+  athleteGroups: AthleteGroupCreateManyWithoutEventInput
+  athletes: AthleteCreateManyWithoutEventInput
+  contestType: ContestType!
+  createdAt: DateTime
+  discipline: Discipline!
+  id: String
+  name: String!
+  officials: OfficialCreateManyWithoutEventInput
+  slots: SlotCreateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventCreateOneWithoutAthleteGroupsInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutAthleteGroupsInput
+}
+
+input EventCreateOneWithoutAthletesInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutAthletesInput
+}
+
+input EventCreateOneWithoutOfficialsInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutOfficialsInput
+}
+
+input EventCreateOneWithoutSlotsInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutSlotsInput
+}
+
+input EventCreateWithoutAthleteGroupsInput {
+  athletes: AthleteCreateManyWithoutEventInput
+  contestType: ContestType!
+  createdAt: DateTime
+  discipline: Discipline!
+  id: String
+  name: String!
+  officials: OfficialCreateManyWithoutEventInput
+  slots: SlotCreateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventCreateWithoutAthletesInput {
+  athleteGroups: AthleteGroupCreateManyWithoutEventInput
+  contestType: ContestType!
+  createdAt: DateTime
+  discipline: Discipline!
+  id: String
+  name: String!
+  officials: OfficialCreateManyWithoutEventInput
+  slots: SlotCreateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventCreateWithoutOfficialsInput {
+  athleteGroups: AthleteGroupCreateManyWithoutEventInput
+  athletes: AthleteCreateManyWithoutEventInput
+  contestType: ContestType!
+  createdAt: DateTime
+  discipline: Discipline!
+  id: String
+  name: String!
+  slots: SlotCreateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventCreateWithoutSlotsInput {
+  athleteGroups: AthleteGroupCreateManyWithoutEventInput
+  athletes: AthleteCreateManyWithoutEventInput
+  contestType: ContestType!
+  createdAt: DateTime
+  discipline: Discipline!
+  id: String
+  name: String!
+  officials: OfficialCreateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventUpdateInput {
+  athleteGroups: AthleteGroupUpdateManyWithoutEventInput
+  athletes: AthleteUpdateManyWithoutEventInput
+  contestType: ContestType
+  createdAt: DateTime
+  discipline: Discipline
+  id: String
+  name: String
+  officials: OfficialUpdateManyWithoutEventInput
+  slots: SlotUpdateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventUpdateManyMutationInput {
+  contestType: ContestType
+  createdAt: DateTime
+  discipline: Discipline
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input EventUpdateOneRequiredWithoutAthleteGroupsInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutAthleteGroupsInput
+  update: EventUpdateWithoutAthleteGroupsDataInput
+  upsert: EventUpsertWithoutAthleteGroupsInput
+}
+
+input EventUpdateOneRequiredWithoutAthletesInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutAthletesInput
+  update: EventUpdateWithoutAthletesDataInput
+  upsert: EventUpsertWithoutAthletesInput
+}
+
+input EventUpdateOneRequiredWithoutOfficialsInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutOfficialsInput
+  update: EventUpdateWithoutOfficialsDataInput
+  upsert: EventUpsertWithoutOfficialsInput
+}
+
+input EventUpdateOneRequiredWithoutSlotsInput {
+  connect: EventWhereUniqueInput
+  create: EventCreateWithoutSlotsInput
+  update: EventUpdateWithoutSlotsDataInput
+  upsert: EventUpsertWithoutSlotsInput
+}
+
+input EventUpdateWithoutAthleteGroupsDataInput {
+  athletes: AthleteUpdateManyWithoutEventInput
+  contestType: ContestType
+  createdAt: DateTime
+  discipline: Discipline
+  id: String
+  name: String
+  officials: OfficialUpdateManyWithoutEventInput
+  slots: SlotUpdateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventUpdateWithoutAthletesDataInput {
+  athleteGroups: AthleteGroupUpdateManyWithoutEventInput
+  contestType: ContestType
+  createdAt: DateTime
+  discipline: Discipline
+  id: String
+  name: String
+  officials: OfficialUpdateManyWithoutEventInput
+  slots: SlotUpdateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventUpdateWithoutOfficialsDataInput {
+  athleteGroups: AthleteGroupUpdateManyWithoutEventInput
+  athletes: AthleteUpdateManyWithoutEventInput
+  contestType: ContestType
+  createdAt: DateTime
+  discipline: Discipline
+  id: String
+  name: String
+  slots: SlotUpdateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventUpdateWithoutSlotsDataInput {
+  athleteGroups: AthleteGroupUpdateManyWithoutEventInput
+  athletes: AthleteUpdateManyWithoutEventInput
+  contestType: ContestType
+  createdAt: DateTime
+  discipline: Discipline
+  id: String
+  name: String
+  officials: OfficialUpdateManyWithoutEventInput
+  updatedAt: DateTime
+}
+
+input EventUpsertWithoutAthleteGroupsInput {
+  create: EventCreateWithoutAthleteGroupsInput!
+  update: EventUpdateWithoutAthleteGroupsDataInput!
+}
+
+input EventUpsertWithoutAthletesInput {
+  create: EventCreateWithoutAthletesInput!
+  update: EventUpdateWithoutAthletesDataInput!
+}
+
+input EventUpsertWithoutOfficialsInput {
+  create: EventCreateWithoutOfficialsInput!
+  update: EventUpdateWithoutOfficialsDataInput!
+}
+
+input EventUpsertWithoutSlotsInput {
+  create: EventCreateWithoutSlotsInput!
+  update: EventUpdateWithoutSlotsDataInput!
+}
+
+input EventWhereInput {
+  AND: [EventWhereInput!]
+  athleteGroups: AthleteGroupFilter
+  athletes: AthleteFilter
+  contestType: ContestType
+  createdAt: DateTimeFilter
+  discipline: Discipline
+  id: UUIDFilter
+  name: StringFilter
+  NOT: [EventWhereInput!]
+  officials: OfficialFilter
+  OR: [EventWhereInput!]
+  slots: SlotFilter
+  updatedAt: DateTimeFilter
+}
+
+input EventWhereUniqueInput {
+  id: String
+}
+
+input FloatFilter {
+  equals: Float
+  gt: Float
+  gte: Float
+  in: [Float!]
+  lt: Float
+  lte: Float
+  not: Float
+  notIn: [Float!]
+}
+
+enum Gender {
+  FEMALE
+  MALE
+}
+
+input IntFilter {
+  equals: Int
+  gt: Int
+  gte: Int
+  in: [Int!]
+  lt: Int
+  lte: Int
+  not: Int
+  notIn: [Int!]
+}
+
+type Mutation {
+  createOneAgeClass(data: AgeClassCreateInput!): AgeClass!
+  createOneAthlete(data: AthleteCreateInput!): Athlete!
+  createOneAthleteGroup(data: AthleteGroupCreateInput!): AthleteGroup!
+  createOneAttempt(data: AttemptCreateInput!): Attempt!
+  createOneEvent(data: EventCreateInput!): Event!
+  createOneOfficial(data: OfficialCreateInput!): Official!
+  createOneOfficialSlot(data: OfficialSlotCreateInput!): OfficialSlot!
+  createOneSlot(data: SlotCreateInput!): Slot!
+  createOneUser(data: UserCreateInput!): User!
+  createOneWeightClass(data: WeightClassCreateInput!): WeightClass!
+  deleteManyAgeClass(where: AgeClassWhereInput): BatchPayload!
+  deleteManyAthlete(where: AthleteWhereInput): BatchPayload!
+  deleteManyAthleteGroup(where: AthleteGroupWhereInput): BatchPayload!
+  deleteManyAttempt(where: AttemptWhereInput): BatchPayload!
+  deleteManyEvent(where: EventWhereInput): BatchPayload!
+  deleteManyOfficial(where: OfficialWhereInput): BatchPayload!
+  deleteManyOfficialSlot(where: OfficialSlotWhereInput): BatchPayload!
+  deleteManySlot(where: SlotWhereInput): BatchPayload!
+  deleteManyUser(where: UserWhereInput): BatchPayload!
+  deleteManyWeightClass(where: WeightClassWhereInput): BatchPayload!
+  deleteOneAgeClass(where: AgeClassWhereUniqueInput!): AgeClass
+  deleteOneAthlete(where: AthleteWhereUniqueInput!): Athlete
+  deleteOneAthleteGroup(where: AthleteGroupWhereUniqueInput!): AthleteGroup
+  deleteOneAttempt(where: AttemptWhereUniqueInput!): Attempt
+  deleteOneEvent(where: EventWhereUniqueInput!): Event
+  deleteOneOfficial(where: OfficialWhereUniqueInput!): Official
+  deleteOneOfficialSlot(where: OfficialSlotWhereUniqueInput!): OfficialSlot
+  deleteOneSlot(where: SlotWhereUniqueInput!): Slot
+  deleteOneUser(where: UserWhereUniqueInput!): User
+  deleteOneWeightClass(where: WeightClassWhereUniqueInput!): WeightClass
+  updateManyAgeClass(data: AgeClassUpdateManyMutationInput!, where: AgeClassWhereInput): BatchPayload!
+  updateManyAthlete(data: AthleteUpdateManyMutationInput!, where: AthleteWhereInput): BatchPayload!
+  updateManyAthleteGroup(data: AthleteGroupUpdateManyMutationInput!, where: AthleteGroupWhereInput): BatchPayload!
+  updateManyAttempt(data: AttemptUpdateManyMutationInput!, where: AttemptWhereInput): BatchPayload!
+  updateManyEvent(data: EventUpdateManyMutationInput!, where: EventWhereInput): BatchPayload!
+  updateManyOfficial(data: OfficialUpdateManyMutationInput!, where: OfficialWhereInput): BatchPayload!
+  updateManyOfficialSlot(data: OfficialSlotUpdateManyMutationInput!, where: OfficialSlotWhereInput): BatchPayload!
+  updateManySlot(data: SlotUpdateManyMutationInput!, where: SlotWhereInput): BatchPayload!
+  updateManyUser(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
+  updateManyWeightClass(data: WeightClassUpdateManyMutationInput!, where: WeightClassWhereInput): BatchPayload!
+  updateOneAgeClass(data: AgeClassUpdateInput!, where: AgeClassWhereUniqueInput!): AgeClass
+  updateOneAthlete(data: AthleteUpdateInput!, where: AthleteWhereUniqueInput!): Athlete
+  updateOneAthleteGroup(data: AthleteGroupUpdateInput!, where: AthleteGroupWhereUniqueInput!): AthleteGroup
+  updateOneAttempt(data: AttemptUpdateInput!, where: AttemptWhereUniqueInput!): Attempt
+  updateOneEvent(data: EventUpdateInput!, where: EventWhereUniqueInput!): Event
+  updateOneOfficial(data: OfficialUpdateInput!, where: OfficialWhereUniqueInput!): Official
+  updateOneOfficialSlot(data: OfficialSlotUpdateInput!, where: OfficialSlotWhereUniqueInput!): OfficialSlot
+  updateOneSlot(data: SlotUpdateInput!, where: SlotWhereUniqueInput!): Slot
+  updateOneUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
+  updateOneWeightClass(data: WeightClassUpdateInput!, where: WeightClassWhereUniqueInput!): WeightClass
+  upsertOneAgeClass(create: AgeClassCreateInput!, update: AgeClassUpdateInput!, where: AgeClassWhereUniqueInput!): AgeClass!
+  upsertOneAthlete(create: AthleteCreateInput!, update: AthleteUpdateInput!, where: AthleteWhereUniqueInput!): Athlete!
+  upsertOneAthleteGroup(create: AthleteGroupCreateInput!, update: AthleteGroupUpdateInput!, where: AthleteGroupWhereUniqueInput!): AthleteGroup!
+  upsertOneAttempt(create: AttemptCreateInput!, update: AttemptUpdateInput!, where: AttemptWhereUniqueInput!): Attempt!
+  upsertOneEvent(create: EventCreateInput!, update: EventUpdateInput!, where: EventWhereUniqueInput!): Event!
+  upsertOneOfficial(create: OfficialCreateInput!, update: OfficialUpdateInput!, where: OfficialWhereUniqueInput!): Official!
+  upsertOneOfficialSlot(create: OfficialSlotCreateInput!, update: OfficialSlotUpdateInput!, where: OfficialSlotWhereUniqueInput!): OfficialSlot!
+  upsertOneSlot(create: SlotCreateInput!, update: SlotUpdateInput!, where: SlotWhereUniqueInput!): Slot!
+  upsertOneUser(create: UserCreateInput!, update: UserUpdateInput!, where: UserWhereUniqueInput!): User!
+  upsertOneWeightClass(create: WeightClassCreateInput!, update: WeightClassUpdateInput!, where: WeightClassWhereUniqueInput!): WeightClass!
+}
+
+type Official {
+  club: String!
+  createdAt: DateTime!
+  event: Event!
+  eventId: String!
+  firstName: String!
+  id: String!
+  importId: Int!
+  lastName: String!
+  license: String!
+  location: String!
+  officalNumber: Int!
+  position: String!
+  updatedAt: DateTime!
+}
+
+input OfficialCreateInput {
+  club: String!
+  createdAt: DateTime
+  event: EventCreateOneWithoutOfficialsInput!
+  firstName: String!
+  id: String
+  importId: Int!
+  lastName: String!
+  license: String!
+  location: String!
+  officalNumber: Int!
+  officialSlots: OfficialSlotCreateManyWithoutOfficialInput
+  position: String!
+  updatedAt: DateTime
+}
+
+input OfficialCreateManyWithoutEventInput {
+  connect: [OfficialWhereUniqueInput!]
+  create: [OfficialCreateWithoutEventInput!]
+}
+
+input OfficialCreateOneWithoutOfficialSlotsInput {
+  connect: OfficialWhereUniqueInput
+  create: OfficialCreateWithoutOfficialSlotsInput
+}
+
+input OfficialCreateWithoutEventInput {
+  club: String!
+  createdAt: DateTime
+  firstName: String!
+  id: String
+  importId: Int!
+  lastName: String!
+  license: String!
+  location: String!
+  officalNumber: Int!
+  officialSlots: OfficialSlotCreateManyWithoutOfficialInput
+  position: String!
+  updatedAt: DateTime
+}
+
+input OfficialCreateWithoutOfficialSlotsInput {
+  club: String!
+  createdAt: DateTime
+  event: EventCreateOneWithoutOfficialsInput!
+  firstName: String!
+  id: String
+  importId: Int!
+  lastName: String!
+  license: String!
+  location: String!
+  officalNumber: Int!
+  position: String!
+  updatedAt: DateTime
+}
+
+input OfficialFilter {
+  every: OfficialWhereInput
+  none: OfficialWhereInput
+  some: OfficialWhereInput
+}
+
+input OfficialScalarWhereInput {
+  AND: [OfficialScalarWhereInput!]
+  club: StringFilter
+  createdAt: DateTimeFilter
+  eventId: StringFilter
+  firstName: StringFilter
+  id: UUIDFilter
+  importId: IntFilter
+  lastName: StringFilter
+  license: StringFilter
+  location: StringFilter
+  NOT: [OfficialScalarWhereInput!]
+  officalNumber: IntFilter
+  officialSlots: OfficialSlotFilter
+  OR: [OfficialScalarWhereInput!]
+  position: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+type OfficialSlot {
+  createdAt: DateTime!
+  id: String!
+  official: Official!
+  officialId: String!
+  position: Position!
+  slot: Slot!
+  slotId: String!
+  updatedAt: DateTime!
+}
+
+input OfficialSlotCreateInput {
+  createdAt: DateTime
+  id: String
+  official: OfficialCreateOneWithoutOfficialSlotsInput!
+  position: Position!
+  slot: SlotCreateOneWithoutOfficialSlotsInput!
+  updatedAt: DateTime
+}
+
+input OfficialSlotCreateManyWithoutOfficialInput {
+  connect: [OfficialSlotWhereUniqueInput!]
+  create: [OfficialSlotCreateWithoutOfficialInput!]
+}
+
+input OfficialSlotCreateManyWithoutSlotInput {
+  connect: [OfficialSlotWhereUniqueInput!]
+  create: [OfficialSlotCreateWithoutSlotInput!]
+}
+
+input OfficialSlotCreateWithoutOfficialInput {
+  createdAt: DateTime
+  id: String
+  position: Position!
+  slot: SlotCreateOneWithoutOfficialSlotsInput!
+  updatedAt: DateTime
+}
+
+input OfficialSlotCreateWithoutSlotInput {
+  createdAt: DateTime
+  id: String
+  official: OfficialCreateOneWithoutOfficialSlotsInput!
+  position: Position!
+  updatedAt: DateTime
+}
+
+input OfficialSlotFilter {
+  every: OfficialSlotWhereInput
+  none: OfficialSlotWhereInput
+  some: OfficialSlotWhereInput
+}
+
+input OfficialSlotScalarWhereInput {
+  AND: [OfficialSlotScalarWhereInput!]
+  createdAt: DateTimeFilter
+  id: UUIDFilter
+  NOT: [OfficialSlotScalarWhereInput!]
+  officialId: StringFilter
+  OR: [OfficialSlotScalarWhereInput!]
+  position: Position
+  slotId: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input OfficialSlotUpdateInput {
+  createdAt: DateTime
+  id: String
+  official: OfficialUpdateOneRequiredWithoutOfficialSlotsInput
+  position: Position
+  slot: SlotUpdateOneRequiredWithoutOfficialSlotsInput
+  updatedAt: DateTime
+}
+
+input OfficialSlotUpdateManyDataInput {
+  createdAt: DateTime
+  id: String
+  position: Position
+  updatedAt: DateTime
+}
+
+input OfficialSlotUpdateManyMutationInput {
+  createdAt: DateTime
+  id: String
+  position: Position
+  updatedAt: DateTime
+}
+
+input OfficialSlotUpdateManyWithoutOfficialInput {
+  connect: [OfficialSlotWhereUniqueInput!]
+  create: [OfficialSlotCreateWithoutOfficialInput!]
+  delete: [OfficialSlotWhereUniqueInput!]
+  deleteMany: [OfficialSlotScalarWhereInput!]
+  disconnect: [OfficialSlotWhereUniqueInput!]
+  set: [OfficialSlotWhereUniqueInput!]
+  update: [OfficialSlotUpdateWithWhereUniqueWithoutOfficialInput!]
+  updateMany: [OfficialSlotUpdateManyWithWhereNestedInput!]
+  upsert: [OfficialSlotUpsertWithWhereUniqueWithoutOfficialInput!]
+}
+
+input OfficialSlotUpdateManyWithoutSlotInput {
+  connect: [OfficialSlotWhereUniqueInput!]
+  create: [OfficialSlotCreateWithoutSlotInput!]
+  delete: [OfficialSlotWhereUniqueInput!]
+  deleteMany: [OfficialSlotScalarWhereInput!]
+  disconnect: [OfficialSlotWhereUniqueInput!]
+  set: [OfficialSlotWhereUniqueInput!]
+  update: [OfficialSlotUpdateWithWhereUniqueWithoutSlotInput!]
+  updateMany: [OfficialSlotUpdateManyWithWhereNestedInput!]
+  upsert: [OfficialSlotUpsertWithWhereUniqueWithoutSlotInput!]
+}
+
+input OfficialSlotUpdateManyWithWhereNestedInput {
+  data: OfficialSlotUpdateManyDataInput!
+  where: OfficialSlotScalarWhereInput!
+}
+
+input OfficialSlotUpdateWithoutOfficialDataInput {
+  createdAt: DateTime
+  id: String
+  position: Position
+  slot: SlotUpdateOneRequiredWithoutOfficialSlotsInput
+  updatedAt: DateTime
+}
+
+input OfficialSlotUpdateWithoutSlotDataInput {
+  createdAt: DateTime
+  id: String
+  official: OfficialUpdateOneRequiredWithoutOfficialSlotsInput
+  position: Position
+  updatedAt: DateTime
+}
+
+input OfficialSlotUpdateWithWhereUniqueWithoutOfficialInput {
+  data: OfficialSlotUpdateWithoutOfficialDataInput!
+  where: OfficialSlotWhereUniqueInput!
+}
+
+input OfficialSlotUpdateWithWhereUniqueWithoutSlotInput {
+  data: OfficialSlotUpdateWithoutSlotDataInput!
+  where: OfficialSlotWhereUniqueInput!
+}
+
+input OfficialSlotUpsertWithWhereUniqueWithoutOfficialInput {
+  create: OfficialSlotCreateWithoutOfficialInput!
+  update: OfficialSlotUpdateWithoutOfficialDataInput!
+  where: OfficialSlotWhereUniqueInput!
+}
+
+input OfficialSlotUpsertWithWhereUniqueWithoutSlotInput {
+  create: OfficialSlotCreateWithoutSlotInput!
+  update: OfficialSlotUpdateWithoutSlotDataInput!
+  where: OfficialSlotWhereUniqueInput!
+}
+
+input OfficialSlotWhereInput {
+  AND: [OfficialSlotWhereInput!]
+  createdAt: DateTimeFilter
+  id: UUIDFilter
+  NOT: [OfficialSlotWhereInput!]
+  official: OfficialWhereInput
+  officialId: StringFilter
+  OR: [OfficialSlotWhereInput!]
+  position: Position
+  slot: SlotWhereInput
+  slotId: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input OfficialSlotWhereUniqueInput {
+  id: String
+}
+
+input OfficialUpdateInput {
+  club: String
+  createdAt: DateTime
+  event: EventUpdateOneRequiredWithoutOfficialsInput
+  firstName: String
+  id: String
+  importId: Int
+  lastName: String
+  license: String
+  location: String
+  officalNumber: Int
+  officialSlots: OfficialSlotUpdateManyWithoutOfficialInput
+  position: String
+  updatedAt: DateTime
+}
+
+input OfficialUpdateManyDataInput {
+  club: String
+  createdAt: DateTime
+  firstName: String
+  id: String
+  importId: Int
+  lastName: String
+  license: String
+  location: String
+  officalNumber: Int
+  position: String
+  updatedAt: DateTime
+}
+
+input OfficialUpdateManyMutationInput {
+  club: String
+  createdAt: DateTime
+  firstName: String
+  id: String
+  importId: Int
+  lastName: String
+  license: String
+  location: String
+  officalNumber: Int
+  position: String
+  updatedAt: DateTime
+}
+
+input OfficialUpdateManyWithoutEventInput {
+  connect: [OfficialWhereUniqueInput!]
+  create: [OfficialCreateWithoutEventInput!]
+  delete: [OfficialWhereUniqueInput!]
+  deleteMany: [OfficialScalarWhereInput!]
+  disconnect: [OfficialWhereUniqueInput!]
+  set: [OfficialWhereUniqueInput!]
+  update: [OfficialUpdateWithWhereUniqueWithoutEventInput!]
+  updateMany: [OfficialUpdateManyWithWhereNestedInput!]
+  upsert: [OfficialUpsertWithWhereUniqueWithoutEventInput!]
+}
+
+input OfficialUpdateManyWithWhereNestedInput {
+  data: OfficialUpdateManyDataInput!
+  where: OfficialScalarWhereInput!
+}
+
+input OfficialUpdateOneRequiredWithoutOfficialSlotsInput {
+  connect: OfficialWhereUniqueInput
+  create: OfficialCreateWithoutOfficialSlotsInput
+  update: OfficialUpdateWithoutOfficialSlotsDataInput
+  upsert: OfficialUpsertWithoutOfficialSlotsInput
+}
+
+input OfficialUpdateWithoutEventDataInput {
+  club: String
+  createdAt: DateTime
+  firstName: String
+  id: String
+  importId: Int
+  lastName: String
+  license: String
+  location: String
+  officalNumber: Int
+  officialSlots: OfficialSlotUpdateManyWithoutOfficialInput
+  position: String
+  updatedAt: DateTime
+}
+
+input OfficialUpdateWithoutOfficialSlotsDataInput {
+  club: String
+  createdAt: DateTime
+  event: EventUpdateOneRequiredWithoutOfficialsInput
+  firstName: String
+  id: String
+  importId: Int
+  lastName: String
+  license: String
+  location: String
+  officalNumber: Int
+  position: String
+  updatedAt: DateTime
+}
+
+input OfficialUpdateWithWhereUniqueWithoutEventInput {
+  data: OfficialUpdateWithoutEventDataInput!
+  where: OfficialWhereUniqueInput!
+}
+
+input OfficialUpsertWithoutOfficialSlotsInput {
+  create: OfficialCreateWithoutOfficialSlotsInput!
+  update: OfficialUpdateWithoutOfficialSlotsDataInput!
+}
+
+input OfficialUpsertWithWhereUniqueWithoutEventInput {
+  create: OfficialCreateWithoutEventInput!
+  update: OfficialUpdateWithoutEventDataInput!
+  where: OfficialWhereUniqueInput!
+}
+
+input OfficialWhereInput {
+  AND: [OfficialWhereInput!]
+  club: StringFilter
+  createdAt: DateTimeFilter
+  event: EventWhereInput
+  eventId: StringFilter
+  firstName: StringFilter
+  id: UUIDFilter
+  importId: IntFilter
+  lastName: StringFilter
+  license: StringFilter
+  location: StringFilter
+  NOT: [OfficialWhereInput!]
+  officalNumber: IntFilter
+  officialSlots: OfficialSlotFilter
+  OR: [OfficialWhereInput!]
+  position: StringFilter
+  updatedAt: DateTimeFilter
+}
+
+input OfficialWhereUniqueInput {
+  id: String
+}
+
+enum Position {
+  SEITENKAMPFRICHTER
+}
+
 type Query {
-  foo: String
+  ageClass(where: AgeClassWhereUniqueInput!): AgeClass
+  ageClasses(after: AgeClassWhereUniqueInput, before: AgeClassWhereUniqueInput, first: Int, last: Int, skip: Int): [AgeClass!]!
+  athlete(where: AthleteWhereUniqueInput!): Athlete
+  athleteGroup(where: AthleteGroupWhereUniqueInput!): AthleteGroup
+  athleteGroups(after: AthleteGroupWhereUniqueInput, before: AthleteGroupWhereUniqueInput, first: Int, last: Int, skip: Int): [AthleteGroup!]!
+  athletes(after: AthleteWhereUniqueInput, before: AthleteWhereUniqueInput, first: Int, last: Int, skip: Int): [Athlete!]!
+  attempt(where: AttemptWhereUniqueInput!): Attempt
+  attempts(after: AttemptWhereUniqueInput, before: AttemptWhereUniqueInput, first: Int, last: Int, skip: Int): [Attempt!]!
+  event(where: EventWhereUniqueInput!): Event
+  events(after: EventWhereUniqueInput, before: EventWhereUniqueInput, first: Int, last: Int, skip: Int): [Event!]!
+  official(where: OfficialWhereUniqueInput!): Official
+  officials(after: OfficialWhereUniqueInput, before: OfficialWhereUniqueInput, first: Int, last: Int, skip: Int): [Official!]!
+  officialSlot(where: OfficialSlotWhereUniqueInput!): OfficialSlot
+  officialSlots(after: OfficialSlotWhereUniqueInput, before: OfficialSlotWhereUniqueInput, first: Int, last: Int, skip: Int): [OfficialSlot!]!
+  slot(where: SlotWhereUniqueInput!): Slot
+  slots(after: SlotWhereUniqueInput, before: SlotWhereUniqueInput, first: Int, last: Int, skip: Int): [Slot!]!
+  user(where: UserWhereUniqueInput!): User
+  users(after: UserWhereUniqueInput, before: UserWhereUniqueInput, first: Int, last: Int, skip: Int): [User!]!
+  weightClass(where: WeightClassWhereUniqueInput!): WeightClass
+  weightClasses(after: WeightClassWhereUniqueInput, before: WeightClassWhereUniqueInput, first: Int, last: Int, skip: Int): [WeightClass!]!
+}
+
+enum Role {
+  ADMIN
+  GUEST
+  USER
+}
+
+type Slot {
+  createdAt: DateTime!
+  event: Event!
+  eventId: String!
+  id: String!
+  name: String!
+  updatedAt: DateTime!
+}
+
+input SlotCreateInput {
+  athleteGroups: AthleteGroupCreateManyWithoutSlotInput
+  createdAt: DateTime
+  event: EventCreateOneWithoutSlotsInput!
+  id: String
+  name: String!
+  officialSlots: OfficialSlotCreateManyWithoutSlotInput
+  updatedAt: DateTime
+}
+
+input SlotCreateManyWithoutEventInput {
+  connect: [SlotWhereUniqueInput!]
+  create: [SlotCreateWithoutEventInput!]
+}
+
+input SlotCreateOneWithoutAthleteGroupsInput {
+  connect: SlotWhereUniqueInput
+  create: SlotCreateWithoutAthleteGroupsInput
+}
+
+input SlotCreateOneWithoutOfficialSlotsInput {
+  connect: SlotWhereUniqueInput
+  create: SlotCreateWithoutOfficialSlotsInput
+}
+
+input SlotCreateWithoutAthleteGroupsInput {
+  createdAt: DateTime
+  event: EventCreateOneWithoutSlotsInput!
+  id: String
+  name: String!
+  officialSlots: OfficialSlotCreateManyWithoutSlotInput
+  updatedAt: DateTime
+}
+
+input SlotCreateWithoutEventInput {
+  athleteGroups: AthleteGroupCreateManyWithoutSlotInput
+  createdAt: DateTime
+  id: String
+  name: String!
+  officialSlots: OfficialSlotCreateManyWithoutSlotInput
+  updatedAt: DateTime
+}
+
+input SlotCreateWithoutOfficialSlotsInput {
+  athleteGroups: AthleteGroupCreateManyWithoutSlotInput
+  createdAt: DateTime
+  event: EventCreateOneWithoutSlotsInput!
+  id: String
+  name: String!
+  updatedAt: DateTime
+}
+
+input SlotFilter {
+  every: SlotWhereInput
+  none: SlotWhereInput
+  some: SlotWhereInput
+}
+
+input SlotScalarWhereInput {
+  AND: [SlotScalarWhereInput!]
+  athleteGroups: AthleteGroupFilter
+  createdAt: DateTimeFilter
+  eventId: StringFilter
+  id: UUIDFilter
+  name: StringFilter
+  NOT: [SlotScalarWhereInput!]
+  officialSlots: OfficialSlotFilter
+  OR: [SlotScalarWhereInput!]
+  updatedAt: DateTimeFilter
+}
+
+input SlotUpdateInput {
+  athleteGroups: AthleteGroupUpdateManyWithoutSlotInput
+  createdAt: DateTime
+  event: EventUpdateOneRequiredWithoutSlotsInput
+  id: String
+  name: String
+  officialSlots: OfficialSlotUpdateManyWithoutSlotInput
+  updatedAt: DateTime
+}
+
+input SlotUpdateManyDataInput {
+  createdAt: DateTime
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input SlotUpdateManyMutationInput {
+  createdAt: DateTime
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input SlotUpdateManyWithoutEventInput {
+  connect: [SlotWhereUniqueInput!]
+  create: [SlotCreateWithoutEventInput!]
+  delete: [SlotWhereUniqueInput!]
+  deleteMany: [SlotScalarWhereInput!]
+  disconnect: [SlotWhereUniqueInput!]
+  set: [SlotWhereUniqueInput!]
+  update: [SlotUpdateWithWhereUniqueWithoutEventInput!]
+  updateMany: [SlotUpdateManyWithWhereNestedInput!]
+  upsert: [SlotUpsertWithWhereUniqueWithoutEventInput!]
+}
+
+input SlotUpdateManyWithWhereNestedInput {
+  data: SlotUpdateManyDataInput!
+  where: SlotScalarWhereInput!
+}
+
+input SlotUpdateOneRequiredWithoutAthleteGroupsInput {
+  connect: SlotWhereUniqueInput
+  create: SlotCreateWithoutAthleteGroupsInput
+  update: SlotUpdateWithoutAthleteGroupsDataInput
+  upsert: SlotUpsertWithoutAthleteGroupsInput
+}
+
+input SlotUpdateOneRequiredWithoutOfficialSlotsInput {
+  connect: SlotWhereUniqueInput
+  create: SlotCreateWithoutOfficialSlotsInput
+  update: SlotUpdateWithoutOfficialSlotsDataInput
+  upsert: SlotUpsertWithoutOfficialSlotsInput
+}
+
+input SlotUpdateWithoutAthleteGroupsDataInput {
+  createdAt: DateTime
+  event: EventUpdateOneRequiredWithoutSlotsInput
+  id: String
+  name: String
+  officialSlots: OfficialSlotUpdateManyWithoutSlotInput
+  updatedAt: DateTime
+}
+
+input SlotUpdateWithoutEventDataInput {
+  athleteGroups: AthleteGroupUpdateManyWithoutSlotInput
+  createdAt: DateTime
+  id: String
+  name: String
+  officialSlots: OfficialSlotUpdateManyWithoutSlotInput
+  updatedAt: DateTime
+}
+
+input SlotUpdateWithoutOfficialSlotsDataInput {
+  athleteGroups: AthleteGroupUpdateManyWithoutSlotInput
+  createdAt: DateTime
+  event: EventUpdateOneRequiredWithoutSlotsInput
+  id: String
+  name: String
+  updatedAt: DateTime
+}
+
+input SlotUpdateWithWhereUniqueWithoutEventInput {
+  data: SlotUpdateWithoutEventDataInput!
+  where: SlotWhereUniqueInput!
+}
+
+input SlotUpsertWithoutAthleteGroupsInput {
+  create: SlotCreateWithoutAthleteGroupsInput!
+  update: SlotUpdateWithoutAthleteGroupsDataInput!
+}
+
+input SlotUpsertWithoutOfficialSlotsInput {
+  create: SlotCreateWithoutOfficialSlotsInput!
+  update: SlotUpdateWithoutOfficialSlotsDataInput!
+}
+
+input SlotUpsertWithWhereUniqueWithoutEventInput {
+  create: SlotCreateWithoutEventInput!
+  update: SlotUpdateWithoutEventDataInput!
+  where: SlotWhereUniqueInput!
+}
+
+input SlotWhereInput {
+  AND: [SlotWhereInput!]
+  athleteGroups: AthleteGroupFilter
+  createdAt: DateTimeFilter
+  event: EventWhereInput
+  eventId: StringFilter
+  id: UUIDFilter
+  name: StringFilter
+  NOT: [SlotWhereInput!]
+  officialSlots: OfficialSlotFilter
+  OR: [SlotWhereInput!]
+  updatedAt: DateTimeFilter
+}
+
+input SlotWhereUniqueInput {
+  id: String
+}
+
+input StringFilter {
+  contains: String
+  endsWith: String
+  equals: String
+  gt: String
+  gte: String
+  in: [String!]
+  lt: String
+  lte: String
+  not: String
+  notIn: [String!]
+  startsWith: String
+}
+
+type User {
+  createdAt: DateTime!
+  id: String!
+  passwordHash: String!
+  role: Role!
+  salt: String!
+  updatedAt: DateTime!
+  username: String!
+}
+
+input UserCreateInput {
+  createdAt: DateTime
+  id: String
+  passwordHash: String!
+  role: Role
+  salt: String!
+  updatedAt: DateTime
+  username: String!
+}
+
+input UserUpdateInput {
+  createdAt: DateTime
+  id: String
+  passwordHash: String
+  role: Role
+  salt: String
+  updatedAt: DateTime
+  username: String
+}
+
+input UserUpdateManyMutationInput {
+  createdAt: DateTime
+  id: String
+  passwordHash: String
+  role: Role
+  salt: String
+  updatedAt: DateTime
+  username: String
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput!]
+  createdAt: DateTimeFilter
+  id: UUIDFilter
+  NOT: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  passwordHash: StringFilter
+  role: Role
+  salt: StringFilter
+  updatedAt: DateTimeFilter
+  username: StringFilter
+}
+
+input UserWhereUniqueInput {
+  id: String
+}
+
+scalar UUID
+
+input UUIDFilter {
+  contains: UUID
+  endsWith: UUID
+  equals: UUID
+  gt: UUID
+  gte: UUID
+  in: [UUID!]
+  lt: UUID
+  lte: UUID
+  not: UUID
+  notIn: [UUID!]
+  startsWith: UUID
+}
+
+type WeightClass {
+  createdAt: DateTime!
+  gender: Gender!
+  id: String!
+  max: Int!
+  min: Float!
+  name: String!
+  updatedAt: DateTime!
+}
+
+input WeightClassCreateInput {
+  athletes: AthleteCreateManyWithoutWeightClassInput
+  createdAt: DateTime
+  gender: Gender!
+  id: String
+  max: Int!
+  min: Float!
+  name: String!
+  updatedAt: DateTime
+}
+
+input WeightClassCreateOneWithoutAthletesInput {
+  connect: WeightClassWhereUniqueInput
+  create: WeightClassCreateWithoutAthletesInput
+}
+
+input WeightClassCreateWithoutAthletesInput {
+  createdAt: DateTime
+  gender: Gender!
+  id: String
+  max: Int!
+  min: Float!
+  name: String!
+  updatedAt: DateTime
+}
+
+input WeightClassUpdateInput {
+  athletes: AthleteUpdateManyWithoutWeightClassInput
+  createdAt: DateTime
+  gender: Gender
+  id: String
+  max: Int
+  min: Float
+  name: String
+  updatedAt: DateTime
+}
+
+input WeightClassUpdateManyMutationInput {
+  createdAt: DateTime
+  gender: Gender
+  id: String
+  max: Int
+  min: Float
+  name: String
+  updatedAt: DateTime
+}
+
+input WeightClassUpdateOneRequiredWithoutAthletesInput {
+  connect: WeightClassWhereUniqueInput
+  create: WeightClassCreateWithoutAthletesInput
+  update: WeightClassUpdateWithoutAthletesDataInput
+  upsert: WeightClassUpsertWithoutAthletesInput
+}
+
+input WeightClassUpdateWithoutAthletesDataInput {
+  createdAt: DateTime
+  gender: Gender
+  id: String
+  max: Int
+  min: Float
+  name: String
+  updatedAt: DateTime
+}
+
+input WeightClassUpsertWithoutAthletesInput {
+  create: WeightClassCreateWithoutAthletesInput!
+  update: WeightClassUpdateWithoutAthletesDataInput!
+}
+
+input WeightClassWhereInput {
+  AND: [WeightClassWhereInput!]
+  athletes: AthleteFilter
+  createdAt: DateTimeFilter
+  gender: Gender
+  id: UUIDFilter
+  max: IntFilter
+  min: FloatFilter
+  name: StringFilter
+  NOT: [WeightClassWhereInput!]
+  OR: [WeightClassWhereInput!]
+  updatedAt: DateTimeFilter
+}
+
+input WeightClassWhereUniqueInput {
+  id: String
 }

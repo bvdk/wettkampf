@@ -24,7 +24,7 @@ CREATE TABLE "public"."Event" (
     "name" text  NOT NULL ,
     "updatedAt" timestamp(3)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."Athlete" (
     "BD1" Decimal(65,30)  NOT NULL ,
@@ -64,7 +64,7 @@ CREATE TABLE "public"."Athlete" (
     "weightClassId" text  NOT NULL ,
     "wilks" Decimal(65,30)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."Slot" (
     "createdAt" timestamp(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -73,7 +73,7 @@ CREATE TABLE "public"."Slot" (
     "name" text  NOT NULL ,
     "updatedAt" timestamp(3)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."AthleteGroup" (
     "createdAt" timestamp(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -83,7 +83,7 @@ CREATE TABLE "public"."AthleteGroup" (
     "slotId" text  NOT NULL ,
     "updatedAt" timestamp(3)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."Attempt" (
     "athleteId" text  NOT NULL ,
@@ -99,7 +99,7 @@ CREATE TABLE "public"."Attempt" (
     "valid" boolean  NOT NULL ,
     "weight" integer  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."WeightClass" (
     "createdAt" timestamp(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -110,7 +110,7 @@ CREATE TABLE "public"."WeightClass" (
     "name" text  NOT NULL ,
     "updatedAt" timestamp(3)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."AgeClass" (
     "createdAt" timestamp(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -119,7 +119,7 @@ CREATE TABLE "public"."AgeClass" (
     "sortId" integer  NOT NULL ,
     "updatedAt" timestamp(3)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."Official" (
     "club" text  NOT NULL ,
@@ -135,7 +135,7 @@ CREATE TABLE "public"."Official" (
     "position" text  NOT NULL ,
     "updatedAt" timestamp(3)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."OfficialSlot" (
     "createdAt" timestamp(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -145,7 +145,7 @@ CREATE TABLE "public"."OfficialSlot" (
     "slotId" text  NOT NULL ,
     "updatedAt" timestamp(3)  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 CREATE TABLE "public"."User" (
     "createdAt" timestamp(3)  NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -156,7 +156,7 @@ CREATE TABLE "public"."User" (
     "updatedAt" timestamp(3)  NOT NULL ,
     "username" text  NOT NULL ,
     PRIMARY KEY ("id")
-) 
+)
 
 ALTER TABLE "public"."Athlete" ADD FOREIGN KEY ("eventId")REFERENCES "public"."Event"("id") ON DELETE CASCADE  ON UPDATE CASCADE
 
@@ -374,5 +374,3 @@ migration ..20200418111310-migration
 +    salt                    String
 +}
 ```
-
-

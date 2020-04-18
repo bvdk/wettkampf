@@ -1,7 +1,7 @@
-//generator ts {
-//  provider = "prisma-client-js"
-//  output   = "../api/client"
-//}
+generator ts {
+  provider = "prisma-client-js"
+  output   = "../api/client"
+}
 
 generator prisma_client {
   provider = "prisma-client-js"
@@ -9,7 +9,7 @@ generator prisma_client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 enum Discipline {
@@ -39,34 +39,25 @@ enum Position {
     SEITENKAMPFRICHTER
 }
 
-model AgeClass {
-    id                      String      @id  @default(uuid())
-    createdAt               DateTime    @default(now())
-    updatedAt               DateTime    @updatedAt
-    name                    String
-    sortId                  Int
-}
-
-// This comment is just for you. It will not
-// show up in the AST.
-/// This is a free-floating comment that will show up
-/// in the AST as a `Comment` node, but is not attached
-/// to any other node. We can use these for documentation
-/// in the same way that godoc.org works.
-
-/// This comment will get attached to the `Athlete` node in the AST
-model Athlete {
-    /// This comment will get attached to the `id` node in the AST
+model Event {
     id                      String      @id @default(uuid())
     createdAt               DateTime    @default(now())
     updatedAt               DateTime    @updatedAt
+    name                    String
 
-    // This comment is just for you
-    raw                     Boolean /// This comment gets attached to the `raw` node
+    discipline              Discipline  @default(POWERLIFTING)
+    contestType             ContestType @default(SINGLE)
+}
+
+model Athlete {
+    id                      String      @id @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    raw                     Boolean
     athleteNumber           Int
     firstName               String
     lastName                String
-    gender                  Gender
+    gender                  Gender      @default(MALE)
     club                    String
     birthday                DateTime
     total                   Float
@@ -102,6 +93,16 @@ model Athlete {
     resultClassId           String
 }
 
+model Slot {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    name                    String
+
+    event                   Event       @relation(fields: [eventId], references: [id])
+    eventId                 String
+}
+
 model AthleteGroup {
     id                      String      @id  @default(uuid())
     createdAt               DateTime    @default(now())
@@ -118,7 +119,7 @@ model Attempt {
     id                      String      @id  @default(uuid())
     createdAt               DateTime    @default(now())
     updatedAt               DateTime    @updatedAt
-    discipline              Discipline
+    discipline              Discipline  @default(SQUAT)
     date                    DateTime
     index                   Int
     weight                  Int
@@ -131,14 +132,22 @@ model Attempt {
     athleteId               String
 }
 
-model Event {
-    id                      String      @id @default(uuid())
+model WeightClass {
+    id                      String      @id  @default(uuid())
     createdAt               DateTime    @default(now())
     updatedAt               DateTime    @updatedAt
     name                    String
+    gender                  Gender      @default(MALE)
+    min                     Float
+    max                     Int
+}
 
-    discipline              Discipline
-    contestType             ContestType
+model AgeClass {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    name                    String
+    sortId                  Int
 }
 
 model Official {
@@ -162,22 +171,12 @@ model OfficialSlot {
     id                      String      @id  @default(uuid())
     createdAt               DateTime    @default(now())
     updatedAt               DateTime    @updatedAt
-    position                Position
+    position                Position    @default(SEITENKAMPFRICHTER)
 
     official                Official    @relation(fields: [officialId], references: [id])
     officialId              String
     slot                    Slot        @relation(fields: [slotId], references: [id])
     slotId                  String
-}
-
-model Slot {
-    id                      String      @id  @default(uuid())
-    createdAt               DateTime    @default(now())
-    updatedAt               DateTime    @updatedAt
-    name                    String
-
-    event                   Event       @relation(fields: [eventId], references: [id])
-    eventId                 String
 }
 
 model User {
@@ -188,14 +187,4 @@ model User {
     username                String
     passwordHash            String
     salt                    String
-}
-
-model WeightClass {
-    id                      String      @id  @default(uuid())
-    createdAt               DateTime    @default(now())
-    updatedAt               DateTime    @updatedAt
-    name                    String
-    gender                  Gender
-    min                     Float
-    max                     Int
 }
