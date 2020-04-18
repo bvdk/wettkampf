@@ -8,6 +8,10 @@ if [ "$ARCH" == "amd64" ]; then
     docker push "bvdk2019/entry:latest";
     docker push "bvdk2019/backend:latest";
     docker push "bvdk2019/frontend:latest";
+
+    docker push "bvdk2019/entry:$VERSION";
+    docker push "bvdk2019/backend:$VERSION";
+    docker push "bvdk2019/frontend:$VERSION";
 fi
 
 docker push "bvdk2019/entry:$ARCH-latest";

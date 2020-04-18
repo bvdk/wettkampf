@@ -2,7 +2,7 @@ version: '3'
 services:
   entry:
     container_name: entry
-    image: bvdk2019/entry
+    image: bvdk2019/entry:2.0.0
     ports:
       - 80:80
     depends_on:
@@ -10,11 +10,24 @@ services:
       - backend
   frontend:
     container_name: frontend
-    image: bvdk2019/frontend
+    image: bvdk2019/frontend:2.0.0
   backend:
     container_name: backend
-    image: bvdk2019/backend
+    image: bvdk2019/backend:2.0.0
     volumes:
       - /var/data/bvdk/db:/usr/src/app/db
     environment:
       - DB=/usr/src/app/db
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgres:alpine
+    volumes:
+      - /var/data/bvdk/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: bvdk
+      POSTGRES_PASSWORD: bvdkpw
+      POSTGRES_DB: bvdk
+    ports:
+      - 5432:5432

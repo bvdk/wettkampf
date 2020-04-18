@@ -4,8 +4,8 @@ generator ts {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "sqlite:./data.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 enum Discipline {
@@ -79,9 +79,12 @@ model Athlete {
     nextAttemptsSortKeys    String
     importId                Int
 
-    event                   Event
-    weightClass             WeightClass
-    ageClass                AgeClass
+    event                   Event           @relation(fields: [eventId], references: [id])
+    eventId                 String
+    weightClass             WeightClass     @relation(fields: [weightClassId], references: [id])
+    weightClassId           String
+    ageClass                AgeClass        @relation(fields: [ageClassId], references: [id])
+    ageClassId              String
 
     resultClassId           String
 }
@@ -92,7 +95,8 @@ model Slot {
     updatedAt               DateTime    @updatedAt
     name                    String
 
-    event                   Event
+    event                   Event       @relation(fields: [eventId], references: [id])
+    eventId                 String
 }
 
 model AthleteGroup {
@@ -101,8 +105,10 @@ model AthleteGroup {
     updatedAt               DateTime    @updatedAt
     name                    String
 
-    event                   Event
-    slot                    Slot
+    event                   Event       @relation(fields: [eventId], references: [id])
+    eventId                 String
+    slot                    Slot        @relation(fields: [slotId], references: [id])
+    slotId                  String
 }
 
 model Attempt {
@@ -118,7 +124,8 @@ model Attempt {
     done                    Boolean
     resign                  Boolean
 
-    athlete                 Athlete
+    athlete                 Athlete     @relation(fields: [athleteId], references: [id])
+    athleteId               String
 }
 
 model WeightClass {
@@ -152,7 +159,8 @@ model Official {
     location                String
     importId                Int
 
-    event                   Event
+    event                   Event       @relation(fields: [eventId], references: [id])
+    eventId                 String
 }
 
 model OfficialSlot {
@@ -161,8 +169,10 @@ model OfficialSlot {
     updatedAt               DateTime    @updatedAt
     position                Position
 
-    official                Official
-    slot                    Slot
+    official                Official    @relation(fields: [officialId], references: [id])
+    officialId              String
+    slot                    Slot        @relation(fields: [slotId], references: [id])
+    slotId                  String
 }
 
 model User {

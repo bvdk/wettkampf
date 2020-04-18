@@ -18,3 +18,14 @@ services:
       - /var/data/bvdk/db:/usr/src/app/db
     environment:
       - DB=/usr/src/app/db
+  postgres:
+    container_name: postgres
+    image: postgres:alpine
+    volumes:
+      - /var/data/bvdk/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: bvdk
+      POSTGRES_PASSWORD: bvdkpw
+      POSTGRES_DB: bvdk
+    ports:
+      - 5432:5432
