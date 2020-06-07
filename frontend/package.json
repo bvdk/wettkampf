@@ -51,8 +51,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "clean:server": "rm -rf ../backend_old/dist/client && rm -rf ../backend_old/src/client",
-    "copy": "$npm_execpath run clean:server && cp -R build/ ../backend_old/src/client && cp -R build/ ../backend_old/dist/client",
+    "clean:server": "rm -rf ../backend/dist/client && rm -rf ../backend/src/client",
+    "copy": "$npm_execpath run clean:server && cp -R build/ ../backend/src/client && cp -R build/ ../backend/dist/client",
     "build:copy": "$npm_execpath run build && $npm_execpath run copy",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

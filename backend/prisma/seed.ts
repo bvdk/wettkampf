@@ -1,10 +1,20 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
+import ageClasses from "../src/database/mocks/ageClasses";
+import weightClasses from "../src/database/mocks/weightClasses";
 
-const db = new PrismaClient()
+const main = async () => {
+  const db = new PrismaClient();
 
-main()
+  const ageClassUpsertPromises = ageClasses.map((ageClass) =>
+    db.ageClass.create({ data: ageClass })
+  );
 
-async function main() {
+  const weightClassUpsertPromises = weightClasses.map((weightClass) =>
+    db.weightClass.create({ data: weightClass })
+  );
+
+  await Promise.all(ageClassUpsertPromises);
+  await Promise.all(weightClassUpsertPromises);
   // const results = await Promise.all(
   //   [
   //     {
@@ -20,5 +30,7 @@ async function main() {
   //
   // console.log('Seeded: %j', results)
   //
-  // db.disconnect()
-}
+  await db.disconnect();
+};
+
+main().catch(console.error);

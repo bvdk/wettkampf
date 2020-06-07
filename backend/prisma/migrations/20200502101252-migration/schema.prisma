@@ -1,0 +1,201 @@
+//generator ts {
+//  provider = "prisma-client-js"
+//  output   = "../api/client"
+//}
+
+generator prisma_client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+enum Discipline {
+    POWERLIFTING
+    SQUAT
+    BENCHPRESS
+    DEADLIFT
+}
+
+enum ContestType {
+    SINGLE
+    TEAM
+}
+
+enum Gender {
+    MALE
+    FEMALE
+}
+
+enum Role {
+    ADMIN
+    USER
+    GUEST
+}
+
+enum Position {
+    SEITENKAMPFRICHTER
+}
+
+model AgeClass {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    name                    String
+    sortId                  Int
+}
+
+// This comment is just for you. It will not
+// show up in the AST.
+/// This is a free-floating comment that will show up
+/// in the AST as a `Comment` node, but is not attached
+/// to any other node. We can use these for documentation
+/// in the same way that godoc.org works.
+
+/// This comment will get attached to the `Athlete` node in the AST
+model Athlete {
+    /// This comment will get attached to the `id` node in the AST
+    id                      String      @id @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+
+    // This comment is just for you
+    raw                     Boolean /// This comment gets attached to the `raw` node
+    athleteNumber           Int
+    firstName               String
+    lastName                String
+    gender                  Gender
+    club                    String
+    birthday                DateTime
+    total                   Float
+    norm                    Boolean
+    lateRegistration        Boolean
+    price                   Float
+    bodyWeight              Float
+    wilks                   Float
+    dots                    Float
+    los                     Int
+    KB1                     Float
+    KB2                     Float
+    KB3                     Float
+    BD1                     Float
+    BD2                     Float
+    BD3                     Float
+    KH1                     Float
+    KH2                     Float
+    KH3                     Float
+    points                  Float
+    place                   Int
+    location                String
+    nextAttemptsSortKeys    String
+    importId                Int
+
+    event                   Event           @relation(fields: [eventId], references: [id])
+    eventId                 String
+    weightClass             WeightClass     @relation(fields: [weightClassId], references: [id])
+    weightClassId           String
+    ageClass                AgeClass        @relation(fields: [ageClassId], references: [id])
+    ageClassId              String
+
+    resultClassId           String
+}
+
+model AthleteGroup {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    name                    String
+
+    event                   Event       @relation(fields: [eventId], references: [id])
+    eventId                 String
+    slot                    Slot        @relation(fields: [slotId], references: [id])
+    slotId                  String
+}
+
+model Attempt {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    discipline              Discipline
+    date                    DateTime
+    index                   Int
+    weight                  Int
+    raw                     Boolean
+    valid                   Boolean
+    done                    Boolean
+    resign                  Boolean
+
+    athlete                 Athlete     @relation(fields: [athleteId], references: [id])
+    athleteId               String
+}
+
+model Event {
+    id                      String      @id @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    name                    String
+
+    discipline              Discipline
+    contestType             ContestType
+}
+
+model Official {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    officalNumber           Int
+    lastName                String
+    firstName               String
+    club                    String
+    license                 String
+    position                String
+    location                String
+    importId                Int
+
+    event                   Event       @relation(fields: [eventId], references: [id])
+    eventId                 String
+}
+
+model OfficialSlot {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    position                Position
+
+    official                Official    @relation(fields: [officialId], references: [id])
+    officialId              String
+    slot                    Slot        @relation(fields: [slotId], references: [id])
+    slotId                  String
+}
+
+model Slot {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    name                    String
+
+    event                   Event       @relation(fields: [eventId], references: [id])
+    eventId                 String
+}
+
+model User {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    role                    Role        @default(GUEST)
+    username                String
+    passwordHash            String
+    salt                    String
+}
+
+model WeightClass {
+    id                      String      @id  @default(uuid())
+    createdAt               DateTime    @default(now())
+    updatedAt               DateTime    @updatedAt
+    name                    String
+    gender                  Gender
+    min                     Float
+    max                     Int
+}

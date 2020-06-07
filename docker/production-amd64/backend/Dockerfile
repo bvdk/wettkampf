@@ -12,4 +12,4 @@ COPY ./backend/dist ./dist
 COPY ./backend/fonts ./fonts
 
 EXPOSE 4000
-CMD export DATABASE_URL=postgresql://bvdk:bvdkpw@postgres:5432/bvdk?schema=public && npm run prisma:prod && node dist/start.js
+CMD export DATABASE_URL=postgresql://bvdk:bvdkpw@postgres:5432/bvdk?schema=public && npm run prisma:prod && npm run prisma:seed && node dist

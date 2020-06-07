@@ -1,0 +1,49 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@apollo/client": "^3.0.0-beta.41",
+    "@apollo/link-context": "^2.0.0-beta.3",
+    "@auth0/auth0-spa-js": "^1.6.4",
+    "apollo-link-error": "^1.1.12",
+    "apollo-link-persisted-queries": "^0.2.2",
+    "apollo-upload-client": "^12.1.0",
+    "graphql": "^14.6.0",
+    "grommet": "^2.13.0",
+    "grommet-icons": "^4.4.0",
+    "history": "^4.10.1",
+    "immutability-helper": "^3.0.1",
+    "moment": "^2.24.0",
+    "password-validator": "^5.0.3",
+    "query-string": "^6.9.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "styled-components": "^4.4.1",
+    "styled-reset": "^4.0.8",
+    "validator": "^12.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
