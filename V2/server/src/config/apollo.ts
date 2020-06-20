@@ -15,7 +15,7 @@ export default async function () {
     ],
   };
 
-  await waitOn(options).catch((error) => {
+  await waitOn(options).catch((error: Error) => {
     console.log("Error waiting for services:", error);
   });
 
@@ -30,11 +30,13 @@ export default async function () {
         url,
         willSendRequest: async ({ request, context }) => {
           await readNestedFileStreams(request.variables);
-          request.http.headers.set(
-            "user",
-            // @ts-ignore
-            context.user ? JSON.stringify(context.user) : null
-          );
+          if (request.http) {
+            request.http.headers.set(
+              "user",
+              // @ts-ignore
+              context.user ? JSON.stringify(context.user) : null
+            );
+          }
         },
       });
     },
@@ -43,7 +45,7 @@ export default async function () {
   return new ApolloServer({
     gateway,
     subscriptions: false,
-    context: ({ req }) => {
+    context: ({ req }: any) => {
       const user = req.user || null;
       return { user };
     },

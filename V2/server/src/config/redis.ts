@@ -2,13 +2,13 @@ import redis from "redis";
 import RedisSMQ from "rsmq";
 
 const host = process.env.REDIS_HOST_ADDRESS;
-const port = process.env.REDIS_PORT;
+const port = process.env.REDIS_PORT || "6379";
 const client = redis.createClient({
   ...(process.env.NODE_ENV === "production" && {
     password: process.env.REDIS_PASSWORD,
   }),
   host,
-  port,
+  port: parseInt(port, 10),
 });
 
 client.on("connect", () => {

@@ -6,13 +6,13 @@ class Queue {
   private rsmq: any;
   private readonly qname: any;
 
-  constructor(rsmq, qname) {
+  constructor(rsmq: any, qname: any) {
     this.rsmq = rsmq;
     this.qname = qname;
   }
 
   async createQueue() {
-    const queues = await this.rsmq.listQueuesAsync();
+    const queues: any[] = await this.rsmq.listQueuesAsync();
 
     if (queues.find((queue) => queue === this.qname)) {
       return;
@@ -41,7 +41,7 @@ class Queue {
     console.log(`${this.qname} queue and all messages deleted`);
   }
 
-  async sendMessage(message) {
+  async sendMessage(message: string) {
     const response = await this.rsmq.sendMessageAsync({
       qname: this.qname,
       message,
@@ -54,7 +54,7 @@ class Queue {
     return response;
   }
 
-  async receiveMessage() {
+  async receiveMessage(): Promise<any> {
     const response = await this.rsmq.receiveMessageAsync({ qname: this.qname });
 
     if (!response || !response.id) {
@@ -64,7 +64,7 @@ class Queue {
     return response;
   }
 
-  async deleteMessage(id) {
+  async deleteMessage(id: string) {
     const response = await this.rsmq.deleteMessageAsync({
       qname: this.qname,
       id,
@@ -73,7 +73,10 @@ class Queue {
     return response === 1;
   }
 
-  async listen({ interval = 10000, maxReceivedCount = 10 }, callback) {
+  async listen(
+    { interval = 10000, maxReceivedCount = 10 },
+    callback: (response: any) => void
+  ) {
     const start = Date.now();
 
     try {

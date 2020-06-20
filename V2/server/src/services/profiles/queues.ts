@@ -14,7 +14,7 @@ export async function initDeleteProfileQueue() {
   return deleteProfileQueue;
 }
 
-export async function onDeleteAccount(payload, deleteProfileQueue) {
+export async function onDeleteAccount(payload: any, deleteProfileQueue: any) {
   const { accountId } = JSON.parse(payload.message);
   const { _id } = await Profile.findOneAndDelete({ accountId }).exec();
   await Profile.updateMany({ $pull: { following: _id } }).exec();

@@ -2,7 +2,7 @@ import app from "./config/app";
 import initGateway from "./config/apollo";
 
 const run = async () => {
-  const port = process.env.PORT;
+  const port = process.env.PORT || 4000;
   const server = await initGateway();
 
   server.applyMiddleware({ app, cors: false });

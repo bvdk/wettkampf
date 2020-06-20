@@ -28,17 +28,19 @@ class AccountsDataSource extends DataSource {
     const q = ids.map((id) => `user_id:${id}`).join(" OR ");
     const accounts = await this.auth0.getUsers({ search_engine: "v3", q });
 
-    return ids.map((id) => accounts.find((account) => account.user_id === id));
+    return ids.map((id) =>
+      accounts.find((account: any) => account.user_id === id)
+    );
   });
 
-  constructor({ auth0 }) {
+  constructor({ auth0 }: { auth0: any }) {
     super();
     this.auth0 = auth0;
   }
 
   // CREATE
 
-  createAccount(email, password) {
+  createAccount(email: string, password: string) {
     return this.auth0.createUser({
       app_metadata: {
         groups: [],
@@ -53,7 +55,7 @@ class AccountsDataSource extends DataSource {
 
   // READ
 
-  getAccountById(id) {
+  getAccountById(id: string) {
     return this._accountByIdLoader.load(id);
   }
 
@@ -63,12 +65,12 @@ class AccountsDataSource extends DataSource {
 
   // UPDATE
 
-  async changeAccountBlockedStatus(id) {
+  async changeAccountBlockedStatus(id: string) {
     const { blocked } = await this.auth0.getUser({ id });
     return this.auth0.updateUser({ id }, { blocked: !blocked });
   }
 
-  async changeAccountAdminRole(id) {
+  async changeAccountAdminRole(id: string) {
     const user = await this.auth0.getUser({ id });
     const isAdmin = user.app_metadata.roles.includes("admin");
     const roles = isAdmin ? ["user"] : ["admin"];
@@ -88,7 +90,14 @@ class AccountsDataSource extends DataSource {
     );
   }
 
-  async updateAccount(id, { email, newPassword, password }) {
+  async updateAccount(
+    id: string,
+    {
+      email,
+      newPassword,
+      password,
+    }: { email: string; newPassword: string; password: string }
+  ) {
     if (!email && !newPassword && !password) {
       throw new UserInputError("You must supply some account data to update.");
     } else if (email && newPassword && password) {
@@ -112,7 +121,7 @@ class AccountsDataSource extends DataSource {
 
   // DELETE
 
-  async deleteAccount(id) {
+  async deleteAccount(id: string) {
     await this.auth0.deleteUser({ id });
     return true;
   }

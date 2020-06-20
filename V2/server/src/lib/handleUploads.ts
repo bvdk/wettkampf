@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 import cloudinary from "../config/cloudinary";
 
-export function deleteUpload(url) {
+export function deleteUpload(url: string) {
   const publicId = url.split("/").slice(-3).join("/").split(".")[0];
 
   return new Promise((resolve, reject) => {
@@ -19,7 +19,7 @@ export function deleteUpload(url) {
   });
 }
 
-export function deleteUserUploads(profileId) {
+export function deleteUserUploads(profileId: string) {
   const prefix = `${process.env.NODE_ENV}/${profileId}`;
 
   return new Promise((resolve, reject) => {
@@ -36,7 +36,7 @@ export function deleteUserUploads(profileId) {
   });
 }
 
-export function deleteUserUploadsDir(profileId) {
+export function deleteUserUploadsDir(profileId: string) {
   return fetch(
     `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/folders/${process.env.NODE_ENV}/${profileId}`,
     {
@@ -50,9 +50,11 @@ export function deleteUserUploadsDir(profileId) {
   );
 }
 
-function onReadStream(stream) {
+function onReadStream(stream: {
+  on: (key: string, cb: (data?: any) => void) => void;
+}) {
   return new Promise((resolve, reject) => {
-    const buffers = [];
+    const buffers: any[] = [];
     stream.on("error", (error) => reject(error));
     stream.on("data", (data) => buffers.push(data));
     stream.on("end", () => {
@@ -62,8 +64,8 @@ function onReadStream(stream) {
   });
 }
 
-export async function readNestedFileStreams(variables) {
-  const varArr = Object.entries(variables || {});
+export async function readNestedFileStreams(variables: any) {
+  const varArr = Object.entries<any>(variables || {});
 
   const promises = varArr.map(async (elem) => {
     if (
@@ -87,7 +89,7 @@ export async function readNestedFileStreams(variables) {
   return variables;
 }
 
-export function uploadStream(buffer, options) {
+export function uploadStream(buffer: Buffer, options: any) {
   return new Promise((resolve, reject) => {
     cloudinary.uploader
       .upload_stream(options, (error, result) => {

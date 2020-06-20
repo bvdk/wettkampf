@@ -1,5 +1,5 @@
 import cors from "cors";
-import express from "express";
+import express, { NextFunction, Request, Response } from "express";
 import jwt from "express-jwt";
 import jwksClient from "jwks-rsa";
 
@@ -18,12 +18,15 @@ const jwtCheck = jwt({
   credentialsRequired: false,
 });
 
-app.use(jwtCheck, (err, req, res, next) => {
-  if (err.code === "invalid_token") {
-    return next();
+app.use(
+  jwtCheck,
+  (err: any, req: Request, res: Response, next: NextFunction) => {
+    if (err.code === "invalid_token") {
+      return next();
+    }
+    return next(err);
   }
-  return next(err);
-});
+);
 
 if (process.env.NODE_ENV === "development") {
   app.use(cors({ origin: "http://localhost:3000" }));

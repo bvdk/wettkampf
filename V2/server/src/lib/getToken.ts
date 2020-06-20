@@ -3,7 +3,7 @@ import util from "util";
 
 const requestPromise = util.promisify(request);
 
-export default async function (username, password) {
+export default async function (username: string, password: string) {
   const options = {
     method: "POST",
     url: `https://${process.env.AUTH0_DOMAIN}/oauth/token`,
@@ -20,8 +20,8 @@ export default async function (username, password) {
     },
   };
 
-  const response = await requestPromise(options).catch((error) => {
-    throw new Error(error);
+  const response = await requestPromise(options).catch((error: Error) => {
+    throw error;
   });
   const body = JSON.parse(response.body);
   const { access_token } = body;

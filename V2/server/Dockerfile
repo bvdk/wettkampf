@@ -2,7 +2,7 @@
 # BASE
 #########################################################
 
-FROM node:12-alpine AS base
+FROM node:alpine AS base
 
 # Get and set the environment variables
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
@@ -23,7 +23,10 @@ COPY package*.json ./
 
 # Install dependencies 
 RUN npm install --no-optional pm2 -g && \
-    npm install --no-optional && npm cache clean --force
+    npm install --no-optional && \
+    npm cache clean --force && \
+    npm run init && \
+    pm2 install typescript
 
 # Copy all the files and make the node user the owner
 COPY --chown=node:node . .

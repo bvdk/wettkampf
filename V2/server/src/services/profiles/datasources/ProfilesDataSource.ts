@@ -44,7 +44,7 @@ class ProfilesDataSource extends DataSource {
   // UTILITIES
 
   async _getPinnedItems(githubToken, username) {
-    const response = await graphql(
+    const response = await graphql<any>(
       `
       {
         user(login: "${username}") {

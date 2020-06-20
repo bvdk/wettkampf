@@ -1,13 +1,16 @@
 apps:
-  - script: src/services/accounts/index.js
+  - script: src/services/accounts/index.ts
     name: accounts
     node_args: "-r dotenv/config -r esm"
-  - script: src/services/content/index.js
+
+  - script: src/services/content/index.ts
     name: content
     node_args: "-r dotenv/config -r esm"
-  - script: src/services/profiles/index.js
+
+  - script: src/services/profiles/index.ts
     name: profiles
     node_args: "-r dotenv/config -r esm"
-  - script: src/index.js
+
+  - script: src/index.ts
     name: gateway
     node_args: "-r dotenv/config -r esm"

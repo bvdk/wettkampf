@@ -22,20 +22,22 @@ const runProfiles = async () => {
 
   deleteAccountQueue.listen(
     { interval: 5000, maxReceivedCount: 5 },
-    (payload) => {
+    (payload: any) => {
       onDeleteAccount(payload, deleteProfileQueue);
     }
   );
 
   const schema = applyMiddleware(
-    buildFederatedSchema([{ typeDefs, resolvers }]),
+    buildFederatedSchema([{ typeDefs, resolvers } as any]),
     permissions
   );
 
   const server = new ApolloServer({
     schema,
     context: ({ req }) => {
-      const user = req.headers.user ? JSON.parse(req.headers.user) : null;
+      const user = req.headers.user
+        ? JSON.parse(req.headers.user as string)
+        : null;
       return { user };
     },
     dataSources: () => {
