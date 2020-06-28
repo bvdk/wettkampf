@@ -5,15 +5,49 @@ import { deleteUpload, uploadStream } from "../../../lib/handleUploads";
 import getProjectionFields from "../../../lib/getProjectionFields";
 import Pagination from "../../../lib/Pagination";
 
+import AgeClass from "../../../models/AgeClass";
+import Athlete from "../../../models/Athlete";
+import AthleteGroup from "../../../models/AthleteGroup";
+import Attempt from "../../../models/Attempt";
+import Event from "../../../models/Event";
+import Official from "../../../models/Official";
+import OfficialSlot from "../../../models/OfficialSlot";
+import Slot from "../../../models/Slot";
+import User from "../../../models/User";
+import WeightClass from "../../../models/WeightClass";
+
+type ContextType = {
+  AgeClass: AgeClass;
+  Athlete: Athlete;
+  AthleteGroup: AthleteGroup;
+  Attempt: Attempt;
+  Event: Event;
+  Official: Official;
+  OfficialSlot: OfficialSlot;
+  Slot: Slot;
+  User: User;
+  WeightClass: WeightClass;
+
+  Post;
+  Profile;
+  Reply;
+};
+
 class ContentDataSource extends DataSource {
+  private context: ContextType;
+
   private readonly Post: any;
   private readonly Reply: any;
   private Profile: any;
   private postPagination: Pagination;
   private replyPagination: Pagination;
 
-  constructor({ Post, Profile, Reply }) {
+  constructor(context: ContextType) {
     super();
+
+    this.context = context;
+
+    const { Post, Reply, Profile } = context;
     this.Post = Post;
     this.Reply = Reply;
     this.Profile = Profile;

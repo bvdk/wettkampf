@@ -6,9 +6,22 @@ import { initDeleteProfileQueue, onDeleteProfile } from "./queues";
 import ContentDataSource from "./datasources/ContentDataSource";
 import initMongoose from "../../config/mongoose";
 import permissions from "./permissions";
+
+import AgeClass from "../../models/AgeClass";
+import Athlete from "../../models/Athlete";
+import AthleteGroup from "../../models/AthleteGroup";
+import Attempt from "../../models/Attempt";
+import Event from "../../models/Event";
+import Official from "../../models/Official";
+import OfficialSlot from "../../models/OfficialSlot";
+import Slot from "../../models/Slot";
+import User from "../../models/User";
+import WeightClass from "../../models/WeightClass";
+
 import Post from "../../models/Post";
 import Profile from "../../models/Profile";
 import Reply from "../../models/Reply";
+
 import resolvers from "./resolvers";
 import typeDefs from "./typeDefs";
 
@@ -29,12 +42,29 @@ const runContent = async () => {
   const server = new ApolloServer({
     schema,
     context: ({ req }) => {
-      const user = req.headers.user ? JSON.parse(req.headers.user as string) : null;
+      const user = req.headers.user
+        ? JSON.parse(req.headers.user as string)
+        : null;
       return { user };
     },
     dataSources: () => {
       return {
-        contentAPI: new ContentDataSource({ Post, Profile, Reply }),
+        contentAPI: new ContentDataSource({
+          AgeClass,
+          Athlete,
+          AthleteGroup,
+          Attempt,
+          Event,
+          Official,
+          OfficialSlot,
+          Slot,
+          User,
+          WeightClass,
+
+          Post,
+          Profile,
+          Reply,
+        }),
       };
     },
   });
