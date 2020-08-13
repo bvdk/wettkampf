@@ -1,7 +1,7 @@
-import mongoose, { Document, Schema } from "mongoose";
+import * as mongoose from "mongoose";
 import Gender from "../enums/Gender";
 
-type WeightClass = Document & {
+type WeightClass = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -11,7 +11,7 @@ type WeightClass = Document & {
   max: number;
 };
 
-const weightClassSchema = new Schema({
+const weightClassSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
@@ -36,6 +36,9 @@ const weightClassSchema = new Schema({
   },
 });
 
-const WeightClass = mongoose.model<WeightClass>("WeightClass", weightClassSchema);
+const WeightClass = mongoose.model<WeightClass>(
+  "WeightClass",
+  weightClassSchema
+);
 
 export default WeightClass;

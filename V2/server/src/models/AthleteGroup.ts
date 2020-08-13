@@ -1,8 +1,8 @@
-import mongoose, { Schema, Document } from "mongoose";
+import * as mongoose from "mongoose";
 import Event from "./Event";
 import Slot from "./Slot";
 
-type AthleteGroup = Document & {
+type AthleteGroup = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -11,7 +11,7 @@ type AthleteGroup = Document & {
   slot: Slot;
 };
 
-const athleteGroupSchema = new Schema({
+const athleteGroupSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,

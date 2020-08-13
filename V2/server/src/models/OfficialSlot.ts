@@ -1,9 +1,9 @@
-import mongoose, { Document, Schema } from "mongoose";
+import * as mongoose from "mongoose";
 import Slot from "./Slot";
 import Official from "./Official";
 import Position from "../enums/Position";
 
-type OfficialSlot = Document & {
+type OfficialSlot = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -12,7 +12,7 @@ type OfficialSlot = Document & {
   slot: Slot;
 };
 
-const officialSlotSchema = new Schema({
+const officialSlotSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,

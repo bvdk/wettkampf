@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import * as mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema({
   authorProfileId: {

@@ -1,10 +1,10 @@
-import mongoose, { Schema, Document } from "mongoose";
+import * as mongoose from "mongoose";
 import Gender from "../enums/Gender";
 import Event from "./Event";
 import AgeClass from "./AgeClass";
 import WeightClass from "./WeightClass";
 
-type Athlete = Document & {
+type Athlete = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -44,7 +44,7 @@ type Athlete = Document & {
   weightClass: WeightClass;
 };
 
-const athleteSchema = new Schema({
+const athleteSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,

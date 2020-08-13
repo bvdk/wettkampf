@@ -1,8 +1,8 @@
-import mongoose, { Document, Schema } from "mongoose";
+import * as mongoose from "mongoose";
 import Discipline from "../enums/Discipline";
 import Athlete from "./Athlete";
 
-type Attempt = Document & {
+type Attempt = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -17,7 +17,7 @@ type Attempt = Document & {
   athlete: Athlete;
 };
 
-const attemptSchema = new Schema({
+const attemptSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,

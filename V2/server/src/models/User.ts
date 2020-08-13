@@ -1,7 +1,7 @@
-import mongoose, { Document, Schema } from "mongoose";
+import * as mongoose from "mongoose";
 import Role from "../enums/Role";
 
-type User = Document & {
+type User = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -11,7 +11,7 @@ type User = Document & {
   role: Role;
 };
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,

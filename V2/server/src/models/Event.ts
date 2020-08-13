@@ -1,8 +1,8 @@
-import mongoose, { Document, Schema } from "mongoose";
+import * as mongoose from "mongoose";
 import Discipline from "../enums/Discipline";
 import ContestType from "../enums/ContestType";
 
-type Event = Document & {
+type Event = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -12,7 +12,7 @@ type Event = Document & {
   contestType: ContestType;
 };
 
-const eventSchema = new Schema({
+const eventSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,

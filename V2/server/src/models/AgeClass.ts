@@ -1,6 +1,6 @@
-import mongoose, { Document, Schema } from "mongoose";
+import * as mongoose from "mongoose";
 
-type AgeClass = Document & {
+type AgeClass = mongoose.Document & {
   id: string;
   name: string;
   sortId: number;
@@ -8,7 +8,7 @@ type AgeClass = Document & {
   updatedAt: Date;
 };
 
-const ageClassSchema = new Schema({
+const ageClassSchema = new mongoose.Schema({
   name: {
     type: String,
   },

@@ -1,7 +1,7 @@
-import mongoose, { Document, Schema } from "mongoose";
+import * as mongoose from "mongoose";
 import Event from "./Event";
 
-type Official = Document & {
+type Official = mongoose.Document & {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -16,7 +16,7 @@ type Official = Document & {
   event: Event;
 };
 
-const officialSchema = new Schema({
+const officialSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
