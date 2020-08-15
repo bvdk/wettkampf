@@ -34,6 +34,7 @@
     "graphql-parse-resolve-info": "4.7.0",
     "graphql-shield": "7.3.3",
     "gravatar-url": "3.1.0",
+    "jsonwebtoken": "8.5.1",
     "jwks-rsa": "1.8.1",
     "mongoose": "5.9.28",
     "node-fetch": "2.6.0",

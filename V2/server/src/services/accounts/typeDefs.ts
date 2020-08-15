@@ -76,8 +76,7 @@ const typeDefs = gql`
   }
 
   extend type Mutation {
-    "Blocks or unblocks an account from authenticating."
-    changeAccountBlockedStatus(where: AccountWhereUniqueInput!): Account!
+    login(email: String!, password: String!): String
 
     "Escalates or deescalates admin role permissions."
     changeAccountAdminRole(where: AccountWhereUniqueInput!): Account!

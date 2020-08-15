@@ -8,6 +8,7 @@ type Official = mongoose.Document & {
   officialNumber: number;
   lastName: string;
   firstName: string;
+  fullName: string;
   club: string;
   license: string;
   position: string;
@@ -56,6 +57,11 @@ const officialSchema = new mongoose.Schema({
   },
 });
 
-const Official = mongoose.model<Official>("Official", officialSchema);
+officialSchema.virtual("fullName").get(() => this.firstName + this.lastName);
+
+const Official = mongoose.model<Official, mongoose.Model<Official>>(
+  "Official",
+  officialSchema
+);
 
 export default Official;

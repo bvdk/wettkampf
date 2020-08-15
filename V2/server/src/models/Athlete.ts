@@ -12,6 +12,7 @@ type Athlete = mongoose.Document & {
   athleteNumber: number;
   firstName: string;
   lastName: string;
+  fullName: string;
   gender: Gender;
   club: string;
   birthday: Date;
@@ -157,6 +158,11 @@ const athleteSchema = new mongoose.Schema({
   },
 });
 
-const Athlete = mongoose.model<Athlete>("Athlete", athleteSchema);
+athleteSchema.virtual("fullName").get(() => this.firstName + this.lastName);
+
+const Athlete = mongoose.model<Athlete, mongoose.Model<Athlete>>(
+  "Athlete",
+  athleteSchema
+);
 
 export default Athlete;

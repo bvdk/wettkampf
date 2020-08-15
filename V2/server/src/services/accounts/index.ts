@@ -4,10 +4,11 @@ import { buildFederatedSchema } from "@apollo/federation";
 
 import { initDeleteAccountQueue } from "./queues";
 import AccountsDataSource from "./datasources/AccountsDataSource";
-import auth0 from "../../config/auth0";
 import permissions from "./permissions";
 import resolvers from "./resolvers";
 import typeDefs from "./typeDefs";
+import User from "../../models/User";
+import { Datasource } from "./types";
 
 const runAccounts = async () => {
   const port = process.env.ACCOUNTS_SERVICE_PORT;
@@ -21,12 +22,16 @@ const runAccounts = async () => {
   const server = new ApolloServer({
     schema,
     context: ({ req }) => {
-      const user = req.headers.user ? JSON.parse(req.headers.user as string) : null;
+      const user = req.headers.user
+        ? JSON.parse(req.headers.user as string)
+        : null;
       return { user, queues: { deleteAccountQueue } };
     },
-    dataSources: () => {
+    dataSources: (): Datasource => {
       return {
-        accountsAPI: new AccountsDataSource({ auth0 }),
+        accountsAPI: new AccountsDataSource({
+          UserModel: User,
+        }),
       };
     },
   });

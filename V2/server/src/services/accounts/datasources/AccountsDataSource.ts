@@ -1,8 +1,12 @@
 import { DataSource } from "apollo-datasource";
 import { UserInputError } from "apollo-server";
-import DataLoader from "dataloader";
+import * as DataLoader from "dataloader";
+import { pbkdf2Sync, randomBytes } from "crypto";
 
 import getToken from "../../../lib/getToken";
+import User from "../../../models/User";
+import Role from "../../../enums/Role";
+import { Model } from "mongoose";
 
 class AccountsDataSource extends DataSource {
   userPermissions = [
@@ -22,85 +26,84 @@ class AccountsDataSource extends DataSource {
     "block:any_content",
   ];
 
-  private auth0: any;
+  private UserModel: Model<User, {}>;
 
   _accountByIdLoader = new DataLoader(async (ids) => {
-    const q = ids.map((id) => `user_id:${id}`).join(" OR ");
-    const accounts = await this.auth0.getUsers({ search_engine: "v3", q });
+    const accounts = await User.find({
+      id: {
+        $in: ids,
+      },
+    }).exec();
 
-    return ids.map((id) =>
-      accounts.find((account: any) => account.user_id === id)
-    );
+    return ids.map((id) => accounts.find((account: User) => account.id === id));
   });
 
-  constructor({ auth0 }: { auth0: any }) {
+  constructor({ UserModel }: { UserModel: Model<User, {}> }) {
     super();
-    this.auth0 = auth0;
+    this.UserModel = UserModel;
   }
 
   // CREATE
 
-  createAccount(email: string, password: string) {
-    return this.auth0.createUser({
-      app_metadata: {
-        groups: [],
-        roles: ["author"],
-        permissions: this.userPermissions,
-      },
-      connection: "Username-Password-Authentication",
-      email,
+  async createAccount(username: string, password: string) {
+    const salt = randomBytes(16).toString("base64");
+    const passwordHash = pbkdf2Sync(
       password,
+      salt,
+      1000,
+      64,
+      `sha512`
+    ).toString(`hex`);
+
+    const account = new User({
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      username,
+      passwordHash,
+      salt,
+      role: Role.ADMIN,
     });
+
+    return account.save();
   }
 
   // READ
+  async findOne(cb: (account: User) => boolean): Promise<User | undefined> {
+    const users = await User.find(cb).exec();
+    return users[0];
+  }
 
   getAccountById(id: string) {
     return this._accountByIdLoader.load(id);
   }
 
   getAccounts() {
-    return this.auth0.getUsers();
+    return User.find().exec();
   }
 
   // UPDATE
 
-  async changeAccountBlockedStatus(id: string) {
-    const { blocked } = await this.auth0.getUser({ id });
-    return this.auth0.updateUser({ id }, { blocked: !blocked });
-  }
-
   async changeAccountAdminRole(id: string) {
-    const user = await this.auth0.getUser({ id });
-    const isAdmin = user.app_metadata.roles.includes("admin");
-    const roles = isAdmin ? ["user"] : ["admin"];
-    const permissions = isAdmin
-      ? this.userPermissions
-      : this.userPermissions.concat(this.adminPermissions);
+    const user = await User.findById(id);
 
-    return this.auth0.updateUser(
-      { id },
-      {
-        app_metadata: {
-          groups: [],
-          roles,
-          permissions,
-        },
-      }
-    );
+    return user
+      .update({
+        role: user.role === Role.ADMIN ? Role.USER : Role.ADMIN,
+      })
+      .exec();
   }
 
   async updateAccount(
     id: string,
     {
-      email,
+      username,
       newPassword,
       password,
-    }: { email: string; newPassword: string; password: string }
+    }: { username: string; newPassword: string; password: string }
   ) {
-    if (!email && !newPassword && !password) {
+    if (!username && !newPassword && !password) {
       throw new UserInputError("You must supply some account data to update.");
-    } else if (email && newPassword && password) {
+    } else if (username && newPassword && password) {
       throw new UserInputError(
         "Email and password cannot be updated simultaneously."
       );
@@ -110,19 +113,20 @@ class AccountsDataSource extends DataSource {
       );
     }
 
-    if (!email) {
-      const user = await this.auth0.getUser({ id });
-      await getToken(user.email, password);
-      return this.auth0.updateUser({ id }, { password: newPassword });
+    const user = await User.findById(id);
+    if (!username) {
+      await getToken(user.username, password);
+      return user.update({ password: newPassword }).exec();
     }
 
-    return this.auth0.updateUser({ id }, { email });
+    return user.update({ username }).exec();
   }
 
   // DELETE
 
   async deleteAccount(id: string) {
-    await this.auth0.deleteUser({ id });
+    await User.deleteOne({ id }).exec();
+    // await this.auth0.deleteUser({ id });
     return true;
   }
 }
